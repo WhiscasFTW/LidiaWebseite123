@@ -87,7 +87,7 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%); /* Neuere Bild 5% nach oben verschoben */
     z-index: 1;
 }
 
@@ -95,7 +95,7 @@ body, html {
 .rounded-image {
     width: 95%; /* Bildgröße anpassen */
     max-width: 800px;
-    border-radius: 15px;
+    border-radius: 11%; /* Rundung des unteren Bildes auf 11% */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
