@@ -1,110 +1,29 @@
-/* Vollbild Bilder untereinander */
-.fullscreen-images {
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.fullscreen-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
+    height: 500vh; /* 5x die Bildschirmhöhe */
+    scroll-snap-type: y mandatory; /* Snap beim Scrollen */
+    overflow-y: scroll;
 }
 
-.fullscreen-images img {
-    width: 100%;
-    height: 100vh; /* Jedes Bild nimmt die ganze Bildschirmhöhe ein */
-    object-fit: cover; /* Verhindert Verzerrung der Bilder */
-    margin: 0;
-}
-
-/* Dropdown Menü Styling */
-.dropdown {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 25vw; /* Menü nimmt 1/4 der Breite ein */
-    background-color: rgba(0, 0, 0, 0.7); /* Deutlich transparenter */
-    height: 100vh; /* Menü nimmt die volle Höhe des Bildschirms ein */
-    padding: 10px 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.dropbtn {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 50px; /* Größere Schriftgröße */
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh; /* Volle Bildschirmhöhe */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* 100% der Breite des Dropdowns */
-    background-color: rgba(0, 0, 0, 0.5); /* Deutlich transparent */
-    color: white;
-    border-radius: 5px;
-    padding: 10px 0;
-}
-
-.dropdown-content a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    font-size: 22px;
-    transition: background-color 0.3s, font-weight 0.3s;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Hover-Effekt */
-    font-weight: bold; /* Schrift fett beim Hover */
-}
-
-/* Dropdown Menü sichtbar machen */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Footer Styling */
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-footer ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-footer ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-footer ul li a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-bottom: 10px;
+.bg-image {
+    height: 100vh; /* Fullscreen-Höhe */
+    width: 100vw; /* Fullscreen-Breite */
+    background-size: cover; /* Bild skaliert, um zu passen */
+    background-position: center; /* Zentriere das Bild */
+    scroll-snap-align: start; /* Snap-Position */
 }
