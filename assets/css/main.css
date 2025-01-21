@@ -5,6 +5,7 @@
     height: 100vh;
     width: 100%;
     overflow-y: auto;
+    margin: 0;
 }
 
 .fullscreen-images img {
@@ -16,29 +17,38 @@
 /* Dropdown Menü Styling */
 .dropdown {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
     z-index: 10;
+    width: 100%; /* Vollständige Breite des Bildschirms */
 }
 
 .dropbtn {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 30px;
+    font-size: 40px; /* Größere Schriftgröße für bessere Lesbarkeit */
     cursor: pointer;
+    width: 100%;
+    height: 100vh; /* Menü nimmt den gesamten oberen Bildschirmbereich ein */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
     width: 25vw; /* Ein Viertel der Breite */
-    background-color: rgba(0, 0, 0, 0.7); /* Halbtransparent */
+    background-color: rgba(0, 0, 0, 0.5); /* Deutlich transparenter */
     color: white;
     border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-content a {
@@ -46,11 +56,13 @@
     padding: 10px;
     text-decoration: none;
     display: block;
+    font-size: 20px;
     transition: background-color 0.3s;
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3); /* Hervorheben bei Hover */
+    font-weight: bold; /* Schrift fett beim Hover */
 }
 
 /* Dropdown öffnen bei Hover */
@@ -58,3 +70,37 @@
     display: block;
 }
 
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
