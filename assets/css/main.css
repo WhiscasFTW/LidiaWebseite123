@@ -86,7 +86,7 @@ body, html {
 /* Intro Name Bild */
 .image-container {
     position: absolute;
-    top: 30%; /* Position des Intro-Bildes */
+    top: 25%; /* Position des Intro-Bildes */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -94,7 +94,7 @@ body, html {
 
 .rounded-image {
     border-radius: 8%; /* 8% abgerundete Ecken */
-    width: 30vw; /* Bildgröße reduziert */
+    width: 40vw; /* Bildgröße reduziert */
     height: auto;
 }
 
@@ -118,4 +118,60 @@ body, html {
 
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    /* Für kleinere Bildschirme (Tablets und Handys) */
+    
+    .rounded-image {
+        width: 70vw; /* Das Intro-Bild ist auf kleineren Geräten größer */
+        border-radius: 11%; /* Rundung beibehalten */
+    }
+
+    .intro-button {
+        width: 250px; /* Button auf mobilen Geräten kleiner */
+    }
+
+    /* Anpassung der Reihenhöhe */
+    .rolling-row {
+        height: 33vh; /* Reihenhöhe auf kleinen Bildschirmen verringern */
+    }
+
+    /* Verkleinern der oberen Position für das Intro-Bild auf mobilen Geräten */
+    .image-container {
+        top: 20%; /* Bild etwas höher auf kleineren Geräten */
+    }
+
+    /* Position des Buttons auf mobilen Geräten weiter nach oben verschieben */
+    .button-container {
+        bottom: 30%; /* Button näher an die Bildmitte */
+    }
+}
+
+/* Sehr kleine Bildschirme wie Handys */
+@media (max-width: 480px) {
+    /* Für sehr kleine Bildschirme (z.B. Handys) */
+
+    .rounded-image {
+        width: 80vw; /* Das Intro-Bild weiter vergrößern */
+        border-radius: 15%; /* Mehr abgerundete Ecken */
+    }
+
+    .intro-button {
+        width: 200px; /* Button für sehr kleine Geräte noch kleiner */
+    }
+
+    /* Reihenhöhe für sehr kleine Bildschirme noch weiter anpassen */
+    .rolling-row {
+        height: 30vh; /* Reihenhöhe weiter anpassen */
+    }
+
+    .image-container {
+        top: 15%; /* Position für sehr kleine Geräte weiter anpassen */
+    }
+
+    .button-container {
+        bottom: 20%; /* Button nach oben verschieben */
+    }
 }
