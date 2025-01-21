@@ -7,6 +7,7 @@ body, html {
     background-color: black;
 }
 
+/* Fullscreen Container */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
@@ -85,24 +86,22 @@ body, html {
 /* Intro Name Bild */
 .image-container {
     position: absolute;
-    top: 400%;
+    top: 20%; /* Position nach Belieben anpassen */
     left: 50%;
-    transform: translate(-50%, -45%); /* Neuere Bild 5% nach oben verschoben */
+    transform: translateX(-50%);
     z-index: 1;
 }
 
-/* Rundung des IntroName1 Bildes auf 8% */
 .rounded-image {
-    width: 95%; /* Bildgröße anpassen */
-    max-width: 800px;
-    border-radius: 8%; /* Rundung auf 8% */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8%; /* 8% abgerundete Ecken */
+    width: 60vw;
+    height: auto;
 }
 
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 350%; /* Button weiter nach oben verschoben */
+    bottom: 40%; /* Button weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -110,7 +109,7 @@ body, html {
 
 /* Der Button wird doppelt so groß */
 .intro-button {
-    width: 600px; /* Button doppelt so groß wie vorher */
+    width: 400px; /* Button doppelt so groß wie vorher */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -119,15 +118,4 @@ body, html {
 
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
-}
-
-
-/* Fade-In für den Button */
-@keyframes fadeInButton {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
