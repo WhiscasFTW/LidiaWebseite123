@@ -102,7 +102,7 @@ body, html {
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 40%; /* Button weiter nach oben verschoben */
+    bottom: 60%; /* Button weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -110,7 +110,7 @@ body, html {
 
 /* Der Button wird doppelt so groß */
 .intro-button {
-    width: 400px; /* Button doppelt so groß wie vorher */
+    width: 800px; /* Button doppelt so groß wie vorher */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
