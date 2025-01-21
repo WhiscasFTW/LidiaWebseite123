@@ -47,6 +47,9 @@
                 row.style.animation = "moveOut 3s forwards"; // Animation für das Herausfahren der Balken
             });
 
+            // Button ausblenden, sobald er geklickt wurde
+            document.querySelector(".intro-button").style.display = "none";
+
             // Warte, bis die Animation abgeschlossen ist, und zeige den echten Inhalt
             setTimeout(function() {
                 document.querySelector(".intro-content").style.display = "none"; // Intro-Inhalt verstecken
