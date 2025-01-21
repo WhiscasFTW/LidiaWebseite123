@@ -10,11 +10,11 @@ body, html {
 .fullscreen-images {
     display: flex;
     flex-direction: column;
-    height: 500vh; /* Damit genug Platz für die Bilder da ist */
+    height: 500vh; /* 5 Bilder, jedes nimmt 100% der Viewporthöhe ein */
 }
 
 .image {
     width: 100%;
-    height: 100vh;  /* Die Bilder nehmen jeweils 100% der Höhe des Viewports ein */
-    object-fit: cover;
+    height: 100vh;  /* Jedes Bild nimmt die volle Höhe des Bildschirms ein */
+    object-fit: cover;  /* Das Bild wird skaliert, sodass es den Raum ausfüllt */
 }
