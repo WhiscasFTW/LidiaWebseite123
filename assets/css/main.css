@@ -101,7 +101,7 @@ body, html {
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 40%; /* Button weiter nach oben verschoben */
+    top: 40%; /* Button weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -122,8 +122,17 @@ body, html {
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
-    /* Für kleinere Bildschirme (Tablets und Handys) */
+    /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     
+    .image-container,
+    .button-container {
+        position: absolute;
+        top: 35%; /* Beide Elemente vertikal zentrieren */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Position und Größe des Intro-Bildes anpassen */
     .rounded-image {
         width: 70vw; /* Das Intro-Bild ist auf kleineren Geräten größer */
         border-radius: 11%; /* Rundung beibehalten */
@@ -133,25 +142,20 @@ body, html {
         width: 250px; /* Button auf mobilen Geräten kleiner */
     }
 
-    /* Anpassung der Reihenhöhe */
+    /* Reihenhöhe */
     .rolling-row {
         height: 33vh; /* Reihenhöhe auf kleinen Bildschirmen verringern */
-    }
-
-    /* Verkleinern der oberen Position für das Intro-Bild auf mobilen Geräten */
-    .image-container {
-        top: 20%; /* Bild etwas höher auf kleineren Geräten */
-    }
-
-    /* Position des Buttons auf mobilen Geräten weiter nach oben verschieben */
-    .button-container {
-        bottom: 30%; /* Button näher an die Bildmitte */
     }
 }
 
 /* Sehr kleine Bildschirme wie Handys */
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme (z.B. Handys) */
+
+    .image-container,
+    .button-container {
+        top: 30%; /* Beide Elemente weiter nach oben verschieben */
+    }
 
     .rounded-image {
         width: 80vw; /* Das Intro-Bild weiter vergrößern */
@@ -162,16 +166,7 @@ body, html {
         width: 200px; /* Button für sehr kleine Geräte noch kleiner */
     }
 
-    /* Reihenhöhe für sehr kleine Bildschirme noch weiter anpassen */
     .rolling-row {
         height: 30vh; /* Reihenhöhe weiter anpassen */
-    }
-
-    .image-container {
-        top: 15%; /* Position für sehr kleine Geräte weiter anpassen */
-    }
-
-    .button-container {
-        bottom: 20%; /* Button nach oben verschieben */
     }
 }
