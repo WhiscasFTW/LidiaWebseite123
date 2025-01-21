@@ -29,12 +29,12 @@ body, html {
 /* Obere und untere Reihe rollen nach links */
 .rolling-row:nth-child(1),
 .rolling-row:nth-child(3) {
-    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+    animation: roll-left 80s linear infinite, fadeFocus 4s ease-in-out forwards; /* Verlangsamt */
 }
 
 /* Mittlere Reihe rollt nach rechts */
 .rolling-row:nth-child(2) {
-    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
+    animation: roll-right 96s linear infinite, fadeFocus 4s ease-in-out forwards; /* Verlangsamt */
 }
 
 /* Bild-Stil */
@@ -52,7 +52,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    animation: fadeInButton 1.5s ease-in-out 2s forwards;
+    animation: fadeInButton 1.5s ease-in-out 1.2s 0.3s forwards; /* Verzögerung angepasst */
 }
 
 /* Button-Stil */
