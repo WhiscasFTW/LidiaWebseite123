@@ -39,7 +39,13 @@ body, html {
     0% {
         transform: translateX(0);
     }
+    25% {
+        transform: translateX(0);
+    }
     50% {
+        transform: translateX(-100%);
+    }
+    75% {
         transform: translateX(-100%);
     }
     100% {
