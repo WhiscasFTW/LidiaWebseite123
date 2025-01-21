@@ -28,13 +28,12 @@ body, html {
 }
 
 /* Obere und untere Reihe rollen nach links */
-.rolling-row:nth-child(1),
-.rolling-row:nth-child(3) {
+.top-row, .bottom-row {
     animation: roll-left 180s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach links */
 }
 
 /* Mittlere Reihe rollt nach rechts */
-.rolling-row:nth-child(2) {
+.middle-row {
     animation: roll-right 180s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach rechts */
 }
 
