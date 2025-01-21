@@ -1,51 +1,39 @@
-/* Grundlegende Resets */
-* {
+/* Allgemeine Stile */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
+    overflow: hidden; /* Verhindert Scrollen */
     height: 100%;
-    overflow: hidden; /* Kein Scrollen */
-    background: #444; /* Fallback-Hintergrund für Debugging */
 }
 
-/* Vollbild-Container */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    animation: fadeIn 12s ease-in-out forwards; /* Einblend-Animation */
 }
 
-/* Fade-In Effekt */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 8s ease-in-out forwards;
-}
-
-/* Jede Reihe */
+/* Reihen-Stil */
 .rolling-row {
     display: flex;
-    width: 200%;
-    height: 33.33vh;
-    position: relative;
+    width: 100%;
+    height: calc(100vh / 3); /* Teilt den Bildschirm in drei gleich hohe Reihen */
     overflow: hidden;
-    animation: roll 20s linear infinite;
+    position: relative;
 }
 
-/* Bilder in der Reihe */
+/* Bild-Stil */
 .rolling-image {
-    flex: 0 0 50%;
+    width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-color: #666; /* Fallback-Farbe */
+    position: absolute;
+    animation: roll 20s linear infinite;
 }
 
-/* Keyframes für kontinuierliches Rollen */
+/* Animation für Rolltreppen-Effekt */
 @keyframes roll {
     0% {
         transform: translateX(0);
@@ -55,7 +43,7 @@ html, body {
     }
 }
 
-/* Keyframes für Einblenden */
+/* Einblend-Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0.5;
@@ -63,4 +51,14 @@ html, body {
     100% {
         opacity: 1;
     }
+}
+
+/* Animation für die zweite Bildreihe (leicht zeitversetzt) */
+.rolling-row:nth-child(2) .rolling-image {
+    animation-delay: -10s; /* Halbe Animationsdauer */
+}
+
+/* Animation für die dritte Bildreihe (noch mehr versetzt) */
+.rolling-row:nth-child(3) .rolling-image {
+    animation-delay: -5s; /* Viertel Animationsdauer */
 }
