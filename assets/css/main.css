@@ -8,16 +8,21 @@
 body, html {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Entfernt Scrollbars */
     font-family: Arial, sans-serif;
 }
 
 .fullscreen-container {
     display: flex;
     flex-direction: column;
-    height: 500vh; /* 5x die Bildschirmhöhe */
+    height: 100%; /* Gesamthöhe dynamisch setzen */
     scroll-snap-type: y mandatory; /* Snap beim Scrollen */
-    overflow-y: scroll;
+    overflow-y: auto; /* Ermöglicht Scrollen ohne dauerhaft sichtbare Scrollbar */
+    scrollbar-width: none; /* Entfernt Scrollbar in Firefox */
+}
+
+.fullscreen-container::-webkit-scrollbar {
+    display: none; /* Entfernt Scrollbar in Chrome und anderen WebKit-Browsern */
 }
 
 .bg-image {
