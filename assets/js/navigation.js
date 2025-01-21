@@ -1,25 +1,21 @@
-// Menü öffnen und schließen
-function toggleMenu() {
-    const menu = document.getElementById('menu-0');
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
-}
+// Array mit den IDs der Bilder
+const images = ['image1', 'image2', 'image3', 'image4', 'image5'];
 
-// Ändern des Button-Textes beim Scrollen
-const imageContainers = document.querySelectorAll('.image-container');
-const button = document.getElementById('imageButton');
-
-const topics = ["Steckbrief", "Meine Werke", "Dienstleistungen", "Impressum", "Kontakt"];
-
-window.addEventListener('scroll', () => {
-    imageContainers.forEach((container, index) => {
-        const rect = container.getBoundingClientRect();
+// Funktion zum Überprüfen der Sichtbarkeit der Bilder
+function checkImageVisibility() {
+    const button = document.querySelector('.image-button');
+    images.forEach((imageId, index) => {
+        const image = document.getElementById(imageId);
+        const rect = image.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            // Button-Text ändern, wenn das Bild sichtbar ist
-            button.textContent = topics[index];
+            // Bild ist sichtbar
+            button.textContent = `Bild ${index + 1}`;
         }
     });
-});
+}
+
+// Event Listener für das Scrollen
+window.addEventListener('scroll', checkImageVisibility);
+
+// Initialer Aufruf
+checkImageVisibility();
