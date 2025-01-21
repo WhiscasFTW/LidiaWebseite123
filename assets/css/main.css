@@ -9,57 +9,82 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Kein Scrollen */
-    background-color: #000; /* Dunkler Hintergrund */
 }
 
-.split-image-container {
+body {
+    background-color: #000; /* Startfarbe von dunkel */
+    opacity: 0.6; /* Start-Opacity für das ganze Body */
+    transition: opacity 15s ease; /* Sanfter Übergang der Opazität */
+}
+
+/* Vollbild-Container */
+.fullscreen-container {
     display: flex;
     flex-direction: column;
-    width: 100vw; /* Vollständige Breite des Ansichtsfensters */
-    height: 100vh; /* Vollständige Höhe des Ansichtsfensters */
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container für jede Reihe von Bildern */
+.split-image-container {
+    display: flex;
+    width: 100vw;
+    height: 33.33vh; /* Jede Reihe nimmt ein Drittel der Höhe ein */
+    position: relative;
+    overflow: hidden; /* Bildüberschüsse werden ausgeblendet */
 }
 
 .split-image {
-    flex: 1; /* Teilt den verfügbaren Platz gleichmäßig auf */
+    width: 50vw; /* Jedes Bild nimmt 50% der Bildschirmbreite ein */
+    height: 100%; /* Vollständige Höhe des Containers */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    transition: opacity 15s ease;
+    position: absolute;
+    opacity: 0.5; /* Start-Opacity */
 }
 
-/* Keyframe-Animation für den Rolltreppeneffekt */
-@keyframes slideEffect {
+/* Keyframes für die Rolltreppen-ähnliche horizontale Bewegung */
+@keyframes rollEffect {
     0% {
-        transform: translateY(0); /* Bild startet an der ursprünglichen Position */
-        opacity: 0.5;
-    }
-    25% {
-        transform: translateY(-100%); /* Bild geht nach oben aus dem Blickfeld */
-        opacity: 0.5;
+        transform: translateX(0); /* Bild startet an der ursprünglichen Position */
     }
     50% {
-        transform: translateY(-100%); /* Nächster Slider bleibt oben */
-        opacity: 1;
-    }
-    75% {
-        transform: translateY(0); /* Neues Bild kommt wieder von unten */
-        opacity: 1;
+        transform: translateX(-100%); /* Das erste Bild ist zur Seite verschoben, das zweite kommt von links */
     }
     100% {
-        transform: translateY(0); /* Bild ist wieder an seiner ursprünglichen Position */
-        opacity: 0.5;
+        transform: translateX(0); /* Bild kommt zurück an die ursprüngliche Position */
     }
 }
 
-.split-image:nth-child(1) {
-    animation: slideEffect 30s infinite; /* Animation für das erste Bild */
+/* Animation für die einzelnen Reihen und Bilder */
+.split-image-container:nth-child(1) .split-image:nth-child(1) {
+    animation: rollEffect 15s infinite;
 }
 
-.split-image:nth-child(2) {
-    animation: slideEffect 30s infinite 15s; /* Animation für das zweite Bild */
+.split-image-container:nth-child(1) .split-image:nth-child(2) {
+    animation: rollEffect 15s infinite 7.5s; /* Verzögerung für das zweite Bild */
 }
 
-.split-image:nth-child(3) {
-    animation: slideEffect 30s infinite 30s; /* Animation für das dritte Bild */
+.split-image-container:nth-child(2) .split-image:nth-child(1) {
+    animation: rollEffect 15s infinite;
+}
+
+.split-image-container:nth-child(2) .split-image:nth-child(2) {
+    animation: rollEffect 15s infinite 7.5s; /* Verzögerung für das zweite Bild */
+}
+
+.split-image-container:nth-child(3) .split-image:nth-child(1) {
+    animation: rollEffect 15s infinite;
+}
+
+.split-image-container:nth-child(3) .split-image:nth-child(2) {
+    animation: rollEffect 15s infinite 7.5s; /* Verzögerung für das zweite Bild */
+}
+
+/* Übergang von Dunkelheit zu Normalzustand */
+body {
+    opacity: 1;
+    transition: opacity 15s ease; /* Der Übergang der Opazität von dunkel auf normal */
 }
