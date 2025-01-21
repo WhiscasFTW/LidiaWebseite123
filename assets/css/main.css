@@ -52,7 +52,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0; /* Start unsichtbar */
-    animation: fadeInButton 1.5s ease-in-out 1.2s forwards; /* Verzögert und eingeblendet */
+    animation: fadeInButton 1.5s ease-in-out 0.8s forwards; /* Verzögert auf 0.8s */
 }
 
 /* Button-Stil */
