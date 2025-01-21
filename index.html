@@ -13,25 +13,35 @@
 
     <div class="image-section">
         <!-- 5 Bilder untereinander -->
-        <div class="image-container">
+        <div class="image-container" id="image1">
             <img class="background-image" src="assets/images/test.jpg" alt="Bild 1">
+            <div class="image-button" data-target="steckbrief.html">Steckbrief</div>
         </div>
-        <div class="image-container">
+        <div class="image-container" id="image2">
             <img class="background-image" src="assets/images/test.jpg" alt="Bild 2">
+            <div class="image-button" data-target="meine-werke.html">Meine Werke</div>
         </div>
-        <div class="image-container">
+        <div class="image-container" id="image3">
             <img class="background-image" src="assets/images/test.jpg" alt="Bild 3">
+            <div class="image-button" data-target="dienstleistungen.html">Dienstleistungen</div>
         </div>
-        <div class="image-container">
+        <div class="image-container" id="image4">
             <img class="background-image" src="assets/images/test.jpg" alt="Bild 4">
+            <div class="image-button" data-target="impressum.html">Impressum</div>
         </div>
-        <div class="image-container">
+        <div class="image-container" id="image5">
             <img class="background-image" src="assets/images/test.jpg" alt="Bild 5">
+            <div class="image-button" data-target="kontakt.html">Kontakt</div>
         </div>
     </div>
 
     <div class="overlay">
-        <button class="open-nav" onclick="toggleMenu()">Menü öffnen</button>
+        <!-- Hamburger-Menü -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <div id="menu-0" class="navigation">
             <ul>
                 <li><a href="steckbrief.html">Steckbrief</a></li>
@@ -43,7 +53,9 @@
         </div>
     </div>
 
-    <footer>2025 Lidia Grön</footer>
+    <footer>
+        2025 Lidia Grön | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
+    </footer>
 
 </body>
 
