@@ -8,27 +8,26 @@
 body, html {
     height: 100%;
     width: 100%;
-    overflow: hidden; /* Entfernt Scrollbars */
-    font-family: Arial, sans-serif;
+    overflow: hidden; /* Verhindert Scrollbars */
 }
 
 .fullscreen-container {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Gesamthöhe dynamisch setzen */
-    scroll-snap-type: y mandatory; /* Snap beim Scrollen */
-    overflow-y: auto; /* Ermöglicht Scrollen ohne dauerhaft sichtbare Scrollbar */
-    scrollbar-width: none; /* Entfernt Scrollbar in Firefox */
+    scroll-snap-type: y mandatory; /* Snap-Effekt beim Scrollen */
+    height: 100vh; /* Die Container-Höhe ist immer 100% des Ansichtsfensters */
+    overflow-y: scroll; /* Aktiviert Scrollen */
+    scrollbar-width: none; /* Versteckt Scrollbar in Firefox */
 }
 
 .fullscreen-container::-webkit-scrollbar {
-    display: none; /* Entfernt Scrollbar in Chrome und anderen WebKit-Browsern */
+    display: none; /* Versteckt Scrollbar in WebKit-Browsern */
 }
 
 .bg-image {
-    height: 100vh; /* Fullscreen-Höhe */
-    width: 100vw; /* Fullscreen-Breite */
-    background-size: cover; /* Bild skaliert, um zu passen */
-    background-position: center; /* Zentriere das Bild */
-    scroll-snap-align: start; /* Snap-Position */
+    height: 100vh; /* Vollständige Bildschirmhöhe */
+    width: 100vw; /* Vollständige Bildschirmbreite */
+    background-size: cover; /* Skaliert das Bild, um es anzupassen */
+    background-position: center; /* Zentriert das Bild */
+    scroll-snap-align: start; /* Stellt sicher, dass jedes Bild beim Scrollen einrastet */
 }
