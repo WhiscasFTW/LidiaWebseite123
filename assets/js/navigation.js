@@ -3,7 +3,7 @@ const images = ['image1', 'image2', 'image3', 'image4', 'image5'];
 
 // Funktion zum Überprüfen der Sichtbarkeit der Bilder
 function checkImageVisibility() {
-    const button = document.querySelector('.image-button');
+    const button = document.getElementById('imageButton');
     images.forEach((imageId, index) => {
         const image = document.getElementById(imageId);
         const rect = image.getBoundingClientRect();
