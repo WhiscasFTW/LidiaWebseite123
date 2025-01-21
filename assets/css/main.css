@@ -85,7 +85,7 @@ body, html {
 /* Intro Name Bild */
 .image-container {
     position: absolute;
-    top: 80%;
+    top: 400%;
     left: 50%;
     transform: translate(-50%, -45%); /* Neuere Bild 5% nach oben verschoben */
     z-index: 1;
