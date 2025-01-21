@@ -82,7 +82,20 @@ body, html {
     }
 }
 
-/* Button Stil */
+/* Intro-Bild und Button-Stile */
+.image-container {
+    position: absolute;
+    top: 10%; /* Position des Intro-Bildes weiter oben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Höherer Z-Index für das Bild */
+}
+
+.rounded-image {
+    width: 70vw; /* Intro-Bild in der Mitte */
+    border-radius: 8%; /* Abgerundete Ecken */
+}
+
 .button-container {
     position: absolute;
     top: 60%; /* Position des Buttons nach unten verschoben */
