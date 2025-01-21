@@ -94,7 +94,7 @@ body, html {
 /* Rundung des IntroName1 Bildes auf 8% */
 .rounded-image {
     width: 95%; /* Bildgröße anpassen */
-    max-width: 800px;
+    max-width: 600px;
     border-radius: 8%; /* Rundung auf 8% */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -102,7 +102,7 @@ body, html {
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 60%; /* Button weiter nach oben verschoben */
+    bottom: 50%; /* Button weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
