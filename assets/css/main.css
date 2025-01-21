@@ -58,10 +58,10 @@ body, html {
 
 @keyframes roll-right {
     0% {
-        transform: translateX(0); /* Start mit dem ersten Bild der mittleren Reihe */
+        transform: translateX(50%); /* Start mit dem zweiten Bild für die mittlere Reihe */
     }
     100% {
-        transform: translateX(-50%); /* Eine Bildbreite nach rechts */
+        transform: translateX(0); /* Zurück zum ersten Bild, das nach rechts rollt */
     }
 }
 
