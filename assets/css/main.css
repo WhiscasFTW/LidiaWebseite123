@@ -12,6 +12,27 @@ body {
     overflow-x: hidden;
 }
 
+/* Hamburger Menü */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 5px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
 /* Container für die Bilder */
 .image-section {
     position: relative;
@@ -33,14 +54,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 400%;
     height: 100%;
     display: flex;
-    animation: slide 15s infinite;
+    animation: slide 60s infinite linear;
 }
 
 .background-image {
-    width: 100%;
+    width: 25%;
     height: 100%;
     object-fit: cover;
     position: absolute;
@@ -54,16 +75,16 @@ body {
         transform: translateX(0);
     }
     25% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
     }
     50% {
-        transform: translateX(-200%);
+        transform: translateX(-50%);
     }
     75% {
-        transform: translateX(-300%);
+        transform: translateX(-75%);
     }
     100% {
-        transform: translateX(-400%);
+        transform: translateX(-100%);
     }
 }
 
