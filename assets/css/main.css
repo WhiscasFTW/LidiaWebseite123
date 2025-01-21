@@ -20,55 +20,46 @@ html, body {
     height: 100vh;
 }
 
+/* Fade-In Effekt */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 8s ease-in-out forwards; /* 8 Sekunden für das Einblenden */
+}
+
 /* Jede Reihe */
 .rolling-row {
     display: flex;
-    width: 100%;
+    width: 200%; /* Doppelte Breite für den kontinuierlichen Übergang */
     height: 33.33vh; /* Jede Reihe nimmt ein Drittel der Höhe ein */
     position: relative;
     overflow: hidden; /* Überschüssige Bilder ausblenden */
+    animation: roll 20s linear infinite; /* Kontinuierliches Rollen */
 }
 
 /* Bilder in der Reihe */
 .rolling-image {
-    position: absolute;
-    width: 100%; /* Bild füllt die gesamte Breite */
+    flex: 0 0 50%; /* Jedes Bild nimmt die Hälfte der sichtbaren Breite ein */
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0; /* Start mit Transparenz */
-    animation: fadeInSlide 12s infinite ease-in-out;
 }
 
-/* Bewegung für das erste Bild */
-.rolling-row .rolling-image:first-child {
-    animation-delay: 0s; /* Startet sofort */
-}
-
-/* Bewegung für das zweite Bild */
-.rolling-row .rolling-image:last-child {
-    animation-delay: 6s; /* Startet nach der Hälfte der Animation */
-}
-
-/* Keyframes für Einblenden und Schieben */
-@keyframes fadeInSlide {
+/* Keyframes für kontinuierliches Rollen */
+@keyframes roll {
     0% {
-        transform: translateX(100%); /* Start außerhalb des rechten Bereichs */
-        opacity: 0; /* Unsichtbar */
-    }
-    10% {
-        opacity: 1; /* Langsam einblenden */
-    }
-    50% {
-        transform: translateX(0); /* Bild vollständig sichtbar */
-        opacity: 1; /* Voll sichtbar */
-    }
-    90% {
-        transform: translateX(-100%); /* Bild verlässt den linken Bereich */
-        opacity: 1; /* Sichtbar bleiben */
+        transform: translateX(0); /* Startposition */
     }
     100% {
-        transform: translateX(-100%); /* Komplett verschwunden */
-        opacity: 0; /* Unsichtbar */
+        transform: translateX(-100%); /* Bilder nach links verschoben */
+    }
+}
+
+/* Keyframes für Einblenden */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5; /* Halbdunkel zu Beginn */
+    }
+    100% {
+        opacity: 1; /* Vollständig sichtbar */
     }
 }
