@@ -86,7 +86,7 @@ body, html {
 /* Intro Name Bild */
 .image-container {
     position: absolute;
-    top: 20%; /* Position nach Belieben anpassen */
+    top: 25%; /* Position des Intro-Bildes */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -94,7 +94,7 @@ body, html {
 
 .rounded-image {
     border-radius: 8%; /* 8% abgerundete Ecken */
-    width: 60vw;
+    width: 40vw; /* Bildgröße reduziert */
     height: auto;
 }
 
