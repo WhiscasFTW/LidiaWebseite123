@@ -9,6 +9,8 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Kein Scrollen */
+    background-color: #000; /* Dunkler Hintergrund zu Beginn */
+    transition: background-color 2s ease; /* Sanfter Übergang der Hintergrundfarbe */
 }
 
 .split-image-container {
@@ -23,4 +25,15 @@ html, body {
     background-size: cover; /* Passt die Bilder an den Bereich an */
     background-position: center; /* Zentriert die Bilder */
     background-repeat: no-repeat; /* Wiederholungen vermeiden */
+    opacity: 0; /* Bilder beginnen unsichtbar */
+    transition: opacity 2s ease; /* Sanfter Übergang der Sichtbarkeit */
+}
+
+/* Wenn die Seite geladen ist, werden die Bilder sichtbar */
+body.loaded .split-image {
+    opacity: 1;
+}
+
+body.loaded {
+    background-color: transparent; /* Hintergrundfarbe wird transparent */
 }
