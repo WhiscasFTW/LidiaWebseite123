@@ -22,7 +22,7 @@ body, html {
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
-    animation: roll-left 15s linear infinite; /* Standardanimation */
+    animation: roll-left 15s linear infinite; /* Standardanimation für obere und untere Reihen */
     filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
     animation: fadeFocus 8s ease-in-out forwards; /* Übergang zu klar und hell */
 }
