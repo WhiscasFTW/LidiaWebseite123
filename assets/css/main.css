@@ -91,11 +91,11 @@ body, html {
     z-index: 1;
 }
 
-/* Bild-Ecken abrunden */
+/* Rundung des IntroName1 Bildes auf 11% */
 .rounded-image {
     width: 95%; /* Bildgröße anpassen */
     max-width: 800px;
-    border-radius: 11%; /* Rundung des unteren Bildes auf 11% */
+    border-radius: 11%; /* Rundung auf 11% */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
