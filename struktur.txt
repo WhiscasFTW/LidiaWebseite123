@@ -1,0 +1,28 @@
+project/
+│
+├── index.html           # Startseite
+├── steckbrief.html      # Steckbrief-Seite
+├── meine-werke.html     # Seite für Werke
+├── dienstleistungen.html # Dienstleistungen-Seite
+├── impressum.html       # Impressum
+├── kontakt.html         # Kontaktseite
+│
+├── assets/
+│   ├── css/
+│   │   ├── main.css       # Allgemeines Styling
+│   │   ├── navigation.css # Navigation spezifisch
+│   │   ├── forms.css      # Formulare spezifisch
+│   │   ├── animations.css # Animationen
+│   │   ├── utilities.css  # Wiederverwendbare Utilities
+│   │
+│   ├── js/
+│   │   ├── main.js        # Hauptlogik und Initialisierungen
+│   │   ├── navigation.js  # Navigation und Menüs
+│   │   ├── forms.js       # Logik für Formulare und Validierung
+│   │   ├── animations.js  # Animationen und Interaktionen
+│   │   ├── utilities.js   # Hilfsfunktionen
+│   │
+│   ├── images/           # Bilder für alle Seiten
+│   └── fonts/            # Schriftarten
+│
+└── README.md             # Projektbeschreibung
