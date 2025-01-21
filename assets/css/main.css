@@ -117,6 +117,13 @@ body, html {
     opacity: 1; /* Button wird sichtbar */
 }
 
+/* Hover-Effekt für den Button */
+.intro-button:hover {
+    transform: scale(1.1); /* Button wird etwas größer */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Ein sanfter Schatten wird hinzugefügt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Der Übergang dauert 0.3 Sekunden */
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
