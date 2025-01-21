@@ -1,7 +1,91 @@
+/* Allgemeine Stile */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Kein Scrollen */
+    height: 100%;
+    background-color: black;
+}
+
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
+}
+
+/* Reihen-Stil */
+.rolling-row {
+    display: flex;
+    width: 200%; /* Platz für beide Bilder */
+    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
+    position: relative;
+    overflow: hidden;
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
+}
+
+/* Obere und untere Reihe rollen nach links */
+.rolling-row:nth-child(1),
+.rolling-row:nth-child(3) {
+    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+}
+
+/* Mittlere Reihe rollt nach rechts */
+.rolling-row:nth-child(2) {
+    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
+}
+
+/* Bild-Stil */
+.rolling-image {
+    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animationen */
+@keyframes roll-left {
+    0% {
+        transform: translateX(0); /* Startposition */
+    }
+    100% {
+        transform: translateX(-50%); /* Eine Bildbreite nach links */
+    }
+}
+
+@keyframes roll-right {
+    0% {
+        transform: translateX(-50%); /* Start mit zweitem Bild */
+    }
+    100% {
+        transform: translateX(0); /* Zurück zum ersten Bild */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.8; /* Leicht sichtbar */
+    }
+    100% {
+        opacity: 1; /* Vollständig sichtbar */
+    }
+}
+
+@keyframes fadeFocus {
+    0% {
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    }
+    100% {
+        filter: blur(0px) brightness(1); /* Klar und normal hell */
+    }
+}
+
 /* Button Stil */
 .button-container {
     position: absolute;
-    top: 50%; /* Ursprüngliche Position des Buttons */
+    top: 60%; /* Position des Buttons nach unten verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
