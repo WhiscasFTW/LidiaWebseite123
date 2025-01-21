@@ -46,13 +46,13 @@
 
         // Event-Listener für den Button
         document.getElementById("startButton").addEventListener("click", function() {
+            // Button ausblenden, sobald er geklickt wurde
+            document.querySelector(".intro-button").style.display = "none";
+
             // Animation der Balken
             document.querySelectorAll(".rolling-row").forEach(row => {
                 row.style.animation = "moveOut 3s forwards"; // Animation für das Herausfahren der Balken
             });
-
-            // Button ausblenden, sobald er geklickt wurde
-            document.querySelector(".intro-button").style.display = "none";
 
             // Warte, bis die Animation abgeschlossen ist, und zeige den echten Inhalt
             setTimeout(function() {
