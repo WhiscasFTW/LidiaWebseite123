@@ -30,7 +30,7 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: cover;
-    animation: roll 15s linear infinite, fadeIn 9s ease-out; /* Opacity Transition für 9 Sekunden */
+    animation: roll 15s linear infinite, fadeIn 6s ease-out; /* Opacity Transition für 9 Sekunden */
 }
 
 /* Reihen Animationen */
