@@ -1,70 +1,83 @@
-/* Grundaufbau */
-* {
+/* Allgemeine Stile */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
+    overflow: hidden; /* Kein Scrollen */
     height: 100%;
-    overflow: hidden; /* Verhindert Scrollen */
+    background-color: black;
 }
 
-/* Vollbildcontainer */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
+    width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
 }
 
-/* Rolltreppen-Effekt für jede Reihe */
+/* Reihen-Stil */
 .rolling-row {
     display: flex;
-    overflow: hidden;
+    width: 200%; /* Platz für beide Bilder */
+    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
-    height: 33.33%; /* Jede Reihe nimmt ein Drittel der Bildschirmhöhe ein */
+    overflow: hidden;
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
+/* Obere und untere Reihe rollen nach links */
+.rolling-row:nth-child(1),
+.rolling-row:nth-child(3) {
+    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+}
+
+/* Mittlere Reihe rollt nach rechts */
+.rolling-row:nth-child(2) {
+    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
+}
+
+/* Bild-Stil */
 .rolling-image {
-    width: 100%;
+    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
     height: 100%;
     background-size: cover;
-    animation: roll 15s linear infinite, fadeIn 9s ease-out; /* Opacity Transition für 9 Sekunden */
+    background-position: center;
 }
 
-/* Reihen Animationen */
-.rolling-row:nth-child(1) .rolling-image {
-    animation-duration: 18s; /* Langsame Geschwindigkeit für obere Reihe */
-}
-
-.rolling-row:nth-child(2) .rolling-image {
-    animation-duration: 15s; /* Mittlere Reihe (nach rechts) */
-}
-
-.rolling-row:nth-child(3) .rolling-image {
-    animation-duration: 18s; /* Langsame Geschwindigkeit für untere Reihe */
-}
-
-/* Roll-Effekt für jede Reihe */
-@keyframes roll {
+/* Animationen */
+@keyframes roll-left {
     0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-100%);
+        transform: translateX(0); /* Startposition */
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-50%); /* Eine Bildbreite nach links */
     }
 }
 
-/* Opacity-Transition für die Bilder */
+@keyframes roll-right {
+    0% {
+        transform: translateX(-50%); /* Start mit zweitem Bild */
+    }
+    100% {
+        transform: translateX(0); /* Zurück zum ersten Bild */
+    }
+}
+
 @keyframes fadeIn {
     0% {
-        opacity: 0;
+        opacity: 0.8; /* Leicht sichtbar */
     }
     100% {
-        opacity: 1;
+        opacity: 1; /* Vollständig sichtbar */
+    }
+}
+
+@keyframes fadeFocus {
+    0% {
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    }
+    100% {
+        filter: blur(0px) brightness(1); /* Klar und normal hell */
     }
 }
