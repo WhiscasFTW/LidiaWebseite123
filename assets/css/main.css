@@ -45,7 +45,7 @@ body, html {
     background-position: center;
 }
 
-/* Bild in der Mitte des Bildschirms */
+/* Bild in der Mitte mit verdoppelter Größe */
 .centered-intro {
     position: absolute;
     top: 50%;
@@ -56,8 +56,8 @@ body, html {
 }
 
 .rounded-image {
-    width: 300px; /* Breite des Bildes */
-    height: auto;
+    width: 600px; /* Verdoppelte Breite */
+    height: auto; /* Höhe wird proportional angepasst */
     border-radius: 20px; /* Abgerundete Ecken */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Schatten */
 }
