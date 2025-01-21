@@ -29,12 +29,12 @@ body, html {
 
 /* Obere und untere Reihe rollen nach links */
 .top-row, .bottom-row {
-    animation: roll-left 180s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach links */
+    animation: roll-left 200s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach links */
 }
 
 /* Mittlere Reihe rollt nach rechts */
 .middle-row {
-    animation: roll-right 180s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach rechts */
+    animation: roll-right 200s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach rechts */
 }
 
 /* Bild-Stil */
