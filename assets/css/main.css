@@ -22,19 +22,19 @@ body, html {
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
-    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    animation: fadeFocus 12s ease-in-out forwards; /* Übergang zu klar und hell */
+    filter: blur(6px) brightness(0.6); /* Leichte Unschärfe und dunkler */
+    animation: fadeFocus 8s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
 /* Obere und untere Reihe rollen nach links */
 .rolling-row:nth-child(1),
 .rolling-row:nth-child(3) {
-    animation: roll-left 150s linear infinite, fadeFocus 12s ease-in-out forwards;
+    animation: roll-left 100s linear infinite, fadeFocus 8s ease-in-out forwards;
 }
 
 /* Mittlere Reihe rollt nach rechts */
 .rolling-row:nth-child(2) {
-    animation: roll-right 150s linear infinite, fadeFocus 12s ease-in-out forwards;
+    animation: roll-right 100s linear infinite, fadeFocus 8s ease-in-out forwards;
 }
 
 /* Bild-Stil */
@@ -56,10 +56,10 @@ body, html {
 }
 
 .rounded-image {
-    width: 750px; /* Vergrößert auf 1,25-mal */
+    width: 600px; /* Verkleinert auf 80 % der vorherigen Größe */
     height: auto; /* Proportional */
-    border-radius: 50%; /* Deutlich abgerundete Ecken */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Schatten */
+    border-radius: 30%; /* Abgerundete Ecken */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Schatten */
 }
 
 /* Animationen */
@@ -83,7 +83,7 @@ body, html {
 
 @keyframes fadeIn {
     0% {
-        opacity: 0.8; /* Leicht sichtbar */
+        opacity: 0.7; /* Leicht sichtbar */
     }
     100% {
         opacity: 1; /* Vollständig sichtbar */
@@ -92,7 +92,7 @@ body, html {
 
 @keyframes fadeFocus {
     0% {
-        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+        filter: blur(6px) brightness(0.6); /* Start mit Unschärfe und dunkler */
     }
     100% {
         filter: blur(0px) brightness(1); /* Klar und normal hell */
