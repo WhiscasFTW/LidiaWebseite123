@@ -41,7 +41,7 @@
 
     <!-- JS -->
     <script>
-        // Stelle sicher, dass der echte Inhalt zu Beginn ausgeblendet ist
+        // Zu Beginn ist der echte Inhalt versteckt
         document.querySelector(".real-content").style.display = "none";
 
         // Event-Listener für den Button
@@ -49,16 +49,19 @@
             // Button ausblenden, sobald er geklickt wurde
             document.querySelector(".intro-button").style.display = "none";
 
-            // Animation der Balken
+            // Animation der Balken: Reihen bewegen sich aus dem Bild
             document.querySelectorAll(".rolling-row").forEach(row => {
-                row.style.animation = "moveOut 3s forwards"; // Animation für das Herausfahren der Balken
+                row.style.animation = "moveOut 3s forwards"; // Balken bewegen sich heraus
             });
 
             // Warte, bis die Animation abgeschlossen ist, und zeige den echten Inhalt
             setTimeout(function() {
-                document.querySelector(".intro-content").style.display = "none"; // Intro-Inhalt verstecken
-                document.querySelector(".real-content").style.display = "block"; // Echt-Startseite anzeigen
-            }, 3000); // Warte, bis die Animation vorbei ist
+                // Intro-Inhalt verschwinden lassen
+                document.querySelector(".intro-content").style.display = "none";
+                
+                // Den echten Inhalt anzeigen
+                document.querySelector(".real-content").style.display = "block";
+            }, 3000); // Warte, bis die Balkenanimation vorbei ist
         });
     </script>
 </body>
