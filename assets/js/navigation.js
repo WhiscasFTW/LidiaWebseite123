@@ -1,21 +1,24 @@
-// Array mit den IDs der Bilder
-const images = ['image1', 'image2', 'image3', 'image4', 'image5'];
+// Array mit den IDs der Bilder und den zugehörigen Links
+const images = [
+    { id: 'image1', link: 'steckbrief.html', text: 'Steckbrief' },
+    { id: 'image2', link: 'meine-werke.html', text: 'Meine Werke' },
+    { id: 'image3', link: 'projekte.html', text: 'Projekte' },
+    { id: 'image4', link: 'kontakt.html', text: 'Kontakt' },
+    { id: 'image5', link: 'impressum.html', text: 'Impressum' }
+];
 
-// Funktion zum Überprüfen der Sichtbarkeit der Bilder
-function checkImageVisibility() {
-    const button = document.getElementById('imageButton');
-    images.forEach((imageId, index) => {
-        const image = document.getElementById(imageId);
-        const rect = image.getBoundingClientRect();
+const button = document.getElementById('imageButton');
+
+function updateButton() {
+    images.forEach((image, index) => {
+        const element = document.getElementById(image.id);
+        const rect = element.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            // Bild ist sichtbar
-            button.textContent = `Bild ${index + 1}`;
+            button.textContent = image.text;
+            button.href = image.link;
         }
     });
 }
 
-// Event Listener für das Scrollen
-window.addEventListener('scroll', checkImageVisibility);
-
-// Initialer Aufruf
-checkImageVisibility();
+window.addEventListener('scroll', updateButton);
+updateButton();
