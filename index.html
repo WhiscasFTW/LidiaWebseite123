@@ -36,5 +36,14 @@
     <div class="button-container">
         <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button">
     </div>
+
+    <script>
+        // Nach einer kurzen Verzögerung den Button sichtbar machen
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.intro-button').classList.add('visible');
+            }, 1000); // 1 Sekunde Verzögerung
+        }
+    </script>
 </body>
 </html>
