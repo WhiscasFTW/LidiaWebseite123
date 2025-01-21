@@ -1,115 +1,15 @@
-/* Allgemeine Stile */
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Kein Scrollen */
-    height: 100%;
-    background-color: black;
-}
-
-/* Fullscreen Container */
-.fullscreen-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
-}
-
-/* Reihen-Stil */
-.rolling-row {
-    display: flex;
-    width: 200%; /* Platz für beide Bilder */
-    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
-    position: relative;
-    overflow: hidden;
-    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
-}
-
-/* Obere und untere Reihe rollen nach links */
-.rolling-row:nth-child(1),
-.rolling-row:nth-child(3) {
-    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
-}
-
-/* Mittlere Reihe rollt nach rechts */
-.rolling-row:nth-child(2) {
-    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
-}
-
-/* Bild-Stil */
-.rolling-image {
-    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Animationen */
-@keyframes roll-left {
-    0% {
-        transform: translateX(0); /* Startposition */
-    }
-    100% {
-        transform: translateX(-50%); /* Eine Bildbreite nach links */
-    }
-}
-
-@keyframes roll-right {
-    0% {
-        transform: translateX(-50%); /* Start mit zweitem Bild */
-    }
-    100% {
-        transform: translateX(0); /* Zurück zum ersten Bild */
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0.8; /* Leicht sichtbar */
-    }
-    100% {
-        opacity: 1; /* Vollständig sichtbar */
-    }
-}
-
-@keyframes fadeFocus {
-    0% {
-        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    }
-    100% {
-        filter: blur(0px) brightness(1); /* Klar und normal hell */
-    }
-}
-
-/* Intro Name Bild */
-.image-container {
-    position: absolute;
-    top: 25%; /* Position des Intro-Bildes */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.rounded-image {
-    border-radius: 8%; /* 8% abgerundete Ecken */
-    width: 40vw; /* Bildgröße reduziert */
-    height: auto;
-}
-
 /* Button Stil */
 .button-container {
     position: absolute;
-    top: 40%; /* Button weiter nach oben verschoben */
+    top: 50%; /* Ursprüngliche Position des Buttons */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird doppelt so groß */
+/* Der Button wird doppelt so groß und nach unten verschoben */
 .intro-button {
-    width: 400px; /* Button doppelt so groß wie vorher */
+    width: 800px; /* Doppelte Breite */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -127,7 +27,7 @@ body, html {
     .image-container,
     .button-container {
         position: absolute;
-        top: 35%; /* Beide Elemente vertikal zentrieren */
+        top: 45%; /* Button weiter nach unten verschoben */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -139,22 +39,16 @@ body, html {
     }
 
     .intro-button {
-        width: 250px; /* Button auf mobilen Geräten kleiner */
-    }
-
-    /* Reihenhöhe */
-    .rolling-row {
-        height: 33vh; /* Reihenhöhe auf kleinen Bildschirmen verringern */
+        width: 500px; /* Button auf mobilen Geräten noch größer */
     }
 }
 
-/* Sehr kleine Bildschirme wie Handys */
 @media (max-width: 480px) {
-    /* Für sehr kleine Bildschirme (z.B. Handys) */
-
+    /* Für sehr kleine Bildschirme wie Handys */
+    
     .image-container,
     .button-container {
-        top: 30%; /* Beide Elemente weiter nach oben verschieben */
+        top: 40%; /* Button weiter nach unten verschoben */
     }
 
     .rounded-image {
@@ -163,10 +57,6 @@ body, html {
     }
 
     .intro-button {
-        width: 200px; /* Button für sehr kleine Geräte noch kleiner */
-    }
-
-    .rolling-row {
-        height: 30vh; /* Reihenhöhe weiter anpassen */
+        width: 400px; /* Button für sehr kleine Geräte noch größer */
     }
 }
