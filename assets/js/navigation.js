@@ -1,19 +1,24 @@
-// Einfache Navigation mit Highlight-Effekt beim Scrollen
-const links = document.querySelectorAll(".navigation a");
+// Menü öffnen und schließen
+function toggleMenu() {
+    const menu = document.getElementById('menu-0');
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
 
-window.addEventListener("scroll", () => {
-    let current = "";
-    links.forEach(link => {
-        const section = document.querySelector(link.hash);
-        if (section.offsetTop <= window.scrollY + 60 && section.offsetTop + section.offsetHeight > window.scrollY) {
-            current = link.hash;
-        }
-    });
-    links.forEach(link => {
-        link.classList.remove("active");
-        if (link.hash === current) {
-            link.classList.add("active");
+// Ändern des Buttons je nach Bild
+const imageContainers = document.querySelectorAll('.image-container');
+const buttons = document.querySelectorAll('.image-button');
+
+window.addEventListener('scroll', () => {
+    imageContainers.forEach((container, index) => {
+        const rect = container.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            // Aktuelles Bild erreichen
+            buttons.forEach(button => button.style.display = "none");
+            buttons[index].style.display = "block";
         }
     });
 });
-
