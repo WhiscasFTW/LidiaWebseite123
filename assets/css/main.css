@@ -46,7 +46,7 @@ body {
 
 /* Fixierter Button */
 .image-button {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -65,75 +65,4 @@ body {
 .image-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 1;
-}
-
-/* Hamburger-Menü */
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.bar {
-    height: 4px;
-    background-color: white;
-    border-radius: 4px;
-}
-
-.overlay {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 8px;
-}
-
-/* Menü-Layout */
-#menu-0 {
-    display: none;
-    margin-top: 30px;
-}
-
-.navigation {
-    list-style: none;
-    padding: 0;
-}
-
-.navigation li {
-    margin: 10px 0;
-}
-
-.navigation a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.navigation a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
 }
