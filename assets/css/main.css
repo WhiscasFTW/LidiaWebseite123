@@ -124,7 +124,7 @@ body, html {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Der Übergang dauert 0.3 Sekunden */
 }
 
-/* Responsive Anpassungen */
+/* Responsive Anpassungen für kleinere Bildschirme */
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     
@@ -147,6 +147,7 @@ body, html {
     }
 }
 
+/* Anpassungen für sehr kleine Bildschirme */
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
     
