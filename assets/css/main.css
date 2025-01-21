@@ -36,15 +36,16 @@ body {
     filter: brightness(100%);
 }
 
-/* Statischer Button für jedes Bild */
+/* Mittiger Button für jedes Bild */
 .image-button {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 10px 20px;
-    font-size: 1.2rem;
+    padding: 15px 30px;
+    font-size: 1.5rem;
     border-radius: 5px;
     cursor: pointer;
     z-index: 10;
