@@ -7,7 +7,7 @@ body, html {
     background-color: black; /* Dunkler Hintergrund von Anfang an */
 }
 
-/* Container für die ganze Ansicht */
+/* Container für die gesamte Ansicht */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
@@ -23,17 +23,18 @@ body, html {
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
-    filter: blur(5px) brightness(0.5); /* Start mit Unschärfe und Dunkelheit */
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und Dunkelheit */
     animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und heller */
 }
 
 /* Obere und untere Reihe rollen nach links */
-.top-row, .bottom-row {
+.rolling-row:nth-child(1),
+.rolling-row:nth-child(3) {
     animation: roll-left 200s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach links */
 }
 
 /* Mittlere Reihe rollt nach rechts */
-.middle-row {
+.rolling-row:nth-child(2) {
     animation: roll-right 200s linear infinite, fadeFocus 4s ease-in-out forwards; /* Langsame Bewegung nach rechts */
 }
 
@@ -75,7 +76,7 @@ body, html {
 
 @keyframes fadeFocus {
     0% {
-        filter: blur(5px) brightness(0.5); /* Start mit Unschärfe und Dunkelheit */
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und Dunkelheit */
     }
     100% {
         filter: blur(0px) brightness(1); /* Klar und normal hell */
