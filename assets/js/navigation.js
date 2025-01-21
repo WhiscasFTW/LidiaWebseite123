@@ -1,24 +1,23 @@
-// Array mit den IDs der Bilder und den zugehörigen Links
-const images = [
-    { id: 'image1', link: 'steckbrief.html', text: 'Steckbrief' },
-    { id: 'image2', link: 'meine-werke.html', text: 'Meine Werke' },
-    { id: 'image3', link: 'projekte.html', text: 'Projekte' },
-    { id: 'image4', link: 'kontakt.html', text: 'Kontakt' },
-    { id: 'image5', link: 'impressum.html', text: 'Impressum' }
-];
+// navigation.js
 
-const button = document.getElementById('imageButton');
+// Funktion zum Aktualisieren des Button-Textes basierend auf dem sichtbaren Bild
+function updateButtonText() {
+    const sections = document.querySelectorAll('.image-container');
+    const button = document.getElementById('imageButton');
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-function updateButton() {
-    images.forEach((image, index) => {
-        const element = document.getElementById(image.id);
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            button.textContent = image.text;
-            button.href = image.link;
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+            button.textContent = `Bild ${index + 1}`;
         }
     });
 }
 
-window.addEventListener('scroll', updateButton);
-updateButton();
+// Event Listener für das Scrollen
+window.addEventListener('scroll', updateButtonText);
+
+// Initialer Aufruf, um den Button-Text beim Laden der Seite zu setzen
+updateButtonText();
