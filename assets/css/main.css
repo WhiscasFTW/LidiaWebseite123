@@ -1,31 +1,26 @@
-/* Allgemeine Stile */
+/* Grundlegende Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
+html, body {
     width: 100%;
-    overflow: hidden; /* Verhindert Scrollbars */
+    height: 100%;
+    overflow: hidden; /* Kein Scrollen */
 }
 
-.fullscreen-container {
-    height: 100vh; /* Immer 100% des sichtbaren Bereichs */
-    scroll-snap-type: y mandatory; /* Vertikales Einrasten beim Scrollen */
-    overflow-y: scroll; /* Aktiviert vertikales Scrollen */
-    scrollbar-width: none; /* Versteckt Scrollbars in Firefox */
+.split-image-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Vollständige Breite des Ansichtsfensters */
+    height: 100vh; /* Vollständige Höhe des Ansichtsfensters */
 }
 
-.fullscreen-container::-webkit-scrollbar {
-    display: none; /* Versteckt Scrollbars in WebKit-Browsern */
-}
-
-.bg-image {
-    height: 100vh; /* Füllt die gesamte Höhe des sichtbaren Bereichs */
-    width: 100vw; /* Füllt die gesamte Breite */
-    background-size: cover; /* Skaliert das Bild, um es anzupassen */
-    background-position: center; /* Zentriert das Bild */
-    scroll-snap-align: start; /* Positioniert jedes Bild beim Einrasten */
+.split-image {
+    flex: 1; /* Teilt den verfügbaren Platz gleichmäßig auf */
+    background-size: cover; /* Passt die Bilder an den Bereich an */
+    background-position: center; /* Zentriert die Bilder */
+    background-repeat: no-repeat; /* Wiederholungen vermeiden */
 }
