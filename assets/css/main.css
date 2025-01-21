@@ -30,10 +30,14 @@ body, html {
     background-size: cover;
     background-position: center;
     position: absolute;
-    animation: roll-left 30s linear infinite; /* Einheitliche Geschwindigkeit für alle Reihen */
+    animation: roll-left 30s linear infinite; /* Standardmäßig nach links */
 }
 
-/* Animation für Rolltreppen-Effekt */
+/* Animation für Rolltreppen-Effekt (links nach rechts für mittlere Reihe) */
+.rolling-row:nth-child(2) .rolling-image {
+    animation: roll-right 30s linear infinite;
+}
+
 @keyframes roll-left {
     0% {
         transform: translateX(0);
@@ -43,12 +47,21 @@ body, html {
     }
 }
 
+@keyframes roll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* Einblend-Animation */
 @keyframes fadeIn {
     0% {
-        opacity: 0.25; /* Start mit halber Sichtbarkeit */
+        opacity: 0.8; /* Start mit höherer Sichtbarkeit */
     }
     100% {
-        opacity: 1; /* Vollständig eingeblendet */
+        opacity: 1; /* Vollständig sichtbar */
     }
 }
