@@ -9,65 +9,80 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-/* Bildsektion */
+/* Container für die Bilder */
 .image-section {
     position: relative;
-    height: 500px;
-    overflow: hidden;
-    width: 100%;
 }
 
 .image-container {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 500px;
-    z-index: -1;
 }
 
-.static-image {
+.background-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: cover;  /* Bild passt sich dem Container an */
 }
 
-/* Text-Sektion */
-.content-section {
-    padding: 60px 20px;
-    background-color: white;
+/* Overlay für das Menü */
+.overlay {
+    position: fixed; /* Position bleibt fixiert beim Scrollen */
+    top: 10px; /* Abstand vom oberen Rand */
+    left: 10px; /* Abstand vom linken Rand */
+    z-index: 10; /* Über Bilder stellen */
+    background: rgba(0, 0, 0, 0.5);  /* Halbtransparente Hintergrundfarbe */
+    padding: 15px;
+    border-radius: 8px;
 }
 
-.content-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
+.open-nav {
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.content-wrapper h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.open-nav:hover {
+    background-color: #0056b3;
 }
 
-.content-wrapper p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 20px;
+/* Menü, das beim Klicken angezeigt wird */
+#menu-0 {
+    display: none;
+    margin-top: 30px;
 }
 
-/* Footer */
+.navigation {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 10px 0;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -77,4 +92,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
