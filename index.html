@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Split Image</title>
+    <title>Fullscreen Rolltreppen-Effekt</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <div class="split-image-container">
-        <div class="split-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
-        <div class="split-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
-        <div class="split-image" style="background-image: url('assets/images/Porträts1.png');"></div>
-    </div>
+    <div class="fullscreen-container">
+        <!-- Reihe 1 -->
+        <div class="split-image-container">
+            <div class="split-image" style="background-image: url('assets/images/bild1.jpg');"></div>
+            <div class="split-image" style="background-image: url('assets/images/bild2.jpg');"></div>
+        </div>
 
-    <script>
-        window.onload = function() {
-            document.body.classList.add('loaded'); // Fügt der Body-Klasse 'loaded' hinzu
-        };
-    </script>
+        <!-- Reihe 2 -->
+        <div class="split-image-container">
+            <div class="split-image" style="background-image: url('assets/images/bild3.jpg');"></div>
+            <div class="split-image" style="background-image: url('assets/images/bild4.jpg');"></div>
+        </div>
+
+        <!-- Reihe 3 -->
+        <div class="split-image-container">
+            <div class="split-image" style="background-image: url('assets/images/bild5.jpg');"></div>
+            <div class="split-image" style="background-image: url('assets/images/bild6.jpg');"></div>
+        </div>
+    </div>
 </body>
 </html>
