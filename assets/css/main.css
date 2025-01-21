@@ -25,13 +25,15 @@ html, body {
     background-size: cover; /* Passt die Bilder an den Bereich an */
     background-position: center; /* Zentriert die Bilder */
     background-repeat: no-repeat; /* Wiederholungen vermeiden */
-    opacity: 50; /* Bilder beginnen unsichtbar */
-    transition: opacity 4s ease; /* Verlängerte Transition für die Bilder */
+    opacity: 0; /* Bilder beginnen unsichtbar */
+    filter: blur(10px); /* Beginnt mit einer starken Unschärfe */
+    transition: opacity 4s ease, filter 3s ease; /* Verlängerte Transition für die Bilder und Unschärfe */
 }
 
-/* Wenn die Seite geladen ist, werden die Bilder sichtbar */
+/* Wenn die Seite geladen ist, werden die Bilder sichtbar und schärfer */
 body.loaded .split-image {
     opacity: 1;
+    filter: blur(0); /* Unschärfe wird im Verlauf entfernt */
 }
 
 body.loaded {
