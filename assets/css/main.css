@@ -30,8 +30,9 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: cover;
-    animation: roll 102.04s linear infinite, fadeIn 9s ease-out, blurEffect 4s ease-out; /* Alle Reihen gleich schnell */
+    animation: roll 51.02s linear infinite, fadeIn 9s ease-out, blurEffect 4s ease-out; /* Animation doppelt so schnell */
     filter: blur(2px); /* Beginnt mit leichter Unschärfe */
+    opacity: 0.25; /* Beginnt halbtransparent */
 }
 
 /* Alle Reihen haben jetzt die gleiche Dauer */
@@ -53,13 +54,13 @@ body, html {
     }
 }
 
-/* Opacity-Transition für die Bilder */
+/* Opacity-Transition für die Bilder (dunkel zu hell) */
 @keyframes fadeIn {
     0% {
-        opacity: 0;
+        opacity: 0; /* Anfangszustand dunkel */
     }
     100% {
-        opacity: 1;
+        opacity: 0.8; /* Endzustand hell */
     }
 }
 
