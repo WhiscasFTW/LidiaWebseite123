@@ -10,7 +10,7 @@ html, body {
     height: 100%;
     overflow: hidden; /* Kein Scrollen */
     background-color: #000; /* Dunkler Hintergrund zu Beginn */
-    transition: background-color 2s ease; /* Sanfter Übergang der Hintergrundfarbe */
+    transition: background-color 4s ease; /* Verlängerte Transition für den Hintergrund */
 }
 
 .split-image-container {
@@ -26,7 +26,7 @@ html, body {
     background-position: center; /* Zentriert die Bilder */
     background-repeat: no-repeat; /* Wiederholungen vermeiden */
     opacity: 0; /* Bilder beginnen unsichtbar */
-    transition: opacity 2s ease; /* Sanfter Übergang der Sichtbarkeit */
+    transition: opacity 4s ease; /* Verlängerte Transition für die Bilder */
 }
 
 /* Wenn die Seite geladen ist, werden die Bilder sichtbar */
