@@ -30,7 +30,7 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: cover;
-    animation: roll 51.02s linear infinite, fadeIn 9s ease-out, blurEffect 4s ease-out; /* Alle Reihen gleich schnell */
+    animation: roll 51.02s linear infinite, fadeIn 3s ease-out, blurEffect 4s ease-out; /* Alle Reihen gleich schnell */
     filter: blur(2px); /* Beginnt mit leichter Unschärfe */
 }
 
