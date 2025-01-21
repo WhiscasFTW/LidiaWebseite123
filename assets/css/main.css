@@ -22,14 +22,14 @@ body, html {
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
-    animation: roll-left 15s linear infinite; /* Standardanimation für obere und untere Reihen */
+    animation: roll-left 25s linear infinite; /* Langsamere Animation für obere und untere Reihen */
     filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    animation: fadeFocus 5s ease-in-out forwards; /* Übergang zu klar und hell */
+    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
 /* Individuelle Animation für die mittlere Reihe */
 .rolling-row:nth-child(2) {
-    animation: roll-right 20s linear infinite, fadeFocus 5s ease-in-out forwards;
+    animation: roll-right 30s linear infinite, fadeFocus 4s ease-in-out forwards;
 }
 
 /* Bild-Stil */
