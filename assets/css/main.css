@@ -102,12 +102,13 @@ body, html {
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 15%; /* Button weiter unten */
+    bottom: 20%; /* Button weiter unten */
     left: 50%;
     transform: translateX(-50%);
     animation: fadeInButton 1s ease forwards; /* Button nach 0,8 Sekunden sichtbar */
     opacity: 0;
     transition: opacity 1s ease;
+    z-index: 2; /* Button über dem Bild */
 }
 
 @keyframes fadeInButton {
