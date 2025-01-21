@@ -51,8 +51,8 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: fadeInButton 1.5s ease-in-out 1.2s 0.3s forwards; /* Verzögerung angepasst */
+    opacity: 0; /* Start unsichtbar */
+    animation: fadeInButton 1.5s ease-in-out 1.2s forwards; /* Verzögert und eingeblendet */
 }
 
 /* Button-Stil */
@@ -117,6 +117,6 @@ body, html {
         opacity: 0; /* Unsichtbar */
     }
     100% {
-        opacity: 0.8; /* Halbtransparent und sichtbar */
+        opacity: 1; /* Voll sichtbar */
     }
 }
