@@ -84,7 +84,10 @@ body, html {
 
 /* Intro-Bild und Button-Stile */
 .image-container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
     z-index: 1; /* Höherer Z-Index für das Bild */
 }
 
@@ -101,6 +104,7 @@ body, html {
     z-index: 2; /* Button über dem Bild */
 }
 
+/* Der Button wird doppelt so groß und nach unten verschoben */
 .intro-button {
     width: 700px; /* Doppelte Breite */
     height: auto;
@@ -132,6 +136,7 @@ body, html {
         transform: translateX(-50%);
     }
 
+    /* Position und Größe des Intro-Bildes anpassen */
     .rounded-image {
         width: 70vw; /* Das Intro-Bild ist auf kleineren Geräten größer */
         border-radius: 11%; /* Rundung beibehalten */
@@ -142,6 +147,7 @@ body, html {
     }
 }
 
+/* Anpassungen für sehr kleine Bildschirme */
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
     
