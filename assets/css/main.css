@@ -13,8 +13,6 @@ body, html {
     width: 100vw;
     height: 100vh;
     animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
-    justify-content: center; /* Zentriert den Inhalt */
-    align-items: center; /* Horizontale Zentrierung */
 }
 
 /* Reihen-Stil */
@@ -88,10 +86,6 @@ body, html {
 .image-container {
     position: relative;
     z-index: 1; /* Höherer Z-Index für das Bild */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .rounded-image {
@@ -100,10 +94,11 @@ body, html {
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%; /* Gleicher Abstand zwischen Bild und Button */
+    position: absolute;
+    top: 54%; /* Button nach unten verschoben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Button über dem Bild */
 }
 
 .intro-button {
@@ -129,14 +124,12 @@ body, html {
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     
-    .fullscreen-container {
-        flex-direction: column; /* Inhalt in einer Spalte */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image-container {
-        width: 100vw; /* Das Bildcontainer nimmt die volle Breite ein */
+    .image-container,
+    .button-container {
+        position: absolute;
+        top: 45%; /* Button weiter nach unten verschoben */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .rounded-image {
@@ -147,24 +140,14 @@ body, html {
     .intro-button {
         width: 500px; /* Button auf mobilen Geräten noch größer */
     }
-
-    .button-container {
-        margin-top: 15%; /* Button weiter nach unten verschoben */
-    }
 }
 
-/* Anpassungen für sehr kleine Bildschirme */
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
     
-    .fullscreen-container {
-        flex-direction: column; /* Inhalt in einer Spalte */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image-container {
-        width: 100vw;
+    .image-container,
+    .button-container {
+        top: 40%; /* Button weiter nach unten verschoben */
     }
 
     .rounded-image {
@@ -174,9 +157,5 @@ body, html {
 
     .intro-button {
         width: 400px; /* Button für sehr kleine Geräte noch größer */
-    }
-
-    .button-container {
-        margin-top: 20%; /* Button noch weiter nach unten verschoben */
     }
 }
