@@ -12,22 +12,20 @@ body, html {
 }
 
 .fullscreen-container {
-    display: flex;
-    flex-direction: column;
-    scroll-snap-type: y mandatory; /* Snap-Effekt beim Scrollen */
-    height: 100vh; /* Die Container-Höhe ist immer 100% des Ansichtsfensters */
-    overflow-y: scroll; /* Aktiviert Scrollen */
-    scrollbar-width: none; /* Versteckt Scrollbar in Firefox */
+    height: 100vh; /* Immer 100% des sichtbaren Bereichs */
+    scroll-snap-type: y mandatory; /* Vertikales Einrasten beim Scrollen */
+    overflow-y: scroll; /* Aktiviert vertikales Scrollen */
+    scrollbar-width: none; /* Versteckt Scrollbars in Firefox */
 }
 
 .fullscreen-container::-webkit-scrollbar {
-    display: none; /* Versteckt Scrollbar in WebKit-Browsern */
+    display: none; /* Versteckt Scrollbars in WebKit-Browsern */
 }
 
 .bg-image {
-    height: 100vh; /* Vollständige Bildschirmhöhe */
-    width: 100vw; /* Vollständige Bildschirmbreite */
+    height: 100vh; /* Füllt die gesamte Höhe des sichtbaren Bereichs */
+    width: 100vw; /* Füllt die gesamte Breite */
     background-size: cover; /* Skaliert das Bild, um es anzupassen */
     background-position: center; /* Zentriert das Bild */
-    scroll-snap-align: start; /* Stellt sicher, dass jedes Bild beim Scrollen einrastet */
+    scroll-snap-align: start; /* Positioniert jedes Bild beim Einrasten */
 }
