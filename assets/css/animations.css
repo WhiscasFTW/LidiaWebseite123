@@ -1,14 +1,73 @@
-/* Animationen */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Basis-Layout-Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
+/* Container für die Bilder */
+.image-section {
+    position: relative;
+    height: 500vh; /* Höhe für 5 Bilder */
+    overflow: hidden;
+}
+
+/* Jedes Bild soll nahtlos untereinander angezeigt werden */
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Höhe eines Bildes */
+    top: 0;
+    left: 0;
+}
+
+/* Bilder sollen sich im Hintergrund verschieben */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Fixierter Button */
+.image-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.8; /* Button leicht transparent */
+}
+
+/* Hover-Effekt für den Button */
+.image-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
