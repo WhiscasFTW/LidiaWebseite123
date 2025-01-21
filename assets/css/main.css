@@ -32,43 +32,43 @@ html, body {
 /* Bilder in der Reihe */
 .rolling-image {
     position: absolute;
-    width: 100%; /* Immer nur ein Bild sichtbar */
+    width: 100%; /* Bild füllt die gesamte Breite */
     height: 100%;
     background-size: cover;
     background-position: center;
-    animation: rollSlide 6s infinite ease-in-out;
+    opacity: 0; /* Start mit Transparenz */
+    animation: fadeInSlide 12s infinite ease-in-out;
 }
 
 /* Bewegung für das erste Bild */
 .rolling-row .rolling-image:first-child {
-    animation: rollSlide 6s infinite ease-in-out;
+    animation-delay: 0s; /* Startet sofort */
 }
 
 /* Bewegung für das zweite Bild */
 .rolling-row .rolling-image:last-child {
-    animation: rollSlide 6s infinite ease-in-out 3s; /* Verzögerung, um das zweite Bild nach dem ersten zu zeigen */
+    animation-delay: 6s; /* Startet nach der Hälfte der Animation */
 }
 
-/* Keyframes für den Rolltreppen-Effekt */
-@keyframes rollSlide {
+/* Keyframes für Einblenden und Schieben */
+@keyframes fadeInSlide {
     0% {
-        transform: translateX(0); /* Vollständig sichtbar */
-        opacity: 1;
+        transform: translateX(100%); /* Start außerhalb des rechten Bereichs */
+        opacity: 0; /* Unsichtbar */
     }
-    25% {
-        transform: translateX(-50%); /* Zur Hälfte herausrollen */
-        opacity: 0.5;
+    10% {
+        opacity: 1; /* Langsam einblenden */
     }
     50% {
-        transform: translateX(-100%); /* Komplett herausrollen */
-        opacity: 0;
+        transform: translateX(0); /* Bild vollständig sichtbar */
+        opacity: 1; /* Voll sichtbar */
     }
-    75% {
-        transform: translateX(50%); /* Vom anderen Ende einrollen */
-        opacity: 0.5;
+    90% {
+        transform: translateX(-100%); /* Bild verlässt den linken Bereich */
+        opacity: 1; /* Sichtbar bleiben */
     }
     100% {
-        transform: translateX(0); /* Zurück zur Ausgangsposition */
-        opacity: 1;
+        transform: translateX(-100%); /* Komplett verschwunden */
+        opacity: 0; /* Unsichtbar */
     }
 }
