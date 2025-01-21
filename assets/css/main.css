@@ -58,7 +58,7 @@ body, html {
 
 @keyframes roll-right {
     0% {
-        transform: translateX(50%); /* Start mit zweitem Bild */
+        transform: translateX(50%); /* Startposition für die mittlere Reihe */
     }
     100% {
         transform: translateX(0); /* Zurück zum ersten Bild */
