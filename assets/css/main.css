@@ -91,20 +91,32 @@ body, html {
     z-index: 1;
 }
 
-/* Rundung des IntroName1 Bildes auf 11% */
+/* Rundung des IntroName1 Bildes auf 8% */
 .rounded-image {
     width: 95%; /* Bildgröße anpassen */
     max-width: 800px;
-    border-radius: 8%; /* Rundung auf 11% */
+    border-radius: 8%; /* Rundung auf 8% */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 20%; /* Button weiter unten */
+    bottom: 15%; /* Button weiter unten */
     left: 50%;
     transform: translateX(-50%);
+    animation: fadeInButton 1s ease forwards; /* Button nach 0,8 Sekunden sichtbar */
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .intro-button {
