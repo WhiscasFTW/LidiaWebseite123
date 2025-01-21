@@ -85,7 +85,7 @@ body, html {
 /* Intro Name Bild */
 .image-container {
     position: absolute;
-    top: 60%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -45%); /* Neuere Bild 5% nach oben verschoben */
     z-index: 1;
@@ -102,7 +102,7 @@ body, html {
 /* Button Stil */
 .button-container {
     position: absolute;
-    bottom: 40%; /* Button weiter nach oben verschoben */
+    bottom: 350%; /* Button weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
