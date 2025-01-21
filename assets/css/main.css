@@ -25,7 +25,7 @@ html, body {
     background-size: cover; /* Passt die Bilder an den Bereich an */
     background-position: center; /* Zentriert die Bilder */
     background-repeat: no-repeat; /* Wiederholungen vermeiden */
-    opacity: 0; /* Bilder beginnen unsichtbar */
+    opacity: 50; /* Bilder beginnen unsichtbar */
     transition: opacity 4s ease; /* Verlängerte Transition für die Bilder */
 }
 
