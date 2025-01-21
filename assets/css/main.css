@@ -58,8 +58,25 @@ body, html {
 .rounded-image {
     width: 720px; /* Leicht vergrößert (95 % der vorherigen Größe) */
     height: auto; /* Proportional */
-    border-radius: 11%; /* Abgerundete Ecken */
+    border-radius: 35%; /* Abgerundete Ecken */
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6); /* Schatten */
+}
+
+/* Button-Stil */
+.button-container {
+    position: absolute;
+    top: 65%; /* Button etwas weiter unten positioniert */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInButton 1.5s ease-in-out 1.5s forwards;
+}
+
+.button-image {
+    width: 200px; /* Angepasste Größe des Buttons */
+    height: auto;
+    border-radius: 12px; /* Abgerundete Ecken für den Button */
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.5); /* Schatten */
 }
 
 /* Animationen */
@@ -105,5 +122,14 @@ body, html {
     }
     100% {
         opacity: 1; /* Sichtbar */
+    }
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0; /* Button unsichtbar */
+    }
+    100% {
+        opacity: 1; /* Button sichtbar */
     }
 }
