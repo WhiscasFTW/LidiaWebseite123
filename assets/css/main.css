@@ -10,7 +10,7 @@ html, body {
     height: 100%;
     overflow: hidden; /* Kein Scrollen */
     background-color: #000; /* Dunkler Hintergrund zu Beginn */
-    transition: background-color 4s ease; /* Verlängerte Transition für den Hintergrund */
+    transition: background-color 8s ease; /* Verlängerte Transition für den Hintergrund */
 }
 
 .split-image-container {
@@ -25,14 +25,14 @@ html, body {
     background-size: cover; /* Passt die Bilder an den Bereich an */
     background-position: center; /* Zentriert die Bilder */
     background-repeat: no-repeat; /* Wiederholungen vermeiden */
-    opacity: 0; /* Bilder beginnen unsichtbar */
+    opacity: 0.5; /* Beginnt halbtransparent */
     filter: blur(10px); /* Beginnt mit einer starken Unschärfe */
-    transition: opacity 4s ease, filter 3s ease; /* Verlängerte Transition für die Bilder und Unschärfe */
+    transition: opacity 8s ease, filter 8s ease; /* Beide Eigenschaften laufen gleichzeitig ab */
 }
 
-/* Wenn die Seite geladen ist, werden die Bilder sichtbar und schärfer */
+/* Wenn die Seite geladen ist, werden die Bilder vollständig sichtbar und schärfer */
 body.loaded .split-image {
-    opacity: 1;
+    opacity: 1; /* Bilder werden vollständig sichtbar */
     filter: blur(0); /* Unschärfe wird im Verlauf entfernt */
 }
 
