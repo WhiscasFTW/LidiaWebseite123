@@ -30,8 +30,7 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: cover;
-    animation: roll 15s linear infinite, fadeIn 2s ease-out, blurEffect 4s ease-out; /* Unschärfe Animation für 4 Sekunden */
-    filter: blur(2px); /* Beginnt mit leichter Unschärfe */
+    animation: roll 15s linear infinite, fadeIn 9s ease-out; /* Opacity Transition für 9 Sekunden */
 }
 
 /* Reihen Animationen */
@@ -67,15 +66,5 @@ body, html {
     }
     100% {
         opacity: 1;
-    }
-}
-
-/* Unschärfe-Reduzierung */
-@keyframes blurEffect {
-    0% {
-        filter: blur(2px); /* Leichte Unschärfe zu Beginn */
-    }
-    100% {
-        filter: blur(0); /* Klarheit am Ende */
     }
 }
