@@ -60,3 +60,14 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 1;
 }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
