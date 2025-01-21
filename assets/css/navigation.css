@@ -1,23 +1,102 @@
-// navigation.js
-
-// Funktion zum Aktualisieren des Button-Textes basierend auf dem sichtbaren Bild
-function updateButtonText() {
-    const sections = document.querySelectorAll('.image-container');
-    const button = document.getElementById('imageButton');
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-    sections.forEach((section, index) => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-            button.textContent = `Bild ${index + 1}`;
-        }
-    });
+/* Basis-Layout-Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Event Listener für das Scrollen
-window.addEventListener('scroll', updateButtonText);
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
 
-// Initialer Aufruf, um den Button-Text beim Laden der Seite zu setzen
-updateButtonText();
+/* Container für die Bilder */
+.image-section {
+    position: relative;
+    height: 500vh; /* Höhe für 5 Bilder */
+    overflow: hidden;
+}
+
+/* Jedes Bild soll nahtlos untereinander angezeigt werden */
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Höhe eines Bildes */
+    top: 0;
+    left: 0;
+}
+
+/* Hintergrundbilder für Diashow-Effekt */
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 15s infinite;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Animation für Diashow-Effekt */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* Fixierter Button */
+.image-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.8; /* Button leicht transparent */
+}
+
+/* Hover-Effekt für den Button */
+.image-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
