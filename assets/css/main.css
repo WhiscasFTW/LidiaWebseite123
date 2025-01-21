@@ -12,7 +12,7 @@ body, html {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    animation: fadeIn 12s ease-in-out forwards; /* Einblendung */
+    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
 }
 
 /* Reihen-Stil */
@@ -22,19 +22,19 @@ body, html {
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
-    filter: blur(7px) brightness(0.5); /* Leichte Unschärfe und dunkler */
-    animation: fadeFocus 9s ease-in-out forwards; /* Übergang zu klar und hell */
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
 /* Obere und untere Reihe rollen nach links */
 .rolling-row:nth-child(1),
 .rolling-row:nth-child(3) {
-    animation: roll-left 90s linear infinite, fadeFocus 9s ease-in-out forwards;
+    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
 }
 
 /* Mittlere Reihe rollt nach rechts */
 .rolling-row:nth-child(2) {
-    animation: roll-right 90s linear infinite, fadeFocus 9s ease-in-out forwards;
+    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
 }
 
 /* Bild-Stil */
@@ -43,40 +43,6 @@ body, html {
     height: 100%;
     background-size: cover;
     background-position: center;
-}
-
-/* Intro Name Bild */
-.image-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: fadeInImage 1.2s ease-in-out 0.8s forwards;
-}
-
-.rounded-image {
-    width: 720px; /* Leicht vergrößert (95 % der vorherigen Größe) */
-    height: auto; /* Proportional */
-    border-radius: 35%; /* Abgerundete Ecken */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6); /* Schatten */
-}
-
-/* Button-Stil */
-.button-container {
-    position: absolute;
-    top: 65%; /* Button etwas weiter unten positioniert */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: fadeInButton 1.5s ease-in-out 1.5s forwards;
-}
-
-.button-image {
-    width: 200px; /* Angepasste Größe des Buttons */
-    height: auto;
-    border-radius: 12px; /* Abgerundete Ecken für den Button */
-    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.5); /* Schatten */
 }
 
 /* Animationen */
@@ -100,7 +66,7 @@ body, html {
 
 @keyframes fadeIn {
     0% {
-        opacity: 0.7; /* Leicht sichtbar */
+        opacity: 0.8; /* Leicht sichtbar */
     }
     100% {
         opacity: 1; /* Vollständig sichtbar */
@@ -109,27 +75,46 @@ body, html {
 
 @keyframes fadeFocus {
     0% {
-        filter: blur(7px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
     }
     100% {
         filter: blur(0px) brightness(1); /* Klar und normal hell */
     }
 }
 
-@keyframes fadeInImage {
-    0% {
-        opacity: 0; /* Unsichtbar */
-    }
-    100% {
-        opacity: 1; /* Sichtbar */
-    }
+/* Intro Name Bild */
+.image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-@keyframes fadeInButton {
-    0% {
-        opacity: 0; /* Button unsichtbar */
-    }
-    100% {
-        opacity: 1; /* Button sichtbar */
-    }
+/* Bild-Ecken abrunden */
+.rounded-image {
+    width: 95%; /* Bildgröße anpassen */
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Stil */
+.button-container {
+    position: absolute;
+    bottom: 20%; /* Button weiter unten */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.intro-button {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 1s ease;
+    opacity: 0; /* Start mit unsichtbar */
+}
+
+.intro-button.visible {
+    opacity: 1; /* Sichtbar nach 1 Sekunde */
 }
