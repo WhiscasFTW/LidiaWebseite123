@@ -15,8 +15,10 @@ body {
 /* Container für die Bilder */
 .image-section {
     position: relative;
+    overflow: hidden;
 }
 
+/* Jedes Bild soll nahtlos untereinander angezeigt werden */
 .image-container {
     position: relative;
     width: 100%;
@@ -25,36 +27,61 @@ body {
 .background-image {
     width: 100%;
     height: auto;
-    object-fit: cover;  /* Bild passt sich dem Container an */
+    object-fit: cover;
+    transition: filter 1s ease-in-out;
 }
 
-/* Overlay für das Menü */
+/* Animation für das Bild, das langsam an Farbe gewinnt */
+.image-container:hover .background-image {
+    filter: brightness(100%);
+}
+
+/* Statischer Button für jedes Bild */
+.image-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.image-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Hamburger-Menü */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+}
+
 .overlay {
-    position: fixed; /* Position bleibt fixiert beim Scrollen */
-    top: 10px; /* Abstand vom oberen Rand */
-    left: 10px; /* Abstand vom linken Rand */
-    z-index: 10; /* Über Bilder stellen */
-    background: rgba(0, 0, 0, 0.5);  /* Halbtransparente Hintergrundfarbe */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 8px;
 }
 
-.open-nav {
-    padding: 20px;
-    font-size: 1.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.open-nav:hover {
-    background-color: #0056b3;
-}
-
-/* Menü, das beim Klicken angezeigt wird */
+/* Menü-Layout */
 #menu-0 {
     display: none;
     margin-top: 30px;
@@ -91,4 +118,10 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
