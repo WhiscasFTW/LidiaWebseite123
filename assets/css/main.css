@@ -1,4 +1,4 @@
-/* Fullscreen Bilder untereinander */
+/* Vollbild Bilder untereinander */
 .fullscreen-images {
     display: flex;
     flex-direction: column;
@@ -6,36 +6,41 @@
     width: 100%;
     overflow-y: auto;
     margin: 0;
+    padding: 0;
 }
 
 .fullscreen-images img {
     width: 100%;
     height: 100vh; /* Jedes Bild nimmt die ganze Bildschirmhöhe ein */
     object-fit: cover; /* Verhindert Verzerrung der Bilder */
+    margin: 0;
 }
 
 /* Dropdown Menü Styling */
 .dropdown {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    width: 100%; /* Vollständige Breite des Bildschirms */
+    width: 25vw; /* Menü nimmt 1/4 der Breite ein */
+    background-color: rgba(0, 0, 0, 0.7); /* Deutlich transparenter */
+    height: 100vh; /* Menü nimmt die volle Höhe des Bildschirms ein */
+    padding: 10px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .dropbtn {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 40px; /* Größere Schriftgröße für bessere Lesbarkeit */
+    font-size: 50px; /* Größere Schriftgröße */
     cursor: pointer;
-    width: 100%;
-    height: 100vh; /* Menü nimmt den gesamten oberen Bildschirmbereich ein */
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 100vh; /* Volle Bildschirmhöhe */
 }
 
 .dropdown-content {
@@ -43,12 +48,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 25vw; /* Ein Viertel der Breite */
-    background-color: rgba(0, 0, 0, 0.5); /* Deutlich transparenter */
+    width: 100%; /* 100% der Breite des Dropdowns */
+    background-color: rgba(0, 0, 0, 0.5); /* Deutlich transparent */
     color: white;
     border-radius: 5px;
     padding: 10px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-content a {
@@ -56,21 +60,21 @@
     padding: 10px;
     text-decoration: none;
     display: block;
-    font-size: 20px;
-    transition: background-color 0.3s;
+    font-size: 22px;
+    transition: background-color 0.3s, font-weight 0.3s;
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Hervorheben bei Hover */
+    background-color: rgba(255, 255, 255, 0.3); /* Hover-Effekt */
     font-weight: bold; /* Schrift fett beim Hover */
 }
 
-/* Dropdown öffnen bei Hover */
+/* Dropdown Menü sichtbar machen */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
     position: relative;
     bottom: 0;
