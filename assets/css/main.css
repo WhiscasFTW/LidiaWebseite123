@@ -16,6 +16,7 @@ body, html {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
+    background-color: black; /* Der Hintergrund bleibt von Anfang an dunkel */
 }
 
 /* Rolltreppen-Effekt für jede Reihe */
@@ -57,10 +58,10 @@ body, html {
 /* Opacity-Transition für die Bilder (dunkel zu hell) */
 @keyframes fadeIn {
     0% {
-        opacity: 0; /* Anfangszustand dunkel */
+        opacity: 0.25; /* Dunkel, Beginn */
     }
     100% {
-        opacity: 0.8; /* Endzustand hell */
+        opacity: 0.8; /* Heller, Ende */
     }
 }
 
