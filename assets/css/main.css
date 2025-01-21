@@ -9,7 +9,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Kein Scrollen */
-    background: #000;
+    background: #444; /* Fallback-Hintergrund für Debugging */
 }
 
 /* Vollbild-Container */
@@ -23,43 +23,44 @@ html, body {
 /* Fade-In Effekt */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 8s ease-in-out forwards; /* 8 Sekunden für das Einblenden */
+    animation: fadeIn 8s ease-in-out forwards;
 }
 
 /* Jede Reihe */
 .rolling-row {
     display: flex;
-    width: 200%; /* Doppelte Breite für den kontinuierlichen Übergang */
-    height: 33.33vh; /* Jede Reihe nimmt ein Drittel der Höhe ein */
+    width: 200%;
+    height: 33.33vh;
     position: relative;
-    overflow: hidden; /* Überschüssige Bilder ausblenden */
-    animation: roll 20s linear infinite; /* Kontinuierliches Rollen */
+    overflow: hidden;
+    animation: roll 20s linear infinite;
 }
 
 /* Bilder in der Reihe */
 .rolling-image {
-    flex: 0 0 50%; /* Jedes Bild nimmt die Hälfte der sichtbaren Breite ein */
+    flex: 0 0 50%;
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-color: #666; /* Fallback-Farbe */
 }
 
 /* Keyframes für kontinuierliches Rollen */
 @keyframes roll {
     0% {
-        transform: translateX(0); /* Startposition */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Bilder nach links verschoben */
+        transform: translateX(-100%);
     }
 }
 
 /* Keyframes für Einblenden */
 @keyframes fadeIn {
     0% {
-        opacity: 0.5; /* Halbdunkel zu Beginn */
+        opacity: 0.5;
     }
     100% {
-        opacity: 1; /* Vollständig sichtbar */
+        opacity: 1;
     }
 }
