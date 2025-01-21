@@ -105,12 +105,23 @@ body, html {
     bottom: 20%; /* Button weiter unten */
     left: 50%;
     transform: translateX(-50%);
-    animation: fadeInButton 1s ease forwards; /* Button nach 0,8 Sekunden sichtbar */
-    opacity: 0;
-    transition: opacity 1s ease;
     z-index: 2; /* Button über dem Bild */
 }
 
+/* Animations für den Button */
+.intro-button {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0; /* Button zu Beginn unsichtbar */
+    transition: opacity 1s ease;
+}
+
+.intro-button.visible {
+    opacity: 1; /* Button wird sichtbar */
+}
+
+/* Fade-In für den Button */
 @keyframes fadeInButton {
     0% {
         opacity: 0;
@@ -118,16 +129,4 @@ body, html {
     100% {
         opacity: 1;
     }
-}
-
-.intro-button {
-    width: 200px;
-    height: auto;
-    cursor: pointer;
-    transition: opacity 1s ease;
-    opacity: 0; /* Start mit unsichtbar */
-}
-
-.intro-button.visible {
-    opacity: 1; /* Sichtbar nach 1 Sekunde */
 }
