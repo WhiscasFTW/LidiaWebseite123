@@ -8,17 +8,18 @@ function toggleMenu() {
     }
 }
 
-// Ändern des Buttons je nach Bild
+// Ändern des Button-Textes beim Scrollen
 const imageContainers = document.querySelectorAll('.image-container');
-const buttons = document.querySelectorAll('.image-button');
+const button = document.getElementById('imageButton');
+
+const topics = ["Steckbrief", "Meine Werke", "Dienstleistungen", "Impressum", "Kontakt"];
 
 window.addEventListener('scroll', () => {
     imageContainers.forEach((container, index) => {
         const rect = container.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            // Aktuelles Bild erreichen
-            buttons.forEach(button => button.style.display = "none");
-            buttons[index].style.display = "block";
+            // Button-Text ändern, wenn das Bild sichtbar ist
+            button.textContent = topics[index];
         }
     });
 });
