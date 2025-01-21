@@ -2,7 +2,7 @@
 .dropdown {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 30px; /* Verschiebung nach rechts */
 }
 
 .dropbtn {
