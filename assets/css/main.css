@@ -23,18 +23,18 @@ body, html {
     position: relative;
     overflow: hidden;
     filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
+    animation: fadeFocus 8s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
 /* Obere und untere Reihe rollen nach links */
 .rolling-row:nth-child(1),
 .rolling-row:nth-child(3) {
-    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+    animation: roll-left 90s linear infinite, fadeFocus 8s ease-in-out forwards;
 }
 
 /* Mittlere Reihe rollt nach rechts */
 .rolling-row:nth-child(2) {
-    animation: roll-right 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+    animation: roll-right 90s linear infinite, fadeFocus 8s ease-in-out forwards;
 }
 
 /* Bild-Stil */
@@ -45,8 +45,8 @@ body, html {
     background-position: center;
 }
 
-/* Bild in der Mitte mit verdoppelter Größe */
-.centered-intro {
+/* Intro Name Bild */
+.image-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,8 +56,8 @@ body, html {
 }
 
 .rounded-image {
-    width: 600px; /* Verdoppelte Breite */
-    height: auto; /* Höhe wird proportional angepasst */
+    width: 750px; /* Vergrößert auf 1,25-mal */
+    height: auto; /* Proportional */
     border-radius: 20px; /* Abgerundete Ecken */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Schatten */
 }
@@ -65,37 +65,37 @@ body, html {
 /* Animationen */
 @keyframes roll-left {
     0% {
-        transform: translateX(0); /* Startposition */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Eine Bildbreite nach links */
+        transform: translateX(-50%);
     }
 }
 
 @keyframes roll-right {
     0% {
-        transform: translateX(-50%); /* Start mit zweitem Bild */
+        transform: translateX(-50%);
     }
     100% {
-        transform: translateX(0); /* Zurück zum ersten Bild */
+        transform: translateX(0);
     }
 }
 
 @keyframes fadeIn {
     0% {
-        opacity: 0.8; /* Leicht sichtbar */
+        opacity: 0.8;
     }
     100% {
-        opacity: 1; /* Vollständig sichtbar */
+        opacity: 1;
     }
 }
 
 @keyframes fadeFocus {
     0% {
-        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+        filter: blur(8px) brightness(0.5);
     }
     100% {
-        filter: blur(0px) brightness(1); /* Klar und normal hell */
+        filter: blur(0px) brightness(1);
     }
 }
 
