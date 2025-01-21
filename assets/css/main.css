@@ -15,6 +15,7 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1; /* Intro-Inhalt wird vor dem echten Inhalt angezeigt */
 }
 
 /* Reihe-Stil */
@@ -90,7 +91,7 @@ body, html {
     padding: 20px;
     text-align: center;
     color: white;
-    z-index: 1; /* Höherer Z-Index, damit der Inhalt nach der Animation sichtbar wird */
+    z-index: 2; /* Echt-Inhalt wird nach dem Intro sichtbar */
 }
 
 /* Intro-Bild und Button-Stile */
