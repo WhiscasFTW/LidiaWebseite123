@@ -92,7 +92,7 @@ body, html {
 }
 
 .rounded-image {
-    width: 70vw; /* Intro-Bild in der Mitte */
+    width: 50vw; /* Intro-Bild kleiner gemacht */
     border-radius: 8%; /* Abgerundete Ecken */
 }
 
