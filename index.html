@@ -34,7 +34,16 @@
 
     <!-- Intro Button -->
     <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Mehr Erfahren" class="intro-button">
+        <img src="assets/images/IntroNameButton.png" alt="Mehr Erfahren" class="intro-button" id="introButton">
     </div>
+
+    <script>
+        // Button nach 0,8 Sekunden sichtbar machen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('introButton').classList.add('visible');
+            }, 800); // Button wird nach 0,8 Sekunden sichtbar
+        });
+    </script>
 </body>
 </html>
