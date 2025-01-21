@@ -41,6 +41,10 @@
 
     <!-- JS -->
     <script>
+        // Stelle sicher, dass die real-content zu Beginn unsichtbar ist
+        document.querySelector(".real-content").style.display = "none";
+
+        // Event-Listener für den Button
         document.getElementById("startButton").addEventListener("click", function() {
             // Animation der Balken
             document.querySelectorAll(".rolling-row").forEach(row => {
