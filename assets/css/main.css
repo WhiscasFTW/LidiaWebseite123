@@ -92,7 +92,7 @@ body, html {
 }
 
 .rounded-image {
-    width: 38vw; /* Dynamische Breite */
+    width: 43.7vw; /* Dynamische Breite um 15% größer */
     aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
     border-radius: 10%; /* Abgerundete Ecken */
 }
@@ -107,7 +107,7 @@ body, html {
 
 /* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 20vw; /* Dynamische Breite */
+    width: 23vw; /* Dynamische Breite um 15% größer */
     aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -122,40 +122,40 @@ body, html {
 @media (max-width: 1023px) {
     /* Bild für mobile Geräte anpassen */
     .rounded-image {
-        width: 55vw; /* Bild auf mobilen Geräten noch größer */
+        width: 63.3vw; /* Bild um 15% größer auf mobilen Geräten */
         height: auto;
     }
 
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
-        width: 36vw; /* Button auf mobilen Geräten deutlich größer */
+        width: 41.4vw; /* Button um 15% größer auf mobilen Geräten */
         height: auto; /* Vermeidet Verzerrung */
     }
 
     /* Buttonposition für mobile Geräte weiter nach oben verschoben */
     .button-container {
-        top: 52%; /* Button weiter nach oben verschoben */
+        top: 50%; /* Button weiter nach oben verschoben */
     }
 }
 
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     .rounded-image {
-        width: 45vw; /* Bild auf Tablets anpassen */
+        width: 51.75vw; /* Bild auf Tablets anpassen */
     }
 
     .intro-button {
-        width: 30vw; /* Button anpassen */
+        width: 34.5vw; /* Button anpassen */
     }
 }
 
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
     .rounded-image {
-        width: 50vw; /* Das Intro-Bild entsprechend vergrößert */
+        width: 57.5vw; /* Das Intro-Bild entsprechend vergrößert */
     }
 
     .intro-button {
-        width: 40vw; /* Button für sehr kleine Geräte */
+        width: 46vw; /* Button für sehr kleine Geräte */
     }
 }
