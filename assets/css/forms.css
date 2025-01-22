@@ -17,6 +17,7 @@ html, body {
 .header-image-container {
     text-align: center;
     margin-bottom: 0;
+    position: relative; /* Wichtig für das korrekte Positionieren des Balkens */
 }
 
 .header-image {
@@ -26,20 +27,20 @@ html, body {
     max-height: 360px;
 }
 
-/* Header-Boxen */
+/* Header-Balken direkt unter dem Bild */
 .header-box-container {
-    display: flex;
+    position: absolute; /* Stellt sicher, dass der Balken direkt unter dem Bild ist */
+    top: 100%; /* Setzt den Balken direkt nach dem Bild */
+    left: 0;
     width: 100%;
-    height: 55px; /* Balken um 5px kleiner (jetzt 55px) */
+    height: 55px; /* Höhe des Balkens */
     background-color: #888;
-    border-top: 0; /* Entfernt den oberen Rand, damit der Balken direkt an das Bild anliegt */
-    margin-top: -5px; /* Balken um 5px näher ans Bild schieben */
-}
-
-/* Leerer Strich auf der linken Seite */
-.header-box-left {
-    width: 2px;
-    background-color: #888;
+    margin-top: -5px; /* Optional, um den Abstand minimal zu reduzieren */
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background-size: 210% 100%; /* Sorgt für den breiten Regenbogen-Effekt */
+    animation: rainbow 5s linear infinite;
 }
 
 /* Boxen für Navigationseinträge */
@@ -108,5 +109,15 @@ footer a:hover {
 
     .header-box a {
         font-size: 16px;
+    }
+}
+
+/* Regenbogen-Hintergrund-Animation */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
     }
 }
