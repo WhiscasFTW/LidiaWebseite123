@@ -93,8 +93,8 @@ body, html {
 
 .rounded-image {
     width: 38vw; /* Dynamische Breite */
-    height: auto; /* Automatische Höhe für das richtige Seitenverhältnis */
-    aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
+    max-width: 100%; /* Maximaler Wert auf 100% der Breite */
+    height: auto; /* Proportionale Höhe */
     border-radius: 10%; /* Abgerundete Ecken */
 }
 
