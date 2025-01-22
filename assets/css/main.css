@@ -100,79 +100,53 @@ body, html {
 
 .button-container {
     position: absolute;
-    top: 70%; /* Button weiter nach unten verschoben */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Horizontale Zentrierung */
     z-index: 2; /* Button über dem Bild */
 }
 
+/* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 17vw; /* Button um 8% kleiner als vorher */
+    width: 17vw; /* Buttongröße */
     height: auto; /* Proportionale Höhe */
     aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease;
+    transition: opacity 1s ease, top 0.5s ease; /* Übergang der Sichtbarkeit und Position */
 }
 
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1024px) {
-    .fullscreen-container {
-        display: block; /* Damit die ganze Struktur nicht verzerrt wird */
-        height: 100%;
-    }
-
-    .rounded-image {
-        width: 45vw; /* Intro-Bild minimal größer auf kleineren Geräten */
-        height: auto; /* Automatische Höhe für das richtige Seitenverhältnis */
-    }
-
+/* Button Position für verschiedene Bildschirmgrößen */
+@media (min-width: 1025px) {
+    /* Desktop (größer als 1024px) */
     .intro-button {
-        width: 22vw; /* Button proportional angepasst */
-        height: auto; /* Proportionale Höhe */
-        aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
-        top: 75%; /* Button weiter nach unten verschoben */
+        top: 50%; /* Button 20% nach oben verschoben */
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Für Tablets */
+    .intro-button {
+        width: 20vw; /* Größerer Button für Tablets */
+        top: 45%; /* Button 20% nach oben verschoben */
     }
 }
 
 @media (max-width: 768px) {
-    .fullscreen-container {
-        display: block;
-        height: 100%;
-    }
-
-    .rounded-image {
-        width: 50vw; /* Intro-Bild auf Tablets angepasst */
-        height: auto; /* Automatische Höhe */
-    }
-
+    /* Für größere Smartphones */
     .intro-button {
-        width: 25vw; /* Button proportional kleiner */
-        height: auto; /* Proportionale Höhe */
-        aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
-        top: 75%; /* Button weiter nach unten verschoben */
+        width: 23vw; /* Button für größere Smartphones */
+        top: 45%; /* Button 20% nach oben verschoben */
     }
 }
 
 @media (max-width: 480px) {
-    .fullscreen-container {
-        display: block;
-        height: 100%;
-    }
-
-    .rounded-image {
-        width: 55vw; /* Intro-Bild auf Smartphones angepasst */
-        height: auto; /* Automatische Höhe */
-    }
-
+    /* Für kleinere Smartphones */
     .intro-button {
         width: 30vw; /* Button proportional kleiner */
-        height: auto; /* Proportionale Höhe */
-        aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
-        top: 80%; /* Button weiter nach unten verschoben */
+        top: 50%; /* Button weiter nach oben verschoben */
     }
 }
