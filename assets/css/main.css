@@ -112,6 +112,11 @@ body, html {
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
+    background-color: green; /* Standard grüne Farbe */
+    color: white; /* Schrift weiß */
+    border: 2px solid green; /* Rand ebenfalls grün */
+    border-radius: 5px; /* Abgerundete Ecken für den Button */
+    animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
 }
 
 /* Button wird sichtbar */
@@ -122,8 +127,25 @@ body, html {
 /* Farbverlauf bei Hover */
 .intro-button:hover {
     transform: scale(1.05); /* Button wird um 5% größer */
-    background: linear-gradient(45deg, #ffcc00, #ff6600); /* Farbverlauf */
-    color: white; /* Textfarbe bei Hover */
+    background: linear-gradient(45deg, #32cd32, #228b22); /* Grüner Farbverlauf */
+    color: white; /* Schrift bleibt weiß */
+    border-color: #228b22; /* Randfarbe beim Hover ebenfalls ändern */
+}
+
+/* Animation der Farbänderung von grün nach blau */
+@keyframes colorChange {
+    0% {
+        background-color: #32cd32; /* Lime Green */
+        border-color: #32cd32;
+    }
+    50% {
+        background-color: #228b22; /* Forest Green */
+        border-color: #228b22;
+    }
+    100% {
+        background-color: #4682b4; /* Steel Blue */
+        border-color: #4682b4;
+    }
 }
 
 /* Desktop-Version */
