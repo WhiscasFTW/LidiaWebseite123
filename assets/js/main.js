@@ -1,10 +1,18 @@
-function openWebsite() {
-    // Entferne den Vorhang, um die echte Website zu zeigen
+document.addEventListener('DOMContentLoaded', function () {
     const curtain = document.querySelector('.curtain');
-    curtain.style.height = '0';  // Vorhang öffnet sich (Höhe auf 0 setzen)
+    const button = document.querySelector('.intro-button');
     
-    // Nach einer Verzögerung (damit der Vorhang gut aussieht), die Website anzeigen
-    setTimeout(() => {
-        window.location.href = 'https://github.com/WhiscasFTW/LidiaWebseite123/';  // Ersetze mit der tatsächlichen URL
-    }, 1000);  // Warten Sie 1 Sekunde, bevor die Seite wechselt
-}
+    // Button wird nach einer kurzen Verzögerung sichtbar
+    setTimeout(function () {
+        button.classList.add('visible');
+    }, 4000); // Button wird nach 4 Sekunden sichtbar
+
+    // Klick-Ereignis für den Button
+    button.addEventListener('click', function () {
+        // Vorhang öffnet sich, wenn der Button geklickt wird
+        curtain.classList.add('open');
+        
+        // Verstecke den Button nach dem Klick
+        button.classList.remove('visible');
+    });
+});
