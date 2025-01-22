@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro Seite</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fullscreen Animation</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <!-- Intro Bereich (Vorhang) -->
-    <div class="intro-content">
+    <div class="fullscreen-container">
         <!-- Reihe 1 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
@@ -28,41 +27,23 @@
         </div>
     </div>
 
-    <!-- Der Inhalt der "echten" Startseite (wird später sichtbar) -->
-    <div class="real-content">
-        <h1>Willkommen auf meiner echten Startseite</h1>
-        <p>Hier befindet sich der Hauptinhalt der Seite.</p>
+    <!-- Intro Name Bild -->
+    <div class="image-container">
+        <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
     </div>
 
-    <!-- Button -->
+    <!-- Mehr erfahren Button -->
     <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Start" class="intro-button" id="startButton">
+        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button">
     </div>
 
-    <!-- JS -->
     <script>
-        // Zu Beginn ist der echte Inhalt versteckt
-        document.querySelector(".real-content").style.display = "none";
-
-        // Event-Listener für den Button
-        document.getElementById("startButton").addEventListener("click", function() {
-            // Button ausblenden, sobald er geklickt wurde
-            document.querySelector(".intro-button").style.display = "none";
-
-            // Animation der Balken: Reihen bewegen sich aus dem Bild
-            document.querySelectorAll(".rolling-row").forEach(row => {
-                row.style.animation = "moveOut 3s forwards"; // Balken bewegen sich heraus
-            });
-
-            // Warte, bis die Animation abgeschlossen ist, und zeige den echten Inhalt
+        // Nach einer kurzen Verzögerung den Button sichtbar machen
+        window.onload = function() {
             setTimeout(function() {
-                // Intro-Inhalt verschwinden lassen
-                document.querySelector(".intro-content").style.display = "none";
-                
-                // Den echten Inhalt anzeigen
-                document.querySelector(".real-content").style.display = "block";
-            }, 3000); // Warte, bis die Balkenanimation vorbei ist
-        });
+                document.querySelector('.intro-button').classList.add('visible');
+            }, 1000); // 1 Sekunde Verzögerung
+        }
     </script>
 </body>
 </html>
