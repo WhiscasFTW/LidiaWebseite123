@@ -1,9 +1,9 @@
-/* Anfangsdunkelheit der Seite */
+/* Die Seite startet mit einem schwarzen Hintergrund und unsichtbarem Inhalt */
 body {
     margin: 0;
     padding: 0;
     background-color: #000; /* Dunkel starten */
-    opacity: 0; /* Der Inhalt ist unsichtbar */
+    opacity: 0; /* Inhalt ist unsichtbar */
     transition: opacity 1s ease-in-out; /* Übergang zur Sichtbarkeit */
 }
 
