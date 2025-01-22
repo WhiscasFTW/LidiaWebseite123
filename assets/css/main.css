@@ -108,6 +108,7 @@ body, html {
 /* Der Button wird dynamisch skaliert */
 .intro-button {
     width: 20vw; /* Dynamische Breite */
+    height: auto; /* Automatische Höhe */
     aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -122,6 +123,7 @@ body, html {
 @media (min-width: 1024px) {
     .rounded-image {
         width: 38vw; /* Größe für Desktop */
+        height: auto;
     }
 
     .intro-button {
@@ -139,6 +141,7 @@ body, html {
     /* Bild für mobile Geräte anpassen */
     .rounded-image {
         width: 45vw; /* Bild auf mobilen Geräten größer */
+        height: auto;
     }
 
     /* Button auf mobilen Geräten anpassen */
