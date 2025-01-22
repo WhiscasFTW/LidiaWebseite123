@@ -11,10 +11,10 @@ html, body {
     width: 100%;
 }
 
-/* Bild soll den gesamten oberen Bildschirm ausfüllen */
-.fullscreen-image {
-    width: 100%;
-    height: 100vh; /* Volle Höhe des Viewports */
-    object-fit: cover; /* Das Bild wird skaliert, um den Bereich zu füllen, ohne das Seitenverhältnis zu verlieren */
-    display: block; /* Entfernt unerwünschte Zwischenräume unterhalb des Bildes */
+/* Bild soll das obere Viertel des Bildschirms einnehmen */
+.top-quarter-image {
+    width: 100%;               /* Breite auf 100% setzen */
+    height: 25vh;              /* Höhe auf 25% der Viewport-Höhe setzen */
+    object-fit: cover;         /* Bild wird skaliert, um den Bereich zu füllen, ohne das Seitenverhältnis zu verlieren */
+    display: block;            /* Entfernt unerwünschte Zwischenräume unterhalb des Bildes */
 }
