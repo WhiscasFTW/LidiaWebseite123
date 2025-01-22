@@ -28,7 +28,7 @@ body, html {
     max-height: 360px; /* Maximale Höhe des Bildes */
     height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
     z-index: -1; /* Bild hinter den anderen Inhalten */
-    background-image: url('HeaderStart.png'); /* Bild einfügen */
+    background-image: url('assets/images/HeaderStart.png'); /* Bild einfügen */
     background-size: cover; /* Bild wird über die gesamte Fläche gestreckt */
     background-position: center; /* Bild wird zentriert */
 }
@@ -227,4 +227,3 @@ body, html {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
 }
-
