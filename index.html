@@ -5,81 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fullscreen Animation</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <style>
-        /* Vorhang-Effekt */
-        .curtain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: 3;
-            transform: translateX(-100%);
-            transition: transform 1s ease;
-        }
-
-        .curtain.open {
-            transform: translateX(0);
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 <body>
+    <!-- Container für die Roll-Bilder (fullscreen) -->
     <div class="fullscreen-container">
-        <!-- Reihe 1 -->
+        <!-- Reihe 1: Links rollendes Bild und rechts -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
         </div>
 
-        <!-- Reihe 2 -->
+        <!-- Reihe 2 und 3 folgen dem gleichen Muster -->
         <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft3.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft4.png');"></div>
         </div>
-
-        <!-- Reihe 3 -->
         <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft5.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft6.png');"></div>
         </div>
     </div>
 
-    <!-- Intro Name Bild -->
+    <!-- Vorhang (Schicht, die den Inhalt verdeckt) -->
+    <div class="curtain"></div>
+
+    <!-- Intro-Bild mit Name (z.B. Logo oder Intro-Bild) -->
     <div class="image-container">
         <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
     </div>
 
-    <!-- Mehr erfahren Button -->
+    <!-- Button, der den Vorhang öffnet und den Inhalt sichtbar macht -->
     <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button" id="openCurtain">
+        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button">
     </div>
 
-    <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
-    <div class="curtain" id="curtain"></div>
+    <!-- Der eigentliche Inhalt, wird nach dem Button-Klick sichtbar -->
+    <div class="main-content">
+        <h1>Willkommen auf der Seite!</h1>
+        <p>Hier ist der Inhalt, der nach dem Klick auf den Button sichtbar wird.</p>
+        <p>Du kannst mehr über unser Projekt erfahren, und was du tun kannst, um uns zu unterstützen.</p>
+    </div>
 
     <script>
-        // Nach einer kurzen Verzögerung den Button sichtbar machen
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.intro-button').classList.add('visible');
-            }, 1000); // 1 Sekunde Verzögerung
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const curtain = document.querySelector('.curtain');
+            const button = document.querySelector('.intro-button');
+            const mainContent = document.querySelector('.main-content');
 
-        // Vorhang-Effekt
-        document.getElementById('openCurtain').addEventListener('click', function() {
-            // Vorhang öffnet sich
-            document.getElementById('curtain').classList.add('open');
+            // Button sichtbar machen nach einer kurzen Verzögerung
+            setTimeout(function () {
+                button.classList.add('visible');
+            }, 4000); // Button erscheint nach 4 Sekunden
 
-            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-            setTimeout(function() {
-                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
-                window.location.href = 'webseite.html'; // Zielseite (kann beliebig geändert werden)
-            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
+            // Klick auf den Button
+            button.addEventListener('click', function () {
+                // Vorhang öffnet sich
+                curtain.classList.add('open');
+                // Hauptinhalt sichtbar machen
+                mainContent.classList.add('visible');
+                // Button ausblenden
+                button.classList.remove('visible');
+            });
         });
     </script>
 </body>
