@@ -31,8 +31,8 @@
             max-height: 360px;
         }
 
-        /* Header-Balken mit RGB Regenbogenanimation */
-        .header-bar {
+        /* Header-Balken unter dem Bild, der sich RGB färbt */
+        .site-header {
             width: 100%;
             height: 60px; /* Höhe des Balkens */
             text-align: center;
@@ -40,7 +40,8 @@
             font-size: 18px;
             font-weight: bold;
             color: white;
-            animation: rainbow-animation 5s linear infinite; /* Animation hinzufügen */
+            background: rgb(255, 0, 0); /* Initialfarbe (Rot) */
+            animation: rainbow-animation 5s linear infinite; /* RGB-Farbwechsel-Animation */
             position: relative;
             top: -5px; /* Stelle sicher, dass der Balken direkt unter dem Bild liegt */
         }
@@ -130,8 +131,8 @@
         <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
     </header>
 
-    <!-- Header-Balken mit RGB-Animation -->
-    <div class="header-bar">
+    <!-- Header-Balken mit RGB-Animation unter dem Bild -->
+    <div class="site-header">
         Deine Navigation oder Text hier
     </div>
 
