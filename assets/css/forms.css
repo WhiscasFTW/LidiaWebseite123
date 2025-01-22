@@ -1,20 +1,76 @@
-/* Alle Ränder und Abstände auf 0 setzen */
+/* Allgemeine Reset-Einstellungen */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Box-Modell auf border-box setzen */
+    box-sizing: border-box;
 }
 
-/* Stellen Sie sicher, dass der Body den gesamten Viewport ausfüllt */
 html, body {
     height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header-Stil */
+.site-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 360px; /* Höhe des Header-Bereichs */
+    background-image: url('assets/images/header-image.jpg'); /* Dein Bild */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-header .logo-container {
+    margin-bottom: 20px;
+}
+
+.site-header .logo {
+    height: 50px; /* Größe des Logos */
+}
+
+.site-header .navigation {
+    position: absolute;
+    bottom: 10px;
     width: 100%;
 }
 
-/* Bild soll das obere Viertel des Bildschirms einnehmen */
-.top-quarter-image {
-    width: 100%;               /* Breite auf 100% setzen */
-    height: 25vh;              /* Höhe auf 25% der Viewport-Höhe setzen */
-    object-fit: cover;         /* Bild wird skaliert, um den Bereich zu füllen, ohne das Seitenverhältnis zu verlieren */
-    display: block;            /* Entfernt unerwünschte Zwischenräume unterhalb des Bildes */
+.site-header .navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.site-header .navigation ul li {
+    margin-left: 20px;
+}
+
+.site-header .navigation ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.site-header .navigation ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Für kleinere Bildschirme (Responsive) */
+@media (max-width: 768px) {
+    .site-header {
+        height: 250px; /* Geringere Höhe auf kleinen Bildschirmen */
+    }
+
+    .site-header .navigation ul {
+        flex-direction: column;
+    }
+
+    .site-header .navigation ul li {
+        margin: 10px 0;
+    }
 }
