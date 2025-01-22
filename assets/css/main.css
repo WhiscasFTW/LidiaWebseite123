@@ -17,15 +17,16 @@ body, html {
 
 /* Header-Bild oberhalb des Headers */
 .header-image {
-    position: absolute; /* Bild wird relativ zum übergeordneten Container positioniert */
-    top: -100px; /* Negative Zahl für eine stärkere Verschiebung nach oben */
-    left: 40%; /* Horizontale Zentrierung */
-    transform: translateX(-50%); /* Verschiebung nach links, um die Hälfte der Breite des Bildes */
-    width: 100vw; /* Breite des Bildes auf die gesamte Bildschirmbreite */
-    height: auto; /* Höhe wird automatisch angepasst */
+    position: fixed; /* Fixierte Position, damit es immer oben bleibt */
+    top: 0; /* Bild direkt an den oberen Rand setzen */
+    left: 50%; /* Horizontale Zentrierung */
+    transform: translateX(-50%); /* Verschiebung nach links, um es zentriert zu halten */
+    width: 100vw; /* Breite des Bildes auf die gesamte Bildschirmbreite setzen */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
     max-height: 360px; /* Maximale Höhe von 360px */
     z-index: -1; /* Bild hinter den Inhalt legen */
 }
+
 
 
 
