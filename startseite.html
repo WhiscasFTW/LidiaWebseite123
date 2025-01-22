@@ -26,26 +26,22 @@
             margin-top: -10px; /* Verhindert das Überlappen mit dem Bild */
         }
 
-        /* Boxen unter dem Strich */
+        /* Container für die Header-Boxen */
         .header-box-container {
             display: flex;
-            justify-content: space-between;
             width: 100%;
-            background-color: #666; /* Hintergrundfarbe für den Strich */
-            padding: 10px 0;
-        }
-        .header-box {
-            background-color: #444;
-            padding: 10px;
-            color: #fff;
-            width: 13%; /* 7 Boxen, mittlere 5 werden belegt */
-            text-align: center;
-            border-right: 1px solid #fff; /* Trennstrich rechts */
+            background-color: #444; /* Hintergrundfarbe für die Boxen */
+            padding: 0;
+            justify-content: center; /* Boxen mittig ausrichten */
         }
 
-        /* Letzte Box hat keinen rechten Rand */
-        .header-box:last-child {
-            border-right: none;
+        /* Einzelne Boxen ohne Trennstriche */
+        .header-box {
+            background-color: #444; /* Einheitliche Farbe für alle Boxen */
+            color: #fff;
+            text-align: center;
+            flex: 1; /* Jede Box nimmt den gleichen Platz ein */
+            padding: 10px 0;
         }
 
         .header-box a {
@@ -110,17 +106,13 @@
     <!-- Grauer Strich unter dem Bild -->
     <div class="header-stripe"></div>
 
-    <!-- Boxen unter dem Strich -->
+    <!-- Boxen unter dem Strich (ohne Trennlinien) -->
     <div class="header-box-container">
-        <!-- Leere Boxen an den Seiten -->
-        <div class="header-box"></div>
         <div class="header-box"><a href="startseite.html">Startseite</a></div>
         <div class="header-box"><a href="steckbrief.html">Steckbrief</a></div>
         <div class="header-box"><a href="meinewerke.html">Meine Werke</a></div>
         <div class="header-box"><a href="dienstleistungen.html">Dienstleistungen</a></div>
         <div class="header-box"><a href="kontakt.html">Kontakt</a></div>
-        <!-- Leere Box an der Seite -->
-        <div class="header-box"></div>
     </div>
 
     <!-- Hauptinhalt der Seite -->
