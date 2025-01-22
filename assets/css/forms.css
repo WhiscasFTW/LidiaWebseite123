@@ -33,7 +33,7 @@ html, body {
     height: 60px; /* Balken um 20px kleiner */
     background-color: #888;
     border-top: 0; /* Entfernt den oberen Rand, damit der Balken direkt an das Bild anliegt */
-    margin-top: 0px; /* Balken um 10px näher ans Bild schieben */
+    margin-top: -5px; /* Balken um 10px näher ans Bild schieben */
 }
 
 /* Leerer Strich auf der linken Seite */
