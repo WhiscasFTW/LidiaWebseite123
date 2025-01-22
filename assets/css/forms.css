@@ -1,25 +1,3 @@
-/* Strich unterteilt die Boxen */
-.header-box:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 2px; /* Dicke des Striches */
-    background-color: #888; /* Farbe des Striches */
-}
-
-/* Strich auch für die erste Box auf der linken Seite */
-.header-box:first-child::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 2px; /* Dicke des Striches */
-    background-color: #888; /* Farbe des Striches */
-}
-/* Allgemeine Reset-Einstellungen */
 * {
     margin: 0;
     padding: 0;
