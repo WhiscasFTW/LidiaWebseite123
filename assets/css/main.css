@@ -111,11 +111,17 @@ body, html {
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease;
+    transition: opacity 1s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
+}
+
+/* Button-Hover-Effekte */
+.intro-button:hover {
+    transform: scale(1.1); /* Button leicht vergrößern */
+    background-color: #ffcc00; /* Buttonfarbe bei Hover (z. B. gelb) */
 }
 
 /* Desktop-Version */
