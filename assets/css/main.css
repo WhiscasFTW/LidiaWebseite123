@@ -185,4 +185,11 @@ body, html {
 /* Mobile-Version */
 @media (max-width: 1023px) {
     .rounded-image {
-        width
+        width: 70vw; /* Größeres Bild für mobile Ansicht */
+    }
+
+    .intro-button {
+        width: 70vw; /* Größerer Button für mobile Ansicht */
+    }
+
+    .button-
