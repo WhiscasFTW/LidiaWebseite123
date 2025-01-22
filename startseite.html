@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,6 +6,35 @@
     <title>Fullscreen Animation</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
+        /* Allgemeiner Stil für die Vollbild-Anzeige */
+        .fullscreen-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        /* Stil für die Bilderreihen */
+        .rolling-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 33.33%; /* Je ein Drittel der Höhe */
+        }
+
+        /* Stil für die Bilder */
+        .rolling-image {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
         /* Vorhang-Effekt */
         .curtain {
             position: fixed;
@@ -31,57 +59,23 @@
 </head>
 <body>
     <div class="fullscreen-container">
-        <!-- Reihe 1 -->
+        <!-- Zeigt nur die oberste Bildschicht jeder Reihe -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
         </div>
-
-        <!-- Reihe 2 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
         </div>
-
-        <!-- Reihe 3 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
         </div>
-    </div>
-
-    <!-- Intro Name Bild -->
-    <div class="image-container">
-        <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
-    </div>
-
-    <!-- Mehr erfahren Button -->
-    <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button" id="openCurtain">
     </div>
 
     <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
-    <div class="curtain" id="curtain"></div>
+    <div class="curtain hidden" id="curtain"></div>
 
     <script>
-        // Nach einer kurzen Verzögerung den Button sichtbar machen
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.intro-button').classList.add('visible');
-            }, 1000); // 1 Sekunde Verzögerung
-        }
-
-        // Vorhang-Effekt
-        document.getElementById('openCurtain').addEventListener('click', function() {
-            // Vorhang öffnet sich
-            document.getElementById('curtain').classList.add('open');
-
-            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-            setTimeout(function() {
-                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
-                window.location.href = 'startseite.html'; // Zielseite (kann beliebig geändert werden)
-            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
-        });
+        // Der Vorhang-Effekt bleibt optional, aber der Button wurde entfernt
     </script>
 </body>
 </html>
