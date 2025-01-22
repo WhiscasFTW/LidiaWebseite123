@@ -107,8 +107,8 @@ body, html {
 }
 
 .intro-button {
-    width: 20vw; /* Dynamische Breite */
-    aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis, angepasst */
+    width: 18.4vw; /* Button um 8% kleiner */
+    aspect-ratio: 5 / 2; /* Beibehaltung des ursprünglichen Verhältnisses */
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -132,7 +132,7 @@ body, html {
     }
 
     .intro-button {
-        width: 25vw; /* Button proportional angepasst */
+        width: 23vw; /* Button proportional angepasst */
         aspect-ratio: 5 / 2; /* Beibehaltung des Originalverhältnisses */
     }
 }
@@ -149,8 +149,8 @@ body, html {
     }
 
     .intro-button {
-        width: 30vw; /* Button größer auf Tablets */
-        aspect-ratio: 5 / 2; /* Originalverhältnis des Buttons */
+        width: 27.5vw; /* Button proportional kleiner */
+        aspect-ratio: 5 / 2; /* Beibehaltung des Originalverhältnisses */
     }
 }
 
@@ -166,7 +166,7 @@ body, html {
     }
 
     .intro-button {
-        width: 35vw; /* Button auf Smartphones proportional größer */
-        aspect-ratio: 5 / 2; /* Originalverhältnis des Buttons */
+        width: 31.5vw; /* Button proportional kleiner */
+        aspect-ratio: 5 / 2; /* Beibehaltung des Originalverhältnisses */
     }
 }
