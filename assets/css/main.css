@@ -18,7 +18,8 @@ body, html {
     position: fixed; /* Fixiert das Bild oben */
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Zentriert das Bild horizontal */
+    transform: translateX(-100%); /* Zentriert das Bild horizontal */
+    height: 100%;
     width: 100%; /* Volle Breite */
     max-height: 360px; /* Maximale Höhe des Bildes */
     height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
