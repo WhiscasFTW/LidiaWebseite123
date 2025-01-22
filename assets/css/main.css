@@ -92,14 +92,14 @@ body, html {
 }
 
 .rounded-image {
-    width: 40vw; /* Dynamische Breite */
-    height: auto; /* Verhindert Verformung */
+    width: 38vw; /* Dynamische Breite */
+    aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
     border-radius: 10%; /* Abgerundete Ecken */
 }
 
 .button-container {
     position: absolute;
-    top: 54%; /* Button um 1% weiter nach oben verschoben */
+    top: 60%; /* Button weiter nach unten verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -107,8 +107,8 @@ body, html {
 
 /* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 22.4vw; /* Button um 2% größer */
-    height: auto; /* Proportionale Höhe */
+    width: 20vw; /* Dynamische Breite */
+    aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease;
@@ -118,38 +118,44 @@ body, html {
     opacity: 1; /* Button wird sichtbar */
 }
 
-/* Desktop-Version */
-@media (min-width: 1024px) {
-    .rounded-image {
-        width: 40vw; /* Originalgröße für Desktop */
-    }
-
-    .intro-button {
-        width: 22.4vw; /* Button für Desktop um 2% größer */
-        height: auto; /* Vermeidet Verzerrung */
-    }
-
-    .button-container {
-        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
-    }
-}
-
-/* Mobile-Version */
+/* Responsive Anpassungen */
 @media (max-width: 1023px) {
     /* Bild für mobile Geräte anpassen */
     .rounded-image {
-        width: 50vw; /* Bild auf mobilen Geräten größer */
+        width: 55vw; /* Bild auf mobilen Geräten noch größer */
         height: auto;
     }
 
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
-        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
-        height: auto;
+        width: 36vw; /* Button auf mobilen Geräten deutlich größer */
+        height: auto; /* Vermeidet Verzerrung */
     }
 
-    /* Buttonposition für mobile Geräte */
+    /* Buttonposition für mobile Geräte weiter nach oben verschoben */
     .button-container {
-        top: 59%; /* Button weiter nach oben für mobile Geräte */
+        top: 52%; /* Button weiter nach oben verschoben */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
+    .rounded-image {
+        width: 45vw; /* Bild auf Tablets anpassen */
+    }
+
+    .intro-button {
+        width: 30vw; /* Button anpassen */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Für sehr kleine Bildschirme wie Handys */
+    .rounded-image {
+        width: 50vw; /* Das Intro-Bild entsprechend vergrößert */
+    }
+
+    .intro-button {
+        width: 40vw; /* Button für sehr kleine Geräte */
     }
 }
