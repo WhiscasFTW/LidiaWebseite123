@@ -5,38 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
     <link rel="stylesheet" href="assets/css/forms.css">
+    <style>
+        /* Allgemeine Reset-Einstellungen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Bild-Container für das Header-Bild */
+        .header-image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            max-width: 2560px; /* Stellt sicher, dass das Bild die alte Größe behält */
+            max-height: 360px;
+        }
+
+        /* Header-Balken mit RGB Regenbogenanimation */
+        .header-bar {
+            width: 100%;
+            height: 60px; /* Höhe des Balkens */
+            text-align: center;
+            line-height: 60px; /* Vertikale Zentrierung des Textes */
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            animation: rainbow-animation 5s linear infinite; /* Animation hinzufügen */
+        }
+
+        /* RGB Regenbogenanimation */
+        @keyframes rainbow-animation {
+            0% {
+                background-color: rgb(255, 0, 0); /* Rot */
+            }
+            14% {
+                background-color: rgb(255, 165, 0); /* Orange */
+            }
+            28% {
+                background-color: rgb(255, 255, 0); /* Gelb */
+            }
+            42% {
+                background-color: rgb(0, 255, 0); /* Grün */
+            }
+            57% {
+                background-color: rgb(0, 0, 255); /* Blau */
+            }
+            71% {
+                background-color: rgb(75, 0, 130); /* Indigo */
+            }
+            85% {
+                background-color: rgb(238, 130, 238); /* Violett */
+            }
+            100% {
+                background-color: rgb(255, 0, 0); /* Zurück zu Rot */
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sicherstellen, dass der Footer immer am unteren Rand bleibt */
+        body {
+            margin: 0;
+            padding-bottom: 50px; /* Platz für den Footer */
+        }
+    </style>
 </head>
 <body>
+    <!-- Header-Bereich -->
     <header>
-        <div class="header-image-container">
-            <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
-        </div>
-        <!-- Header Boxen -->
-        <div class="header-box-container">
-            <!-- Leerer Bereich links -->
-            <div class="header-box-left"></div>
-            
-            <!-- Navigationseinträge -->
-            <div class="header-box">
-                <a href="startseite.html">Startseite</a>
-            </div>
-            <div class="header-box">
-                <a href="steckbrief.html">Steckbrief</a>
-            </div>
-            <div class="header-box">
-                <a href="meinewerke.html">Meine Werke</a>
-            </div>
-            <div class="header-box">
-                <a href="dienstleistungen.html">Dienstleistungen</a>
-            </div>
-            <div class="header-box">
-                <a href="kontakt.html">Kontakt</a>
-            </div>
-            
-            <!-- Leerer Bereich rechts -->
-            <div class="header-box-left"></div>
-        </div>
+        <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
     </header>
+
+    <!-- Header-Balken mit RGB-Animation -->
+    <div class="header-bar">
+        Deine Navigation oder Text hier
+    </div>
 
     <!-- Hauptinhalt der Seite -->
     <div class="content">
