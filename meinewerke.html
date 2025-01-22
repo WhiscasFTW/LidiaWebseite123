@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Werke</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <div class="navbar">
-        <a href="startseite.html">Startseite</a>
-        <a href="steckbrief.html">Steckbrief</a>
-        <a href="meinewerke.html">Meine Werke</a>
-        <a href="dienstleistungen.html">Dienstleistungen</a>
-        <a href="kontakt.html">Kontakt</a>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+                <li><a href="meinewerke.html" class="active">Meine Werke</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <h1>Meine Projekte</h1>
+    </header>
 
-    <div class="content">
-        <h1>Meine Werke</h1>
-        <p>Hier kannst du meine bisherigen Arbeiten sehen.</p>
-    </div>
+    <section class="projekte">
+        <h2>Einige meiner erfolgreich umgesetzten Projekte</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Projekt 1: Webentwicklung</h3>
+                <p>Entwicklung einer benutzerfreundlichen Webseite für einen lokalen Einzelhändler.</p>
+            </div>
+            <div class="project-item">
+                <h3>Projekt 2: Branding</h3>
+                <p>Erstellung eines modernen Logos und einer Corporate Identity für ein Startup.</p>
+            </div>
+            <div class="project-item">
+                <h3>Projekt 3: Online-Marketing</h3>
+                <p>Konzeption und Durchführung einer erfolgreichen Social-Media-Marketing-Kampagne.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <p>Haben Sie Fragen zu den Projekten? <a href="kontakt.html">Kontaktieren Sie mich!</a></p>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
-        </div>
+        <p>&copy; 2025 Lidia Grön</p>
     </footer>
 </body>
 </html>
