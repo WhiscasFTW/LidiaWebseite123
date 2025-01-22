@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Werke</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/main.css"> <!-- Dein Haupt-CSS -->
 </head>
 <body>
+    <!-- Header mit Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Startseite</a></li>
+                <li><a href="startseite.html">Startseite</a></li>
                 <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
-                <li><a href="meinewerke.html" class="active">Meine Werke</a></li>
+                <li><a href="meinewerke.html">Meine Werke</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
-        <h1>Meine Projekte</h1>
     </header>
 
-    <section class="projekte">
-        <h2>Einige meiner erfolgreich umgesetzten Projekte</h2>
-        <div class="project-list">
-            <div class="project-item">
-                <h3>Projekt 1: Webentwicklung</h3>
-                <p>Entwicklung einer benutzerfreundlichen Webseite für einen lokalen Einzelhändler.</p>
+    <!-- Main-Bereich -->
+    <main>
+        <section>
+            <h1>Unsere Arbeiten</h1>
+            <p>Wir haben an vielen spannenden Projekten gearbeitet. Hier sind einige unserer bisherigen Werke:</p>
+            <div class="portfolio">
+                <div class="project">
+                    <img src="assets/images/project1.jpg" alt="Projekt 1">
+                    <h3>Projekt 1</h3>
+                    <p>Beschreibung des Projekts.</p>
+                </div>
+                <div class="project">
+                    <img src="assets/images/project2.jpg" alt="Projekt 2">
+                    <h3>Projekt 2</h3>
+                    <p>Beschreibung des Projekts.</p>
+                </div>
+                <div class="project">
+                    <img src="assets/images/project3.jpg" alt="Projekt 3">
+                    <h3>Projekt 3</h3>
+                    <p>Beschreibung des Projekts.</p>
+                </div>
             </div>
-            <div class="project-item">
-                <h3>Projekt 2: Branding</h3>
-                <p>Erstellung eines modernen Logos und einer Corporate Identity für ein Startup.</p>
-            </div>
-            <div class="project-item">
-                <h3>Projekt 3: Online-Marketing</h3>
-                <p>Konzeption und Durchführung einer erfolgreichen Social-Media-Marketing-Kampagne.</p>
-            </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="cta">
-            <p>Haben Sie Fragen zu den Projekten? <a href="kontakt.html">Kontaktieren Sie mich!</a></p>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lidia Grön</p>
+        <p>&copy; 2025 Lidia Grön. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script src="assets/js/main.js"></script> <!-- Dein Haupt-JS -->
 </body>
 </html>
