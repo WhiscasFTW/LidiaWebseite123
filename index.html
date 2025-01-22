@@ -27,173 +27,26 @@
             display: none;
         }
 
-        /* Allgemeine Stile */
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Kein Scrollen */
-            height: 100%;
-            background-color: black;
-        }
-
-        .fullscreen-container {
-            display: flex;
-            flex-direction: column;
-            width: 100vw;
-            height: 100vh;
-            animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
-        }
-
-        /* Reihe-Stil */
-        .rolling-row {
-            display: flex;
-            width: 200%; /* Platz für beide Bilder */
-            height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
-            position: relative;
-            overflow: hidden;
-            filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-            animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
-        }
-
-        /* Obere und untere Reihe rollen nach links */
-        .rolling-row:nth-child(1),
-        .rolling-row:nth-child(3) {
-            animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
-        }
-
-        /* Mittlere Reihe rollt nach rechts */
-        .rolling-row:nth-child(2) {
-            animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
-        }
-
-        /* Bild-Stil */
-        .rolling-image {
-            width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Animationen */
-        @keyframes roll-left {
-            0% {
-                transform: translateX(0); /* Startposition */
-            }
-            100% {
-                transform: translateX(-50%); /* Eine Bildbreite nach links */
-            }
-        }
-
-        @keyframes roll-right {
-            0% {
-                transform: translateX(-50%); /* Start mit zweitem Bild */
-            }
-            100% {
-                transform: translateX(0); /* Zurück zum ersten Bild */
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0.8; /* Leicht sichtbar */
-            }
-            100% {
-                opacity: 1; /* Vollständig sichtbar */
-            }
-        }
-
-        @keyframes fadeFocus {
-            0% {
-                filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-            }
-            100% {
-                filter: blur(0px) brightness(1); /* Klar und normal hell */
-            }
-        }
-
-        /* Intro-Bild und Button-Stile */
-        .image-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Perfekte Zentrierung */
-            z-index: 1; /* Höherer Z-Index für das Bild */
-        }
-
-        .rounded-image {
-            width: 40vw; /* Dynamische Breite */
-            height: auto; /* Verhindert Verformung */
-            border-radius: 10%; /* Abgerundete Ecken */
-        }
-
-        .button-container {
-            position: absolute;
-            top: 54%; /* Button um 1% weiter nach oben verschoben */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2; /* Button über dem Bild */
-        }
-
-        .intro-button {
-            width: 22.4vw; /* Button um 2% größer */
-            height: auto; /* Proportionale Höhe */
-            cursor: pointer;
-            opacity: 0; /* Button zu Beginn unsichtbar */
-            transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
-            background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
-            color: white; /* Schrift weiß */
-            border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
-            border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
-            animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
-        }
-
-        /* Button wird sichtbar */
+        /* Button sichtbar machen */
         .intro-button.visible {
-            opacity: 1; /* Button wird sichtbar */
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
         }
-
-        /* Farbverlauf bei Hover */
-        .intro-button:hover {
-            transform: scale(1.05); /* Button wird um 5% größer */
-            background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf mit halbierter Intensität */
-            color: white; /* Schrift bleibt weiß */
-            border-color: #4d8b4d; /* Randfarbe beim Hover ebenfalls ändern */
-            border-radius: 25px; /* Bleibt abgerundet beim Hover */
-        }
-
-        /* Animation der Farbänderung von grün nach blau */
-        @keyframes colorChange {
-            0% {
-                background-color: #66cc66; /* Lime Green, halbiert */
-                border-color: #66cc66;
-            }
-            50% {
-                background-color: #4d8b4d; /* Dunkleres Grün mit halbierter Intensität */
-                border-color: #4d8b4d;
-            }
-            100% {
-                background-color: #6495ed; /* Steel Blue, halbierte Intensität */
-                border-color: #6495ed;
-            }
-        }
-
     </style>
 </head>
 <body>
     <div class="fullscreen-container">
-        <!-- Reihe 1 -->
+        <!-- Reihen mit Bildern, wie im ursprünglichen Code -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
         </div>
 
-        <!-- Reihe 2 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
         </div>
 
-        <!-- Reihe 3 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
@@ -213,25 +66,6 @@
     <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
     <div class="curtain" id="curtain"></div>
 
-    <script>
-        // Nach einer kurzen Verzögerung den Button sichtbar machen
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.intro-button').classList.add('visible');
-            }, 1000); // 1 Sekunde Verzögerung
-        }
-
-        // Vorhang-Effekt
-        document.getElementById('openCurtain').addEventListener('click', function() {
-            // Vorhang öffnet sich
-            document.getElementById('curtain').classList.add('open');
-
-            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-            setTimeout(function() {
-                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
-                window.location.href = 'webseite.html'; // Zielseite (kann beliebig geändert werden)
-            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
