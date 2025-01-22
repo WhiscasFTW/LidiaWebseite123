@@ -1,18 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const curtain = document.querySelector('.curtain');
-    const button = document.querySelector('.intro-button');
+document.getElementById('openCurtain').addEventListener('click', function() {
+    // Vorhang öffnet sich
+    document.getElementById('curtain').classList.add('open');
     
-    // Button wird nach einer kurzen Verzögerung sichtbar
-    setTimeout(function () {
-        button.classList.add('visible');
-    }, 4000); // Button wird nach 4 Sekunden sichtbar
-
-    // Klick-Ereignis für den Button
-    button.addEventListener('click', function () {
-        // Vorhang öffnet sich, wenn der Button geklickt wird
-        curtain.classList.add('open');
-        
-        // Verstecke den Button nach dem Klick
-        button.classList.remove('visible');
-    });
+    // Verzögerung vor dem Einblenden des Inhalts
+    setTimeout(function() {
+        document.getElementById('newContent').classList.add('visible'); // Dynamischer Inhalt wird sichtbar
+        document.getElementById('curtain').classList.remove('open'); // Vorhang wird entfernt
+    }, 1000); // 1 Sekunde Verzögerung
 });
