@@ -16,22 +16,6 @@ body, html {
     height: 100%; /* Die gesamte Höhe wird genutzt */
 }
 
-/* Bild-Header */
-.header-image {
-    position: fixed; /* Fixiert das Bild oben */
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Zentriert das Bild horizontal */
-    height: 100%;
-    width: 100%; /* Volle Breite */
-    max-height: 360px; /* Maximale Höhe des Bildes */
-    height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
-    z-index: -1; /* Bild hinter den anderen Inhalten */
-    background-image: url('assets/images/HeaderStart.png'); /* Bild einfügen */
-    background-size: cover; /* Bild wird über die gesamte Fläche gestreckt */
-    background-position: center; /* Bild wird zentriert */
-}
-
 /* Für kleinere Bildschirme wie Mobile */
 @media (max-width: 1024px) {
     .header-image {
