@@ -1,22 +1,20 @@
-body, html {
+/* Alle Ränder und Abstände auf 0 setzen */
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
+    box-sizing: border-box; /* Box-Modell auf border-box setzen */
+}
+
+/* Stellen Sie sicher, dass der Body den gesamten Viewport ausfüllt */
+html, body {
     height: 100%;
-}
-
-.image-container {
-    position: relative;
     width: 100%;
-    height: 360px; /* Die Höhe des Bildes */
 }
 
+/* Bild soll den gesamten oberen Bildschirm ausfüllen */
 .fullscreen-image {
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    object-fit: cover; /* Bild wird gestreckt, um den gesamten Bereich zu füllen */
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Zentriert das Bild horizontal */
+    width: 100%;
+    height: 100vh; /* Volle Höhe des Viewports */
+    object-fit: cover; /* Das Bild wird skaliert, um den Bereich zu füllen, ohne das Seitenverhältnis zu verlieren */
+    display: block; /* Entfernt unerwünschte Zwischenräume unterhalb des Bildes */
 }
