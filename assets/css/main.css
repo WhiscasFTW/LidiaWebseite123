@@ -99,7 +99,7 @@ body, html {
 
 .button-container {
     position: absolute;
-    top: 57%; /* Button um 3% nach oben verschoben */
+    top: 54%; /* Button um 1% weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -107,7 +107,7 @@ body, html {
 
 /* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 20.4vw; /* Button um 2% größer */
+    width: 22.4vw; /* Button um 2% größer */
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -125,12 +125,12 @@ body, html {
     }
 
     .intro-button {
-        width: 20.4vw; /* Button für Desktop um 2% größer */
+        width: 22.4vw; /* Button für Desktop um 2% größer */
         height: auto; /* Vermeidet Verzerrung */
     }
 
     .button-container {
-        top: 57%; /* Buttonposition für Desktop um 3% nach oben verschoben */
+        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
     }
 }
 
@@ -144,12 +144,12 @@ body, html {
 
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
-        width: 30.6vw; /* Button um 2% größer auf mobilen Geräten */
+        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
         height: auto;
     }
 
     /* Buttonposition für mobile Geräte */
     .button-container {
-        top: 62%; /* Button weiter nach oben für mobile Geräte */
+        top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
 }
