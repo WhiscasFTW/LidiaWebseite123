@@ -17,19 +17,20 @@ body, html {
 
 /* Header-Bild oberhalb des Headers */
 .header-image {
-    position: fixed; /* Fixed Positionierung, damit das Bild beim Scrollen fixiert bleibt */
-    top: 0; /* Direkt oben */
+    position: absolute; /* Absolute Positionierung */
+    top: 0; /* Kein Abstand nach oben */
     left: 50%; /* Horizontale Zentrierung */
-    transform: translateX(-50%) translateY(0); /* Horizontal zentrieren und vertikal anpassen */
-    width: 2560px; /* Bild mit Originalbreite */
-    height: 360px; /* Originalhöhe */
+    transform: translateX(-50%); /* Zentrierung durch Verschiebung nach links um die eigene Breite */
+    width: 100%; /* Bild nimmt die gesamte Breite des Bildschirms ein */
+    height: auto; /* Höhe automatisch basierend auf der Breite */
+    max-height: 360px; /* Maximale Höhe von 360px, um sicherzustellen, dass das Bild nicht zu hoch wird */
     z-index: -1; /* Das Bild hinter dem Inhalt positionieren */
 }
 
 /* Für kleinere Bildschirme wie Mobile */
 @media (max-width: 1024px) {
     .header-image {
-        width: 100%; /* Bild passt sich der Breite des Bildschirms an */
+        width: 100%;
         max-height: 200px; /* Für mobile Geräte eine kleinere Höhe einstellen */
     }
 }
@@ -219,4 +220,4 @@ body, html {
     .button-container {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
-}
+}  
