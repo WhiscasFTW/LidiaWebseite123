@@ -198,6 +198,19 @@ body, html {
 
     /* Buttonposition für mobile Geräte */
     .button-container {
-        top: 59%; /* Button weiter nach oben für mobile Geräte */
+        top: 52%;
     }
+}
+
+/* Dynamischer Inhalt */
+.content {
+    display: none; /* Zu Beginn unsichtbar */
+    opacity: 0; /* Start mit unsichtbarem Inhalt */
+    transition: opacity 1s ease-in-out; /* Übergang zur Sichtbarkeit */
+}
+
+/* Sichtbar machen des Inhalts */
+.content.visible {
+    display: block;
+    opacity: 1; /* Voll sichtbar */
 }
