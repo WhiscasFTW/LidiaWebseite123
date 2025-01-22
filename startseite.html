@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Startseite</title>
-    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -14,31 +13,31 @@
         <nav>
             <ul>
                 <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="meinewerke.html">Meine Werke</a></li>
-                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
                 <li><a href="steckbrief.html">Steckbrief</a></li>
+                <li><a href="meine_werke.html">Meine Werke</a></li>
+                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero-Bereich mit Bild -->
-    <div class="header-image" style="background-image: url('assets/images/HeaderStart.png');"></div>
+    <!-- Hero-Bereich mit HeaderStart.png -->
+    <div class="hero">
+        <div class="hero-image" style="background-image: url('assets/images/HeaderStart.png');"></div>
+    </div>
 
-    <!-- Optionaler weiterer Inhalt kann hier hinzugefügt werden -->
+    <!-- Hauptinhalt -->
+    <main>
+        <section class="content">
+            <h1>Willkommen auf meiner Webseite!</h1>
+            <p>Erkunde meine Werke, Dienstleistungen und erfahre mehr über mich.</p>
+        </section>
+    </main>
 
-    <!-- JavaScript für die Animation des Vorhangs und des Buttons -->
-    <script>
-        // Vorhang öffnet sich nach einem kurzen Delay
-        setTimeout(function() {
-            document.querySelector('.curtain').classList.add('open');
-        }, 1000);
-
-        // Button nach einer kurzen Zeit sichtbar machen
-        setTimeout(function() {
-            document.querySelector('.intro-button').classList.add('visible');
-        }, 3000);
-    </script>
+    <footer>
+        <p>&copy; 2025 Lidia Grön</p>
+    </footer>
 
 </body>
 </html>
