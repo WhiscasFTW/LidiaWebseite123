@@ -1,18 +1,19 @@
-// Vorhang-Effekt: Nach Klick auf den Button wird der Vorhang geöffnet
-document.getElementById('openCurtain').addEventListener('click', function() {
-    // Vorhang öffnet sich
-    document.getElementById('curtain').classList.add('open');
+document.addEventListener('DOMContentLoaded', function () {
+    const curtain = document.querySelector('.curtain');
+    const button = document.querySelector('.intro-button');
+    
+    // Button wird nach einer kurzen Verzögerung sichtbar
+    setTimeout(function () {
+        button.classList.add('visible');
+    }, 4000); // Button wird nach 4 Sekunden sichtbar
 
-    // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-    setTimeout(function() {
-        // Die Hauptseite mit Navigation anzeigen
-        window.location.href = 'startseite.html'; // Zielseite (Startseite)
-    }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
+    // Klick-Ereignis für den Button
+    button.addEventListener('click', function () {
+        // Vorhang öffnet sich, wenn der Button geklickt wird
+        curtain.classList.add('open');
+        
+        // Verstecke den Button nach dem Klick
+        button.classList.remove('visible');
+    });
 });
 
-// Nach einer kurzen Verzögerung den Button sichtbar machen
-window.onload = function() {
-    setTimeout(function() {
-        document.querySelector('.intro-button').classList.add('visible');
-    }, 1000); // 1 Sekunde Verzögerung
-};
