@@ -2,85 +2,23 @@
 body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Kein horizontaler Scrollbalken */
+    overflow: hidden; /* Kein Scrollen */
     height: 100%;
     background-color: black;
 }
 
-/* Header-Bild */
+/* Header-Bild oberhalb des Headers */
 .header-image {
-    position: absolute;
-    top: -100px; /* Bild wird oberhalb des Headers platziert */
-    left: 50%;
-    transform: translateX(-50%); /* Zentriert das Bild horizontal */
-    width: 100%; /* Bild nimmt die volle Breite des Viewports ein */
-    height: auto;
-    z-index: -1; /* Das Bild bleibt hinter allen anderen Inhalten */
+    position: absolute; /* Absolute Positionierung */
+    top: 0; /* Kein Abstand nach oben */
+    left: 50%; /* Horizontale Zentrierung */
+    transform: translateX(-50%); /* Zentrierung durch Verschiebung nach links um die eigene Breite */
+    width: 100%; /* Bild nimmt die gesamte Breite des Bildschirms ein */
+    height: auto; /* Höhe automatisch basierend auf der Breite */
+    z-index: -1; /* Das Bild hinter dem Inhalt positionieren */
 }
 
-/* Header */
-header {
-    position: relative;
-    z-index: 1; /* Header bleibt über dem Bild */
-}
-
-/* Allgemeine Stile */
-body, html {
-    font-family: Arial, sans-serif;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-}
-
-nav ul li a:hover {
-    background-color: #575757;
-}
-
-/* Main-Inhalte */
-main {
-    position: relative;
-    z-index: 1; /* Stellt sicher, dass der Main-Bereich vor dem Bild liegt */
-    padding: 20px;
-    color: white;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-footer a {
-    color: #66cc66;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #4d8b4d;
-}
-
-/* Weitere Stile für andere Inhalte und Animationen */
-
-/* Hintergrund für die Seite */
+/* Fullscreen-Container */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
