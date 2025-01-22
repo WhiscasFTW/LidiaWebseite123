@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const curtain = document.querySelector('.curtain');
     const button = document.querySelector('.intro-button');
-    const mainContent = document.querySelector('.main-content');
+    const newPage = document.querySelector('.new-page');
+    const closeButton = document.querySelector('.close-button');
 
     // Button sichtbar machen nach einer kurzen Verzögerung
     setTimeout(function () {
@@ -10,16 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Klick auf den Button
     button.addEventListener('click', function () {
-        // Vorhang öffnet sich
-        curtain.classList.add('open');
-        
-        // Warte, bis der Vorhang vollständig geöffnet ist
-        setTimeout(function () {
-            // Hauptinhalt sichtbar machen
-            mainContent.classList.add('visible');
-        }, 1000); // Warte 1 Sekunde nach dem Öffnen des Vorhangs, um sicherzustellen, dass der Inhalt angezeigt wird
+        // Neue Seite sichtbar machen
+        newPage.classList.add('visible');
+    });
 
-        // Button ausblenden
-        button.classList.remove('visible');
+    // Klick auf den Schließen-Button der neuen Seite
+    closeButton.addEventListener('click', function () {
+        // Neue Seite ausblenden
+        newPage.classList.remove('visible');
     });
 });
