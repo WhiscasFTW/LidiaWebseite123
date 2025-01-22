@@ -22,7 +22,7 @@ body, html {
     height: 100%;
     width: 100%;
     max-height: 360px;
-    background-image: url('assets/images/IntroName1.png'); /* Bild anpassen */
+    background-image: url('assets/images/HeaderStart.png.png'); /* Bild anpassen */
     background-size: cover;
     background-position: center;
     z-index: 1; /* Bild in den Vordergrund setzen */
