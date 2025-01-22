@@ -26,27 +26,23 @@
         .hidden {
             display: none;
         }
-
-        /* Button sichtbar machen */
-        .intro-button.visible {
-            opacity: 1;
-            transition: opacity 1s ease-in-out;
-        }
     </style>
 </head>
 <body>
     <div class="fullscreen-container">
-        <!-- Reihen mit Bildern, wie im ursprünglichen Code -->
+        <!-- Reihe 1 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
         </div>
 
+        <!-- Reihe 2 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
         </div>
 
+        <!-- Reihe 3 -->
         <div class="rolling-row">
             <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
             <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
@@ -66,6 +62,25 @@
     <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
     <div class="curtain" id="curtain"></div>
 
-    <script src="assets/js/main.js"></script>
+    <script>
+        // Nach einer kurzen Verzögerung den Button sichtbar machen
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.intro-button').classList.add('visible');
+            }, 1000); // 1 Sekunde Verzögerung
+        }
+
+        // Vorhang-Effekt
+        document.getElementById('openCurtain').addEventListener('click', function() {
+            // Vorhang öffnet sich
+            document.getElementById('curtain').classList.add('open');
+
+            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
+            setTimeout(function() {
+                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
+                window.location.href = 'webseite.html'; // Zielseite (kann beliebig geändert werden)
+            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
+        });
+    </script>
 </body>
 </html>
