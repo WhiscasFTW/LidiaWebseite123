@@ -3,55 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Startseite für meine Website mit interaktivem Design und persönlichen Steckbrief.">
     <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/main.css"> <!-- Dein Haupt-CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header mit Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+                <li><a href="steckbrief.html">Steckbrief</a></li>
                 <li><a href="meinewerke.html">Meine Werke</a></li>
+                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main-Bereich -->
     <main>
-        <section class="intro">
-            <h1>Willkommen auf der Startseite</h1>
-            <p>Erfahre mehr über unsere Dienstleistungen, Werke und vieles mehr!</p>
-            <button class="intro-button">Mehr erfahren</button>
-        </section>
-
-        <section class="overview">
-            <h2>Unsere Angebote</h2>
-            <p>Hier findest du eine Übersicht über das, was wir anbieten.</p>
-            <div class="offerings">
-                <div class="offering">
-                    <h3>Webdesign</h3>
-                    <p>Moderne und ansprechende Webseiten für dein Unternehmen.</p>
-                </div>
-                <div class="offering">
-                    <h3>SEO</h3>
-                    <p>Optimierung deiner Seite für bessere Sichtbarkeit in Suchmaschinen.</p>
-                </div>
-                <div class="offering">
-                    <h3>App-Entwicklung</h3>
-                    <p>Erstellung von benutzerfreundlichen und funktionalen Apps.</p>
-                </div>
+        <section class="fullscreen-container">
+            <div class="rolling-row">
+                <div class="rolling-image" style="background-image: url('image1.jpg');"></div>
+                <div class="rolling-image" style="background-image: url('image2.jpg');"></div>
             </div>
+            <div class="image-container">
+                <img src="intro-image.jpg" class="rounded-image" alt="Intro Bild">
+            </div>
+            <div class="button-container">
+                <button class="intro-button">Los geht's!</button>
+            </div>
+            <div class="curtain"></div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lidia Grön. Alle Rechte vorbehalten.</p>
+        <p>2025 Max Müller</p>
     </footer>
-
-    <script src="assets/js/main.js"></script> <!-- Dein Haupt-JS -->
 </body>
 </html>
