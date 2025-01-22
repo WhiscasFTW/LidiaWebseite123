@@ -1,1 +1,17 @@
+/* Stellt sicher, dass das body-Element den gesamten Viewport abdeckt */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Das Header-Div nimmt 25% der Höhe des Viewports ein */
+.header {
+    width: 100%;
+    height: 25vh; /* 25% der Viewport-Höhe */
+    background-image: url('assets/images/HeaderStart.png');
+    background-size: cover; /* Skaliert das Bild, um den gesamten Bereich abzudecken */
+    background-position: center; /* Zentriert das Bild innerhalb des Divs */
+    background-repeat: no-repeat; /* Verhindert die Wiederholung des Bildes */
+}
 
