@@ -3,34 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Willkommen auf meiner Startseite!">
-    <title>Startseite</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Fullscreen Animation</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Vorhang-Effekt */
+        .curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 3;
+            transform: translateX(-100%);
+            transition: transform 1s ease;
+        }
+
+        .curtain.open {
+            transform: translateX(0);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="steckbrief.html">Steckbrief</a></li>
-                <li><a href="meinewerke.html">Meine Werke</a></li>
-                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="fullscreen-container">
+        <!-- Reihe 1 -->
+        <div class="rolling-row">
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
+        </div>
 
-    <!-- Header-Bild -->
-    <img src="assets/images/HeaderStart.png" alt="Header-Bild Startseite" class="header-image">
+        <!-- Reihe 2 -->
+        <div class="rolling-row">
+            <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
+        </div>
 
-    <main>
-        <h1>Willkommen auf meiner Startseite!</h1>
-        <p>Ich freue mich, dich hier zu begrüßen. Auf dieser Seite findest du Informationen über mich und meine Werke.</p>
-    </main>
+        <!-- Reihe 3 -->
+        <div class="rolling-row">
+            <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
+            <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
+        </div>
+    </div>
 
-    <footer>
-        <p>2025 Max Müller | <a href="impressum.html">Impressum</a></p>
-    </footer>
+    <!-- Intro Name Bild -->
+    <div class="image-container">
+        <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
+    </div>
+
+    <!-- Mehr erfahren Button -->
+    <div class="button-container">
+        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button" id="openCurtain">
+    </div>
+
+    <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
+    <div class="curtain" id="curtain"></div>
+
+    <script>
+        // Nach einer kurzen Verzögerung den Button sichtbar machen
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.intro-button').classList.add('visible');
+            }, 1000); // 1 Sekunde Verzögerung
+        }
+
+        // Vorhang-Effekt
+        document.getElementById('openCurtain').addEventListener('click', function() {
+            // Vorhang öffnet sich
+            document.getElementById('curtain').classList.add('open');
+
+            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
+            setTimeout(function() {
+                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
+                window.location.href = 'webseite.html'; // Zielseite (kann beliebig geändert werden)
+            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
+        });
+    </script>
 </body>
 </html>
