@@ -111,11 +111,11 @@ body, html {
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
+    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
     background-color: green; /* Standard grüne Farbe */
     color: white; /* Schrift weiß */
     border: 2px solid green; /* Rand ebenfalls grün */
-    border-radius: 5px; /* Abgerundete Ecken für den Button */
+    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
     animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
 }
 
@@ -130,6 +130,7 @@ body, html {
     background: linear-gradient(45deg, #32cd32, #228b22); /* Grüner Farbverlauf */
     color: white; /* Schrift bleibt weiß */
     border-color: #228b22; /* Randfarbe beim Hover ebenfalls ändern */
+    border-radius: 25px; /* Bleibt abgerundet beim Hover */
 }
 
 /* Animation der Farbänderung von grün nach blau */
