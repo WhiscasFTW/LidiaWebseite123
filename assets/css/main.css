@@ -100,7 +100,7 @@ body, html {
 
 .button-container {
     position: absolute;
-    top: 65%; /* Button unter dem Bild */
+    top: 70%; /* Button weiter nach unten verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
@@ -135,6 +135,7 @@ body, html {
         width: 22vw; /* Button proportional angepasst */
         height: auto; /* Proportionale Höhe */
         aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
+        top: 75%; /* Button weiter nach unten verschoben */
     }
 }
 
@@ -153,6 +154,7 @@ body, html {
         width: 25vw; /* Button proportional kleiner */
         height: auto; /* Proportionale Höhe */
         aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
+        top: 75%; /* Button weiter nach unten verschoben */
     }
 }
 
@@ -171,5 +173,6 @@ body, html {
         width: 30vw; /* Button proportional kleiner */
         height: auto; /* Proportionale Höhe */
         aspect-ratio: 5 / 2; /* Beibehaltung des richtigen Verhältnisses */
+        top: 80%; /* Button weiter nach unten verschoben */
     }
 }
