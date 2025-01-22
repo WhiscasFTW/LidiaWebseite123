@@ -92,7 +92,8 @@ body, html {
 }
 
 .rounded-image {
-    width: 38vw; /* Dynamische Breite */
+    width: 35vw; /* Dynamische Breite */
+    max-width: 300px; /* Begrenzte maximale Breite */
     aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
     border-radius: 10%; /* Abgerundete Ecken */
 }
@@ -107,7 +108,8 @@ body, html {
 
 /* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 20vw; /* Dynamische Breite */
+    width: 25vw; /* Dynamische Breite */
+    max-width: 200px; /* Begrenzte maximale Breite */
     aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -119,9 +121,21 @@ body, html {
 }
 
 /* Responsive Anpassungen */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    /* Für Laptops */
+    .rounded-image {
+        width: 30vw; /* Bildgröße für Laptops */
+        max-width: 280px; /* Maximalgröße */
+    }
+
+    .intro-button {
+        width: 20vw; /* Buttongröße für Laptops */
+        max-width: 180px;
+    }
+}
+
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
-    
     .rounded-image {
         width: 45vw; /* Bild auf Tablets anpassen */
     }
@@ -133,7 +147,6 @@ body, html {
 
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
-    
     .rounded-image {
         width: 50vw; /* Das Intro-Bild entsprechend vergrößert */
     }
