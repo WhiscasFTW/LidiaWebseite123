@@ -92,21 +92,21 @@ body, html {
 }
 
 .rounded-image {
-    width: 40vw; /* Vergrößert das Intro-Bild */
+    width: 35vw; /* Intro-Bild um 5% kleiner gemacht */
     border-radius: 10%; /* Abgerundete Ecken */
 }
 
 .button-container {
     position: absolute;
-    top: 55%; /* Button weiter nach oben verschoben */
+    top: 54%; /* Button etwas nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird kleiner */
+/* Der Button wird doppelt so groß */
 .intro-button {
-    width: 250px; /* Verkleinerte Breite */
+    width: 500px; /* Doppelte Breite */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -131,12 +131,12 @@ body, html {
 
     /* Position und Größe des Intro-Bildes anpassen */
     .rounded-image {
-        width: 60vw; /* Das Intro-Bild größer gemacht */
+        width: 55vw; /* Das Intro-Bild kleiner gemacht */
         border-radius: 12%; /* Rundung beibehalten */
     }
 
     .intro-button {
-        width: 200px; /* Button auf mobilen Geräten kleiner */
+        width: 400px; /* Button auf mobilen Geräten größer */
     }
 }
 
@@ -149,11 +149,11 @@ body, html {
     }
 
     .rounded-image {
-        width: 70vw; /* Das Intro-Bild weiter vergrößert */
+        width: 65vw; /* Das Intro-Bild weiter verkleinert */
         border-radius: 15%; /* Mehr abgerundete Ecken */
     }
 
     .intro-button {
-        width: 180px; /* Button für sehr kleine Geräte noch kleiner */
+        width: 350px; /* Button für sehr kleine Geräte größer */
     }
 }
