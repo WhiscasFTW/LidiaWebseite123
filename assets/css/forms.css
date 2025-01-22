@@ -1,11 +1,13 @@
-/* Übergang für das Einblenden */
+/* Hintergrund, der die Transition vom Dunkeln ins Helle ermöglicht */
 body {
+    background-color: #000; /* Dunkel starten */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
 body.loaded {
-    opacity: 1;
+    opacity: 1; /* Nach der Transition wird es vollständig sichtbar */
+    background-color: #fff; /* Heller Hintergrund nach dem Laden */
 }
 
 /* Header-Bereich */
