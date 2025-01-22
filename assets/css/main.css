@@ -1,30 +1,20 @@
-/* Allgemeine Stile */
 body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Kein horizontales Scrollen */
     height: 100%;
     background-color: black;
+    overflow-x: hidden; /* Kein horizontales Scrollen */
 }
 
-.fullscreen-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
-}
-
-/* Header-Bild oberhalb des Headers */
 .header-image {
-    position: fixed; /* Fixierte Position, damit es immer oben bleibt */
-    top: 0; /* Bild direkt an den oberen Rand setzen */
-    left: 50%; /* Horizontale Zentrierung */
-    transform: translateX(-50%); /* Verschiebung nach links, um es zentriert zu halten */
-    width: 100vw; /* Breite des Bildes auf die gesamte Bildschirmbreite setzen */
-    height: auto; /* Automatische Höhe basierend auf der Breite */
+    position: absolute; /* Absolute Positionierung */
+    top: 0; /* An den oberen Rand setzen */
+    left: 50%; /* Zentrieren */
+    transform: translateX(-50%) translateY(0); /* Horizontale Zentrierung und vertikale Anpassung */
+    width: 100vw; /* Bild soll die gesamte Bildschirmbreite ausfüllen */
     max-height: 360px; /* Maximale Höhe von 360px */
-    z-index: -1; /* Bild hinter den Inhalt legen */
+    height: auto; /* Verhindert Verformung des Bildes */
+    z-index: -1; /* Das Bild bleibt im Hintergrund */
 }
 
 
