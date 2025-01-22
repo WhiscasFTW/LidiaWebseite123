@@ -1,18 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     const curtain = document.querySelector('.curtain');
     const button = document.querySelector('.intro-button');
-    
-    // Button wird nach einer kurzen Verzögerung sichtbar
+    const mainContent = document.querySelector('.main-content');
+
+    // Button sichtbar machen nach einer kurzen Verzögerung
     setTimeout(function () {
         button.classList.add('visible');
-    }, 4000); // Button wird nach 4 Sekunden sichtbar
+    }, 4000); // Button erscheint nach 4 Sekunden
 
-    // Klick-Ereignis für den Button
+    // Klick auf den Button
     button.addEventListener('click', function () {
-        // Vorhang öffnet sich, wenn der Button geklickt wird
+        // Vorhang öffnet sich
         curtain.classList.add('open');
         
-        // Verstecke den Button nach dem Klick
+        // Warte, bis der Vorhang vollständig geöffnet ist
+        setTimeout(function () {
+            // Hauptinhalt sichtbar machen
+            mainContent.classList.add('visible');
+        }, 1000); // Warte 1 Sekunde nach dem Öffnen des Vorhangs, um sicherzustellen, dass der Inhalt angezeigt wird
+
+        // Button ausblenden
         button.classList.remove('visible');
     });
 });
