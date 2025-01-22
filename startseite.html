@@ -18,26 +18,27 @@
             object-fit: cover;
         }
 
-        /* Navigation */
-        nav {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* Navigation Boxen */
+        .navigation-container {
             display: flex;
-            justify-content: space-around;
-            width: 60%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
+            justify-content: center;
+            margin-top: -50px; /* Positioniere die Boxen unterhalb des Bildes */
+            gap: 20px;
         }
-        nav a {
-            color: #fff;
+        .nav-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+        }
+        .nav-box a {
+            color: white;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
         }
-        nav a:hover {
+        .nav-box a:hover {
             text-decoration: underline;
         }
 
@@ -76,15 +77,16 @@
 <body>
     <header>
         <img src="assets/images/HeaderStart.png" alt="Header-Bild">
-        <!-- Navigation -->
-        <nav>
-            <a href="startseite.html">Startseite</a>
-            <a href="steckbrief.html">Steckbrief</a>
-            <a href="meinewerke.html">Meine Werke</a>
-            <a href="dienstleistungen.html">Dienstleistungen</a>
-            <a href="kontakt.html">Kontakt</a>
-        </nav>
     </header>
+
+    <!-- Navigation Boxen unter dem Header-Bild -->
+    <div class="navigation-container">
+        <div class="nav-box"><a href="startseite.html">Startseite</a></div>
+        <div class="nav-box"><a href="steckbrief.html">Steckbrief</a></div>
+        <div class="nav-box"><a href="meinewerke.html">Meine Werke</a></div>
+        <div class="nav-box"><a href="dienstleistungen.html">Dienstleistungen</a></div>
+        <div class="nav-box"><a href="kontakt.html">Kontakt</a></div>
+    </div>
 
     <!-- Hauptinhalt der Seite -->
     <div class="content">
