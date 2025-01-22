@@ -93,7 +93,7 @@ body, html {
 
 .rounded-image {
     width: 40vw; /* Intro-Bild kleiner gemacht */
-    border-radius: 8%; /* Abgerundete Ecken */
+    border-radius: 7%; /* Abgerundete Ecken */
 }
 
 .button-container {
@@ -125,7 +125,7 @@ body, html {
     .button-container {
         position: absolute;
         top: 45%; /* Button weiter nach unten verschoben */
-        left: 50%;
+        left: 54%;
         transform: translateX(-50%);
     }
 
