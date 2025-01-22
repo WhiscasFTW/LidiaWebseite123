@@ -25,5 +25,5 @@ body, html {
     background-image: url('assets/images/IntroName1.png'); /* Bild anpassen */
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Bild bleibt im Hintergrund */
+    z-index: 1; /* Bild in den Vordergrund setzen */
 }
