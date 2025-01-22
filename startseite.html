@@ -3,14 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Startseite</title>
-    <link rel="stylesheet" href="forms.css"> <!-- Verlinkung zur forms.css Datei -->
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
-    <!-- Hero-Bild ganz oben -->
+
+    <!-- Header mit Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="meinewerke.html">Meine Werke</a></li>
+                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+                <li><a href="steckbrief.html">Steckbrief</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-Bereich mit Bild -->
     <div class="header-image"></div>
 
-    <!-- Optionaler Text oder weitere Inhalte können hier folgen -->
+    <!-- Optionaler weiterer Inhalt kann hier hinzugefügt werden -->
+
+    <!-- JavaScript für die Animation des Vorhangs und des Buttons -->
+    <script>
+        // Vorhang öffnet sich nach einem kurzen Delay
+        setTimeout(function() {
+            document.querySelector('.curtain').classList.add('open');
+        }, 1000);
+
+        // Button nach einer kurzen Zeit sichtbar machen
+        setTimeout(function() {
+            document.querySelector('.intro-button').classList.add('visible');
+        }, 3000);
+    </script>
 
 </body>
 </html>
