@@ -92,24 +92,22 @@ body, html {
 }
 
 .rounded-image {
-    width: 38vw; /* Intro-Bild etwas größer */
-    border-radius: 8%; /* Abgerundete Ecken */
-    max-width: 320px; /* Begrenzte Maximalbreite */
+    width: 38vw; /* Dynamische Breite für Desktop */
+    aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
+    border-radius: 10%; /* Abgerundete Ecken */
 }
 
 .button-container {
     position: absolute;
-    top: 63%; /* Button etwas nach unten verschoben */
+    top: 65%; /* Button unter dem Bild */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird reduziert */
 .intro-button {
-    width: 40vw; /* Angepasste Breite */
-    max-width: 300px; /* Begrenzte Maximalbreite */
-    height: auto;
+    width: 20vw; /* Dynamische Breite für Desktop */
+    aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease;
@@ -121,40 +119,31 @@ body, html {
 
 /* Responsive Anpassungen */
 @media (max-width: 1024px) {
-    /* Für Laptops und Tablets */
     .rounded-image {
-        width: 42vw; /* Intro-Bild für kleinere Bildschirme */
-        max-width: 280px;
+        width: 42vw; /* Intro-Bild minimal größer auf kleineren Geräten */
     }
 
     .intro-button {
-        width: 35vw; /* Button kleiner für Laptops/Tablets */
-        max-width: 250px;
+        width: 25vw; /* Button proportional angepasst */
     }
 }
 
 @media (max-width: 768px) {
-    /* Für Smartphones im Hochformat */
     .rounded-image {
-        width: 48vw; /* Intro-Bild größer für Smartphones */
-        max-width: 260px;
+        width: 50vw; /* Intro-Bild auf Tablets angepasst */
     }
 
     .intro-button {
-        width: 30vw; /* Button an Smartphones angepasst */
-        max-width: 230px;
+        width: 30vw; /* Button größer auf Tablets */
     }
 }
 
 @media (max-width: 480px) {
-    /* Für sehr kleine Smartphones */
     .rounded-image {
-        width: 55vw; /* Intro-Bild weiter vergrößert */
-        max-width: 200px;
+        width: 55vw; /* Intro-Bild auf Smartphones angepasst */
     }
 
     .intro-button {
-        width: 28vw; /* Button für sehr kleine Geräte angepasst */
-        max-width: 200px;
+        width: 35vw; /* Button auf Smartphones proportional größer */
     }
 }
