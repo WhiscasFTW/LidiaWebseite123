@@ -7,68 +7,42 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <!-- Container für die Roll-Bilder (fullscreen) -->
-    <div class="fullscreen-container">
-        <!-- Reihe 1: Links rollendes Bild und rechts -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
-        </div>
-
-        <!-- Reihe 2 -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft3.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft4.png');"></div>
-        </div>
-        
-        <!-- Reihe 3 -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft5.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft6.png');"></div>
-        </div>
-    </div>
-
-    <!-- Vorhang (Schicht, die den Inhalt verdeckt) -->
+    <!-- Vorhang (Curtain) -->
     <div class="curtain"></div>
 
-    <!-- Intro-Bild mit Name (z.B. Logo oder Intro-Bild) -->
-    <div class="image-container">
-        <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
-    </div>
-
-    <!-- Button, der den Vorhang öffnet und den Inhalt sichtbar macht -->
-    <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button">
-    </div>
-
-    <!-- Der eigentliche Inhalt, wird nach dem Button-Klick sichtbar -->
+    <!-- Hauptinhalt, der nach dem Öffnen des Vorhangs sichtbar wird -->
     <div class="main-content">
-        <h1>Willkommen auf der Seite!</h1>
-        <p>Hier ist der Inhalt, der nach dem Klick auf den Button sichtbar wird.</p>
-        <p>Du kannst mehr über unser Projekt erfahren, und was du tun kannst, um uns zu unterstützen.</p>
+        <div class="fullscreen-container">
+            <!-- Reihe 1 -->
+            <div class="rolling-row">
+                <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
+                <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
+            </div>
+
+            <!-- Reihe 2 -->
+            <div class="rolling-row">
+                <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
+                <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
+            </div>
+
+            <!-- Reihe 3 -->
+            <div class="rolling-row">
+                <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
+                <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
+            </div>
+        </div>
+
+        <!-- Intro Name Bild -->
+        <div class="image-container">
+            <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
+        </div>
+
+        <!-- Mehr erfahren Button -->
+        <div class="button-container">
+            <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button">
+        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const curtain = document.querySelector('.curtain');
-            const button = document.querySelector('.intro-button');
-            const mainContent = document.querySelector('.main-content');
-
-            // Button sichtbar machen nach einer kurzen Verzögerung
-            setTimeout(function () {
-                button.classList.add('visible');
-            }, 4000); // Button erscheint nach 4 Sekunden
-
-            // Klick auf den Button
-            button.addEventListener('click', function () {
-                // Vorhang öffnet sich
-                curtain.classList.add('open');
-                // Hauptinhalt sichtbar machen
-                mainContent.classList.add('visible');
-                // Button ausblenden
-                button.classList.remove('visible');
-            });
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
