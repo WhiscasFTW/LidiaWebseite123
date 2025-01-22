@@ -18,7 +18,7 @@ body, html {
 /* Header-Bild oberhalb des Headers */
 .header-image {
     position: absolute; /* Absolute Positionierung */
-    top: 0; /* Kein Abstand nach oben */
+    top: 0; /* Das Bild bleibt ganz oben */
     left: 50%; /* Horizontale Zentrierung */
     transform: translateX(-50%); /* Zentrierung durch Verschiebung nach links um die eigene Breite */
     width: 100%; /* Bild nimmt die gesamte Breite des Bildschirms ein */
@@ -26,6 +26,7 @@ body, html {
     max-height: 360px; /* Maximale Höhe von 360px, um sicherzustellen, dass das Bild nicht zu hoch wird */
     z-index: -1; /* Das Bild hinter dem Inhalt positionieren */
 }
+
 
 /* Für kleinere Bildschirme wie Mobile */
 @media (max-width: 1024px) {
