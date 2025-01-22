@@ -42,12 +42,24 @@
             text-align: center;
             flex: 1; /* Jede Box nimmt den gleichen Platz ein */
             padding: 10px 0;
+            position: relative;
         }
 
         /* Leere Boxen an den äußeren Enden */
         .empty-box {
             flex: 1;
             background-color: #444; /* Gleiche Hintergrundfarbe wie die Boxen */
+        }
+
+        /* Strich unterteilt die Boxen */
+        .header-box:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 2px; /* Dicke des Striches */
+            background-color: #888; /* Farbe des Striches */
         }
 
         .header-box a {
