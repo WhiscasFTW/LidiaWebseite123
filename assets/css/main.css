@@ -1,21 +1,77 @@
-// Nach einer kurzen Verzögerung den Button sichtbar machen
-window.onload = function() {
-    setTimeout(function() {
-        // Button und Intro-Name-Bild erscheinen
-        document.querySelector('.intro-button').classList.add('visible');
-        document.querySelector('.image-container').style.display = 'block'; // sichtbar machen
-        document.querySelector('.button-container').style.display = 'block'; // sichtbar machen
-    }, 1000); // 1 Sekunde Verzögerung
-};
+/* ... anderer Code bleibt gleich */
 
-// Vorhang-Effekt
-document.getElementById('openCurtain').addEventListener('click', function() {
-    // Vorhang öffnet sich
-    document.getElementById('curtain').classList.add('open');
+/* Der Vorhang-Effekt */
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 3;
+    transform: translateY(-100%); /* Vorhang startet oben */
+    transition: transform 1s ease; /* sanfter Übergang */
+}
 
-    // Die Webseite nach dem Vorhang-Effekt ändern
-    setTimeout(function() {
-        document.getElementById('newContent').classList.add('visible'); // Dynamischer Inhalt wird sichtbar
-        document.getElementById('curtain').classList.remove('open'); // Vorhang entfernt
-    }, 1000); // 1 Sekunde Verzögerung
-});
+.curtain.open {
+    transform: translateY(0); /* Vorhang öffnet sich nach unten */
+}
+
+/* Intro-Bild und Button-Stile */
+.image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
+    z-index: 1; /* Höherer Z-Index für das Bild */
+    display: none; /* Starten als unsichtbar */
+}
+
+.rounded-image {
+    width: 40vw; /* Dynamische Breite */
+    height: auto; /* Verhindert Verformung */
+    border-radius: 10%; /* Abgerundete Ecken */
+}
+
+.button-container {
+    position: absolute;
+    top: 54%; /* Button um 1% weiter nach oben verschoben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Button über dem Bild */
+    display: none; /* Starten als unsichtbar */
+}
+
+/* Der Button wird dynamisch skaliert */
+.intro-button {
+    width: 22.4vw; /* Button um 2% größer */
+    height: auto; /* Vermeidet Verzerrung */
+    cursor: pointer;
+    opacity: 0; /* Button zu Beginn unsichtbar */
+    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
+    background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
+    color: white; /* Schrift weiß */
+    border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
+    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
+    animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
+}
+
+/* Button wird sichtbar */
+.intro-button.visible {
+    opacity: 1; /* Button wird sichtbar */
+}
+
+/* ... anderer Code bleibt gleich */
+
+/* Dynamischer Inhalt */
+.content {
+    display: none; /* Zu Beginn unsichtbar */
+    opacity: 0; /* Start mit unsichtbarem Inhalt */
+    transition: opacity 1s ease-in-out; /* Übergang zur Sichtbarkeit */
+}
+
+/* Sichtbar machen des Inhalts */
+.content.visible {
+    display: block;
+    opacity: 1; /* Voll sichtbar */
+}
