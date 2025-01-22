@@ -130,11 +130,12 @@ body, html {
     .intro-button {
         width: 41.4vw; /* Button um 15% größer auf mobilen Geräten */
         height: auto; /* Vermeidet Verzerrung */
+        aspect-ratio: 5 / 2; /* Entspricht dem Format der Desktop-Version */
     }
 
     /* Buttonposition für mobile Geräte weiter nach oben verschoben */
     .button-container {
-        top: 50%; /* Button weiter nach oben verschoben */
+        top: 58%; /* Button weiter nach oben verschoben (2% mehr) */
     }
 }
 
@@ -146,6 +147,7 @@ body, html {
 
     .intro-button {
         width: 34.5vw; /* Button anpassen */
+        aspect-ratio: 5 / 2; /* Entspricht dem Format der Desktop-Version */
     }
 }
 
@@ -157,5 +159,6 @@ body, html {
 
     .intro-button {
         width: 46vw; /* Button für sehr kleine Geräte */
+        aspect-ratio: 5 / 2; /* Entspricht dem Format der Desktop-Version */
     }
 }
