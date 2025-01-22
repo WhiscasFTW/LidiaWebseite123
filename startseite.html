@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,82 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fullscreen Animation</title>
     <link rel="stylesheet" href="assets/css/forms.css">
-    <style>
-        /* Vorhang-Effekt */
-        .curtain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: 3;
-            transform: translateX(-100%);
-            transition: transform 1s ease;
-        }
-
-        .curtain.open {
-            transform: translateX(0);
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="fullscreen-container">
-        <!-- Reihe 1 -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
-        </div>
-
-        <!-- Reihe 2 -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
-        </div>
-
-        <!-- Reihe 3 -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
-        </div>
+        <!-- Header Bild -->
+        <div class="header-image"></div>
     </div>
-
-    <!-- Intro Name Bild -->
-    <div class="image-container">
-        <img src="assets/images/IntroName1.png" alt="Intro Name" class="rounded-image">
-    </div>
-
-    <!-- Mehr erfahren Button -->
-    <div class="button-container">
-        <img src="assets/images/IntroNameButton.png" alt="Mehr erfahren" class="intro-button" id="openCurtain">
-    </div>
-
-    <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
-    <div class="curtain" id="curtain"></div>
 
     <script>
-        // Nach einer kurzen Verzögerung den Button sichtbar machen
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.intro-button').classList.add('visible');
-            }, 1000); // 1 Sekunde Verzögerung
-        }
-
-        // Vorhang-Effekt
-        document.getElementById('openCurtain').addEventListener('click', function() {
-            // Vorhang öffnet sich
-            document.getElementById('curtain').classList.add('open');
-
-            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-            setTimeout(function() {
-                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
-                window.location.href = 'startseite.html'; // Zielseite (kann beliebig geändert werden)
-            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
-        });
+        // Hier können weitere Skripte hinzugefügt werden, wenn notwendig.
     </script>
 </body>
 </html>
