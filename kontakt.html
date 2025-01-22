@@ -3,44 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktseite, um mit mir in Verbindung zu treten.">
     <title>Kontakt</title>
-    <link rel="stylesheet" href="assets/css/main.css"> <!-- Dein Haupt-CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header mit Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+                <li><a href="steckbrief.html">Steckbrief</a></li>
                 <li><a href="meinewerke.html">Meine Werke</a></li>
+                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main-Bereich -->
     <main>
-        <section>
-            <h1>Kontakt</h1>
-            <p>Du möchtest mit uns zusammenarbeiten oder hast Fragen? Schreib uns!</p>
-            <form action="mailto:info@deinunternehmen.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Nachricht:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Absenden</button>
-            </form>
-        </section>
+        <h1>Kontakt</h1>
+        <form action="submit-form.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Absenden</button>
+        </form>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lidia Grön. Alle Rechte vorbehalten.</p>
+        <p>2025 Max Müller</p>
     </footer>
-
-    <script src="assets/js/main.js"></script> <!-- Dein Haupt-JS -->
 </body>
 </html>
