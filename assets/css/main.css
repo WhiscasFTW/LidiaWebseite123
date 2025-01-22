@@ -82,21 +82,22 @@ body, html {
     }
 }
 
-/* Vorhang-Effekt */
+/* Vorhang (Overlay) */
 .curtain {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: 3;
-    transform: translateX(-100%);
-    transition: transform 1s ease;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
+/* Vorhang öffnen, wenn der Button geklickt wird */
 .curtain.open {
-    transform: translateX(0);
+    opacity: 0;
 }
 
 /* Intro-Bild und Button-Stile */
@@ -129,10 +130,10 @@ body, html {
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
-    background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
+    background-color: #66cc66; /* Grüner Farbton */
     color: white; /* Schrift weiß */
-    border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
-    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
+    border: 2px solid #66cc66; /* Rand ebenfalls mit grüner Farbe */
+    border-radius: 25px; /* Abgerundete Ecken für den Button */
     animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
 }
 
@@ -144,26 +145,25 @@ body, html {
 /* Farbverlauf bei Hover */
 .intro-button:hover {
     transform: scale(1.05); /* Button wird um 5% größer */
-    background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf mit halbierter Intensität */
+    background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf */
     color: white; /* Schrift bleibt weiß */
     border-color: #4d8b4d; /* Randfarbe beim Hover ebenfalls ändern */
     border-radius: 25px; /* Bleibt abgerundet beim Hover */
 }
 
-/* Animation der Farbänderung von grün nach blau */
-@keyframes colorChange {
-    0% {
-        background-color: #66cc66; /* Lime Green, halbiert */
-        border-color: #66cc66;
-    }
-    50% {
-        background-color: #4d8b4d; /* Dunkleres Grün mit halbierter Intensität */
-        border-color: #4d8b4d;
-    }
-    100% {
-        background-color: #6495ed; /* Steel Blue, halbierte Intensität */
-        border-color: #6495ed;
-    }
+/* Der Hauptinhalt wird nach dem Klick auf den Button sichtbar */
+.main-content {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 3;
+}
+
+.main-content.visible {
+    display: block; /* Sichtbar machen */
 }
 
 /* Desktop-Version */
@@ -173,31 +173,16 @@ body, html {
     }
 
     .intro-button {
-        width: 22.4vw; /* Button für Desktop um 2% größer */
+        width: 22.4vw; /* Button für Desktop */
         height: auto; /* Vermeidet Verzerrung */
     }
 
     .button-container {
-        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
+        top: 54%; /* Buttonposition für Desktop */
     }
 }
 
 /* Mobile-Version */
 @media (max-width: 1023px) {
-    /* Bild für mobile Geräte anpassen */
     .rounded-image {
-        width: 50vw; /* Bild auf mobilen Geräten größer */
-        height: auto;
-    }
-
-    /* Button auf mobilen Geräten anpassen */
-    .intro-button {
-        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
-        height: auto;
-    }
-
-    /* Buttonposition für mobile Geräte */
-    .button-container {
-        top: 59%; /* Button weiter nach oben für mobile Geräte */
-    }
-}
+        width
