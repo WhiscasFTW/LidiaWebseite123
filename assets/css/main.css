@@ -1,33 +1,28 @@
-body, html {
-    margin: 0; /* Entfernt alle Ränder */
-    padding: 0; /* Entfernt alle Innenabstände */
-    width: 100%; /* Die gesamte Breite wird genutzt */
-    height: 100%; /* Die gesamte Höhe wird genutzt */
-    overflow: hidden; /* Kein Scrollen erlaubt */
-    background-color: black;
+/* Setze sicher, dass HTML und Body keinen Abstand oder Ränder haben */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Verhindert Scrollen */
+    background-color: black; /* Hintergrundfarbe auf schwarz setzen */
 }
 
+/* Container für das Bild auf der Startseite */
 .fullscreen-container {
     display: flex;
-    flex-direction: column;
-    width: 100%; /* Die ganze Breite wird genutzt */
-    height: 100%; /* Die gesamte Höhe wird genutzt */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Bildschirmhöhe */
+    width: 100%;
 }
 
-.header-image {
-    position: fixed; /* Fixiert das Bild oben */
-    top: 0;
-    left: 50%;
-    transform: translateX(-100%); /* Zentriert das Bild horizontal */
+/* Das Bild im Container auf den gesamten Bildschirm anpassen */
+.fullscreen-image {
+    width: 100%;
     height: 100%;
-    width: 100%; /* Volle Breite */
-    max-height: 360px; /* Maximale Höhe des Bildes */
-    height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
-    z-index: -1; /* Bild hinter den anderen Inhalten */
+    object-fit: cover; /* Das Bild füllt den Bildschirm aus und bleibt proportional */
 }
-
-
-
 
 
 /* Für kleinere Bildschirme wie Mobile */
