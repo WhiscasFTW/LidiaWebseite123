@@ -92,22 +92,23 @@ body, html {
 }
 
 .rounded-image {
-    width: 41vw; /* Intro-Bild um 3% größer gemacht (vorher 40vw) */
+    width: 38vw; /* Dynamische Breite */
+    aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
     border-radius: 10%; /* Abgerundete Ecken */
 }
 
 .button-container {
     position: absolute;
-    top: 52%; /* Button weiter nach oben verschoben */
+    top: 60%; /* Button weiter nach unten verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird dreimal so groß */
+/* Der Button wird dynamisch skaliert */
 .intro-button {
-    width: 750px; /* Dreifache Breite (vorher 250px) */
-    height: auto;
+    width: 20vw; /* Dynamische Breite */
+    aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease;
@@ -121,39 +122,23 @@ body, html {
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     
-    .image-container,
-    .button-container {
-        position: absolute;
-        top: 60%; /* Button weiter nach unten verschoben */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* Position und Größe des Intro-Bildes anpassen */
     .rounded-image {
-        width: 60vw; /* Das Intro-Bild entsprechend angepasst */
-        border-radius: 12%; /* Rundung beibehalten */
+        width: 45vw; /* Bild auf Tablets anpassen */
     }
 
     .intro-button {
-        width: 500px; /* Button auf mobilen Geräten angepasst */
+        width: 30vw; /* Button anpassen */
     }
 }
 
 @media (max-width: 480px) {
     /* Für sehr kleine Bildschirme wie Handys */
     
-    .image-container,
-    .button-container {
-        top: 50%; /* Button höher verschoben */
-    }
-
     .rounded-image {
-        width: 70vw; /* Das Intro-Bild entsprechend vergrößert */
-        border-radius: 15%; /* Mehr abgerundete Ecken */
+        width: 50vw; /* Das Intro-Bild entsprechend vergrößert */
     }
 
     .intro-button {
-        width: 400px; /* Button für sehr kleine Geräte angepasst */
+        width: 40vw; /* Button für sehr kleine Geräte */
     }
 }
