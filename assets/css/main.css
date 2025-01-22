@@ -7,18 +7,15 @@ body, html {
     background-color: black;
 }
 
-/* Intro-Inhalt (Vorhang) */
-.intro-content {
-    display: block;
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Intro-Inhalt wird vor dem echten Inhalt angezeigt */
+    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
 }
 
-/* Reihe-Stil */
+/* Reihen-Stil */
 .rolling-row {
     display: flex;
     width: 200%; /* Platz für beide Bilder */
@@ -67,6 +64,15 @@ body, html {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0.8; /* Leicht sichtbar */
+    }
+    100% {
+        opacity: 1; /* Vollständig sichtbar */
+    }
+}
+
 @keyframes fadeFocus {
     0% {
         filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
@@ -76,30 +82,22 @@ body, html {
     }
 }
 
-@keyframes moveOut {
-    0% {
-        transform: translateX(0); /* Startposition */
-    }
-    100% {
-        transform: translateX(-100%); /* Aus dem Bild heraus bewegen */
-    }
-}
-
-/* Inhalt der "echten" Startseite */
-.real-content {
-    display: none; /* Zu Beginn ausgeblendet */
-    padding: 20px;
-    text-align: center;
-    color: white;
-    z-index: 2; /* Echt-Inhalt wird nach dem Intro sichtbar */
-}
-
 /* Intro-Bild und Button-Stile */
+.image-container {
+    position: relative;
+    z-index: 1; /* Höherer Z-Index für das Bild */
+}
+
+.rounded-image {
+    width: 40vw; /* Intro-Bild kleiner gemacht */
+    border-radius: 8%; /* Abgerundete Ecken */
+}
+
 .button-container {
     position: absolute;
-    top: 50%;
+    top: 54%; /* Button nach unten verschoben */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
@@ -115,15 +113,49 @@ body, html {
     opacity: 1; /* Button wird sichtbar */
 }
 
-/* Responsive Anpassungen */
+/* Hover-Effekt für den Button */
+.intro-button:hover {
+    transform: scale(1.1); /* Button wird etwas größer */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Ein sanfter Schatten wird hinzugefügt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Der Übergang dauert 0.3 Sekunden */
+}
+
+/* Responsive Anpassungen für kleinere Bildschirme */
 @media (max-width: 768px) {
+    /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
+    
+    .image-container,
+    .button-container {
+        position: absolute;
+        top: 45%; /* Button weiter nach unten verschoben */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .rounded-image {
+        width: 70vw; /* Das Intro-Bild ist auf kleineren Geräten größer */
+        border-radius: 11%; /* Rundung beibehalten */
+    }
+
     .intro-button {
-        width: 500px; /* Kleinere Button-Größe für kleinere Bildschirme */
+        width: 500px; /* Button auf mobilen Geräten noch größer */
     }
 }
 
 @media (max-width: 480px) {
+    /* Für sehr kleine Bildschirme wie Handys */
+    
+    .image-container,
+    .button-container {
+        top: 40%; /* Button weiter nach unten verschoben */
+    }
+
+    .rounded-image {
+        width: 80vw; /* Das Intro-Bild weiter vergrößern */
+        border-radius: 15%; /* Mehr abgerundete Ecken */
+    }
+
     .intro-button {
-        width: 400px; /* Noch kleinere Button-Größe */
+        width: 400px; /* Button für sehr kleine Geräte noch größer */
     }
 }
