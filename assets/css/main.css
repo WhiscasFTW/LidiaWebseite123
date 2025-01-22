@@ -12,6 +12,7 @@ body, html {
     flex-direction: column;
     width: 100%; /* Die ganze Breite wird genutzt */
     height: 100%; /* Die gesamte Höhe wird genutzt */
+    padding-top: 360px; /* Platz für das Header-Bild schaffen */
 }
 
 .header-image {
@@ -24,10 +25,6 @@ body, html {
     height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
     z-index: -1; /* Bild hinter den anderen Inhalten */
 }
-
-
-
-
 
 /* Für kleinere Bildschirme wie Mobile */
 @media (max-width: 1024px) {
@@ -222,4 +219,4 @@ body, html {
     .button-container {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
-}  
+}
