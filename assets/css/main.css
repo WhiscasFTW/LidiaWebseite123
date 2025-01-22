@@ -92,23 +92,23 @@ body, html {
 }
 
 .rounded-image {
-    width: 35vw; /* Dynamische Breite für Desktop */
+    width: 38vw; /* Intro-Bild etwas größer */
     border-radius: 8%; /* Abgerundete Ecken */
-    max-width: 300px; /* Begrenzte Maximalbreite für kleinere Bildschirme */
+    max-width: 320px; /* Begrenzte Maximalbreite */
 }
 
 .button-container {
     position: absolute;
-    top: 65%; /* Button etwas weiter unten */
+    top: 63%; /* Button etwas nach unten verschoben */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird dreimal so groß */
+/* Der Button wird reduziert */
 .intro-button {
-    width: 60vw; /* Dynamische Breite für Desktop */
-    max-width: 600px; /* Begrenzte Maximalbreite */
+    width: 40vw; /* Angepasste Breite */
+    max-width: 300px; /* Begrenzte Maximalbreite */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -123,38 +123,38 @@ body, html {
 @media (max-width: 1024px) {
     /* Für Laptops und Tablets */
     .rounded-image {
-        width: 40vw; /* Intro-Bild für kleinere Bildschirme */
-        max-width: 250px;
+        width: 42vw; /* Intro-Bild für kleinere Bildschirme */
+        max-width: 280px;
     }
 
     .intro-button {
-        width: 50vw; /* Button kleiner für Laptops/Tablets */
-        max-width: 500px;
+        width: 35vw; /* Button kleiner für Laptops/Tablets */
+        max-width: 250px;
     }
 }
 
 @media (max-width: 768px) {
     /* Für Smartphones im Hochformat */
     .rounded-image {
-        width: 50vw; /* Intro-Bild größer für Smartphones */
-        max-width: 220px;
+        width: 48vw; /* Intro-Bild größer für Smartphones */
+        max-width: 260px;
     }
 
     .intro-button {
-        width: 40vw; /* Button an Smartphones angepasst */
-        max-width: 400px;
+        width: 30vw; /* Button an Smartphones angepasst */
+        max-width: 230px;
     }
 }
 
 @media (max-width: 480px) {
     /* Für sehr kleine Smartphones */
     .rounded-image {
-        width: 60vw; /* Intro-Bild weiter vergrößert */
-        max-width: 180px;
+        width: 55vw; /* Intro-Bild weiter vergrößert */
+        max-width: 200px;
     }
 
     .intro-button {
-        width: 35vw; /* Button für sehr kleine Geräte angepasst */
-        max-width: 300px;
+        width: 28vw; /* Button für sehr kleine Geräte angepasst */
+        max-width: 200px;
     }
 }
