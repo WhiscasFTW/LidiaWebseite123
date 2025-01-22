@@ -33,6 +33,7 @@ html, body {
     height: 60px; /* Höhe des Balkens */
     background-color: #888;
     border-top: 2px solid #888; /* Sicherstellen, dass der Balken direkt unter dem Bild ist */
+    margin-top: 0; /* Kein Abstand zwischen Bild und Balken */
 }
 
 /* Leerer Strich auf der linken Seite */
@@ -69,8 +70,8 @@ html, body {
 }
 
 .header-box a:hover {
-    transform: scale(1.6); /* Schriftgröße um 60 % vergrößern */
-    font-size: 20px; /* Schriftgröße der Boxen auf 20px festgelegt */
+    transform: scale(1.1); /* Schriftgröße nur um 10 % vergrößern */
+    font-size: 19.8px; /* Neue Schriftgröße für den Hover-Effekt */
 }
 
 /* Footer */
