@@ -16,6 +16,7 @@ body, html {
     transform: translateX(-50%);
     color: white;
     z-index: 3;
+    width: 100%; /* Stelle sicher, dass es die volle Breite nutzt */
 }
 
 /* Fullscreen Container */
@@ -25,12 +26,13 @@ body, html {
     width: 100vw;
     height: 100vh;
     animation: fadeIn 8s ease-in-out forwards;
+    position: relative; /* Füge Position hinzu */
 }
 
 /* Reihen-Stil */
 .rolling-row {
     display: flex;
-    width: 200%; /* Platz für beide Bilder */
+    width: 100%; /* Jedes Bild nimmt die volle Breite ein */
     height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
     overflow: hidden;
