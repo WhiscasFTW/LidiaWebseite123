@@ -10,12 +10,18 @@ body, html {
 /* Header-Bild */
 .header-image {
     position: absolute;
-    top: -50px; /* Positioniert das Bild oberhalb des Headers */
+    top: -100px; /* Bild wird oberhalb des Headers platziert */
     left: 50%;
     transform: translateX(-50%); /* Zentriert das Bild horizontal */
-    width: 100%; /* Bild über die gesamte Breite */
+    width: 100%; /* Bild nimmt die volle Breite des Viewports ein */
     height: auto;
-    z-index: -1; /* Bild bleibt hinter allen anderen Inhalten */
+    z-index: -1; /* Das Bild bleibt hinter allen anderen Inhalten */
+}
+
+/* Header */
+header {
+    position: relative;
+    z-index: 1; /* Header bleibt über dem Bild */
 }
 
 /* Allgemeine Stile */
