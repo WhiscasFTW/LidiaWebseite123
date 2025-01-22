@@ -1,22 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('.intro-button');
-    const newPage = document.querySelector('.new-page');
-    const closeButton = document.querySelector('.close-button');
-
-    // Button sichtbar machen nach einer kurzen Verzögerung
-    setTimeout(function () {
-        button.classList.add('visible');
-    }, 4000); // Button erscheint nach 4 Sekunden
-
-    // Klick auf den Button
-    button.addEventListener('click', function () {
-        // Neue Seite sichtbar machen
-        newPage.classList.add('visible');
-    });
-
-    // Klick auf den Schließen-Button der neuen Seite
-    closeButton.addEventListener('click', function () {
-        // Neue Seite ausblenden
-        newPage.classList.remove('visible');
-    });
-});
+function openWebsite() {
+    // Entferne den Vorhang, um die echte Website zu zeigen
+    const curtain = document.querySelector('.curtain');
+    curtain.style.height = '0';  // Vorhang öffnet sich (Höhe auf 0 setzen)
+    
+    // Nach einer Verzögerung (damit der Vorhang gut aussieht), die Website anzeigen
+    setTimeout(() => {
+        window.location.href = 'https://deine-eigentliche-website.com';  // Ersetze mit der tatsächlichen URL
+    }, 1000);  // Warten Sie 1 Sekunde, bevor die Seite wechselt
+}
