@@ -2,28 +2,84 @@
 body, html {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Kein Scrollen */
+    overflow-x: hidden; /* Kein horizontaler Scrollbalken */
     height: 100%;
     background-color: black;
 }
 
+/* Header-Bild */
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Bild über die gesamte Breite */
+    height: auto;
+    z-index: -1; /* Bild bleibt hinter allen anderen Inhalten */
+}
+
+/* Allgemeine Stile */
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Main-Inhalte */
+main {
+    position: relative;
+    z-index: 1; /* Stellt sicher, dass der Main-Bereich vor dem Bild liegt */
+    padding: 20px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: #66cc66;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #4d8b4d;
+}
+
+/* Weitere Stile für andere Inhalte und Animationen */
+
+/* Hintergrund für die Seite */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
-}
-
-/* Header-Bild */
-.header-image {
-    position: fixed; /* Über allem */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Vollbreite */
-    height: 100vh; /* Vollhöhe */
-    object-fit: cover; /* Bild wird proportional skaliert und zentriert */
-    z-index: 1000; /* Ganz vorne */
 }
 
 /* Reihen-Stil */
