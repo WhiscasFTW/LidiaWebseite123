@@ -10,6 +10,19 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px; /* Stellt sicher, dass das Bild die alte Größe behält */
+    max-height: 360px;
+}
+
 /* Header-Stil */
 .site-header {
     position: relative;
@@ -17,13 +30,10 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 360px; /* Höhe des Header-Bereichs */
-    background-image: url('assets/images/header-image.jpg'); /* Dein Bild */
-    background-size: cover;
-    background-position: center;
+    background-color: #333; /* Hintergrundfarbe für den Header */
+    padding: 20px;
     color: white;
     text-align: center;
-    padding: 20px;
 }
 
 .site-header .logo-container {
@@ -35,8 +45,6 @@ html, body {
 }
 
 .site-header .navigation {
-    position: absolute;
-    bottom: 10px;
     width: 100%;
 }
 
@@ -63,7 +71,7 @@ html, body {
 /* Für kleinere Bildschirme (Responsive) */
 @media (max-width: 768px) {
     .site-header {
-        height: 250px; /* Geringere Höhe auf kleinen Bildschirmen */
+        height: auto;
     }
 
     .site-header .navigation ul {
