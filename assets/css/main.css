@@ -120,8 +120,13 @@ body, html {
 
 /* Responsive Anpassungen */
 @media (max-width: 1024px) {
+    .fullscreen-container {
+        display: block; /* Damit die ganze Struktur nicht verzerrt wird */
+        height: 100%;
+    }
+
     .rounded-image {
-        width: 42vw; /* Intro-Bild minimal größer auf kleineren Geräten */
+        width: 45vw; /* Intro-Bild minimal größer auf kleineren Geräten */
         height: auto; /* Automatische Höhe für das richtige Seitenverhältnis */
     }
 
@@ -131,6 +136,11 @@ body, html {
 }
 
 @media (max-width: 768px) {
+    .fullscreen-container {
+        display: block;
+        height: 100%;
+    }
+
     .rounded-image {
         width: 50vw; /* Intro-Bild auf Tablets angepasst */
         height: auto; /* Automatische Höhe */
@@ -142,6 +152,11 @@ body, html {
 }
 
 @media (max-width: 480px) {
+    .fullscreen-container {
+        display: block;
+        height: 100%;
+    }
+
     .rounded-image {
         width: 55vw; /* Intro-Bild auf Smartphones angepasst */
         height: auto; /* Automatische Höhe */
