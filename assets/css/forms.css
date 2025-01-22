@@ -30,10 +30,10 @@ html, body {
 .header-box-container {
     display: flex;
     width: 100%;
-    height: 60px; /* Balken um 20px kleiner */
+    height: 55px; /* Balken um 5px kleiner (jetzt 55px) */
     background-color: #888;
     border-top: 0; /* Entfernt den oberen Rand, damit der Balken direkt an das Bild anliegt */
-    margin-top: -5px; /* Balken um 10px näher ans Bild schieben */
+    margin-top: -5px; /* Balken um 5px näher ans Bild schieben */
 }
 
 /* Leerer Strich auf der linken Seite */
@@ -70,8 +70,8 @@ html, body {
 }
 
 .header-box a:hover {
-    transform: scale(1.1); /* Schriftgröße nur um 10 % vergrößern */
-    font-size: 19.8px; /* Neue Schriftgröße für den Hover-Effekt */
+    transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
+    font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
 }
 
 /* Footer */
