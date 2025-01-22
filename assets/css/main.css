@@ -7,37 +7,15 @@ body, html {
     background-color: black;
 }
 
-/* Vorhang (Overlay) */
-.curtain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 1s ease;
-}
-
-/* Vorhang öffnen, wenn der Button geklickt wird */
-.curtain.open {
-    opacity: 0;
-}
-
-/* Hauptinhalt, der nach dem Öffnen des Vorhangs sichtbar wird */
+/* Hauptinhalt */
 .main-content {
-    display: none;
+    display: block;
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
     z-index: 3;
-}
-
-.main-content.visible {
-    display: block; /* Sichtbar machen */
 }
 
 /* Fullscreen Container */
@@ -183,38 +161,34 @@ body, html {
     }
 }
 
-/* Desktop-Version */
-@media (min-width: 1024px) {
-    .rounded-image {
-        width: 40vw; /* Originalgröße für Desktop */
-    }
-
-    .intro-button {
-        width: 22.4vw; /* Button für Desktop um 2% größer */
-        height: auto; /* Vermeidet Verzerrung */
-    }
-
-    .button-container {
-        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
-    }
+/* Neue Seite */
+.new-page {
+    display: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 50px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
 }
 
-/* Mobile-Version */
-@media (max-width: 1023px) {
-    /* Bild für mobile Geräte anpassen */
-    .rounded-image {
-        width: 50vw; /* Bild auf mobilen Geräten größer */
-        height: auto;
-    }
+.new-page.visible {
+    display: block; /* Sichtbar machen */
+}
 
-    /* Button auf mobilen Geräten anpassen */
-    .intro-button {
-        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
-        height: auto;
-    }
+.close-button {
+    background-color: #66cc66;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
-    /* Buttonposition für mobile Geräte */
-    .button-container {
-        top: 59%; /* Button weiter nach oben für mobile Geräte */
-    }
+.close-button:hover {
+    background-color: #4d8b4d;
 }
