@@ -7,14 +7,6 @@ body, html {
     background-color: black;
 }
 
-/* Header-Bild */
-.header-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px; /* Optionaler Abstand zwischen dem Bild und dem restlichen Inhalt */
-}
-
 .fullscreen-container {
     display: flex;
     flex-direction: column;
@@ -208,4 +200,17 @@ body, html {
     .button-container {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
+}
+
+/* Header-Bild */
+.header-image {
+    width: 100vw; /* Deckt die gesamte Breite des Viewports ab */
+    height: auto; /* Beibehaltung der Proportionen */
+    position: fixed; /* Fest positioniert, bleibt über allem */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Hoher Z-Index, um über allem zu liegen */
+    margin: 0; /* Entfernt mögliche Ränder */
+    padding: 0; /* Entfernt mögliche Innenabstände */
+    transform: translateX(0); /* Zentriert horizontal */
 }
