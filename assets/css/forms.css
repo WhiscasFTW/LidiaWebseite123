@@ -8,6 +8,9 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Bild-Container für das Header-Bild */
@@ -19,7 +22,7 @@ html, body {
 .header-image {
     width: 100%;
     height: auto;
-    max-width: 2560px; /* Stellt sicher, dass das Bild die alte Größe behält */
+    max-width: 2560px;
     max-height: 360px;
 }
 
@@ -27,7 +30,7 @@ html, body {
 .header-box-container {
     display: flex;
     width: 100%;
-    height: 60px;  /* Vergrößert die Höhe des gesamten Containers */
+    height: 60px;
     background-color: #888;
 }
 
@@ -46,8 +49,8 @@ html, body {
     text-align: center;
     border-right: 2px solid #888;
     position: relative;
-    padding: 15px 0;  /* Vergrößert den Abstand und damit die Hitbox */
-    font-size: 20px;   /* Größere Schriftgröße für eine bessere Lesbarkeit */
+    padding: 15px 0;
+    font-size: 20px;
 }
 
 /* Letzte Box ohne rechten Strich */
@@ -59,14 +62,34 @@ html, body {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    display: block;  /* Macht den gesamten Bereich der Box klickbar */
-    width: 100%;     /* Stellt sicher, dass der Link den gesamten Boxbereich ausfüllt */
-    transition: transform 0.3s ease, font-size 0.3s ease; /* Sanfter Übergang für die Transformation */
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 .header-box a:hover {
-    transform: scale(1.1); /* Vergrößert den Text um 10% */
+    transform: scale(1.1); /* Vergrößert den Text */
     font-size: 20px; /* Vergrößert die Schriftgröße */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Für kleinere Bildschirme (Responsive) */
