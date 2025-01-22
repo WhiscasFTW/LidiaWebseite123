@@ -1,3 +1,4 @@
+/* Entfernt Ränder und Innenabstände für die gesamte Seite */
 body, html {
     margin: 0; /* Entfernt alle Ränder */
     padding: 0; /* Entfernt alle Innenabstände */
@@ -7,6 +8,7 @@ body, html {
     background-color: black;
 }
 
+/* Container für das Bild auf der Startseite */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
@@ -14,21 +16,18 @@ body, html {
     height: 100%; /* Die gesamte Höhe wird genutzt */
 }
 
+/* Stil für das Bild */
 .header-image {
     position: fixed; /* Fixiert das Bild oben */
     top: 0;
     left: 50%;
-    transform: translateX(-100%); /* Zentriert das Bild horizontal */
+    transform: translateX(-50%); /* Zentriert das Bild horizontal */
     height: 100%;
     width: 100%; /* Volle Breite */
     max-height: 360px; /* Maximale Höhe des Bildes */
     height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
     z-index: -1; /* Bild hinter den anderen Inhalten */
 }
-
-
-
-
 
 /* Für kleinere Bildschirme wie Mobile */
 @media (max-width: 1024px) {
@@ -38,7 +37,7 @@ body, html {
     }
 }
 
-/* Reihen-Stil */
+/* Reihen-Stil für andere Inhalte */
 .rolling-row {
     display: flex;
     width: 200%; /* Platz für beide Bilder */
@@ -223,4 +222,4 @@ body, html {
     .button-container {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
     }
-}  
+}
