@@ -1,134 +1,112 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/forms.css">
-    <style>
-        /* Allgemeine Reset-Einstellungen */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Allgemeine Reset-Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html, body {
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        /* Bild-Container für das Header-Bild */
-        .header-image-container {
-            text-align: center;
-            margin-bottom: 0;
-        }
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
+}
 
-        .header-image {
-            width: 100%;
-            height: auto;
-            max-width: 2560px; /* Stellt sicher, dass das Bild die alte Größe behält */
-            max-height: 360px;
-        }
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
 
-        /* Header-Balken direkt unter dem Bild */
-        .site-header {
-            width: 100%;
-            height: 60px; /* Höhe des Balkens */
-            background-color: #333; /* Dunkle Hintergrundfarbe */
-            color: white;
-            text-align: center;
-            line-height: 60px; /* Vertikale Zentrierung des Textes */
-            font-size: 18px;
-            font-weight: bold;
-            position: relative;
-            top: -5px; /* Platzierung direkt unter dem Bild */
-        }
+/* Header-Boxen */
+.header-box-container {
+    display: flex;
+    width: 100%;
+    height: 55px; /* Balken um 5px kleiner (jetzt 55px) */
+    background-color: #888;
+    border-top: 0; /* Entfernt den oberen Rand, damit der Balken direkt an das Bild anliegt */
+    margin-top: -5px; /* Balken um 5px näher ans Bild schieben */
+}
 
-        /* Navigation */
-        nav {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: space-around;
-            width: 60%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
-        }
+/* Leerer Strich auf der linken Seite */
+.header-box-left {
+    width: 2px;
+    background-color: #888;
+}
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
+/* Boxen für Navigationseinträge */
+.header-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 2px solid #888;
+    position: relative;
+    padding: 15px 0;
+    font-size: 20px;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+/* Letzte Box ohne rechten Strich */
+.header-box:last-child {
+    border-right: none;
+}
 
-        /* Footer */
-        .site-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .site-footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .site-footer a:hover {
-            text-decoration: underline;
-        }
+.header-box a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
 
-        /* Sicherstellen, dass der Footer immer am unteren Rand bleibt */
-        body {
-            margin: 0;
-            padding-bottom: 50px; /* Platz für den Footer */
-        }
-    </style>
-</head>
-<body>
-    <!-- Header-Bereich -->
-    <header>
-        <div class="header-image-container">
-            <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
-        </div>
-    </header>
+.header-box a:hover {
+    transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
+    font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
+}
 
-    <!-- Header-Balken direkt unter dem Bild -->
-    <div class="site-header">
-        Deine Navigation oder Text hier
-    </div>
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
 
-    <!-- Navigation -->
-    <nav>
-        <a href="startseite.html">Startseite</a>
-        <a href="steckbrief.html">Steckbrief</a>
-        <a href="meinewerke.html">Meine Werke</a>
-        <a href="dienstleistungen.html">Dienstleistungen</a>
-        <a href="kontakt.html">Kontakt</a>
-    </nav>
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <!-- Hauptinhalt der Seite -->
-    <div class="content">
-        <h1>Willkommen auf der Startseite!</h1>
-        <p>Hier ist der Inhalt deiner Startseite.</p>
-    </div>
+footer a:hover {
+    text-decoration: underline;
+}
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
-        </div>
-    </footer>
-</body>
-</html>
+/* Für kleinere Bildschirme (Responsive) */
+@media (max-width: 768px) {
+    .header-box-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header-box {
+        border-right: none;
+        border-bottom: 2px solid #888;
+    }
+
+    .header-box a {
+        font-size: 16px;
+    }
+}
