@@ -41,6 +41,8 @@
             font-weight: bold;
             color: white;
             animation: rainbow-animation 5s linear infinite; /* Animation hinzufügen */
+            position: relative;
+            top: -5px; /* Stelle sicher, dass der Balken direkt unter dem Bild liegt */
         }
 
         /* RGB Regenbogenanimation */
@@ -69,6 +71,31 @@
             100% {
                 background-color: rgb(255, 0, 0); /* Zurück zu Rot */
             }
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -107,6 +134,15 @@
     <div class="header-bar">
         Deine Navigation oder Text hier
     </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="startseite.html">Startseite</a>
+        <a href="steckbrief.html">Steckbrief</a>
+        <a href="meinewerke.html">Meine Werke</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
 
     <!-- Hauptinhalt der Seite -->
     <div class="content">
