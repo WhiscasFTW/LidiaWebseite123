@@ -1,6 +1,7 @@
 // Nach einer kurzen Verzögerung den Button sichtbar machen
 window.onload = function() {
     setTimeout(function() {
+        // Button und Intro-Name-Bild erscheinen
         document.querySelector('.intro-button').classList.add('visible');
         document.querySelector('.image-container').classList.remove('hidden');
         document.querySelector('.button-container').classList.remove('hidden');
