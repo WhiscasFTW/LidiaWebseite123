@@ -5,103 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
     <link rel="stylesheet" href="assets/css/forms.css">
-    <style>
-        /* Header-Bereich */
-        header {
-            position: relative;
-            width: 100%;
-            height: 360px;
-        }
-        header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Header-Boxen */
-        .header-box-container {
-            display: flex;
-            width: 100%;
-            height: 50px;
-            background-color: #888;
-        }
-
-        /* Leerer Strich auf der linken Seite */
-        .header-box-left {
-            width: 2px;
-            background-color: #888;
-        }
-
-        .header-box {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border-right: 2px solid #888;
-            position: relative;
-        }
-
-        /* Letzte Box ohne rechten Strich */
-        .header-box:last-child {
-            border-right: none;
-        }
-
-        .header-box a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .header-box a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .site-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .site-footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .site-footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="assets/images/HeaderStart.png" alt="Header-Bild">
+        <div class="header-image-container">
+            <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
+        </div>
+        <!-- Header Boxen -->
+        <div class="header-box-container">
+            <!-- Leerer Bereich links -->
+            <div class="header-box-left"></div>
+            
+            <!-- Navigationseinträge -->
+            <div class="header-box">
+                <a href="startseite.html">Startseite</a>
+            </div>
+            <div class="header-box">
+                <a href="steckbrief.html">Steckbrief</a>
+            </div>
+            <div class="header-box">
+                <a href="meinewerke.html">Meine Werke</a>
+            </div>
+            <div class="header-box">
+                <a href="dienstleistungen.html">Dienstleistungen</a>
+            </div>
+            <div class="header-box">
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            
+            <!-- Leerer Bereich rechts -->
+            <div class="header-box-left"></div>
+        </div>
     </header>
 
-    <!-- Header Boxen -->
-    <div class="header-box-container">
-        <!-- Leerer Strich auf der linken Seite -->
-        <div class="header-box-left"></div>
-
-        <div class="header-box">
-            <a href="startseite.html">Startseite</a>
-        </div>
-        <div class="header-box">
-            <a href="steckbrief.html">Steckbrief</a>
-        </div>
-        <div class="header-box">
-            <a href="meinewerke.html">Meine Werke</a>
-        </div>
-        <div class="header-box">
-            <a href="dienstleistungen.html">Dienstleistungen</a>
-        </div>
-        <div class="header-box">
-            <a href="kontakt.html">Kontakt</a>
-        </div>
+    <!-- Hauptinhalt der Seite -->
+    <div class="content">
+        <h1>Willkommen auf der Startseite!</h1>
+        <p>Hier ist der Inhalt deiner Startseite.</p>
     </div>
 
     <!-- Footer -->
