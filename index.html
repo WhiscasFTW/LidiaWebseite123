@@ -4,29 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fullscreen Animation</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <style>
-        /* Vorhang-Effekt */
-        .curtain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: 3;
-            transform: translateX(-100%);
-            transition: transform 1s ease;
-        }
-
-        .curtain.open {
-            transform: translateX(0);
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div class="fullscreen-container">
@@ -62,25 +40,12 @@
     <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
     <div class="curtain" id="curtain"></div>
 
-    <script>
-        // Nach einer kurzen Verzögerung den Button sichtbar machen
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.intro-button').classList.add('visible');
-            }, 1000); // 1 Sekunde Verzögerung
-        }
+    <!-- Dynamischer Inhalt -->
+    <div class="content" id="newContent">
+        <!-- Dynamischer Inhalt -->
+        <h1>Willkommen auf der neuen Seite!</h1>
+    </div>
 
-        // Vorhang-Effekt
-        document.getElementById('openCurtain').addEventListener('click', function() {
-            // Vorhang öffnet sich
-            document.getElementById('curtain').classList.add('open');
-
-            // Die eigentliche Webseite nach dem Vorhang-Effekt laden
-            setTimeout(function() {
-                // Hier könnte der Übergang zur echten Webseite sein, zum Beispiel:
-                window.location.href = 'webseite.html'; // Zielseite (kann beliebig geändert werden)
-            }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
-        });
-    </script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
