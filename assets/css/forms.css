@@ -18,6 +18,18 @@ body, html {
     overflow: hidden; /* Kein Scrollen erlaubt */
     background-color: black;
 }
+/* Entfernt Standard-Margen und -Paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Für konsistente Größenberechnungen */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
 
 .fullscreen-container {
     display: flex;
