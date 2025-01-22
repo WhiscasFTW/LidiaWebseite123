@@ -1,85 +1,41 @@
-/* Allgemeine Stile */
+/* Allgemeine Stile für die Seite */
 body, html {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Kein Scrollen */
     height: 100%;
-    background-color: black;
+    background-color: white;
 }
 
-.fullscreen-container {
+/* Navigationsleiste oben */
+.navbar {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    animation: fadeIn 8s ease-in-out forwards; /* Einblendung */
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-/* Reihen-Stil */
-.rolling-row {
-    display: flex;
-    width: 200%; /* Platz für beide Bilder */
-    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
-    position: relative;
-    overflow: hidden;
-    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    animation: fadeFocus 4s ease-in-out forwards; /* Übergang zu klar und hell */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 14px 20px;
+    text-align: center;
 }
 
-/* Obere und untere Reihe rollen nach links */
-.rolling-row:nth-child(1),
-.rolling-row:nth-child(3) {
-    animation: roll-left 50s linear infinite, fadeFocus 4s ease-in-out forwards;
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
 }
 
-/* Mittlere Reihe rollt nach rechts */
-.rolling-row:nth-child(2) {
-    animation: roll-right 60s linear infinite, fadeFocus 4s ease-in-out forwards;
-}
-
-/* Bild-Stil */
-.rolling-image {
-    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Animationen */
-@keyframes roll-left {
-    0% {
-        transform: translateX(0); /* Startposition */
-    }
-    100% {
-        transform: translateX(-50%); /* Eine Bildbreite nach links */
-    }
-}
-
-@keyframes roll-right {
-    0% {
-        transform: translateX(-50%); /* Start mit zweitem Bild */
-    }
-    100% {
-        transform: translateX(0); /* Zurück zum ersten Bild */
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0.8; /* Leicht sichtbar */
-    }
-    100% {
-        opacity: 1; /* Vollständig sichtbar */
-    }
-}
-
-@keyframes fadeFocus {
-    0% {
-        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
-    }
-    100% {
-        filter: blur(0px) brightness(1); /* Klar und normal hell */
-    }
+/* Content-Bereich */
+.content {
+    padding: 20px;
+    margin-top: 60px; /* Damit der Content nicht unter der Navbar versteckt wird */
 }
 
 /* Vorhang-Effekt */
@@ -99,105 +55,13 @@ body, html {
     transform: translateX(0);
 }
 
-/* Intro-Bild und Button-Stile */
-.image-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
-    z-index: 1; /* Höherer Z-Index für das Bild */
-}
-
-.rounded-image {
-    width: 40vw; /* Dynamische Breite */
-    height: auto; /* Verhindert Verformung */
-    border-radius: 10%; /* Abgerundete Ecken */
-}
-
-.button-container {
-    position: absolute;
-    top: 54%; /* Button um 1% weiter nach oben verschoben */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Button über dem Bild */
-}
-
-/* Der Button wird dynamisch skaliert */
-.intro-button {
-    width: 22.4vw; /* Button um 2% größer */
-    height: auto; /* Proportionale Höhe */
-    cursor: pointer;
-    opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
-    background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
-    color: white; /* Schrift weiß */
-    border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
-    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
-    animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
-}
-
-/* Button wird sichtbar */
-.intro-button.visible {
-    opacity: 1; /* Button wird sichtbar */
-}
-
-/* Farbverlauf bei Hover */
-.intro-button:hover {
-    transform: scale(1.05); /* Button wird um 5% größer */
-    background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf mit halbierter Intensität */
-    color: white; /* Schrift bleibt weiß */
-    border-color: #4d8b4d; /* Randfarbe beim Hover ebenfalls ändern */
-    border-radius: 25px; /* Bleibt abgerundet beim Hover */
-}
-
-/* Animation der Farbänderung von grün nach blau */
-@keyframes colorChange {
-    0% {
-        background-color: #66cc66; /* Lime Green, halbiert */
-        border-color: #66cc66;
-    }
-    50% {
-        background-color: #4d8b4d; /* Dunkleres Grün mit halbierter Intensität */
-        border-color: #4d8b4d;
-    }
-    100% {
-        background-color: #6495ed; /* Steel Blue, halbierte Intensität */
-        border-color: #6495ed;
-    }
-}
-
-/* Desktop-Version */
-@media (min-width: 1024px) {
-    .rounded-image {
-        width: 40vw; /* Originalgröße für Desktop */
+/* Für mobile Geräte: Das Menü soll gut sichtbar sein */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
     }
 
-    .intro-button {
-        width: 22.4vw; /* Button für Desktop um 2% größer */
-        height: auto; /* Vermeidet Verzerrung */
-    }
-
-    .button-container {
-        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
-    }
-}
-
-/* Mobile-Version */
-@media (max-width: 1023px) {
-    /* Bild für mobile Geräte anpassen */
-    .rounded-image {
-        width: 50vw; /* Bild auf mobilen Geräten größer */
-        height: auto;
-    }
-
-    /* Button auf mobilen Geräten anpassen */
-    .intro-button {
-        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
-        height: auto;
-    }
-
-    /* Buttonposition für mobile Geräte */
-    .button-container {
-        top: 59%; /* Button weiter nach oben für mobile Geräte */
+    .navbar a {
+        padding: 10px;
     }
 }
