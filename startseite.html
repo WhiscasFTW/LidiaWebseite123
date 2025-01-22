@@ -40,7 +40,7 @@
             height: 55px; /* Balken um 5px kleiner (jetzt 55px) */
             background-color: #888;
             border-top: 0; /* Entfernt den oberen Rand, damit der Balken direkt an das Bild anliegt */
-            margin-top: -5px; /* Balken um 5px näher ans Bild schieben */
+            margin-top: -10px; /* Balken um 10px näher ans Bild schieben */
             justify-content: space-evenly;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
             background-size: 210% 100%;
@@ -64,7 +64,6 @@
             position: relative;
             padding: 15px 0;
             font-size: 20px;
-            color: white;
         }
 
         /* Letzte Box ohne rechten Strich */
@@ -72,7 +71,6 @@
             border-right: none;
         }
 
-        /* Link in den Boxen */
         .header-box a {
             color: white;
             text-decoration: none;
@@ -82,7 +80,6 @@
             transition: transform 0.3s ease, font-size 0.3s ease;
         }
 
-        /* Hover-Effekt für Links */
         .header-box a:hover {
             transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
             font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
@@ -108,19 +105,6 @@
             text-decoration: underline;
         }
 
-        /* Regenbogen-Animation */
-        @keyframes rainbow {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 0%;
-            }
-            100% {
-                background-position: 0% 0%;
-            }
-        }
-
         /* Für kleinere Bildschirme (Responsive) */
         @media (max-width: 768px) {
             .header-box-container {
@@ -137,33 +121,50 @@
                 font-size: 16px;
             }
         }
+
+        /* Regenbogen-Hintergrund-Animation */
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Header-Bereich -->
-    <header>
-        <div class="header-image-container">
-            <img src="assets/images/HeaderStart.png" alt="Header-Bild" class="header-image">
-        </div>
-    </header>
+    <!-- Bild-Container für das Header-Bild -->
+    <div class="header-image-container">
+        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
+    </div>
 
-    <!-- Header-Boxen unter dem Bild -->
+    <!-- Header-Balken mit den Boxen -->
     <div class="header-box-container">
         <div class="header-box-left"></div>
-        <div class="header-box"><a href="startseite.html">Startseite</a></div>
-        <div class="header-box"><a href="steckbrief.html">Steckbrief</a></div>
-        <div class="header-box"><a href="meinewerke.html">Meine Werke</a></div>
-        <div class="header-box"><a href="dienstleistungen.html">Dienstleistungen</a></div>
-        <div class="header-box"><a href="kontakt.html">Kontakt</a></div>
+        <div class="header-box">
+            <a href="startseite.html">Startseite</a>
+        </div>
+        <div class="header-box">
+            <a href="steckbrief.html">Steckbrief</a>
+        </div>
+        <div class="header-box">
+            <a href="meinewerke.html">Meine Werke</a>
+        </div>
+        <div class="header-box">
+            <a href="dienstleistungen.html">Dienstleistungen</a>
+        </div>
+        <div class="header-box">
+            <a href="kontakt.html">Kontakt</a>
+        </div>
         <div class="header-box-left"></div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
-        </div>
+        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
 
 </body>
