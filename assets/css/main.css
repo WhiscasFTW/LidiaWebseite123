@@ -7,6 +7,15 @@ body, html {
     background-color: black;
 }
 
+/* Header-Bild */
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Abstand zwischen Bild und Inhalt */
+}
+
+/* Fullscreen-Container */
 .fullscreen-container {
     display: flex;
     flex-direction: column;
@@ -97,73 +106,6 @@ body, html {
 
 .curtain.open {
     transform: translateX(0);
-}
-
-/* Intro-Bild und Button-Stile */
-.image-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
-    z-index: 1; /* Höherer Z-Index für das Bild */
-}
-
-.rounded-image {
-    width: 40vw; /* Dynamische Breite */
-    height: auto; /* Verhindert Verformung */
-    border-radius: 10%; /* Abgerundete Ecken */
-}
-
-.button-container {
-    position: absolute;
-    top: 54%; /* Button um 1% weiter nach oben verschoben */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Button über dem Bild */
-}
-
-/* Der Button wird dynamisch skaliert */
-.intro-button {
-    width: 22.4vw; /* Button um 2% größer */
-    height: auto; /* Proportionale Höhe */
-    cursor: pointer;
-    opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
-    background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
-    color: white; /* Schrift weiß */
-    border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
-    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
-    animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
-}
-
-/* Button wird sichtbar */
-.intro-button.visible {
-    opacity: 1; /* Button wird sichtbar */
-}
-
-/* Farbverlauf bei Hover */
-.intro-button:hover {
-    transform: scale(1.05); /* Button wird um 5% größer */
-    background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf mit halbierter Intensität */
-    color: white; /* Schrift bleibt weiß */
-    border-color: #4d8b4d; /* Randfarbe beim Hover ebenfalls ändern */
-    border-radius: 25px; /* Bleibt abgerundet beim Hover */
-}
-
-/* Animation der Farbänderung von grün nach blau */
-@keyframes colorChange {
-    0% {
-        background-color: #66cc66; /* Lime Green, halbiert */
-        border-color: #66cc66;
-    }
-    50% {
-        background-color: #4d8b4d; /* Dunkleres Grün mit halbierter Intensität */
-        border-color: #4d8b4d;
-    }
-    100% {
-        background-color: #6495ed; /* Steel Blue, halbierte Intensität */
-        border-color: #6495ed;
-    }
 }
 
 /* Desktop-Version */
