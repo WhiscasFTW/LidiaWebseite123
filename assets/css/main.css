@@ -92,7 +92,8 @@ body, html {
 }
 
 .rounded-image {
-    width: 38vw; /* Dynamische Breite für Desktop */
+    width: 38vw; /* Dynamische Breite */
+    height: auto; /* Automatische Höhe für das richtige Seitenverhältnis */
     aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
     border-radius: 10%; /* Abgerundete Ecken */
 }
@@ -106,7 +107,7 @@ body, html {
 }
 
 .intro-button {
-    width: 20vw; /* Dynamische Breite für Desktop */
+    width: 20vw; /* Dynamische Breite */
     aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -121,6 +122,7 @@ body, html {
 @media (max-width: 1024px) {
     .rounded-image {
         width: 42vw; /* Intro-Bild minimal größer auf kleineren Geräten */
+        height: auto; /* Automatische Höhe für das richtige Seitenverhältnis */
     }
 
     .intro-button {
@@ -131,6 +133,7 @@ body, html {
 @media (max-width: 768px) {
     .rounded-image {
         width: 50vw; /* Intro-Bild auf Tablets angepasst */
+        height: auto; /* Automatische Höhe */
     }
 
     .intro-button {
@@ -141,6 +144,7 @@ body, html {
 @media (max-width: 480px) {
     .rounded-image {
         width: 55vw; /* Intro-Bild auf Smartphones angepasst */
+        height: auto; /* Automatische Höhe */
     }
 
     .intro-button {
