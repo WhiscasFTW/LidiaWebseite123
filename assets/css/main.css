@@ -3,17 +3,24 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: black;
-    overflow-x: hidden; /* Kein horizontales Scrollen */
+    overflow: hidden; /* Kein horizontales Scrollen */
+}
+
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
 }
 
 .header-image {
-    position: absolute; /* Absolute Positionierung */
-    top: 0; /* An den oberen Rand setzen */
-    left: 50%; /* Zentrieren */
-    transform: translateX(-50%) translateY(0); /* Horizontale Zentrierung und vertikale Anpassung */
-    width: 100vw; /* Bild soll die gesamte Bildschirmbreite ausfüllen */
-    max-height: 360px; /* Maximale Höhe von 360px */
-    height: auto; /* Verhindert Verformung des Bildes */
+    position: fixed; /* Fixierte Positionierung */
+    top: 0; /* Am oberen Rand */
+    left: 50%; /* Horizontal zentrieren */
+    transform: translateX(-50%); /* Korrektur für horizontale Zentrierung */
+    width: 100vw; /* Breite des Bildes auf die volle Bildschirmbreite setzen */
+    max-height: 360px; /* Maximale Höhe auf 360px begrenzen */
+    height: auto; /* Verhindert eine Verzerrung des Bildes */
     z-index: -1; /* Das Bild bleibt im Hintergrund */
 }
 
