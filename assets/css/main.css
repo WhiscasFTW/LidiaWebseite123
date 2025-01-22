@@ -82,6 +82,23 @@ body, html {
     }
 }
 
+/* Vorhang-Effekt */
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+}
+
+.curtain.open {
+    transform: translateX(0);
+}
+
 /* Intro-Bild und Button-Stile */
 .image-container {
     position: absolute;
