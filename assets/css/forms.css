@@ -5,7 +5,7 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-/* Vorhang-Effekt (Rechts nach Links) */
+/* Vorhang-Effekt (Rechts nach Links öffnen) */
 .curtain {
     position: fixed;
     top: 0;
@@ -13,17 +13,17 @@ body {
     width: 100%;
     height: 100%;
     background-color: #000;
-    transform: translateX(100%);
+    transform: translateX(100%); /* Startposition - Vorhang außerhalb des Bildschirms rechts */
     z-index: 5;
-    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out; /* 0.8s für die Bewegung von rechts nach links */
 }
 
-/* Wenn die Seite vollständig geladen ist, Vorhang schließt */
+/* Wenn die Seite vollständig geladen ist, Vorhang öffnet sich */
 body.loaded .curtain {
-    transform: translateX(0); /* Vorhang von rechts nach links ziehen */
+    transform: translateX(0); /* Vorhang öffnet sich von rechts nach links */
 }
 
-/* Content wird sichtbar, wenn der Vorhang geschlossen ist */
+/* Content wird sichtbar, wenn der Vorhang geöffnet ist */
 body.loaded {
     opacity: 1;
     background-color: #fff;
