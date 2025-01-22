@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Verstecke den Button nach dem Klick
         button.classList.remove('visible');
+
+        // Weiterleitung zur Startseite nach einer Verzögerung
+        setTimeout(function() {
+            window.location.href = 'startseite.html'; // Weiterleitung zu Startseite
+        }, 1000); // Verzögerung von 1 Sekunde, um den Vorhang-Effekt abzuwarten
     });
 });
-
