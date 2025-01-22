@@ -1,10 +1,10 @@
 /* Anfangsdunkelheit der Seite */
 body {
-    background-color: #000; /* Dunkel starten */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
     margin: 0;
-    padding-bottom: 50px; /* Platz für den Footer */
+    padding: 0;
+    background-color: #000; /* Dunkel starten */
+    opacity: 0; /* Der Inhalt ist unsichtbar */
+    transition: opacity 1s ease-in-out; /* Übergang zur Sichtbarkeit */
 }
 
 /* Vorhang-Effekt (Von rechts nach links öffnend) */
@@ -27,7 +27,7 @@ body.loaded .curtain {
 
 /* Sobald der Vorhang vollständig geöffnet ist, wird der Inhalt sichtbar */
 body.loaded {
-    opacity: 1;
+    opacity: 1; /* Inhalt wird sichtbar */
     background-color: #fff; /* Hintergrund wird hell */
 }
 
