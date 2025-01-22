@@ -44,6 +44,12 @@
             padding: 10px 0;
         }
 
+        /* Leere Boxen an den äußeren Enden */
+        .empty-box {
+            flex: 1;
+            background-color: #444; /* Gleiche Hintergrundfarbe wie die Boxen */
+        }
+
         .header-box a {
             color: white;
             text-decoration: none;
@@ -106,13 +112,15 @@
     <!-- Grauer Strich unter dem Bild -->
     <div class="header-stripe"></div>
 
-    <!-- Boxen unter dem Strich (ohne Trennlinien) -->
+    <!-- Boxen unter dem Strich (mit leeren Boxen an den Enden) -->
     <div class="header-box-container">
+        <div class="empty-box"></div> <!-- Leere Box links -->
         <div class="header-box"><a href="startseite.html">Startseite</a></div>
         <div class="header-box"><a href="steckbrief.html">Steckbrief</a></div>
         <div class="header-box"><a href="meinewerke.html">Meine Werke</a></div>
         <div class="header-box"><a href="dienstleistungen.html">Dienstleistungen</a></div>
         <div class="header-box"><a href="kontakt.html">Kontakt</a></div>
+        <div class="empty-box"></div> <!-- Leere Box rechts -->
     </div>
 
     <!-- Hauptinhalt der Seite -->
