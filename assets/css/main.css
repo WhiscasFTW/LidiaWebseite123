@@ -17,11 +17,12 @@ body, html {
 
 /* Header-Bild */
 .header-image {
-    width: 100vw; /* Vollbreite */
-    height: auto; /* Automatische Höhe */
     position: fixed; /* Über allem */
-    top: 0; /* Oben ausgerichtet */
-    left: 0; /* Ganz links */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Vollbreite */
+    height: 100vh; /* Vollhöhe */
+    object-fit: cover; /* Bild wird proportional skaliert und zentriert */
     z-index: 1000; /* Ganz vorne */
 }
 
