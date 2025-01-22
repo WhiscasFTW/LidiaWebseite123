@@ -61,11 +61,12 @@ html, body {
     font-size: 18px;
     display: block;  /* Macht den gesamten Bereich der Box klickbar */
     width: 100%;     /* Stellt sicher, dass der Link den gesamten Boxbereich ausfüllt */
-    transition: transform 0.3s ease; /* Sanfter Übergang für die Transformation */
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Sanfter Übergang für die Transformation */
 }
 
 .header-box a:hover {
-    transform: translateY(-5px); /* Hebt den Text um 5px an */
+    transform: scale(1.1); /* Vergrößert den Text um 10% */
+    font-size: 20px; /* Vergrößert die Schriftgröße */
 }
 
 /* Für kleinere Bildschirme (Responsive) */
