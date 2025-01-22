@@ -84,7 +84,10 @@ body, html {
 
 /* Intro-Bild und Button-Stile */
 .image-container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
     z-index: 1; /* Höherer Z-Index für das Bild */
 }
 
@@ -95,14 +98,15 @@ body, html {
 
 .button-container {
     position: absolute;
-    top: 54%; /* Button nach unten verschoben */
+    top: 60%; /* Button nach unten verschoben */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Button über dem Bild */
 }
 
+/* Der Button wird doppelt so groß und nach unten verschoben */
 .intro-button {
-    width: 700px; /* Doppelte Breite */
+    width: 800px; /* Doppelte Breite */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -113,14 +117,7 @@ body, html {
     opacity: 1; /* Button wird sichtbar */
 }
 
-/* Hover-Effekt für den Button */
-.intro-button:hover {
-    transform: scale(1.1); /* Button wird etwas größer */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Ein sanfter Schatten wird hinzugefügt */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Der Übergang dauert 0.3 Sekunden */
-}
-
-/* Responsive Anpassungen für kleinere Bildschirme */
+/* Responsive Anpassungen */
 @media (max-width: 768px) {
     /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
     
@@ -132,6 +129,7 @@ body, html {
         transform: translateX(-50%);
     }
 
+    /* Position und Größe des Intro-Bildes anpassen */
     .rounded-image {
         width: 70vw; /* Das Intro-Bild ist auf kleineren Geräten größer */
         border-radius: 11%; /* Rundung beibehalten */
