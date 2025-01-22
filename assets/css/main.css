@@ -91,12 +91,12 @@ body, html {
     height: 100%;
     background: black;
     z-index: 3;
-    transform: translateX(-100%);
-    transition: transform 1s ease;
+    transform: translateY(-100%); /* Vorhang startet oben */
+    transition: transform 1s ease; /* sanfter Übergang */
 }
 
 .curtain.open {
-    transform: translateX(0);
+    transform: translateY(0); /* Vorhang öffnet sich nach unten */
 }
 
 /* Intro-Bild und Button-Stile */
