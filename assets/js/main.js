@@ -1,21 +1,18 @@
-// Nach einer kurzen Verzögerung den Button sichtbar machen
-window.onload = function() {
-    setTimeout(function() {
-        // Button und Intro-Name-Bild erscheinen
-        document.querySelector('.intro-button').classList.add('visible');
-        document.querySelector('.image-container').style.display = 'block'; // sichtbar machen
-        document.querySelector('.button-container').style.display = 'block'; // sichtbar machen
-    }, 1000); // 1 Sekunde Verzögerung
-};
+document.addEventListener('DOMContentLoaded', function () {
+    const curtain = document.querySelector('.curtain');
+    const button = document.querySelector('.intro-button');
+    
+    // Button wird nach einer kurzen Verzögerung sichtbar
+    setTimeout(function () {
+        button.classList.add('visible');
+    }, 4000); // Button wird nach 4 Sekunden sichtbar
 
-// Vorhang-Effekt
-document.getElementById('openCurtain').addEventListener('click', function() {
-    // Vorhang öffnet sich
-    document.getElementById('curtain').classList.add('open');
-
-    // Die Webseite nach dem Vorhang-Effekt ändern
-    setTimeout(function() {
-        document.getElementById('newContent').classList.add('visible'); // Dynamischer Inhalt wird sichtbar
-        document.getElementById('curtain').classList.remove('open'); // Vorhang entfernt
-    }, 1000); // 1 Sekunde Verzögerung
+    // Klick-Ereignis für den Button
+    button.addEventListener('click', function () {
+        // Vorhang öffnet sich, wenn der Button geklickt wird
+        curtain.classList.add('open');
+        
+        // Verstecke den Button nach dem Klick
+        button.classList.remove('visible');
+    });
 });
