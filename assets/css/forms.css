@@ -43,6 +43,7 @@ html, body {
     height: 50px; /* Größe des Logos */
 }
 
+/* Navigation */
 .site-header .navigation {
     width: 100%;
 }
@@ -81,3 +82,48 @@ html, body {
         margin: 10px 0;
     }
 }
+
+/* Header-Boxen */
+.header-box-container {
+    display: flex;
+    width: 100%;
+    height: 60px;  /* Vergrößert die Höhe des gesamten Containers */
+    background-color: #888;
+}
+
+/* Leerer Strich auf der linken Seite */
+.header-box-left {
+    width: 2px;
+    background-color: #888;
+}
+
+/* Boxen für Navigationseinträge */
+.header-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 2px solid #888;
+    position: relative;
+    padding: 15px 0;  /* Vergrößert den Abstand und damit die Hitbox */
+    font-size: 20px;   /* Größere Schriftgröße für eine bessere Lesbarkeit */
+}
+
+/* Letzte Box ohne rechten Strich */
+.header-box:last-child {
+    border-right: none;
+}
+
+.header-box a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;  /* Macht den gesamten Bereich der Box klickbar */
+    width: 100%;     /* Stellt sicher, dass der Link den gesamten Boxbereich ausfüllt */
+}
+
+.header-box a:hover {
+    text-decoration: underline;
+}
+
