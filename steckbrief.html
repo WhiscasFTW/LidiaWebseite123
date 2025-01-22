@@ -5,35 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steckbrief</title>
     <link rel="stylesheet" href="assets/css/forms.css">
+    <style>
+        /* Header-Bereich */
+        header {
+            position: relative;
+            width: 100%;
+            height: 360px;
+        }
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .site-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Sicherstellen, dass der Footer immer am unteren Rand bleibt */
+        body {
+            margin: 0;
+            padding-bottom: 50px; /* Platz für den Footer */
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Bild oben, das die alte Größe behält -->
-    <div class="header-image-container">
-        <img src="assets/images/HeaderSteckbrief.png" alt="Header Image" class="header-image">
-    </div>
-
-    <!-- Header mit Navigation -->
-    <header class="site-header">
-        <div class="logo-container">
-            <img src="assets/images/logo.png" alt="Logo" class="logo">
-        </div>
-
-        <nav class="navigation">
-            <ul>
-                <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="steckbrief.html">Steckbrief</a></li>
-                <li><a href="meinewerke.html">Meine Werke</a></li>
-                <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+    <header>
+        <img src="assets/images/HeaderSteckbrief.png" alt="Header-Bild">
+        <!-- Navigation -->
+        <nav>
+            <a href="startseite.html">Startseite</a>
+            <a href="steckbrief.html">Steckbrief</a>
+            <a href="meinewerke.html">Meine Werke</a>
+            <a href="dienstleistungen.html">Dienstleistungen</a>
+            <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
 
-    <!-- Inhalt der Seite -->
-    <main>
-        <!-- Hier kommt der Inhalt des Steckbriefs -->
-    </main>
+    <!-- Hauptinhalt der Seite -->
+    <div class="content">
+        <h1>Steckbrief</h1>
+        <p>Hier ist der Steckbrief-Inhalt.</p>
+    </div>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+        </div>
+    </footer>
 </body>
 </html>
