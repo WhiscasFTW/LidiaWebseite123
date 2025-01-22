@@ -5,9 +5,28 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
+/* Vorhang-Effekt (Rechts nach Links) */
+.curtain {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: translateX(100%);
+    z-index: 5;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Wenn die Seite vollständig geladen ist, Vorhang schließt */
+body.loaded .curtain {
+    transform: translateX(0); /* Vorhang von rechts nach links ziehen */
+}
+
+/* Content wird sichtbar, wenn der Vorhang geschlossen ist */
 body.loaded {
-    opacity: 1; /* Nach der Transition wird es vollständig sichtbar */
-    background-color: #fff; /* Heller Hintergrund nach dem Laden */
+    opacity: 1;
+    background-color: #fff;
 }
 
 /* Header-Bereich */
