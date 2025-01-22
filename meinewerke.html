@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meine Werke als Webdesigner">
     <title>Meine Werke</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/forms.css">
 </head>
 <body>
-    <header>
-        <nav>
+
+    <!-- Bild oben, das die alte Größe behält -->
+    <div class="header-image-container">
+        <img src="assets/images/HeaderMeineWerke.png" alt="Header Image" class="header-image">
+    </div>
+
+    <!-- Header mit Navigation -->
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <nav class="navigation">
             <ul>
                 <li><a href="startseite.html">Startseite</a></li>
                 <li><a href="steckbrief.html">Steckbrief</a></li>
@@ -21,18 +30,10 @@
         </nav>
     </header>
 
+    <!-- Inhalt der Seite -->
     <main>
-        <h1>Meine Werke</h1>
-        <p>Hier findest du einige meiner bisherigen Projekte im Bereich Webdesign und digitale Kunst:</p>
-        <ul>
-            <li><a href="#">Projekt 1: Webshop für Mode</a></li>
-            <li><a href="#">Projekt 2: Portfolio-Webseite für Fotografen</a></li>
-            <li><a href="#">Projekt 3: Mobile App für Eventplanung</a></li>
-        </ul>
+        <!-- Hier kommt der Inhalt der Seite Meine Werke -->
     </main>
 
-    <footer>
-        <p>2025 Max Müller | <a href="impressum.html">Impressum</a></p>
-    </footer>
 </body>
 </html>
