@@ -1,3 +1,4 @@
+/* Allgemeine Reset-Einstellungen */
 * {
     margin: 0;
     padding: 0;
@@ -20,67 +21,6 @@ html, body {
     height: auto;
     max-width: 2560px; /* Stellt sicher, dass das Bild die alte Größe behält */
     max-height: 360px;
-}
-
-/* Header-Stil */
-.site-header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #333; /* Hintergrundfarbe für den Header */
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.site-header .logo-container {
-    margin-bottom: 20px;
-}
-
-.site-header .logo {
-    height: 50px; /* Größe des Logos */
-}
-
-/* Navigation */
-.site-header .navigation {
-    width: 100%;
-}
-
-.site-header .navigation ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-.site-header .navigation ul li {
-    margin-left: 20px;
-}
-
-.site-header .navigation ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.site-header .navigation ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Für kleinere Bildschirme (Responsive) */
-@media (max-width: 768px) {
-    .site-header {
-        height: auto;
-    }
-
-    .site-header .navigation ul {
-        flex-direction: column;
-    }
-
-    .site-header .navigation ul li {
-        margin: 10px 0;
-    }
 }
 
 /* Header-Boxen */
@@ -121,9 +61,26 @@ html, body {
     font-size: 18px;
     display: block;  /* Macht den gesamten Bereich der Box klickbar */
     width: 100%;     /* Stellt sicher, dass der Link den gesamten Boxbereich ausfüllt */
+    transition: transform 0.3s ease; /* Sanfter Übergang für die Transformation */
 }
 
 .header-box a:hover {
-    text-decoration: underline;
+    transform: translateY(-5px); /* Hebt den Text um 5px an */
 }
 
+/* Für kleinere Bildschirme (Responsive) */
+@media (max-width: 768px) {
+    .header-box-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header-box {
+        border-right: none;
+        border-bottom: 2px solid #888;
+    }
+
+    .header-box a {
+        font-size: 16px;
+    }
+}
