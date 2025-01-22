@@ -106,7 +106,7 @@ body, html {
 
 /* Der Button wird doppelt so groß und nach unten verschoben */
 .intro-button {
-    width: 800px; /* Doppelte Breite */
+    width: 700px; /* Doppelte Breite */
     height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -124,8 +124,8 @@ body, html {
     .image-container,
     .button-container {
         position: absolute;
-        top: 45%; /* Button weiter nach unten verschoben */
-        left: 54%;
+        top: 54%; /* Button weiter nach unten verschoben */
+        left: 50%;
         transform: translateX(-50%);
     }
 
