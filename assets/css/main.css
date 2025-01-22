@@ -92,25 +92,24 @@ body, html {
 }
 
 .rounded-image {
-    width: 35vw; /* Dynamische Breite */
-    max-width: 300px; /* Begrenzte maximale Breite */
-    aspect-ratio: 1 / 1; /* Bild bleibt quadratisch */
-    border-radius: 10%; /* Abgerundete Ecken */
+    width: 35vw; /* Dynamische Breite für Desktop */
+    border-radius: 8%; /* Abgerundete Ecken */
+    max-width: 300px; /* Begrenzte Maximalbreite für kleinere Bildschirme */
 }
 
 .button-container {
     position: absolute;
-    top: 60%; /* Button weiter nach unten verschoben */
+    top: 65%; /* Button etwas weiter unten */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird dynamisch skaliert */
+/* Der Button wird dreimal so groß */
 .intro-button {
-    width: 25vw; /* Dynamische Breite */
-    max-width: 200px; /* Begrenzte maximale Breite */
-    aspect-ratio: 5 / 2; /* Breite zu Höhe Verhältnis */
+    width: 60vw; /* Dynamische Breite für Desktop */
+    max-width: 600px; /* Begrenzte Maximalbreite */
+    height: auto;
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
     transition: opacity 1s ease;
@@ -121,37 +120,41 @@ body, html {
 }
 
 /* Responsive Anpassungen */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    /* Für Laptops */
+@media (max-width: 1024px) {
+    /* Für Laptops und Tablets */
     .rounded-image {
-        width: 30vw; /* Bildgröße für Laptops */
-        max-width: 280px; /* Maximalgröße */
+        width: 40vw; /* Intro-Bild für kleinere Bildschirme */
+        max-width: 250px;
     }
 
     .intro-button {
-        width: 20vw; /* Buttongröße für Laptops */
-        max-width: 180px;
+        width: 50vw; /* Button kleiner für Laptops/Tablets */
+        max-width: 500px;
     }
 }
 
 @media (max-width: 768px) {
-    /* Für kleinere Bildschirme (Tablets und größere Smartphones) */
+    /* Für Smartphones im Hochformat */
     .rounded-image {
-        width: 45vw; /* Bild auf Tablets anpassen */
+        width: 50vw; /* Intro-Bild größer für Smartphones */
+        max-width: 220px;
     }
 
     .intro-button {
-        width: 30vw; /* Button anpassen */
+        width: 40vw; /* Button an Smartphones angepasst */
+        max-width: 400px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Für sehr kleine Bildschirme wie Handys */
+    /* Für sehr kleine Smartphones */
     .rounded-image {
-        width: 50vw; /* Das Intro-Bild entsprechend vergrößert */
+        width: 60vw; /* Intro-Bild weiter vergrößert */
+        max-width: 180px;
     }
 
     .intro-button {
-        width: 40vw; /* Button für sehr kleine Geräte */
+        width: 35vw; /* Button für sehr kleine Geräte angepasst */
+        max-width: 300px;
     }
 }
