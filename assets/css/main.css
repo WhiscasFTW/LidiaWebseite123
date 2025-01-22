@@ -111,17 +111,19 @@ body, html {
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, background-color 0.3s ease;
+    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
 }
 
+/* Button wird sichtbar */
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
 }
 
-/* Button-Hover-Effekte */
+/* Farbverlauf bei Hover */
 .intro-button:hover {
-    transform: scale(1.1); /* Button leicht vergrößern */
-    background-color: #ffcc00; /* Buttonfarbe bei Hover (z. B. gelb) */
+    transform: scale(1.05); /* Button wird um 5% größer */
+    background: linear-gradient(45deg, #ffcc00, #ff6600); /* Farbverlauf */
+    color: white; /* Textfarbe bei Hover */
 }
 
 /* Desktop-Version */
