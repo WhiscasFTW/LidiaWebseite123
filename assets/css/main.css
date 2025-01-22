@@ -1,28 +1,30 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    margin: 0; /* Entfernt alle Ränder */
+    padding: 0; /* Entfernt alle Innenabstände */
+    width: 100%; /* Die gesamte Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
+    overflow: hidden; /* Kein Scrollen erlaubt */
     background-color: black;
-    overflow: hidden; /* Kein horizontales Scrollen */
 }
 
 .fullscreen-container {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: 100%; /* Die ganze Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
 }
 
 .header-image {
-    position: fixed; /* Fixierte Positionierung */
-    top: 0; /* Am oberen Rand */
-    left: 50%; /* Horizontal zentrieren */
-    transform: translateX(-50%); /* Korrektur für horizontale Zentrierung */
-    width: 100vw; /* Breite des Bildes auf die volle Bildschirmbreite setzen */
-    max-height: 360px; /* Maximale Höhe auf 360px begrenzen */
-    height: auto; /* Verhindert eine Verzerrung des Bildes */
-    z-index: -1; /* Das Bild bleibt im Hintergrund */
+    position: fixed; /* Fixiert das Bild oben */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Zentriert das Bild horizontal */
+    width: 100%; /* Volle Breite */
+    max-height: 360px; /* Maximale Höhe des Bildes */
+    height: auto; /* Höhe anpassen, um Verzerrungen zu vermeiden */
+    z-index: -1; /* Bild hinter den anderen Inhalten */
 }
+
 
 
 
