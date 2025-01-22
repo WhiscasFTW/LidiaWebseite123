@@ -5,6 +5,6 @@ function openWebsite() {
     
     // Nach einer Verzögerung (damit der Vorhang gut aussieht), die Website anzeigen
     setTimeout(() => {
-        window.location.href = 'https://deine-eigentliche-website.com';  // Ersetze mit der tatsächlichen URL
+        window.location.href = 'https://github.com/WhiscasFTW/LidiaWebseite123/';  // Ersetze mit der tatsächlichen URL
     }, 1000);  // Warten Sie 1 Sekunde, bevor die Seite wechselt
 }
