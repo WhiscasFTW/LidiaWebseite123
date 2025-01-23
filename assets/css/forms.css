@@ -10,7 +10,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212;
+    background-color: #121212; /* Einfarbiger Hintergrund */
     color: #ffffff;
     cursor: url('assets/images/circle.png') 16 16, pointer;
 }
@@ -130,24 +130,6 @@ html, body {
     margin: 5px 10px;
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.sidebar a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.5s ease;
-}
-
-.sidebar a:hover::before {
-    transform: translate(-50%, -50%) scale(1);
 }
 
 .sidebar a:hover {
