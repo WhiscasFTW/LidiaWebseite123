@@ -199,3 +199,24 @@ footer a:hover {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .toggle-button {
+        font-size: 40px;
+        left: 10px;
+    }
+
+    .sidebar.open + .toggle-button {
+        left: calc(100% - 50px);
+    }
+}
