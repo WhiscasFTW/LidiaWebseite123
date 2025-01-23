@@ -41,8 +41,8 @@
             justify-content: space-evenly;
             position: relative;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-            background-size: 210% 100%; /* Sorgt für den breiten Regenbogen-Effekt */
-            animation: rainbow 5s linear infinite;
+            background-size: 300% 100%; /* Größerer Bereich für nahtlose Bewegung */
+            animation: rainbow 15s linear infinite; /* Animation auf 15 Sekunden verlangsamt */
             margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
         }
 
@@ -119,10 +119,10 @@
         /* Regenbogen-Hintergrund-Animation */
         @keyframes rainbow {
             0% {
-                background-position: 0% 0%;
+                background-position: 0% 50%;
             }
             100% {
-                background-position: 100% 0%;
+                background-position: 100% 50%; /* Durchgängige Bewegung von links nach rechts */
             }
         }
     </style>
