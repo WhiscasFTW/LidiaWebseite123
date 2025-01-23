@@ -43,11 +43,11 @@ html, body {
 
 /* Hamburger Menü */
 .hamburger {
-    font-size: 30px;
+    font-size: 40px;  /* Etwas dicker */
     cursor: pointer;
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px; /* Auf der linken Seite */
     z-index: 2;
 }
 
