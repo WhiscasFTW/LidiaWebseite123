@@ -177,7 +177,7 @@ html, body {
     transform: scale(1); /* Bilder behalten ihre ursprüngliche Größe */
 }
 
-/* Positionierung der Bilder im 3D-Raum */
+/* Positionierung der Bilder im 3D-Raum mit konstanter Skalierung */
 .gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(250px) scale(1); }
 .gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(250px) scale(1); }
 .gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(250px) scale(1); }
@@ -238,4 +238,30 @@ footer a {
 
 footer a:hover {
     color: #007bff;
+}
+
+/* Animation für den Regenbogen-Effekt */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animation für die schwebende Signatur */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
