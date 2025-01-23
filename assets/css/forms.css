@@ -207,7 +207,7 @@ footer a:hover {
     margin: 0 auto;
 }
 
-.intro, .art-gallery, .about-me, .services {
+.intro, .art-gallery, .about-me, .services, .creative-process, .quote, .contact-preview {
     margin-bottom: 40px;
 }
 
@@ -253,4 +253,53 @@ p {
 
 .btn:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Stile für den kreativen Prozess */
+.creative-process {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.process-steps {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.step {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.step h3 {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Stile für das Zitat */
+.quote {
+    text-align: center;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.quote blockquote {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.quote cite {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stile für die Kontakt-Vorschau */
+.contact-preview {
+    text-align: center;
 }
