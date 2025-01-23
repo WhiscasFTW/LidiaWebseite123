@@ -46,7 +46,7 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: absolute;
-    bottom: 40px;
+    bottom: 51px; /* 51px (Höhe des Footers) */
     z-index: 2; /* Höherer z-index, um über dem Footer zu liegen */
 }
 
