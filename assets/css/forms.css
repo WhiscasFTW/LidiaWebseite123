@@ -1,153 +1,8 @@
-/* Allgemeine Reset-Einstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color: #121212;
-    color: #ffffff;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
-}
-
-/* Overlay für die Sidebar */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-}
-
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
-}
-
-/* Header-Balken (Regenbogen-Streifen) */
-.header-box-container {
-    width: 100%;
-    height: 3.5px; /* Halbierte Dicke */
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: relative;
-    margin-top: -5px; /* Anpassung für bündigen Verlauf */
-}
-
-/* Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer */
-.second-header-box-container {
-    width: 100%;
-    height: 3.5px; /* Halbierte Dicke */
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: absolute;
-    bottom: 51px; /* 51px (Höhe des Footers) */
-    z-index: 2; /* Höherer z-index, um über dem Footer zu liegen */
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 60px;
-    color: #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
-}
-
-/* Wenn die Sidebar geöffnet ist, Button verschieben */
-.sidebar.open + .toggle-button {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Die Sidebar auf der linken Seite */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 3;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Wenn die Sidebar geöffnet ist */
-.sidebar.open {
-    width: 250px;
-    left: 0;
-}
-
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Links in der Sidebar */
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
-    display: block;
-    transition: 0.3s;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
-    border-radius: 5px;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
 /* 3D-Galerie */
 .gallery-3d {
     perspective: 1000px; /* 3D-Perspektive */
     width: 100%;
-    height: 200px; /* Höhe der Galerie anpassen */
+    height: 300px; /* Höhe der Galerie anpassen */
     position: relative;
     margin: 20px auto;
     overflow: hidden;
@@ -165,21 +20,21 @@ html, body {
 /* Stile für die Bilder */
 .gallery-3d-inner img {
     position: absolute;
-    width: 120px; /* Größe der Bilder */
-    height: 120px;
+    width: 200px; /* Größe der Bilder (200x200 Pixel) */
+    height: 200px;
     object-fit: cover; /* Bilder passen sich dem Container an */
     border-radius: 10px; /* Abgerundete Ecken */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
-    transform-origin: center center -150px; /* 3D-Transformation */
+    transform-origin: center center -250px; /* 3D-Transformation */
     transition: transform 0.5s ease, opacity 0.5s ease; /* Sanfte Übergänge */
 }
 
 /* Positionierung der Bilder im 3D-Raum */
-.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
-.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(150px); }
-.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(150px); }
-.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(150px); }
-.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(150px); }
+.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(250px); }
 
 /* Animation für die Rotation */
 @keyframes rotateGallery {
@@ -189,50 +44,4 @@ html, body {
     100% {
         transform: rotateY(360deg);
     }
-}
-
-/* Footer mit Hintergrundbild */
-footer {
-    width: 100%;
-    height: 51px;
-    position: relative;
-    margin-top: auto;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    overflow: hidden;
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #007bff;
 }
