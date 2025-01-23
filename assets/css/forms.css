@@ -36,7 +36,7 @@ html, body {
     position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 700% 100%; /* Hintergrundgröße erhöht, damit es genug Platz für den Übergang gibt */
-    animation: rainbow 15s linear infinite; /* Nahtlose Animation */
+    animation: rainbow 50s linear infinite; /* Animation auf 50s verlängert für langsameren Verlauf */
     margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
 }
 
