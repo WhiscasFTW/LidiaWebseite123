@@ -31,12 +31,11 @@ html, body {
 .header-box-container {
     width: 100%;
     height: 7px; /* Höhe auf 7px gesetzt (4x kleiner als 27.5px) */
-    background-color: #888;
     display: flex;
     justify-content: space-evenly;
     position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 500% 100%; /* Hintergrundbereich vergrößert für nahtlose Animation */
+    background-size: 700% 100%; /* Hintergrundgröße so angepasst, dass nahtloser Übergang entsteht */
     animation: rainbow 15s linear infinite; /* Animation mit linearer Bewegung */
     margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
 }
@@ -68,6 +67,6 @@ footer a:hover {
         background-position: 0% 50%;
     }
     100% {
-        background-position: 100% 50%; /* Nahtloser Übergang von Blau zu Rot */
+        background-position: 100% 50%; /* Nahtloser Übergang ohne sichtbaren Schnitt */
     }
 }
