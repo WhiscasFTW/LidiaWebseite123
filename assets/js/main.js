@@ -1,23 +1,56 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const curtain = document.querySelector('.curtain');
-    const button = document.querySelector('.intro-button');
-    
-    // Button wird nach einer kurzen Verzögerung sichtbar
-    setTimeout(function () {
-        button.classList.add('visible');
-    }, 4000); // Button wird nach 4 Sekunden sichtbar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+    var sound = new Audio('assets/sounds/click.mp3'); /* Soundeffekt */
 
-    // Klick-Ereignis für den Button
-    button.addEventListener('click', function () {
-        // Vorhang öffnet sich, wenn der Button geklickt wird
-        curtain.classList.add('open');
-        
-        // Verstecke den Button nach dem Klick
-        button.classList.remove('visible');
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
 
-        // Weiterleitung zur Startseite nach einer Verzögerung
-        setTimeout(function() {
-            window.location.href = 'startseite.html'; // Weiterleitung zu Startseite
-        }, 1000); // Verzögerung von 1 Sekunde, um den Vorhang-Effekt abzuwarten
+    if (sidebar.classList.contains('open')) {
+        overlay.style.display = 'block';
+        localStorage.setItem('sidebarState', 'open');
+    } else {
+        overlay.style.display = 'none';
+        localStorage.setItem('sidebarState', 'closed');
+    }
+
+    sound.play().catch(error => {
+        console.error("Sound konnte nicht abgespielt werden:", error);
     });
+}
+
+// Beim Laden der Seite den Zustand überprüfen
+window.onload = function () {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+    var sidebarState = localStorage.getItem('sidebarState');
+
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+        overlay.style.display = 'block';
+    }
+};
+
+// Karussell-Funktionalität
+let currentIndex = 0;
+const carouselInner = document.querySelector('.carousel-inner');
+const images = document.querySelectorAll('.carousel-inner img');
+const totalImages = images.length;
+
+document.querySelector('.carousel-next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
 });
+
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const offset = -currentIndex * 160; // 150px Bildbreite + 10px Abstand
+    carouselInner.style.transform = `translateX(${offset}px)`;
+}
