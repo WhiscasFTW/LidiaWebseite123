@@ -154,6 +154,7 @@ html, body {
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
+    width: max-content; /* Wichtig: Breite an den Inhalt anpassen */
 }
 
 .carousel-inner img {
@@ -163,6 +164,7 @@ html, body {
     border-radius: 10px;
     margin-right: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Verhindert, dass die Bilder schrumpfen */
 }
 
 .carousel-prev, .carousel-next {
@@ -174,6 +176,7 @@ html, body {
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 10; /* Buttons über den Bildern */
 }
 
 .carousel-prev {
