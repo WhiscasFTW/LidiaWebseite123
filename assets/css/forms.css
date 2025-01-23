@@ -136,8 +136,8 @@ html, body {
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: absolute;
-    bottom: 51px;
+    position: fixed; /* Geändert zu fixed */
+    bottom: 51px; /* Abstand zum Footer */
     z-index: 2;
 }
 
@@ -145,11 +145,11 @@ html, body {
 footer {
     width: 100%;
     height: 51px;
-    position: relative;
-    margin-top: auto;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Geändert zu fixed */
+    bottom: 0; /* Am unteren Rand der Seite */
+    background-color: rgba(0, 0, 0, 0.8); /* Hintergrundfarbe für bessere Sichtbarkeit */
     z-index: 1;
-    overflow: hidden;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .footer-background {
@@ -205,6 +205,8 @@ footer a:hover {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    flex: 1; /* Füllt den verfügbaren Platz aus */
+    padding-bottom: 100px; /* Platz für Footer und bunten Streifen */
 }
 
 .intro, .art-gallery, .about-me, .services, .creative-process, .quote, .contact-preview {
