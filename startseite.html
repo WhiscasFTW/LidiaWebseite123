@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -13,9 +13,23 @@
         <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
     </div>
 
-    <!-- Header-Balken ohne Verlinkungen, halbiert -->
+    <!-- Header-Balken -->
     <div class="header-box-container">
-        <!-- Keine Boxen mit Links, nur der Balken bleibt -->
+        <div class="header-box"></div>
+    </div>
+
+    <!-- Hamburger-Menü Button -->
+    <div id="hamburger" class="hamburger" onclick="toggleSidebar()">
+        &#9776; <!-- 3 Striche -->
+    </div>
+
+    <!-- Die Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="startseite.html">Startseite</a>
+        <a href="steckbrief.html">Steckbrief</a>
+        <a href="meinewerke.html">Meine Werke</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kontakt.html">Kontakt</a>
     </div>
 
     <!-- Footer -->
@@ -23,5 +37,6 @@
         <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
 
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
