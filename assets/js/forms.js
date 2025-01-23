@@ -40,16 +40,15 @@ window.onload = function () {
 
 // Karussell-Funktionalität
 function initCarousel() {
-    let currentIndex = 2; // Starte mit dem dritten Bild (Index 2)
+    let currentIndex = 0; // Starte mit dem ersten Bild (Index 0)
     const carouselInner = document.querySelector('.carousel-inner');
     const images = document.querySelectorAll('.carousel-inner img');
     const totalImages = images.length;
     const imageWidth = images[0].clientWidth + 10; // Breite eines Bildes + Abstand
-    const carouselWidth = document.querySelector('.sidebar-carousel').clientWidth;
 
     // Funktion zum Aktualisieren des Karussells
     function updateCarousel() {
-        const offset = -currentIndex * imageWidth + (carouselWidth / 2 - imageWidth / 2);
+        const offset = -currentIndex * imageWidth;
         carouselInner.style.transform = `translateX(${offset}px)`;
     }
 
