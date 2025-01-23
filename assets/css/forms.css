@@ -35,8 +35,8 @@ html, body {
     justify-content: space-evenly;
     position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 700% 100%; /* Hintergrundgröße so angepasst, dass nahtloser Übergang entsteht */
-    animation: rainbow 15s linear infinite; /* Animation mit linearer Bewegung */
+    background-size: 400% 100%; /* Hintergrundgröße angepasst, damit der Verlauf nahtlos läuft */
+    animation: rainbow 15s linear infinite; /* Nahtlose Animation */
     margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
 }
 
@@ -64,9 +64,9 @@ footer a:hover {
 /* Regenbogen-Hintergrund-Animation */
 @keyframes rainbow {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 50%; /* Start der Animation bei 0% */
     }
     100% {
-        background-position: 100% 50%; /* Nahtloser Übergang ohne sichtbaren Schnitt */
+        background-position: 100% 50%; /* Ende der Animation bei 100%, so dass der Farbverlauf nahtlos wiederholt wird */
     }
 }
