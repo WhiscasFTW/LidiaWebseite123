@@ -32,12 +32,4 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
-
-    // Ladeanimation ausblenden
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        loadingScreen.style.display = 'none';
-    } else {
-        console.error("Ladeanimation-Element nicht gefunden!");
-    }
 };
