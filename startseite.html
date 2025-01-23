@@ -4,67 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Header-Bereich -->
+
+    <!-- Bild-Container für das Header-Bild -->
     <div class="header-image-container">
         <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
     </div>
 
-    <!-- Navigation -->
+    <!-- Header-Balken mit den Boxen -->
     <div class="header-box-container">
-        <div class="header-box"><a href="startseite.html">Startseite</a></div>
-        <div class="header-box"><a href="steckbrief.html">Steckbrief</a></div>
-        <div class="header-box"><a href="meinewerke.html">Meine Werke</a></div>
-        <div class="header-box"><a href="dienstleistungen.html">Dienstleistungen</a></div>
-        <div class="header-box"><a href="kontakt.html">Kontakt</a></div>
-    </div>
-
-    <!-- Hauptinhalt -->
-    <div class="content">
-        <div class="box">
-            <h2>Beispielbox 1: Einführung</h2>
-            <p>Willkommen auf meiner Seite! Hier findest du viele interessante Inhalte. Erkunde alles und entdecke, was mich ausmacht. Klick auf <strong>Mehr erfahren</strong> um tiefer in die Inhalte einzutauchen.</p>
-            <button class="more-info-btn" onclick="navigateToPage('steckbrief.html')">Mehr erfahren</button>
+        <div class="header-box">
+            <a href="startseite.html">Startseite</a>
         </div>
-
-        <div class="box">
-            <h2>Beispielbox 2: Meine Werke</h2>
-            <p>In dieser Box findest du eine Übersicht meiner Werke. Schau dich um, und lass dich von meiner Kreativität inspirieren. Mehr Details findest du im Bereich <strong>Meine Werke</strong>.</p>
-            <button class="more-info-btn" onclick="navigateToPage('meinewerke.html')">Mehr erfahren</button>
+        <div class="header-box">
+            <a href="steckbrief.html">Steckbrief</a>
         </div>
-
-        <div class="box">
-            <h2>Beispielbox 3: Dienstleistungen</h2>
-            <p>Ich biete viele verschiedene Dienstleistungen an. Klicke auf <strong>Mehr erfahren</strong>, um eine detaillierte Liste der Services zu sehen, die ich anbiete.</p>
-            <button class="more-info-btn" onclick="navigateToPage('dienstleistungen.html')">Mehr erfahren</button>
+        <div class="header-box">
+            <a href="meinewerke.html">Meine Werke</a>
         </div>
-
-        <div class="box">
-            <h2>Beispielbox 4: Kontakt</h2>
-            <p>Hast du Fragen oder möchtest du mehr erfahren? Zögere nicht, mich zu kontaktieren! Klicke auf <strong>Mehr erfahren</strong> für meine Kontaktdaten.</p>
-            <button class="more-info-btn" onclick="navigateToPage('kontakt.html')">Mehr erfahren</button>
+        <div class="header-box">
+            <a href="dienstleistungen.html">Dienstleistungen</a>
         </div>
-
-        <div class="box">
-            <h2>Beispielbox 5: Weitere Inhalte</h2>
-            <p>Hier findest du noch weitere interessante Inhalte. Diese Box ist ein Platzhalter, der immer weiter gefüllt werden kann. Lese weiter und entdecke spannende Themen.</p>
-            <button class="more-info-btn" onclick="navigateToPage('mehr.html')">Mehr erfahren</button>
-        </div>
-
-        <div class="box">
-            <h2>Beispielbox 6: Ein weiteres Thema</h2>
-            <p>Diese Box gibt dir noch mehr Informationen. Es gibt noch viel zu entdecken, also bleib dran und klick auf "Mehr erfahren", um mehr zu erfahren!</p>
-            <button class="more-info-btn" onclick="navigateToPage('mehr.html')">Mehr erfahren</button>
+        <div class="header-box">
+            <a href="kontakt.html">Kontakt</a>
         </div>
     </div>
+
+    <!-- Zusätzlicher Inhalt -->
+    <main>
+        <section class="content-section">
+            <h2>Willkommen auf meiner Seite</h2>
+            <p>Dies ist ein Beispieltext, der den Anfang der Seite darstellt. Scrollen Sie nach unten, um mehr Inhalte zu sehen!</p>
+        </section>
+
+        <section class="content-grid">
+            <div class="content-box">
+                <h3>Box 1</h3>
+                <p>Dies ist ein Beispielinhalt für die erste Box.</p>
+                <a href="mehr.html" class="btn">Mehr erfahren</a>
+            </div>
+            <div class="content-box">
+                <h3>Box 2</h3>
+                <p>Dies ist ein Beispielinhalt für die zweite Box.</p>
+                <a href="mehr.html" class="btn">Mehr erfahren</a>
+            </div>
+            <div class="content-box">
+                <h3>Box 3</h3>
+                <p>Dies ist ein Beispielinhalt für die dritte Box.</p>
+                <a href="mehr.html" class="btn">Mehr erfahren</a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Weitere Inhalte</h2>
+            <p>Hier könnten noch mehr Informationen oder Bilder eingefügt werden. Dieser Abschnitt ist nur ein Beispiel.</p>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
 
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
