@@ -43,9 +43,9 @@ html, body {
 
 /* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 30px; /* Etwas kleinere Schrift für das Zeichen */
+    font-size: 90px; /* 3-mal größer */
     color: white; /* Weißes Zeichen */
-    background-color: #333; /* Grauer Hintergrund, passend zum Footer */
+    background-color: transparent; /* Kein Hintergrund */
     border-radius: 50%; /* Runder Button */
     padding: 15px; /* Größere Padding für den Button */
     cursor: pointer;
@@ -54,7 +54,7 @@ html, body {
     left: 10px; /* Direkt neben der Sidebar */
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.3s ease-in-out, background-color 0.3s ease;
+    transition: left 0.3s ease-in-out;
 }
 
 /* Hover-Effekt für den Button */
