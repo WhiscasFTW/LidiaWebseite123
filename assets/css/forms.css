@@ -47,8 +47,8 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: absolute;
-    bottom: 50px; /* Mehr Abstand zum Footer */
-    z-index: 2; /* Höherer z-index, um über dem Footer zu liegen */
+    bottom: 50px;
+    z-index: 2;
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
@@ -128,17 +128,28 @@ html, body {
     }
 }
 
-/* Footer */
+/* Footer mit Hintergrundbild */
 footer {
     width: 100%;
-    background-color: #333;
+    background-image: url('assets/images/Footer.jpg'); /* Bild als Hintergrund */
+    background-size: cover; /* Bild deckt den gesamten Footer ab */
+    background-position: center; /* Bild wird zentriert */
     color: #fff;
     text-align: center;
-    padding: 20px 0 15px 0; /* Mehr padding-top für Abstand zum Streifen */
+    padding: 40px 0; /* Mehr Padding für bessere Lesbarkeit */
     position: relative;
     margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1; /* Footer unter dem Streifen */
+    z-index: 1;
+}
+
+footer p {
+    background-color: rgba(0, 0, 0, 0.5); /* Dunkler durchsichtiger Hintergrund für bessere Lesbarkeit */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px; /* Abgerundete Ecken */
+    font-size: 16px;
+    margin: 0; /* Abstand entfernen */
 }
 
 footer a {
@@ -149,5 +160,5 @@ footer a {
 }
 
 footer a:hover {
-    color: #007bff;
+    color: #007bff; /* Moderne blaue Farbe beim Hover */
 }
