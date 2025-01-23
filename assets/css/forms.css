@@ -1,159 +1,157 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
-    <style>
-        /* Allgemeine Reset-Einstellungen */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Allgemeine Reset-Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html, body {
-            height: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #111; /* Dunkler Hintergrund */
+    color: #fff; /* Helle Schriftfarbe */
+    display: flex;
+    flex-direction: column;
+}
 
-        /* Bild-Container für das Header-Bild */
-        .header-image-container {
-            text-align: center;
-        }
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
+}
 
-        .header-image {
-            width: 100%;
-            height: auto;
-            max-width: 2560px;
-            max-height: 360px;
-        }
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
 
-        /* Header-Boxen */
-        .header-box-container {
-            display: flex;
-            width: 100%;
-            height: 55px; /* Balkenhöhe */
-            position: relative;
-            background: linear-gradient(90deg, #660000, #993300, #996600, #336633, #336666, #333399, #663366);
-            background-size: 300% 100%; /* Größere Breite für flüssigere Animation */
-            animation: rainbow-carousel 5s linear infinite; /* Unendliche Schleife wie Karussell */
-            z-index: 10;
-        }
+/* Header-Balken direkt unter dem Bild */
+.header-box-container {
+    width: 100%;
+    height: 55px;
+    background-color: #888;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background-size: 210% 100%;
+    animation: rainbow 5s linear infinite;
+}
 
-        /* Boxen für Navigationseinträge */
-        .header-box {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border-right: 2px solid #555;
-            position: relative;
-            padding: 15px 0;
-            font-size: 20px;
-        }
+.header-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 2px solid #888;
+    position: relative;
+    padding: 15px 0;
+    font-size: 20px;
+}
 
-        /* Letzte Box ohne rechten Strich */
-        .header-box:last-child {
-            border-right: none;
-        }
+.header-box:last-child {
+    border-right: none;
+}
 
-        .header-box a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            width: 100%;
-            transition: transform 0.3s ease, font-size 0.3s ease;
-        }
+.header-box a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
 
-        .header-box a:hover {
-            transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
-            font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
-        }
+.header-box a:hover {
+    transform: scale(1.05);
+    font-size: 18.9px;
+}
 
-        /* Footer */
-        footer {
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: auto; /* Footer bleibt am Seitenende */
-        }
+/* Seiteninhalt */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #222; /* Dunkler Hintergrund für den Inhalt */
+}
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.box {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+.box h2 {
+    color: #ffcc00; /* Gelbe Farbe für Überschriften */
+    margin-bottom: 10px;
+}
 
-        /* Für kleinere Bildschirme (Responsive) */
-        @media (max-width: 768px) {
-            .header-box-container {
-                flex-direction: column;
-                height: auto;
-            }
+.box p {
+    font-size: 16px;
+}
 
-            .header-box {
-                border-right: none;
-                border-bottom: 2px solid #555;
-            }
+.more-info-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
 
-            .header-box a {
-                font-size: 16px;
-            }
-        }
+.more-info-btn:hover {
+    background-color: #555;
+}
 
-        /* Regenbogen-Hintergrund-Animation */
-        @keyframes rainbow-carousel {
-            0% {
-                background-position: 0% 0%;
-            }
-            100% {
-                background-position: -300% 0%; /* Verschiebt die Farben wie ein Karussell */
-            }
-        }
-    </style>
-</head>
-<body>
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
 
-    <!-- Bild-Container für das Header-Bild -->
-    <div class="header-image-container">
-        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
-    </div>
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <!-- Header-Balken mit den Boxen -->
-    <div class="header-box-container">
-        <div class="header-box">
-            <a href="startseite.html">Startseite</a>
-        </div>
-        <div class="header-box">
-            <a href="steckbrief.html">Steckbrief</a>
-        </div>
-        <div class="header-box">
-            <a href="meinewerke.html">Meine Werke</a>
-        </div>
-        <div class="header-box">
-            <a href="dienstleistungen.html">Dienstleistungen</a>
-        </div>
-        <div class="header-box">
-            <a href="kontakt.html">Kontakt</a>
-        </div>
-    </div>
+footer a:hover {
+    text-decoration: underline;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
-    </footer>
+/* Für kleinere Bildschirme (Responsive) */
+@media (max-width: 768px) {
+    .header-box-container {
+        flex-direction: column;
+        height: auto;
+    }
 
-</body>
-</html>
+    .header-box {
+        border-right: none;
+        border-bottom: 2px solid #888;
+    }
+
+    .header-box a {
+        font-size: 16px;
+    }
+}
+
+/* Regenbogen-Hintergrund-Animation */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
