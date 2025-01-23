@@ -15,6 +15,9 @@
         html, body {
             height: 100%;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         /* Bild-Container für das Header-Bild */
@@ -23,7 +26,6 @@
         }
 
         .header-image {
-            display: block; /* Entfernt mögliche Inline-Abstände */
             width: 100%;
             height: auto;
             max-width: 2560px;
@@ -35,21 +37,27 @@
             display: flex;
             width: 100%;
             height: 55px; /* Balkenhöhe */
-            background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-            background-size: 210% 100%;
-            animation: rainbow 5s linear infinite;
+            position: relative;
+            background: linear-gradient(90deg, #660000, #993300, #996600, #336633, #336666, #333399, #663366);
+            background-size: 300% 100%; /* Größere Breite für flüssigere Animation */
+            animation: rainbow-carousel 5s linear infinite; /* Unendliche Schleife wie Karussell */
+            z-index: 10;
         }
 
+        /* Boxen für Navigationseinträge */
         .header-box {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-right: 2px solid #888;
+            border-right: 2px solid #555;
+            position: relative;
+            padding: 15px 0;
             font-size: 20px;
         }
 
+        /* Letzte Box ohne rechten Strich */
         .header-box:last-child {
             border-right: none;
         }
@@ -58,6 +66,8 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+            display: block;
+            width: 100%;
             transition: transform 0.3s ease, font-size 0.3s ease;
         }
 
@@ -73,6 +83,7 @@
             color: #fff;
             text-align: center;
             padding: 10px 0;
+            margin-top: auto; /* Footer bleibt am Seitenende */
         }
 
         footer a {
@@ -94,7 +105,7 @@
 
             .header-box {
                 border-right: none;
-                border-bottom: 2px solid #888;
+                border-bottom: 2px solid #555;
             }
 
             .header-box a {
@@ -103,12 +114,12 @@
         }
 
         /* Regenbogen-Hintergrund-Animation */
-        @keyframes rainbow {
+        @keyframes rainbow-carousel {
             0% {
                 background-position: 0% 0%;
             }
             100% {
-                background-position: 100% 0%;
+                background-position: -300% 0%; /* Verschiebt die Farben wie ein Karussell */
             }
         }
     </style>
