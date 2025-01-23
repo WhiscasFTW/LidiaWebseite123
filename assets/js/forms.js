@@ -21,7 +21,7 @@ function toggleSidebar() {
 }
 
 // Beim Laden der Seite den Zustand überprüfen
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
@@ -35,12 +35,18 @@ window.onload = function () {
 
     // Ladeanimation ausblenden
     const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.display = 'none';
-};
+    if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+    } else {
+        console.error("Ladeanimation-Element nicht gefunden!");
+    }
+});
 
 // Parallax-Effekt für das Header-Bild
 window.addEventListener('scroll', () => {
     const headerImage = document.querySelector('.header-image');
-    const scrollPosition = window.scrollY;
-    headerImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    if (headerImage) {
+        const scrollPosition = window.scrollY;
+        headerImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    }
 });
