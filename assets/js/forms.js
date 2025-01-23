@@ -45,10 +45,11 @@ function initCarousel() {
     const images = document.querySelectorAll('.carousel-inner img');
     const totalImages = images.length;
     const imageWidth = images[0].clientWidth + 10; // Breite eines Bildes + Abstand
+    const carouselWidth = document.querySelector('.sidebar-carousel').clientWidth;
 
     // Funktion zum Aktualisieren des Karussells
     function updateCarousel() {
-        const offset = -currentIndex * imageWidth;
+        const offset = -currentIndex * imageWidth + (carouselWidth / 2 - imageWidth / 2);
         carouselInner.style.transform = `translateX(${offset}px)`;
     }
 
