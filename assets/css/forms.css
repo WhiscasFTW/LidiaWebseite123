@@ -8,6 +8,7 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: #222; /* Hintergrundfarbe dunkel */
 }
 
 /* Bild-Container für das Header-Bild */
@@ -27,14 +28,12 @@ html, body {
 .header-box-container {
     width: 100%;
     height: 27.5px; /* Höhe halbiert */
-    background-color: #888;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background-size: 210% 100%;
+    animation: rainbow 10s linear infinite; /* Animation langsamer */
     display: flex;
     justify-content: space-evenly;
-    position: relative;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 210% 100%; /* Sorgt für den breiten Regenbogen-Effekt */
-    animation: rainbow 5s linear infinite;
-    margin-top: 0; /* Kein Abstand mehr nach oben */
+    margin-top: 0;
 }
 
 /* Boxen für Navigationseinträge */
@@ -45,12 +44,10 @@ html, body {
     justify-content: center;
     text-align: center;
     border-right: 2px solid #888;
-    position: relative;
     padding: 7.5px 0; /* Padding halbiert */
-    font-size: 10px; /* Schriftgröße halbiert */
+    font-size: 10px; /* Schriftgröße entsprechend angepasst */
 }
 
-/* Letzte Box ohne rechten Strich */
 .header-box:last-child {
     border-right: none;
 }
@@ -58,15 +55,14 @@ html, body {
 .header-box a {
     color: white;
     text-decoration: none;
-    font-size: 9px; /* Schriftgröße halbiert */
+    font-size: 10px; /* Schriftgröße halbiert */
     display: block;
     width: 100%;
     transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 .header-box a:hover {
-    transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
-    font-size: 9.45px; /* Neue Schriftgröße für den Hover-Effekt */
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -76,7 +72,8 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: relative;
+    position: absolute;
+    bottom: 0;
 }
 
 footer a {
@@ -99,10 +96,11 @@ footer a:hover {
     .header-box {
         border-right: none;
         border-bottom: 2px solid #888;
+        padding: 5px 0; /* Weiter angepasst für kleine Bildschirme */
     }
 
     .header-box a {
-        font-size: 8px; /* Schriftgröße für kleinere Bildschirme angepasst */
+        font-size: 8px; /* Schriftgröße für kleinere Bildschirme */
     }
 }
 
