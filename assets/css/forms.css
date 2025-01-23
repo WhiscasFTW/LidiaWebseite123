@@ -143,48 +143,30 @@ html, body {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-/* Bilderkarussell in der Sidebar */
-.sidebar-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+/* Akkordeon-Galerie */
+.accordion-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 20px;
 }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: max-content; /* Breite an den Inhalt anpassen */
+.accordion-item {
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease;
 }
 
-.carousel-inner img {
-    width: 200px; /* Größe der Bilder (200x200 Pixel) */
-    height: 200px;
-    object-fit: cover;
+.accordion-item img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    margin-right: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0; /* Verhindert, dass die Bilder schrumpfen */
-}
-
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
-    z-index: 10; /* Buttons über den Bildern */
+    transition: transform 0.3s ease;
 }
 
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
+.accordion-item img.active {
+    transform: scale(1.1);
 }
 
 /* Footer mit Hintergrundbild */
