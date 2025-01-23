@@ -58,19 +58,19 @@ html, body {
     margin-left: 10px;
 }
 
-/* Die Sidebar auf der rechten Seite */
+/* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
-    right: -250px; /* Sidebar außerhalb des Bildschirms nach rechts */
+    left: -250px; /* Sidebar außerhalb des Bildschirms nach links */
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar a {
@@ -87,13 +87,13 @@ html, body {
     color: #f1f1f1;
 }
 
-/* Close-Button (X) außerhalb der Sidebar */
+/* Close-Button (X) neben der Sidebar im geöffneten Zustand */
 .close-btn {
     font-size: 40px;
     color: #333;
     position: fixed;
     top: 20px;
-    right: 20px; /* X rechts neben der Sidebar */
+    left: 250px; /* X direkt neben der Sidebar */
     z-index: 2;
     cursor: pointer;
     display: none; /* Anfangs unsichtbar */
@@ -107,16 +107,11 @@ html, body {
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
     width: 250px;
-    right: 0; /* Sidebar gleitet nach links */
+    left: 0; /* Sidebar gleitet nach links */
 }
 
 .sidebar.open .close-btn {
     display: block; /* Zeige das X, wenn die Sidebar geöffnet ist */
-}
-
-/* Wenn die Sidebar geschlossen ist, verstecken wir sie */
-.sidebar.closed {
-    width: 0;
 }
 
 /* Regenbogen-Hintergrund-Animation */
