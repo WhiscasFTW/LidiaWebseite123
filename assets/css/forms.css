@@ -143,6 +143,47 @@ html, body {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Bilderkarussell in der Sidebar */
+.sidebar-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
 /* Footer mit Hintergrundbild */
 footer {
     width: 100%;
