@@ -51,14 +51,14 @@ html, body {
     z-index: 2;
 }
 
-/* Die Sidebar */
+/* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 350px;  /* Größere Sidebar */
     position: fixed;
     top: 0;
-    right: 0;
-    background-color: #333;
+    left: 0;  /* Sidebar auf die linke Seite verschieben */
+    background-color: #f0f0f0; /* Polarweiß */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -66,10 +66,10 @@ html, body {
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
+    padding: 10px 10px 10px 32px;  /* Etwas mehr Padding für den Text */
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: #333;  /* Dunkler Text für besseren Kontrast */
     display: block;
     transition: 0.3s;
 }
@@ -80,7 +80,7 @@ html, body {
 
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
-    width: 250px; /* Breite der Sidebar */
+    width: 350px; /* Breite der Sidebar */
 }
 
 /* Wenn die Sidebar geschlossen ist, verstecken wir sie */
