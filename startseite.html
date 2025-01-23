@@ -18,15 +18,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            margin: 0;
         }
 
         /* Bild-Container für das Header-Bild */
         .header-image-container {
             text-align: center;
-            margin-bottom: 0;
+            margin: 0; /* Kein Abstand um das Bild */
         }
 
         .header-image {
+            display: block; /* Entfernt mögliche Inline-Abstände */
             width: 100%;
             height: auto;
             max-width: 2560px;
@@ -38,19 +40,10 @@
             display: flex;
             width: 100%;
             height: 55px; /* Balkenhöhe */
-            background-color: #888;
-            border-top: 0;
-            margin-top: -5px; /* Korrektur, um den Balken näher ans Bild zu verschieben */
-            justify-content: space-evenly;
+            margin: 0; /* Kein zusätzlicher Abstand */
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
             background-size: 210% 100%;
             animation: rainbow 5s linear infinite;
-        }
-
-        /* Leerer Strich auf der linken Seite */
-        .header-box-left {
-            width: 2px;
-            background-color: #888;
         }
 
         /* Boxen für Navigationseinträge */
@@ -61,7 +54,6 @@
             justify-content: center;
             text-align: center;
             border-right: 2px solid #888;
-            position: relative;
             padding: 15px 0;
             font-size: 20px;
         }
@@ -92,7 +84,6 @@
             color: #fff;
             text-align: center;
             padding: 10px 0;
-            position: relative;
         }
 
         footer a {
@@ -131,7 +122,6 @@
                 background-position: 100% 0%;
             }
         }
-
     </style>
 </head>
 <body>
@@ -143,7 +133,6 @@
 
     <!-- Header-Balken mit den Boxen -->
     <div class="header-box-container">
-        <div class="header-box-left"></div>
         <div class="header-box">
             <a href="startseite.html">Startseite</a>
         </div>
@@ -159,7 +148,6 @@
         <div class="header-box">
             <a href="kontakt.html">Kontakt</a>
         </div>
-        <div class="header-box-left"></div>
     </div>
 
     <!-- Footer -->
