@@ -7,7 +7,7 @@
 
 html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Moderne, seriöse Schriftart */
     display: flex;
     flex-direction: column;
     background-color: #121212; /* Dunkler Hintergrund */
@@ -65,7 +65,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;  /* Sidebar auf die linke Seite verschieben */
-    background-color: #f0f0f0; /* Polarweiß */
+    background-color: rgba(240, 240, 240, 0.9); /* Halbtransparentes Polarweiß */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -79,6 +79,7 @@ html, body {
     color: #333;  /* Dunkler Text für besseren Kontrast */
     display: block;
     transition: 0.3s;
+    font-family: 'Open Sans', sans-serif; /* Moderne, seriöse Schriftart für Links */
 }
 
 .sidebar a:hover {
