@@ -54,7 +54,7 @@ html, body {
     animation: rainbow 15s linear infinite;
     position: absolute;
     bottom: 0;
-    z-index: -1; /* Damit der Streifen hinter dem Inhalt liegt, aber vor dem Footer */
+    z-index: 1; /* Streifen muss unterhalb des Inhalts, aber über dem Footer sein */
 }
 
 /* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
@@ -65,12 +65,12 @@ html, body {
     border-radius: 50%; /* Runder Button */
     padding: 15px; /* Größere Padding für den Button */
     cursor: pointer;
-    position: absolute;
+    position: fixed; /* Fixierte Position */
     top: 50%;
-    left: 10px; /* Direkt neben der Sidebar */
+    left: -35px; /* Button direkt auf der linken Seite */
     transform: translateY(-50%);
     z-index: 2;
-    transition: none; /* Keine Veränderung beim Hover */
+    transition: left 0.5s ease; /* Sanfter Übergang für die Position */
 }
 
 /* Die Sidebar auf der linken Seite */
@@ -108,6 +108,11 @@ html, body {
     left: 0; /* Sidebar gleitet nach links */
 }
 
+/* Wenn die Sidebar geöffnet ist, Button auch verschieben */
+.sidebar.open + .toggle-button {
+    left: 250px; /* Button verschiebt sich nach rechts */
+}
+
 /* Regenbogen-Hintergrund-Animation */
 @keyframes rainbow {
     0% {
@@ -141,5 +146,5 @@ footer a:hover {
 
 /* Anpassung des Buttons, wenn Sidebar geöffnet */
 .sidebar.open + .toggle-button {
-    left: 250px; /* Button verschiebt sich nach rechts, um an der Sidebar auszurichten */
+    left: 250px; /* Button verschiebt sich nach rechts */
 }
