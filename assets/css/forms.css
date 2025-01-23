@@ -91,13 +91,14 @@ html, body {
     height: 10px; /* Leerer Abstand zwischen "Meine Werke" und "Dienstleistungen" */
 }
 
-/* Close-Button (X) außerhalb der Sidebar */
+/* Close-Button (X) auf der Sidebar */
 .close-btn {
     font-size: 40px;
     color: #333;
     position: absolute;
     top: 20px;
-    left: 270px;
+    left: 100%;
+    transform: translateX(-100%);
     cursor: pointer;
     z-index: 2;
     display: none; /* Anfangs unsichtbar */
