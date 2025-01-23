@@ -63,12 +63,14 @@ html, body {
     left: 15px; /* Standardposition */
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.5s ease; /* Sanfte Bewegung */
+    transition: left 0.5s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Wenn die Sidebar geöffnet ist, Button verschieben */
 .sidebar.open + .toggle-button {
     left: 265px; /* Button verschiebt sich nach rechts */
+    background-color: #007bff; /* Blaue Hintergrundfarbe */
+    transform: translateY(-50%) rotate(90deg); /* Drehung */
 }
 
 /* Die Sidebar auf der linken Seite */
@@ -78,23 +80,26 @@ html, body {
     position: fixed;
     top: 0;
     left: -250px;
-    background-color: rgba(255, 255, 255, 0.1); /* Noch transparenter */
-    backdrop-filter: blur(20px); /* Stärkere Unschärfe für mehr Glas-Effekt */
-    -webkit-backdrop-filter: blur(20px); /* Für Safari-Browser */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 3; /* Höherer z-index, um über dem Footer zu liegen */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten */
     border-right: 1px solid rgba(255, 255, 255, 0.1); /* Feiner, transparenter Rahmen */
+    animation: backgroundAnimation 10s infinite alternate; /* Hintergrund-Animation */
 }
 
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
     width: 250px;
     left: 0;
+    animation: slideIn 0.5s ease-in-out; /* Schwingende Bewegung */
 }
 
+/* Links in der Sidebar */
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
@@ -106,11 +111,23 @@ html, body {
     background-color: rgba(255, 255, 255, 0.7); /* Heller Hintergrund für Links */
     margin: 5px 10px; /* Abstand zwischen den Links */
     border-radius: 5px; /* Abgerundete Ecken */
+    position: relative; /* Für den Pfeil-Effekt */
 }
 
 .sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.9); /* Hellerer Hintergrund beim Hover */
     color: #007bff; /* Blaue Schrift beim Hover */
+    transform: translateX(10px); /* Bewegung nach rechts */
+}
+
+.sidebar a:hover::after {
+    content: '→'; /* Pfeil-Symbol */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #007bff;
 }
 
 /* Regenbogen-Hintergrund-Animation */
@@ -120,6 +137,29 @@ html, body {
     }
     100% {
         background-position: 100% 50%;
+    }
+}
+
+/* Hintergrund-Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Eingangsanimation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    60% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
