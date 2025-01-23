@@ -44,14 +44,22 @@ html, body {
 /* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 50px;
-    color: #888; /* Graue Farbe */
+    color: white; /* Weißes Zeichen */
+    background-color: #888; /* Grauer Hintergrund */
+    border-radius: 50%; /* Kreisform */
+    padding: 10px; /* Etwas Abstand für den Kreis */
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 10px; /* Direkt neben der Sidebar */
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Hover-Effekt für den Button */
+.toggle-button:hover {
+    background-color: #555; /* Etwas dunklerer grauer Hintergrund beim Hover */
 }
 
 /* Die Sidebar auf der linken Seite */
