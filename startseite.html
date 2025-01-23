@@ -1,8 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="assets/css/forms.css">
+</head>
+<body>
 
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
+    <!-- Bild-Container für das Header-Bild -->
+    <div class="header-image-container">
+        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
+    </div>
 
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-}
+    <!-- Header-Balken (Regenbogen-Streifen) -->
+    <div class="header-box-container"></div>
+
+    <!-- Die Sidebar auf der linken Seite -->
+    <div id="sidebar" class="sidebar">
+        <a href="startseite.html">Startseite</a>
+        <a href="steckbrief.html">Steckbrief</a>
+        <a href="meinewerke.html">Meine&nbsp;Werke</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+
+    <!-- Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar -->
+    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+
+    <!-- Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer -->
+    <div class="second-header-box-container"></div>
+
+    <footer>
+        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+    </footer>
+
+    <script src="assets/js/forms.js"></script>
+
+</body>
+</html>
