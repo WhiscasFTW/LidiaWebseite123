@@ -44,11 +44,12 @@ function initCarousel() {
     const carouselInner = document.querySelector('.carousel-inner');
     const images = document.querySelectorAll('.carousel-inner img');
     const totalImages = images.length;
-    const imageWidth = images[0].clientWidth + 10; // Breite eines Bildes + Abstand
+    const imageWidth = 200; // Breite eines Bildes (200px)
+    const sidebarWidth = 250; // Breite der Sidebar (250px)
 
     // Funktion zum Aktualisieren des Karussells
     function updateCarousel() {
-        const offset = -currentIndex * imageWidth;
+        const offset = -currentIndex * imageWidth + (sidebarWidth / 2 - imageWidth / 2);
         carouselInner.style.transform = `translateX(${offset}px)`;
     }
 
