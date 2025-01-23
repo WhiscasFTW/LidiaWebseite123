@@ -8,7 +8,10 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #222; /* Hintergrundfarbe dunkel */
+    display: flex;
+    flex-direction: column;
+    background-color: #121212; /* Dunkler Hintergrund */
+    color: #ffffff; /* Standardfarbe für Text */
 }
 
 /* Bild-Container für das Header-Bild */
@@ -29,11 +32,11 @@ html, body {
     width: 100%;
     height: 27.5px; /* Höhe halbiert (ehemals 55px) */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 210% 100%;
+    background-size: 300% 100%; /* Größerer Bereich für nahtlose Bewegung */
     animation: rainbow 10s linear infinite; /* Animation langsamer */
     display: flex;
     justify-content: space-evenly;
-    margin-top: 0;
+    margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
 }
 
 /* Boxen für Navigationseinträge */
@@ -62,7 +65,7 @@ html, body {
 }
 
 .header-box a:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
 }
 
 /* Footer */
@@ -107,9 +110,9 @@ footer a:hover {
 /* Regenbogen-Hintergrund-Animation */
 @keyframes rainbow {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% 50%;
     }
     100% {
-        background-position: 100% 0%;
+        background-position: 100% 50%; /* Durchgängige Bewegung von links nach rechts */
     }
 }
