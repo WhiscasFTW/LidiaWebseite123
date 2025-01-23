@@ -32,4 +32,15 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
+
+    // Ladeanimation ausblenden
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
 };
+
+// Parallax-Effekt für das Header-Bild
+window.addEventListener('scroll', () => {
+    const headerImage = document.querySelector('.header-image');
+    const scrollPosition = window.scrollY;
+    headerImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
