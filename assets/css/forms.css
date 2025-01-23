@@ -98,15 +98,26 @@ html, body {
     animation: slideIn 0.5s ease-in-out; /* Schwingende Bewegung */
 }
 
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+}
+
+.artist-signature img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Links in der Sidebar */
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 22px;
     color: #333; /* Dunkle Schrift für bessere Lesbarkeit */
     display: block;
     transition: 0.3s;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive; /* Künstlerische Schriftart */
     background-color: rgba(255, 255, 255, 0.7); /* Heller Hintergrund für Links */
     margin: 5px 10px; /* Abstand zwischen den Links */
     border-radius: 5px; /* Abgerundete Ecken */
@@ -114,13 +125,27 @@ html, body {
 
 .sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.9); /* Hellerer Hintergrund beim Hover */
-    color: #007bff; /* Blaue Schrift beim Hover */
+    color: #ff6f61; /* Künstlerische Akzentfarbe */
     transform: translateX(10px); /* Bewegung nach rechts */
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3); /* Schatten-Effekt */
 }
 
-/* Entferne die Pfeile */
-.sidebar a:hover::after {
-    display: none; /* Pfeil-Symbol ausblenden */
+/* Miniaturgalerie */
+.gallery-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery-preview img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-preview img:hover {
+    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
 }
 
 /* Regenbogen-Hintergrund-Animation */
