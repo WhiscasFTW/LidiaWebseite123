@@ -43,11 +43,11 @@ html, body {
 
 /* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 50px;
+    font-size: 30px; /* Etwas kleinere Schrift für das Zeichen */
     color: white; /* Weißes Zeichen */
-    background-color: #888; /* Grauer Hintergrund */
-    border-radius: 50%; /* Kreisform */
-    padding: 10px; /* Etwas Abstand für den Kreis */
+    background-color: #333; /* Grauer Hintergrund, passend zum Footer */
+    border-radius: 50%; /* Runder Button */
+    padding: 15px; /* Größere Padding für den Button */
     cursor: pointer;
     position: absolute;
     top: 50%;
