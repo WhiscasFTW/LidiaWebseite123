@@ -131,18 +131,36 @@ html, body {
 /* Footer mit Hintergrundbild */
 footer {
     width: 100%;
-    height: 51px; /* Höhe des Footers beibehalten */
-    background-image: url('assets/images/Footer.jpg'); /* Bild als Hintergrund */
-    background-size: auto 51px; /* Bild auf 51px Höhe skalieren */
-    background-repeat: repeat-x; /* Bild horizontal wiederholen */
-    background-position: center; /* Bild zentrieren */
-    color: #fff;
-    text-align: center;
-    line-height: 51px; /* Text vertikal zentrieren */
+    height: 51px;
     position: relative;
     margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    overflow: hidden; /* Verhindert, dass das Bild über den Footer hinausragt */
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Bild hinter dem Text */
+}
+
+.footer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild deckt den gesamten Footer ab */
+}
+
+footer p {
+    position: relative;
+    z-index: 1; /* Text über dem Bild */
+    color: #fff;
+    text-align: center;
+    line-height: 51px;
+    margin: 0;
 }
 
 footer a {
@@ -153,5 +171,5 @@ footer a {
 }
 
 footer a:hover {
-    color: #007bff; /* Moderne blaue Farbe beim Hover */
+    color: #007bff;
 }
