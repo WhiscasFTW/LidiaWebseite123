@@ -4,7 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Allgemeine Reset-Einstellungen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Bild-Container für das Header-Bild */
+        .header-image-container {
+            text-align: center;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            max-width: 2560px;
+            max-height: 360px;
+        }
+
+        /* Header-Boxen */
+        .header-box-container {
+            display: flex;
+            width: 100%;
+            height: 55px; /* Balkenhöhe */
+            position: relative;
+            background: linear-gradient(90deg, #660000, #993300, #996600, #336633, #336666, #333399, #663366);
+            background-size: 300% 100%; /* Größere Breite für flüssigere Animation */
+            animation: rainbow-carousel 5s linear infinite; /* Unendliche Schleife wie Karussell */
+            z-index: 10;
+        }
+
+        /* Boxen für Navigationseinträge */
+        .header-box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-right: 2px solid #555;
+            position: relative;
+            padding: 15px 0;
+            font-size: 20px;
+        }
+
+        /* Letzte Box ohne rechten Strich */
+        .header-box:last-child {
+            border-right: none;
+        }
+
+        .header-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
+
+        .header-box a:hover {
+            transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
+            font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Footer bleibt am Seitenende */
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Für kleinere Bildschirme (Responsive) */
+        @media (max-width: 768px) {
+            .header-box-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .header-box {
+                border-right: none;
+                border-bottom: 2px solid #555;
+            }
+
+            .header-box a {
+                font-size: 16px;
+            }
+        }
+
+        /* Regenbogen-Hintergrund-Animation */
+        @keyframes rainbow-carousel {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: -300% 0%; /* Verschiebt die Farben wie ein Karussell */
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -32,41 +150,10 @@
         </div>
     </div>
 
-    <!-- Zusätzlicher Inhalt -->
-    <main>
-        <section class="content-section">
-            <h2>Willkommen auf meiner Seite</h2>
-            <p>Dies ist ein Beispieltext, der den Anfang der Seite darstellt. Scrollen Sie nach unten, um mehr Inhalte zu sehen!</p>
-        </section>
-
-        <section class="content-grid">
-            <div class="content-box">
-                <h3>Box 1</h3>
-                <p>Dies ist ein Beispielinhalt für die erste Box.</p>
-                <a href="mehr.html" class="btn">Mehr erfahren</a>
-            </div>
-            <div class="content-box">
-                <h3>Box 2</h3>
-                <p>Dies ist ein Beispielinhalt für die zweite Box.</p>
-                <a href="mehr.html" class="btn">Mehr erfahren</a>
-            </div>
-            <div class="content-box">
-                <h3>Box 3</h3>
-                <p>Dies ist ein Beispielinhalt für die dritte Box.</p>
-                <a href="mehr.html" class="btn">Mehr erfahren</a>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Weitere Inhalte</h2>
-            <p>Hier könnten noch mehr Informationen oder Bilder eingefügt werden. Dieser Abschnitt ist nur ein Beispiel.</p>
-        </section>
-    </main>
-
     <!-- Footer -->
     <footer>
         <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
 
 </body>
-</html>
+</html>   
