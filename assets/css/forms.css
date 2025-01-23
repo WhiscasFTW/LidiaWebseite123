@@ -97,7 +97,7 @@ html, body {
     color: #333;
     position: fixed;
     top: 20px;
-    left: 260px; /* Positionieren des X neben der Sidebar */
+    left: 250px; /* Positioniert das X genau neben der Sidebar */
     z-index: 2;
     cursor: pointer;
     display: none; /* Anfangs unsichtbar */
