@@ -174,15 +174,14 @@ html, body {
     transform-origin: center center -250px; /* 3D-Transformation */
     transition: transform 0.5s ease, opacity 0.5s ease; /* Sanfte Übergänge */
     backface-visibility: visible; /* Rückseite der Bilder sichtbar machen */
-    transform: scale(1); /* Bilder behalten ihre ursprüngliche Größe */
 }
 
 /* Positionierung der Bilder im 3D-Raum mit konstanter Skalierung */
-.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(250px) scale(1); }
-.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(250px) scale(1); }
-.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(250px) scale(1); }
-.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(250px) scale(1); }
-.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(250px) scale(1); }
+.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(250px) scale(calc(1000px / (1000px - 250px))); }
+.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(250px) scale(calc(1000px / (1000px - 250px))); }
+.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(250px) scale(calc(1000px / (1000px - 250px))); }
+.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(250px) scale(calc(1000px / (1000px - 250px))); }
+.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(250px) scale(calc(1000px / (1000px - 250px))); }
 
 /* Animation für die Rotation */
 @keyframes rotateGallery {
