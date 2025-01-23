@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
     <link rel="stylesheet" href="assets/css/forms.css">
-    <!-- FontAwesome für Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts für künstlerische Schriftart -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
@@ -37,27 +34,21 @@
         <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
         <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
 
-        <!-- Akkordeon-Galerie -->
-        <div class="accordion-gallery">
-            <div class="accordion-item">
-                <img src="assets/images/GalerieSB1.png" alt="Bild 1" onclick="toggleAccordion(this)">
+        <!-- Horizontale Scroll-Galerie -->
+        <div class="horizontal-gallery">
+            <button class="scroll-button left" onclick="scrollGallery(-1)">&#10094;</button>
+            <div class="gallery-container">
+                <img src="assets/images/GalerieSB1.png" alt="Bild 1" onclick="openLightbox('assets/images/GalerieSB1.png')">
+                <img src="assets/images/GalerieSB2.png" alt="Bild 2" onclick="openLightbox('assets/images/GalerieSB2.png')">
+                <img src="assets/images/GalerieSB3.png" alt="Bild 3" onclick="openLightbox('assets/images/GalerieSB3.png')">
+                <img src="assets/images/GalerieSB4.png" alt="Bild 4" onclick="openLightbox('assets/images/GalerieSB4.png')">
+                <img src="assets/images/GalerieSB5.png" alt="Bild 5" onclick="openLightbox('assets/images/GalerieSB5.png')">
             </div>
-            <div class="accordion-item">
-                <img src="assets/images/GalerieSB2.png" alt="Bild 2" onclick="toggleAccordion(this)">
-            </div>
-            <div class="accordion-item">
-                <img src="assets/images/GalerieSB3.png" alt="Bild 3" onclick="toggleAccordion(this)">
-            </div>
-            <div class="accordion-item">
-                <img src="assets/images/GalerieSB4.png" alt="Bild 4" onclick="toggleAccordion(this)">
-            </div>
-            <div class="accordion-item">
-                <img src="assets/images/GalerieSB5.png" alt="Bild 5" onclick="toggleAccordion(this)">
-            </div>
+            <button class="scroll-button right" onclick="scrollGallery(1)">&#10095;</button>
         </div>
     </div>
 
-    <!-- Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar -->
+    <!-- Button zum Öffnen und Schließen der Sidebar -->
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
     <!-- Zweiter Streifen direkt über dem Footer -->
@@ -70,6 +61,11 @@
         </div>
         <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Lightbox Bild">
+    </div>
 
     <script src="assets/js/forms.js"></script>
 </body>
