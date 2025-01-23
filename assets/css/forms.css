@@ -10,7 +10,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #1a1a1a;
+    background-color: #121212;
     color: #ffffff;
 }
 
@@ -25,103 +25,94 @@ html, body {
     height: auto;
     max-width: 2560px;
     max-height: 360px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Header-Balken (Regenbogen-Streifen) */
+/* Header-Balken */
 .header-box-container {
     width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffd166, #4ecdc4, #4d8af0, #845ef7);
+    height: 7px;
+    background-color: #888;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: relative;
-    margin-top: -6px;
+    margin-top: -5px;
 }
 
-/* Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer */
+/* Der obere Streifen, der direkt unter dem Bild angezeigt wird */
+.header-box-container {
+    width: 100%;
+    height: 7px;
+    background-color: #ff2a68;
+    position: absolute;
+    top: 0;
+}
+
+/* Der zweite Streifen, der direkt über dem Footer liegt */
 .second-header-box-container {
     width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffd166, #4ecdc4, #4d8af0, #845ef7);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
+    height: 7px;
+    background-color: #ff2a68;
     position: absolute;
-    bottom: 50px;
-    z-index: 2;
+    bottom: 40px;
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 40px;
+    font-size: 60px;
     color: #fff;
     background-color: transparent;
     border-radius: 50%;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     position: fixed;
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.toggle-button:hover {
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.5s ease;
 }
 
 /* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
-    width: 250px; /* Breite der Sidebar */
+    width: 0;
     position: fixed;
     top: 0;
-    left: -250px; /* Sidebar außerhalb des Bildschirms nach links */
-    background-color: #f5f5f5;
+    left: -250px;
+    background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 15% 25%, 0 0); /* Hexagonale Form */
-}
-
-/* Wenn die Sidebar geöffnet ist */
-.sidebar.open {
-    left: 0; /* Sidebar gleitet nach links */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 15% 25%, 0 0); /* Hexagonale Form beibehalten */
-    animation: slideIn 0.5s ease-in-out; /* Animation für das Hereinklettern */
-}
-
-/* Animation für das Hereinklettern */
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%) rotate(-30deg); /* Startposition außerhalb des Bildschirms */
-    }
-    100% {
-        transform: translateX(0) rotate(0deg); /* Endposition */
-    }
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar a {
-    padding: 15px 20px;
+    padding: 10px 10px 10px 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: #333;
     display: block;
     transition: 0.3s;
     font-family: 'Open Sans', sans-serif;
-    border-radius: 5px;
-    margin: 5px 10px;
 }
 
 .sidebar a:hover {
-    background-color: #007bff;
-    color: #fff;
-    transform: translateX(5px);
+    color: #f1f1f1;
+}
+
+/* Wenn die Sidebar geöffnet ist */
+.sidebar.open {
+    width: 250px;
+    left: 0;
+}
+
+/* Wenn die Sidebar geöffnet ist, Button auch verschieben */
+.sidebar.open + .toggle-button {
+    left: 250px;
 }
 
 /* Regenbogen-Hintergrund-Animation */
@@ -134,48 +125,23 @@ html, body {
     }
 }
 
-/* Footer mit Hintergrundbild */
+/* Footer */
 footer {
     width: 100%;
-    height: 51px;
-    position: relative;
-    margin-top: auto;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    overflow: hidden; /* Verhindert, dass das Bild über den Footer hinausragt */
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Bild hinter dem Text */
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Bild deckt den gesamten Footer ab */
-}
-
-footer p {
-    position: relative;
-    z-index: 1; /* Text über dem Bild */
+    background-color: #333;
     color: #fff;
     text-align: center;
-    line-height: 51px;
-    margin: 0;
+    padding: 10px 0;
+    position: relative;
+    margin-top: auto;
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #007bff;
+    text-decoration: underline;
 }
