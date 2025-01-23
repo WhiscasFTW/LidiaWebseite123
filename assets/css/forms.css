@@ -48,12 +48,11 @@ html, body {
     background-color: #888;
     display: flex;
     justify-content: space-evenly;
-    position: absolute;
-    bottom: 0; /* Direkt über dem Footer */
+    position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    z-index: 1; /* Streifen muss unterhalb des Inhalts, aber über dem Footer sein */
+    margin-top: auto;
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
