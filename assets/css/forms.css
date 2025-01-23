@@ -27,7 +27,7 @@ html, body {
 /* Header-Balken direkt unter dem Bild */
 .header-box-container {
     width: 100%;
-    height: 27.5px; /* Höhe halbiert */
+    height: 27.5px; /* Höhe halbiert (ehemals 55px) */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 210% 100%;
     animation: rainbow 10s linear infinite; /* Animation langsamer */
@@ -45,7 +45,7 @@ html, body {
     text-align: center;
     border-right: 2px solid #888;
     padding: 7.5px 0; /* Padding halbiert */
-    font-size: 10px; /* Schriftgröße entsprechend angepasst */
+    font-size: 10px; /* Schriftgröße halbiert */
 }
 
 .header-box:last-child {
