@@ -73,12 +73,15 @@ html, body {
     position: fixed;
     top: 0;
     left: -250px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5); /* Halbtransparenter Hintergrund */
+    backdrop-filter: blur(10px); /* Glas-Effekt */
+    -webkit-backdrop-filter: blur(10px); /* Für Safari-Browser */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 3; /* Höherer z-index, um über dem Footer zu liegen */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Feiner Rahmen */
 }
 
 /* Wenn die Sidebar geöffnet ist */
@@ -98,12 +101,8 @@ html, body {
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
-}
-
-/* Wenn die Sidebar geöffnet ist, Button auch verschieben */
-.sidebar.open + .toggle-button {
-    left: 250px;
+    background-color: rgba(0, 123, 255, 0.1); /* Leichter Hover-Effekt */
+    color: #007bff;
 }
 
 /* Regenbogen-Hintergrund-Animation */
