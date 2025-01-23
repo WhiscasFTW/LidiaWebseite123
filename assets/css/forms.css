@@ -154,12 +154,12 @@ html, body {
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
-    width: max-content; /* Wichtig: Breite an den Inhalt anpassen */
+    width: max-content; /* Breite an den Inhalt anpassen */
 }
 
 .carousel-inner img {
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Größe der Bilder (200x200 Pixel) */
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 10px;
