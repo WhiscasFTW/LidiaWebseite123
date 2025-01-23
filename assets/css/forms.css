@@ -47,8 +47,8 @@ html, body {
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: relative;
-    margin-top: -5px; /* Anpassung für bündige Ausrichtung */
+    position: relative; /* Bündig unter dem Header-Bild */
+    margin-top: -5px; /* Kleine Anpassung für perfekte Ausrichtung */
     z-index: 1; /* Über dem Header-Bild */
 }
 
@@ -137,8 +137,8 @@ html, body {
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: relative;
-    bottom: 0; /* Bündig über dem Footer */
+    position: relative; /* Bündig über dem Footer */
+    bottom: 0; /* Am unteren Rand des Inhalts */
     z-index: 1; /* Über dem Footer */
 }
 
