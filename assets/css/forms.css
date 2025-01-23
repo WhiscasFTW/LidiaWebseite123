@@ -12,7 +12,7 @@ html, body {
     flex-direction: column;
     background-color: #121212;
     color: #ffffff;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
+    cursor: url('assets/images/circle.png') 16 16, pointer;
 }
 
 /* Overlay für die Sidebar */
@@ -40,52 +40,18 @@ html, body {
     max-height: 360px;
 }
 
-/* Header-Balken (Regenbogen-Streifen) */
+/* Header-Balken */
 .header-box-container {
     width: 100%;
-    height: 3.5px; /* Halbierte Dicke */
+    height: 3.5px;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: relative;
-    margin-top: -5px; /* Anpassung für bündigen Verlauf */
+    margin-top: -5px;
 }
 
-/* Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer */
-.second-header-box-container {
-    width: 100%;
-    height: 3.5px; /* Halbierte Dicke */
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: absolute;
-    bottom: 51px; /* 51px (Höhe des Footers) */
-    z-index: 2; /* Höherer z-index, um über dem Footer zu liegen */
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 60px;
-    color: #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3; /* Buttons über der Galerie */
-    transition: left 0.5s ease, transform 0.3s ease;
-}
-
-/* Wenn die Sidebar geöffnet ist, Button verschieben */
-.sidebar.open + .toggle-button {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Die Sidebar auf der linken Seite */
+/* Sidebar */
 .sidebar {
     height: 100%;
     width: 0;
@@ -103,73 +69,84 @@ html, body {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
     width: 250px;
     left: 0;
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Links in der Sidebar */
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
-    display: block;
-    transition: 0.3s;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
-    border-radius: 5px;
-    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Akkordeon-Galerie */
-.accordion-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-}
-
-.accordion-item {
+/* Horizontale Scroll-Galerie */
+.horizontal-gallery {
+    position: relative;
     width: 100%;
     overflow: hidden;
-    transition: height 0.3s ease;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.accordion-item img {
-    width: 100%;
-    height: auto;
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 40px;
+}
+
+.gallery-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.accordion-item img.active {
+.gallery-container img:hover {
     transform: scale(1.1);
 }
 
-/* Footer mit Hintergrundbild */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.scroll-button.left {
+    left: 10px;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Footer */
 footer {
     width: 100%;
     height: 51px;
@@ -215,28 +192,9 @@ footer a:hover {
     color: #007bff;
 }
 
-/* Animation für den Regenbogen-Effekt */
+/* Animationen */
 @keyframes rainbow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Animation für die schwebende Signatur */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
