@@ -76,17 +76,34 @@ html, body {
 /* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 250px; /* Breite der Sidebar */
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Sidebar außerhalb des Bildschirms nach links */
     background-color: #f5f5f5;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 0 10px 10px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 15% 25%, 0 0); /* Hexagonale Form */
+}
+
+/* Wenn die Sidebar geöffnet ist */
+.sidebar.open {
+    left: 0; /* Sidebar gleitet nach links */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 15% 25%, 0 0); /* Hexagonale Form beibehalten */
+    animation: slideIn 0.5s ease-in-out; /* Animation für das Hereinklettern */
+}
+
+/* Animation für das Hereinklettern */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%) rotate(-30deg); /* Startposition außerhalb des Bildschirms */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg); /* Endposition */
+    }
 }
 
 .sidebar a {
@@ -105,17 +122,6 @@ html, body {
     background-color: #007bff;
     color: #fff;
     transform: translateX(5px);
-}
-
-/* Wenn die Sidebar geöffnet ist */
-.sidebar.open {
-    width: 250px;
-    left: 0;
-}
-
-/* Wenn die Sidebar geöffnet ist, Button auch verschieben */
-.sidebar.open + .toggle-button {
-    left: 250px;
 }
 
 /* Regenbogen-Hintergrund-Animation */
