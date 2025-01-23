@@ -8,11 +8,11 @@ function toggleSidebar() {
     toggleButton.classList.toggle('open');
 
     if (sidebar.classList.contains('open')) {
-        overlay.style.display = 'block'; /* Overlay anzeigen */
-        localStorage.setItem('sidebarState', 'open'); /* Zustand speichern */
+        overlay.style.display = 'block';
+        localStorage.setItem('sidebarState', 'open');
     } else {
-        overlay.style.display = 'none'; /* Overlay ausblenden */
-        localStorage.setItem('sidebarState', 'closed'); /* Zustand speichern */
+        overlay.style.display = 'none';
+        localStorage.setItem('sidebarState', 'closed');
     }
 
     sound.play().catch(error => {
