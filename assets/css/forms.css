@@ -8,10 +8,11 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #111; /* Dunkler Hintergrund */
-    color: #fff; /* Helle Schriftfarbe */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background-color: #222; /* Dunkler Hintergrund */
+    color: #eee;
 }
 
 /* Bild-Container für das Header-Bild */
@@ -27,16 +28,12 @@ html, body {
     max-height: 360px;
 }
 
-/* Header-Balken direkt unter dem Bild */
+/* Header-Balken */
 .header-box-container {
+    display: flex;
     width: 100%;
     height: 55px;
-    background-color: #888;
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 210% 100%;
+    background: linear-gradient(90deg, #660000, #993300, #996600, #336633, #336666, #333399, #663366);
     animation: rainbow 5s linear infinite;
 }
 
@@ -45,11 +42,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    border-right: 2px solid #888;
-    position: relative;
-    padding: 15px 0;
-    font-size: 20px;
+    border-right: 1px solid #444;
 }
 
 .header-box:last-child {
@@ -60,98 +53,15 @@ html, body {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    display: block;
-    width: 100%;
-    transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
-.header-box a:hover {
-    transform: scale(1.05);
-    font-size: 18.9px;
-}
-
-/* Seiteninhalt */
-.content {
-    flex: 1;
+/* Inhalt */
+main {
     padding: 20px;
-    background-color: #222; /* Dunkler Hintergrund für den Inhalt */
 }
 
-.box {
-    background-color: #333;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.box h2 {
-    color: #ffcc00; /* Gelbe Farbe für Überschriften */
-    margin-bottom: 10px;
-}
-
-.box p {
-    font-size: 16px;
-}
-
-.more-info-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.more-info-btn:hover {
-    background-color: #555;
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
+.content-section {
+    margin-bottom: 40px;
     text-align: center;
-    padding: 10px 0;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Für kleinere Bildschirme (Responsive) */
-@media (max-width: 768px) {
-    .header-box-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .header-box {
-        border-right: none;
-        border-bottom: 2px solid #888;
-    }
-
-    .header-box a {
-        font-size: 16px;
-    }
-}
-
-/* Regenbogen-Hintergrund-Animation */
-@keyframes rainbow {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 0%;
-    }
-}
