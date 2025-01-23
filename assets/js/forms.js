@@ -33,26 +33,3 @@ window.onload = function () {
         overlay.classList.add('active');
     }
 };
-
-// Funktion für die horizontale Scroll-Galerie
-function scrollGallery(direction) {
-    const gallery = document.querySelector('.gallery-container');
-    const scrollAmount = 220; // 200px Bildbreite + 20px Abstand
-    gallery.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-    });
-}
-
-// Lightbox-Funktionen
-function openLightbox(imageSrc) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = imageSrc;
-    lightbox.style.display = 'flex';
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
-}
