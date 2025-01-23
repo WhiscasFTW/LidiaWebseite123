@@ -45,12 +45,13 @@ html, body {
 .toggle-button {
     font-size: 40px;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
     display: block;
+    transition: left 0.3s ease-in-out;
 }
 
 /* Die Sidebar auf der linken Seite */
@@ -117,4 +118,9 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Anpassung des Buttons, wenn Sidebar geöffnet */
+.sidebar.open + #toggleButton {
+    left: 250px; /* Button verschiebt sich nach rechts, um an der Sidebar auszurichten */
 }
