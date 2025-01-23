@@ -9,4 +9,3 @@ function toggleSidebar() {
         sidebar.classList.add("open");
     }
 }
-
