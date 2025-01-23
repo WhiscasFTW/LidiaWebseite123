@@ -172,6 +172,7 @@ html, body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
     transform-origin: center center -250px; /* 3D-Transformation */
     transition: transform 0.5s ease, opacity 0.5s ease; /* Sanfte Übergänge */
+    backface-visibility: hidden; /* Verhindert, dass die Rückseite der Bilder sichtbar wird */
 }
 
 /* Positionierung der Bilder im 3D-Raum */
