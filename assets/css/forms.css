@@ -41,16 +41,16 @@ html, body {
     margin-top: -5px;
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
+/* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 40px;
+    font-size: 50px;
+    color: #888; /* Graue Farbe */
     cursor: pointer;
     position: absolute;
-    left: 0;
     top: 50%;
+    left: 10px; /* Direkt neben der Sidebar */
     transform: translateY(-50%);
     z-index: 2;
-    display: block;
     transition: left 0.3s ease-in-out;
 }
 
@@ -121,6 +121,6 @@ footer a:hover {
 }
 
 /* Anpassung des Buttons, wenn Sidebar geöffnet */
-.sidebar.open + #toggleButton {
+.sidebar.open + .toggle-button {
     left: 250px; /* Button verschiebt sich nach rechts, um an der Sidebar auszurichten */
 }
