@@ -26,7 +26,7 @@ html, body {
 /* Header-Balken direkt unter dem Bild */
 .header-box-container {
     width: 100%;
-    height: 55px; /* Höhe des Balkens */
+    height: 27.5px; /* Höhe halbiert */
     background-color: #888;
     display: flex;
     justify-content: space-evenly;
@@ -46,8 +46,8 @@ html, body {
     text-align: center;
     border-right: 2px solid #888;
     position: relative;
-    padding: 15px 0;
-    font-size: 20px;
+    padding: 7.5px 0; /* Padding halbiert */
+    font-size: 10px; /* Schriftgröße halbiert */
 }
 
 /* Letzte Box ohne rechten Strich */
@@ -58,7 +58,7 @@ html, body {
 .header-box a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 9px; /* Schriftgröße halbiert */
     display: block;
     width: 100%;
     transition: transform 0.3s ease, font-size 0.3s ease;
@@ -66,7 +66,7 @@ html, body {
 
 .header-box a:hover {
     transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
-    font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
+    font-size: 9.45px; /* Neue Schriftgröße für den Hover-Effekt */
 }
 
 /* Footer */
@@ -102,7 +102,7 @@ footer a:hover {
     }
 
     .header-box a {
-        font-size: 16px;
+        font-size: 8px; /* Schriftgröße für kleinere Bildschirme angepasst */
     }
 }
 
