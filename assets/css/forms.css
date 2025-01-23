@@ -12,6 +12,7 @@ html, body {
     flex-direction: column;
     background-color: #121212;
     color: #ffffff;
+    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
 }
 
 /* Overlay für die Sidebar */
@@ -69,7 +70,7 @@ html, body {
     background-color: transparent;
     border-radius: 50%;
     padding: 15px;
-    cursor: pointer;
+    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
     position: fixed;
     top: 50%;
     left: 15px;
@@ -132,6 +133,7 @@ html, body {
     background-color: rgba(255, 255, 255, 0.1);
     margin: 5px 10px;
     border-radius: 5px;
+    cursor: url('assets/images/circle.png') 16 16, pointer; /* Benutzerdefinierter Cursor */
 }
 
 .sidebar a:hover {
