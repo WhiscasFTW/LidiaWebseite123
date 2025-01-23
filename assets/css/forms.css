@@ -42,18 +42,18 @@ html, body {
 /* Header-Balken (Regenbogen-Streifen) */
 .header-box-container {
     width: 100%;
-    height: 7px;
+    height: 3.5px; /* Halbierte Dicke */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: relative;
-    margin-top: -5px;
+    margin-top: -5px; /* Anpassung für bündigen Verlauf */
 }
 
 /* Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer */
 .second-header-box-container {
     width: 100%;
-    height: 7px;
+    height: 3.5px; /* Halbierte Dicke */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
