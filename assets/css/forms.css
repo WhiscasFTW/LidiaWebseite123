@@ -41,16 +41,22 @@ html, body {
     margin-top: -5px;
 }
 
-/* Zweiter bunter Streifen, direkt vor dem Footer */
+/* Der obere Streifen, der direkt unter dem Bild angezeigt wird */
+.header-box-container {
+    width: 100%;
+    height: 7px; /* Höhe des ersten Streifens */
+    background-color: #ff2a68;
+    position: absolute;
+    top: 0;
+}
+
+/* Der zweite Streifen, der direkt über dem Footer liegt */
 .second-header-box-container {
     width: 100%;
-    height: 7px; /* Gleiche Höhe wie der erste Streifen */
-    background-color: #888;
-    display: flex;
-    justify-content: space-evenly;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
+    height: 7px; /* Höhe des zweiten Streifens */
+    background-color: #ff2a68;
+    position: absolute;
+    bottom: 40px; /* Abstand von unten (über dem Footer) */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
