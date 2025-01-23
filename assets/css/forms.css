@@ -78,15 +78,15 @@ html, body {
     position: fixed;
     top: 0;
     left: -250px;
-    background-color: rgba(255, 255, 255, 0.3); /* Deutlich transparenter */
-    backdrop-filter: blur(10px); /* Glas-Effekt */
-    -webkit-backdrop-filter: blur(10px); /* Für Safari-Browser */
+    background-color: rgba(255, 255, 255, 0.1); /* Noch transparenter */
+    backdrop-filter: blur(20px); /* Stärkere Unschärfe für mehr Glas-Effekt */
+    -webkit-backdrop-filter: blur(20px); /* Für Safari-Browser */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 3; /* Höherer z-index, um über dem Footer zu liegen */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
-    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Feiner Rahmen */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Feiner, transparenter Rahmen */
 }
 
 /* Wenn die Sidebar geöffnet ist */
@@ -99,15 +99,18 @@ html, body {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #333;
+    color: #333; /* Dunkle Schrift für bessere Lesbarkeit */
     display: block;
     transition: 0.3s;
     font-family: 'Open Sans', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7); /* Heller Hintergrund für Links */
+    margin: 5px 10px; /* Abstand zwischen den Links */
+    border-radius: 5px; /* Abgerundete Ecken */
 }
 
 .sidebar a:hover {
-    background-color: rgba(0, 123, 255, 0.1); /* Leichter Hover-Effekt */
-    color: #007bff;
+    background-color: rgba(255, 255, 255, 0.9); /* Hellerer Hintergrund beim Hover */
+    color: #007bff; /* Blaue Schrift beim Hover */
 }
 
 /* Regenbogen-Hintergrund-Animation */
