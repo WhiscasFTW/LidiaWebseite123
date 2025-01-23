@@ -58,19 +58,19 @@ html, body {
     margin-left: 10px;
 }
 
-/* Die Sidebar auf der linken Seite */
+/* Die Sidebar auf der rechten Seite */
 .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
-    left: 0;
+    right: -250px; /* Sidebar außerhalb des Bildschirms nach rechts */
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar a {
@@ -93,7 +93,7 @@ html, body {
     color: #333;
     position: fixed;
     top: 20px;
-    left: 260px; /* Direkt neben der Sidebar */
+    right: 20px; /* X rechts neben der Sidebar */
     z-index: 2;
     cursor: pointer;
     display: none; /* Anfangs unsichtbar */
@@ -107,6 +107,7 @@ html, body {
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
     width: 250px;
+    right: 0; /* Sidebar gleitet nach links */
 }
 
 .sidebar.open .close-btn {
