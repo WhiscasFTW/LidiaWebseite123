@@ -10,37 +10,9 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212; /* Einfarbiger Hintergrund */
+    background-color: #121212;
     color: #ffffff;
     cursor: url('assets/images/circle.png') 16 16, pointer;
-}
-
-/* Ladeanimation */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-}
-
-.loader {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 /* Overlay für die Sidebar */
@@ -57,18 +29,15 @@ html, body {
 
 /* Bild-Container für das Header-Bild */
 .header-image-container {
-    position: relative;
-    overflow: hidden;
-    height: 360px; /* Höhe des Header-Bildes */
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .header-image {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.3s ease-out;
+    max-width: 2560px;
+    max-height: 360px;
 }
 
 /* Header-Balken */
@@ -151,7 +120,7 @@ html, body {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 1000; /* Hoher z-index, um über anderen Elementen zu liegen */
+    z-index: 3;
     transition: left 0.5s ease, transform 0.3s ease;
 }
 
@@ -174,10 +143,10 @@ html, body {
 
 /* Footer mit Hintergrundbild */
 footer {
-    margin-top: auto; /* Footer ans Ende der Seite schieben */
     width: 100%;
     height: 51px;
     position: relative;
+    margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     overflow: hidden;
