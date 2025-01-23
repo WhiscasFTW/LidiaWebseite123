@@ -35,7 +35,7 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: relative;
-    margin-top: -6px; /* 6px nach oben verschoben (2px + 4px) */
+    margin-top: -6px; /* 6px nach oben verschoben */
 }
 
 /* Zweiter Streifen (Regenbogen-Streifen) direkt über dem Footer */
@@ -46,7 +46,7 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: absolute;
-    bottom: 36px; /* 4px nach unten verschoben (40px → 38px → 36px) */
+    bottom: 38px; /* 2px nach oben verschoben (von 36px auf 38px) */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
