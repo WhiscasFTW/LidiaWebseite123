@@ -1,14 +1,18 @@
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay'); // Overlay hinzufügen
     var sound = new Audio('assets/sounds/click.mp3'); /* Soundeffekt */
 
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
 
+    // Overlay ein- oder ausblenden
     if (sidebar.classList.contains('open')) {
+        overlay.style.display = 'block'; // Overlay anzeigen
         localStorage.setItem('sidebarState', 'open');
     } else {
+        overlay.style.display = 'none'; // Overlay ausblenden
         localStorage.setItem('sidebarState', 'closed');
     }
 
@@ -21,11 +25,13 @@ function toggleSidebar() {
 window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay'); // Overlay hinzufügen
     var sidebarState = localStorage.getItem('sidebarState');
 
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
+        overlay.style.display = 'block'; // Overlay anzeigen, wenn Sidebar geöffnet ist
     }
 };
 
