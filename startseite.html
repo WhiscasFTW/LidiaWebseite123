@@ -17,13 +17,25 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Wrapper für Inhalte */
+        .wrapper {
+            min-height: 100%; /* Deckt die gesamte Seite ab */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hauptinhalt */
+        .content {
+            flex: 1; /* Füllt den verfügbaren Platz */
+        }
+
         /* Bild-Container für das Header-Bild */
         .header-image-container {
             text-align: center;
         }
 
         .header-image {
-            display: block; /* Entfernt mögliche Inline-Abstände */
+            display: block;
             width: 100%;
             height: auto;
             max-width: 2560px;
@@ -35,11 +47,11 @@
             display: flex;
             width: 100%;
             height: 55px; /* Balkenhöhe */
-            position: relative; /* Wichtige Einstellung für exakte Positionierung */
+            position: relative;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
             background-size: 210% 100%;
             animation: rainbow 5s linear infinite;
-            z-index: 10; /* Stellt sicher, dass der Header sichtbar bleibt */
+            z-index: 10;
         }
 
         .header-box {
@@ -64,15 +76,8 @@
         }
 
         .header-box a:hover {
-            transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
-            font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
-        }
-
-        /* Debugging-Lücke verhindern */
-        .header-box-container::before {
-            content: '';
-            display: block;
-            height: 0;
+            transform: scale(1.05);
+            font-size: 18.9px;
         }
 
         /* Footer */
@@ -123,35 +128,40 @@
     </style>
 </head>
 <body>
+    <div class="wrapper">
+        <!-- Bild-Container für das Header-Bild -->
+        <div class="header-image-container">
+            <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
+        </div>
 
-    <!-- Bild-Container für das Header-Bild -->
-    <div class="header-image-container">
-        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
+        <!-- Header-Balken mit den Boxen -->
+        <div class="header-box-container">
+            <div class="header-box">
+                <a href="startseite.html">Startseite</a>
+            </div>
+            <div class="header-box">
+                <a href="steckbrief.html">Steckbrief</a>
+            </div>
+            <div class="header-box">
+                <a href="meinewerke.html">Meine Werke</a>
+            </div>
+            <div class="header-box">
+                <a href="dienstleistungen.html">Dienstleistungen</a>
+            </div>
+            <div class="header-box">
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+
+        <!-- Hauptinhalt -->
+        <div class="content">
+            <p>Hier kommt dein Seiteninhalt hin...</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+        </footer>
     </div>
-
-    <!-- Header-Balken mit den Boxen -->
-    <div class="header-box-container">
-        <div class="header-box">
-            <a href="startseite.html">Startseite</a>
-        </div>
-        <div class="header-box">
-            <a href="steckbrief.html">Steckbrief</a>
-        </div>
-        <div class="header-box">
-            <a href="meinewerke.html">Meine Werke</a>
-        </div>
-        <div class="header-box">
-            <a href="dienstleistungen.html">Dienstleistungen</a>
-        </div>
-        <div class="header-box">
-            <a href="kontakt.html">Kontakt</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
-    </footer>
-
 </body>
 </html>
