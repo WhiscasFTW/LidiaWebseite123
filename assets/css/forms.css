@@ -27,10 +27,10 @@ html, body {
     max-height: 360px;
 }
 
-/* Header-Balken direkt unter dem Bild, halbiert */
+/* Header-Balken direkt unter dem Bild, nochmal 4x verkleinert */
 .header-box-container {
     width: 100%;
-    height: 27.5px; /* Höhe halbiert (ehemals 55px) */
+    height: 7px; /* Höhe auf 7px gesetzt (4x kleiner als 27.5px) */
     background-color: #888;
     display: flex;
     justify-content: space-evenly;
