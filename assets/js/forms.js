@@ -3,16 +3,15 @@ function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
-    var sound = new Audio('assets/sounds/click.mp3'); /* Soundeffekt */
+    var sound = new Audio('assets/sounds/click.mp3');
 
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
+    overlay.classList.toggle('active');
 
     if (sidebar.classList.contains('open')) {
-        overlay.style.display = 'block';
         localStorage.setItem('sidebarState', 'open');
     } else {
-        overlay.style.display = 'none';
         localStorage.setItem('sidebarState', 'closed');
     }
 
@@ -31,18 +30,29 @@ window.onload = function () {
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
-        overlay.style.display = 'block';
+        overlay.classList.add('active');
     }
 };
 
-// Akkordeon-Galerie-Funktionalität
-function toggleAccordion(image) {
-    const items = document.querySelectorAll('.accordion-item img');
-    items.forEach(item => {
-        if (item === image) {
-            item.classList.toggle('active');
-        } else {
-            item.classList.remove('active');
-        }
+// Funktion für die horizontale Scroll-Galerie
+function scrollGallery(direction) {
+    const gallery = document.querySelector('.gallery-container');
+    const scrollAmount = 220; // 200px Bildbreite + 20px Abstand
+    gallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
     });
+}
+
+// Lightbox-Funktionen
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
 }
