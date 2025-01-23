@@ -1,3 +1,4 @@
+// Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
@@ -32,4 +33,36 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.style.display = 'block';
     }
+
+    // Karussell-Funktionalität initialisieren
+    initCarousel();
 };
+
+// Karussell-Funktionalität
+function initCarousel() {
+    let currentIndex = 0;
+    const carouselInner = document.querySelector('.carousel-inner');
+    const images = document.querySelectorAll('.carousel-inner img');
+    const totalImages = images.length;
+    const imageWidth = images[0].clientWidth + 10; // Breite eines Bildes + Abstand
+
+    // Funktion zum Aktualisieren des Karussells
+    function updateCarousel() {
+        const offset = -currentIndex * imageWidth;
+        carouselInner.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Event-Listener für die Buttons
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+    });
+
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    // Initiale Position setzen
+    updateCarousel();
+}
