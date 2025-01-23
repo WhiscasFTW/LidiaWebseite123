@@ -41,21 +41,16 @@ html, body {
     margin-top: -5px;
 }
 
-/* Hamburger Menü */
-.hamburger {
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
     font-size: 40px;
     cursor: pointer;
     position: fixed;
-    top: 20px;
     left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
-    display: flex;
-    align-items: center;
-}
-
-#menuText {
-    font-size: 20px;
-    margin-left: 10px;
+    display: block;
 }
 
 /* Die Sidebar auf der linken Seite */
@@ -87,31 +82,10 @@ html, body {
     color: #f1f1f1;
 }
 
-/* Close-Button (X) neben der Sidebar im geöffneten Zustand */
-.close-btn {
-    font-size: 40px;
-    color: #333;
-    position: fixed;
-    top: 20px;
-    left: 250px; /* X direkt neben der Sidebar */
-    z-index: 2;
-    cursor: pointer;
-    display: none; /* Anfangs unsichtbar */
-}
-
-.close-btn:hover {
-    background-color: rgba(169, 169, 169, 0.3); /* Leicht grauer Hintergrund */
-    border-radius: 50%;
-}
-
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
     width: 250px;
     left: 0; /* Sidebar gleitet nach links */
-}
-
-.sidebar.open .close-btn {
-    display: block; /* Zeige das X, wenn die Sidebar geöffnet ist */
 }
 
 /* Regenbogen-Hintergrund-Animation */
@@ -124,23 +98,4 @@ html, body {
     }
 }
 
-/* Footer */
-footer {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    margin-top: auto;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+/* F
