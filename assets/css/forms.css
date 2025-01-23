@@ -35,7 +35,7 @@ html, body {
     justify-content: space-evenly;
     position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 400% 100%; /* Hintergrundgröße angepasst, damit der Verlauf nahtlos läuft */
+    background-size: 700% 100%; /* Hintergrundgröße erhöht, damit es genug Platz für den Übergang gibt */
     animation: rainbow 15s linear infinite; /* Nahtlose Animation */
     margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
 }
@@ -67,6 +67,6 @@ footer a:hover {
         background-position: 0% 50%; /* Start der Animation bei 0% */
     }
     100% {
-        background-position: 100% 50%; /* Ende der Animation bei 100%, so dass der Farbverlauf nahtlos wiederholt wird */
+        background-position: 100% 50%; /* Ende der Animation bei 100%, der Farbverlauf wird kontinuierlich verschoben */
     }
 }
