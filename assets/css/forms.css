@@ -56,7 +56,7 @@ html, body {
     z-index: 1; /* Streifen muss unterhalb des Inhalts, aber über dem Footer sein */
 }
 
-/* Button (größer als Zeichen) zum Öffnen und Schließen der Sidebar */
+/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px; /* Doppelt so groß wie zuvor */
     color: #fff; /* Weißer Button */
@@ -66,7 +66,7 @@ html, body {
     cursor: pointer;
     position: fixed; /* Fixierte Position */
     top: 50%;
-    left: -35px; /* Button direkt auf der linken Seite */
+    left: 15px; /* Button direkt auf der linken Seite */
     transform: translateY(-50%);
     z-index: 2;
     transition: left 0.5s ease; /* Sanfter Übergang für die Position */
@@ -143,7 +143,17 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Anpassung des Buttons, wenn Sidebar geöffnet */
-.sidebar.open + .toggle-button {
-    left: 250px; /* Button verschiebt sich nach rechts */
+/* Zweiter Streifen unter der Sidebar */
+.second-header-box-container {
+    width: 100%;
+    height: 7px; /* Gleiche Höhe wie der erste Streifen */
+    background-color: #888;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 90%; /* Weiter unten auf der Seite */
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background-size: 300% 100%;
+    animation: rainbow 15s linear infinite;
+    z-index: 0; /* Streifen muss unterhalb des Inhalts, aber über dem Footer sein */
 }
