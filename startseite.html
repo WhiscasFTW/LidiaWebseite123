@@ -15,16 +15,11 @@
         html, body {
             height: 100%;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin: 0;
         }
 
         /* Bild-Container für das Header-Bild */
         .header-image-container {
             text-align: center;
-            margin: 0; /* Kein Abstand um das Bild */
         }
 
         .header-image {
@@ -40,13 +35,13 @@
             display: flex;
             width: 100%;
             height: 55px; /* Balkenhöhe */
-            margin: 0; /* Kein zusätzlicher Abstand */
+            position: relative; /* Wichtige Einstellung für exakte Positionierung */
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
             background-size: 210% 100%;
             animation: rainbow 5s linear infinite;
+            z-index: 10; /* Stellt sicher, dass der Header sichtbar bleibt */
         }
 
-        /* Boxen für Navigationseinträge */
         .header-box {
             flex: 1;
             display: flex;
@@ -54,11 +49,9 @@
             justify-content: center;
             text-align: center;
             border-right: 2px solid #888;
-            padding: 15px 0;
             font-size: 20px;
         }
 
-        /* Letzte Box ohne rechten Strich */
         .header-box:last-child {
             border-right: none;
         }
@@ -67,14 +60,19 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
-            display: block;
-            width: 100%;
             transition: transform 0.3s ease, font-size 0.3s ease;
         }
 
         .header-box a:hover {
             transform: scale(1.05); /* Schriftgröße um 5% vergrößern */
             font-size: 18.9px; /* Neue Schriftgröße für den Hover-Effekt */
+        }
+
+        /* Debugging-Lücke verhindern */
+        .header-box-container::before {
+            content: '';
+            display: block;
+            height: 0;
         }
 
         /* Footer */
