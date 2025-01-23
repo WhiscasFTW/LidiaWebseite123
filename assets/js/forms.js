@@ -33,20 +33,3 @@ window.onload = function () {
         overlay.style.display = 'block';
     }
 };
-
-// 3D-Galerie Interaktivität
-const galleryInner = document.querySelector('.gallery-3d-inner');
-
-document.addEventListener('mousemove', (e) => {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    galleryInner.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
-
-galleryInner.addEventListener('mouseenter', () => {
-    galleryInner.style.animationPlayState = 'paused';
-});
-
-galleryInner.addEventListener('mouseleave', () => {
-    galleryInner.style.animationPlayState = 'running';
-});
