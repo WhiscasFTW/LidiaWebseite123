@@ -33,45 +33,16 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.style.display = 'block';
     }
-
-    // Karussell-Funktionalität initialisieren
-    initCarousel();
 };
 
-// Karussell-Funktionalität
-function initCarousel() {
-    let currentIndex = 0; // Starte mit dem ersten Bild (Index 0)
-    const carouselInner = document.querySelector('.carousel-inner');
-    const images = document.querySelectorAll('.carousel-inner img');
-    const totalImages = images.length;
-    const imageWidth = 200; // Breite eines Bildes (200px)
-    const sidebarWidth = 250; // Breite der Sidebar (250px)
-
-    // Funktion zum Aktualisieren des Karussells
-    function updateCarousel() {
-        const offset = -currentIndex * imageWidth + (sidebarWidth / 2 - imageWidth / 2);
-        carouselInner.style.transform = `translateX(${offset}px)`;
-    }
-
-    // Event-Listener für die Buttons
-    document.querySelector('.carousel-next').addEventListener('click', () => {
-        if (currentIndex < totalImages - 1) {
-            currentIndex++;
+// Akkordeon-Galerie-Funktionalität
+function toggleAccordion(image) {
+    const items = document.querySelectorAll('.accordion-item img');
+    items.forEach(item => {
+        if (item === image) {
+            item.classList.toggle('active');
         } else {
-            currentIndex = 0; // Zurück zum ersten Bild
+            item.classList.remove('active');
         }
-        updateCarousel();
     });
-
-    document.querySelector('.carousel-prev').addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalImages - 1; // Zum letzten Bild springen
-        }
-        updateCarousel();
-    });
-
-    // Initiale Position setzen
-    updateCarousel();
 }
