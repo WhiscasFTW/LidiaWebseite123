@@ -169,7 +169,7 @@ html, body {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3;
+    z-index: 1000; /* Hoher z-index, um über anderen Elementen zu liegen */
     transition: left 0.5s ease, transform 0.3s ease;
 }
 
@@ -192,10 +192,10 @@ html, body {
 
 /* Footer mit Hintergrundbild */
 footer {
+    margin-top: auto; /* Footer ans Ende der Seite schieben */
     width: 100%;
     height: 51px;
     position: relative;
-    margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     overflow: hidden;
@@ -247,61 +247,4 @@ footer a:hover {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Scroll-Indikator */
-.scroll-indicator {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 50px;
-    border: 2px solid #fff;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 10px;
-    z-index: 1000;
-}
-
-.scroll-indicator span {
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-}
-
-/* Tooltips */
-[data-tooltip] {
-    position: relative;
-}
-
-[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-[data-tooltip]:hover::after {
-    opacity: 1;
-    visibility: visible;
 }
