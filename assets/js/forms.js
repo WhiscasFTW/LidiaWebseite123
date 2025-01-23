@@ -40,7 +40,7 @@ window.onload = function () {
 
 // Karussell-Funktionalität
 function initCarousel() {
-    let currentIndex = 1; // Starte mit dem zweiten Bild (Index 1)
+    let currentIndex = 2; // Starte mit dem dritten Bild (Index 2)
     const carouselInner = document.querySelector('.carousel-inner');
     const images = document.querySelectorAll('.carousel-inner img');
     const totalImages = images.length;
