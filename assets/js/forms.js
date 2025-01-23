@@ -1,48 +1,18 @@
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sound = new Audio('assets/sounds/click.mp3'); /* Soundeffekt */
+const galleryInner = document.querySelector('.gallery-3d-inner');
 
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
+// Galerie mit Mausbewegung steuern
+document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25; // Horizontaler Effekt
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25; // Vertikaler Effekt
+    galleryInner.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
 
-    if (sidebar.classList.contains('open')) {
-        overlay.style.display = 'block';
-        localStorage.setItem('sidebarState', 'open');
-    } else {
-        overlay.style.display = 'none';
-        localStorage.setItem('sidebarState', 'closed');
-    }
+// Galerie stoppt, wenn die Maus über der Galerie ist
+galleryInner.addEventListener('mouseenter', () => {
+    galleryInner.style.animationPlayState = 'paused';
+});
 
-    sound.play().catch(error => {
-        console.error("Sound konnte nicht abgespielt werden:", error);
-    });
-}
-
-// Beim Laden der Seite den Zustand überprüfen
-window.onload = function () {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var sidebarState = localStorage.getItem('sidebarState');
-
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-    }
-};
-
-// Sidebar mit Escape-Taste schließen
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-        var sidebar = document.getElementById('sidebar');
-        var toggleButton = document.getElementById('toggleButton');
-        var overlay = document.getElementById('overlay');
-
-        if (sidebar.classList.contains('open')) {
-            sidebar.classList.remove('open');
-            toggleButton.classList.remove('open');
-            overlay.style.display = 'none';
-        }
-    }
+// Galerie startet wieder, wenn die Maus die Galerie verlässt
+galleryInner.addEventListener('mouseleave', () => {
+    galleryInner.style.animationPlayState = 'running';
 });
