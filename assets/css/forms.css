@@ -90,6 +90,35 @@ html, body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Pseudoelement für die Farbe */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0; /* Startwert: keine Farbe sichtbar */
+    background: linear-gradient(to bottom, #007bff, #00bfff); /* Farbverlauf (Blau) */
+    z-index: -1; /* Hinter dem Inhalt der Sidebar */
+    animation: pourPaint 1s ease-in-out forwards; /* Animation */
+}
+
+/* Wenn die Sidebar geöffnet ist */
+.sidebar.open {
+    width: 250px;
+    left: 0;
+}
+
+/* Animation für das Herunterlaufen der Farbe */
+@keyframes pourPaint {
+    0% {
+        height: 0; /* Start: keine Farbe sichtbar */
+    }
+    100% {
+        height: 100%; /* Ende: Farbe füllt die gesamte Sidebar */
+    }
+}
+
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
@@ -102,12 +131,6 @@ html, body {
 
 .sidebar a:hover {
     color: #f1f1f1;
-}
-
-/* Wenn die Sidebar geöffnet ist */
-.sidebar.open {
-    width: 250px;
-    left: 0;
 }
 
 /* Wenn die Sidebar geöffnet ist, Button auch verschieben */
