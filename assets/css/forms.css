@@ -54,7 +54,7 @@ html, body {
 .toggle-button {
     font-size: 60px;
     color: #fff;
-    background-color: transparent;
+    background-color: transparent; /* Kein Hintergrund */
     border-radius: 50%;
     padding: 15px;
     cursor: pointer;
@@ -63,13 +63,12 @@ html, body {
     left: 15px; /* Standardposition */
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.5s ease, transform 0.3s ease, background-color 0.3s ease;
+    transition: left 0.5s ease, transform 0.3s ease;
 }
 
 /* Wenn die Sidebar geöffnet ist, Button verschieben */
 .sidebar.open + .toggle-button {
     left: 265px; /* Button verschiebt sich nach rechts */
-    background-color: #007bff; /* Blaue Hintergrundfarbe */
     transform: translateY(-50%) rotate(90deg); /* Drehung */
 }
 
@@ -111,7 +110,6 @@ html, body {
     background-color: rgba(255, 255, 255, 0.7); /* Heller Hintergrund für Links */
     margin: 5px 10px; /* Abstand zwischen den Links */
     border-radius: 5px; /* Abgerundete Ecken */
-    position: relative; /* Für den Pfeil-Effekt */
 }
 
 .sidebar a:hover {
@@ -120,14 +118,9 @@ html, body {
     transform: translateX(10px); /* Bewegung nach rechts */
 }
 
+/* Entferne die Pfeile */
 .sidebar a:hover::after {
-    content: '→'; /* Pfeil-Symbol */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #007bff;
+    display: none; /* Pfeil-Symbol ausblenden */
 }
 
 /* Regenbogen-Hintergrund-Animation */
