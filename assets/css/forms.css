@@ -147,10 +147,10 @@ html, body {
 .gallery-3d {
     perspective: 1000px; /* 3D-Perspektive */
     width: 100%;
-    height: 300px; /* Höhe der Galerie anpassen */
+    height: 400px; /* Höhe der Galerie erhöhen, um Platz für die Bilder zu schaffen */
     position: relative;
     margin: 20px auto;
-    overflow: hidden; /* Überschüssige Teile der Bilder ausblenden */
+    overflow: visible; /* Überschüssige Teile der Bilder anzeigen */
 }
 
 /* Innerer Container für die Bilder */
@@ -170,17 +170,17 @@ html, body {
     object-fit: cover; /* Bilder passen sich dem Container an */
     border-radius: 10px; /* Abgerundete Ecken */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
-    transform-origin: center center -200px; /* 3D-Transformation */
+    transform-origin: center center -250px; /* 3D-Transformation */
     transition: transform 0.5s ease, opacity 0.5s ease; /* Sanfte Übergänge */
-    backface-visibility: hidden; /* Verhindert, dass die Rückseite der Bilder sichtbar wird */
+    backface-visibility: visible; /* Rückseite der Bilder sichtbar machen */
 }
 
 /* Positionierung der Bilder im 3D-Raum */
-.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
-.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(200px); }
-.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(200px); }
-.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(200px); }
-.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(200px); }
+.gallery-3d-inner img:nth-child(1) { transform: rotateY(0deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(2) { transform: rotateY(72deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(3) { transform: rotateY(144deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(4) { transform: rotateY(216deg) translateZ(250px); }
+.gallery-3d-inner img:nth-child(5) { transform: rotateY(288deg) translateZ(250px); }
 
 /* Animation für die Rotation */
 @keyframes rotateGallery {
