@@ -65,7 +65,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;  /* Sidebar auf die linke Seite verschieben */
-    background-color: rgba(240, 240, 240, 0.7); /* Noch transparenter */
+    background-color: #fff; /* Solide weiße Farbe statt transparent */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -86,9 +86,19 @@ html, body {
     color: #f1f1f1;
 }
 
+/* Close-Button (X) */
+.close-btn {
+    font-size: 40px;
+    color: #333;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
-    width: 250px; /* Automatisch an die Breite der Links anpassen */
+    width: 250px; /* Sidebar wird auf 250px Breite erweitert */
 }
 
 /* Wenn die Sidebar geschlossen ist, verstecken wir sie */
