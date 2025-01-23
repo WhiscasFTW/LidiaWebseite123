@@ -49,12 +49,19 @@ html, body {
     top: 20px;
     left: 20px; /* Auf der linken Seite */
     z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+#menuText {
+    font-size: 20px;
+    margin-left: 10px; /* Abstand zwischen den 3 Strichen und dem Text */
 }
 
 /* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
-    width: 350px;  /* Größere Sidebar */
+    width: 0;  /* Anfangs versteckt */
     position: fixed;
     top: 0;
     left: 0;  /* Sidebar auf die linke Seite verschieben */
