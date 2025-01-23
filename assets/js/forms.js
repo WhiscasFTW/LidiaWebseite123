@@ -55,12 +55,20 @@ function initCarousel() {
 
     // Event-Listener für die Buttons
     document.querySelector('.carousel-next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalImages;
+        if (currentIndex < totalImages - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Zurück zum ersten Bild
+        }
         updateCarousel();
     });
 
     document.querySelector('.carousel-prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalImages - 1; // Zum letzten Bild springen
+        }
         updateCarousel();
     });
 
