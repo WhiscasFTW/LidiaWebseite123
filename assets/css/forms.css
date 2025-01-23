@@ -10,7 +10,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212;
+    background-color: #1a1a1a; /* Dunkleres Grau für modernen Look */
     color: #ffffff;
 }
 
@@ -25,13 +25,14 @@ html, body {
     height: auto;
     max-width: 2560px;
     max-height: 360px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
 }
 
 /* Header-Balken (Regenbogen-Streifen) */
 .header-box-container {
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffd166, #4ecdc4, #4d8af0, #845ef7);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: relative;
@@ -42,11 +43,11 @@ html, body {
 .second-header-box-container {
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
+    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffd166, #4ecdc4, #4d8af0, #845ef7);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: absolute;
-    bottom: 38px; /* 2px nach oben verschoben (von 36px auf 38px) */
+    bottom: 38px; /* 2px nach oben verschoben */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
@@ -62,7 +63,13 @@ html, body {
     left: 15px;
     transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.5s ease;
+    transition: left 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
+}
+
+.toggle-button:hover {
+    transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung beim Hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten beim Hover */
 }
 
 /* Die Sidebar auf der linken Seite */
@@ -72,26 +79,31 @@ html, body {
     position: fixed;
     top: 0;
     left: -250px;
-    background-color: #fff;
+    background-color: #f5f5f5; /* Heller Hintergrund für die Sidebar */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten */
+    border-radius: 0 10px 10px 0; /* Abgerundete rechte Ecken */
 }
 
 .sidebar a {
-    padding: 10px 10px 10px 32px;
+    padding: 15px 20px; /* Mehr Padding für bessere Lesbarkeit */
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #333;
     display: block;
     transition: 0.3s;
     font-family: 'Open Sans', sans-serif;
+    border-radius: 5px; /* Abgerundete Ecken für Links */
+    margin: 5px 10px; /* Abstand zwischen den Links */
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    background-color: #007bff; /* Moderne blaue Hintergrundfarbe beim Hover */
+    color: #fff; /* Weiße Schrift beim Hover */
+    transform: translateX(5px); /* Leichte Verschiebung nach rechts */
 }
 
 /* Wenn die Sidebar geöffnet ist */
@@ -121,17 +133,19 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     position: relative;
     margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #007bff; /* Moderne blaue Farbe beim Hover */
 }
