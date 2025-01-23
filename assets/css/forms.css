@@ -7,17 +7,17 @@
 
 html, body {
     height: 100%;
-    font-family: 'Roboto', sans-serif; /* Moderne, seriöse Schriftart */
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212; /* Dunkler Hintergrund */
-    color: #ffffff; /* Standardfarbe für Text */
+    background-color: #121212;
+    color: #ffffff;
 }
 
 /* Bild-Container für das Header-Bild */
 .header-image-container {
     text-align: center;
-    margin-bottom: 0; /* Kein Abstand unten */
+    margin-bottom: 0;
 }
 
 .header-image {
@@ -30,24 +30,24 @@ html, body {
 /* Header-Balken */
 .header-box-container {
     width: 100%;
-    height: 13px; /* Höhe des Balkens */
+    height: 13px;
     background-color: #888;
     display: flex;
     justify-content: space-evenly;
     position: relative;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%; /* Größerer Bereich für nahtlose Bewegung */
-    animation: rainbow 15s linear infinite; /* Animation auf 15 Sekunden verlangsamt */
-    margin-top: -5px; /* Navigationsleiste 5px näher an das Bild */
+    background-size: 300% 100%;
+    animation: rainbow 15s linear infinite;
+    margin-top: -5px;
 }
 
 /* Hamburger Menü */
 .hamburger {
-    font-size: 40px;  /* Etwas dicker */
+    font-size: 40px;
     cursor: pointer;
     position: fixed;
     top: 20px;
-    left: 20px; /* Auf der linken Seite */
+    left: 20px;
     z-index: 2;
     display: flex;
     align-items: center;
@@ -55,17 +55,17 @@ html, body {
 
 #menuText {
     font-size: 20px;
-    margin-left: 10px; /* Abstand zwischen den 3 Strichen und dem Text */
+    margin-left: 10px;
 }
 
 /* Die Sidebar auf der linken Seite */
 .sidebar {
     height: 100%;
-    width: 0;  /* Anfangs versteckt */
+    width: 0;
     position: fixed;
     top: 0;
-    left: 0;  /* Sidebar auf die linke Seite verschieben */
-    background-color: #fff; /* Solide weiße Farbe statt transparent */
+    left: 0;
+    background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -73,17 +73,22 @@ html, body {
 }
 
 .sidebar a {
-    padding: 10px 10px 10px 32px;  /* Etwas mehr Padding für den Text */
+    padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #333;  /* Dunkler Text für besseren Kontrast */
+    color: #333;
     display: block;
     transition: 0.3s;
-    font-family: 'Open Sans', sans-serif; /* Moderne, seriöse Schriftart für Links */
+    font-family: 'Open Sans', sans-serif;
 }
 
 .sidebar a:hover {
     color: #f1f1f1;
+}
+
+/* Unsichtbares Zwischen-Element */
+.spacer {
+    height: 10px; /* Leerer Abstand zwischen "Meine Werke" und "Dienstleistungen" */
 }
 
 /* Close-Button (X) außerhalb der Sidebar */
@@ -92,14 +97,24 @@ html, body {
     color: #333;
     position: absolute;
     top: 20px;
-    left: 270px;  /* Direkt neben der Sidebar */
+    left: 270px;
     cursor: pointer;
     z-index: 2;
+    display: none; /* Anfangs unsichtbar */
+}
+
+.close-btn:hover {
+    background-color: rgba(169, 169, 169, 0.3); /* Leicht grauer Hintergrund */
+    border-radius: 50%;
 }
 
 /* Wenn die Sidebar geöffnet ist */
 .sidebar.open {
-    width: 250px; /* Sidebar wird auf 250px Breite erweitert */
+    width: 250px;
+}
+
+.sidebar.open .close-btn {
+    display: block; /* Zeige das X, wenn die Sidebar geöffnet ist */
 }
 
 /* Wenn die Sidebar geschlossen ist, verstecken wir sie */
@@ -113,7 +128,7 @@ html, body {
         background-position: 0% 50%;
     }
     100% {
-        background-position: 100% 50%; /* Durchgängige Bewegung von links nach rechts */
+        background-position: 100% 50%;
     }
 }
 
@@ -125,7 +140,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     position: relative;
-    margin-top: auto; /* Footer bleibt immer am unteren Rand */
+    margin-top: auto;
 }
 
 footer a {
