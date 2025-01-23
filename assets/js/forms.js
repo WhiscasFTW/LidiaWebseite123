@@ -21,7 +21,7 @@ function toggleSidebar() {
 }
 
 // Beim Laden der Seite den Zustand überprüfen
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
@@ -40,13 +40,4 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error("Ladeanimation-Element nicht gefunden!");
     }
-});
-
-// Parallax-Effekt für das Header-Bild
-window.addEventListener('scroll', () => {
-    const headerImage = document.querySelector('.header-image');
-    if (headerImage) {
-        const scrollPosition = window.scrollY;
-        headerImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    }
-});
+};
