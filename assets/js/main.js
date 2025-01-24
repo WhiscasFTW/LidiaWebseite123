@@ -1,21 +1,20 @@
-// Nach einer kurzen Verzögerung den Button sichtbar machen
+// Nach einer kurzen Verzögerung den Button und die Signatur sichtbar machen
 window.onload = function() {
     setTimeout(function() {
-        // Button und Intro-Name-Bild erscheinen
         document.querySelector('.intro-button').classList.add('visible');
-        document.querySelector('.image-container').style.display = 'block'; // sichtbar machen
-        document.querySelector('.button-container').style.display = 'block'; // sichtbar machen
+        document.getElementById('signature').classList.add('visible'); // Signatur sichtbar machen
     }, 1000); // 1 Sekunde Verzögerung
 };
 
-// Vorhang-Effekt
+// Vorhang-Effekt und Übergang zur nächsten Seite
 document.getElementById('openCurtain').addEventListener('click', function() {
-    // Vorhang öffnet sich
-    document.getElementById('curtain').classList.add('open');
+    const curtain = document.getElementById('curtain');
+    
+    // Vorhang-Effekt starten
+    curtain.classList.add('open');
 
-    // Die Webseite nach dem Vorhang-Effekt ändern
+    // Verzögerung für den Seitenwechsel
     setTimeout(function() {
-        document.getElementById('newContent').classList.add('visible'); // Dynamischer Inhalt wird sichtbar
-        document.getElementById('curtain').classList.remove('open'); // Vorhang entfernt
-    }, 1000); // 1 Sekunde Verzögerung
+        window.location.href = 'startseite.html'; // Zielseite
+    }, 1200); // 1,2 Sekunden, passend zur CSS-Transition
 });
