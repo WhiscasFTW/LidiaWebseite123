@@ -1,3 +1,4 @@
+/* Boxen-Container */
 .box-container {
     display: flex;
     justify-content: space-between;
@@ -6,6 +7,7 @@
     margin: 20px 0;
 }
 
+/* Einzelne Boxen */
 .box {
     flex: 1 1 calc(25% - 20px); /* Vier Boxen nebeneinander, mit Abstand */
     background-color: #f9f9f9;
