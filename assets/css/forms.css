@@ -178,6 +178,6 @@ footer a:hover {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    flex: 1;
-    padding-bottom: 100px;
+    flex: 1; /* Füllt den verfügbaren Platz aus */
+    padding-bottom: 20px; /* Abstand zum Footer */
 }
