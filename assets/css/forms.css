@@ -55,11 +55,11 @@ html, body {
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: -60px; /* Boxen 120px weiter nach oben schieben */
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 50px;
+    padding-top: 50px; /* Boxen werden jetzt 50px nach oben verschoben */
 }
 
 .sidebar.open {
@@ -72,12 +72,15 @@ html, body {
     text-align: center;
     padding: 20px;
     animation: float 3s ease-in-out infinite;
+    position: relative;
 }
 
 .artist-signature img {
-    max-width: 100%;
-    height: auto;
-    width: 100%; /* Originalgröße des Bildes */
+    width: auto;
+    height: 140px; /* Setzt die Höhe auf 140px (oder gewünschte Größe) */
+    max-width: 100%; /* Bild bleibt in voller Breite des Containers */
+    display: block;
+    margin: 0 auto;
 }
 
 /* Links in der Sidebar */
