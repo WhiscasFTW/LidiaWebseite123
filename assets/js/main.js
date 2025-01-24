@@ -1,11 +1,9 @@
-// Button und Signatur nach einer kurzen Verzögerung sichtbar machen
+// Button nach einer kurzen Verzögerung sichtbar machen, ohne die Unterschrift
 window.onload = function () {
     setTimeout(function () {
         const button = document.querySelector('.intro-button');
-        const signature = document.getElementById('signature');
-
+        
         button.classList.add('visible');
-        signature.classList.add('visible');
     }, 1000); // 1 Sekunde Verzögerung
 };
 
