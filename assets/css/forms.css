@@ -35,7 +35,7 @@ html, body {
 .header-image-container {
     text-align: center;
     margin-bottom: 0;
-    position: relative; /* Relativer Container für die Streifen */
+    position: relative; /* Relativer Container für den oberen Streifen */
 }
 
 .header-image {
@@ -145,8 +145,8 @@ html, body {
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: absolute; /* Relativ zum Header-Bild */
-    bottom: -3px; /* Direkt unter dem Header-Bild */
+    position: fixed; /* Fixiert am unteren Rand */
+    bottom: 51px; /* Direkt über dem Footer */
     left: 0;
     z-index: 1;
 }
