@@ -12,7 +12,6 @@ html, body {
     flex-direction: column;
     background-color: #121212;
     color: #ffffff;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
 }
 
 /* Overlay für die Sidebar */
@@ -35,7 +34,6 @@ html, body {
 .header-image-container {
     text-align: center;
     margin-bottom: 0;
-    position: relative; /* Relativer Container für den oberen Streifen */
 }
 
 .header-image {
@@ -43,19 +41,6 @@ html, body {
     height: auto;
     max-width: 2560px;
     max-height: 360px;
-}
-
-/* Oberer leuchtender Streifen */
-.header-box-container {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: absolute; /* Relativ zum Header-Bild */
-    top: 100%; /* Direkt unter dem Header-Bild */
-    left: 0;
-    z-index: 1;
 }
 
 /* Sidebar */
@@ -105,7 +90,6 @@ html, body {
     background-color: rgba(255, 255, 255, 0.1);
     margin: 5px 10px;
     border-radius: 5px;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
     position: relative;
     top: 0;
     transition: top 0s;
@@ -136,20 +120,6 @@ html, body {
 .toggle-button.open {
     left: 265px;
     transform: translateY(-50%) rotate(90deg);
-}
-
-/* Unterer leuchtender Streifen */
-.second-header-box-container {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: fixed; /* Fixiert am unteren Rand */
-    bottom: -3px; /* Initial versteckt */
-    left: 0;
-    z-index: 1;
-    transition: bottom 0.3s ease; /* Gleiche Animation wie der Footer */
 }
 
 /* Footer */
@@ -203,12 +173,6 @@ footer a:hover {
 }
 
 /* Animationen */
-@keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
