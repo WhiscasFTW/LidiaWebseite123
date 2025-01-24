@@ -77,7 +77,7 @@ html, body {
 
 .artist-signature img {
     width: auto;
-    height: 280px; /* Verdoppelte Höhe des Bildes */
+    height: 140px; /* Originalhöhe */
     max-width: 100%; /* Bild bleibt in voller Breite des Containers */
     display: block;
     margin: 0 auto;
