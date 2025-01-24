@@ -12,8 +12,6 @@ html, body {
     flex-direction: column;
     background-color: #121212;
     color: #ffffff;
-    opacity: 0;  /* Anfangszustand: unsichtbar */
-    transition: opacity 1s ease-in-out;  /* Fade-In-Transition */
 }
 
 /* Overlay für die Sidebar */
@@ -131,4 +129,11 @@ footer a:hover {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
+    opacity: 0;  /* Anfangszustand: unsichtbar */
+    transition: opacity 1s ease-in-out;  /* Fade-In-Transition */
+}
+
+/* Für den Fall, dass ein Bild ein- oder ausgeblendet wird */
+.content.visible {
+    opacity: 1;  /* Sichtbar nach der Transition */
 }
