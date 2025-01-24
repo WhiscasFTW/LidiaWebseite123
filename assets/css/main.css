@@ -110,7 +110,7 @@ body, html {
     left: 50%; /* Horizontal zentrieren */
     transform: translate(-50%, -50%); /* Exakte Zentrierung */
     z-index: 2; /* Über anderen Inhalten */
-    width: 800px; /* Signatur achtmal so groß (angenommene Originalgröße: 100px * 8) */
+    width: 2400px; /* Signatur dreimal so groß (3 * 800px) */
     height: auto; /* Höhe proportional anpassen */
     opacity: 0; /* Standardmäßig unsichtbar */
     transition: opacity 2s ease; /* Sanfter Übergang */
@@ -158,12 +158,12 @@ body, html {
 
     /* Buttonposition für mobile Geräte */
     .button-container {
-        top: calc(30% + 150px); /* Button um 150 Pixel weiter nach unten */
+        top: calc(30% + 300px); /* Button um 300 Pixel weiter nach unten */
     }
 
     /* Signatur auf mobilen Geräten kleiner */
     .signature {
-        width: 600px; /* Kleinere Signatur auf mobilen Geräten */
+        width: 1800px; /* Signatur dreimal so groß (3 * 600px) */
         top: 70%; /* Signatur weiter nach unten verschieben, um Abstand zum Button zu halten */
     }
 }
