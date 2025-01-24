@@ -74,8 +74,8 @@ html, body {
 }
 
 .artist-signature img {
-    max-width: 100%;
-    height: auto;
+    max-width: 200%; /* Verdoppelt die Breite */
+    height: auto; /* Die Höhe bleibt proportional zur Breite */
 }
 
 /* Links in der Sidebar */
