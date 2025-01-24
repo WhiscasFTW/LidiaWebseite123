@@ -91,7 +91,7 @@ body, html {
 }
 
 .intro-button {
-    width: 22.4vw; /* Button um 2% größer */
+    width: 15vw; /* Button kleiner gemacht */
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
@@ -103,10 +103,20 @@ body, html {
     opacity: 1; /* Button wird sichtbar */
 }
 
+/* Signatur-Stil */
+.signature {
+    position: fixed;
+    bottom: 20px; /* Abstand vom unteren Rand */
+    right: 20px; /* Abstand vom rechten Rand */
+    z-index: 2; /* Über anderen Inhalten */
+    width: 150px; /* Größe der Signatur */
+    height: auto;
+}
+
 /* Desktop-Version */
 @media (min-width: 1024px) {
     .intro-button {
-        width: 22.4vw; /* Button für Desktop um 2% größer */
+        width: 15vw; /* Button für Desktop kleiner */
         height: auto; /* Vermeidet Verzerrung */
     }
 
@@ -119,12 +129,17 @@ body, html {
 @media (max-width: 1023px) {
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
-        width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
+        width: 25vw; /* Button um 2% größer auf mobilen Geräten */
         height: auto;
     }
 
     /* Buttonposition für mobile Geräte */
     .button-container {
         top: 59%; /* Button weiter nach oben für mobile Geräte */
+    }
+
+    /* Signatur auf mobilen Geräten kleiner */
+    .signature {
+        width: 100px; /* Kleinere Signatur auf mobilen Geräten */
     }
 }
