@@ -48,3 +48,19 @@ window.onload = function () {
         }
     });
 };
+
+// Funktion zum Wechseln der Seite mit Animation
+function changePage(url) {
+    document.body.classList.add('page-transition');
+    setTimeout(function () {
+        window.location.href = url;  // Navigiert nach der Animation zur neuen Seite
+    }, 500);  // Verweilt für 500ms (Animation läuft ab)
+}
+
+// Beispiel: Verwendung beim Klick auf Links
+document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        changePage(this.href);
+    });
+});
