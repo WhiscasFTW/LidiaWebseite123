@@ -74,7 +74,7 @@ html, body {
 }
 
 .artist-signature img {
-    width: 300%; /* Bild dreifach vergrößern */
+    max-width: 100%;
     height: auto;
 }
 
@@ -125,7 +125,7 @@ html, body {
 /* Footer */
 footer {
     position: fixed;
-    bottom: -51px; /* Standardmäßig außerhalb des sichtbaren Bereichs */
+    bottom: -51px; /* Footer initial versteckt */
     width: 100%;
     height: 51px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -135,10 +135,6 @@ footer {
 
 footer.visible {
     bottom: 0; /* Footer wird sichtbar */
-}
-
-footer.hidden {
-    bottom: -51px; /* Footer wird wieder versteckt */
 }
 
 .footer-background {
