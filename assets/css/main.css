@@ -1,5 +1,3 @@
-
-
 body, html {
     margin: 0; /* Entfernt alle Ränder */
     padding: 0; /* Entfernt alle Innenabstände */
@@ -14,14 +12,6 @@ body, html {
     flex-direction: column;
     width: 100%; /* Die ganze Breite wird genutzt */
     height: 100%; /* Die gesamte Höhe wird genutzt */
-}
-
-/* Für kleinere Bildschirme wie Mobile */
-@media (max-width: 1024px) {
-    .header-image {
-        width: 100%;
-        max-height: 200px; /* Für mobile Geräte eine kleinere Höhe einstellen */
-    }
 }
 
 /* Reihen-Stil */
@@ -91,38 +81,7 @@ body, html {
     }
 }
 
-/* Vorhang-Effekt */
-.curtain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: 3;
-    transform: translateX(-100%);
-    transition: transform 1s ease;
-}
-
-.curtain.open {
-    transform: translateX(0);
-}
-
-/* Intro-Bild und Button-Stile */
-.image-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Perfekte Zentrierung */
-    z-index: 1; /* Höherer Z-Index für das Bild */
-}
-
-.rounded-image {
-    width: 40vw; /* Dynamische Breite */
-    height: auto; /* Verhindert Verformung */
-    border-radius: 10%; /* Abgerundete Ecken */
-}
-
+/* Button-Stile */
 .button-container {
     position: absolute;
     top: 54%; /* Button um 1% weiter nach oben verschoben */
@@ -131,7 +90,6 @@ body, html {
     z-index: 2; /* Button über dem Bild */
 }
 
-/* Der Button wird dynamisch skaliert */
 .intro-button {
     width: 22.4vw; /* Button um 2% größer */
     height: auto; /* Proportionale Höhe */
@@ -177,10 +135,6 @@ body, html {
 
 /* Desktop-Version */
 @media (min-width: 1024px) {
-    .rounded-image {
-        width: 40vw; /* Originalgröße für Desktop */
-    }
-
     .intro-button {
         width: 22.4vw; /* Button für Desktop um 2% größer */
         height: auto; /* Vermeidet Verzerrung */
@@ -193,12 +147,6 @@ body, html {
 
 /* Mobile-Version */
 @media (max-width: 1023px) {
-    /* Bild für mobile Geräte anpassen */
-    .rounded-image {
-        width: 50vw; /* Bild auf mobilen Geräten größer */
-        height: auto;
-    }
-
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
         width: 32.6vw; /* Button um 2% größer auf mobilen Geräten */
