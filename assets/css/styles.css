@@ -198,29 +198,31 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
-    margin: 40px 0;
+    gap: 40px; /* Mehr Abstand zwischen den Boxen */
+    margin: 60px 0; /* Mehr Abstand oben und unten */
 }
 
 /* Einzelne Boxen */
 .box {
-    flex: 1 1 calc(25% - 30px);
+    flex: 1 1 calc(25% - 40px); /* Vier Boxen nebeneinander, mit Abstand */
     background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Dünner Rahmen */
+    border-radius: 25px; /* Stärker abgerundete Ecken */
     overflow: hidden;
     text-align: center;
     padding: 0;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
 }
 
 /* Bild in der Box */
 .box img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 300px; /* Größere Höhe für die Bilder */
+    object-fit: cover; /* Bild wird zugeschnitten, um den Container zu füllen */
     display: block;
+    filter: grayscale(20%); /* Leichter Graustufen-Effekt für künstlerischen Look */
+    transition: filter 0.3s;
 }
 
 /* Overlay für den Text */
@@ -231,7 +233,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); /* Dunklerer Gradient */
     z-index: 1;
 }
 
@@ -241,35 +243,43 @@ footer a:hover {
     position: relative;
     z-index: 2;
     color: #fff;
-    margin: 15px 20px;
+    margin: 20px 25px; /* Mehr Abstand zum Rand */
 }
 
 .box p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.4;
+    font-size: 1.3rem; /* Größere Schrift */
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-family: 'Pacifico', cursive; /* Künstlerische Schriftart */
 }
 
 /* Button in der Box */
 .box .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Pacifico', cursive; /* Künstlerische Schriftart */
 }
 
 .box .button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
 }
 
 /* Hover-Effekt für die Box */
 .box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Stärkerer Schatten */
+    border-color: rgba(255, 255, 255, 0.5); /* Hellerer Rahmen beim Hover */
+}
+
+.box:hover img {
+    filter: grayscale(0%); /* Graustufen-Effekt entfernen beim Hover */
 }
 
 /* Zitat unter den Boxen */
