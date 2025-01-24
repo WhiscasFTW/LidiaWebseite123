@@ -30,6 +30,19 @@ html, body {
     display: block;
 }
 
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
+
 /* Sidebar */
 .sidebar {
     height: 100%;
@@ -54,22 +67,64 @@ html, body {
     left: 0;
 }
 
-/* Leuchtender Streifen */
-.header-box-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
 }
 
-.second-header-box-container {
-    position: absolute;
-    bottom: -3px;  /* Leuchtstreifen wird am unteren Rand gestartet */
-    width: 100%;
-    height: 3px;
-    background-color: rgba(0, 255, 255, 0.7);
-    transition: bottom 0.3s ease; /* Animation für den Leuchtstreifen */
+.artist-signature img {
+    width: auto;
+    height: 140px; /* Originalhöhe */
+    max-width: 100%; /* Bild bleibt in voller Breite des Containers */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Links in der Sidebar */
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    transition: 0.3s;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    transition: top 0s;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+    font-size: 60px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: left 0.5s ease, transform 0.3s ease;
+}
+
+.toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
 }
 
 /* Footer */
@@ -122,6 +177,13 @@ footer a:hover {
     color: #007bff;
 }
 
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 /* Hauptinhalt */
 .content {
     padding: 20px;
@@ -129,11 +191,4 @@ footer a:hover {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
-    opacity: 0;  /* Anfangszustand: unsichtbar */
-    transition: opacity 1s ease-in-out;  /* Fade-In-Transition */
-}
-
-/* Für den Fall, dass ein Bild ein- oder ausgeblendet wird */
-.content.visible {
-    opacity: 1;  /* Sichtbar nach der Transition */
 }
