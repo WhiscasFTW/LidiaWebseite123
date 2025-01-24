@@ -104,11 +104,12 @@ body {
     filter: blur(10px);
     transition: opacity 5s ease, filter 5s ease;
     z-index: 1;
+    pointer-events: none;
 }
 
 .fullscreen-container.start::before {
-    opacity: 0;
-    filter: blur(0);
+    opacity: 0; /* Abdunkelung verschwindet */
+    filter: blur(0); /* Unschärfe verschwindet */
 }
 
 /* Vorhang-Stil */
