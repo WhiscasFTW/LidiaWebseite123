@@ -1,39 +1,183 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Animation</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-    <div class="fullscreen-container">
-        <!-- Reihen mit Bildern -->
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BLandschaft2.png');"></div>
-        </div>
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/BMenschen2.png');"></div>
-        </div>
-        <div class="rolling-row">
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts1.png');"></div>
-            <div class="rolling-image" style="background-image: url('assets/images/Porträts2.png');"></div>
-        </div>
-    </div>
+/* Allgemeine Reset-Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Button -->
-    <div class="button-container">
-        <img src="assets/images/Button.gif" alt="Mehr erfahren" class="intro-button" id="openCurtain">
-    </div>
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    color: #ffffff;
+}
 
-    <!-- Signatur (wird beim Start unsichtbar bleiben) -->
-    <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature" id="signature">
+/* Overlay für die Sidebar */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
 
-    <!-- Vorhang -->
-    <div class="curtain" id="curtain"></div>
+.overlay.active {
+    display: block;
+}
 
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 3;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.open {
+    width: 250px;
+    left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links in der Sidebar */
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    transition: 0.3s;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    transition: top 0s;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+    font-size: 60px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: left 0.5s ease, transform 0.3s ease;
+}
+
+.toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 51px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    margin-top: auto; /* Footer bleibt am Ende der Seite */
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.footer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    line-height: 51px;
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hauptinhalt */
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Füllt den verfügbaren Platz aus */
+    padding-bottom: 20px; /* Abstand zum Footer */
+}
