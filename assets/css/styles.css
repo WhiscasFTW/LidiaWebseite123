@@ -10,7 +10,6 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212;
     color: #ffffff;
 }
 
@@ -310,5 +309,4 @@ footer a:hover {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    opacity: 0.5; /* Transparenz für den Nebel */
 }
