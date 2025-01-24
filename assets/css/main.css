@@ -87,7 +87,7 @@ body, html {
     top: 54%; /* Button um 1% weiter nach oben verschoben */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2; /* Button über dem Bild */
+    z-index: 1000; /* Sehr hoher Z-Index, um sicherzustellen, dass der Button über anderen Elementen liegt */
 }
 
 .intro-button {
@@ -109,7 +109,7 @@ body, html {
     top: 50%; /* Vertikal zentrieren */
     left: 50%; /* Horizontal zentrieren */
     transform: translate(-50%, -50%); /* Exakte Zentrierung */
-    z-index: 2; /* Über anderen Inhalten */
+    z-index: 2; /* Unter dem Button */
     width: 800px; /* Standardgröße für Desktop */
     height: auto; /* Höhe proportional anpassen */
     opacity: 0; /* Standardmäßig unsichtbar */
