@@ -114,6 +114,10 @@ body, html {
     height: auto; /* Höhe proportional anpassen */
     opacity: 0; /* Standardmäßig unsichtbar */
     transition: opacity 2s ease; /* Sanfter Übergang */
+    background-image: url('assets/images/Siganture.png'); /* Neue Signatur-Datei */
+    background-size: contain; /* Bild skalieren, um es vollständig anzuzeigen */
+    background-repeat: no-repeat; /* Bild nicht wiederholen */
+    background-position: center; /* Bild zentrieren */
 }
 
 /* Signatur sichtbar machen */
