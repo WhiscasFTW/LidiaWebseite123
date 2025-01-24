@@ -137,17 +137,18 @@ body, html {
 @media (max-width: 1023px) {
     /* Button auf mobilen Geräten anpassen */
     .intro-button {
-        width: 150px; /* Feste Breite für mobile Geräte */
+        width: 450px; /* Dreimal so groß (3 * 150px) */
         height: auto; /* Höhe proportional anpassen */
     }
 
     /* Buttonposition für mobile Geräte */
     .button-container {
-        top: 80%; /* Button weiter nach unten für mobile Geräte */
+        top: 30%; /* Button deutlich höher positionieren */
     }
 
     /* Signatur auf mobilen Geräten kleiner */
     .signature {
         width: 600px; /* Kleinere Signatur auf mobilen Geräten */
+        top: 70%; /* Signatur weiter nach unten verschieben, um Abstand zum Button zu halten */
     }
 }
