@@ -124,17 +124,11 @@ html, body {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: -51px; /* Footer initial versteckt */
     width: 100%;
     height: 51px;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
-    transition: bottom 0.3s ease;
-}
-
-footer.visible {
-    bottom: 0; /* Footer wird sichtbar */
+    margin-top: auto; /* Footer bleibt am Ende der Seite */
 }
 
 .footer-background {
