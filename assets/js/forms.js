@@ -32,4 +32,16 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
+
+    // Footer-Einblenden beim Scrollen
+    window.addEventListener('scroll', function () {
+        const footer = document.querySelector('footer');
+        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+        if (isAtBottom) {
+            footer.classList.add('visible');
+        } else {
+            footer.classList.remove('visible');
+        }
+    });
 };
