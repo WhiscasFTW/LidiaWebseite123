@@ -3,100 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steckbrief</title>
+    <title>Startseite</title>
     <link rel="stylesheet" href="assets/css/forms.css">
-    <style>
-        /* Header-Bereich */
-        header {
-            position: relative;
-            width: 100%;
-            height: 360px;
-        }
-        header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation */
-        nav {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: space-around;
-            width: 60%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .site-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .site-footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .site-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Content */
-        .content {
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Sicherstellen, dass der Footer immer am unteren Rand bleibt */
-        body {
-            margin: 0;
-            padding-bottom: 50px; /* Platz für den Footer */
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="assets/images/HeaderSteckbrief.png" alt="Header-Bild">
-        <!-- Navigation -->
-        <nav>
-            <a href="startseite.html">Startseite</a>
-            <a href="steckbrief.html">Steckbrief</a>
-            <a href="meinewerke.html">Meine Werke</a>
-            <a href="dienstleistungen.html">Dienstleistungen</a>
-            <a href="kontakt.html">Kontakt</a>
-        </nav>
-    </header>
+    <!-- Overlay für die Sidebar -->
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- Hauptinhalt der Seite -->
-    <div class="content">
-        <h1>Steckbrief</h1>
-        <p>Hier ist der Steckbrief-Inhalt.</p>
+    <!-- Bild-Container für das Header-Bild -->
+    <div class="header-image-container">
+        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
     </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+    <!-- Oberer leuchtender Streifen -->
+    <div class="header-box-container"></div>
+
+    <!-- Die Sidebar auf der linken Seite -->
+    <div id="sidebar" class="sidebar">
+        <!-- Signatur der Künstlerin -->
+        <div class="artist-signature">
+            <img src="assets/images/Signature.png" alt="Signatur der Künstlerin">
         </div>
+
+        <!-- Links mit Icons -->
+        <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
+        <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
+        <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine&nbsp;Werke</a>
+        <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
+        <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
+    </div>
+
+    <!-- Button zum Öffnen und Schließen der Sidebar -->
+    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+
+    <!-- Hauptinhalt der Seite -->
+    <main class="content">
+        <!-- Hier kommt der Inhalt der Seite hin -->
+        <h1>Willkommen auf meiner Webseite!</h1>
+        <p>Dies ist der Hauptinhalt der Seite.</p>
+        <!-- Füge mehr Inhalt hinzu, um das Scrollen zu testen -->
+        <div style="height: 1000px;"></div>
+    </main>
+
+    <!-- Unterer leuchtender Streifen -->
+    <div class="second-header-box-container"></div>
+
+    <!-- Footer mit Hintergrundbild -->
+    <footer>
+        <div class="footer-background">
+            <img src="assets/images/Footer.jpg" alt="Footer-Hintergrund" class="footer-image">
+        </div>
+        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
     </footer>
+
+    <script src="assets/js/forms.js"></script>
 </body>
 </html>
