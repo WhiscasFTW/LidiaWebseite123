@@ -48,7 +48,7 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: fixed; /* Fest positioniert */
-    top: 360px; /* Abstand vom oberen Rand (Höhe des Header-Bildes) */
+    top: 358px; /* 2px weiter oben (360px - 2px) */
     left: 0;
     z-index: 1; /* Unter der Sidebar */
 }
@@ -76,14 +76,16 @@ html, body {
     left: 0;
 }
 
-/* Container für die Links und Boxen in der Sidebar */
-.sidebar-nav {
-    position: absolute; /* Absolute Positionierung */
-    top: 80px; /* Abstand vom oberen Rand der Sidebar */
-    left: 0;
-    right: 0;
-    padding: 0 10px;
-    transition: transform 0.5s ease; /* Animation für das Hereinfahren */
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Links in der Sidebar */
@@ -96,10 +98,12 @@ html, body {
     transition: 0.3s;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 0; /* Abstand zwischen den Links */
+    margin: 5px 10px;
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: relative; /* Relative Positionierung innerhalb des Containers */
+    position: relative;
+    top: 0;
+    transition: top 0s;
 }
 
 .sidebar a:hover {
@@ -107,16 +111,6 @@ html, body {
     color: rgba(255, 255, 255, 1);
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Boxen in der Sidebar */
-.sidebar .box {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 10px 0; /* Abstand zwischen den Boxen */
-    border-radius: 5px;
-    position: relative; /* Relative Positionierung innerhalb des Containers */
-    transition: transform 0.5s ease; /* Animation für das Hereinfahren */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
@@ -157,10 +151,16 @@ html, body {
 footer {
     width: 100%;
     height: 51px;
-    position: relative; /* Am Ende des Inhalts */
-    background-color: rgba(0, 0, 0, 0.8); /* Hintergrundfarbe für bessere Sichtbarkeit */
+    position: fixed; /* Footer bleibt fixiert */
+    bottom: -51px; /* Footer wird initial versteckt */
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    transition: bottom 0.3s ease; /* Animation für das Einblenden */
+}
+
+footer.visible {
+    bottom: 0; /* Footer wird sichtbar */
 }
 
 .footer-background {
