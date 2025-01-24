@@ -33,18 +33,17 @@ window.onload = function () {
         overlay.classList.add('active');
     }
 
-    // Footer und Leuchtstreifen einblenden beim Scrollen
+    // Footer einblenden, wenn das Ende der Seite erreicht wird
     window.addEventListener('scroll', function () {
         const footer = document.querySelector('footer');
-        const secondHeaderBox = document.querySelector('.second-header-box-container');
         const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
         if (isAtBottom) {
             footer.classList.add('visible');
-            secondHeaderBox.style.bottom = '51px'; // Leuchtstreifen über dem Footer
+            footer.classList.remove('hidden'); // Footer anzeigen, wenn unten
         } else {
             footer.classList.remove('visible');
-            secondHeaderBox.style.bottom = '-3px'; // Leuchtstreifen versteckt
+            footer.classList.add('hidden'); // Footer verstecken, wenn nicht am Ende
         }
     });
 };
