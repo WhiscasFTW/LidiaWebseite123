@@ -144,7 +144,7 @@ body, html {
 
     /* Buttonposition für Laptops */
     .button-container {
-        top: 54%; /* Buttonposition bleibt gleich */
+        top: 60%; /* Button weiter nach unten verschieben */
     }
 }
 
