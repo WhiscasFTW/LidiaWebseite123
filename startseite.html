@@ -18,46 +18,40 @@
     </div>
 
     <!-- Oberer leuchtender Streifen -->
-    <div class="header-box-container"></div>
-
-    <!-- Die Sidebar auf der linken Seite -->
-    <div id="sidebar" class="sidebar">
-        <!-- Signatur der Künstlerin -->
-        <div class="artist-signature">
-            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin">
+    <div class="header-box-container">
+        <div class="second-header-box-container">
+            <p>Dies ist der Leuchtstreifen!</p>
         </div>
-
-        <!-- Links mit Icons -->
-        <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-        <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
-        <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine&nbsp;Werke</a>
-        <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-        <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
     </div>
 
-    <!-- Button zum Öffnen und Schließen der Sidebar -->
-    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="sidebar-link">Link 1</a>
+        <a href="#" class="sidebar-link">Link 2</a>
+    </div>
 
-    <!-- Hauptinhalt der Seite -->
-    <main class="content">
-        <!-- Hier kommt der Inhalt der Seite hin -->
-        <h1>Willkommen auf meiner Webseite!</h1>
-        <p>Dies ist der Hauptinhalt der Seite.</p>
-        <!-- Füge mehr Inhalt hinzu, um das Scrollen zu testen -->
-        <div style="height: 1000px;"></div>
-    </main>
+    <!-- Button zum Öffnen der Sidebar -->
+    <button id="toggleButton" class="toggle-button" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
 
-    <!-- Unterer leuchtender Streifen -->
-    <div class="second-header-box-container"></div>
-
-    <!-- Footer mit Hintergrundbild -->
+    <!-- Footer -->
     <footer>
         <div class="footer-background">
-            <img src="assets/images/Footer.jpg" alt="Footer-Hintergrund" class="footer-image">
+            <img class="footer-image" src="assets/images/footer-image.jpg" alt="Footer-Bild">
         </div>
-        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+        <p>&copy; 2025 <a href="#">Lidia Grön</a></p>
     </footer>
 
+    <!-- Hauptinhalt -->
+    <div class="content">
+        <h1>Willkommen auf meiner Seite</h1>
+        <p>Inhalt der Seite...</p>
+    </div>
+
     <script src="assets/js/forms.js"></script>
+    <script>
+        // Hier das JavaScript von oben hinzufügen...
+    </script>
 </body>
 </html>
