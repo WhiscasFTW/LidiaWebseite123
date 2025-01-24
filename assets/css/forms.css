@@ -76,16 +76,13 @@ html, body {
     left: 0;
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-    max-width: 100%;
-    height: auto;
+/* Container für die Links in der Sidebar */
+.sidebar-nav {
+    position: absolute; /* Absolute Positionierung */
+    top: 80px; /* Abstand vom oberen Rand der Sidebar */
+    left: 0;
+    right: 0;
+    padding: 0 10px;
 }
 
 /* Links in der Sidebar */
@@ -98,12 +95,9 @@ html, body {
     transition: 0.3s;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
+    margin: 5px 0; /* Abstand zwischen den Links */
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: relative; /* Relative Positionierung */
-    top: 0; /* Immer auf der gleichen Höhe */
-    transition: top 0s; /* Keine Animation für die Höhe */
 }
 
 .sidebar a:hover {
