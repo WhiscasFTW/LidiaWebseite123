@@ -12,6 +12,17 @@ html, body {
     flex-direction: column;
     background-color: #121212;
     color: #ffffff;
+    animation: fadeIn 1s ease-in-out forwards;  /* Fade-In beim Laden */
+}
+
+/* Fade-In-Animation für die gesamte Seite */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Overlay für die Sidebar */
