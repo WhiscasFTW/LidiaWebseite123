@@ -33,6 +33,11 @@ window.onload = function () {
         overlay.classList.add('active');
     }
 
+    // Übergangs-Effekt für das Fade-In
+    setTimeout(function () {
+        document.body.style.opacity = '1';
+    }, 1000);  // 1 Sekunde nach dem Laden
+
     // Footer und Leuchtstreifen einblenden beim Scrollen
     window.addEventListener('scroll', function () {
         const footer = document.querySelector('footer');
@@ -49,12 +54,12 @@ window.onload = function () {
     });
 };
 
-// Funktion zum Wechseln der Seite mit Animation
+// Funktion zum Wechseln der Seite mit Transition
 function changePage(url) {
-    document.body.classList.add('page-transition');
+    document.body.style.opacity = '0';  // Seite wird unsichtbar
     setTimeout(function () {
         window.location.href = url;  // Navigiert nach der Animation zur neuen Seite
-    }, 500);  // Verweilt für 500ms (Animation läuft ab)
+    }, 1000);  // 1 Sekunde warten bis zur Navigation
 }
 
 // Beispiel: Verwendung beim Klick auf Links
