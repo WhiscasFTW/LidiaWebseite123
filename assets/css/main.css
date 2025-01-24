@@ -1,128 +1,189 @@
-/* Originale CSS-Einstellungen */
-body {
+/* Allgemeine Reset-Einstellungen */
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: black;
+    box-sizing: border-box;
 }
 
-/* Fullscreen-Container */
-.fullscreen-container {
-    width: 100%;
-    height: 100vh;
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    animation: backgroundEffect 5s ease-in-out forwards;
+    background-color: #121212;
+    color: #ffffff;
 }
 
-/* Reihen mit Bildern */
-.rolling-row {
-    display: flex;
+/* Overlay für die Sidebar */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 33.33%;
-    overflow: hidden;
-    filter: blur(4px) brightness(0.5); /* Initiale Unschärfe und Dunkelheit */
-    animation: backgroundEffect 5s ease-in-out forwards;
-}
-
-.rolling-image {
-    flex: 0 0 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    animation: scroll 24s linear infinite; /* 3x langsamer */
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
-.rolling-row:nth-child(2) .rolling-image {
-    animation-direction: reverse;
+.overlay.active {
+    display: block;
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
 }
 
-/* Animation für Hintergrundverbesserung */
-@keyframes backgroundEffect {
-    0% {
-        filter: blur(4px) brightness(0.5);
-    }
-    100% {
-        filter: blur(0px) brightness(1);
-    }
-}
-
-/* Button */
-.button-container {
-    position: absolute;
-    bottom: 10%;
-    display: flex;
-    justify-content: center;
+.header-image {
     width: 100%;
-}
-
-.intro-button {
-    width: 200px;
     height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 3;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.open {
+    width: 250px;
+    left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links in der Sidebar */
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    transition: 0.3s;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    transition: top 0s;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+    font-size: 60px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.intro-button.visible {
-    opacity: 1;
-}
-
-/* Signatur */
-.signature {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: left 0.5s ease, transform 0.3s ease;
 }
 
-.signature.visible {
-    opacity: 1;
+.toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
 }
 
-/* Vorhang */
-.curtain {
+/* Footer */
+footer {
     position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 51px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    transition: bottom 0.3s ease;
+}
+
+footer.visible {
+    bottom: 0; /* Footer wird sichtbar */
+}
+
+.footer-background {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    z-index: 10;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 1s ease-in-out;
+    z-index: -1;
 }
 
-.curtain.open {
-    transform: scaleX(1);
-}
-
-/* Neue Animation für Seitenwechsel */
-.page-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
+.footer-image {
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0;
-    z-index: 20;
-    transition: opacity 0.8s ease-in-out;
+    object-fit: cover;
 }
 
-.page-transition.active {
-    opacity: 1;
+footer p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    line-height: 51px;
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hauptinhalt */
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    padding-bottom: 100px;
 }
