@@ -41,10 +41,10 @@ window.onload = function () {
 
         if (isAtBottom) {
             footer.classList.add('visible');
-            secondHeaderBox.style.bottom = '51px'; // Leuchtstreifen über dem Footer
+            secondHeaderBox.style.bottom = '51px';
         } else {
             footer.classList.remove('visible');
-            secondHeaderBox.style.bottom = '-3px'; // Leuchtstreifen versteckt
+            secondHeaderBox.style.bottom = '-3px';
         }
     });
 };
