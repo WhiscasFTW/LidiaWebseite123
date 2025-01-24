@@ -1,215 +1,168 @@
-* Allgemeine Reset-Einstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body, html {
+    margin: 0; /* Entfernt alle Ränder */
+    padding: 0; /* Entfernt alle Innenabstände */
+    width: 100%; /* Die gesamte Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
+    overflow: hidden; /* Kein Scrollen erlaubt */
+    background-color: black;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
+.fullscreen-container {
     display: flex;
     flex-direction: column;
-    background-color: #121212;
-    color: #ffffff;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
+    width: 100%; /* Die ganze Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
 }
 
-/* Overlay für die Sidebar */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-}
-
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
-}
-
-/* Oberer leuchtender Streifen (direkt unter dem Header-Bild) */
-.header-box-container {
-    width: 100%;
-    height: 3px; /* Höhe auf 3px */
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: fixed; /* Fest positioniert */
-    top: 360px; /* Abstand vom oberen Rand (Höhe des Header-Bildes) */
-    left: 0;
-    z-index: 1; /* Unter der Sidebar */
-}
-
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 3;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar.open {
-    width: 250px;
-    left: 0;
-}
-
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Links in der Sidebar */
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
-    display: block;
-    transition: 0.3s;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
-    border-radius: 5px;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: relative; /* Relative Positionierung */
-    top: 0; /* Immer auf der gleichen Höhe */
-    transition: top 0s; /* Keine Animation für die Höhe */
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 60px;
-    color: #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
-}
-
-.sidebar.open + .toggle-button {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Unterer leuchtender Streifen (direkt über dem Footer) */
-.second-header-box-container {
-    width: 100%;
-    height: 3px; /* Höhe auf 3px */
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
-    background-size: 300% 100%;
-    animation: rainbow 15s linear infinite;
-    position: fixed; /* Fest positioniert */
-    bottom: 51px; /* Abstand vom unteren Rand (Höhe des Footers) */
-    left: 0;
-    z-index: 1; /* Unter der Sidebar */
-}
-
-/* Footer mit Hintergrundbild */
-footer {
-    width: 100%;
-    height: 51px;
-    position: relative; /* Am Ende des Inhalts */
-    background-color: rgba(0, 0, 0, 0.8); /* Hintergrundfarbe für bessere Sichtbarkeit */
-    z-index: 1;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
+/* Reihen-Stil */
+.rolling-row {
+    display: flex;
+    width: 200%; /* Platz für beide Bilder */
+    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
     position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
+    overflow: hidden;
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    animation: fadeFocus 6s ease-in-out forwards; /* Übergang zu klar und hell (1,5-mal so lange) */
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+/* Obere und untere Reihe rollen nach links */
+.rolling-row:nth-child(1),
+.rolling-row:nth-child(3) {
+    animation: roll-left 50s linear infinite, fadeFocus 6s ease-in-out forwards; /* 1,5-mal so lange */
 }
 
-footer a:hover {
-    color: #007bff;
+/* Mittlere Reihe rollt nach rechts */
+.rolling-row:nth-child(2) {
+    animation: roll-right 60s linear infinite, fadeFocus 6s ease-in-out forwards; /* 1,5-mal so lange */
+}
+
+/* Bild-Stil */
+.rolling-image {
+    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Animationen */
-@keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes roll-left {
+    0% {
+        transform: translateX(0); /* Startposition */
+    }
+    100% {
+        transform: translateX(-50%); /* Eine Bildbreite nach links */
+    }
 }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+@keyframes roll-right {
+    0% {
+        transform: translateX(-50%); /* Start mit zweitem Bild */
+    }
+    100% {
+        transform: translateX(0); /* Zurück zum ersten Bild */
+    }
 }
 
-/* Stile für den Hauptinhalt */
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1; /* Füllt den verfügbaren Platz aus */
-    padding-bottom: 100px; /* Platz für Footer und bunten Streifen */
-}   
+@keyframes fadeIn {
+    0% {
+        opacity: 0.8; /* Leicht sichtbar */
+    }
+    100% {
+        opacity: 1; /* Vollständig sichtbar */
+    }
+}
+
+@keyframes fadeFocus {
+    0% {
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    }
+    100% {
+        filter: blur(0px) brightness(1); /* Klar und normal hell */
+    }
+}
+
+/* Button-Stile */
+.button-container {
+    position: absolute;
+    top: 54%; /* Button um 1% weiter nach oben verschoben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Sehr hoher Z-Index, um sicherzustellen, dass der Button über anderen Elementen liegt */
+}
+
+.intro-button {
+    width: 7.5vw; /* Button halb so klein (15vw / 2) */
+    height: auto; /* Proportionale Höhe */
+    cursor: pointer;
+    opacity: 0; /* Button zu Beginn unsichtbar */
+    transition: opacity 1s ease; /* Einfacher Übergang für Sichtbarkeit */
+}
+
+/* Button wird sichtbar */
+.intro-button.visible {
+    opacity: 1; /* Button wird sichtbar */
+}
+
+/* Signatur-Stil */
+.signature {
+    position: fixed;
+    top: 50%; /* Vertikal zentrieren */
+    left: 50%; /* Horizontal zentrieren */
+    transform: translate(-50%, -50%); /* Exakte Zentrierung */
+    z-index: 2; /* Unter dem Button */
+    width: 800px; /* Standardgröße für Desktop */
+    height: auto; /* Höhe proportional anpassen */
+    opacity: 0; /* Standardmäßig unsichtbar */
+    transition: opacity 2s ease; /* Sanfter Übergang */
+}
+
+/* Signatur sichtbar machen */
+.signature.visible {
+    opacity: 1; /* Signatur wird sichtbar */
+}
+
+/* Desktop-Version (≥ 1024px) */
+@media (min-width: 1024px) {
+    /* Button auf dem Desktop doppelt so groß */
+    .intro-button {
+        width: 15vw; /* Doppelt so groß wie zuvor */
+        height: auto; /* Höhe proportional anpassen */
+    }
+
+    .button-container {
+        top: 54%; /* Buttonposition bleibt gleich */
+    }
+}
+
+/* Laptop-Version (768px bis 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Button auf Laptops doppelt so groß */
+    .intro-button {
+        width: 15vw; /* Doppelt so groß wie auf Desktop */
+        height: auto; /* Höhe proportional anpassen */
+    }
+
+    /* Buttonposition für Laptops */
+    .button-container {
+        top: 60%; /* Button weiter nach unten verschieben */
+    }
+}
+
+/* Mobile-Version (≤ 767px) */
+@media (max-width: 767px) {
+    /* Button auf mobilen Geräten 1,5-mal so groß */
+    .intro-button {
+        width: 225px; /* 1,5-mal so groß (1,5 * 150px) */
+        height: auto; /* Höhe proportional anpassen */
+    }
+
+    /* Buttonposition für mobile Geräte */
+    .button-container {
+        top: calc(30% + 300px); /* Button um 300 Pixel weiter nach unten */
+    }
+
+    /* Signatur auf mobilen Geräten kleiner */
+    .signature {
+        width: 600px; /* Kleinere Signatur auf mobilen Geräten */
+    }
+}
