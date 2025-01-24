@@ -110,7 +110,7 @@ body, html {
     left: 50%; /* Horizontal zentrieren */
     transform: translate(-50%, -50%); /* Exakte Zentrierung */
     z-index: 2; /* Über anderen Inhalten */
-    width: 1200px; /* Signatur viermal so groß (4 * 300px) */
+    width: 2400px; /* Signatur achtmal so groß (8 * 300px) */
     height: auto;
     opacity: 0; /* Standardmäßig unsichtbar */
     transition: opacity 2s ease; /* Sanfter Übergang */
@@ -148,6 +148,6 @@ body, html {
 
     /* Signatur auf mobilen Geräten kleiner */
     .signature {
-        width: 800px; /* Kleinere Signatur auf mobilen Geräten (4 * 200px) */
+        width: 1600px; /* Kleinere Signatur auf mobilen Geräten (8 * 200px) */
     }
 }
