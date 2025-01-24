@@ -121,15 +121,16 @@ body, html {
     opacity: 1; /* Signatur wird sichtbar */
 }
 
-/* Desktop-Version (unverändert) */
+/* Desktop-Version (≥ 1024px) */
 @media (min-width: 1024px) {
+    /* Button auf dem Desktop doppelt so groß */
     .intro-button {
-        width: 7.5vw; /* Button für Desktop halb so klein */
-        height: auto; /* Vermeidet Verzerrung */
+        width: 15vw; /* Doppelt so groß wie zuvor */
+        height: auto; /* Höhe proportional anpassen */
     }
 
     .button-container {
-        top: 54%; /* Buttonposition für Desktop um 1% weiter nach oben verschoben */
+        top: 54%; /* Buttonposition bleibt gleich */
     }
 }
 
@@ -147,7 +148,7 @@ body, html {
     }
 }
 
-/* Mobile-Version (max-width: 767px) */
+/* Mobile-Version (≤ 767px) */
 @media (max-width: 767px) {
     /* Button auf mobilen Geräten 1,5-mal so groß */
     .intro-button {
@@ -157,7 +158,7 @@ body, html {
 
     /* Buttonposition für mobile Geräte */
     .button-container {
-        top: 30%; /* Button deutlich höher positionieren */
+        top: calc(30% + 150px); /* Button um 150 Pixel weiter nach unten */
     }
 
     /* Signatur auf mobilen Geräten kleiner */
