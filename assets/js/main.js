@@ -1,8 +1,11 @@
-// Button nach einer Verzögerung sichtbar machen
+// Button und Signatur nach Verzögerung sichtbar machen
 window.onload = function () {
     setTimeout(function () {
         const button = document.querySelector('.intro-button');
-        button.classList.add('visible'); // Button sichtbar machen
+        const signature = document.getElementById('signature');
+
+        button.classList.add('visible');
+        signature.classList.add('visible');
     }, 1000); // 1 Sekunde Verzögerung
 };
 
