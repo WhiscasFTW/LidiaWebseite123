@@ -26,6 +26,7 @@ window.onload = function () {
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
     var sidebarState = localStorage.getItem('sidebarState');
+    var content = document.querySelector('.content');
 
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
@@ -33,9 +34,9 @@ window.onload = function () {
         overlay.classList.add('active');
     }
 
-    // Übergangs-Effekt für das Fade-In
+    // Übergangs-Effekt für das Fade-In des Inhalts
     setTimeout(function () {
-        document.body.style.opacity = '1';
+        content.classList.add('visible');  // Macht den Inhalt sichtbar
     }, 1000);  // 1 Sekunde nach dem Laden
 
     // Footer und Leuchtstreifen einblenden beim Scrollen
@@ -56,7 +57,8 @@ window.onload = function () {
 
 // Funktion zum Wechseln der Seite mit Transition
 function changePage(url) {
-    document.body.style.opacity = '0';  // Seite wird unsichtbar
+    var content = document.querySelector('.content');
+    content.style.opacity = '0';  // Inhalt wird unsichtbar
     setTimeout(function () {
         window.location.href = url;  // Navigiert nach der Animation zur neuen Seite
     }, 1000);  // 1 Sekunde warten bis zur Navigation
