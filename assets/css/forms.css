@@ -76,7 +76,7 @@ html, body {
     left: 0;
 }
 
-/* Container für die Links in der Sidebar */
+/* Container für die Links und Boxen in der Sidebar */
 .sidebar-nav {
     position: absolute; /* Absolute Positionierung */
     top: 80px; /* Abstand vom oberen Rand der Sidebar */
@@ -98,6 +98,7 @@ html, body {
     margin: 5px 0; /* Abstand zwischen den Links */
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
+    position: relative; /* Relative Positionierung innerhalb des Containers */
 }
 
 .sidebar a:hover {
@@ -105,6 +106,15 @@ html, body {
     color: rgba(255, 255, 255, 1);
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Boxen in der Sidebar */
+.sidebar .box {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0; /* Abstand zwischen den Boxen */
+    border-radius: 5px;
+    position: relative; /* Relative Positionierung innerhalb des Containers */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
