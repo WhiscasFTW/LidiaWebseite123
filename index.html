@@ -26,6 +26,16 @@
         .hidden {
             display: none;
         }
+
+        /* Signatur-Stil */
+        .signature {
+            position: fixed;
+            bottom: 20px; /* Abstand vom unteren Rand */
+            right: 20px; /* Abstand vom rechten Rand */
+            z-index: 2; /* Über anderen Inhalten */
+            width: 150px; /* Größe der Signatur */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +63,9 @@
     <div class="button-container">
         <img src="assets/images/Button.gif" alt="Mehr erfahren" class="intro-button" id="openCurtain">
     </div>
+
+    <!-- Signatur der Künstlerin -->
+    <img src="assets/images/Signature.png" alt="Signatur der Künstlerin" class="signature">
 
     <!-- Vorhang (versteckt, wird beim Klicken auf den Button sichtbar) -->
     <div class="curtain" id="curtain"></div>
