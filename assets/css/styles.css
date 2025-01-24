@@ -59,7 +59,7 @@ html, body {
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 50px;
-    padding-top: 50px; /* Boxen werden jetzt 50px nach oben verschoben */
+    padding-top: 50px;
 }
 
 .sidebar.open {
@@ -77,8 +77,8 @@ html, body {
 
 .artist-signature img {
     width: auto;
-    height: 140px; /* Originalhöhe */
-    max-width: 100%; /* Bild bleibt in voller Breite des Containers */
+    height: 140px;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
@@ -130,7 +130,7 @@ html, body {
 /* Footer */
 footer {
     position: fixed;
-    bottom: -51px; /* Footer initial versteckt */
+    bottom: -51px;
     width: 100%;
     height: 51px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -139,7 +139,7 @@ footer {
 }
 
 footer.visible {
-    bottom: 0; /* Footer wird sichtbar */
+    bottom: 0;
 }
 
 .footer-background {
@@ -198,28 +198,28 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px; /* Mehr Abstand zwischen den Boxen */
-    margin: 40px 0; /* Mehr Abstand oben und unten */
+    gap: 30px;
+    margin: 40px 0;
 }
 
 /* Einzelne Boxen */
 .box {
-    flex: 1 1 calc(25% - 30px); /* Vier Boxen nebeneinander, mit Abstand */
-    background-color: rgba(255, 255, 255, 0.1); /* Leichter transparenter Hintergrund */
-    border: none; /* Kein Rahmen */
-    border-radius: 20px; /* Abgerundete Ecken */
-    overflow: hidden; /* Damit das Bild die Ecken nicht überragt */
+    flex: 1 1 calc(25% - 30px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
     text-align: center;
-    padding: 0; /* Kein Innenabstand, da das Bild den gesamten Raum einnimmt */
+    padding: 0;
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative; /* Für den Overlay-Effekt */
+    position: relative;
 }
 
 /* Bild in der Box */
 .box img {
     width: 100%;
-    height: 200px; /* Feste Höhe für die Bilder */
-    object-fit: cover; /* Bild wird zugeschnitten, um den Container zu füllen */
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
@@ -231,28 +231,23 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Dunkler Gradient */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
     z-index: 1;
 }
 
 /* Text in der Box */
-.box h2,
 .box p,
 .box .button {
     position: relative;
-    z-index: 2; /* Text über dem Overlay */
-    color: #fff; /* Weiße Schrift */
-    margin: 15px 20px; /* Abstand zum Rand */
-}
-
-.box h2 {
-    font-size: 1.8rem; /* Größere Schrift */
-    margin-top: 20px;
+    z-index: 2;
+    color: #fff;
+    margin: 15px 20px;
 }
 
 .box p {
-    font-size: 1.1rem; /* Größere Schrift */
+    font-size: 1.1rem;
     margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 /* Button in der Box */
@@ -273,6 +268,19 @@ footer a:hover {
 
 /* Hover-Effekt für die Box */
 .box:hover {
-    transform: translateY(-10px); /* Größerer Versatz beim Hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Zitat unter den Boxen */
+.quote {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.quote p {
+    margin: 0;
 }
