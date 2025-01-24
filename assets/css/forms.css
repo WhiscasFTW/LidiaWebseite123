@@ -53,7 +53,7 @@ html, body {
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
     position: absolute; /* Relativ zum Header-Bild */
-    top: 100%; /* Direkt unter dem Header-Bild */
+    top: 900px%; /* Direkt unter dem Header-Bild */
     left: 0;
     z-index: 1;
 }
