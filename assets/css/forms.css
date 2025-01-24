@@ -74,9 +74,8 @@ html, body {
 }
 
 .artist-signature img {
-    max-width: 100%; /* Originalgröße der Signatur */
+    width: 300%; /* Bild dreifach vergrößern */
     height: auto;
-    margin: 0;
 }
 
 /* Links in der Sidebar */
@@ -136,6 +135,10 @@ footer {
 
 footer.visible {
     bottom: 0; /* Footer wird sichtbar */
+}
+
+footer.hidden {
+    bottom: -51px; /* Footer wird wieder versteckt */
 }
 
 .footer-background {
