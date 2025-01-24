@@ -27,6 +27,10 @@ html, body {
     z-index: 2;
 }
 
+.overlay.active {
+    display: block;
+}
+
 /* Bild-Container für das Header-Bild */
 .header-image-container {
     text-align: center;
@@ -40,17 +44,17 @@ html, body {
     max-height: 360px;
 }
 
-/* Oberer leuchtender Streifen (direkt unter dem Header-Bild) */
+/* Oberer leuchtender Streifen */
 .header-box-container {
     width: 100%;
-    height: 3px; /* Höhe auf 3px */
+    height: 3px;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: fixed; /* Fest positioniert */
-    top: 358px; /* 2px weiter oben (360px - 2px) */
+    position: fixed;
+    top: 358px; /* 2px weiter oben */
     left: 0;
-    z-index: 1; /* Unter der Sidebar */
+    z-index: 1;
 }
 
 /* Sidebar */
@@ -118,9 +122,8 @@ html, body {
     font-size: 60px;
     color: #fff;
     background-color: transparent;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: url('assets/images/circle.png') 16 16, pointer;
+    border: none;
+    cursor: pointer;
     position: fixed;
     top: 50%;
     left: 15px;
@@ -129,34 +132,33 @@ html, body {
     transition: left 0.5s ease, transform 0.3s ease;
 }
 
-.sidebar.open + .toggle-button {
+.toggle-button.open {
     left: 265px;
     transform: translateY(-50%) rotate(90deg);
 }
 
-/* Unterer leuchtender Streifen (direkt über dem Footer) */
+/* Unterer leuchtender Streifen */
 .second-header-box-container {
     width: 100%;
-    height: 3px; /* Höhe auf 3px */
+    height: 3px;
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: fixed; /* Fest positioniert */
-    bottom: 51px; /* Abstand vom unteren Rand (Höhe des Footers) */
+    position: fixed;
+    bottom: 51px;
     left: 0;
-    z-index: 1; /* Unter der Sidebar */
+    z-index: 1;
 }
 
-/* Footer mit Hintergrundbild */
+/* Footer */
 footer {
+    position: fixed;
+    bottom: -51px; /* Footer initial versteckt */
     width: 100%;
     height: 51px;
-    position: fixed; /* Footer bleibt fixiert */
-    bottom: -51px; /* Footer wird initial versteckt */
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    transition: bottom 0.3s ease; /* Animation für das Einblenden */
+    transition: bottom 0.3s ease;
 }
 
 footer.visible {
@@ -211,11 +213,11 @@ footer a:hover {
     100% { transform: translateY(0); }
 }
 
-/* Stile für den Hauptinhalt */
+/* Hauptinhalt */
 .content {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    flex: 1; /* Füllt den verfügbaren Platz aus */
-    padding-bottom: 100px; /* Platz für Footer und bunten Streifen */
+    flex: 1;
+    padding-bottom: 100px;
 }
