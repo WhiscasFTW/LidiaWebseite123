@@ -1,183 +1,63 @@
-/* Allgemeine Reset-Einstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay für die Sidebar -->
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color: #121212;
-    color: #ffffff;
-}
+    <!-- Bild-Container für das Header-Bild -->
+    <div class="header-image-container">
+        <img class="header-image" src="assets/images/HeaderStart.png" alt="Header-Bild">
+    </div>
 
-/* Overlay für die Sidebar */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-}
+    <!-- Oberer leuchtender Streifen -->
+    <div class="header-box-container"></div>
 
-.overlay.active {
-    display: block;
-}
+    <!-- Die Sidebar auf der linken Seite -->
+    <div id="sidebar" class="sidebar">
+        <!-- Signatur der Künstlerin -->
+        <div class="artist-signature">
+            <img src="assets/images/Signature.png" alt="Signatur der Künstlerin">
+        </div>
 
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
+        <!-- Links mit Icons -->
+        <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
+        <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
+        <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine&nbsp;Werke</a>
+        <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
+        <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
+    </div>
 
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
-}
+    <!-- Button zum Öffnen und Schließen der Sidebar -->
+    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 3;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
+    <!-- Hauptinhalt der Seite -->
+    <main class="content">
+        <!-- Hier kommt der Inhalt der Seite hin -->
+        <h1>Willkommen auf meiner Webseite!</h1>
+        <p>Dies ist der Hauptinhalt der Seite.</p>
+        <!-- Füge mehr Inhalt hinzu, um das Scrollen zu testen -->
+        <div style="height: 1000px;"></div>
+    </main>
 
-.sidebar.open {
-    width: 250px;
-    left: 0;
-}
+    <!-- Unterer leuchtender Streifen -->
+    <div class="second-header-box-container"></div>
 
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-}
+    <!-- Footer mit Hintergrundbild -->
+    <footer>
+        <div class="footer-background">
+            <img src="assets/images/Footer.jpg" alt="Footer-Hintergrund" class="footer-image">
+        </div>
+        <p>Lidia Grön 2025 | <a href="impressum.html">Impressum</a></p>
+    </footer>
 
-.artist-signature img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Links in der Sidebar */
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
-    display: block;
-    transition: 0.3s;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    top: 0;
-    transition: top 0s;
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 60px;
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
-}
-
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    height: 51px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    margin-top: auto; /* Footer bleibt am Ende der Seite */
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #007bff;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Hauptinhalt */
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1; /* Füllt den verfügbaren Platz aus */
-    padding-bottom: 20px; /* Abstand zum Footer */
-}
+    <script src="assets/js/forms.js"></script>
+</body>
+</html>
