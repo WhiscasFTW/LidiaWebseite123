@@ -1,19 +1,30 @@
-// Nach einer kurzen Verzögerung den Button, die Signatur und die Animation sichtbar machen
+// Button und Signatur nach einer kurzen Verzögerung sichtbar machen
 window.onload = function () {
     setTimeout(function () {
-        document.querySelector('.intro-button').classList.add('visible'); // Button sichtbar machen
-        document.querySelector('.signature').classList.add('visible'); // Signatur sichtbar machen
-        document.querySelector('.fullscreen-container').classList.add('start'); // Abdunkelungs- und Unschärfeeffekt starten
+        const button = document.querySelector('.intro-button');
+        const signature = document.getElementById('signature');
+
+        button.classList.add('visible');
+        signature.classList.add('visible');
     }, 1000); // 1 Sekunde Verzögerung
 };
 
-// Vorhang-Effekt
+// Übergangsanimation und Weiterleitung zur Startseite
 document.getElementById('openCurtain').addEventListener('click', function () {
-    // Vorhang öffnet sich
-    document.getElementById('curtain').classList.add('open');
+    const curtain = document.getElementById('curtain');
+    const transition = document.createElement('div'); // Übergangselement
 
-    // Die eigentliche Webseite nach dem Vorhang-Effekt laden
+    // Übergangs-Element für die Animation erstellen
+    transition.classList.add('page-transition');
+    document.body.appendChild(transition);
+
+    // Animation starten
+    setTimeout(() => {
+        transition.classList.add('active');
+    }, 50); // Kleine Verzögerung, um die Animation sichtbar zu machen
+
+    // Weiterleitung zur Startseite nach der Animation
     setTimeout(function () {
-        window.location.href = 'startseite.html'; // Zielseite (kann beliebig geändert werden)
-    }, 1000); // Der Vorhang öffnet sich für 1 Sekunde
+        window.location.href = 'startseite.html'; // Zielseite
+    }, 850); // Zeitdauer entsprechend der CSS-Transition
 });
