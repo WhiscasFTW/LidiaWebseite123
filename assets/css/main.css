@@ -1,128 +1,159 @@
-/* Originale CSS-Einstellungen */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: black;
+body, html {
+    margin: 0; /* Entfernt alle Ränder */
+    padding: 0; /* Entfernt alle Innenabstände */
+    width: 100%; /* Die gesamte Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
+    overflow: hidden; /* Kein Scrollen erlaubt */
+    background-color: black;
 }
 
-/* Fullscreen-Container */
 .fullscreen-container {
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    animation: backgroundEffect 5s ease-in-out forwards;
+    width: 100%; /* Die ganze Breite wird genutzt */
+    height: 100%; /* Die gesamte Höhe wird genutzt */
 }
 
-/* Reihen mit Bildern */
+/* Reihen-Stil */
 .rolling-row {
     display: flex;
-    width: 100%;
-    height: 33.33%;
+    width: 200%; /* Platz für beide Bilder */
+    height: calc(100vh / 3); /* Bildschirm in drei Reihen teilen */
+    position: relative;
     overflow: hidden;
-    filter: blur(4px) brightness(0.5); /* Initiale Unschärfe und Dunkelheit */
-    animation: backgroundEffect 5s ease-in-out forwards;
+    filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    animation: fadeFocus 5s ease-in-out forwards; /* Übergang zu klar und hell */
 }
 
+/* Obere und untere Reihe rollen nach links */
+.rolling-row:nth-child(1),
+.rolling-row:nth-child(3) {
+    animation: roll-left 100s linear infinite, fadeFocus 5s ease-in-out forwards; /* Geschwindigkeit halbiert */
+}
+
+/* Mittlere Reihe rollt nach rechts */
+.rolling-row:nth-child(2) {
+    animation: roll-right 120s linear infinite, fadeFocus 5s ease-in-out forwards; /* Geschwindigkeit halbiert */
+}
+
+/* Bild-Stil */
 .rolling-image {
-    flex: 0 0 100%;
+    width: 50%; /* Jedes Bild nimmt die Hälfte der Reihe ein */
     height: 100%;
     background-size: cover;
     background-position: center;
-    animation: scroll 24s linear infinite; /* 3x langsamer */
 }
 
-.rolling-row:nth-child(2) .rolling-image {
-    animation-direction: reverse;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Animation für Hintergrundverbesserung */
-@keyframes backgroundEffect {
+/* Animationen */
+@keyframes roll-left {
     0% {
-        filter: blur(4px) brightness(0.5);
+        transform: translateX(0); /* Startposition */
     }
     100% {
-        filter: blur(0px) brightness(1);
+        transform: translateX(-50%); /* Eine Bildbreite nach links */
     }
 }
 
-/* Button */
+@keyframes roll-right {
+    0% {
+        transform: translateX(-50%); /* Start mit zweitem Bild */
+    }
+    100% {
+        transform: translateX(0); /* Zurück zum ersten Bild */
+    }
+}
+
+@keyframes fadeFocus {
+    0% {
+        filter: blur(8px) brightness(0.5); /* Start mit Unschärfe und dunkler */
+    }
+    100% {
+        filter: blur(0px) brightness(1); /* Klar und normal hell */
+    }
+}
+
+/* Button-Stile */
 .button-container {
     position: absolute;
-    bottom: 10%;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    top: 54%; /* Button um 1% weiter nach oben verschoben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Sehr hoher Z-Index, um sicherzustellen, dass der Button über anderen Elementen liegt */
 }
 
 .intro-button {
-    width: 200px;
-    height: auto;
+    width: 7.5vw; /* Ursprüngliche Button-Größe */
+    height: auto; /* Proportionale Höhe */
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    opacity: 0; /* Button zu Beginn unsichtbar */
+    transition: opacity 1s ease; /* Einfacher Übergang für Sichtbarkeit */
 }
 
+/* Button wird sichtbar */
 .intro-button.visible {
-    opacity: 1;
+    opacity: 1; /* Button wird sichtbar */
 }
 
-/* Signatur */
+/* Signatur-Stil */
 .signature {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    position: fixed;
+    top: 50%; /* Vertikal zentrieren */
+    left: 50%; /* Horizontal zentrieren */
+    transform: translate(-50%, -50%); /* Exakte Zentrierung */
+    z-index: 2; /* Über den Animationen */
+    width: 4000px; /* 5-mal so groß wie zuvor */
+    height: auto; /* Höhe proportional anpassen */
+    opacity: 0; /* Standardmäßig unsichtbar */
+    transition: opacity 5s ease; /* Sanfter Übergang */
 }
 
+/* Signatur sichtbar machen */
 .signature.visible {
-    opacity: 1;
+    opacity: 1; /* Signatur wird sichtbar */
 }
 
-/* Vorhang */
-.curtain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: 10;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 1s ease-in-out;
+/* Desktop-Version (≥ 1024px) */
+@media (min-width: 1024px) {
+    /* Button auf dem Desktop */
+    .intro-button {
+        width: 15vw; /* Größe bleibt angepasst */
+        height: auto; /* Höhe proportional anpassen */
+    }
+
+    .button-container {
+        top: 54%; /* Buttonposition bleibt gleich */
+    }
 }
 
-.curtain.open {
-    transform: scaleX(1);
+/* Laptop-Version (768px bis 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Button auf Laptops */
+    .intro-button {
+        width: 15vw; /* Größe bleibt angepasst */
+        height: auto; /* Höhe proportional anpassen */
+    }
+
+    /* Buttonposition für Laptops */
+    .button-container {
+        top: 60%; /* Button weiter nach unten verschieben */
+    }
 }
 
-/* Neue Animation für Seitenwechsel */
-.page-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0;
-    z-index: 20;
-    transition: opacity 0.8s ease-in-out;
-}
+/* Mobile-Version (≤ 767px) */
+@media (max-width: 767px) {
+    /* Button auf mobilen Geräten */
+    .intro-button {
+        width: 225px; /* 1,5-mal so groß */
+        height: auto; /* Höhe proportional anpassen */
+    }
 
-.page-transition.active {
-    opacity: 1;
+    /* Buttonposition für mobile Geräte */
+    .button-container {
+        top: calc(30% + 300px); /* Button weiter nach unten */
+    }
+
+    /* Signatur auf mobilen Geräten kleiner */
+    .signature {
+        width: 3000px; /* Kleinere Signatur auf mobilen Geräten */
+    }
 }
