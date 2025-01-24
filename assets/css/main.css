@@ -1,118 +1,98 @@
-/* Grundlegendes Styling */
+/* Originale CSS-Einstellungen */
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    background: black;
 }
 
+/* Fullscreen-Container */
 .fullscreen-container {
-    position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: backgroundEffect 5s ease-in-out forwards;
 }
 
+/* Reihen mit Bildern */
 .rolling-row {
     display: flex;
-    position: absolute;
-    width: 200%; /* Ermöglicht das Rollen der Bilder */
-    height: 33.33%; /* Gleichmäßige Aufteilung */
+    width: 100%;
+    height: 33.33%;
+    overflow: hidden;
+    filter: blur(4px) brightness(0.5); /* Initiale Unschärfe und Dunkelheit */
+    animation: backgroundEffect 5s ease-in-out forwards;
 }
 
 .rolling-image {
-    flex: 0 0 50%; /* Bildbreite */
+    flex: 0 0 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    height: 100%;
+    animation: scroll 24s linear infinite; /* 3x langsamer */
 }
 
-/* Animationsgeschwindigkeit */
-@keyframes roll-left {
+.rolling-row:nth-child(2) .rolling-image {
+    animation-direction: reverse;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Animation für Hintergrundverbesserung */
+@keyframes backgroundEffect {
     0% {
-        transform: translateX(0);
+        filter: blur(4px) brightness(0.5);
     }
     100% {
-        transform: translateX(-50%);
+        filter: blur(0px) brightness(1);
     }
 }
 
-@keyframes roll-right {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-.rolling-row:nth-child(1),
-.rolling-row:nth-child(3) {
-    animation: roll-left 60s linear infinite; /* Geschwindigkeit halbiert */
-}
-
-.rolling-row:nth-child(2) {
-    animation: roll-right 60s linear infinite; /* Geschwindigkeit halbiert */
-}
-
-/* Button-Stil */
+/* Button */
 .button-container {
     position: absolute;
     bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .intro-button {
-    width: 150px;
+    width: 200px;
     height: auto;
+    cursor: pointer;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease-in-out;
 }
 
 .intro-button.visible {
     opacity: 1;
 }
 
-/* Signatur-Stil */
+/* Signatur */
 .signature {
-    position: fixed;
-    top: 50%; /* Vertikal zentriert */
-    left: 50%; /* Horizontal zentriert */
-    transform: translate(-50%, -50%); /* Exakte Zentrierung */
-    z-index: 2; /* Über den Animationen */
-    width: 400px; /* Größe halbiert */
-    height: auto; /* Höhe proportional anpassen */
-    opacity: 0; /* Standardmäßig unsichtbar */
-    transition: opacity 5s ease; /* Sanfter Übergang */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .signature.visible {
-    opacity: 1; /* Signatur wird sichtbar */
+    opacity: 1;
 }
 
-/* Abdunkelung und Unschärfe-Effekt */
-.fullscreen-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    filter: blur(10px);
-    transition: opacity 5s ease, filter 5s ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.fullscreen-container.start::before {
-    opacity: 0; /* Abdunkelung verschwindet */
-    filter: blur(0); /* Unschärfe verschwindet */
-}
-
-/* Vorhang-Stil */
+/* Vorhang */
 .curtain {
     position: fixed;
     top: 0;
@@ -120,12 +100,29 @@ body {
     width: 100%;
     height: 100%;
     background: black;
-    z-index: 3;
-    opacity: 1;
-    transition: opacity 1s ease;
+    z-index: 10;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease-in-out;
 }
 
 .curtain.open {
+    transform: scaleX(1);
+}
+
+/* Neue Animation für Seitenwechsel */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
     opacity: 0;
-    pointer-events: none;
+    z-index: 20;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.page-transition.active {
+    opacity: 1;
 }
