@@ -76,13 +76,16 @@ html, body {
     left: 0;
 }
 
-/* Container für die Links und Boxen in der Sidebar */
-.sidebar-nav {
-    position: absolute; /* Absolute Positionierung */
-    top: 80px; /* Abstand vom oberen Rand der Sidebar */
-    left: 0;
-    right: 0;
-    padding: 0 10px;
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Links in der Sidebar */
@@ -95,10 +98,12 @@ html, body {
     transition: 0.3s;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 0; /* Abstand zwischen den Links */
+    margin: 5px 10px;
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
-    position: relative; /* Relative Positionierung innerhalb des Containers */
+    position: relative; /* Relative Positionierung */
+    top: 0; /* Immer auf der gleichen Höhe */
+    transition: top 0s; /* Keine Animation für die Höhe */
 }
 
 .sidebar a:hover {
@@ -106,15 +111,6 @@ html, body {
     color: rgba(255, 255, 255, 1);
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Boxen in der Sidebar */
-.sidebar .box {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 10px 0; /* Abstand zwischen den Boxen */
-    border-radius: 5px;
-    position: relative; /* Relative Positionierung innerhalb des Containers */
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
