@@ -43,12 +43,13 @@ html, body {
 /* Oberer leuchtender Streifen (direkt unter dem Header-Bild) */
 .header-box-container {
     width: 100%;
-    height: 3px; /* Höhe auf 3px geändert */
+    height: 3px; /* Höhe auf 3px */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: relative; /* Bündig unter dem Header-Bild */
-    margin-top: -5px; /* Kleine Anpassung für perfekte Ausrichtung */
+    position: fixed; /* Fest positioniert */
+    top: 360px; /* Abstand vom oberen Rand (Höhe des Header-Bildes) */
+    left: 0;
     z-index: 1; /* Unter der Sidebar */
 }
 
@@ -65,7 +66,7 @@ html, body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    z-index: 3; /* Höher als die Streifen */
+    z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -100,6 +101,9 @@ html, body {
     margin: 5px 10px;
     border-radius: 5px;
     cursor: url('assets/images/circle.png') 16 16, pointer;
+    position: relative; /* Relative Positionierung */
+    top: 0; /* Immer auf der gleichen Höhe */
+    transition: top 0s; /* Keine Animation für die Höhe */
 }
 
 .sidebar a:hover {
@@ -133,12 +137,13 @@ html, body {
 /* Unterer leuchtender Streifen (direkt über dem Footer) */
 .second-header-box-container {
     width: 100%;
-    height: 3px; /* Höhe auf 3px geändert */
+    height: 3px; /* Höhe auf 3px */
     background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple);
     background-size: 300% 100%;
     animation: rainbow 15s linear infinite;
-    position: relative; /* Bündig über dem Footer */
-    bottom: 0; /* Am unteren Rand des Inhalts */
+    position: fixed; /* Fest positioniert */
+    bottom: 51px; /* Abstand vom unteren Rand (Höhe des Footers) */
+    left: 0;
     z-index: 1; /* Unter der Sidebar */
 }
 
