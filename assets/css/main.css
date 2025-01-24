@@ -95,42 +95,12 @@ body, html {
     height: auto; /* Proportionale Höhe */
     cursor: pointer;
     opacity: 0; /* Button zu Beginn unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Übergänge für Sichtbarkeit, Vergrößerung und Hintergrund */
-    background-color: #66cc66; /* Halbierte Intensität des grünen Farbtons */
-    color: white; /* Schrift weiß */
-    border: 2px solid #66cc66; /* Rand ebenfalls mit halbierter Intensität */
-    border-radius: 25px; /* Abgerundete Ecken für den Button, jetzt stärker */
-    animation: colorChange 5s linear infinite; /* Animiert die Farbänderung */
+    transition: opacity 1s ease; /* Einfacher Übergang für Sichtbarkeit */
 }
 
 /* Button wird sichtbar */
 .intro-button.visible {
     opacity: 1; /* Button wird sichtbar */
-}
-
-/* Farbverlauf bei Hover */
-.intro-button:hover {
-    transform: scale(1.05); /* Button wird um 5% größer */
-    background: linear-gradient(45deg, #66cc66, #4d8b4d); /* Grüner Farbverlauf mit halbierter Intensität */
-    color: white; /* Schrift bleibt weiß */
-    border-color: #4d8b4d; /* Randfarbe beim Hover ebenfalls ändern */
-    border-radius: 25px; /* Bleibt abgerundet beim Hover */
-}
-
-/* Animation der Farbänderung von grün nach blau */
-@keyframes colorChange {
-    0% {
-        background-color: #66cc66; /* Lime Green, halbiert */
-        border-color: #66cc66;
-    }
-    50% {
-        background-color: #4d8b4d; /* Dunkleres Grün mit halbierter Intensität */
-        border-color: #4d8b4d;
-    }
-    100% {
-        background-color: #6495ed; /* Steel Blue, halbierte Intensität */
-        border-color: #6495ed;
-    }
 }
 
 /* Desktop-Version */
