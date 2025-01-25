@@ -22,17 +22,20 @@ function toggleSidebar() {
 
 // Beim Laden der Seite den Zustand überprüfen und alle Elemente einblenden
 window.onload = function () {
-    // Sicherstellen, dass der Body beim ersten Laden dunkel bleibt
-    if (!localStorage.getItem('firstLoadCompleted')) {
-        // Beim ersten Laden die dunkle Seite anzeigen
-        setTimeout(function () {
-            document.body.classList.add('loaded');
-        }, 100); // Verzögerung für sanften Übergang
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+    var sidebarState = localStorage.getItem('sidebarState');
 
-        // Markieren, dass der erste Ladevorgang abgeschlossen ist
-        localStorage.setItem('firstLoadCompleted', 'true');
-    } else {
-        // Wenn die Seite bereits geladen wurde, die Übergangsklasse sofort anwenden
+    // Beim ersten Laden alles dunkel starten
+    setTimeout(function () {
+        // Nach 1.4 Sekunden wird der normale Zustand angewendet
         document.body.classList.add('loaded');
+    }, 100); // Verzögerung, um den Effekt sichtbar zu machen
+
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+        overlay.classList.add('active');
     }
 };
