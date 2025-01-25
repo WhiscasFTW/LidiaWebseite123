@@ -111,7 +111,7 @@
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 120px; /* 1,5-fache Größe (vorher 80px) */
+    font-size: 120px; /* 1,5-fache Größe */
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
     border: none;
@@ -122,7 +122,7 @@
     transform: translateY(-50%);
     z-index: 3;
     transition: left 0.5s ease, transform 0.5s ease, color 1.5s ease-in-out;
-    animation: breathe 2s infinite ease-in-out; /* Atmungsanimation */
+    animation: breathe 2s ease-in-out; /* Animation nur einmal abspielen */
     padding: 10px;
 }
 
