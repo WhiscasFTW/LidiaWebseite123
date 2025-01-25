@@ -27,15 +27,15 @@ window.onload = function () {
     var overlay = document.getElementById('overlay');
     var sidebarState = localStorage.getItem('sidebarState');
 
-    // Beim ersten Laden alles dunkel starten
-    setTimeout(function () {
-        // Nach 1.4 Sekunden wird der normale Zustand angewendet
-        document.body.classList.add('loaded');
-    }, 100); // Verzögerung, um den Effekt sichtbar zu machen
-
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
+
+    // Alle Elemente einblenden
+    setTimeout(function () {
+        document.body.classList.add('loaded');
+    }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
 };
+
