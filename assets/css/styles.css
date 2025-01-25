@@ -112,24 +112,47 @@
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
+/* Auffälligere Button-Farbe und Animation */
 .toggle-button {
     font-size: 60px;
-    color: #333; /* Textfarbe anpassen */
-    background-color: transparent;
+    color: #fff; /* Weiße Textfarbe für besseren Kontrast */
+    background-color: #ff6f00; /* Kräftiges Orange als Hintergrundfarbe */
     border: none;
     cursor: pointer;
     position: fixed;
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3; /* Button über der Sidebar */
-    transition: left 0.5s ease, transform 0.5s ease;
+    z-index: 3;
+    transition: left 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+    border-radius: 50%; /* Runder Button */
+    padding: 10px;
 }
 
+/* Wackel-Animation für den ersten Klick */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.toggle-button:first-of-type {
+    animation: shake 0.5s ease-out 1;
+}
+
+/* Button beim Hover-Effekt */
+.toggle-button:hover {
+    background-color: #ff8c00; /* Etwas helleres Orange beim Hover */
+    transform: translateY(-50%) scale(1.1); /* Button wird leicht größer */
+}
+
+/* Wenn der Button in geöffnetem Zustand ist */
 .toggle-button.open {
     left: 265px;
     transform: translateY(-50%) rotate(90deg);
+    background-color: #00aaff; /* Blauer Button, wenn Sidebar offen ist */
 }
 
 /* Animationen */
