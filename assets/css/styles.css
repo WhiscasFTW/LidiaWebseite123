@@ -30,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Dunkleres Overlay */
     z-index: 1;
 }
 
@@ -168,4 +168,21 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Text, der nach 2 Sekunden eingeblendet wird */
+.quote {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+    opacity: 0; /* Anfangs unsichtbar */
+    transition: opacity 1s ease; /* Sanftes Einblenden */
+}
+
+/* Klasse zum Einblenden des Textes */
+.quote.visible {
+    opacity: 1;
 }
