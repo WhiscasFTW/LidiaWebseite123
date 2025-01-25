@@ -12,13 +12,23 @@ html, body {
     flex-direction: column;
     background-color: #000; /* Startet mit schwarzem Hintergrund */
     color: #fff; /* Startet mit weißer Schrift */
-    transition: background-color 1s ease, color 1s ease; /* Transition für Hintergrund und Schriftfarbe */
 }
 
-/* Transition für den Hintergrund und die Schriftfarbe beim Laden */
-body.loaded {
-    background-color: #121212; /* Originaler dunkler Hintergrund */
-    color: #ffffff; /* Originale Schriftfarbe */
+/* Alle sichtbaren Elemente zunächst unsichtbar */
+body:not(.loaded) .content,
+body:not(.loaded) .sidebar,
+body:not(.loaded) .toggle-button,
+body:not(.loaded) .overlay {
+    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
+}
+
+/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
+body.loaded .content,
+body.loaded .sidebar,
+body.loaded .toggle-button,
+body.loaded .overlay {
+    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
+    transition: opacity 1s ease; /* Transition für die Opacity */
 }
 
 /* Overlay für die Sidebar */
