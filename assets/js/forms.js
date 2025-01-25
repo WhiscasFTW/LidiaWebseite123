@@ -2,10 +2,14 @@
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
 
     // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
+
+    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+    overlay.classList.toggle('active');
 
     // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
     toggleButton.style.animation = 'none'; // Animationen entfernen
@@ -22,6 +26,27 @@ window.onload = function () {
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
     }, 1500); // 1,5 Sekunden
+
+    // Text nach 2 Sekunden einblenden
+    setTimeout(function () {
+        var quote = document.getElementById('quote');
+        quote.classList.add('visible'); // Text sichtbar machen
+    }, 2000); // 2 Sekunden
+
+    // Sidebar nach 4,5 Sekunden automatisch öffnen (nur einmal)
+    setTimeout(function () {
+        var sidebar = document.getElementById('sidebar');
+        var toggleButton = document.getElementById('toggleButton');
+        var overlay = document.getElementById('overlay');
+
+        // Sidebar öffnen
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+        overlay.classList.add('active');
+
+        // Animationen des Buttons stoppen
+        toggleButton.style.animation = 'none';
+    }, 4500); // 4,5 Sekunden
 };
 
 // Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
