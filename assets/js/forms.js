@@ -1,28 +1,17 @@
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var overlay = document.getElementById('overlay');
-    var toggleButton = document.getElementById('toggleButton');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.toggle-button');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
 
-    // Zustand der Sidebar und des Overlays umschalten
-    var isOpen = sidebar.classList.toggle('open');
-    overlay.classList.toggle('active', isOpen);
-    toggleButton.classList.toggle('open', isOpen);
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+        toggleButton.classList.toggle('open');
+    });
 
-    // Sidebar-Zustand speichern
-    localStorage.setItem('sidebarState', isOpen ? 'open' : 'closed');
-}
-
-// Zustand der Sidebar beim Laden wiederherstellen
-window.onload = function () {
-    var sidebar = document.getElementById('sidebar');
-    var overlay = document.getElementById('overlay');
-    var toggleButton = document.getElementById('toggleButton');
-    var sidebarState = localStorage.getItem('sidebarState');
-
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        toggleButton.classList.add('open');
-    }
-};
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        toggleButton.classList.remove('open');
+    });
+});
