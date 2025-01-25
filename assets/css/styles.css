@@ -139,7 +139,7 @@ html, body {
     100% { transform: translateY(0); }
 }
 
-/* Hauptinhalt */
+/* Hauptinhalt (leer, da nur das Video angezeigt werden soll) */
 .content {
     padding: 20px;
     max-width: 1200px;
