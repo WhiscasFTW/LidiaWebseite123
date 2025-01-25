@@ -12,6 +12,7 @@ html, body {
     flex-direction: column;
     background-color: white; /* Fallback-Hintergrundfarbe */
     color: #333; /* Textfarbe anpassen */
+    overflow: hidden; /* Verhindert Scrollen auf der gesamten Seite */
 }
 
 /* Hintergrundbild für die gesamte Seite */
