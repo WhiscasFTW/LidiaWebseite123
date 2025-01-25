@@ -22,7 +22,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Bild abdecken */
-    aspect-ratio: 16 / 9; /* 16:9-Seitenverhältnis erzwingen */
+    object-position: center; /* Bild zentrieren */
     z-index: -1; /* Hintergrundebene */
 }
 
