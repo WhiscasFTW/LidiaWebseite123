@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    animation: backgroundEffect 5s ease-in-out forwards;
+    animation: backgroundEffect 7s ease-in-out forwards; /* 7s Gesamtdauer */
 }
 
 /* Reihen mit Bildern */
@@ -26,7 +26,7 @@ body {
     height: 33.33%;
     overflow: hidden;
     filter: blur(4px) brightness(0.5); /* Initiale Unschärfe und Dunkelheit */
-    animation: backgroundEffect 5s ease-in-out forwards;
+    animation: backgroundEffect 7s ease-in-out forwards; /* 7s Gesamtdauer */
 }
 
 .rolling-image {
@@ -34,7 +34,7 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-    animation: scroll 24s linear infinite; /* 3x langsamer */
+    animation: scroll 72s linear infinite; /* 3x langsamer */
 }
 
 .rolling-row:nth-child(2) .rolling-image {
@@ -48,7 +48,7 @@ body {
 
 /* Animation für Hintergrundverbesserung */
 @keyframes backgroundEffect {
-    0% {
+    0%, 28.57% { /* 2 Sekunden Verzögerung (2/7 * 100%) */
         filter: blur(4px) brightness(0.5);
     }
     100% {
