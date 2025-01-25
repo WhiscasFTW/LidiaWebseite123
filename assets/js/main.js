@@ -1,73 +1,38 @@
-// Funktion zum Preloading aller Ressourcen
-function preloadResources() {
-    const resources = [
-        'assets/images/HeaderStart.png',
-        'assets/images/Siganture.png',
-        'assets/images/steckbrief.jpg',
-        'assets/images/meinewerke.jpg',
-        'assets/images/dienstleistungen.jpg',
-        'assets/images/kontakt.jpg',
-        'assets/images/fog.mp4',
-        'assets/sounds/click.mp3'
-    ];
+// Ladeanimation ausblenden und Hauptinhalt einblenden
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    const fullscreenContainer = document.querySelector('.fullscreen-container');
 
-    let loaded = 0;
-    const total = resources.length;
+    // Ladeanimation ausblenden
+    loader.classList.add('hidden');
 
-    resources.forEach((resource) => {
-        const img = new Image();
-        img.src = resource;
-        img.onload = () => {
-            loaded++;
-            if (loaded === total) {
-                // Alles geladen, Loading Screen ausblenden
-                document.getElementById('loading-screen').style.display = 'none';
-            }
-        };
-        img.onerror = () => {
-            console.error(`Fehler beim Laden von: ${resource}`);
-            loaded++;
-            if (loaded === total) {
-                document.getElementById('loading-screen').style.display = 'none';
-            }
-        };
-    });
-}
+    // Hauptinhalt einblenden
+    setTimeout(() => {
+        fullscreenContainer.classList.add('visible');
+    }, 500); // Kurze Verzögerung für einen fließenden Übergang
+});
 
-// Beim Laden der Seite Preloading starten
+// Button nach einer kurzen Verzögerung sichtbar machen
 window.onload = function () {
-    preloadResources();
-
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sidebarState = localStorage.getItem('sidebarState');
-
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-        overlay.classList.add('active');
-    }
+    setTimeout(function () {
+        const button = document.querySelector('.intro-button');
+        button.classList.add('visible');
+    }, 1000); // 1 Sekunde Verzögerung
 };
 
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sound = new Audio('assets/sounds/click.mp3');
+// Übergangsanimation und Weiterleitung zur Startseite
+document.getElementById('openCurtain').addEventListener('click', function () {
+    const transition = document.createElement('div'); // Übergangselement erstellen
+    transition.classList.add('page-transition'); // Klasse hinzufügen
+    document.body.appendChild(transition); // Element zum Body hinzufügen
 
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-    overlay.classList.toggle('active');
+    // Animation starten
+    setTimeout(() => {
+        transition.classList.add('active'); // Seite dunkler machen
+    }, 50); // Kleine Verzögerung, um die Animation sichtbar zu machen
 
-    if (sidebar.classList.contains('open')) {
-        localStorage.setItem('sidebarState', 'open');
-    } else {
-        localStorage.setItem('sidebarState', 'closed');
-    }
-
-    sound.play().catch(error => {
-        console.error("Sound konnte nicht abgespielt werden:", error);
-    });
-}
+    // Weiterleitung zur Startseite nach der Animation
+    setTimeout(function () {
+        window.location.href = 'startseite.html'; // Zielseite
+    }, 850); // Zeitdauer entsprechend der CSS-Transition
+});
