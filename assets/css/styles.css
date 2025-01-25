@@ -1,4 +1,3 @@
-/* Allgemeine Reset-Einstellungen */
 * {
     margin: 0;
     padding: 0;
@@ -10,23 +9,20 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: white; /* Fallback-Hintergrundfarbe */
-    color: #333; /* Textfarbe anpassen */
-    overflow: hidden; /* Verhindert Scrollen auf der gesamten Seite */
+    background-color: white;
+    overflow: hidden;
 }
 
-/* Video-Hintergrund (obere Schicht) */
 #video-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Video deckt den gesamten Hintergrund ab */
-    z-index: -1; /* Video über dem Bild */
+    object-fit: cover;
+    z-index: -2; /* Sicherstellen, dass das Video im Hintergrund bleibt */
 }
 
-/* Overlay für die Sidebar */
 .overlay {
     display: none;
     position: fixed;
@@ -34,27 +30,26 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
-    z-index: 1; /* Overlay über dem Video/Bild */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .overlay.active {
     display: block;
 }
 
-/* Sidebar */
 .sidebar {
     height: 100%;
     width: 250px;
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)); /* Glasoptik etwas heller */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 2; /* Sidebar über dem Overlay */
+    z-index: 2;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -64,7 +59,6 @@ html, body {
     left: 0;
 }
 
-/* Signatur der Künstlerin */
 .artist-signature {
     text-align: center;
     padding: 20px;
@@ -80,7 +74,6 @@ html, body {
     margin: 0 auto;
 }
 
-/* Links in der Sidebar */
 .sidebar-links {
     padding-bottom: 20px;
 }
@@ -89,11 +82,11 @@ html, body {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
-    color: rgba(255, 255, 255, 0.85); /* Textfarbe etwas dunkler */
+    color: rgba(255, 255, 255, 0.85);
     display: block;
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.15); /* Hintergrund etwas dunkler */
+    background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
@@ -107,16 +100,15 @@ html, body {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.25); /* Hellerer Hintergrund beim Hover */
-    color: rgba(255, 255, 255, 1); /* Textfarbe auf Vollweiß beim Hover */
+    background-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
-    color: #333; /* Textfarbe anpassen */
+    color: #333;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -124,7 +116,7 @@ html, body {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3; /* Button über der Sidebar */
+    z-index: 3;
     transition: left 0.5s ease, transform 0.5s ease;
 }
 
@@ -133,7 +125,6 @@ html, body {
     transform: translateY(-50%) rotate(90deg);
 }
 
-/* Animationen */
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
