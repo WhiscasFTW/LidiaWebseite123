@@ -122,8 +122,8 @@
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: all 0.3s ease; /* Sanfte Übergänge für Hover und Bewegung */
-    animation: breathe 2s ease-in-out, wobble 2s infinite ease-in-out; /* Atmungs- und Wackel-Animation */
+    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
+    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
     padding: 10px;
 }
 
