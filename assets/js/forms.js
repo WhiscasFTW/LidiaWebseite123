@@ -6,6 +6,9 @@ function toggleSidebar() {
     // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
+
+    // Animation stoppen, nachdem der Button das erste Mal gedrückt wurde
+    toggleButton.style.animation = 'none'; // Animation entfernen
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
