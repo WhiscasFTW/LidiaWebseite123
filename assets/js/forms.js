@@ -22,19 +22,13 @@ function toggleSidebar() {
 
 // Beim Laden der Seite den Zustand überprüfen und alle Elemente einblenden
 window.onload = function () {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sidebarState = localStorage.getItem('sidebarState');
-
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-        overlay.classList.add('active');
-    }
-
     // Alle Elemente einblenden
     setTimeout(function () {
         document.body.classList.add('loaded');
-    }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
+    }, 100); // Diese Verzögerung sorgt für einen weichen Übergang
+
+    // Optional: Verzögerung für den vollständigen Lade-Effekt
+    setTimeout(function () {
+        document.body.classList.add('fade-in-complete');
+    }, 1400); // Warten bis die komplette Animation abgeschlossen ist
 };
