@@ -12,17 +12,23 @@ html, body {
     flex-direction: column;
     background-color: #000; /* Startet mit schwarzem Hintergrund */
     color: #fff; /* Startet mit weißer Schrift */
+}
+
+/* Alle sichtbaren Elemente zunächst unsichtbar */
+body:not(.loaded) .content,
+body:not(.loaded) .sidebar,
+body:not(.loaded) .toggle-button,
+body:not(.loaded) .overlay {
+    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
+}
+
+/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
+body.loaded .content,
+body.loaded .sidebar,
+body.loaded .toggle-button,
+body.loaded .overlay {
+    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
     transition: opacity 1s ease; /* Transition für die Opacity */
-}
-
-/* Alle Elemente zunächst unsichtbar */
-body:not(.loaded) * {
-    opacity: 0; /* Alle Elemente sind unsichtbar */
-}
-
-/* Beim Laden der Seite alle Elemente einblenden */
-body.loaded * {
-    opacity: 1; /* Alle Elemente werden sichtbar */
 }
 
 /* Overlay für die Sidebar */
