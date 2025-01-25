@@ -20,9 +20,9 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 300px); /* Höhe um 300px vergrößern */
     object-fit: cover; /* Bild abdecken */
-    object-position: center; /* Bild zentrieren */
+    object-position: center top; /* Bild oben zentrieren */
     z-index: -1; /* Hintergrundebene */
 }
 
