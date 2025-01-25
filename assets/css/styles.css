@@ -20,9 +20,9 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% + 300px); /* Höhe um 300px vergrößern */
+    height: 100%;
     object-fit: cover; /* Bild abdecken */
-    object-position: center top; /* Bild oben zentrieren */
+    aspect-ratio: 16 / 9; /* 16:9-Seitenverhältnis erzwingen */
     z-index: -1; /* Hintergrundebene */
 }
 
