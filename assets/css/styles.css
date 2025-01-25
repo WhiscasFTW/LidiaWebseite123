@@ -1,18 +1,4 @@
-/* Bild-Hintergrund (untere Schicht) */
-#image-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/Start1.png'); /* Pfad zum Hintergrundbild */
-    background-size: cover; /* Bild abdecken */
-    background-position: top center; /* Bild oben zentrieren */
-    background-repeat: no-repeat; /* Bild nicht wiederholen */
-    z-index: -2; /* Hintergrundebene unter dem Video */
-}
-
-/* Video-Hintergrund (obere Schicht) */
+/* Video-Hintergrund (einzige Hintergrundebene) */
 #video-background {
     position: fixed;
     top: 0;
@@ -20,7 +6,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Video deckt den gesamten Hintergrund ab */
-    z-index: -1; /* Video über dem Bild, aber unter der Sidebar */
+    z-index: -1; /* Video unter der Sidebar und dem Button */
 }
 
 /* Overlay für die Sidebar */
@@ -32,7 +18,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
-    z-index: 1; /* Overlay über dem Video/Bild */
+    z-index: 1; /* Overlay über dem Video */
 }
 
 .overlay.active {
@@ -60,8 +46,6 @@
 .sidebar.open {
     left: 0;
 }
-
-/* Weitere CSS-Regeln (keine Änderungen) */
 
 /* Signatur der Künstlerin */
 .artist-signature {
@@ -115,7 +99,7 @@
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
-    color: #333; /* Textfarbe anpassen */
+    color: rgba(255, 255, 255, 0.8); /* Weiß mit Transparenz */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -124,12 +108,26 @@
     left: 15px;
     transform: translateY(-50%);
     z-index: 3; /* Button über der Sidebar */
-    transition: left 0.5s ease, transform 0.5s ease;
+    transition: left 0.5s ease, transform 0.5s ease, color 1.5s ease-in-out;
+    animation: breathe 2s infinite ease-in-out; /* Atmungsanimation */
 }
 
 .toggle-button.open {
     left: 265px;
     transform: translateY(-50%) rotate(90deg);
+}
+
+/* Atmungsanimation für den Button */
+@keyframes breathe {
+    0% {
+        color: rgba(255, 255, 255, 0.8); /* Hell */
+    }
+    50% {
+        color: rgba(255, 255, 255, 0.3); /* Dunkler */
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.8); /* Hell */
+    }
 }
 
 /* Animationen */
