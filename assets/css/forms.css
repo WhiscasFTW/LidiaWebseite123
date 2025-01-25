@@ -10,25 +10,8 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #000; /* Startet mit schwarzem Hintergrund */
-    color: #fff; /* Startet mit weißer Schrift */
-}
-
-/* Alle sichtbaren Elemente zunächst unsichtbar */
-body:not(.loaded) .content,
-body:not(.loaded) .sidebar,
-body:not(.loaded) .toggle-button,
-body:not(.loaded) .overlay {
-    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
-}
-
-/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
-body.loaded .content,
-body.loaded .sidebar,
-body.loaded .toggle-button,
-body.loaded .overlay {
-    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
-    transition: opacity 1s ease; /* Transition für die Opacity */
+    background-color: #121212;
+    color: #ffffff;
 }
 
 /* Overlay für die Sidebar */
@@ -47,10 +30,23 @@ body.loaded .overlay {
     display: block;
 }
 
+/* Bild-Container für das Header-Bild */
+.header-image-container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    max-width: 2560px;
+    max-height: 360px;
+}
+
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 250px;
+    width: 0;
     position: fixed;
     top: 0;
     left: -250px;
@@ -58,14 +54,16 @@ body.loaded .overlay {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 0.5s ease;
+    transition: 0.5s;
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-top: 50px; /* Boxen werden jetzt 50px nach oben verschoben */
 }
 
 .sidebar.open {
+    width: 250px;
     left: 0;
 }
 
@@ -79,36 +77,27 @@ body.loaded .overlay {
 
 .artist-signature img {
     width: auto;
-    height: 140px;
-    max-width: 100%;
+    height: 140px; /* Originalhöhe */
+    max-width: 100%; /* Bild bleibt in voller Breite des Containers */
     display: block;
     margin: 0 auto;
 }
 
 /* Links in der Sidebar */
-.sidebar-links {
-    padding-bottom: 20px;
-}
-
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
     color: rgba(255, 255, 255, 0.9);
     display: block;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: 0.3s;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.sidebar.open a {
-    transform: translateX(0);
-    opacity: 1;
+    top: 0;
+    transition: top 0s;
 }
 
 .sidebar a:hover {
@@ -130,12 +119,69 @@ body.loaded .overlay {
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: left 0.5s ease, transform 0.5s ease; /* Sanfte Transition für die Drehung */
+    transition: left 0.5s ease, transform 0.3s ease;
 }
 
 .toggle-button.open {
     left: 265px;
-    transform: translateY(-50%) rotate(90deg); /* Dreht den Button um 90 Grad */
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: -51px; /* Footer initial versteckt */
+    width: 100%;
+    height: 51px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    transition: bottom 0.3s ease;
+}
+
+footer.visible {
+    bottom: 0; /* Footer wird sichtbar */
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.footer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    line-height: 51px;
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 /* Hauptinhalt */
@@ -145,16 +191,4 @@ body.loaded .overlay {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
-    transition: margin-left 0.5s ease;
-}
-
-.sidebar.open ~ .content {
-    margin-left: 250px;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
 }
