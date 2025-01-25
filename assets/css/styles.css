@@ -124,13 +124,12 @@ body.loaded * {
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
-    animation: bounce 2s infinite; /* Animation für den Button */
+    transition: left 0.5s ease, transform 0.5s ease; /* Sanfte Transition für die Drehung */
 }
 
 .toggle-button.open {
     left: 265px;
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg); /* Dreht den Button um 90 Grad */
 }
 
 /* Hauptinhalt */
@@ -152,16 +151,4 @@ body.loaded * {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(-50%) translateX(0);
-    }
-    40% {
-        transform: translateY(-50%) translateX(-10px);
-    }
-    60% {
-        transform: translateY(-50%) translateX(-5px);
-    }
 }
