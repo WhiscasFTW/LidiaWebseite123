@@ -10,29 +10,8 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: black; /* Fallback-Hintergrund */
-    color: #fff;
-}
-
-/* Container für das Hintergrundbild */
-.background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Container im Hintergrund */
-}
-
-/* Hintergrundbild */
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Bild deckt den gesamten Bereich ab */
-    z-index: 0; /* Hintergrundbild im Hintergrund */
+    background-color: white; /* Hintergrund auf weiß setzen */
+    color: #333; /* Textfarbe anpassen */
 }
 
 /* Overlay für die Sidebar */
@@ -44,7 +23,7 @@ html, body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
-    z-index: 2; /* Overlay über dem Hintergrundbild */
+    z-index: 2; /* Overlay über dem Hintergrund */
 }
 
 .overlay.active {
@@ -63,7 +42,7 @@ html, body {
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 3; /* Sidebar über dem Hintergrundbild */
+    z-index: 3; /* Sidebar über dem Overlay */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -98,7 +77,7 @@ html, body {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(51, 51, 51, 0.9); /* Textfarbe anpassen */
     display: block;
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
@@ -117,7 +96,7 @@ html, body {
 
 .sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
+    color: rgba(51, 51, 51, 1); /* Textfarbe anpassen */
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
@@ -125,7 +104,7 @@ html, body {
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
-    color: #fff;
+    color: #333; /* Textfarbe anpassen */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -133,7 +112,7 @@ html, body {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3; /* Button über dem Hintergrundbild */
+    z-index: 3; /* Button über der Sidebar */
     transition: left 0.5s ease, transform 0.5s ease;
 }
 
