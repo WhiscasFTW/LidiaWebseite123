@@ -1,35 +1,162 @@
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sound = new Audio('assets/sounds/click.mp3');
-
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-    overlay.classList.toggle('active');
-
-    if (sidebar.classList.contains('open')) {
-        localStorage.setItem('sidebarState', 'open');
-    } else {
-        localStorage.setItem('sidebarState', 'closed');
-    }
-
-    sound.play().catch(error => {
-        console.error("Sound konnte nicht abgespielt werden:", error);
-    });
+/* Allgemeine Reset-Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Beim Laden der Seite den Zustand überprüfen
-window.onload = function () {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-    var sidebarState = localStorage.getItem('sidebarState');
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: black; /* Hintergrund auf schwarz setzen */
+    color: #fff;
+}
 
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-        overlay.classList.add('active');
-    }
-};
+/* Container für das Video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Container im Hintergrund */
+}
+
+/* Video-Hintergrund */
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%; /* Video auf 70 % der Breite skalieren */
+    height: auto; /* Höhe automatisch anpassen, um das Seitenverhältnis beizubehalten */
+    object-fit: cover; /* Video deckt den Bereich ab */
+    transform: translate(-50%, -50%); /* Zentrieren */
+    z-index: 1; /* Video über dem schwarzen Hintergrund */
+}
+
+/* Schwarzer Hintergrund als Fallback */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Schwarzer Hintergrund */
+    z-index: 0; /* Hintergrund hinter dem Video */
+}
+
+/* Overlay für die Sidebar */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
+    z-index: 2; /* Overlay über dem Video */
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow-x: hidden;
+    transition: left 0.5s ease;
+    z-index: 3; /* Sidebar über dem Video */
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+.artist-signature img {
+    width: auto;
+    height: 140px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Links in der Sidebar */
+.sidebar-links {
+    padding-bottom: 20px;
+}
+
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.sidebar.open a {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+    font-size: 60px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 3; /* Button über dem Video */
+    transition: left 0.5s ease, transform 0.5s ease;
+}
+
+.toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
