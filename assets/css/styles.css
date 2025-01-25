@@ -98,7 +98,7 @@
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 60px;
+    font-size: 80px; /* Vergrößert (vorher 60px) */
     color: rgba(255, 255, 255, 0.8); /* Weiß mit Transparenz */
     background-color: transparent;
     border: none;
@@ -110,6 +110,7 @@
     z-index: 3; /* Button über der Sidebar */
     transition: left 0.5s ease, transform 0.5s ease, color 1.5s ease-in-out;
     animation: breathe 2s infinite ease-in-out; /* Atmungsanimation */
+    padding: 10px; /* Mehr Platz um den Button */
 }
 
 .toggle-button.open {
