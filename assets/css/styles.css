@@ -12,23 +12,17 @@ html, body {
     flex-direction: column;
     background-color: #000; /* Startet mit schwarzem Hintergrund */
     color: #fff; /* Startet mit weißer Schrift */
-}
-
-/* Alle sichtbaren Elemente zunächst unsichtbar */
-body:not(.loaded) .content,
-body:not(.loaded) .sidebar,
-body:not(.loaded) .toggle-button,
-body:not(.loaded) .overlay {
-    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
-}
-
-/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
-body.loaded .content,
-body.loaded .sidebar,
-body.loaded .toggle-button,
-body.loaded .overlay {
-    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
     transition: opacity 1s ease; /* Transition für die Opacity */
+}
+
+/* Alle Elemente zunächst unsichtbar */
+body:not(.loaded) * {
+    opacity: 0; /* Alle Elemente sind unsichtbar */
+}
+
+/* Beim Laden der Seite alle Elemente einblenden */
+body.loaded * {
+    opacity: 1; /* Alle Elemente werden sichtbar */
 }
 
 /* Overlay für die Sidebar */
@@ -131,6 +125,7 @@ body.loaded .overlay {
     transform: translateY(-50%);
     z-index: 3;
     transition: left 0.5s ease, transform 0.3s ease;
+    animation: bounce 2s infinite; /* Animation für den Button */
 }
 
 .toggle-button.open {
@@ -157,4 +152,16 @@ body.loaded .overlay {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    40% {
+        transform: translateY(-50%) translateX(-10px);
+    }
+    60% {
+        transform: translateY(-50%) translateX(-5px);
+    }
 }
