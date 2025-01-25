@@ -30,74 +30,68 @@ html, body {
     display: block;
 }
 
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
-}
-
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 250px; /* Feste Breite der Sidebar */
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Sidebar standardmäßig versteckt */
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: left 0.5s ease; /* Nur die Position ändern */
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 50px;
-    padding-top: 50px; /* Boxen werden jetzt 50px nach oben verschoben */
+    padding-top: 20px; /* Padding oben für die Signatur und Links */
 }
 
 .sidebar.open {
-    width: 250px;
-    left: 0;
+    left: 0; /* Sidebar sichtbar */
 }
 
 /* Signatur der Künstlerin */
 .artist-signature {
     text-align: center;
     padding: 20px;
-    animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite; /* Fliegende Animation */
     position: relative;
 }
 
 .artist-signature img {
     width: auto;
-    height: 140px; /* Originalhöhe */
-    max-width: 100%; /* Bild bleibt in voller Breite des Containers */
+    height: 140px;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
 
 /* Links in der Sidebar */
+.sidebar-links {
+    padding-bottom: 20px; /* Abstand nach unten */
+}
+
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
     color: rgba(255, 255, 255, 0.9);
     display: block;
-    transition: 0.3s;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
-    top: 0;
-    transition: top 0s;
+    transform: translateX(-100%); /* Startposition außerhalb der Sidebar */
+    opacity: 0; /* Standardmäßig unsichtbar */
+}
+
+.sidebar.open a {
+    transform: translateX(0); /* Endposition in der Sidebar */
+    opacity: 1; /* Sichtbar */
 }
 
 .sidebar a:hover {
@@ -127,63 +121,6 @@ html, body {
     transform: translateY(-50%) rotate(90deg);
 }
 
-/* Footer */
-footer {
-    position: fixed;
-    bottom: -51px; /* Footer initial versteckt */
-    width: 100%;
-    height: 51px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    transition: bottom 0.3s ease;
-}
-
-footer.visible {
-    bottom: 0; /* Footer wird sichtbar */
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #007bff;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
 /* Hauptinhalt */
 .content {
     padding: 20px;
@@ -191,4 +128,60 @@ footer a:hover {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
+    transition: margin-left 0.5s ease; /* Sanfte Transition für den Inhalt */
+}
+
+.sidebar.open ~ .content {
+    margin-left: 250px; /* Inhalt nach rechts verschieben, wenn Sidebar geöffnet ist */
+}
+
+/* Boxen-Container */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.box {
+    flex: 1 1 calc(25% - 20px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.box p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.box .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.box .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
