@@ -10,13 +10,13 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: white; /* Hintergrund auf weiß setzen */
+    background-color: white; /* Fallback-Hintergrundfarbe */
     color: #333; /* Textfarbe anpassen */
 }
 
 /* Hintergrundbild für die gesamte Seite */
 body {
-    background-image: url('assets/images/Start.png');
+    background-image: url('../images/Start.png'); /* Pfad zum Hintergrundbild */
     background-size: cover; /* Bild deckt den gesamten Hintergrund ab */
     background-position: center; /* Bild wird zentriert */
     background-repeat: no-repeat; /* Bild wird nicht wiederholt */
