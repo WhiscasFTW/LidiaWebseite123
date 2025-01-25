@@ -14,6 +14,27 @@ html, body {
     color: #333; /* Textfarbe anpassen */
 }
 
+/* Hintergrundbild für die gesamte Seite */
+body {
+    background-image: url('assets/images/Start.png');
+    background-size: cover; /* Bild deckt den gesamten Hintergrund ab */
+    background-position: center; /* Bild wird zentriert */
+    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
+    background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
+}
+
+/* Optional: Overlay für bessere Lesbarkeit */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* Weißes Overlay mit 30% Deckkraft */
+    z-index: -1; /* Hintergrundebene */
+}
+
 /* Overlay für die Sidebar */
 .overlay {
     display: none;
