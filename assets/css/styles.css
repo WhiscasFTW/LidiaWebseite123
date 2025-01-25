@@ -41,10 +41,50 @@
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sidebar.open {
     left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    margin-bottom: 30px; /* Abstand nach unten */
+}
+
+.artist-signature img {
+    max-width: 200px; /* Maximale Breite der Signatur */
+    width: 100%;
+    height: auto;
+}
+
+/* Links mit Icons */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar-links a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-links a i {
+    margin-right: 10px;
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
