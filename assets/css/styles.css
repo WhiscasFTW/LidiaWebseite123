@@ -1,297 +1,161 @@
-/* Allgemeine Reset-Einstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Alte Styles */
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: #ffffff;
+/* Grundlegendes Layout für das Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
 /* Overlay für die Sidebar */
 .overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     z-index: 2;
-}
-
-.overlay.active {
-    display: block;
-}
-
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
 }
 
 /* Sidebar */
 .sidebar {
-    height: 100%;
-    width: 0;
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: 0.5s;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    color: white;
     z-index: 3;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 50px;
-    padding-top: 50px;
 }
 
 .sidebar.open {
-    width: 250px;
     left: 0;
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-    position: relative;
-}
-
-.artist-signature img {
-    width: auto;
-    height: 140px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Links in der Sidebar */
 .sidebar a {
-    padding: 10px 10px 10px 32px;
+    color: white;
     text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
     display: block;
-    transition: 0.3s;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    top: 0;
-    transition: top 0s;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    background-color: #555;
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
+/* Sidebar Toggle Button */
 .toggle-button {
-    font-size: 60px;
-    color: #fff;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
     background-color: transparent;
     border: none;
+    color: #333;
     cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
-}
-
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: -51px;
-    width: 100%;
-    height: 51px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    transition: bottom 0.3s ease;
-}
-
-footer.visible {
-    bottom: 0;
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #007bff;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    z-index: 4;
 }
 
 /* Hauptinhalt */
 .content {
+    margin-left: 250px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1;
-    padding-bottom: 100px;
 }
 
-/* Boxen-Container */
+/* Boxen */
 .box-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px; /* Mehr Abstand zwischen den Boxen */
-    margin: 60px 0; /* Mehr Abstand oben und unten */
+    justify-content: space-between;
 }
 
-/* Einzelne Boxen */
 .box {
-    flex: 1 1 calc(25% - 40px); /* Vier Boxen nebeneinander, mit Abstand */
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Dünner Rahmen */
-    border-radius: 25px; /* Stärker abgerundete Ecken */
-    overflow: hidden;
+    width: 22%;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 0;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    position: relative;
+    border-radius: 8px;
 }
 
-/* Bild in der Box */
 .box img {
     width: 100%;
-    height: 300px; /* Größere Höhe für die Bilder */
-    object-fit: cover; /* Bild wird zugeschnitten, um den Container zu füllen */
-    display: block;
-    filter: grayscale(20%); /* Leichter Graustufen-Effekt für künstlerischen Look */
-    transition: filter 0.3s;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Overlay für den Text */
-.box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); /* Dunklerer Gradient */
-    z-index: 1;
-}
-
-/* Text in der Box */
-.box p,
-.box .button {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    margin: 20px 25px; /* Mehr Abstand zum Rand */
-}
-
-.box p {
-    font-size: 1.3rem; /* Größere Schrift */
-    margin-bottom: 25px;
-    line-height: 1.5;
-    font-family: 'Pacifico', cursive; /* Künstlerische Schriftart */
-}
-
-/* Button in der Box */
 .box .button {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #007BFF;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    font-family: 'Pacifico', cursive; /* Künstlerische Schriftart */
+    border-radius: 5px;
 }
 
 .box .button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+    background-color: #555;
 }
 
-/* Hover-Effekt für die Box */
-.box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Stärkerer Schatten */
-    border-color: rgba(255, 255, 255, 0.5); /* Hellerer Rahmen beim Hover */
-}
-
-.box:hover img {
-    filter: grayscale(0%); /* Graustufen-Effekt entfernen beim Hover */
-}
-
-/* Zitat unter den Boxen */
+/* Zitat */
 .quote {
     text-align: center;
     margin-top: 40px;
-    font-size: 1.2rem;
+    font-size: 24px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
 }
 
-.quote p {
-    margin: 0;
+/* Header und Footer-Stile */
+.header-box-container {
+    height: 20px;
+    background-color: #f1c40f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.second-header-box-container {
+    height: 20px;
+    background-color: #e67e22;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer .footer-background {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+footer .footer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Video-Hintergrund */
@@ -301,12 +165,40 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Hintergrund */
-    overflow: hidden;
+    z-index: -1;
 }
 
 .video-background video {
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+}
+
+/* Rauch-Effekt */
+.fullscreen-smoke {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: -1; /* Hinter den Inhalten */
+    overflow: hidden;
+    animation: smokeEffect 20s infinite linear;
+}
+
+/* Animation des Rauchs */
+@keyframes smokeEffect {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(100%) translateY(50%) rotate(180deg);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%) rotate(360deg);
+        opacity: 0.3;
+    }
 }
