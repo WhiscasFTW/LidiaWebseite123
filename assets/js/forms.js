@@ -5,13 +5,12 @@ function toggleSidebar() {
     var overlay = document.getElementById('overlay');
 
     // Zustand umschalten
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-    overlay.classList.toggle('active');
+    var isOpen = sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
 
     // Sidebar-Zustand speichern
-    var sidebarState = sidebar.classList.contains('open') ? 'open' : 'closed';
-    localStorage.setItem('sidebarState', sidebarState);
+    localStorage.setItem('sidebarState', isOpen ? 'open' : 'closed');
 }
 
 // Beim Laden der Seite den Zustand überprüfen
