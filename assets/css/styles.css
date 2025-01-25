@@ -21,7 +21,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/Start.png'); /* Pfad zum Hintergrundbild */
+    background-image: url('../images/Start1.png'); /* Pfad zum neuen Hintergrundbild */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
