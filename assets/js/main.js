@@ -1,8 +1,13 @@
-// Button nach einer kurzen Verzögerung sichtbar machen, ohne die Unterschrift
+// Ladeanimation ausblenden, wenn die Seite vollständig geladen ist
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    loader.style.display = 'none';
+});
+
+// Button nach einer kurzen Verzögerung sichtbar machen
 window.onload = function () {
     setTimeout(function () {
         const button = document.querySelector('.intro-button');
-        
         button.classList.add('visible');
     }, 1000); // 1 Sekunde Verzögerung
 };
