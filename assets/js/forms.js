@@ -22,13 +22,17 @@ function toggleSidebar() {
 
 // Beim Laden der Seite den Zustand überprüfen und alle Elemente einblenden
 window.onload = function () {
-    // Alle Elemente einblenden
-    setTimeout(function () {
-        document.body.classList.add('loaded');
-    }, 100); // Diese Verzögerung sorgt für einen weichen Übergang
+    // Sicherstellen, dass der Body beim ersten Laden dunkel bleibt
+    if (!localStorage.getItem('firstLoadCompleted')) {
+        // Beim ersten Laden die dunkle Seite anzeigen
+        setTimeout(function () {
+            document.body.classList.add('loaded');
+        }, 100); // Verzögerung für sanften Übergang
 
-    // Optional: Verzögerung für den vollständigen Lade-Effekt
-    setTimeout(function () {
-        document.body.classList.add('fade-in-complete');
-    }, 1400); // Warten bis die komplette Animation abgeschlossen ist
+        // Markieren, dass der erste Ladevorgang abgeschlossen ist
+        localStorage.setItem('firstLoadCompleted', 'true');
+    } else {
+        // Wenn die Seite bereits geladen wurde, die Übergangsklasse sofort anwenden
+        document.body.classList.add('loaded');
+    }
 };
