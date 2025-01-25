@@ -138,18 +138,4 @@ html, body {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3; /* Button über der Sidebar */
-    transition: left 0.5s ease, transform 0.5s ease;
-}
-
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
+    z-index: 3; /* Button über de
