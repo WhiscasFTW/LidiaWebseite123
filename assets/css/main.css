@@ -19,6 +19,13 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Deaktiviert Interaktionen mit dem Ladebildschirm */
 }
 
 .spinner {
@@ -45,6 +52,12 @@ body {
     align-items: center;
     position: relative;
     animation: backgroundEffect 7s ease-in-out forwards; /* 7s Gesamtdauer */
+    opacity: 0; /* Startet unsichtbar */
+    transition: opacity 1s ease-in-out;
+}
+
+.fullscreen-container.visible {
+    opacity: 1; /* Wird sichtbar nach dem Laden */
 }
 
 /* Reihen mit Bildern */
