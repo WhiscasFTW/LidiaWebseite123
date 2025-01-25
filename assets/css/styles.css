@@ -14,7 +14,7 @@ html, body {
     color: #fff;
 }
 
-/* Container für das Video und den schwarzen Hintergrund */
+/* Container für das Video */
 .video-container {
     position: fixed;
     top: 0;
