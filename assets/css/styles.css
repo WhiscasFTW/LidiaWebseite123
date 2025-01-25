@@ -45,11 +45,27 @@ html, body {
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px; /* Padding oben für die Links */
+    padding-top: 20px; /* Padding oben für die Signatur und Links */
 }
 
 .sidebar.open {
     left: 0; /* Sidebar sichtbar */
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite; /* Fliegende Animation */
+    position: relative;
+}
+
+.artist-signature img {
+    width: auto;
+    height: 140px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Links in der Sidebar */
@@ -161,4 +177,11 @@ html, body {
 
 .box .button:hover {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
