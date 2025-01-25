@@ -30,19 +30,6 @@ html, body {
     display: block;
 }
 
-/* Bild-Container für das Header-Bild */
-.header-image-container {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 2560px;
-    max-height: 360px;
-}
-
 /* Sidebar */
 .sidebar {
     height: 100%;
@@ -58,32 +45,15 @@ html, body {
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 50px; /* Padding oben für die Signatur */
+    padding-top: 20px; /* Padding oben für die Links */
 }
 
 .sidebar.open {
     left: 0; /* Sidebar sichtbar */
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-    position: relative;
-}
-
-.artist-signature img {
-    width: auto;
-    height: 140px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
 /* Links in der Sidebar */
 .sidebar-links {
-    margin-top: 20px; /* Abstand zur Signatur */
     padding-bottom: 20px; /* Abstand nach unten */
 }
 
@@ -191,87 +161,4 @@ html, body {
 
 .box .button:hover {
     background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Zitat unter den Boxen */
-.quote {
-    text-align: center;
-    margin-top: 40px;
-    font-style: italic;
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: -51px;
-    width: 100%;
-    height: 51px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    transition: bottom 0.3s ease;
-}
-
-footer.visible {
-    bottom: 0;
-}
-
-.footer-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.footer-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-footer p {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    line-height: 51px;
-    margin: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #007bff;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Video-Hintergrund */
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.video-background video {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
 }
