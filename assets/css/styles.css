@@ -5,21 +5,15 @@
     box-sizing: border-box;
 }
 
-/* Grundlegende Animation für den Hintergrund (Body und Overlay) */
 html, body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: black; /* Startfarbe für den Übergang */
+    background-color: white;
     color: #333;
     overflow: hidden;
-    transition: background-color 1.3s ease-in-out; /* Smooth Übergang für Hintergrundfarbe */
-}
-
-/* Body nach dem Laden - normale Hintergrundfarbe */
-body.loaded {
-    background-color: white; /* Zielfarbe */
+    transition: background-color 1.3s ease; /* Übergang für das Hintergrundfarbe */
 }
 
 /* Bild-Hintergrund (untere Schicht) */
@@ -29,11 +23,10 @@ body.loaded {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/Start1.png'); /* Pfad zum Hintergrundbild */
-    background-size: cover; /* Bild abdecken */
-    background-position: top center; /* Bild oben zentrieren */
-    background-repeat: no-repeat; /* Bild nicht wiederholen */
-    z-index: -2; /* Hintergrundebene unter dem Video */
+    background-image: url('assets/images/Start1.png');
+    background-size: cover;
+    background-position: top center;
+    z-index: -2;
 }
 
 /* Video-Hintergrund (obere Schicht) */
@@ -43,8 +36,8 @@ body.loaded {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Video deckt den gesamten Hintergrund ab */
-    z-index: -1; /* Video über dem Bild */
+    object-fit: cover;
+    z-index: -3;
 }
 
 /* Overlay für die Sidebar */
@@ -55,15 +48,12 @@ body.loaded {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
-    z-index: 1; /* Overlay über dem Video/Bild */
-    opacity: 0; /* Start-Opacity */
-    transition: opacity 1.3s ease-in-out; /* Übergangseffekt für das Overlay */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .overlay.active {
     display: block;
-    opacity: 1; /* End-Opacity */
 }
 
 /* Sidebar */
@@ -73,12 +63,12 @@ body.loaded {
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)); /* Glasoptik etwas heller */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 2; /* Sidebar über dem Overlay */
+    z-index: 2;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -113,11 +103,11 @@ body.loaded {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
-    color: rgba(255, 255, 255, 0.85); /* Textfarbe etwas dunkler */
+    color: rgba(255, 255, 255, 0.85);
     display: block;
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.15); /* Hintergrund etwas dunkler */
+    background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
@@ -131,8 +121,8 @@ body.loaded {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.25); /* Hellerer Hintergrund beim Hover */
-    color: rgba(255, 255, 255, 1); /* Textfarbe auf Vollweiß beim Hover */
+    background-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
@@ -140,7 +130,7 @@ body.loaded {
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
-    color: #333; /* Textfarbe anpassen */
+    color: #333;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -148,7 +138,7 @@ body.loaded {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3; /* Button über der Sidebar */
+    z-index: 3;
     transition: left 0.5s ease, transform 0.5s ease;
 }
 
@@ -162,4 +152,9 @@ body.loaded {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Fade-In Effekt für den Körper */
+body.loaded {
+    background-color: white; /* Der Hintergrund wird beim Laden sichtbar */
 }
