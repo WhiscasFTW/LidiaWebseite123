@@ -20,7 +20,7 @@ function toggleSidebar() {
     });
 }
 
-// Beim Laden der Seite den Zustand überprüfen
+// Beim Laden der Seite den Zustand überprüfen und Hintergrund-Transition auslösen
 window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
@@ -32,4 +32,9 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
+
+    // Hintergrund-Transition auslösen
+    setTimeout(function () {
+        document.body.classList.add('loaded');
+    }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
 };
