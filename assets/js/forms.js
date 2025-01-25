@@ -39,13 +39,19 @@ window.onload = function () {
         var toggleButton = document.getElementById('toggleButton');
         var overlay = document.getElementById('overlay');
 
-        // Sidebar öffnen
+        // Sidebar langsam öffnen (3 Sekunden)
+        sidebar.classList.add('first-open'); // Langsamere Animation
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
         overlay.classList.add('active');
 
         // Animationen des Buttons stoppen
         toggleButton.style.animation = 'none';
+
+        // Nach dem ersten Öffnen die langsame Animation entfernen
+        setTimeout(function () {
+            sidebar.classList.remove('first-open');
+        }, 3000); // 3 Sekunden (Dauer der langsamen Animation)
     }, 4500); // 4,5 Sekunden
 };
 
