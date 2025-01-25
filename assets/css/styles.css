@@ -10,7 +10,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: transparent; /* Keine Hintergrundfarbe */
+    background-color: black; /* Hintergrund auf schwarz setzen */
     color: #fff;
 }
 
