@@ -18,9 +18,23 @@ html, body {
 body {
     background-image: url('../images/Start.png'); /* Pfad zum Hintergrundbild */
     background-size: cover; /* Bild deckt den gesamten Hintergrund ab */
-    background-position: center; /* Bild wird zentriert */
+    background-position: center top; /* Bild oben zentrieren */
     background-repeat: no-repeat; /* Bild wird nicht wiederholt */
     background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
+}
+
+/* Anpassung für Bildschirme mit einem Seitenverhältnis von 16:10 */
+@media (max-aspect-ratio: 16/10) {
+    body {
+        background-position: center 25%; /* Bild etwas nach unten verschieben */
+    }
+}
+
+/* Anpassung für Bildschirme mit einem Seitenverhältnis von 4:3 */
+@media (max-aspect-ratio: 4/3) {
+    body {
+        background-position: center 40%; /* Bild weiter nach unten verschieben */
+    }
 }
 
 /* Optional: Overlay für bessere Lesbarkeit */
