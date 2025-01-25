@@ -20,7 +20,7 @@ function toggleSidebar() {
     });
 }
 
-// Beim Laden der Seite den Zustand überprüfen und Opacity-Transition auslösen
+// Beim Laden der Seite den Zustand überprüfen und Hintergrund-Transition auslösen
 window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
@@ -33,7 +33,7 @@ window.onload = function () {
         overlay.classList.add('active');
     }
 
-    // Opacity-Transition auslösen
+    // Hintergrund-Transition auslösen
     setTimeout(function () {
         document.body.classList.add('loaded');
     }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
