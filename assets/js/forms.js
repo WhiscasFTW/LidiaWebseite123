@@ -18,15 +18,14 @@ window.onload = function () {
     // Overlay langsam ausblenden
     overlay.style.opacity = '0';
 
-    // Overlay nach 2 Sekunden vollständig entfernen
+    // Overlay nach 1,5 Sekunden vollständig entfernen
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 2000); // 2 Sekunden (vorher 1300ms)
+    }, 1500); // 1,5 Sekunden
 };
 
-// Weiterleitungs-Button (z. B. für die Kontaktseite)
-document.getElementById('redirect-button').addEventListener('click', function (event) {
-    event.preventDefault(); // Standardverhalten verhindern
+// Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
+function navigateToPage(url) {
     var overlay = document.createElement('div'); // Neues Overlay erstellen
     overlay.id = 'page-transition-overlay';
     overlay.className = 'page-transition-overlay';
@@ -37,8 +36,19 @@ document.getElementById('redirect-button').addEventListener('click', function (e
         overlay.style.opacity = '1';
     }, 10); // Kurze Verzögerung, um das Einblenden zu starten
 
-    // Nach 2 Sekunden weiterleiten
+    // Nach 1,5 Sekunden weiterleiten
     setTimeout(function () {
-        window.location.href = 'kontakt.html';
-    }, 2000); // 2 Sekunden (vorher 1300ms)
+        window.location.href = url;
+    }, 1500); // 1,5 Sekunden
+}
+
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        // Nur Links behandeln, die zu einer anderen Seite führen
+        if (link.href && !link.href.includes('javascript:')) {
+            event.preventDefault(); // Standardverhalten verhindern
+            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+        }
+    });
 });
