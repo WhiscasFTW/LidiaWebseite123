@@ -97,12 +97,19 @@ html, body {
     font-size: 22px;
     color: rgba(255, 255, 255, 0.9);
     display: block;
-    transition: 0.3s;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
+    transform: translateX(-100%); /* Startposition außerhalb der Sidebar */
+    opacity: 0; /* Standardmäßig unsichtbar */
+}
+
+.sidebar.open a {
+    transform: translateX(0); /* Endposition in der Sidebar */
+    opacity: 1; /* Sichtbar */
 }
 
 .sidebar a:hover {
