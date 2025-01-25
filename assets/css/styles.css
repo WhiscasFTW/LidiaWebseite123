@@ -1,189 +1,79 @@
-/* Video-Hintergrund */
-#video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+// Funktion zum Öffnen/Schließen der Sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+
+    // Sidebar und Button umschalten
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
+
+    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+    overlay.classList.toggle('active');
+
+    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-/* Dunkles Overlay für die Transition */
-.page-transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black; /* Startfarbe (dunkel) */
-    z-index: 9999; /* Über allem anderen */
-    opacity: 1; /* Anfangs sichtbar */
-    transition: opacity 1.5s ease; /* Transition auf 1,5 Sekunden */
+// Beim Laden der Seite das Overlay ausblenden und entfernen
+window.onload = function () {
+    var overlay = document.getElementById('page-transition-overlay');
+
+    // Overlay langsam ausblenden
+    overlay.style.opacity = '0';
+
+    // Overlay nach 1,5 Sekunden vollständig entfernen
+    setTimeout(function () {
+        overlay.remove(); // Overlay aus dem DOM entfernen
+    }, 1500); // 1,5 Sekunden
+
+    // Text nach 2 Sekunden einblenden
+    setTimeout(function () {
+        var quote = document.getElementById('quote');
+        quote.classList.add('visible'); // Text sichtbar machen
+    }, 2000); // 2 Sekunden
+
+    // Sidebar nach 4,5 Sekunden automatisch öffnen (nur einmal)
+    setTimeout(function () {
+        var sidebar = document.getElementById('sidebar');
+        var toggleButton = document.getElementById('toggleButton');
+        var overlay = document.getElementById('overlay');
+
+        // Sidebar öffnen
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+        overlay.classList.add('active');
+
+        // Animationen des Buttons stoppen
+        toggleButton.style.animation = 'none';
+    }, 4500); // 4,5 Sekunden
+};
+
+// Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
+function navigateToPage(url) {
+    var overlay = document.createElement('div'); // Neues Overlay erstellen
+    overlay.id = 'page-transition-overlay';
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay); // Overlay hinzufügen
+
+    // Overlay einblenden
+    setTimeout(function () {
+        overlay.style.opacity = '1';
+    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+
+    // Nach 1,5 Sekunden weiterleiten
+    setTimeout(function () {
+        window.location.href = url;
+    }, 1500); // 1,5 Sekunden
 }
 
-/* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dunkleres Overlay */
-    z-index: 1;
-    transition: opacity 0.5s ease; /* Sanftes Ein- und Ausblenden */
-}
-
-.overlay.active {
-    display: block;
-}
-
-/* Sidebar (langsamere Animation) */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
-    z-index: 2;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-.sidebar.open {
-    left: 0;
-}
-
-/* Signatur der Künstlerin */
-.artist-signature {
-    text-align: center;
-    padding: 20px;
-    animation: float 3s ease-in-out infinite;
-    position: relative;
-}
-
-.artist-signature img {
-    width: auto;
-    height: 140px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Links in der Sidebar */
-.sidebar-links {
-    padding-bottom: 20px;
-}
-
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.85);
-    display: block;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.15);
-    margin: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.sidebar.open a {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 96px; /* 20 % kleiner (vorher 120px) */
-    color: rgba(255, 255, 255, 0.8);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
-    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
-    padding: 10px;
-}
-
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Hover-Effekt für den Button */
-.toggle-button:hover {
-    transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
-    color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
-}
-
-/* Atmungsanimation für den Button (halbe Stärke) */
-@keyframes breathe {
-    0% {
-        color: rgba(255, 255, 255, 0.8); /* Hell */
-    }
-    50% {
-        color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
-    }
-    100% {
-        color: rgba(255, 255, 255, 0.8); /* Hell */
-    }
-}
-
-/* Wackel-Animation für den Button */
-@keyframes wobble {
-    0%, 100% {
-        transform: translateY(-50%) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
-    }
-    75% {
-        transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
-    }
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Text, der nach 2 Sekunden eingeblendet wird */
-.quote {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Pacifico', cursive;
-    font-size: 18px;
-    opacity: 0; /* Anfangs unsichtbar */
-    transition: opacity 1s ease; /* Sanftes Einblenden */
-}
-
-/* Klasse zum Einblenden des Textes */
-.quote.visible {
-    opacity: 1;
-}
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        // Nur Links behandeln, die zu einer anderen Seite führen
+        if (link.href && !link.href.includes('javascript:')) {
+            event.preventDefault(); // Standardverhalten verhindern
+            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+        }
+    });
+});
