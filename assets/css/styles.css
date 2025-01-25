@@ -75,6 +75,12 @@
     max-width: 100%;
     display: block;
     margin: 0 auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Sanfte Übergänge */
+}
+
+.artist-signature img:hover {
+    transform: scale(1.1); /* Leichte Vergrößerung */
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
 
 /* Links in der Sidebar */
