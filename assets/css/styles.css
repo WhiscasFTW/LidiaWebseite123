@@ -58,8 +58,7 @@ html, body {
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 50px;
-    padding-top: 50px;
+    padding-top: 50px; /* Padding oben für die Signatur */
 }
 
 .sidebar.open {
@@ -72,7 +71,10 @@ html, body {
     text-align: center;
     padding: 20px;
     animation: float 3s ease-in-out infinite;
-    position: relative;
+    position: absolute; /* Absolute Positionierung, um die Links nicht zu beeinflussen */
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .artist-signature img {
@@ -84,6 +86,11 @@ html, body {
 }
 
 /* Links in der Sidebar */
+.sidebar-links {
+    margin-top: 140px; /* Platz für die Signatur */
+    padding-bottom: 20px; /* Abstand nach unten */
+}
+
 .sidebar a {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
@@ -96,7 +103,6 @@ html, body {
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
-    top: 0;
 }
 
 .sidebar a:hover {
@@ -190,7 +196,6 @@ footer a:hover {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
-    transition: margin-left 0.5s ease; /* Sanfte Transition für den Inhalt */
 }
 
 /* Boxen-Container */
