@@ -1,7 +1,22 @@
-// JavaScript zum Öffnen und Schließen der Sidebar
+// Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay');
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+
+    // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
-    overlay.classList.toggle('active');
+    toggleButton.classList.toggle('open');
 }
+
+// Beim Laden der Seite den Zustand überprüfen
+window.onload = function () {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var sidebarState = localStorage.getItem('sidebarState');
+
+    // Sidebar-Zustand wiederherstellen
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+    }
+};
