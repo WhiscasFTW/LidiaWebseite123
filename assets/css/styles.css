@@ -10,8 +10,9 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212;
+    background-color: #121212; /* Dunkler Hintergrund */
     color: #ffffff;
+    transition: background-color 1s ease; /* Transition für den Hintergrund */
 }
 
 /* Overlay für die Sidebar */
@@ -33,30 +34,30 @@ html, body {
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 250px; /* Feste Breite der Sidebar */
+    width: 250px;
     position: fixed;
     top: 0;
-    left: -250px; /* Sidebar standardmäßig versteckt */
+    left: -250px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 0.5s ease; /* Nur die Position ändern */
+    transition: left 0.5s ease;
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px; /* Padding oben für die Signatur und Links */
+    padding-top: 20px;
 }
 
 .sidebar.open {
-    left: 0; /* Sidebar sichtbar */
+    left: 0;
 }
 
 /* Signatur der Künstlerin */
 .artist-signature {
     text-align: center;
     padding: 20px;
-    animation: float 3s ease-in-out infinite; /* Fliegende Animation */
+    animation: float 3s ease-in-out infinite;
     position: relative;
 }
 
@@ -70,7 +71,7 @@ html, body {
 
 /* Links in der Sidebar */
 .sidebar-links {
-    padding-bottom: 20px; /* Abstand nach unten */
+    padding-bottom: 20px;
 }
 
 .sidebar a {
@@ -85,13 +86,13 @@ html, body {
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
-    transform: translateX(-100%); /* Startposition außerhalb der Sidebar */
-    opacity: 0; /* Standardmäßig unsichtbar */
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .sidebar.open a {
-    transform: translateX(0); /* Endposition in der Sidebar */
-    opacity: 1; /* Sichtbar */
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .sidebar a:hover {
@@ -128,11 +129,11 @@ html, body {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
-    transition: margin-left 0.5s ease; /* Sanfte Transition für den Inhalt */
+    transition: margin-left 0.5s ease;
 }
 
 .sidebar.open ~ .content {
-    margin-left: 250px; /* Inhalt nach rechts verschieben, wenn Sidebar geöffnet ist */
+    margin-left: 250px;
 }
 
 /* Boxen-Container */
@@ -184,4 +185,10 @@ html, body {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Transition für den Hintergrund beim Laden */
+body.loaded {
+    background-color: #ffffff; /* Heller Hintergrund */
+    color: #121212; /* Dunkle Schrift */
 }
