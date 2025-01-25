@@ -19,7 +19,7 @@ html, body {
 body {
     background-image: url('../images/Start1.png'); /* Pfad zum Hintergrundbild */
     background-size: cover; /* Bild abdecken */
-    background-position: center; /* Bild zentrieren */
+    background-position: top center; /* Bild oben zentrieren */
     background-repeat: no-repeat; /* Bild nicht wiederholen */
     background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
 }
