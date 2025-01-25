@@ -22,16 +22,13 @@ window.onload = function () {
 
 // Übergangsanimation und Weiterleitung zur Startseite
 document.getElementById('openCurtain').addEventListener('click', function () {
-    const curtain = document.getElementById('curtain');
-    const transition = document.createElement('div'); // Übergangselement
-
-    // Übergangs-Element für die Animation erstellen
-    transition.classList.add('page-transition');
-    document.body.appendChild(transition);
+    const transition = document.createElement('div'); // Übergangselement erstellen
+    transition.classList.add('page-transition'); // Klasse hinzufügen
+    document.body.appendChild(transition); // Element zum Body hinzufügen
 
     // Animation starten
     setTimeout(() => {
-        transition.classList.add('active');
+        transition.classList.add('active'); // Seite dunkler machen
     }, 50); // Kleine Verzögerung, um die Animation sichtbar zu machen
 
     // Weiterleitung zur Startseite nach der Animation
