@@ -3,15 +3,19 @@ function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
+    var content = document.querySelector('.content');
     var sound = new Audio('assets/sounds/click.mp3');
 
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
     overlay.classList.toggle('active');
 
+    // Anpassung des Inhalts, um Verschiebungen zu vermeiden
     if (sidebar.classList.contains('open')) {
+        content.style.marginLeft = '250px';
         localStorage.setItem('sidebarState', 'open');
     } else {
+        content.style.marginLeft = '0';
         localStorage.setItem('sidebarState', 'closed');
     }
 
@@ -25,12 +29,14 @@ window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
+    var content = document.querySelector('.content');
     var sidebarState = localStorage.getItem('sidebarState');
 
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
         overlay.classList.add('active');
+        content.style.marginLeft = '250px';
     }
 
     // Footer und Leuchtstreifen einblenden beim Scrollen
