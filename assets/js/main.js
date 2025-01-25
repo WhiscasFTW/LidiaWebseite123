@@ -1,7 +1,15 @@
-// Ladeanimation ausblenden, wenn die Seite vollständig geladen ist
+// Ladeanimation ausblenden und Hauptinhalt einblenden
 window.addEventListener('load', () => {
     const loader = document.querySelector('.loader');
-    loader.style.display = 'none';
+    const fullscreenContainer = document.querySelector('.fullscreen-container');
+
+    // Ladeanimation ausblenden
+    loader.classList.add('hidden');
+
+    // Hauptinhalt einblenden
+    setTimeout(() => {
+        fullscreenContainer.classList.add('visible');
+    }, 500); // Kurze Verzögerung für einen fließenden Übergang
 });
 
 // Button nach einer kurzen Verzögerung sichtbar machen
