@@ -99,11 +99,11 @@ body::before {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
-    color: rgba(51, 51, 51, 0.9); /* Textfarbe anpassen */
+    color: rgba(255, 255, 255, 0.9); /* Textfarbe auf Weiß mit 90% Deckkraft */
     display: block;
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* Hellerer Hintergrund */
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
@@ -117,10 +117,10 @@ body::before {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgba(51, 51, 51, 1); /* Textfarbe anpassen */
+    background-color: rgba(255, 255, 255, 0.3); /* Hellerer Hintergrund beim Hover */
+    color: rgba(255, 255, 255, 1); /* Textfarbe auf Vollweiß beim Hover */
     transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
