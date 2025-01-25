@@ -14,16 +14,13 @@ html, body {
     color: #333; /* Textfarbe anpassen */
 }
 
-/* Bild als <img>-Tag */
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Bild abdecken */
-    object-position: center; /* Bild zentrieren */
-    z-index: -1; /* Hintergrundebene */
+/* Hintergrundbild für die gesamte Seite */
+body {
+    background-image: url('../images/Start1.png'); /* Pfad zum Hintergrundbild */
+    background-size: cover; /* Bild abdecken */
+    background-position: center; /* Bild zentrieren */
+    background-repeat: no-repeat; /* Bild nicht wiederholen */
+    background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
 }
 
 /* Optional: Overlay für bessere Lesbarkeit */
