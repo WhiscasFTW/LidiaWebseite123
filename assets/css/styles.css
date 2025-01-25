@@ -138,15 +138,3 @@ html, body {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
-
-/* Hauptinhalt (leer, da nur das Video angezeigt werden soll) */
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1;
-    padding-bottom: 100px;
-    position: relative;
-    z-index: 1; /* Inhalt über dem Video */
-    color: #fff; /* Textfarbe anpassen, falls nötig */
-}
