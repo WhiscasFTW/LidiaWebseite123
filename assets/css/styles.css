@@ -59,7 +59,7 @@ body::before {
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)); /* Glasoptik etwas heller */
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
@@ -99,11 +99,11 @@ body::before {
     padding: 10px 10px 10px 32px;
     text-decoration: none;
     font-size: 22px;
-    color: rgba(255, 255, 255, 0.9); /* Textfarbe auf Weiß mit 90% Deckkraft */
+    color: rgba(255, 255, 255, 0.85); /* Textfarbe etwas dunkler */
     display: block;
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.2); /* Hellerer Hintergrund */
+    background-color: rgba(255, 255, 255, 0.15); /* Hintergrund etwas dunkler */
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
@@ -117,7 +117,7 @@ body::before {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Hellerer Hintergrund beim Hover */
+    background-color: rgba(255, 255, 255, 0.25); /* Hellerer Hintergrund beim Hover */
     color: rgba(255, 255, 255, 1); /* Textfarbe auf Vollweiß beim Hover */
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
