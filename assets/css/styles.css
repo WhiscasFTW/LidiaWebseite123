@@ -10,7 +10,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: black; /* Hintergrund auf schwarz setzen */
+    background-color: transparent; /* Hintergrund transparent */
     color: #fff;
 }
 
@@ -33,18 +33,7 @@ html, body {
     height: auto; /* Höhe automatisch anpassen, um das Seitenverhältnis beizubehalten */
     object-fit: cover; /* Video deckt den Bereich ab */
     transform: translate(-50%, -50%); /* Zentrieren */
-    z-index: 1; /* Video über dem schwarzen Hintergrund */
-}
-
-/* Schwarzer Hintergrund als Fallback */
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black; /* Schwarzer Hintergrund */
-    z-index: 0; /* Hintergrund hinter dem Video */
+    z-index: 1; /* Video über dem Hintergrund */
 }
 
 /* Overlay für die Sidebar */
