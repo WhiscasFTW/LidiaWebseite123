@@ -2,40 +2,28 @@
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
 
     // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
 
-    // Speichern des Sidebar-Zustands im LocalStorage
-    if (sidebar.classList.contains('open')) {
-        localStorage.setItem('sidebarState', 'open');
-    } else {
-        localStorage.setItem('sidebarState', 'closed');
-    }
-
-    // Deaktivierung der Wackel-Animation nach dem ersten Öffnen
-    if (toggleButton.classList.contains('shake')) {
-        toggleButton.classList.remove('shake');
-    }
+    // Entferne die Pulsierungs-Animation nach dem ersten Klick
+    toggleButton.classList.remove('attention');
 }
 
-// Beim Laden der Seite den Zustand überprüfen und Animation beim ersten Laden
+// Beim Laden der Seite den Zustand überprüfen
 window.onload = function () {
     var sidebar = document.getElementById('sidebar');
     var toggleButton = document.getElementById('toggleButton');
     var sidebarState = localStorage.getItem('sidebarState');
-    var isFirstLoad = localStorage.getItem('firstLoad');
 
     // Sidebar-Zustand wiederherstellen
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
-    }
-
-    // Animation des Buttons aktivieren beim ersten Laden
-    if (!isFirstLoad) {
-        toggleButton.classList.add('shake'); // Animation aktivieren
-        localStorage.setItem('firstLoad', 'true');
+    } else {
+        // Füge die Pulsierungs-Animation hinzu, wenn der Button zum ersten Mal sichtbar wird
+        toggleButton.classList.add('attention');
     }
 };
