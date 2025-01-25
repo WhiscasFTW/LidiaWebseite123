@@ -5,12 +5,16 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent; /* Keine Hintergrundfarbe */
+/* Ausgangszustand der Webseite - alles dunkel */
+body {
+    background-color: #000;
+    color: #000;
+    transition: background-color 1.4s ease, color 1.4s ease;
+}
+
+/* Wenn die Seite geladen ist, wird die Farbe auf das Original zurückgesetzt */
+body.loaded {
+    background-color: transparent;
     color: #fff;
 }
 
@@ -23,6 +27,8 @@ html, body {
     height: 100%;
     object-fit: cover; /* Video deckt den gesamten Bereich ab */
     z-index: -1; /* Video bleibt im Hintergrund */
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards;
 }
 
 /* Overlay für die Sidebar */
@@ -57,6 +63,9 @@ html, body {
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards;
+    animation-delay: 1.2s; /* Verzögert, damit es nach der Body-Animation kommt */
 }
 
 .sidebar.open {
@@ -69,6 +78,9 @@ html, body {
     padding: 20px;
     animation: float 3s ease-in-out infinite;
     position: relative;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .artist-signature img {
@@ -82,6 +94,9 @@ html, body {
 /* Links in der Sidebar */
 .sidebar-links {
     padding-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .sidebar a {
@@ -125,6 +140,9 @@ html, body {
     transform: translateY(-50%);
     z-index: 3; /* Button über dem Video */
     transition: left 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .toggle-button.open {
@@ -137,4 +155,10 @@ html, body {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Animation für das Einblenden aller Elemente */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
