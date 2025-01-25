@@ -18,20 +18,10 @@ window.onload = function () {
     // Overlay langsam ausblenden
     overlay.style.opacity = '0';
 
-    // Overlay nach 1,3 Sekunden vollständig entfernen
+    // Overlay nach 2 Sekunden vollständig entfernen
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1300); // 1,3 Sekunden
-
-    // Sidebar-Zustand wiederherstellen (falls benötigt)
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var sidebarState = localStorage.getItem('sidebarState');
-
-    if (sidebarState === 'open') {
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-    }
+    }, 2000); // 2 Sekunden (vorher 1300ms)
 };
 
 // Weiterleitungs-Button (z. B. für die Kontaktseite)
@@ -47,8 +37,8 @@ document.getElementById('redirect-button').addEventListener('click', function (e
         overlay.style.opacity = '1';
     }, 10); // Kurze Verzögerung, um das Einblenden zu starten
 
-    // Nach 1,3 Sekunden weiterleiten
+    // Nach 2 Sekunden weiterleiten
     setTimeout(function () {
         window.location.href = 'kontakt.html';
-    }, 1300); // 1,3 Sekunden
+    }, 2000); // 2 Sekunden (vorher 1300ms)
 });
