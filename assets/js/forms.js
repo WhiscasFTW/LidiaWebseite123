@@ -1,11 +1,22 @@
-// Überprüfen, ob das Video geladen wird
-document.addEventListener('DOMContentLoaded', function () {
-    var video = document.getElementById('video-background');
-    var imageBackground = document.getElementById('image-background');
+// Funktion zum Öffnen/Schließen der Sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
 
-    // Wenn das Video nicht geladen wird, zeige das Bild an
-    video.addEventListener('error', function () {
-        video.style.display = 'none'; // Video ausblenden
-        imageBackground.style.display = 'block'; // Bild anzeigen
-    });
-});
+    // Sidebar und Button umschalten
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
+}
+
+// Beim Laden der Seite den Zustand überprüfen
+window.onload = function () {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var sidebarState = localStorage.getItem('sidebarState');
+
+    // Sidebar-Zustand wiederherstellen
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+    }
+};
