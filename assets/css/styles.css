@@ -10,15 +10,15 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #121212; /* Dunkler Hintergrund */
-    color: #ffffff;
-    opacity: 0.2; /* Startet mit niedriger Opacity */
-    transition: opacity 1s ease; /* Transition für die Opacity */
+    background-color: #000; /* Startet mit schwarzem Hintergrund */
+    color: #fff; /* Startet mit weißer Schrift */
+    transition: background-color 1s ease, color 1s ease; /* Transition für Hintergrund und Schriftfarbe */
 }
 
-/* Transition für die Opacity beim Laden */
+/* Transition für den Hintergrund und die Schriftfarbe beim Laden */
 body.loaded {
-    opacity: 1; /* Endet mit voller Opacity */
+    background-color: #121212; /* Originaler dunkler Hintergrund */
+    color: #ffffff; /* Originale Schriftfarbe */
 }
 
 /* Overlay für die Sidebar */
