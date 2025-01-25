@@ -17,7 +17,7 @@ window.onload = function () {
     var sidebarState = localStorage.getItem('sidebarState');
     var overlay = document.getElementById('overlay');
 
-    // Sidebar-Zustand wiederherstellen, wenn gespeichert
+    // Sidebar-Zustand wiederherstellen
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
