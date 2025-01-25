@@ -8,10 +8,17 @@ function toggleSidebar() {
     toggleButton.classList.toggle('open');
 }
 
-// Beim Laden der Seite das Overlay ausblenden
+// Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
-    overlay.style.opacity = '0'; // Overlay ausblenden
+
+    // Overlay langsam ausblenden
+    overlay.style.opacity = '0';
+
+    // Overlay nach 1,3 Sekunden vollständig entfernen
+    setTimeout(function () {
+        overlay.remove(); // Overlay aus dem DOM entfernen
+    }, 1300); // 1,3 Sekunden
 
     // Sidebar-Zustand wiederherstellen (falls benötigt)
     var sidebar = document.getElementById('sidebar');
@@ -27,10 +34,15 @@ window.onload = function () {
 // Weiterleitungs-Button (z. B. für die Kontaktseite)
 document.getElementById('redirect-button').addEventListener('click', function (event) {
     event.preventDefault(); // Standardverhalten verhindern
-    var overlay = document.getElementById('page-transition-overlay');
+    var overlay = document.createElement('div'); // Neues Overlay erstellen
+    overlay.id = 'page-transition-overlay';
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay); // Overlay hinzufügen
 
     // Overlay einblenden
-    overlay.style.opacity = '1';
+    setTimeout(function () {
+        overlay.style.opacity = '1';
+    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
 
     // Nach 1,3 Sekunden weiterleiten
     setTimeout(function () {
