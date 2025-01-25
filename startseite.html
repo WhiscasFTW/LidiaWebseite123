@@ -3,29 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Video</title>
-    <link rel="stylesheet" href="style.css"> <!-- Falls externes CSS verwendet wird -->
+    <title>Startseite</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Video-Hintergrund -->
+    <!-- Bild-Hintergrund (untere Schicht) -->
+    <div id="image-background"></div>
+
+    <!-- Video-Hintergrund (obere Schicht) -->
     <video autoplay muted loop id="video-background">
-        <source src="https://whiscasftw.github.io/LidiaWebseite123/assets/images/background.webm" type="video/webm">
+        <source src="assets/images/background.webm" type="video/webm">
+        <source src="assets/images/background.mp4" type="video/mp4">
         Dein Browser unterstützt das Video-Tag nicht.
     </video>
 
     <!-- Overlay für die Sidebar -->
-    <div class="overlay"></div>
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+    <!-- Die Sidebar auf der linken Seite -->
+    <div id="sidebar" class="sidebar">
+        <!-- Signatur der Künstlerin -->
+        <div class="artist-signature">
+            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin">
+        </div>
+
+        <!-- Links mit Icons -->
+        <div class="sidebar-links">
+            <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
+            <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
+            <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine&nbsp;Werke</a>
+            <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
+            <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
+        </div>
     </div>
 
     <!-- Button zum Öffnen und Schließen der Sidebar -->
-    <button class="toggle-button" onclick="toggleSidebar()">☰</button>
+    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-    <script src="script.js"></script> <!-- Falls externes JS verwendet wird -->
+    <!-- JavaScript-Datei einbinden -->
+    <script src="assets/js/forms.js"></script>
 </body>
 </html>
