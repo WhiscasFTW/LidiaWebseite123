@@ -32,19 +32,4 @@ window.onload = function () {
         toggleButton.classList.add('open');
         overlay.classList.add('active');
     }
-
-    // Footer und Leuchtstreifen einblenden beim Scrollen
-    window.addEventListener('scroll', function () {
-        const footer = document.querySelector('footer');
-        const secondHeaderBox = document.querySelector('.second-header-box-container');
-        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
-
-        if (isAtBottom) {
-            footer.classList.add('visible');
-            secondHeaderBox.style.bottom = '51px';
-        } else {
-            footer.classList.remove('visible');
-            secondHeaderBox.style.bottom = '-3px';
-        }
-    });
 };
