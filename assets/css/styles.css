@@ -15,13 +15,15 @@ html, body {
     overflow: hidden; /* Verhindert Scrollen auf der gesamten Seite */
 }
 
-/* Hintergrundbild für die gesamte Seite */
-body {
-    background-image: url('../images/Start1.png'); /* Pfad zum Hintergrundbild */
-    background-size: cover; /* Bild abdecken */
-    background-position: top center; /* Bild oben zentrieren */
-    background-repeat: no-repeat; /* Bild nicht wiederholen */
-    background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
+/* Video-Hintergrund */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video deckt den gesamten Hintergrund ab */
+    z-index: -1; /* Video im Hintergrund */
 }
 
 /* Optional: Overlay für bessere Lesbarkeit */
@@ -33,7 +35,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.3); /* Weißes Overlay mit 30% Deckkraft */
-    z-index: -1; /* Hintergrundebene */
+    z-index: 0; /* Overlay über dem Video */
 }
 
 /* Overlay für die Sidebar */
@@ -45,7 +47,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
-    z-index: 2; /* Overlay über dem Hintergrund */
+    z-index: 2; /* Overlay über dem Video */
 }
 
 .overlay.active {
@@ -64,7 +66,7 @@ body::before {
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 3; /* Sidebar über dem Overlay */
+    z-index: 3; /* Sidebar über dem Overlay und Video */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
