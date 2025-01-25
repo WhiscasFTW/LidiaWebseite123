@@ -5,16 +5,19 @@ function toggleSidebar() {
     var overlay = document.getElementById('overlay');
     var sound = new Audio('assets/sounds/click.mp3');
 
+    // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
     overlay.classList.toggle('active');
 
+    // Zustand der Sidebar im localStorage speichern
     if (sidebar.classList.contains('open')) {
         localStorage.setItem('sidebarState', 'open');
     } else {
         localStorage.setItem('sidebarState', 'closed');
     }
 
+    // Sound abspielen (falls vorhanden)
     sound.play().catch(error => {
         console.error("Sound konnte nicht abgespielt werden:", error);
     });
@@ -27,6 +30,7 @@ window.onload = function () {
     var overlay = document.getElementById('overlay');
     var sidebarState = localStorage.getItem('sidebarState');
 
+    // Sidebar-Zustand wiederherstellen
     if (sidebarState === 'open') {
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
@@ -37,4 +41,14 @@ window.onload = function () {
     setTimeout(function () {
         document.body.classList.add('loaded');
     }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
+
+    // Überprüfen, ob das Video geladen wird
+    var video = document.getElementById('video-background');
+    var imageBackground = document.getElementById('image-background');
+
+    // Wenn das Video nicht geladen wird, zeige das Bild an
+    video.addEventListener('error', function () {
+        video.style.display = 'none'; // Video ausblenden
+        imageBackground.style.display = 'block'; // Bild anzeigen
+    });
 };
