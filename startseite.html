@@ -9,10 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Bild-Hintergrund (untere Schicht) -->
-    <div id="image-background"></div>
-
-    <!-- Video-Hintergrund (obere Schicht) -->
+    <!-- Video-Hintergrund -->
     <video autoplay muted loop id="video-background">
         <source src="assets/images/background.webm" type="video/webm">
         <source src="assets/images/background.mp4" type="video/mp4">
@@ -22,13 +19,12 @@
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- Die Sidebar auf der linken Seite -->
+    <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <!-- Signatur der Künstlerin -->
         <div class="artist-signature">
             <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin">
         </div>
-
         <!-- Links mit Icons -->
         <div class="sidebar-links">
             <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
@@ -42,7 +38,7 @@
     <!-- Button zum Öffnen und Schließen der Sidebar -->
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-    <!-- JavaScript-Datei einbinden -->
-    <script src="assets/js/forms.js"></script>
+    <!-- JavaScript -->
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
