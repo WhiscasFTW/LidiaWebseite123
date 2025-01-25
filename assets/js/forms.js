@@ -33,7 +33,7 @@ window.onload = function () {
         quote.classList.add('visible'); // Text sichtbar machen
     }, 2000); // 2 Sekunden
 
-    // Sidebar nach 4,5 Sekunden automatisch öffnen (nur einmal)
+    // Sidebar nach 5,5 Sekunden automatisch öffnen (nur einmal)
     setTimeout(function () {
         var sidebar = document.getElementById('sidebar');
         var toggleButton = document.getElementById('toggleButton');
@@ -52,7 +52,7 @@ window.onload = function () {
         setTimeout(function () {
             sidebar.classList.remove('first-open');
         }, 3000); // 3 Sekunden (Dauer der langsamen Animation)
-    }, 4500); // 4,5 Sekunden
+    }, 5500); // 5,5 Sekunden (vorher 4,5 Sekunden)
 };
 
 // Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
