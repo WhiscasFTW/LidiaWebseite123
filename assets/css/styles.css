@@ -14,16 +14,37 @@ html, body {
     color: #fff;
 }
 
+/* Container für das Video und den schwarzen Hintergrund */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Container im Hintergrund */
+}
+
 /* Video-Hintergrund */
 #background-video {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 70%; /* Video auf 70 % der Breite skalieren */
     height: auto; /* Höhe automatisch anpassen, um das Seitenverhältnis beizubehalten */
     object-fit: cover; /* Video deckt den Bereich ab */
     transform: translate(-50%, -50%); /* Zentrieren */
-    z-index: -1; /* Video bleibt im Hintergrund */
+    z-index: 1; /* Video über dem schwarzen Hintergrund */
+}
+
+/* Schwarzer Hintergrund als Fallback */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Schwarzer Hintergrund */
+    z-index: 0; /* Hintergrund hinter dem Video */
 }
 
 /* Overlay für die Sidebar */
