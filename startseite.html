@@ -9,9 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Transition-Element für den Dunkel-zu-Hell-Effekt -->
-    <div class="page-transition" id="pageTransition"></div>
-
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
@@ -63,22 +60,5 @@
     </main>
 
     <script src="assets/js/forms.js"></script>
-    <script>
-        // Transition-Effekt: Seite von dunkel zu hell
-        window.addEventListener('load', () => {
-            const transition = document.getElementById('pageTransition');
-
-            // Prüfen, ob ein Übergangszustand gespeichert ist
-            if (localStorage.getItem('pageTransition') === 'true') {
-                // Animation ausführen
-                setTimeout(() => {
-                    transition.classList.add('fade-out'); // Seite heller machen
-                }, 50);
-
-                // Zustand zurücksetzen
-                localStorage.removeItem('pageTransition');
-            }
-        });
-    </script>
 </body>
 </html>
