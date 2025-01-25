@@ -1,15 +1,8 @@
-/* Allgemeine Reset-Einstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Ausgangszustand der Webseite - alles dunkel */
 body {
     background-color: #000;
     color: #000;
-    overflow: hidden;
+    overflow: hidden; /* Verhindert das Scrollen beim Start */
     transition: background-color 1.4s ease, color 1.4s ease;
     height: 100vh;
 }
@@ -18,20 +11,18 @@ body {
 body.loaded {
     background-color: transparent;
     color: #fff;
-    overflow: auto; /* Wenn der Übergang abgeschlossen ist, wird das Scrollen wieder ermöglicht */
+    overflow: auto; /* Scrollen ist jetzt erlaubt */
 }
 
-/* Video-Hintergrund */
+/* Der Video-Hintergrund soll auch dunkel starten */
 #background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0;
-    animation: fadeIn 1.4s ease forwards;
+    transition: opacity 1.4s ease;
+    opacity: 0; /* Video ist zu Beginn unsichtbar */
+}
+
+/* Video wird sichtbar nach dem Übergang */
+body.loaded #background-video {
+    opacity: 1;
 }
 
 /* Overlay für die Sidebar */
@@ -42,8 +33,8 @@ body.loaded {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
+    z-index: 2; /* Overlay über dem Video */
 }
 
 .overlay.active {
@@ -57,14 +48,15 @@ body.loaded {
     position: fixed;
     top: 0;
     left: -250px;
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 3;
+    z-index: 3; /* Sidebar über dem Video */
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
-    opacity: 0;
-    animation: fadeIn 1.4s ease forwards;
-    animation-delay: 1.2s;
 }
 
 .sidebar.open {
@@ -77,9 +69,6 @@ body.loaded {
     padding: 20px;
     animation: float 3s ease-in-out infinite;
     position: relative;
-    opacity: 0;
-    animation: fadeIn 1.4s ease forwards;
-    animation-delay: 1.2s;
 }
 
 .artist-signature img {
@@ -93,9 +82,6 @@ body.loaded {
 /* Links in der Sidebar */
 .sidebar-links {
     padding-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 1.4s ease forwards;
-    animation-delay: 1.2s;
 }
 
 .sidebar a {
@@ -137,11 +123,8 @@ body.loaded {
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3;
+    z-index: 3; /* Button über dem Video */
     transition: left 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    animation: fadeIn 1.4s ease forwards;
-    animation-delay: 1.2s;
 }
 
 .toggle-button.open {
@@ -154,10 +137,4 @@ body.loaded {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Animation für das Einblenden aller Elemente */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
 }
