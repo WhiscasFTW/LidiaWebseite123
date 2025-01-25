@@ -10,25 +10,19 @@ html, body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #000; /* Startet mit schwarzem Hintergrund */
-    color: #fff; /* Startet mit weißer Schrift */
+    background-color: #000; /* Fallback-Hintergrundfarbe */
+    color: #fff;
 }
 
-/* Alle sichtbaren Elemente zunächst unsichtbar */
-body:not(.loaded) .content,
-body:not(.loaded) .sidebar,
-body:not(.loaded) .toggle-button,
-body:not(.loaded) .overlay {
-    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
-}
-
-/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
-body.loaded .content,
-body.loaded .sidebar,
-body.loaded .toggle-button,
-body.loaded .overlay {
-    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
-    transition: opacity 1s ease; /* Transition für die Opacity */
+/* Video-Hintergrund */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video deckt den gesamten Bereich ab */
+    z-index: -1; /* Video bleibt im Hintergrund */
 }
 
 /* Overlay für die Sidebar */
@@ -39,7 +33,7 @@ body.loaded .overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
     z-index: 2;
 }
 
@@ -130,12 +124,19 @@ body.loaded .overlay {
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: left 0.5s ease, transform 0.5s ease; /* Sanfte Transition für die Drehung */
+    transition: left 0.5s ease, transform 0.5s ease;
 }
 
 .toggle-button.open {
     left: 265px;
-    transform: translateY(-50%) rotate(90deg); /* Dreht den Button um 90 Grad */
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 /* Hauptinhalt */
@@ -145,16 +146,7 @@ body.loaded .overlay {
     margin: 0 auto;
     flex: 1;
     padding-bottom: 100px;
-    transition: margin-left 0.5s ease;
-}
-
-.sidebar.open ~ .content {
-    margin-left: 250px;
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    position: relative;
+    z-index: 1; /* Inhalt über dem Video */
+    color: #fff; /* Textfarbe anpassen, falls nötig */
 }
