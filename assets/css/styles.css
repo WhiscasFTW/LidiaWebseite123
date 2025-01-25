@@ -46,15 +46,15 @@ html, body {
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 250px; /* Feste Breite der Sidebar */
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Sidebar standardmäßig versteckt */
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: left 0.5s ease; /* Nur die Position ändern */
     z-index: 3;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -62,8 +62,7 @@ html, body {
 }
 
 .sidebar.open {
-    width: 250px;
-    left: 0;
+    left: 0; /* Sidebar sichtbar */
 }
 
 /* Signatur der Künstlerin */
@@ -71,10 +70,7 @@ html, body {
     text-align: center;
     padding: 20px;
     animation: float 3s ease-in-out infinite;
-    position: absolute; /* Absolute Positionierung, um die Links nicht zu beeinflussen */
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
 }
 
 .artist-signature img {
@@ -87,7 +83,7 @@ html, body {
 
 /* Links in der Sidebar */
 .sidebar-links {
-    margin-top: 140px; /* Platz für die Signatur */
+    margin-top: 20px; /* Abstand zur Signatur */
     padding-bottom: 20px; /* Abstand nach unten */
 }
 
@@ -137,6 +133,73 @@ html, body {
 .toggle-button.open {
     left: 265px;
     transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hauptinhalt */
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    padding-bottom: 100px;
+    transition: margin-left 0.5s ease; /* Sanfte Transition für den Inhalt */
+}
+
+.sidebar.open ~ .content {
+    margin-left: 250px; /* Inhalt nach rechts verschieben, wenn Sidebar geöffnet ist */
+}
+
+/* Boxen-Container */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.box {
+    flex: 1 1 calc(25% - 20px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.box p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.box .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.box .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Zitat unter den Boxen */
+.quote {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Footer */
@@ -194,68 +257,6 @@ footer a:hover {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Hauptinhalt */
-.content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1;
-    padding-bottom: 100px;
-}
-
-/* Boxen-Container */
-.box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.box {
-    flex: 1 1 calc(25% - 20px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease;
-}
-
-.box img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.box p {
-    margin: 15px 0;
-    font-size: 16px;
-}
-
-.box .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.box .button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Zitat unter den Boxen */
-.quote {
-    text-align: center;
-    margin-top: 40px;
-    font-style: italic;
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Video-Hintergrund */
