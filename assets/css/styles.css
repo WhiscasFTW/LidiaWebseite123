@@ -12,7 +12,13 @@ html, body {
     flex-direction: column;
     background-color: #121212; /* Dunkler Hintergrund */
     color: #ffffff;
-    transition: background-color 1s ease; /* Transition für den Hintergrund */
+    opacity: 0.2; /* Startet mit niedriger Opacity */
+    transition: opacity 1s ease; /* Transition für die Opacity */
+}
+
+/* Transition für die Opacity beim Laden */
+body.loaded {
+    opacity: 1; /* Endet mit voller Opacity */
 }
 
 /* Overlay für die Sidebar */
@@ -185,10 +191,4 @@ html, body {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Transition für den Hintergrund beim Laden */
-body.loaded {
-    background-color: #ffffff; /* Heller Hintergrund */
-    color: #121212; /* Dunkle Schrift */
 }
