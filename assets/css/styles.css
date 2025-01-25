@@ -14,27 +14,18 @@ html, body {
     color: #333; /* Textfarbe anpassen */
 }
 
-/* Hintergrundbild für die gesamte Seite */
-body {
+/* Container für das Hintergrundbild */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('../images/Start.png'); /* Pfad zum Hintergrundbild */
-    background-size: cover; /* Bild deckt den gesamten Hintergrund ab */
-    background-position: center top; /* Bild oben zentrieren */
-    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
-    background-attachment: fixed; /* Bild bleibt beim Scrollen fixiert */
-}
-
-/* Anpassung für Bildschirme mit einem Seitenverhältnis von 16:10 */
-@media (max-aspect-ratio: 16/10) {
-    body {
-        background-position: center 25%; /* Bild etwas nach unten verschieben */
-    }
-}
-
-/* Anpassung für Bildschirme mit einem Seitenverhältnis von 4:3 */
-@media (max-aspect-ratio: 4/3) {
-    body {
-        background-position: center 40%; /* Bild weiter nach unten verschieben */
-    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Hintergrundebene */
 }
 
 /* Optional: Overlay für bessere Lesbarkeit */
