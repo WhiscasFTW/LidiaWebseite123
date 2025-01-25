@@ -1,3 +1,27 @@
+/* Allgemeine Reset-Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grundlegende Animation für den Hintergrund (Body und Overlay) */
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: black; /* Startfarbe für den Übergang */
+    color: #333;
+    overflow: hidden;
+    transition: background-color 1.3s ease-in-out; /* Smooth Übergang für Hintergrundfarbe */
+}
+
+/* Body nach dem Laden - normale Hintergrundfarbe */
+body.loaded {
+    background-color: white; /* Zielfarbe */
+}
+
 /* Bild-Hintergrund (untere Schicht) */
 #image-background {
     position: fixed;
@@ -20,7 +44,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Video deckt den gesamten Hintergrund ab */
-    z-index: -1; /* Video über dem Bild, aber unter der Sidebar */
+    z-index: -1; /* Video über dem Bild */
 }
 
 /* Overlay für die Sidebar */
@@ -33,10 +57,13 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dunkleres Overlay für bessere Lesbarkeit */
     z-index: 1; /* Overlay über dem Video/Bild */
+    opacity: 0; /* Start-Opacity */
+    transition: opacity 1.3s ease-in-out; /* Übergangseffekt für das Overlay */
 }
 
 .overlay.active {
     display: block;
+    opacity: 1; /* End-Opacity */
 }
 
 /* Sidebar */
@@ -51,7 +78,7 @@
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 0.5s ease;
-    z-index: 2; /* Sidebar über dem Video/Overlay */
+    z-index: 2; /* Sidebar über dem Overlay */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -60,8 +87,6 @@
 .sidebar.open {
     left: 0;
 }
-
-/* Weitere CSS-Regeln (keine Änderungen) */
 
 /* Signatur der Künstlerin */
 .artist-signature {
