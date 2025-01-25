@@ -12,17 +12,23 @@ html, body {
     flex-direction: column;
     background-color: #000; /* Startet mit schwarzem Hintergrund */
     color: #fff; /* Startet mit weißer Schrift */
+}
+
+/* Alle sichtbaren Elemente zunächst unsichtbar */
+body:not(.loaded) .content,
+body:not(.loaded) .sidebar,
+body:not(.loaded) .toggle-button,
+body:not(.loaded) .overlay {
+    opacity: 0; /* Alle sichtbaren Elemente sind unsichtbar */
+}
+
+/* Beim Laden der Seite alle sichtbaren Elemente einblenden */
+body.loaded .content,
+body.loaded .sidebar,
+body.loaded .toggle-button,
+body.loaded .overlay {
+    opacity: 1; /* Alle sichtbaren Elemente werden sichtbar */
     transition: opacity 1s ease; /* Transition für die Opacity */
-}
-
-/* Alle Elemente zunächst unsichtbar */
-body:not(.loaded) * {
-    opacity: 0; /* Alle Elemente sind unsichtbar */
-}
-
-/* Beim Laden der Seite alle Elemente einblenden */
-body.loaded * {
-    opacity: 1; /* Alle Elemente werden sichtbar */
 }
 
 /* Overlay für die Sidebar */
@@ -124,12 +130,12 @@ body.loaded * {
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: left 0.5s ease, transform 0.3s ease;
+    transition: left 0.5s ease, transform 0.5s ease; /* Sanfte Transition für die Drehung */
 }
 
 .toggle-button.open {
     left: 265px;
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg); /* Dreht den Button um 90 Grad */
 }
 
 /* Hauptinhalt */
