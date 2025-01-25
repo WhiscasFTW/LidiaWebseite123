@@ -1,38 +1,40 @@
-// Ladeanimation ausblenden und Hauptinhalt einblenden
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-    const fullscreenContainer = document.querySelector('.fullscreen-container');
+// Funktion zum Öffnen/Schließen der Sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+    var sound = new Audio('assets/sounds/click.mp3');
 
-    // Ladeanimation ausblenden
-    loader.classList.add('hidden');
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
+    overlay.classList.toggle('active');
 
-    // Hauptinhalt einblenden
-    setTimeout(() => {
-        fullscreenContainer.classList.add('visible');
-    }, 500); // Kurze Verzögerung für einen fließenden Übergang
-});
+    if (sidebar.classList.contains('open')) {
+        localStorage.setItem('sidebarState', 'open');
+    } else {
+        localStorage.setItem('sidebarState', 'closed');
+    }
 
-// Button nach einer kurzen Verzögerung sichtbar machen
+    sound.play().catch(error => {
+        console.error("Sound konnte nicht abgespielt werden:", error);
+    });
+}
+
+// Beim Laden der Seite den Zustand überprüfen und alle Elemente einblenden
 window.onload = function () {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+    var sidebarState = localStorage.getItem('sidebarState');
+
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+        overlay.classList.add('active');
+    }
+
+    // Alle Elemente einblenden
     setTimeout(function () {
-        const button = document.querySelector('.intro-button');
-        button.classList.add('visible');
-    }, 1000); // 1 Sekunde Verzögerung
+        document.body.classList.add('loaded');
+    }, 100); // Kurze Verzögerung, um den Effekt sichtbar zu machen
 };
-
-// Übergangsanimation und Weiterleitung zur Startseite
-document.getElementById('openCurtain').addEventListener('click', function () {
-    const transition = document.createElement('div'); // Übergangselement erstellen
-    transition.classList.add('page-transition'); // Klasse hinzufügen
-    document.body.appendChild(transition); // Element zum Body hinzufügen
-
-    // Animation starten
-    setTimeout(() => {
-        transition.classList.add('active'); // Seite dunkler machen
-    }, 50); // Kleine Verzögerung, um die Animation sichtbar zu machen
-
-    // Weiterleitung zur Startseite nach der Animation
-    setTimeout(function () {
-        window.location.href = 'startseite.html'; // Zielseite
-    }, 850); // Zeitdauer entsprechend der CSS-Transition
-});
