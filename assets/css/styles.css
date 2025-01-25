@@ -191,10 +191,15 @@
     font-family: 'Calibri', sans-serif; /* Normale Schriftart */
     font-size: 18px;
     opacity: 0; /* Anfangs unsichtbar */
-    transition: opacity 1s ease; /* Sanftes Einblenden */
+    transition: opacity 1s ease, transform 0.3s ease, filter 0.3s ease; /* Sanftes Einblenden und Hover-Effekt */
 }
 
-/* Klasse zum Einblenden des Textes */
 .quote.visible {
     opacity: 1;
+}
+
+/* Hover-Effekt für das Zitat */
+.quote:hover {
+    transform: scale(1.05); /* Leichte Vergrößerung */
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
