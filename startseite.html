@@ -43,36 +43,6 @@
 
     <!-- JavaScript-Datei einbinden -->
     <script src="assets/js/forms.js"></script>
-    <script>
-        // Funktion zum Öffnen/Schließen der Sidebar
-        function toggleSidebar() {
-            var sidebar = document.getElementById('sidebar');
-            var toggleButton = document.getElementById('toggleButton');
-
-            // Sidebar und Button umschalten
-            sidebar.classList.toggle('open');
-            toggleButton.classList.toggle('open');
-        }
-
-        // Beim Laden der Seite den Zustand überprüfen und Animation beim ersten Laden
-        window.onload = function () {
-            var sidebar = document.getElementById('sidebar');
-            var toggleButton = document.getElementById('toggleButton');
-            var sidebarState = localStorage.getItem('sidebarState');
-            var isFirstLoad = localStorage.getItem('firstLoad');
-
-            // Sidebar-Zustand wiederherstellen
-            if (sidebarState === 'open') {
-                sidebar.classList.add('open');
-                toggleButton.classList.add('open');
-            }
-
-            // Animation des Buttons aktivieren beim ersten Laden
-            if (!isFirstLoad) {
-                toggleButton.classList.add('shake'); // Animation aktivieren
-                localStorage.setItem('firstLoad', 'true');
-            }
-        };
-    </script>
+    <script src="assets/js/sidebar.js"></script>
 </body>
 </html>
