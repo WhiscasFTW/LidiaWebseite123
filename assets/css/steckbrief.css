@@ -77,9 +77,9 @@ footer img {
   margin-top: 70px; /* Bild 70px weiter nach unten verschieben */
 }
 
-/* Footer-Text 75px weiter nach oben (60px + 15px) */
+/* Footer-Text 15px weiter nach unten (60px - 15px) */
 .footer-text {
-  margin-top: -75px; /* Text 75px weiter nach oben */
+  margin-top: -45px; /* Text 15px weiter nach unten */
   color: white;
   font-size: 14px;
 }
@@ -199,7 +199,7 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar (deutlich dünner) */
+/* Button zum Öffnen und Schließen der Sidebar (deutlich dünner und modern) */
 .toggle-button {
   font-size: 96px;
   color: rgba(255, 255, 255, 0.8);
@@ -214,8 +214,9 @@ footer img {
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
   padding: 10px;
-  font-weight: 100; /* Dünnere Schrift */
-  font-family: 'Arial Narrow', sans-serif; /* Sehr schmale Schriftart */
+  font-weight: 100; /* Sehr dünne Schrift */
+  font-family: 'Arial Narrow', sans-serif; /* Schmale Schriftart */
+  line-height: 1; /* Verhindert zusätzlichen Abstand */
 }
 
 .toggle-button.open {
