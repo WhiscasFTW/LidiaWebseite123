@@ -6,12 +6,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -1; /* Video im Hintergrund */
 }
 
 /* Header */
 header {
-  position: relative;
+  position: relative; /* Header über dem Video */
   z-index: 1;
   text-align: center;
   padding: 20px 0;
@@ -22,18 +22,26 @@ header img {
   height: auto;
 }
 
-/* Main-Bereich */
+/* Main-Bereich (Video-Container) */
 main {
   position: relative;
   z-index: 1;
-  padding: 20px;
-  text-align: center;
-  color: white;
+  display: flex;
+  justify-content: center; /* Video zentrieren */
+  align-items: center;
+  height: 100vh; /* Volle Höhe des Viewports */
+  overflow: hidden; /* Verhindert Scrollen */
+}
+
+main video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Video skalieren, ohne es zu beschneiden */
 }
 
 /* Footer */
 footer {
-  position: relative;
+  position: relative; /* Footer unter dem Video */
   z-index: 1;
   text-align: center;
   padding: 20px 0;
