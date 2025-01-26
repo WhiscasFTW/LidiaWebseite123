@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -131,6 +132,33 @@ footer {
     z-index: 200;
 }
 
+/* Footer Text & Links */
+footer .footer-text a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Flexbox für die Seitenstruktur */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Für den Fall von zu viel Inhalt in der Sidebar */
+.sidebar-links {
+    flex-grow: 1;
+}
+
+/* Header, Video und Footer in der richtigen Reihenfolge */
+header, #video-background, footer {
+    flex-shrink: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
@@ -139,5 +167,10 @@ footer {
 
     .toggle-button.open {
         transform: translateX(180px);
+    }
+
+    /* Textgröße anpassen für kleine Bildschirme */
+    .footer-text {
+        font-size: 0.7rem;
     }
 }
