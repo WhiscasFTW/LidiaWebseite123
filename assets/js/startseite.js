@@ -1,58 +1,48 @@
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-
-    // Sidebar und Button umschalten
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-
-    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
-    overlay.classList.toggle('active');
-
-    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-    toggleButton.style.animation = 'none'; // Animationen entfernen
-}
-
-// Beim Laden der Seite das Overlay ausblenden und entfernen
+// Warten, bis das gesamte Dokument geladen ist
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
+    
+    // Warten, bis alle Bilder und das Video geladen sind
+    var video = document.getElementById('video-background');
+    var images = document.querySelectorAll('img');
+    var totalResources = images.length + (video ? 1 : 0); // Anzahl der zu ladenden Ressourcen
+    var loadedResources = 0;
 
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
+    // Funktion zum Überprüfen, ob alle Ressourcen geladen sind
+    function checkIfAllLoaded() {
+        loadedResources++;
+        if (loadedResources === totalResources) {
+            // Alle Ressourcen sind geladen, Overlay entfernen und Fade-Out starten
+            overlay.style.opacity = '0';
+            setTimeout(function () {
+                overlay.remove();
+            }, 1400); // Nach 1,4 Sekunden Overlay entfernen
+        }
+    }
 
-    // Overlay nach 1,4 Sekunden vollständig entfernen
-    setTimeout(function () {
-        overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1400); // 1,4 Sekunden
+    // Überprüfen, ob das Video geladen wurde
+    if (video) {
+        video.onloadeddata = checkIfAllLoaded;
+    }
+
+    // Überprüfen, ob alle Bilder geladen wurden
+    images.forEach(function (img) {
+        img.onload = checkIfAllLoaded;
+    });
+
+    // Falls bereits alle Ressourcen beim Laden vorhanden sind
+    if (loadedResources === totalResources) {
+        checkIfAllLoaded();
+    }
 };
 
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-function navigateToPage(url) {
-    var overlay = document.createElement('div'); // Neues Overlay erstellen
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay); // Overlay hinzufügen
+// Funktion zum Öffnen und Schließen der Sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('overlay');
+    var toggleButton = document.getElementById('toggleButton');
 
-    // Overlay einblenden
-    setTimeout(function () {
-        overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
-
-    // Nach 1,4 Sekunden weiterleiten
-    setTimeout(function () {
-        window.location.href = url;
-    }, 1400); // 1,4 Sekunden
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+    toggleButton.classList.toggle('open');
 }
-
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-        // Nur Links behandeln, die zu einer anderen Seite führen
-        if (link.href && !link.href.includes('javascript:')) {
-            event.preventDefault(); // Standardverhalten verhindern
-            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
-        }
-    });
-});
