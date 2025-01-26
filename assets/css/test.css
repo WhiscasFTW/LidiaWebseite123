@@ -36,7 +36,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Video bleibt im Hintergrund */
+  z-index: 0; /* Video wird unter dem Overlay angezeigt */
 }
 
 /* Overlay für das Video, um es dunkler zu machen */
@@ -48,7 +48,7 @@ main::after {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 1); /* Anfangs vollständig dunkel */
-  z-index: 0; /* Overlay liegt über dem Video */
+  z-index: 1; /* Overlay liegt über dem Video */
   transition: background 2s ease-out; /* Übergang für das Dunkelheits-Overlay */
 }
 
