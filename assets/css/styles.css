@@ -1,3 +1,34 @@
+/* Allgemeine Einstellungen */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Bild- und Video-Hintergründe */
+#image-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
@@ -61,7 +92,7 @@
     transition: opacity 0.3s ease 0.3s; /* Synchronisiert mit dem Öffnen der Sidebar */
 }
 
-/.sidebar-links a {
+.sidebar-links a {
     display: block;
     color: #fff;
     text-decoration: none;
