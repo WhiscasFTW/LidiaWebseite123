@@ -55,7 +55,7 @@ video {
   left: 0;
   z-index: -1;
   margin: 0;
-  filter: none; /* Zurück zum Originalzustand */
+  filter: none; /* Originalzustand des Videos ohne Filter */
 }
 
 /* Noch dunkleres Overlay für das Video */
