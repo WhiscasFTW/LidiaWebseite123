@@ -1,11 +1,13 @@
-document.getElementById('openCurtain').addEventListener('click', function () {
+window.addEventListener('load', function () {
   const transition = document.getElementById('pageTransition'); // Übergangselement holen
 
-  // Animation starten
-  transition.classList.add('active'); // Übergang aktivieren
+  // Übergang aktivieren, wenn die Seite vollständig geladen ist
+  setTimeout(() => {
+    transition.classList.add('active'); // Übergang aktivieren
+  }, 100); // Kleine Verzögerung, um den Effekt sichtbar zu machen
 
-  // Weiterleitung zur gewünschten Seite nach der Animation
-  setTimeout(function () {
-    window.location.href = 'deine-zielseite.html'; // Zielseite
-  }, 800); // Zeitdauer entsprechend der CSS-Transition
+  // Übergang nach einiger Zeit wieder deaktivieren
+  setTimeout(() => {
+    transition.classList.remove('active'); // Übergang deaktivieren
+  }, 1200); // Übergangszeit (passend zur Dauer der CSS-Transition)
 });
