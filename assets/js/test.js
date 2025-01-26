@@ -1,3 +1,6 @@
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
+<script>
+  window.addEventListener('load', function() {
+    var video = document.querySelector('video');
+    video.classList.add('loaded');
+  });
+</script>
