@@ -5,7 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  background-color: black; /* Startet mit schwarzem Hintergrund */
+  background-color: #1c1c1c; /* Startet mit Dunkelgrau */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -82,10 +82,10 @@ body {
 @keyframes fadeIn {
   0% {
     opacity: 0; /* Startet mit unsichtbarer Seite */
-    background-color: black; /* Hintergrund bleibt anfangs schwarz */
+    background-color: #1c1c1c; /* Hintergrund bleibt anfangs dunkel */
   }
   100% {
     opacity: 1; /* Seite wird vollständig sichtbar */
-    background-color: #1c1c1c; /* Setzt den Hintergrund zu einem etwas helleren Dunkelgrau */
+    background-color: #2f2f2f; /* Helles Dunkelgrau für den Endzustand */
   }
 }
