@@ -5,6 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  background-color: black; /* Hintergrundfarbe auf Schwarz setzen */
   transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
 }
 
@@ -58,6 +59,10 @@ main::after {
 footer {
   width: 100%;
   position: relative;
+  background-color: black; /* Footer Hintergrund auf Schwarz */
+  z-index: 1;
+  padding: 20px 0; /* Fügt oben und unten etwas Abstand hinzu */
+  box-sizing: border-box; /* Verhindert, dass Padding die Gesamtgröße beeinflusst */
 }
 
 footer img {
@@ -70,28 +75,17 @@ footer img {
 /* Footer-Text */
 .footer-text {
   position: absolute;
-  bottom: 20px; /* Abstand vom unteren Rand */
+  top: 50%; /* Vertikale Zentrierung */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%); /* Perfekte Zentrierung sowohl horizontal als auch vertikal */
   color: white;
   font-size: 16px;
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  opacity: 0;
-  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
 }
 
-/* Animation für das Einblenden des Footer-Texts */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Links im Footer */
 .footer-text a {
   color: white;
   text-decoration: none;
