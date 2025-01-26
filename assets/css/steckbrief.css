@@ -67,7 +67,7 @@ footer {
   padding: 20px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   margin-top: 0; /* Kein Abstand zum Video */
-  margin-bottom: 0; /* Abstand unter dem Footer entfernt */
+  margin-bottom: -15px; /* Abstand unter dem Footer vollständig entfernen */
 }
 
 footer img {
@@ -199,7 +199,7 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar (genau wie auf der anderen Seite) */
+/* Button zum Öffnen und Schließen der Sidebar (exakt wie auf der anderen Seite) */
 .toggle-button {
   font-size: 96px; /* 20 % kleiner (vorher 120px) */
   color: rgba(255, 255, 255, 0.8);
@@ -210,7 +210,7 @@ footer img {
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  z-index: 3; /* Button über allem */
+  z-index: 3;
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
   padding: 10px;
