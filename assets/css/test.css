@@ -15,13 +15,13 @@ body, html {
   width: 100%;
   height: 100%;
   background: black;
-  opacity: 0;
+  opacity: 1;
   z-index: 20;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .page-transition.active {
-  opacity: 1;
+  opacity: 0; /* Verblasst die Seite nach der Übergangszeit */
 }
 
 /* Header-Styling */
