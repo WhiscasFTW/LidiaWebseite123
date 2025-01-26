@@ -58,6 +58,7 @@ main::after {
 footer {
   width: 100%;
   position: relative;
+  text-align: center;
 }
 
 footer img {
@@ -79,6 +80,8 @@ footer img {
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
   z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
+  overflow: hidden; /* Verhindert, dass der Text über den Rand hinausläuft */
+  text-overflow: ellipsis; /* Wenn der Text zu lang ist, wird er mit '...' abgeschnitten */
 }
 
 /* Footer-Link Styling */
