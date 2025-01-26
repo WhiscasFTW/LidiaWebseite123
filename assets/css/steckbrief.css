@@ -43,7 +43,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4); /* Dezenteres Overlay */
-    z-index: 1;
+    z-index: 2; /* Über dem Footer, aber unter der Sidebar */
     transition: opacity 0.5s ease; /* Sanftes Ein- und Ausblenden */
 }
 
@@ -63,7 +63,7 @@
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
     transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
-    z-index: 2; /* Über dem Overlay */
+    z-index: 3; /* Sidebar über Header und Footer */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -140,7 +140,7 @@
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3;
+    z-index: 4; /* Button über der Sidebar */
     transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
     animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
     padding: 10px;
@@ -196,7 +196,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1; /* Hinter der Sidebar */
+    z-index: 2; /* Header über dem Footer, aber unter der Sidebar */
     text-align: center;
     background: rgba(0, 0, 0, 0.7); /* Abgedunkeltes Overlay */
     transition: background 0.3s ease; /* Sanfter Übergang */
@@ -220,7 +220,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1; /* Hinter der Sidebar */
+    z-index: 1; /* Footer unter Header und Sidebar */
     text-align: center;
 }
 
