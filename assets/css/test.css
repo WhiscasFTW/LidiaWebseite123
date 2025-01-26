@@ -78,8 +78,10 @@ footer img {
 @keyframes fadeInBackground {
   0% {
     background-color: #1c1c1c; /* Dunkelgrau zu Beginn */
+    opacity: 0;
   }
   100% {
-    background-color: #2f2f2f; /* Hellere, aber immer noch dunkle Farbe für das Ende */
+    background-color: #1c1c1c; /* Dunkel bleibt konstant */
+    opacity: 1;
   }
 }
