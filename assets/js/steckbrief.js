@@ -15,20 +15,7 @@ function toggleSidebar() {
   toggleButton.style.animation = 'none';
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-  var overlay = document.getElementById('page-transition-overlay');
-
-  // Overlay langsam ausblenden
-  overlay.style.opacity = '0';
-
-  // Overlay nach 1,4 Sekunden vollständig entfernen
-  setTimeout(function () {
-    overlay.remove();
-  }, 1400);
-};
-
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+// Funktion für den Seitenwechsel mit Vorhang-Effekt
 function navigateToPage(url) {
   var overlay = document.createElement('div');
   overlay.id = 'page-transition-overlay';
@@ -43,7 +30,7 @@ function navigateToPage(url) {
   // Nach 1,4 Sekunden weiterleiten
   setTimeout(function () {
     window.location.href = url;
-  }, 1400);
+  }, 1400); // 1,4 Sekunden
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
