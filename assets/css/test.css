@@ -14,44 +14,53 @@ header {
 }
 
 header img {
-  width: 2560px;
-  height: 360px;
-  object-fit: contain;
+  max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
   display: block; /* Verhindert zusätzliche Abstände */
-  margin: 0; /* Entfernt ungewollte Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
 }
 
 /* Video-Styling */
 main {
   width: 100%;
-  height: 1440px;
+  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
   position: relative;
-  margin: 0; /* Entfernt unerwünschte Abstände */
-  padding: 0; /* Entfernt unerwünschte Abstände */
+  margin: 0;
+  padding: 0;
 }
 
 video {
-  width: 2560px;
-  height: 1440px;
-  object-fit: cover;
+  width: 100%; /* Video nimmt die gesamte Breite ein */
+  height: 100%; /* Video nimmt die gesamte Höhe ein */
+  object-fit: cover; /* Deckt den gesamten Bereich ab */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  margin: 0; /* Entfernt unerwünschte Abstände */
+  z-index: -1; /* Video bleibt im Hintergrund */
+}
+
+/* Overlay für das Video, um es dunkler zu machen */
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Schwarzes Overlay mit 50% Deckkraft */
+  z-index: 0; /* Overlay liegt über dem Video */
 }
 
 /* Footer-Styling */
 footer {
   width: 100%;
   text-align: center;
-  margin: 0; /* Entfernt unerwünschte Abstände */
+  margin: 0;
 }
 
 footer img {
-  width: 2560px;
-  height: 51px;
-  object-fit: contain;
+  max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
   display: block; /* Verhindert zusätzliche Abstände */
-  margin: 0; /* Entfernt unerwünschte Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
 }
