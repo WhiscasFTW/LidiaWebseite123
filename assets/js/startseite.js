@@ -16,15 +16,15 @@ function toggleSidebar() {
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
 
-    // Das Overlay direkt einblenden
+    // Direkt beim Laden der Seite wird das Overlay eingeblendet
     setTimeout(function () {
-        overlay.style.opacity = '1'; // Anfangszustand: dunkel
+        overlay.style.opacity = '1'; // Anfangszustand: Dunkel
     }, 10); // Verzögerung für weichen Start
 
     // Nach 1,4 Sekunden das Overlay ausblenden und entfernen
     setTimeout(function () {
         overlay.style.opacity = '0'; // Übergang: Dunkelheit verschwindet
-    }, 10);
+    }, 10); // Sofortiges Starten des Übergangs
 
     // Nach 1,4 Sekunden das Overlay endgültig entfernen
     setTimeout(function () {
