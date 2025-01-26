@@ -15,12 +15,22 @@ function toggleSidebar() {
     toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-    var overlay = document.getElementById('page-transition-overlay');
+// Funktion für den sanften Übergang zur nächsten Seite
+function pageTransition() {
+    const overlay = document.getElementById('page-transition-overlay');
+    overlay.style.opacity = '1'; // Das Overlay sichtbar machen
 
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
+    // Nach der Übergangszeit (1.4s) die Seite wechseln
+    setTimeout(function () {
+        window.location.href = 'startseite.html'; // Beispiel für eine Weiterleitung
+    }, 1400); // Zeit, bis die Seite geladen wird
+}
+
+// Funktion, um das Overlay zu entfernen und den Übergang zu stoppen
+window.onload = function () {
+    const overlay = document.getElementById('page-transition-overlay');
+    overlay.style.transition = 'opacity 1.4s ease'; // Sanfter Übergang
+    overlay.style.opacity = '0'; // Overlay ausblenden
 
     // Overlay nach 1,4 Sekunden entfernen
     setTimeout(function () {
