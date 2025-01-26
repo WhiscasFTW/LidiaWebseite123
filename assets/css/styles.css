@@ -1,23 +1,23 @@
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
     font-size: 60px;
-    color: #fff;
-    background-color: #ff6f00;
+    color: #fff; /* Weißer Text */
+    background-color: #ff6f00; /* Helles Orange für den Button */
     border: none;
     cursor: pointer;
     position: fixed;
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
-    z-index: 3;
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    z-index: 3; /* Button über der Sidebar */
+    transition: all 0.3s ease; /* Alle Übergänge sanfter */
+    border-radius: 5px; /* Rechteckiger Button */
+    width: 60px; /* Größe des Buttons */
+    height: 60px; /* Größe des Buttons */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für den Button */
 }
 
 /* Sanfte Pulsierungs-Animation für den Button */
@@ -28,7 +28,7 @@
     }
     50% {
         transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Etwas stärkerer Schatten */
     }
     100% {
         transform: translateY(-50%) scale(1);
@@ -48,9 +48,9 @@
 
 /* Hover-Effekt */
 .toggle-button:hover {
-    background-color: #ff8c00;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-50%) scale(1.1);
+    background-color: #ff8c00; /* Etwas heller beim Hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten beim Hover */
+    transform: translateY(-50%) scale(1.1); /* Button vergrößert sich leicht beim Hover */
 }
 
 /* Styling für die Sidebar */
@@ -96,6 +96,7 @@
     z-index: 1;
 }
 
+/* Das Overlay erscheint, wenn die Sidebar geöffnet ist */
 .sidebar.open + .overlay {
     display: block;
 }
