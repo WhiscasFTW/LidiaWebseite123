@@ -54,13 +54,11 @@ main::after {
 /* Footer-Styling */
 footer {
   width: 100%;
-  text-align: center;
-  margin: 0;
   position: relative;
 }
 
 footer img {
-  max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  width: 100%; /* Bild passt sich der Breite des Containers an */
   height: auto; /* Höhe wird proportional angepasst */
   display: block; /* Verhindert zusätzliche Abstände */
   margin: 0 auto; /* Zentriert das Bild */
@@ -73,8 +71,9 @@ footer img {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  text-align: center; /* Text wird zentriert */
   font-size: 16px;
+  text-align: center; /* Text wird zentriert */
+  white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
 }
 
