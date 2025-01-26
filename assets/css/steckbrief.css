@@ -5,6 +5,7 @@ body, html {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-y: auto; /* Scrollen erlauben */
+  background-color: black; /* Hintergrundfarbe für die gesamte Seite */
 }
 
 /* Video-Hintergrund */
@@ -22,7 +23,7 @@ header {
   z-index: 1; /* Header über dem Video */
   text-align: center;
   padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Optional: Hintergrund für bessere Sichtbarkeit */
+  background-color: black; /* Hintergrundfarbe des Headers */
   margin-bottom: 0; /* Kein Abstand zum Video */
 }
 
@@ -37,6 +38,7 @@ main {
   position: relative; /* Video innerhalb des Main-Bereichs */
   z-index: 0; /* Video unter Header und Footer */
   margin-top: 0; /* Kein Abstand zum Header */
+  background-color: black; /* Hintergrundfarbe für den Main-Bereich */
 }
 
 main video {
@@ -51,7 +53,7 @@ footer {
   z-index: 1; /* Footer über dem Video */
   text-align: center;
   padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund für bessere Lesbarkeit */
+  background-color: black; /* Hintergrundfarbe des Footers */
   margin-top: 0; /* Kein Abstand zum Video */
 }
 
