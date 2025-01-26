@@ -10,7 +10,9 @@ function toggleSidebar() {
 
     // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
     overlay.classList.toggle('active');
-    overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+
+    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
