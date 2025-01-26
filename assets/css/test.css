@@ -60,8 +60,8 @@ footer img {
   bottom: 20px; /* Setzt den Text 20px vom unteren Rand des Footers */
   width: 100%;
   text-align: center;
-  color: white;
-  font-size: 14px;
+  color: white; /* Einheitliche weiße Schriftfarbe */
+  font-size: 18px; /* Größere Schriftgröße */
   line-height: 1.5;
   z-index: 2; /* Verhindert, dass der Text vom Bild verdeckt wird */
 }
@@ -79,8 +79,10 @@ body {
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    background-color: black; /* Stellt sicher, dass die Seite nicht weiß startet */
   }
   100% {
     opacity: 1;
+    background-color: white; /* Hintergrundfarbe wird langsam zu weiß */
   }
 }
