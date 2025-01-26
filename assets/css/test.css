@@ -5,6 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  transition: background-color 2s ease; /* Übergang für Hintergrundfarbe */
 }
 
 /* Header-Styling */
@@ -53,8 +54,19 @@ main::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
+  background: rgba(0, 0, 0, 1); /* Bildschirm ist anfangs komplett dunkel */
   z-index: 0; /* Overlay liegt über dem Video */
+  animation: fadeInBackground 3s forwards; /* Hintergrund über 3 Sekunden aufhellen */
+}
+
+/* Übergang von dunkel zu normal */
+@keyframes fadeInBackground {
+  0% {
+    background: rgba(0, 0, 0, 1); /* Anfangs komplett dunkel */
+  }
+  100% {
+    background: rgba(0, 0, 0, 0); /* Endet mit einem durchsichtigen Hintergrund */
+  }
 }
 
 /* Footer-Styling */
@@ -73,7 +85,7 @@ footer img {
 /* Footer-Text */
 .footer-text {
   position: absolute;
-  bottom: 20px; /* Abstand vom unteren Rand */
+  bottom: 10px; /* Text weiter nach unten verschoben */
   left: 50%;
   transform: translateX(-50%); /* Exakte Zentrierung des Textes */
   color: white;
