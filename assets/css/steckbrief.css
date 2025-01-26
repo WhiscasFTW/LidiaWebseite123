@@ -79,6 +79,7 @@
     padding: 20px;
     animation: float 3s ease-in-out infinite;
     position: relative;
+    cursor: pointer; /* Zeigt an, dass die Signatur klickbar ist */
 }
 
 .artist-signature img {
@@ -195,9 +196,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Über der Sidebar und dem Video */
+    z-index: 1; /* Hinter der Sidebar */
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Optional: Hintergrund für bessere Sichtbarkeit */
+    background: rgba(0, 0, 0, 0.7); /* Abgedunkeltes Overlay */
+    transition: background 0.3s ease; /* Sanfter Übergang */
+    cursor: pointer; /* Zeigt an, dass der Header klickbar ist */
+}
+
+header:hover {
+    background: rgba(0, 0, 0, 0.5); /* Heller beim Darüberfahren */
 }
 
 .header-image {
@@ -213,9 +220,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Über der Sidebar und dem Video */
+    z-index: 1; /* Hinter der Sidebar */
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Optional: Hintergrund für bessere Sichtbarkeit */
 }
 
 .footer-image {
