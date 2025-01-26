@@ -1,58 +1,102 @@
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
-
-    // Sidebar und Button umschalten
-    sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-
-    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
-    overlay.classList.toggle('active');
-
-    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-    toggleButton.style.animation = 'none'; // Animationen entfernen
+/* Grundlegendes Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-    var overlay = document.getElementById('page-transition-overlay');
-
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
-
-    // Overlay nach 1,4 Sekunden vollständig entfernen
-    setTimeout(function () {
-        overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1400); // 1,4 Sekunden
-};
-
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-function navigateToPage(url) {
-    var overlay = document.createElement('div'); // Neues Overlay erstellen
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay); // Overlay hinzufügen
-
-    // Overlay einblenden
-    setTimeout(function () {
-        overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
-
-    // Nach 1,4 Sekunden weiterleiten
-    setTimeout(function () {
-        window.location.href = url;
-    }, 1400); // 1,4 Sekunden
+/* Header-Styling */
+header {
+  width: 100%;
+  text-align: center;
 }
 
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-        // Nur Links behandeln, die zu einer anderen Seite führen
-        if (link.href && !link.href.includes('javascript:')) {
-            event.preventDefault(); // Standardverhalten verhindern
-            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
-        }
-    });
-});
+header img {
+  max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
+}
+
+/* Video-Styling */
+main {
+  width: 100%;
+  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  width: 100%; /* Video nimmt die gesamte Breite ein */
+  height: 100%; /* Video nimmt die gesamte Höhe ein */
+  object-fit: cover; /* Deckt den gesamten Bereich ab */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Video bleibt im Hintergrund */
+  transition: opacity 1s ease-in-out; /* Transition für Video */
+}
+
+/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
+  z-index: 0; /* Overlay liegt über dem Video */
+  transition: background 1s ease-in-out; /* Übergang für das Overlay */
+}
+
+/* Footer-Styling */
+footer {
+  width: 100%;
+  position: relative;
+}
+
+footer img {
+  width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
+}
+
+/* Footer-Text */
+.footer-text {
+  position: absolute;
+  bottom: 20px; /* Abstand vom unteren Rand */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  text-align: center; /* Text wird zentriert */
+  white-space: nowrap; /* Verhindert Umbruch des Textes */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
+}
+
+/* Animation für das Einblenden des Footer-Texts */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
