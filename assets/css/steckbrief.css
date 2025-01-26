@@ -30,7 +30,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dunkles Overlay (50% Deckkraft) */
+  background-color: rgba(0, 0, 0, 0.7); /* Dunkles Overlay (70% Deckkraft) */
   z-index: 1; /* Overlay über dem Video */
 }
 
@@ -77,8 +77,9 @@ footer img {
   margin-top: 70px; /* Bild 70px weiter nach unten verschieben */
 }
 
+/* Footer-Text 40px weiter nach oben */
 .footer-text {
-  margin-top: 10px;
+  margin-top: -40px; /* Text 40px weiter nach oben */
   color: white;
   font-size: 14px;
 }
