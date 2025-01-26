@@ -23,14 +23,14 @@ body, html {
   display: block; /* Verhindert unerwünschte Abstände */
 }
 
-/* Dunkles Overlay für das Video (doppelt so dunkel) */
+/* Helles Overlay für das Video */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* 90% Deckkraft (doppelt so dunkel) */
+  background-color: rgba(0, 0, 0, 0.4); /* 40% Deckkraft (deutlich heller) */
   z-index: 1; /* Overlay über dem Video */
 }
 
@@ -199,7 +199,7 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
+/* Button zum Öffnen und Schließen der Sidebar (deutlich dünner) */
 .toggle-button {
   font-size: 96px;
   color: rgba(255, 255, 255, 0.8);
@@ -214,8 +214,8 @@ footer img {
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
   padding: 10px;
-  font-weight: 50; /* Sehr dünne Schrift */
-  font-family: 'Arial', sans-serif; /* Einfache Schriftart für dünnere Darstellung */
+  font-weight: 100; /* Dünnere Schrift */
+  font-family: 'Arial Narrow', sans-serif; /* Sehr schmale Schriftart */
 }
 
 .toggle-button.open {
