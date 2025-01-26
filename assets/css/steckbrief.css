@@ -255,4 +255,15 @@ footer {
 /* Wackel-Animation für den Button */
 @keyframes wobble {
     0%, 100% {
-        transform: translateY(-50%)
+        transform: translateY(-50%) rotate(0);
+    }
+    25% {
+        transform: translateY(-50%) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-50%) rotate(3deg);
+    }
+}
