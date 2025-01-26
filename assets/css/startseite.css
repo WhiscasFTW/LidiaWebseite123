@@ -176,3 +176,8 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+
+/* Übergang für das Ausblenden des Inhalts */
+body {
+    transition: opacity 1.4s ease;
+}
