@@ -67,7 +67,7 @@ footer {
   padding: 20px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   margin-top: 0; /* Kein Abstand zum Video */
-  margin-bottom: -70px; /* Footer-Bild 70px weiter nach unten */
+  margin-bottom: 0; /* Abstand unter dem Footer entfernt */
 }
 
 footer img {
@@ -199,7 +199,7 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar (dünner und modern) */
+/* Button zum Öffnen und Schließen der Sidebar (genau wie auf der anderen Seite) */
 .toggle-button {
   font-size: 96px; /* 20 % kleiner (vorher 120px) */
   color: rgba(255, 255, 255, 0.8);
