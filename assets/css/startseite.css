@@ -176,14 +176,3 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
-
-/* Übergang für das Ausblenden des Inhalts */
-body {
-    transition: opacity 1.4s ease;
-}
-
-/* Hover-Effekt für die Signatur */
-.artist-signature img:hover {
-    transform: scale(1.2); /* Vergrößern der Signatur */
-    filter: brightness(1.5) drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* Heller und leuchtender */
-}
