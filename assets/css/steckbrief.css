@@ -62,15 +62,14 @@ main {
 
 /* Footer */
 footer {
-  position: fixed; /* Footer am unteren Rand fixieren */
-  bottom: 0; /* Direkt am unteren Rand */
-  left: 0;
+  position: relative; /* Footer am Ende der Seite */
   width: 100%;
   text-align: center;
   padding: 20px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
-  margin: 0; /* Keine Margins */
+  margin-top: 0; /* Kein Abstand nach oben */
+  margin-bottom: 0; /* Kein Abstand nach unten */
 }
 
 footer img {
@@ -82,7 +81,7 @@ footer img {
 
 /* Footer-Text */
 .footer-text {
-  margin-top: -60px; /* Text weiter nach unten verschieben */
+  margin-top: -60px; /* Text weiter nach unten verschieben (vorher -45px) */
   color: white;
   font-size: 14px;
 }
