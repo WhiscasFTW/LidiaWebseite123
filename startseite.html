@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="assets/css/steckbrief.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Transition für das Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            z-index: 1000;
+            transition: opacity 1.4s ease-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Video-Hintergrund -->
@@ -46,14 +60,14 @@
 
     <!-- Transition-Skripte -->
     <script>
-        // Beim Laden der Seite das Overlay ausblenden und entfernen
+        // Beim Laden der Seite das Overlay einblenden
         window.onload = function () {
             var overlay = document.getElementById('page-transition-overlay');
+            
+            // Übergang starten: Overlay wird eingeblendet
+            overlay.style.opacity = '1';
 
-            // Overlay langsam ausblenden
-            overlay.style.opacity = '0';
-
-            // Overlay nach 1,4 Sekunden vollständig entfernen
+            // Nach 1,4 Sekunden Overlay entfernen
             setTimeout(function () {
                 overlay.remove(); // Overlay aus dem DOM entfernen
             }, 1400); // 1,4 Sekunden
