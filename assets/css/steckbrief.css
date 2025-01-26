@@ -9,6 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    height: 100%; /* Damit der Footer nach unten verschoben werden kann */
 }
 
 /* Header */
@@ -76,33 +77,15 @@ header {
     transition: opacity 0s ease; /* Transition auf 0 Sekunden */
 }
 
-/* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dezenteres Overlay */
-    z-index: 2; /* Über dem Footer, aber unter der Sidebar */
-    transition: opacity 0s ease; /* Transition auf 0 Sekunden */
-}
-
-.overlay.active {
-    display: block;
-}
-
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 51px; /* Feste Höhe für den Footer */
     z-index: 1; /* Über dem Video, aber unter Header und Sidebar */
     text-align: center;
     background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
+    margin-top: 1440px; /* Abstand vom Video, um Scrollen zu ermöglichen */
 }
 
 .footer-image {
@@ -214,7 +197,7 @@ footer {
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 96px; /* Originalgröße */
+    font-size: 48px; /* Schlankere Größe */
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
     border: none;
@@ -226,7 +209,7 @@ footer {
     z-index: 4; /* Button über der Sidebar */
     transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
     animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
-    padding: 10px;
+    padding: 5px 10px; /* Schlanker Button */
 }
 
 .toggle-button.open {
