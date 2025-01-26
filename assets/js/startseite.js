@@ -22,13 +22,13 @@ window.onload = function () {
     // Overlay langsam ausblenden
     overlay.style.opacity = '0';
 
-    // Overlay nach 1,1 Sekunden vollständig entfernen
+    // Overlay nach 1,4 Sekunden vollständig entfernen
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1100); // 1,1 Sekunden
+    }, 1400); // 1,4 Sekunden
 };
 
-// Funktion für den Seitenwechsel mit 1,1 Sekunden Fade-Out
+// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
 function navigateToPage(url) {
     var overlay = document.createElement('div'); // Neues Overlay erstellen
     overlay.id = 'page-transition-overlay';
@@ -40,10 +40,10 @@ function navigateToPage(url) {
         overlay.style.opacity = '1';
     }, 10); // Kurze Verzögerung, um das Einblenden zu starten
 
-    // Nach 1,1 Sekunden weiterleiten
+    // Nach 1,4 Sekunden weiterleiten
     setTimeout(function () {
         window.location.href = url;
-    }, 1100); // 1,1 Sekunden
+    }, 1400); // 1,4 Sekunden
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
