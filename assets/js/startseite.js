@@ -16,8 +16,13 @@ function toggleSidebar() {
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
     
-    // Übergang starten: Overlay wird eingeblendet
-    overlay.style.opacity = '1';
+    // Startwert für die Opazität wird auf 0 gesetzt (keine Animation sichtbar)
+    overlay.style.opacity = '0';
+    
+    // Es folgt eine kurze Verzögerung, bevor die Transition einsetzt
+    setTimeout(function () {
+        overlay.style.opacity = '1'; // Overlay einblenden
+    }, 50); // 50 ms Verzögerung, um das Flackern zu vermeiden
 
     // Nach 1,4 Sekunden Overlay entfernen
     setTimeout(function () {
