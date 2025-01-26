@@ -23,7 +23,7 @@ video {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8); /* Dunkles Overlay */
-    opacity: 0; /* Anfangs unsichtbar */
+    opacity: 1; /* Direkt sichtbar beim Laden */
     z-index: 1000; /* Overlay über anderen Elementen platzieren */
     transition: opacity 1.4s ease-out; /* Übergangseffekt für die Opazität */
 }
