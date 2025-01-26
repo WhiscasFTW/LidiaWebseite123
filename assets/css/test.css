@@ -38,7 +38,7 @@ video {
   top: 0;
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
-  filter: brightness(50%); /* Dunkelt das Video permanent ab */
+  filter: brightness(50%); /* Video bleibt dunkler */
 }
 
 /* Footer-Styling */
