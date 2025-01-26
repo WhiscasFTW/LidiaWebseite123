@@ -4,11 +4,11 @@ function toggleSidebar() {
     var toggleButton = document.getElementById('toggleButton');
     var overlay = document.getElementById('overlay');
 
-    // Sidebar und Button umschalten
+    // Sidebar umschalten
     sidebar.classList.toggle('open');
+    // Toggle Button umschalten
     toggleButton.classList.toggle('open');
-
-    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+    // Overlay ein- oder ausblenden
     overlay.classList.toggle('active');
 }
 
@@ -39,8 +39,7 @@ function navigateToPage(url) {
 
     // Sanften Fade-Out durchführen, bevor wir die Seite wechseln
     setTimeout(function () {
-        // Overlay sanft ausblenden
-        overlay.style.opacity = '0';
+        overlay.style.opacity = '0'; // Overlay sanft ausblenden
     }, 10); // Sofort starten
 
     // Nach dem Fade-Out die Seite wechseln
