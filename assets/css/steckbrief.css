@@ -43,18 +43,18 @@ header {
 
 /* Video-Hintergrund */
 #video-background {
-    position: fixed;
-    top: 360px; /* Beginnt unter dem Header */
+    position: absolute;
+    top: 360px; /* Beginnt direkt nach dem Header */
     left: 0;
     width: 100%;
-    height: 1440px; /* Höhe des Videos */
-    object-fit: cover;
+    height: 200vh; /* Das Video wird 200% der Viewport-Höhe einnehmen */
+    object-fit: cover; /* Beibehaltung der vollständigen Abdeckung ohne Verzerrung */
     z-index: -2; /* Unter dem Video-Overlay */
 }
 
 /* Overlay zum Abdunkeln des Videos */
 .video-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -85,7 +85,7 @@ footer {
     z-index: 1; /* Über dem Video, aber unter Header und Sidebar */
     text-align: center;
     background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
-    margin-top: 1440px; /* Abstand vom Video, um Scrollen zu ermöglichen */
+    margin-top: 0; /* Der Footer wird unter dem Video sichtbar */
 }
 
 .footer-image {
