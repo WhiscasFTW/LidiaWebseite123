@@ -5,10 +5,11 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  background-color: #1c1c1c; /* Startet mit Dunkelgrau */
+  background-color: #1c1c1c; /* Dunkelgrau für Startbildschirm */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: fadeInBackground 3s ease-out; /* Langsame Hintergrund-Transition */
 }
 
 /* Header-Styling */
@@ -73,19 +74,12 @@ footer img {
   text-decoration: underline; /* Unterstreichung bei Hover */
 }
 
-/* Übergangseffekte */
-body {
-  animation: fadeIn 3s ease-out; /* Verwendung von ease-out für sanfteren Übergang */
-}
-
-/* Keyframe-Animation für das sanfte Einblenden der Seite */
-@keyframes fadeIn {
+/* Hintergrund Übergang */
+@keyframes fadeInBackground {
   0% {
-    opacity: 0; /* Startet mit unsichtbarer Seite */
-    background-color: #1c1c1c; /* Hintergrund bleibt anfangs dunkel */
+    background-color: #1c1c1c; /* Dunkelgrau zu Beginn */
   }
   100% {
-    opacity: 1; /* Seite wird vollständig sichtbar */
-    background-color: #2f2f2f; /* Helles Dunkelgrau für den Endzustand */
+    background-color: #2f2f2f; /* Hellere, aber immer noch dunkle Farbe für das Ende */
   }
 }
