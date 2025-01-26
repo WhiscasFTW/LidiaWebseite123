@@ -31,7 +31,7 @@
     background: black; /* Startfarbe (dunkel) */
     z-index: 9999; /* Über allem anderen */
     opacity: 1; /* Anfangs sichtbar */
-    transition: opacity 1.4s ease; /* Transition auf 1,4 Sekunden */
+    transition: opacity 0s ease; /* Transition auf 0 Sekunden */
 }
 
 /* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
@@ -44,14 +44,14 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.4); /* Dezenteres Overlay */
     z-index: 2; /* Über dem Footer, aber unter der Sidebar */
-    transition: opacity 0.5s ease; /* Sanftes Ein- und Ausblenden */
+    transition: opacity 0s ease; /* Transition auf 0 Sekunden */
 }
 
 .overlay.active {
     display: block;
 }
 
-/* Sidebar (langsamere Animation) */
+/* Sidebar (ohne Animation) */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -62,7 +62,7 @@
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
+    transition: left 0s ease; /* Transition auf 0 Sekunden */
     z-index: 3; /* Sidebar über Header und Footer */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -88,7 +88,7 @@
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Sanfte Übergänge */
+    transition: transform 0s ease, filter 0s ease; /* Transition auf 0 Sekunden */
 }
 
 .artist-signature img:hover {
@@ -107,7 +107,7 @@
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     display: block;
-    transition: transform 1s ease, opacity 1s ease; /* Synchron mit der Sidebar */
+    transition: transform 0s ease, opacity 0s ease; /* Transition auf 0 Sekunden */
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
@@ -141,7 +141,7 @@
     left: 15px;
     transform: translateY(-50%);
     z-index: 4; /* Button über der Sidebar */
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
+    transition: left 0s ease, transform 0s ease, color 0s ease-in-out; /* Transition auf 0 Sekunden */
     animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
     padding: 10px;
 }
@@ -199,7 +199,7 @@ header {
     z-index: 2; /* Header über dem Footer, aber unter der Sidebar */
     text-align: center;
     background: rgba(0, 0, 0, 0.7); /* Abgedunkeltes Overlay */
-    transition: background 0.3s ease; /* Sanfter Übergang */
+    transition: background 0s ease; /* Transition auf 0 Sekunden */
     cursor: pointer; /* Zeigt an, dass der Header klickbar ist */
 }
 
