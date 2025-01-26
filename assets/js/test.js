@@ -9,6 +9,7 @@ window.addEventListener('load', function () {
 
   // Übergang nach einiger Zeit wieder deaktivieren
   setTimeout(() => {
-    transition.classList.remove('active'); // Übergang deaktivieren
+    transition.style.opacity = '0'; // Übergang bleibt ausgeblendet
+    transition.style.zIndex = '-1'; // Verhindert, dass es erneut erscheint
   }, 1000); // Übergangszeit (passend zur Dauer der CSS-Transition)
 });
