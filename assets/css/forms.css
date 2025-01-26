@@ -19,7 +19,7 @@
     background: black; /* Startfarbe (dunkel) */
     z-index: 9999; /* Über allem anderen */
     opacity: 1; /* Anfangs sichtbar */
-    transition: opacity 1.5s ease; /* Transition auf 1,5 Sekunden */
+    transition: opacity 0.3s ease; /* Transition auf 0,3 Sekunden */
 }
 
 /* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
