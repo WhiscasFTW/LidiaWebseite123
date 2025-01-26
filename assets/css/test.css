@@ -36,7 +36,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0; /* Video wird unter dem Overlay angezeigt */
+  z-index: -1; /* Video bleibt im Hintergrund */
 }
 
 /* Overlay für das Video, um es dunkler zu machen */
@@ -48,8 +48,18 @@ main::after {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 1); /* Anfangs vollständig dunkel */
-  z-index: 1; /* Overlay liegt über dem Video */
-  transition: background 2s ease-out; /* Übergang für das Dunkelheits-Overlay */
+  z-index: 0; /* Overlay liegt über dem Video */
+  animation: fadeOut 1s ease-in-out forwards; /* Animation beim Laden der Seite */
+}
+
+/* Keyframe-Animation für das Overlay */
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 1); /* Vollständig dunkel */
+  }
+  100% {
+    background: rgba(0, 0, 0, 0); /* Vollständig transparent */
+  }
 }
 
 /* Footer-Styling */
@@ -64,9 +74,4 @@ footer img {
   height: auto; /* Höhe wird proportional angepasst */
   display: block; /* Verhindert zusätzliche Abstände */
   margin: 0 auto; /* Zentriert das Bild */
-}
-
-/* Effekt zum Entfernen der Dunkelheit, wenn die Seite geladen wird */
-body.loaded main::after {
-  background: rgba(0, 0, 0, 0); /* Übergang zum transparenten Zustand */
 }
