@@ -75,3 +75,48 @@ footer img {
   display: block; /* Verhindert zusätzliche Abstände */
   margin: 0 auto; /* Zentriert das Bild */
 }
+
+/* Styling für die Info-Boxen */
+.info-box {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparentes Weiß */
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.info-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-box li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.info-box a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+  .info-box {
+    width: 90%; /* Boxen auf 90% der Breite anpassen */
+  }
+
+  header img, footer img {
+    width: 100%; /* Bilder auf 100% der Breite anpassen */
+  }
+}
