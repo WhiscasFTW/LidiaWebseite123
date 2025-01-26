@@ -70,6 +70,16 @@ footer img {
   margin: 0;
 }
 
+/* Links im Footer */
+.footer-text a {
+  color: white; /* Weiß für Links */
+  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+}
+
+.footer-text a:hover {
+  text-decoration: underline; /* Unterstreichung bei Hover */
+}
+
 /* Übergangseffekte */
 body {
   animation: fadeIn 2s ease-in-out;
@@ -79,7 +89,7 @@ body {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    background-color: black; /* Stellt sicher, dass die Seite nicht weiß startet */
+    background-color: black; /* Stellt sicher, dass die Seite mit schwarzem Hintergrund startet */
   }
   100% {
     opacity: 1;
