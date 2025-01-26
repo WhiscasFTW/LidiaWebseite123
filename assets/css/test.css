@@ -5,7 +5,23 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
+}
+
+/* Neue Animation für Seitenwechsel */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  z-index: 20;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.page-transition.active {
+  opacity: 1;
 }
 
 /* Header-Styling */
@@ -99,21 +115,4 @@ footer img {
 
 .footer-text a:hover {
   text-decoration: underline;
-}
-
-/* Neue Animation für Seitenwechsel */
-.page-transition {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0;
-  z-index: 20;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.page-transition.active {
-  opacity: 1;
 }
