@@ -38,8 +38,8 @@ video {
   top: 0;
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
-  filter: brightness(50%); /* Video dauerhaft dunkler */
-  transition: filter 1s ease; /* Sanfter Übergang, falls sich der Helligkeitswert ändert */
+  filter: brightness(50%); /* Video dauerhaft abdunkeln */
+  transition: filter 1s ease; /* Sanfter Übergang für Helligkeitseffekt */
 }
 
 /* Overlay für das Video, um es dauerhaft abzudunkeln */
@@ -52,7 +52,6 @@ main::after {
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Video ist dauerhaft halbtransparent */
   z-index: 0; /* Overlay liegt über dem Video */
-  transition: background 1s ease-in-out; /* Sanfter Übergang bei Änderung des Overlays */
 }
 
 /* Footer-Styling */
@@ -71,15 +70,14 @@ footer img {
 /* Footer-Text */
 .footer-text {
   position: absolute;
-  bottom: 20px; /* Abstand vom unteren Rand */
+  bottom: 50%; /* Positioniert den Text in der Mitte des Footer-Bildes */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 50%); /* Zentriert den Text sowohl horizontal als auch vertikal */
   color: white;
   font-size: 18px;
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  opacity: 1;
   z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
 }
 
