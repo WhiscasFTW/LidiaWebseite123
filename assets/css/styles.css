@@ -31,39 +31,57 @@ body, html {
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 60px;
-    color: #fff;
-    background-color: #ff6f00;
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
+    top: 20px;
+    left: 20px;
     z-index: 3;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Aufmerksamkeit auf den Button lenken */
+.toggle-button::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s infinite;
+    pointer-events: none;
+    opacity: 0;
 }
 
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
+/* Animation für den Button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
-/* Hover-Effekt */
+/* Beim Hover */
 .toggle-button:hover {
-    background-color: #ff8c00;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-50%) scale(1.1);
+    color: #ff6f00;
+    transform: scale(1.1);
 }
 
-/* Styling für die Sidebar */
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -81,17 +99,7 @@ body, html {
     left: 0;
 }
 
-/* Links innerhalb der Sidebar */
-.sidebar-links {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.sidebar.open .sidebar-links {
-    opacity: 1;
-    transition: opacity 0.3s ease 0.3s; /* Synchronisiert mit dem Öffnen der Sidebar */
-}
-
+/* Sidebar Links */
 .sidebar-links a {
     display: block;
     color: #fff;
