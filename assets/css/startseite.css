@@ -18,7 +18,7 @@
     height: 100%;
     background: black; /* Startfarbe (dunkel) */
     z-index: 9999; /* Über allem anderen */
-    opacity: 1; /* Anfangs sichtbar */
+    opacity: 0; /* Anfangs unsichtbar */
     transition: opacity 1.4s ease; /* Transition auf 1,4 Sekunden */
 }
 
