@@ -51,18 +51,18 @@
     display: block;
 }
 
-/* Sidebar (mit sanfter Animation) */
+/* Sidebar (langsamere Animation) */
 .sidebar {
     height: 100%;
     width: 250px;
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)); /* Noch transparenter */
-    backdrop-filter: blur(50px); /* Stärkerer Blur-Effekt */
-    -webkit-backdrop-filter: blur(50px);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 0.5s ease; /* Sanfte Animation (0,5 Sekunden) */
+    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
     z-index: 3; /* Sidebar über Header und Footer */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -107,7 +107,7 @@
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     display: block;
-    transition: transform 0s ease, opacity 0s ease; /* Transition auf 0 Sekunden */
+    transition: transform 1s ease, opacity 1s ease; /* Synchron mit der Sidebar */
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
@@ -141,7 +141,7 @@
     left: 15px;
     transform: translateY(-50%);
     z-index: 4; /* Button über der Sidebar */
-    transition: left 0s ease, transform 0s ease, color 0s ease-in-out; /* Transition auf 0 Sekunden */
+    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
     animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
     padding: 10px;
 }
