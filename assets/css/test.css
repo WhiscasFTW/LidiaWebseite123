@@ -5,11 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  background-color: #000000; /* Dunkler Start */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  animation: fadeInBackground 3s ease-out; /* Übergang von dunkel zu normal */
+  transition: background-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe */
 }
 
 /* Header-Styling */
@@ -25,57 +21,75 @@ header img {
   margin: 0 auto; /* Zentriert das Bild */
 }
 
-/* Main-Styling */
+/* Video-Styling */
 main {
   width: 100%;
-  min-height: 60vh; /* Setzt eine minimale Höhe, damit der Abstand zwischen Header und Footer gleich bleibt */
+  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
   position: relative;
   margin: 0;
   padding: 0;
 }
 
+video {
+  width: 100%; /* Video nimmt die gesamte Breite ein */
+  height: 100%; /* Video nimmt die gesamte Höhe ein */
+  object-fit: cover; /* Deckt den gesamten Bereich ab */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Video bleibt im Hintergrund */
+  filter: brightness(50%); /* Video dauerhaft abdunkeln */
+  transition: filter 1s ease; /* Sanfter Übergang für Helligkeitseffekt */
+}
+
+/* Overlay für das Video, um es dauerhaft abzudunkeln */
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Video ist dauerhaft halbtransparent */
+  z-index: 0; /* Overlay liegt über dem Video */
+}
+
 /* Footer-Styling */
 footer {
-  position: relative;
   width: 100%;
+  position: relative;
   text-align: center;
-  margin: 0;
-  z-index: 1; /* Stellt sicher, dass der Footer über dem Bild bleibt */
 }
 
 footer img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
 }
 
+/* Footer-Text */
 .footer-text {
   position: absolute;
-  bottom: 10px;
+  bottom: 50%; /* Positioniert den Text in der Mitte des Footer-Bildes */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 50%); /* Zentriert den Text sowohl horizontal als auch vertikal */
   color: white;
   font-size: 18px;
-  z-index: 2; /* Sicherstellen, dass der Text immer über dem Footer-Bild bleibt */
+  text-align: center; /* Text wird zentriert */
+  white-space: nowrap; /* Verhindert Umbruch des Textes */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
+  z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
+  overflow: hidden; /* Verhindert, dass der Text über den Rand hinausläuft */
+  text-overflow: ellipsis; /* Wenn der Text zu lang ist, wird er mit '...' abgeschnitten */
 }
 
-/* Links im Footer */
-footer a {
+/* Footer-Link Styling */
+.footer-text a {
   color: white;
   text-decoration: none;
-  margin-left: 10px;
 }
 
-footer a:hover {
+.footer-text a:hover {
   text-decoration: underline;
-}
-
-/* Übergangseffekte */
-@keyframes fadeInBackground {
-  0% {
-    background-color: #000000; /* Dunkel bei Beginn */
-  }
-  100% {
-    background-color: #f5f5f5; /* Normaler Zustand nach der Transition */
-  }
 }
