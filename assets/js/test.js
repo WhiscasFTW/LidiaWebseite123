@@ -1,3 +1,4 @@
+// Automatische Transition beim Laden der Seite
 window.addEventListener('load', function () {
   const transition = document.getElementById('pageTransition'); // Übergangselement holen
 
@@ -9,5 +10,5 @@ window.addEventListener('load', function () {
   // Übergang nach einiger Zeit wieder deaktivieren
   setTimeout(() => {
     transition.classList.remove('active'); // Übergang deaktivieren
-  }, 1200); // Übergangszeit (passend zur Dauer der CSS-Transition)
+  }, 1000); // Übergangszeit (passend zur Dauer der CSS-Transition)
 });
