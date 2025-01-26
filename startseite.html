@@ -15,16 +15,24 @@
         Dein Browser unterstützt das Video-Tag nicht.
     </video>
 
+    <!-- Overlay zum Abdunkeln des Videos -->
+    <div class="video-overlay"></div>
+
     <!-- Dunkles Overlay für die Transition -->
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
+    <!-- Header -->
+    <header onclick="navigateToPage('startseite.html')">
+        <img src="assets/images/HeaderSteckbrief.png" alt="Header" class="header-image">
+    </header>
+
     <!-- Die Sidebar auf der linken Seite -->
     <div id="sidebar" class="sidebar">
         <!-- Signatur der Künstlerin -->
-        <div class="artist-signature">
+        <div class="artist-signature" onclick="navigateToPage('startseite.html')">
             <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
         </div>
 
@@ -45,6 +53,11 @@
     <div id="quote" class="quote">
         „Wenn du es in Worten sagen könntest, gäbe es keinen Grund zu malen.“ – Eduard Hopper
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="assets/images/Footer.jpg" alt="Footer" class="footer-image">
+    </footer>
 
     <!-- JavaScript-Datei einbinden -->
     <script src="assets/js/steckbrief.js"></script>
