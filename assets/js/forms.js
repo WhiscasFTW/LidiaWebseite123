@@ -1,14 +1,29 @@
+// Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-    const toggleButton = document.getElementById("toggleButton");
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
 
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("open");
-    toggleButton.classList.toggle("open");
+    // Sidebar und Button umschalten
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
 
-    // Entferne die Pulsierungsanimation nach dem ersten Klick
-    if (toggleButton.classList.contains("attention")) {
-        toggleButton.classList.remove("attention");
-    }
+    // Entferne die Pulsierungs-Animation nach dem ersten Klick
+    toggleButton.classList.remove('attention');
 }
+
+// Beim Laden der Seite den Zustand überprüfen
+window.onload = function () {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var sidebarState = localStorage.getItem('sidebarState');
+
+    // Sidebar-Zustand wiederherstellen
+    if (sidebarState === 'open') {
+        sidebar.classList.add('open');
+        toggleButton.classList.add('open');
+    } else {
+        // Füge die Pulsierungs-Animation hinzu, wenn der Button zum ersten Mal sichtbar wird
+        toggleButton.classList.add('attention');
+    }
+};
