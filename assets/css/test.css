@@ -5,11 +5,11 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  background-color: #1c1c1c; /* Dunkelgrau für Startbildschirm */
+  background-color: #000000; /* Dunkler Start */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: fadeInBackground 3s ease-out; /* Langsame Hintergrund-Transition */
+  animation: fadeInBackground 3s ease-out; /* Übergang von dunkel zu normal */
 }
 
 /* Header-Styling */
@@ -51,37 +51,31 @@ footer img {
 
 .footer-text {
   position: absolute;
-  bottom: 20px; /* Setzt den Text 20px vom unteren Rand des Footers */
-  width: 100%;
-  text-align: center;
-  color: white; /* Einheitliche weiße Schriftfarbe */
-  font-size: 18px; /* Größere Schriftgröße */
-  line-height: 1.5;
-  z-index: 2; /* Verhindert, dass der Text vom Bild verdeckt wird */
-}
-
-.footer-text p {
-  margin: 0;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  z-index: 2; /* Sicherstellen, dass der Text immer über dem Footer-Bild bleibt */
 }
 
 /* Links im Footer */
-.footer-text a {
-  color: white; /* Weiß für Links */
-  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+footer a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
 }
 
-.footer-text a:hover {
-  text-decoration: underline; /* Unterstreichung bei Hover */
+footer a:hover {
+  text-decoration: underline;
 }
 
-/* Hintergrund Übergang */
+/* Übergangseffekte */
 @keyframes fadeInBackground {
   0% {
-    background-color: #1c1c1c; /* Dunkelgrau zu Beginn */
-    opacity: 0;
+    background-color: #000000; /* Dunkel bei Beginn */
   }
   100% {
-    background-color: #1c1c1c; /* Dunkel bleibt konstant */
-    opacity: 1;
+    background-color: #f5f5f5; /* Normaler Zustand nach der Transition */
   }
 }
