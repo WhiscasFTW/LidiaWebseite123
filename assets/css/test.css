@@ -5,7 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
+  transition: background-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe */
 }
 
 /* Header-Styling */
@@ -38,10 +38,11 @@ video {
   top: 0;
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
-  transition: opacity 1s ease-in-out; /* Transition für Video */
+  filter: brightness(50%); /* Video dauerhaft dunkler */
+  transition: filter 1s ease; /* Sanfter Übergang, falls sich der Helligkeitswert ändert */
 }
 
-/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
+/* Overlay für das Video, um es dauerhaft abzudunkeln */
 main::after {
   content: "";
   position: absolute;
@@ -49,9 +50,9 @@ main::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
+  background: rgba(0, 0, 0, 0.5); /* Video ist dauerhaft halbtransparent */
   z-index: 0; /* Overlay liegt über dem Video */
-  transition: background 1s ease-in-out; /* Übergang für das Overlay */
+  transition: background 1s ease-in-out; /* Sanfter Übergang bei Änderung des Overlays */
 }
 
 /* Footer-Styling */
@@ -74,24 +75,15 @@ footer img {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  opacity: 0;
-  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
+  opacity: 1;
+  z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
 }
 
-/* Animation für das Einblenden des Footer-Texts */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Footer-Link Styling */
 .footer-text a {
   color: white;
   text-decoration: none;
