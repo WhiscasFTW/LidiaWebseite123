@@ -5,7 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  transition: background-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe */
+  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
 }
 
 /* Header-Styling */
@@ -38,11 +38,10 @@ video {
   top: 0;
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
-  filter: brightness(50%); /* Video dauerhaft abdunkeln */
-  transition: filter 1s ease; /* Sanfter Übergang für Helligkeitseffekt */
+  transition: opacity 1s ease-in-out; /* Transition für Video */
 }
 
-/* Overlay für das Video, um es dauerhaft abzudunkeln */
+/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
 main::after {
   content: "";
   position: absolute;
@@ -50,15 +49,15 @@ main::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Video ist dauerhaft halbtransparent */
+  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
   z-index: 0; /* Overlay liegt über dem Video */
+  transition: background 1s ease-in-out; /* Übergang für das Overlay */
 }
 
 /* Footer-Styling */
 footer {
   width: 100%;
   position: relative;
-  text-align: center;
 }
 
 footer img {
@@ -71,20 +70,28 @@ footer img {
 /* Footer-Text */
 .footer-text {
   position: absolute;
-  bottom: 50%; /* Positioniert den Text in der Mitte des Footer-Bildes */
+  bottom: 20px; /* Abstand vom unteren Rand */
   left: 50%;
-  transform: translate(-50%, 50%); /* Zentriert den Text sowohl horizontal als auch vertikal */
+  transform: translateX(-50%);
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
-  overflow: hidden; /* Verhindert, dass der Text über den Rand hinausläuft */
-  text-overflow: ellipsis; /* Wenn der Text zu lang ist, wird er mit '...' abgeschnitten */
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
 }
 
-/* Footer-Link Styling */
+/* Animation für das Einblenden des Footer-Texts */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .footer-text a {
   color: white;
   text-decoration: none;
