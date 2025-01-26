@@ -188,3 +188,39 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Über der Sidebar und dem Video */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Hintergrund für bessere Sichtbarkeit */
+}
+
+.header-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Über der Sidebar und dem Video */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Hintergrund für bessere Sichtbarkeit */
+}
+
+.footer-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
