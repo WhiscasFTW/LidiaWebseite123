@@ -16,7 +16,9 @@ body {
 
 /* Header */
 header {
-    position: relative;
+    position: fixed; /* Header bleibt immer oben */
+    top: 0;
+    left: 0;
     width: 100%; /* Header nimmt volle Breite ein */
     height: 360px; /* Feste Höhe für den Header */
     background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund */
@@ -36,9 +38,10 @@ header {
 
 /* Video-Hintergrund */
 #video-background {
-    position: relative;
+    position: absolute; /* Video unterhalb des Headers */
+    top: 360px; /* Abstand von oben (gleich der Höhe des Headers) */
     width: 100%; /* Video nimmt die gesamte Breite ein */
-    height: 100vh; /* Video nimmt volle Höhe des Viewports ein */
+    height: calc(100vh - 360px); /* Video nimmt den gesamten Raum unter dem Header ein */
     object-fit: cover; /* Beibehaltung der Vollbildansicht ohne Verzerrung */
     z-index: 1; /* Video hinter dem Header */
 }
