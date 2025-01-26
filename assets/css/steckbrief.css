@@ -22,8 +22,9 @@ header {
   position: relative; /* Header über dem Video */
   z-index: 1; /* Header über dem Video */
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0; /* 10px weniger Padding oben und unten */
   background-color: black; /* Hintergrundfarbe des Headers */
+  margin-top: -10px; /* Header 10px weiter nach oben */
   margin-bottom: 0; /* Kein Abstand zum Video */
 }
 
@@ -52,9 +53,10 @@ footer {
   position: relative; /* Footer unter dem Video */
   z-index: 1; /* Footer über dem Video */
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0; /* 20px mehr Padding oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   margin-top: 0; /* Kein Abstand zum Video */
+  margin-bottom: -20px; /* Footer 20px weiter nach unten */
 }
 
 footer img {
