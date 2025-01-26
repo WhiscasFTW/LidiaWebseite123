@@ -28,12 +28,16 @@ window.onload = function () {
     }, 1400); // 1,4 Sekunden
 };
 
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+// Funktion für den Seitenwechsel mit Ausblend- und Einblend-Transition
 function navigateToPage(url) {
     var overlay = document.createElement('div'); // Neues Overlay erstellen
     overlay.id = 'page-transition-overlay';
     overlay.className = 'page-transition-overlay';
     document.body.appendChild(overlay); // Overlay hinzufügen
+
+    // Inhalt ausblenden (Ausblend-Animation)
+    document.body.style.transition = 'opacity 1.4s ease';
+    document.body.style.opacity = '0';
 
     // Overlay einblenden
     setTimeout(function () {
@@ -43,7 +47,7 @@ function navigateToPage(url) {
     // Nach 1,4 Sekunden weiterleiten
     setTimeout(function () {
         window.location.href = url;
-    }, 1400); // 1,4 Sekunden
+    }, 1400); // 1,4 Sekunden nach der Ausblend-Animation
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
@@ -52,7 +56,7 @@ document.querySelectorAll('a').forEach(function (link) {
         // Nur Links behandeln, die zu einer anderen Seite führen
         if (link.href && !link.href.includes('javascript:')) {
             event.preventDefault(); // Standardverhalten verhindern
-            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+            navigateToPage(link.href); // Seitenwechsel mit Fade-Out und Fade-In
         }
     });
 });
