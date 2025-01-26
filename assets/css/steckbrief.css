@@ -1,4 +1,4 @@
-/* Übergangselement */
+/* Transition für die Seite */
 .page-transition {
   position: fixed;
   top: 0;
@@ -12,81 +12,116 @@
 }
 
 .page-transition.active {
-  opacity: 0; /* Verblasst die Seite nach der Übergangszeit */
+  opacity: 0;
 }
 
-/* Header-Styling */
-header {
-  width: 100%;
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.sidebar .artist-signature {
+  padding: 20px;
   text-align: center;
 }
 
-header img {
-  max-width: 100%; /* Bild passt sich der Breite des Containers an */
-  height: auto; /* Höhe wird proportional angepasst */
-  display: block; /* Verhindert zusätzliche Abstände */
-  margin: 0 auto; /* Zentriert das Bild */
+.sidebar .artist-signature img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Video-Styling */
-main {
-  width: 100%;
-  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
-  position: relative;
-  margin: 0;
-  padding: 0;
+.sidebar .sidebar-links {
+  margin-top: 50px;
 }
 
-video {
-  width: 100%; /* Video nimmt die gesamte Breite ein */
-  height: 100%; /* Video nimmt die gesamte Höhe ein */
-  object-fit: cover; /* Deckt den gesamten Bereich ab */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Video bleibt im Hintergrund */
-  transition: opacity 1s ease-in-out; /* Transition für Video */
+.sidebar .sidebar-links a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
-/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
-main::after {
-  content: "";
-  position: absolute;
+.sidebar .sidebar-links a:hover {
+  background-color: #444;
+}
+
+/* Overlay zum Schließen der Sidebar */
+.overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
-  z-index: 0; /* Overlay liegt über dem Video */
-  transition: background 1s ease-in-out; /* Übergang für das Overlay */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: none;
 }
 
-/* Footer-Styling */
-footer {
+/* Toggle Button für Sidebar */
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 15;
+}
+
+/* Styling für den Header */
+header img {
   width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styling für das Video */
+main {
+  width: 100%;
+  height: 100vh;
   position: relative;
 }
 
-footer img {
-  width: 100%; /* Bild passt sich der Breite des Containers an */
-  height: auto; /* Höhe wird proportional angepasst */
-  display: block; /* Verhindert zusätzliche Abstände */
-  margin: 0 auto; /* Zentriert das Bild */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-/* Footer-Text */
+/* Footer Styling */
+footer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .footer-text {
-  position: absolute;
-  bottom: 20px; /* Abstand vom unteren Rand */
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
+  padding: 20px;
   color: white;
-  font-size: 16px;
-  text-align: center; /* Text wird zentriert */
-  white-space: nowrap; /* Verhindert Umbruch des Textes */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  opacity: 0;
-  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
+}
+
+.footer-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
 }
 
 /* Animation für das Einblenden des Footer-Texts */
@@ -99,74 +134,8 @@ footer img {
   }
 }
 
-.footer-text a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-text a:hover {
-  text-decoration: underline;
-}
-
-/* Sidebar Styling */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #111;
-  color: white;
-  padding-top: 20px;
-  transition: left 0.3s ease-in-out;
-  z-index: 30;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  background-color: #575757;
-}
-
-.sidebar .artist-signature {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.sidebar .signature-image {
-  max-width: 80%;
-  height: auto;
-}
-
-.toggle-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  z-index: 35;
-}
-
-/* Overlay */
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 25;
-}
-
-.overlay.show {
-  display: block;
+/* Einblend-Animation für Footer Text */
+.footer-text {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
