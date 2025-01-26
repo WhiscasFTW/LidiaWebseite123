@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
-    height: 100%; /* Damit der Footer am Ende der Seite korrekt positioniert werden kann */
+    min-height: 100%; /* Um sicherzustellen, dass die Seite mindestens die Höhe des Bildschirms hat */
     display: flex;
     flex-direction: column;
 }
@@ -17,7 +17,7 @@ body {
 /* Header */
 header {
     position: relative;
-    width: 2560px; /* Feste Breite für den Header */
+    width: 100%; /* Header nimmt volle Breite ein */
     height: 360px; /* Feste Höhe für den Header */
     background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund */
     color: white;
@@ -25,7 +25,6 @@ header {
     z-index: 2; /* Über dem Video */
     padding: 20px;
     box-sizing: border-box;
-    margin: 0 auto; /* Zentriert den Header auf der Seite */
 }
 
 /* Header-Bild */
@@ -39,10 +38,9 @@ header {
 #video-background {
     position: relative;
     width: 100%; /* Video nimmt die gesamte Breite ein */
-    height: calc(100vh - 360px - 100px); /* Video zwischen Header und Footer */
+    height: 100vh; /* Video nimmt volle Höhe des Viewports ein */
     object-fit: cover; /* Beibehaltung der Vollbildansicht ohne Verzerrung */
-    z-index: -1; /* Video hinter dem Header */
-    margin: 0 auto; /* Zentriert das Video auf der Seite */
+    z-index: 1; /* Video hinter dem Header */
 }
 
 /* Overlay zum Abdunkeln des Videos */
@@ -59,13 +57,13 @@ header {
 /* Footer */
 footer {
     position: relative;
-    width: 2560px; /* Feste Breite für den Footer */
+    width: 100%; /* Footer nimmt volle Breite ein */
     height: 100px; /* Feste Höhe für den Footer */
     background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund */
     color: white;
     text-align: center;
     padding: 20px;
-    margin: 0 auto; /* Zentriert den Footer auf der Seite */
+    box-sizing: border-box;
     position: relative;
     z-index: 1; /* Über dem Video */
 }
