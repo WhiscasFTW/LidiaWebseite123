@@ -4,23 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/steckbrief.css">
+    <link rel="stylesheet" href="assets/css/startseite.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        /* Transition für das Overlay */
-        .page-transition-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            opacity: 0;
-            z-index: 1000;
-            transition: opacity 1.4s ease-out;
-        }
-    </style>
 </head>
 <body>
     <!-- Video-Hintergrund -->
@@ -56,51 +42,6 @@
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
     <!-- JavaScript-Datei einbinden -->
-    <script src="assets/js/steckbrief.js"></script>
-
-    <!-- Transition-Skripte -->
-    <script>
-        // Beim Laden der Seite das Overlay einblenden
-        window.onload = function () {
-            var overlay = document.getElementById('page-transition-overlay');
-            
-            // Übergang starten: Overlay wird eingeblendet
-            overlay.style.opacity = '1';
-
-            // Nach 1,4 Sekunden Overlay entfernen
-            setTimeout(function () {
-                overlay.remove(); // Overlay aus dem DOM entfernen
-            }, 1400); // 1,4 Sekunden
-        };
-
-        // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-        function navigateToPage(url) {
-            var overlay = document.createElement('div'); // Neues Overlay erstellen
-            overlay.id = 'page-transition-overlay';
-            overlay.className = 'page-transition-overlay';
-            document.body.appendChild(overlay); // Overlay hinzufügen
-
-            // Overlay einblenden
-            setTimeout(function () {
-                overlay.style.opacity = '1';
-            }, 10); // Kurze Verzögerung, um das Einblenden zu starten
-
-            // Nach 1,4 Sekunden weiterleiten
-            setTimeout(function () {
-                window.location.href = url;
-            }, 1400); // 1,4 Sekunden
-        }
-
-        // Event-Listener für alle Links, die zu einer neuen Seite führen
-        document.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function (event) {
-                // Nur Links behandeln, die zu einer anderen Seite führen
-                if (link.href && !link.href.includes('javascript:')) {
-                    event.preventDefault(); // Standardverhalten verhindern
-                    navigateToPage(link.href); // Seitenwechsel mit Fade-Out
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/startseite.js"></script>
 </body>
 </html>
