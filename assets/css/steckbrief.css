@@ -23,6 +23,17 @@ body, html {
   display: block; /* Verhindert unerwünschte Abstände */
 }
 
+/* Dunkles Overlay für das Video (doppelt so dunkel) */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* 90% Deckkraft (doppelt so dunkel) */
+  z-index: 1; /* Overlay über dem Video */
+}
+
 /* Header */
 header {
   position: relative; /* Header über dem Video */
@@ -203,7 +214,8 @@ footer img {
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
   padding: 10px;
-  font-weight: 100; /* Dünnere Schrift */
+  font-weight: 50; /* Sehr dünne Schrift */
+  font-family: 'Arial', sans-serif; /* Einfache Schriftart für dünnere Darstellung */
 }
 
 .toggle-button.open {
