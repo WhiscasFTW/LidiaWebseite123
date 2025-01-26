@@ -55,4 +55,4 @@ document.querySelectorAll('a').forEach(function (link) {
             navigateToPage(link.href); // Seitenwechsel mit Fade-Out
         }
     });
-});
+})
