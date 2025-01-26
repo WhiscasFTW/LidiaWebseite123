@@ -81,7 +81,7 @@ footer img {
 
 /* Footer-Text */
 .footer-text {
-  margin-top: -45px; /* Text 15px weiter nach unten */
+  margin-top: -60px; /* Text weiter nach unten verschieben (vorher -45px) */
   color: white;
   font-size: 14px;
 }
@@ -154,16 +154,11 @@ footer img {
   animation: float 3s ease-in-out infinite;
 }
 
-.artist-signature .signature-link {
-  display: inline-block; /* Verhindert zusätzliche Abstände */
-  text-decoration: none; /* Entfernt den Unterstrich */
-}
-
 .artist-signature img {
   width: auto;
   height: 140px;
   max-width: 100%;
-  display: block; /* Verhindert unerwünschte Abstände */
+  display: block;
   margin: 0 auto;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
