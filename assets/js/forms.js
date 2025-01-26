@@ -1,12 +1,14 @@
 function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const toggleButton = document.getElementById("toggleButton");
 
-    if (sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
-        overlay.style.display = 'none';
-    } else {
-        sidebar.classList.add('open');
-        overlay.style.display = 'block';
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("open");
+    toggleButton.classList.toggle("open");
+
+    // Entferne die Pulsierungsanimation nach dem ersten Klick
+    if (toggleButton.classList.contains("attention")) {
+        toggleButton.classList.remove("attention");
     }
 }
