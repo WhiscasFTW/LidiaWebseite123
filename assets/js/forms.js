@@ -8,22 +8,78 @@ function toggleSidebar() {
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
 
-    // Entferne die Pulsierungs-Animation nach dem ersten Klick
-    toggleButton.classList.remove('attention');
+    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+    overlay.classList.toggle('active');
+
+    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Beim Laden der Seite den Zustand überprüfen
+// Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var sidebarState = localStorage.getItem('sidebarState');
+    var overlay = document.getElementById('page-transition-overlay');
 
-    // Sidebar-Zustand wiederherstellen
-    if (sidebarState === 'open') {
+    // Overlay langsam ausblenden
+    overlay.style.opacity = '0';
+
+    // Overlay nach 1,5 Sekunden vollständig entfernen
+    setTimeout(function () {
+        overlay.remove(); // Overlay aus dem DOM entfernen
+    }, 1500); // 1,5 Sekunden
+
+    // Text nach 2 Sekunden einblenden
+    setTimeout(function () {
+        var quote = document.getElementById('quote');
+        quote.classList.add('visible'); // Text sichtbar machen
+    }, 2000); // 2 Sekunden
+
+    // Sidebar nach 5,5 Sekunden automatisch öffnen (nur einmal)
+    setTimeout(function () {
+        var sidebar = document.getElementById('sidebar');
+        var toggleButton = document.getElementById('toggleButton');
+        var overlay = document.getElementById('overlay');
+
+        // Sidebar langsam öffnen (3 Sekunden)
+        sidebar.classList.add('first-open'); // Langsamere Animation
         sidebar.classList.add('open');
         toggleButton.classList.add('open');
-    } else {
-        // Füge die Pulsierungs-Animation hinzu, wenn der Button zum ersten Mal sichtbar wird
-        toggleButton.classList.add('attention');
-    }
+        overlay.classList.add('active');
+
+        // Animationen des Buttons stoppen
+        toggleButton.style.animation = 'none';
+
+        // Nach dem ersten Öffnen die langsame Animation entfernen
+        setTimeout(function () {
+            sidebar.classList.remove('first-open');
+        }, 3000); // 3 Sekunden (Dauer der langsamen Animation)
+    }, 5500); // 5,5 Sekunden (vorher 4,5 Sekunden)
 };
+
+// Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
+function navigateToPage(url) {
+    var overlay = document.createElement('div'); // Neues Overlay erstellen
+    overlay.id = 'page-transition-overlay';
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay); // Overlay hinzufügen
+
+    // Overlay einblenden
+    setTimeout(function () {
+        overlay.style.opacity = '1';
+    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+
+    // Nach 1,5 Sekunden weiterleiten
+    setTimeout(function () {
+        window.location.href = url;
+    }, 1500); // 1,5 Sekunden
+}
+
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        // Nur Links behandeln, die zu einer anderen Seite führen
+        if (link.href && !link.href.includes('javascript:')) {
+            event.preventDefault(); // Standardverhalten verhindern
+            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+        }
+    });
+});
