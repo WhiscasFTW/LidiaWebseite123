@@ -199,9 +199,9 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar (deutlich dünner und modern) */
+/* Button zum Öffnen und Schließen der Sidebar (dünner und modern) */
 .toggle-button {
-  font-size: 96px;
+  font-size: 96px; /* 20 % kleiner (vorher 120px) */
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
   border: none;
@@ -210,9 +210,9 @@ footer img {
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  z-index: 12; /* Button über allem */
-  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+  z-index: 3; /* Button über allem */
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
   padding: 10px;
   font-weight: 100; /* Sehr dünne Schrift */
   font-family: 'Arial Narrow', sans-serif; /* Schmale Schriftart */
@@ -224,24 +224,39 @@ footer img {
   transform: translateY(-50%) rotate(90deg);
 }
 
+/* Hover-Effekt für den Button */
 .toggle-button:hover {
-  transform: translateY(-50%) scale(1.1);
-  color: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
+  color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
+}
+
+/* Atmungsanimation für den Button (halbe Stärke) */
+@keyframes breathe {
+  0% {
+    color: rgba(255, 255, 255, 0.8); /* Hell */
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.8); /* Hell */
+  }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+  0%, 100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
+  }
+  75% {
+    transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
+  }
 }
 
 /* Animationen */
-@keyframes breathe {
-  0% { color: rgba(255, 255, 255, 0.8); }
-  50% { color: rgba(255, 255, 255, 0.6); }
-  100% { color: rgba(255, 255, 255, 0.8); }
-}
-
-@keyframes wobble {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
-}
-
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
