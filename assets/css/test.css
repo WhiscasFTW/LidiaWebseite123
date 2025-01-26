@@ -5,23 +5,7 @@ body, html {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
-}
-
-/* Neue Animation für Seitenwechsel */
-.page-transition {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 1;
-  z-index: 20;
-  transition: opacity 1s ease-in-out;
-}
-
-.page-transition.active {
-  opacity: 0; /* Verblasst die Seite nach der Übergangszeit */
+  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
 }
 
 /* Header-Styling */
@@ -51,7 +35,7 @@ video {
   height: 100%; /* Video nimmt die gesamte Höhe ein */
   object-fit: cover; /* Deckt den gesamten Bereich ab */
   position: absolute;
-  top: 0;
+  top: 10%; /* Setzt das Video etwas tiefer */
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
   transition: opacity 1s ease-in-out; /* Transition für Video */
