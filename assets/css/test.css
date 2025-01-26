@@ -6,7 +6,9 @@ body, html {
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
   background-color: black; /* Hintergrundfarbe auf Schwarz setzen */
-  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Sorgt dafür, dass der Footer am unteren Rand bleibt */
 }
 
 /* Header-Styling */
@@ -25,7 +27,7 @@ header img {
 /* Video-Styling */
 main {
   width: 100%;
-  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+  height: calc(100vh - 120px); /* Video nimmt den verfügbaren Platz ein, abzüglich des Footers */
   position: relative;
   margin: 0;
   padding: 0;
@@ -36,7 +38,7 @@ video {
   height: 100%; /* Video nimmt die gesamte Höhe ein */
   object-fit: cover; /* Deckt den gesamten Bereich ab */
   position: absolute;
-  top: 10%; /* Setzt das Video etwas tiefer */
+  top: 0; /* Video oben ansetzen */
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
   transition: opacity 1s ease-in-out; /* Transition für Video */
@@ -63,6 +65,8 @@ footer {
   z-index: 1;
   padding: 20px 0; /* Fügt oben und unten etwas Abstand hinzu */
   box-sizing: border-box; /* Verhindert, dass Padding die Gesamtgröße beeinflusst */
+  position: absolute;
+  bottom: 0; /* Footer bleibt immer am unteren Rand */
 }
 
 footer img {
@@ -75,7 +79,7 @@ footer img {
 /* Footer-Text */
 .footer-text {
   position: absolute;
-  top: calc(50% + 30px); /* Text 30px weiter nach unten verschieben */
+  top: 50%; /* Vertikal zentrieren */
   left: 50%;
   transform: translate(-50%, -50%); /* Perfekte Zentrierung sowohl horizontal als auch vertikal */
   color: white;
@@ -83,6 +87,7 @@ footer img {
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
+  padding-top: 30px; /* Fügt zusätzlich Platz nach oben ein, um den Text 30px nach unten zu verschieben */
 }
 
 /* Links im Footer */
