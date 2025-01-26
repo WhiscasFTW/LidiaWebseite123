@@ -17,6 +17,7 @@ video {
     z-index: -1; /* Video hinter den Inhalten platzieren */
 }
 
+/* Das Overlay für den Übergang */
 #page-transition-overlay {
     position: fixed;
     top: 0;
@@ -24,9 +25,9 @@ video {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8); /* Dunkles Overlay */
-    opacity: 1; /* Direkt sichtbar beim Laden */
+    opacity: 1; /* Zuerst komplett sichtbar */
     z-index: 1000; /* Overlay über anderen Elementen platzieren */
-    transition: opacity 1.4s ease-out; /* Übergangseffekt für die Opazität */
+    transition: opacity 1.4s ease-out; /* Sanftes Ausblenden */
 }
 
 /* Styling für die Sidebar */
