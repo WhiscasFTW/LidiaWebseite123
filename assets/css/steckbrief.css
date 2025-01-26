@@ -57,18 +57,18 @@ main {
   z-index: 0; /* Video unter Header und Footer */
   margin-top: 0; /* Kein Abstand zum Header */
   background-color: black; /* Hintergrundfarbe für den Main-Bereich */
+  padding-bottom: 0; /* Kein Abstand nach unten */
 }
 
 /* Footer */
 footer {
-  position: fixed; /* Footer am Ende des Bildschirms fixieren */
-  bottom: 0; /* Am unteren Rand des Bildschirms */
-  left: 0;
+  position: relative; /* Footer am Ende der Seite */
   width: 100%;
   text-align: center;
   padding: 20px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
+  margin-top: 0; /* Kein Abstand nach oben */
 }
 
 footer img {
