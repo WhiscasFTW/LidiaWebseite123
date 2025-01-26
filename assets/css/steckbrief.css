@@ -77,9 +77,9 @@ footer img {
   margin-top: 70px; /* Bild 70px weiter nach unten verschieben */
 }
 
-/* Footer-Text 60px weiter nach oben (40px + 20px) */
+/* Footer-Text 75px weiter nach oben (60px + 15px) */
 .footer-text {
-  margin-top: -60px; /* Text 60px weiter nach oben */
+  margin-top: -75px; /* Text 75px weiter nach oben */
   color: white;
   font-size: 14px;
 }
