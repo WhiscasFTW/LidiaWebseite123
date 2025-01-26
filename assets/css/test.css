@@ -6,6 +6,9 @@ body, html {
   height: 100%;
   overflow-x: hidden; /* Verhindert horizontales Scrollen */
   background-color: black; /* Startet mit schwarzem Hintergrund */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Header-Styling */
@@ -21,7 +24,7 @@ header img {
   margin: 0 auto; /* Zentriert das Bild */
 }
 
-/* Entferne das Video */
+/* Main-Styling */
 main {
   width: 100%;
   min-height: 60vh; /* Setzt eine minimale Höhe, damit der Abstand zwischen Header und Footer gleich bleibt */
@@ -36,7 +39,7 @@ footer {
   width: 100%;
   text-align: center;
   margin: 0;
-  z-index: 1; /* Stellt sicher, dass der Footer über dem Video bleibt */
+  z-index: 1; /* Stellt sicher, dass der Footer über dem Bild bleibt */
 }
 
 footer img {
