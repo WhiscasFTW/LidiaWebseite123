@@ -1,3 +1,12 @@
+/* Allgemeines Layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-y: auto; /* Scrollen erlauben */
+}
+
 /* Video-Hintergrund */
 #video-background {
   position: fixed;
@@ -11,10 +20,14 @@
 
 /* Header */
 header {
-  position: relative; /* Header über dem Video */
+  position: fixed; /* Header oben fixieren */
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
   text-align: center;
   padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: Hintergrund für bessere Sichtbarkeit */
 }
 
 header img {
@@ -24,13 +37,13 @@ header img {
 
 /* Main-Bereich (Video-Container) */
 main {
-  position: relative;
-  z-index: 1;
   display: flex;
-  justify-content: center; /* Video zentrieren */
-  align-items: center;
-  height: 100vh; /* Volle Höhe des Viewports */
-  overflow: hidden; /* Verhindert Scrollen */
+  justify-content: center; /* Video horizontal zentrieren */
+  align-items: center; /* Video vertikal zentrieren */
+  min-height: 100vh; /* Mindesthöhe des Viewports */
+  padding-top: 80px; /* Platz für den Header */
+  padding-bottom: 80px; /* Platz für den Footer */
+  box-sizing: border-box;
 }
 
 main video {
@@ -41,7 +54,10 @@ main video {
 
 /* Footer */
 footer {
-  position: relative; /* Footer unter dem Video */
+  position: fixed; /* Footer unten fixieren */
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
   text-align: center;
   padding: 20px 0;
