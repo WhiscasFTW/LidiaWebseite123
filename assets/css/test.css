@@ -47,8 +47,19 @@ main::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Schwarzes Overlay mit 50% Deckkraft */
+  background: rgba(0, 0, 0, 1); /* Anfangs vollständig dunkel */
   z-index: 0; /* Overlay liegt über dem Video */
+  animation: fadeOut 1s ease-in-out forwards; /* Animation beim Laden der Seite */
+}
+
+/* Keyframe-Animation für das Overlay */
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 1); /* Vollständig dunkel */
+  }
+  100% {
+    background: rgba(0, 0, 0, 0); /* Vollständig transparent */
+  }
 }
 
 /* Footer-Styling */
