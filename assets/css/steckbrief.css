@@ -21,48 +21,46 @@ body, html {
 /* Header */
 header {
   position: relative; /* Header über dem Video */
-  z-index: 11; /* Header über der Sidebar und dem Overlay */
+  z-index: 1; /* Header über dem Video */
   text-align: center;
   padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.7); /* Optional: Hintergrund für bessere Sichtbarkeit */
+  margin-bottom: 0; /* Kein Abstand zum Video */
 }
 
 header img {
   max-width: 100%;
   height: auto;
+  display: block; /* Verhindert unerwünschte Abstände */
 }
 
 /* Main-Bereich (Video-Container) */
 main {
-  display: flex;
-  justify-content: center; /* Video horizontal zentrieren */
-  align-items: center; /* Video vertikal zentrieren */
-  min-height: 100vh; /* Mindesthöhe des Viewports */
-  padding-top: 80px; /* Platz für den Header */
-  padding-bottom: 80px; /* Platz für den Footer */
-  box-sizing: border-box;
   position: relative; /* Video innerhalb des Main-Bereichs */
   z-index: 0; /* Video unter Header und Footer */
+  margin-top: 0; /* Kein Abstand zum Header */
 }
 
 main video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Video skalieren, ohne es zu beschneiden */
+  width: 100%;
+  height: auto;
+  display: block; /* Verhindert unerwünschte Abstände */
 }
 
 /* Footer */
 footer {
   position: relative; /* Footer unter dem Video */
-  z-index: 11; /* Footer über der Sidebar und dem Overlay */
+  z-index: 1; /* Footer über dem Video */
   text-align: center;
   padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund für bessere Lesbarkeit */
+  margin-top: 0; /* Kein Abstand zum Video */
 }
 
 footer img {
   max-width: 100%;
   height: auto;
+  display: block; /* Verhindert unerwünschte Abstände */
 }
 
 .footer-text {
