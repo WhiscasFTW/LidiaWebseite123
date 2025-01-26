@@ -15,25 +15,44 @@ function toggleSidebar() {
     toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Funktion für den sanften Übergang zur nächsten Seite
-function pageTransition() {
-    const overlay = document.getElementById('page-transition-overlay');
-    overlay.style.opacity = '1'; // Das Overlay sichtbar machen
+// Beim Laden der Seite das Overlay ausblenden und entfernen
+window.onload = function () {
+    var overlay = document.getElementById('page-transition-overlay');
 
-    // Nach der Übergangszeit (1.4s) die Seite wechseln
+    // Overlay langsam ausblenden
+    overlay.style.opacity = '0';
+
+    // Overlay nach 1,4 Sekunden vollständig entfernen
     setTimeout(function () {
-        window.location.href = 'startseite.html'; // Beispiel für eine Weiterleitung
-    }, 1400); // Zeit, bis die Seite geladen wird
+        overlay.remove(); // Overlay aus dem DOM entfernen
+    }, 1400); // 1,4 Sekunden
+};
+
+// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+function navigateToPage(url) {
+    var overlay = document.createElement('div'); // Neues Overlay erstellen
+    overlay.id = 'page-transition-overlay';
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay); // Overlay hinzufügen
+
+    // Overlay einblenden
+    setTimeout(function () {
+        overlay.style.opacity = '1';
+    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+
+    // Nach 1,4 Sekunden weiterleiten
+    setTimeout(function () {
+        window.location.href = url;
+    }, 1400); // 1,4 Sekunden
 }
 
-// Funktion, um das Overlay zu entfernen und den Übergang zu stoppen
-window.onload = function () {
-    const overlay = document.getElementById('page-transition-overlay');
-    overlay.style.transition = 'opacity 1.4s ease'; // Sanfter Übergang
-    overlay.style.opacity = '0'; // Overlay ausblenden
-
-    // Overlay nach 1,4 Sekunden entfernen
-    setTimeout(function () {
-        overlay.style.display = 'none';
-    }, 1400);
-};
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        // Nur Links behandeln, die zu einer anderen Seite führen
+        if (link.href && !link.href.includes('javascript:')) {
+            event.preventDefault(); // Standardverhalten verhindern
+            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+        }
+    });
+});
