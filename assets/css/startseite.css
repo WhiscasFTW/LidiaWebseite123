@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -1; /* Sicherstellen, dass das Video hinter allen anderen Elementen bleibt */
 }
 
 /* Dunkles Overlay für die Transition */
@@ -40,7 +40,7 @@
     display: block;
 }
 
-/* Sidebar (langsamere Animation) */
+/* Sidebar */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -51,8 +51,8 @@
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
-    z-index: 2; /* Über dem Overlay */
+    transition: left 0.5s ease; /* Korrektur der Geschwindigkeit */
+    z-index: 2;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -76,12 +76,6 @@
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Sanfte Übergänge */
-}
-
-.artist-signature img:hover {
-    transform: scale(1.1); /* Leichte Vergrößerung */
-    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
 
 /* Links in der Sidebar */
@@ -95,7 +89,7 @@
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     display: block;
-    transition: transform 1s ease, opacity 1s ease; /* Synchron mit der Sidebar */
+    transition: transform 1s ease, opacity 1s ease;
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
@@ -119,7 +113,7 @@
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 96px; /* 20 % kleiner (vorher 120px) */
+    font-size: 96px;
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
     border: none;
@@ -129,9 +123,7 @@
     left: 15px;
     transform: translateY(-50%);
     z-index: 3;
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
-    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
-    padding: 10px;
+    transition: left 0.5s ease, transform 0.5s ease;
 }
 
 .toggle-button.open {
@@ -141,20 +133,20 @@
 
 /* Hover-Effekt für den Button */
 .toggle-button:hover {
-    transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
-    color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
+    transform: translateY(-50%) scale(1.1);
+    color: rgba(255, 255, 255, 1);
 }
 
-/* Atmungsanimation für den Button (halbe Stärke) */
+/* Atmungsanimation für den Button */
 @keyframes breathe {
     0% {
-        color: rgba(255, 255, 255, 0.8); /* Hell */
+        color: rgba(255, 255, 255, 0.8);
     }
     50% {
-        color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
+        color: rgba(255, 255, 255, 0.6);
     }
     100% {
-        color: rgba(255, 255, 255, 0.8); /* Hell */
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
@@ -164,10 +156,10 @@
         transform: translateY(-50%) rotate(0deg);
     }
     25% {
-        transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
+        transform: translateY(-50%) rotate(-2deg);
     }
     75% {
-        transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
+        transform: translateY(-50%) rotate(2deg);
     }
 }
 
