@@ -39,7 +39,7 @@ video {
   z-index: -1; /* Video bleibt im Hintergrund */
 }
 
-/* Overlay für das Video, um es halb so hell zu machen */
+/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
 main::after {
   content: "";
   position: absolute;
@@ -47,19 +47,8 @@ main::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Halb so hell wie vorher */
+  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
   z-index: 0; /* Overlay liegt über dem Video */
-  animation: fadeOut 1s ease-in-out forwards; /* Animation beim Laden der Seite */
-}
-
-/* Keyframe-Animation für das Overlay */
-@keyframes fadeOut {
-  0% {
-    background: rgba(0, 0, 0, 0.5); /* Halb so hell */
-  }
-  100% {
-    background: rgba(0, 0, 0, 0); /* Vollständig transparent */
-  }
 }
 
 /* Footer-Styling */
@@ -84,19 +73,16 @@ footer img {
   left: 50%;
   transform: translateX(-50%);
   color: white;
+  text-align: center; /* Text wird zentriert */
+  font-size: 16px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
 }
 
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links a {
+.footer-text a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
 }
 
-.footer-links a:hover {
+.footer-text a:hover {
   text-decoration: underline;
 }
