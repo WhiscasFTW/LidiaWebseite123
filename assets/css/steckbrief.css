@@ -1,10 +1,10 @@
 /* Video-Hintergrund */
 #video-background {
     position: fixed;
-    top: 0;
+    top: 150px; /* Beginnt unter dem Header */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 250px); /* Höhe = Viewport-Höhe - (Header + Footer) */
     object-fit: cover;
     z-index: -2; /* Unter dem Video-Overlay */
 }
@@ -196,18 +196,17 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2; /* Header über dem Footer, aber unter der Sidebar */
+    height: 150px; /* Feste Höhe für den Header */
+    z-index: 2; /* Über dem Video, aber unter der Sidebar */
     text-align: center;
     background: rgba(0, 0, 0, 0.7); /* Abgedunkeltes Overlay */
-    transition: background 0s ease; /* Transition auf 0 Sekunden */
     cursor: pointer; /* Zeigt an, dass der Header klickbar ist */
 }
 
 .header-image {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
+    height: 100%; /* Füllt die gesamte Höhe des Headers aus */
+    object-fit: cover; /* Bild wird zugeschnitten, um den Header zu füllen */
     animation: subtleBreathing 5s infinite ease-in-out; /* Dezentes Atmen */
 }
 
@@ -226,9 +225,9 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1; /* Footer unter Header und Sidebar */
+    height: 100px; /* Feste Höhe für den Footer */
+    z-index: 1; /* Über dem Video, aber unter Header und Sidebar */
     text-align: center;
-    padding: 10px 0; /* Abstand oben und unten */
     background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
 }
 
@@ -238,7 +237,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Bild wird zugeschnitten, um den Footer zu füllen */
     z-index: -1; /* Bild hinter dem Text */
     opacity: 0.5; /* Leichte Transparenz */
 }
