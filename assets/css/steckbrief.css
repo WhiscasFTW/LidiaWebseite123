@@ -1,4 +1,3 @@
-
 /* Video-Hintergrund */
 #video-background {
     position: fixed;
@@ -7,7 +6,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2; /* Unter dem Video-Overlay */
+}
+
+/* Overlay zum Abdunkeln des Videos */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Schwarzes Overlay mit 75 % Deckkraft */
+    z-index: -1; /* Über dem Video, aber unter allen anderen Elementen */
+    pointer-events: none; /* Ermöglicht Interaktion mit dem darunterliegenden Video */
 }
 
 /* Dunkles Overlay für die Transition */
@@ -20,7 +31,7 @@
     background: black; /* Startfarbe (dunkel) */
     z-index: 9999; /* Über allem anderen */
     opacity: 1; /* Anfangs sichtbar */
-    transition: opacity 0.3s ease; /* Transition auf 0,3 Sekunden */
+    transition: opacity 1.4s ease; /* Transition auf 1,4 Sekunden */
 }
 
 /* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
