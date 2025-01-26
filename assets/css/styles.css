@@ -39,7 +39,7 @@
     display: block;
 }
 
-/* Sidebar (langsamere Animation beim ersten Öffnen) */
+/* Sidebar (langsamere Animation) */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -50,7 +50,7 @@
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 1s ease; /* Normale Geschwindigkeit */
+    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
     z-index: 2; /* Über dem Overlay */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -59,11 +59,6 @@
 
 .sidebar.open {
     left: 0;
-}
-
-/* Langsamere Animation beim ersten automatischen Öffnen */
-.sidebar.first-open {
-    transition: left 3s ease; /* 3-mal langsamer */
 }
 
 /* Signatur der Künstlerin */
@@ -99,7 +94,7 @@
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     display: block;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 1s ease, opacity 1s ease; /* Synchron mit der Sidebar */
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
@@ -180,26 +175,4 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Text, der nach 2 Sekunden eingeblendet wird */
-.quote {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Calibri', sans-serif; /* Normale Schriftart */
-    font-size: 18px;
-    opacity: 0; /* Anfangs unsichtbar */
-    transition: opacity 1s ease, transform 0.3s ease, filter 0.3s ease; /* Sanftes Einblenden und Hover-Effekt */
-}
-
-.quote.visible {
-    opacity: 1;
-}
-
-/* Hover-Effekt für das Zitat */
-.quote:hover {
-    transform: scale(1.05); /* Leichte Vergrößerung */
-    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
