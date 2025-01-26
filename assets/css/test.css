@@ -28,6 +28,7 @@ main {
   position: relative;
   margin: 0;
   padding: 0;
+  transition: all 1s ease-in-out; /* Übergang für die Video-Anpassung */
 }
 
 video {
@@ -39,7 +40,7 @@ video {
   left: 0;
   z-index: -1; /* Video bleibt im Hintergrund */
   filter: brightness(50%); /* Video dauerhaft abdunkeln */
-  transition: filter 1s ease; /* Sanfter Übergang für Helligkeitseffekt */
+  transition: filter 1s ease-in-out; /* Sanfter Übergang für Helligkeitseffekt */
 }
 
 /* Overlay für das Video, um es dauerhaft abzudunkeln */
@@ -59,6 +60,8 @@ footer {
   width: 100%;
   position: relative;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 footer img {
@@ -82,6 +85,7 @@ footer img {
   z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
   overflow: hidden; /* Verhindert, dass der Text über den Rand hinausläuft */
   text-overflow: ellipsis; /* Wenn der Text zu lang ist, wird er mit '...' abgeschnitten */
+  transition: all 1s ease-in-out; /* Übergang für den Text */
 }
 
 /* Footer-Link Styling */
