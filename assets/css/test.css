@@ -12,11 +12,12 @@ header {
   width: 100%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Header */
-  transition: background-color 0.5s ease-in-out; /* Übergang der Hintergrundfarbe */
-  position: fixed; /* Fixiert den Header oben */
+  position: sticky; /* Header bleibt oben beim Scrollen */
   top: 0;
   left: 0;
   z-index: 10;
+  cursor: pointer; /* Cursor ändert sich zu einem Hand-Symbol */
+  animation: breathe 3s ease-in-out infinite; /* Atem-Effekt */
 }
 
 header img {
@@ -74,7 +75,15 @@ footer img {
   margin: 0;
 }
 
-/* Wenn die Seite gescrollt wird, ändert sich die Transparenz des Headers */
-body.scrolled header {
-  background-color: rgba(0, 0, 0, 1); /* Header wird weniger transparent */
+/* Atem-Effekt für den Header */
+@keyframes breathe {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5); /* Weniger intensiv */
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.7); /* Etwas intensiver */
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5); /* Zurück zu weniger intensiv */
+  }
 }
