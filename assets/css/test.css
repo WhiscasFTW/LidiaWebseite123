@@ -82,7 +82,7 @@ footer img {
 
 /* Übergangseffekte */
 body {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2s ease-out; /* Verwendung von ease-out für sanfteren Übergang */
 }
 
 /* Keyframe-Animation für das sanfte Einblenden der Seite */
