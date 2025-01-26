@@ -9,9 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Dunkles Overlay für die Transition -->
-  <div id="page-transition-overlay" class="page-transition-overlay"></div>
-
   <!-- Overlay für die Sidebar -->
   <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
@@ -42,10 +39,13 @@
   
   <!-- Main-Bereich (Video) -->
   <main>
-    <video autoplay loop muted id="video-background">
-      <source src="assets/images/background_1.webm" type="video/webm">
-      Dein Browser unterstützt dieses Videoformat nicht.
-    </video>
+    <div class="video-container">
+      <video autoplay loop muted id="video-background">
+        <source src="assets/images/background_1.webm" type="video/webm">
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
+      <div class="video-overlay"></div> <!-- Dunkles Overlay für das Video -->
+    </div>
   </main>
   
   <!-- Footer -->
