@@ -1,94 +1,103 @@
-/* Dunkles Overlay für die Transition */
-.page-transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Dunkles Overlay */
-    z-index: 9999;
+/* Grundlegendes Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  transition: background-color 0.3s ease; /* Für sanften Wechsel von Hintergrundfarben */
+}
+
+/* Header-Styling */
+header {
+  width: 100%;
+  text-align: center;
+}
+
+header img {
+  max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
+}
+
+/* Video-Styling */
+main {
+  width: 100%;
+  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  width: 100%; /* Video nimmt die gesamte Breite ein */
+  height: 100%; /* Video nimmt die gesamte Höhe ein */
+  object-fit: cover; /* Deckt den gesamten Bereich ab */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Video bleibt im Hintergrund */
+  transition: opacity 1s ease-in-out; /* Transition für Video */
+}
+
+/* Overlay für das Video, um es dauerhaft abgedunkelt zu halten */
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Immer halb so dunkel */
+  z-index: 0; /* Overlay liegt über dem Video */
+  transition: background 1s ease-in-out; /* Übergang für das Overlay */
+}
+
+/* Footer-Styling */
+footer {
+  width: 100%;
+  position: relative;
+}
+
+footer img {
+  width: 100%; /* Bild passt sich der Breite des Containers an */
+  height: auto; /* Höhe wird proportional angepasst */
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0 auto; /* Zentriert das Bild */
+}
+
+/* Footer-Text */
+.footer-text {
+  position: absolute;
+  bottom: 20px; /* Abstand vom unteren Rand */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  text-align: center; /* Text wird zentriert */
+  white-space: nowrap; /* Verhindert Umbruch des Textes */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Einblend-Animation für den Text */
+}
+
+/* Animation für das Einblenden des Footer-Texts */
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transition: opacity 1.4s ease;
-}
-
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: left 1s ease;
-    z-index: 2;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-.sidebar.open {
-    left: 0;
-}
-
-/* Sidebar Links */
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.85);
-    display: block;
-    transition: transform 1s ease, opacity 1s ease;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.15);
-    margin: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.sidebar.open a {
-    transform: translateX(0);
+  }
+  100% {
     opacity: 1;
+  }
 }
 
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+.footer-text a {
+  color: white;
+  text-decoration: none;
 }
 
-/* Toggle Button */
-.toggle-button {
-    font-size: 96px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-    padding: 10px;
+.footer-text a:hover {
+  text-decoration: underline;
 }
 
-/* Overlay für die Sidebar */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.overlay.active {
-    display: block;
-}
