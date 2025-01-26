@@ -51,16 +51,16 @@
     display: block;
 }
 
-/* Sidebar (ohne Animation) */
+/* Sidebar (noch gläsiger) */
 .sidebar {
     height: 100%;
     width: 250px;
     position: fixed;
     top: 0;
     left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)); /* Noch transparenter */
+    backdrop-filter: blur(50px); /* Stärkerer Blur-Effekt */
+    -webkit-backdrop-filter: blur(50px);
     overflow-x: hidden;
     transition: left 0s ease; /* Transition auf 0 Sekunden */
     z-index: 3; /* Sidebar über Header und Footer */
@@ -203,15 +203,21 @@ header {
     cursor: pointer; /* Zeigt an, dass der Header klickbar ist */
 }
 
-header:hover {
-    background: rgba(0, 0, 0, 0.5); /* Heller beim Darüberfahren */
-}
-
 .header-image {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
+    animation: subtleGlow 5s infinite ease-in-out; /* Dezenter Leuchteffekt */
+}
+
+@keyframes subtleGlow {
+    0%, 100% {
+        filter: brightness(1); /* Normal */
+    }
+    50% {
+        filter: brightness(1.1); /* Leicht heller */
+    }
 }
 
 /* Footer */
@@ -222,11 +228,24 @@ footer {
     width: 100%;
     z-index: 1; /* Footer unter Header und Sidebar */
     text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
+    padding: 10px 0; /* Abstand oben und unten */
 }
 
-.footer-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
+.footer-text {
+    color: rgba(255, 255, 255, 0.8); /* Hellgrauer Text */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.footer-text a {
+    color: rgba(255, 255, 255, 0.8); /* Farbe der Links */
+    text-decoration: none; /* Keine Unterstreichung */
+    margin: 0 10px; /* Abstand zwischen den Links */
+    transition: color 0.3s ease; /* Sanfter Farbübergang */
+}
+
+.footer-text a:hover {
+    color: rgba(255, 255, 255, 1); /* Heller beim Darüberfahren */
 }
