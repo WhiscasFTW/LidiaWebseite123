@@ -88,11 +88,10 @@
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    transition: transform 0s ease, filter 0s ease; /* Transition auf 0 Sekunden */
+    transition: filter 0.3s ease; /* Nur Filter-Transition */
 }
 
 .artist-signature img:hover {
-    transform: scale(1.1); /* Leichte Vergrößerung */
     filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
 
@@ -125,13 +124,12 @@
 .sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.25);
     color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    font-size: 96px; /* 20 % kleiner (vorher 120px) */
+    font-size: 96px; /* Originalgröße */
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
     border: none;
@@ -153,7 +151,6 @@
 
 /* Hover-Effekt für den Button */
 .toggle-button:hover {
-    transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
     color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
 }
 
