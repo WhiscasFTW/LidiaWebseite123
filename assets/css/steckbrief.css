@@ -154,11 +154,16 @@ footer img {
   animation: float 3s ease-in-out infinite;
 }
 
+.artist-signature .signature-link {
+  display: inline-block; /* Verhindert zusätzliche Abstände */
+  text-decoration: none; /* Entfernt den Unterstrich */
+}
+
 .artist-signature img {
   width: auto;
   height: 140px;
   max-width: 100%;
-  display: block;
+  display: block; /* Verhindert unerwünschte Abstände */
   margin: 0 auto;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
