@@ -1,11 +1,3 @@
-/* Basis-Layout */
-body {
-    font-family: 'Pacifico', cursive;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 /* Video-Hintergrund */
 #video-background {
     position: fixed;
@@ -17,20 +9,37 @@ body {
     z-index: -1;
 }
 
-/* Transition Overlay (für den Seitenwechsel) */
+/* Dunkles Overlay für die Transition */
 .page-transition-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transition: opacity 1.4s ease;
-    z-index: 1000;
+    background: black; /* Startfarbe (dunkel) */
+    z-index: 9999; /* Über allem anderen */
+    opacity: 1; /* Anfangs sichtbar */
+    transition: opacity 1.4s ease; /* Transition auf 1,4 Sekunden */
 }
 
-/* Sidebar (langsame Animation) */
+/* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dezenteres Overlay */
+    z-index: 1;
+    transition: opacity 0.5s ease; /* Sanftes Ein- und Ausblenden */
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Sidebar (langsamere Animation) */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -41,16 +50,37 @@ body {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 1s ease; /* Langsame Animation für das Einblenden */
+    transition: left 1s ease; /* Langsamere Animation (1s statt 0.5s) */
     z-index: 2; /* Über dem Overlay */
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
 }
 
-/* Sidebar geöffnet */
 .sidebar.open {
     left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+.artist-signature img {
+    width: auto;
+    height: 140px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Sanfte Übergänge */
+}
+
+.artist-signature img:hover {
+    transform: scale(1.1); /* Leichte Vergrößerung */
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Aufleuchten und Schatten */
 }
 
 /* Links in der Sidebar */
@@ -64,17 +94,16 @@ body {
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     display: block;
-    transition: transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease, opacity 1s ease; /* Synchron mit der Sidebar */
     font-family: 'Pacifico', cursive;
     background-color: rgba(255, 255, 255, 0.15);
     margin: 5px 10px;
     border-radius: 5px;
     position: relative;
-    transform: translateX(-100%); /* Sidebar Links starten von der linken Seite */
+    transform: translateX(-100%);
     opacity: 0;
 }
 
-/* Wenn die Sidebar geöffnet ist, werden die Links eingeblendet */
 .sidebar.open a {
     transform: translateX(0);
     opacity: 1;
@@ -87,50 +116,63 @@ body {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Overlay für die Sidebar */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 1;
-}
-
-/* Button für Sidebar */
+/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 3;
-    color: white;
-    background: none;
+    font-size: 96px; /* 20 % kleiner (vorher 120px) */
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
     border: none;
-}
-
-/* Fade-in-Quote */
-#quote {
+    cursor: pointer;
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    color: white;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    z-index: 10;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
+    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
+    padding: 10px;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+.toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hover-Effekt für den Button */
+.toggle-button:hover {
+    transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
+    color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
+}
+
+/* Atmungsanimation für den Button (halbe Stärke) */
+@keyframes breathe {
+    0% {
+        color: rgba(255, 255, 255, 0.8); /* Hell */
     }
-    to {
-        opacity: 1;
+    50% {
+        color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
     }
+    100% {
+        color: rgba(255, 255, 255, 0.8); /* Hell */
+    }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
+    }
+    75% {
+        transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
+    }
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
