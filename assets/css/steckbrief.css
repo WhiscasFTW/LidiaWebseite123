@@ -69,13 +69,14 @@ footer {
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
   margin-top: 0; /* Kein Abstand nach oben */
+  margin-bottom: 0; /* Kein Abstand nach unten */
 }
 
 footer img {
   max-width: 100%;
   height: auto;
   display: block; /* Verhindert unerwünschte Abstände */
-  margin-top: 70px; /* Bild 70px weiter nach unten verschieben */
+  margin-top: 0; /* Bild direkt am unteren Rand */
 }
 
 /* Footer-Text */
