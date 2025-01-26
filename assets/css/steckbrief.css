@@ -93,6 +93,19 @@ footer img {
   text-decoration: underline;
 }
 
+/* Dunkles Overlay für die Transition */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1.4s ease;
+}
+
 /* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
 .overlay {
   display: none;
