@@ -12,22 +12,27 @@ function toggleSidebar() {
     overlay.classList.toggle('active');
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
+// Beim Laden der Seite das Overlay einblenden und dann entfernen
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
-    
-    // Das Overlay wird beim Laden der Seite eingeblendet, aber dann ausgeblendet
+
+    // Das Overlay direkt einblenden
     setTimeout(function () {
-        overlay.style.opacity = '0'; // Übergang starten
-    }, 10); // Kleine Verzögerung, damit der Übergang sanft startet
-    
-    // Nach 1,4 Sekunden Overlay entfernen
+        overlay.style.opacity = '1'; // Anfangszustand: dunkel
+    }, 10); // Verzögerung für weichen Start
+
+    // Nach 1,4 Sekunden das Overlay ausblenden und entfernen
+    setTimeout(function () {
+        overlay.style.opacity = '0'; // Übergang: Dunkelheit verschwindet
+    }, 10);
+
+    // Nach 1,4 Sekunden das Overlay endgültig entfernen
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1400); // 1,4 Sekunden
+    }, 1400); // Dauer des Übergangs
 };
 
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-In und Fade-Out
 function navigateToPage(url) {
     var overlay = document.createElement('div'); // Neues Overlay erstellen
     overlay.id = 'page-transition-overlay';
@@ -37,7 +42,7 @@ function navigateToPage(url) {
     // Overlay einblenden
     setTimeout(function () {
         overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+    }, 10); // Verzögerung, um das Einblenden zu starten
 
     // Nach 1,4 Sekunden weiterleiten
     setTimeout(function () {
@@ -51,7 +56,7 @@ document.querySelectorAll('a').forEach(function (link) {
         // Nur Links behandeln, die zu einer anderen Seite führen
         if (link.href && !link.href.includes('javascript:')) {
             event.preventDefault(); // Standardverhalten verhindern
-            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
+            navigateToPage(link.href); // Seitenwechsel mit Fade-In
         }
     });
 });
