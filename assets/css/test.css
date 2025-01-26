@@ -4,84 +4,54 @@ body, html {
   padding: 0;
   font-family: Arial, sans-serif;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
-/* Header-Styling mit Atem-Effekt */
+/* Header-Styling */
 header {
   width: 100%;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: breathe 3s infinite ease-in-out; /* Atem-Effekt hinzufügen */
 }
 
 header img {
-  width: 100%;
-  max-width: 2560px;
-  height: auto;
+  width: 2560px;
+  height: 360px;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Atem-Effekt-Animation */
-@keyframes breathe {
-  0% {
-    background-color: rgba(0, 0, 0, 0.5); /* Dunkler Zustand */
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.7); /* Heller Zustand */
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5); /* Zurück zum Dunklen */
-  }
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0; /* Entfernt ungewollte Abstände */
 }
 
 /* Video-Styling */
 main {
   width: 100%;
-  height: 100vh;
+  height: 1440px;
   position: relative;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Entfernt unerwünschte Abstände */
+  padding: 0; /* Entfernt unerwünschte Abstände */
 }
 
 video {
-  width: 100%;
-  height: 100vh;
+  width: 2560px;
+  height: 1440px;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  margin: 0;
-  filter: none; /* Originalzustand des Videos ohne Filter */
-}
-
-/* Noch dunkleres Overlay für das Video */
-main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 0;
+  margin: 0; /* Entfernt unerwünschte Abstände */
 }
 
 /* Footer-Styling */
 footer {
   width: 100%;
   text-align: center;
-  margin: 0;
+  margin: 0; /* Entfernt unerwünschte Abstände */
 }
 
 footer img {
-  width: 100%;
-  max-width: 2560px;
-  height: auto;
+  width: 2560px;
+  height: 51px;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  display: block; /* Verhindert zusätzliche Abstände */
+  margin: 0; /* Entfernt unerwünschte Abstände */
 }
