@@ -26,33 +26,6 @@ window.onload = function () {
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
     }, 1500); // 1,5 Sekunden
-
-    // Text nach 2 Sekunden einblenden
-    setTimeout(function () {
-        var quote = document.getElementById('quote');
-        quote.classList.add('visible'); // Text sichtbar machen
-    }, 2000); // 2 Sekunden
-
-    // Sidebar nach 5,5 Sekunden automatisch öffnen (nur einmal)
-    setTimeout(function () {
-        var sidebar = document.getElementById('sidebar');
-        var toggleButton = document.getElementById('toggleButton');
-        var overlay = document.getElementById('overlay');
-
-        // Sidebar langsam öffnen (3 Sekunden)
-        sidebar.classList.add('first-open'); // Langsamere Animation
-        sidebar.classList.add('open');
-        toggleButton.classList.add('open');
-        overlay.classList.add('active');
-
-        // Animationen des Buttons stoppen
-        toggleButton.style.animation = 'none';
-
-        // Nach dem ersten Öffnen die langsame Animation entfernen
-        setTimeout(function () {
-            sidebar.classList.remove('first-open');
-        }, 3000); // 3 Sekunden (Dauer der langsamen Animation)
-    }, 5500); // 5,5 Sekunden (vorher 4,5 Sekunden)
 };
 
 // Funktion für den Seitenwechsel mit 1,5 Sekunden Fade-Out
