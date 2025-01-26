@@ -61,13 +61,14 @@ main {
 
 /* Footer */
 footer {
-  position: relative; /* Footer unter dem Video */
-  z-index: 2; /* Footer über dem Video und Overlay */
+  position: fixed; /* Footer am Ende des Bildschirms fixieren */
+  bottom: 0; /* Am unteren Rand des Bildschirms */
+  left: 0;
+  width: 100%;
   text-align: center;
   padding: 20px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
-  margin-top: 0; /* Kein Abstand zum Video */
-  margin-bottom: -15px; /* Abstand unter dem Footer vollständig entfernen */
+  z-index: 2; /* Footer über dem Video und Overlay */
 }
 
 footer img {
@@ -77,7 +78,7 @@ footer img {
   margin-top: 70px; /* Bild 70px weiter nach unten verschieben */
 }
 
-/* Footer-Text 15px weiter nach unten (60px - 15px) */
+/* Footer-Text */
 .footer-text {
   margin-top: -45px; /* Text 15px weiter nach unten */
   color: white;
@@ -199,7 +200,7 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Button zum Öffnen und Schließen der Sidebar (exakt wie auf der anderen Seite) */
+/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
   font-size: 96px; /* 20 % kleiner (vorher 120px) */
   color: rgba(255, 255, 255, 0.8);
@@ -214,9 +215,6 @@ footer img {
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
   padding: 10px;
-  font-weight: 100; /* Sehr dünne Schrift */
-  font-family: 'Arial Narrow', sans-serif; /* Schmale Schriftart */
-  line-height: 1; /* Verhindert zusätzlichen Abstand */
 }
 
 .toggle-button.open {
