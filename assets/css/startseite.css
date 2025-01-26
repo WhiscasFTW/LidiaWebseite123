@@ -61,17 +61,23 @@
     left: 0;
 }
 
-/* Signatur der Künstlerin */
+/* Signatur der Künstlerin (clean) */
 .artist-signature {
     text-align: center;
     padding: 20px;
     animation: float 3s ease-in-out infinite;
     position: relative;
+    display: block; /* Link als Block-Element */
+    text-decoration: none; /* Unterstreichung entfernen */
+    color: inherit; /* Standardfarbe beibehalten */
+    background: none; /* Hintergrund entfernen */
+    border: none; /* Rahmen entfernen */
+    outline: none; /* Fokus-Rahmen entfernen */
 }
 
 .artist-signature img {
     width: auto;
-    height: 140px;
+    height: 140px; /* Höhe der Signatur */
     max-width: 100%;
     display: block;
     margin: 0 auto;
