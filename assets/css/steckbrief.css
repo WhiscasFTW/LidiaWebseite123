@@ -9,6 +9,57 @@
   z-index: -1;
 }
 
+/* Header */
+header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main-Bereich */
+main {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund für bessere Lesbarkeit */
+}
+
+footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-text {
+  margin-top: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
 /* Dunkles Overlay für die Transition */
 .page-transition-overlay {
   position: fixed;
