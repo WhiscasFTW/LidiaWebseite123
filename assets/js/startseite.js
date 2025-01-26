@@ -10,19 +10,16 @@ function toggleSidebar() {
 
     // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
     overlay.classList.toggle('active');
-
-    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
+    
+    // Übergang starten: Overlay wird eingeblendet
+    overlay.style.opacity = '1';
 
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
-
-    // Overlay nach 1,4 Sekunden vollständig entfernen
+    // Nach 1,4 Sekunden Overlay entfernen
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
     }, 1400); // 1,4 Sekunden
