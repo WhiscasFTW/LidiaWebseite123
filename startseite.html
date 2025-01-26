@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Bild-Hintergrund (untere Schicht) -->
-    <div id="image-background"></div>
-
-    <!-- Video-Hintergrund (obere Schicht) -->
+    <!-- Video-Hintergrund -->
     <video autoplay muted loop id="video-background">
         <source src="assets/images/background_1.webm" type="video/webm">
         Dein Browser unterstützt das Video-Tag nicht.
     </video>
+
+    <!-- Dunkles Overlay für die Transition -->
+    <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
@@ -25,7 +25,7 @@
     <div id="sidebar" class="sidebar">
         <!-- Signatur der Künstlerin -->
         <div class="artist-signature">
-            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin">
+            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
         </div>
 
         <!-- Links mit Icons -->
@@ -34,15 +34,19 @@
             <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
             <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
             <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-            <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
+            <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
         </div>
     </div>
 
     <!-- Button zum Öffnen und Schließen der Sidebar -->
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
+    <!-- Text, der nach 2 Sekunden eingeblendet wird -->
+    <div id="quote" class="quote">
+        „Wenn du es in Worten sagen könntest, gäbe es keinen Grund zu malen.“ – Eduard Hopper
+    </div>
+
     <!-- JavaScript-Datei einbinden -->
     <script src="assets/js/forms.js"></script>
-    <script src="assets/js/sidebar.js"></script>
 </body>
 </html>
