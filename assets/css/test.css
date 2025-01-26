@@ -11,6 +11,12 @@ body, html {
 header {
   width: 100%;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Header */
+  transition: background-color 0.5s ease-in-out; /* Übergang der Hintergrundfarbe */
+  position: fixed; /* Fixiert den Header oben */
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 header img {
@@ -41,7 +47,7 @@ video {
   margin: 0;
 }
 
-/* Dunkles Overlay für das Video */
+/* Noch dunkleres Overlay für das Video */
 main::before {
   content: "";
   position: absolute;
@@ -49,8 +55,8 @@ main::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Schwarzes Overlay, angepasst auf 60% Opazität für dunkleren Effekt */
-  z-index: 0; /* Overlay unterhalb des Inhalts */
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 0;
 }
 
 /* Footer-Styling */
@@ -66,4 +72,9 @@ footer img {
   object-fit: contain;
   display: block;
   margin: 0;
+}
+
+/* Wenn die Seite gescrollt wird, ändert sich die Transparenz des Headers */
+body.scrolled header {
+  background-color: rgba(0, 0, 0, 1); /* Header wird weniger transparent */
 }
