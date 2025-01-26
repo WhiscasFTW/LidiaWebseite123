@@ -72,13 +72,13 @@ footer img {
   position: absolute;
   bottom: 20px; /* Abstand vom unteren Rand */
   left: 50%;
-  transform: translateX(-50%); /* Zentriert den Text exakt */
+  transform: translateX(-50%); /* Exakte Zentrierung des Textes */
   color: white;
   font-size: 16px;
   text-align: center; /* Text wird zentriert */
   white-space: nowrap; /* Verhindert Umbruch des Textes */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Für bessere Lesbarkeit */
-  opacity: 1; /* Sofort sichtbar, ohne Animation */
+  opacity: 1; /* Text sofort sichtbar ohne Animation */
 }
 
 /* Footer-Links */
