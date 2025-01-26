@@ -21,24 +21,13 @@ header img {
   margin: 0 auto; /* Zentriert das Bild */
 }
 
-/* Video-Styling */
+/* Entferne das Video */
 main {
   width: 100%;
-  height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+  min-height: 60vh; /* Setzt eine minimale Höhe, damit der Abstand zwischen Header und Footer gleich bleibt */
   position: relative;
   margin: 0;
   padding: 0;
-}
-
-video {
-  width: 100%; /* Video nimmt die gesamte Breite ein */
-  height: 100%; /* Video nimmt die gesamte Höhe ein */
-  object-fit: cover; /* Deckt den gesamten Bereich ab */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Video bleibt im Hintergrund */
-  filter: brightness(50%); /* Video bleibt dunkler */
 }
 
 /* Footer-Styling */
