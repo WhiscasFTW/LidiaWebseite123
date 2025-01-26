@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webseite mit Header, Video und Footer</title>
+  <link rel="stylesheet" href="assets/css/test.css">
 </head>
 <body>
-    <!-- Video-Hintergrund -->
-    <video autoplay muted loop id="video-background">
-        <source src="assets/images/background_1.webm" type="video/webm">
-        Dein Browser unterstützt das Video-Tag nicht.
+  <header>
+    <img src="assets/images/HeaderSteckbrief.png" alt="Header">
+  </header>
+  
+  <main>
+    <video autoplay loop muted>
+      <source src="assets/images/background_1.webm" type="video/webm">
+      Dein Browser unterstützt dieses Videoformat nicht.
     </video>
-
-    <!-- Dunkles Overlay für die Transition -->
-    <div id="page-transition-overlay" class="page-transition-overlay"></div>
-
-    <!-- Overlay für die Sidebar -->
-    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
-    <!-- Die Sidebar auf der linken Seite -->
-    <div id="sidebar" class="sidebar">
-        <!-- Signatur der Künstlerin -->
-        <div class="artist-signature">
-            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
-        </div>
-
-        <!-- Links mit Icons -->
-        <div class="sidebar-links">
-            <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-            <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
-            <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
-            <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-            <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
-        </div>
-    </div>
-
-    <!-- Button zum Öffnen und Schließen der Sidebar -->
-    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
-
-    <!-- Text, der nach 2 Sekunden eingeblendet wird -->
-    <div id="quote" class="quote">
-        „Wenn du es in Worten sagen könntest, gäbe es keinen Grund zu malen.“ – Eduard Hopper
-    </div>
-
-    <!-- JavaScript-Datei einbinden -->
-    <script src="assets/js/forms.js"></script>
+  </main>
+  
+  <footer>
+    <img src="assets/images/Footer.jpg" alt="Footer">
+  </footer>
 </body>
 </html>
