@@ -80,7 +80,7 @@ footer .footer-content p {
 footer .footer-content a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  margin: 0px;
+  margin: -30px;
   transition: color 0.3s ease;
 }
 
