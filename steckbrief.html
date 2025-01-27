@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webseite mit Sidebar</title>
-  <!-- CSS-Dateien werden mit "rel=preload" asynchron geladen -->
   <link rel="stylesheet" href="assets/css/steckbrief.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader">Lädt...</div>
+  </div>
+
   <!-- Dunkles Overlay für die Transition -->
   <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
@@ -51,7 +55,6 @@
       <div class="video-overlay"></div> <!-- Helles Overlay für das Video -->
     </div>
   </main>
-  
 
   <!-- Footer -->
   <footer>
