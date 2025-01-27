@@ -62,34 +62,40 @@ main {
 
 /* Info-Box für Impressum und Datenschutz */
 .info-box {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.9); /* Heller Hintergrund */
   padding: 20px;
   margin: 30px auto;
   width: 80%;
-  max-width: 400px;
+  max-width: 800px; /* Breiter für mehr Text */
   border-radius: 8px;
-  text-align: center;
+  text-align: left; /* Text linksbündig */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 2; /* Über dem Video */
+  color: #333; /* Dunkler Text für bessere Lesbarkeit */
+}
+
+.info-box h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #000;
+}
+
+.info-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
 }
 
 .info-box a {
-  display: block;
+  color: #007BFF;
   text-decoration: none;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 10px 0;
   transition: color 0.3s ease;
 }
 
 .info-box a:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.info-box:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-5px);
+  color: #0056b3;
 }
 
 /* Footer */
