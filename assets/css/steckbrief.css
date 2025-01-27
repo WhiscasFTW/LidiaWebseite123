@@ -65,7 +65,7 @@ footer {
   position: relative;
   width: 100%;
   text-align: center;
-  padding: 20px 0; /* Innenabstand oben und unten */
+  padding: 10px 0; /* Innenabstand oben und unten */
   background-color: black;
   z-index: 2;
   margin-top: 0;
