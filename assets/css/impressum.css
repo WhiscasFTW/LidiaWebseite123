@@ -8,33 +8,6 @@ body, html {
   background-color: black;
 }
 
-/* Video-Container */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Volle Höhe des Viewports */
-  z-index: -1;
-}
-
-/* Video-Hintergrund */
-#video-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Video deckt den gesamten Bereich ab */
-  display: block;
-}
-
-/* Helles Overlay für das Video */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
 /* Header */
 header {
   position: relative;
