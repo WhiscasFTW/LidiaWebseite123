@@ -69,7 +69,7 @@ footer {
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
   margin-top: 0; /* Kein Abstand nach oben */
-  margin-bottom: 0; /* Kein Abstand nach unten */
+  margin-bottom: -10; /* Kein Abstand nach unten */
 }
 
 footer img {
