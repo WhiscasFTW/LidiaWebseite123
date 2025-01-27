@@ -65,11 +65,11 @@ footer {
   position: relative; /* Footer am Ende der Seite */
   width: 100%;
   text-align: center;
-  padding: -10px 0; /* Innenabstand oben und unten */
+  padding: -30px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
   margin-top: 0; /* Kein Abstand nach oben */
-  margin-bottom: -10; /* Kein Abstand nach unten */
+  margin-bottom: -20; /* Kein Abstand nach unten */
 }
 
 footer img {
