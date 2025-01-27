@@ -8,32 +8,6 @@ body, html {
   background-color: black;
 }
 
-/* Loading Screen */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-.loader {
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-  animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 /* Video-Container */
 .video-container {
   position: relative;
@@ -218,23 +192,63 @@ footer img {
   cursor: pointer;
   position: fixed;
   top: 50%;
-  right: 0;
+  right: 10px;  /* Korrektur der Position */
   transform: translateY(-50%);
   z-index: 20;
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+  padding: 10px;
 }
 
 .toggle-button:hover {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Overlay für die Sidebar */
-.overlay {
+/* Atmungsanimation für den Button */
+@keyframes breathe {
+  0% { color: rgba(255, 255, 255, 0.8); }
+  50% { color: rgba(255, 255, 255, 0.6); }
+  100% { color: rgba(255, 255, 255, 0.8); }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(-2deg); }
+  75% { transform: translateY(-50%) rotate(2deg); }
+}
+
+/* Animationen */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Loading Screen */
+#loading-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: none;
-  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+#loading-screen .loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
