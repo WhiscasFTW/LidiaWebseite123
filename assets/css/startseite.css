@@ -1,12 +1,3 @@
-/* Grundlegendes Styling für die Seite */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #1d1d1d; /* Dunkler Hintergrund */
-    color: #fff;
-}
-
 /* Video-Hintergrund */
 #video-background {
     position: fixed;
