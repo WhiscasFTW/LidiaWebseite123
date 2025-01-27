@@ -1,66 +1,73 @@
-// Funktion zum Öffnen/Schließen der Sidebar
+// Funktion für den Übergangseffekt
+function pageTransition() {
+    const overlay = document.querySelector('.page-transition-overlay');
+    overlay.style.opacity = '1';
+
+    setTimeout(() => {
+        overlay.style.opacity = '0';
+    }, 1400); // Überblendung nach 1,4 Sekunden
+}
+
+// Funktion zum Öffnen und Schließen der Sidebar
 function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleButton = document.getElementById('toggleButton');
-    var overlay = document.getElementById('overlay');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    const button = document.querySelector('.toggle-button');
 
-    // Sidebar und Button umschalten
     sidebar.classList.toggle('open');
-    toggleButton.classList.toggle('open');
-
-    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
     overlay.classList.toggle('active');
-
-    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-    toggleButton.style.animation = 'none'; // Animationen entfernen
+    button.classList.toggle('open');
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-document.addEventListener("DOMContentLoaded", function () {
-    var overlay = document.getElementById('page-transition-overlay');
+// Funktion für das Overlay (dunkles Hintergrund)
+function closeOverlay() {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.remove('active');
+}
 
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
+// Event-Listener für die Sidebar und den Button
+document.querySelector('.toggle-button').addEventListener('click', toggleSidebar);
+document.querySelector('.overlay').addEventListener('click', closeOverlay);
 
-    // Overlay nach 1,4 Sekunden vollständig entfernen
-    setTimeout(function () {
-        overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1400); // 1,4 Sekunden
+// Automatische Übergangsstart beim Laden der Seite
+window.addEventListener('load', () => {
+    pageTransition(); // Startet den Übergangseffekt, wenn die Seite geladen wird
 });
 
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-function navigateToPage(url) {
-    var overlay = document.createElement('div'); // Neues Overlay erstellen
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay); // Overlay hinzufügen
+// Verhindert das versehentliche Laden des Hintergrundvideos nach einem Fehler
+window.addEventListener('error', () => {
+    const video = document.querySelector('#video-background');
+    video.style.display = 'none'; // Versteckt das Video, wenn ein Fehler auftritt
+});
 
-    // Overlay einblenden
-    setTimeout(function () {
-        overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+// Funktion für den Video-Hintergrund
+function setBackgroundVideo() {
+    const video = document.querySelector('#video-background');
 
-    // Nach 1,4 Sekunden weiterleiten
-    setTimeout(function () {
-        window.location.href = url;
-    }, 1400); // 1,4 Sekunden
+    // Setzt den Video-Hintergrund
+    video.src = 'your-video-file.mp4'; // Setze den Pfad zu deinem Video hier ein
+
+    // Überprüft, ob das Video geladen werden konnte
+    video.onerror = () => {
+        video.style.display = 'none'; // Versteckt das Video bei einem Fehler
+    };
 }
 
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-        // Nur Links behandeln, die zu einer anderen Seite führen
-        if (link.href && !link.href.includes('javascript:')) {
-            event.preventDefault(); // Standardverhalten verhindern
-            navigateToPage(link.href); // Seitenwechsel mit Fade-Out
-        }
+// Ruft die Funktion auf, um den Video-Hintergrund zu setzen
+setBackgroundVideo();
+
+// Optionale Funktion für einen sanften Scroll-Effekt
+function smoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
-});
+}
 
-// Fehlerbehandlung für das Video-Hintergrund
-var video = document.getElementById("video-background");
-
-video.onerror = function () {
-    console.error("Fehler beim Laden des Videos.");
-    // Hier könnte eine Fallback-Methode eingeführt werden, z. B. ein statisches Bild anstelle des Videos.
-};
+// Ruft die Funktion für den sanften Scroll-Effekt auf
+smoothScroll();
