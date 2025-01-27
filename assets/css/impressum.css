@@ -12,14 +12,15 @@ body, html {
 .video-container {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh; /* Volle Höhe des Viewports */
   z-index: -1;
 }
 
 /* Video-Hintergrund */
 #video-background {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Video deckt den gesamten Bereich ab */
   display: block;
 }
 
@@ -56,17 +57,17 @@ main {
   position: relative;
   z-index: 0;
   margin-top: 0;
-  background-color: black;
+  background-color: transparent; /* Transparenter Hintergrund */
   padding-bottom: 0;
 }
 
 /* Info-Box für Impressum und Datenschutz */
 .info-box {
-  background-color: rgba(255, 255, 255, 0.9); /* Heller Hintergrund */
+  background-color: rgba(255, 255, 255, 0.95); /* Sehr heller Hintergrund */
   padding: 20px;
   margin: 30px auto;
-  width: 80%;
-  max-width: 800px; /* Breiter für mehr Text */
+  width: 90%; /* Standardbreite für Mobile */
+  max-width: 1200px; /* Maximale Breite für Desktop */
   border-radius: 8px;
   text-align: left; /* Text linksbündig */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -74,6 +75,15 @@ main {
   position: relative;
   z-index: 2; /* Über dem Video */
   color: #333; /* Dunkler Text für bessere Lesbarkeit */
+}
+
+/* Desktop-Version der Info-Box */
+@media (min-width: 768px) {
+  .info-box {
+    width: 80%; /* Breiter für Desktop */
+    padding: 40px; /* Mehr Innenabstand */
+    margin: 50px auto; /* Mehr Abstand oben und unten */
+  }
 }
 
 .info-box h2 {
@@ -105,7 +115,7 @@ footer {
   text-align: center;
   padding: 0px 0;
   background-color: black;
-  z-index: 2;
+  z-index: 3; /* Über der Box */
   margin-top: 0;
   display: flex;
   align-items: center;
