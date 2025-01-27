@@ -42,10 +42,10 @@ function navigateToPage(url) {
         overlay.style.opacity = '1';
     }, 10); // Kurze Verzögerung, um das Einblenden zu starten
 
-    // Nach 1,4 Sekunden weiterleiten
-    setTimeout(function () {
-        window.location.href = url;
-    }, 1400); // 1,4 Sekunden
+    // Warte, bis die Fade-Out-Animation abgeschlossen ist
+    overlay.addEventListener('transitionend', function () {
+        window.location.href = url; // Weiterleitung zur neuen Seite
+    }, { once: true }); // Event-Listener nur einmal ausführen
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
