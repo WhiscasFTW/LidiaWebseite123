@@ -230,17 +230,3 @@ footer img {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
-
-/* Overlay für den Fade-In/Fade-Out Effekt */
-.page-transition-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  z-index: 100;
-  pointer-events: none;
-  transition: opacity 1.4s ease;
-}
