@@ -57,19 +57,25 @@ main {
   z-index: 0; /* Video unter Header und Footer */
   margin-top: 0; /* Kein Abstand zum Header */
   background-color: black; /* Hintergrundfarbe für den Main-Bereich */
-  padding-bottom: 0; /* Kein Abstand nach unten */
+  padding-bottom: 51px; /* Platz für Footer */
 }
 
 /* Footer */
 footer {
-  position: absolute; /* Footer relativ zum Bildschirm positionieren */
-  bottom: 0; /* Footer am unteren Rand platzieren */
+  position: fixed; /* Footer bleibt immer am unteren Rand */
+  bottom: -51px; /* Anfangs ist der Footer außerhalb des Bildschirms */
   width: 100%;
-  height: 51px; /* Höhe des Footers auf 51px festlegen */
+  height: 51px; /* Höhe des Footers */
   text-align: center;
   padding: 10px 0;
   background-color: black;
   z-index: 2;
+  transition: bottom 0.5s ease-in-out; /* Sanfte Bewegung für das Erscheinen */
+}
+
+/* Footer sichtbar machen */
+footer.visible {
+  bottom: 0; /* Sobald sichtbar, ist der Footer am unteren Rand */
 }
 
 /* Footer-Text */
