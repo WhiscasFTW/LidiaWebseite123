@@ -12,16 +12,6 @@ function navigateToPage(url) {
   overlay.className = 'page-transition-overlay';
   document.body.appendChild(overlay);
 
-  // Übergang für das Overlay starten (für 1,4 Sekunden)
-  setTimeout(function () {
-    overlay.style.opacity = '1';
-  }, 10);
-
-  // Nach 1,4 Sekunden zur neuen Seite wechseln
-  setTimeout(function () {
-    console.log('Redirecting to: ' + url); // Debug-Ausgabe
-    window.location.href = url;
-  }, 1400); // Verzögerung für den Übergangseffekt
 }
 
 // Event-Listener für das Laden der Seite, um das Overlay zu initialisieren
