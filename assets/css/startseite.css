@@ -22,6 +22,23 @@
     transition: opacity 1.4s ease;
 }
 
+/* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.overlay.active {
+    display: block;
+}
+
 /* Sidebar (langsame Animation) */
 .sidebar {
     height: 100%;
@@ -42,6 +59,28 @@
 
 .sidebar.open {
     left: 0;
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+    text-align: center;
+    padding: 20px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+.artist-signature img {
+    width: auto;
+    height: 140px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 /* Links in der Sidebar */
@@ -117,6 +156,13 @@
     0%, 100% { transform: translateY(-50%) rotate(0deg); }
     25% { transform: translateY(-50%) rotate(-2deg); }
     75% { transform: translateY(-50%) rotate(2deg); }
+}
+
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 /* Medienabfragen für verschiedene Bildschirmgrößen */
