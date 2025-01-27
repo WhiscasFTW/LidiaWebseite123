@@ -30,7 +30,7 @@ window.onload = function () {
     overlay.style.opacity = '0';
     setTimeout(function () {
       overlay.remove();
-    }, 1400);
+    }, 500);
   }
 };
 
@@ -43,11 +43,11 @@ function navigateToPage(url) {
 
   setTimeout(function () {
     overlay.style.opacity = '1';
-  }, 10);
+  }, 1);
 
   setTimeout(function () {
     window.location.href = url;
-  }, 1400);
+  }, 500);
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
