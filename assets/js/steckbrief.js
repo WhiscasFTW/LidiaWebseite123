@@ -55,7 +55,3 @@ document.querySelectorAll('a').forEach(function (link) {
     }
   });
 });
-window.onload = function() {
-    // Forciertes Neuladen der Seite bei jedem Besuch
-    window.location.reload(true);
-};
