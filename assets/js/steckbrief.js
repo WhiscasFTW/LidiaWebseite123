@@ -1,6 +1,6 @@
 // Funktion für den Übergang zwischen Seiten
 function navigateToPage(url) {
-  // Überprüfen, ob bereits ein Overlay existiert, und entfernen, falls ja
+  // Überprüfen, ob bereits ein Overlay existiert und entfernen, falls ja
   var existingOverlay = document.getElementById('page-transition-overlay');
   if (existingOverlay) {
     existingOverlay.remove();
@@ -21,18 +21,22 @@ function navigateToPage(url) {
   setTimeout(function () {
     console.log('Redirecting to: ' + url); // Debug-Ausgabe
     window.location.href = url;
-  }, 1400);
+  }, 1400); // Verzögerung für den Übergangseffekt
 }
 
 // Event-Listener für das Laden der Seite, um das Overlay zu initialisieren
 window.addEventListener('load', function () {
-  var overlay = document.createElement('div');
-  overlay.id = 'page-transition-overlay';
-  overlay.className = 'page-transition-overlay';
-  document.body.appendChild(overlay);
+  // Nur initialisieren, wenn noch kein Overlay existiert
+  var existingOverlay = document.getElementById('page-transition-overlay');
+  if (!existingOverlay) {
+    var overlay = document.createElement('div');
+    overlay.id = 'page-transition-overlay';
+    overlay.className = 'page-transition-overlay';
+    document.body.appendChild(overlay);
+  }
 });
 
-// Wenn du eine Animation bei Seitenwechsel und einem Hover-Effekt auf Links oder Buttons hast:
+// Event-Listener für alle Links und Buttons zum Anwenden des Übergangseffekts
 const links = document.querySelectorAll('a, .toggle-button');
 
 links.forEach(link => {
@@ -42,3 +46,25 @@ links.forEach(link => {
     navigateToPage(href); // Übergang zur Seite mit Animation
   });
 });
+
+// Funktion zum Öffnen der Sidebar (kann aufgerufen werden, wenn Sidebar geöffnet werden soll)
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.overlay');
+
+  // Sidebar öffnen oder schließen
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('active');
+}
+
+// Event-Listener für das Öffnen der Sidebar
+const toggleButton = document.querySelector('.toggle-button');
+if (toggleButton) {
+  toggleButton.addEventListener('click', toggleSidebar);
+}
+
+// Überprüfung der Overlay-Logik für die Sidebar
+const overlay = document.querySelector('.overlay');
+if (overlay) {
+  overlay.addEventListener('click', toggleSidebar); // Sidebar schließen, wenn Overlay geklickt wird
+}
