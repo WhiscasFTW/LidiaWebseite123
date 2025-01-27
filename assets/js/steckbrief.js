@@ -1,57 +1,44 @@
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  var toggleButton = document.getElementById('toggleButton');
-  var overlay = document.getElementById('overlay');
-
-  // Sidebar und Button umschalten
-  sidebar.classList.toggle('open');
-  toggleButton.classList.toggle('open');
-
-  // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
-  overlay.classList.toggle('active');
-
-  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-  toggleButton.style.animation = 'none'; // Animationen entfernen
-}
-
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-  var overlay = document.getElementById('page-transition-overlay');
-
-  // Overlay langsam ausblenden
-  overlay.style.opacity = '0';
-
-  // Overlay nach 1,4 Sekunden vollständig entfernen
-  setTimeout(function () {
-    overlay.remove();
-  }, 1400);
-};
-
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+// Funktion für den Übergang zwischen Seiten
 function navigateToPage(url) {
+  // Überprüfen, ob bereits ein Overlay existiert, und entfernen, falls ja
+  var existingOverlay = document.getElementById('page-transition-overlay');
+  if (existingOverlay) {
+    existingOverlay.remove();
+  }
+
+  // Erstellen des neuen Overlays
   var overlay = document.createElement('div');
   overlay.id = 'page-transition-overlay';
   overlay.className = 'page-transition-overlay';
   document.body.appendChild(overlay);
 
-  // Overlay einblenden
+  // Übergang für das Overlay starten (für 1,4 Sekunden)
   setTimeout(function () {
     overlay.style.opacity = '1';
   }, 10);
 
-  // Nach 1,4 Sekunden weiterleiten
+  // Nach 1,4 Sekunden zur neuen Seite wechseln
   setTimeout(function () {
+    console.log('Redirecting to: ' + url); // Debug-Ausgabe
     window.location.href = url;
   }, 1400);
 }
 
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    if (link.href && !link.href.includes('javascript:')) {
-      event.preventDefault();
-      navigateToPage(link.href);
-    }
+// Event-Listener für das Laden der Seite, um das Overlay zu initialisieren
+window.addEventListener('load', function () {
+  var overlay = document.createElement('div');
+  overlay.id = 'page-transition-overlay';
+  overlay.className = 'page-transition-overlay';
+  document.body.appendChild(overlay);
+});
+
+// Wenn du eine Animation bei Seitenwechsel und einem Hover-Effekt auf Links oder Buttons hast:
+const links = document.querySelectorAll('a, .toggle-button');
+
+links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // Verhindert das sofortige Weiterleiten
+    const href = this.getAttribute('href');
+    navigateToPage(href); // Übergang zur Seite mit Animation
   });
 });
