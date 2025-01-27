@@ -76,7 +76,7 @@ footer img {
   max-width: 100%;
   height: auto;
   display: block; /* Verhindert unerwünschte Abstände */
-  margin-top: 0; /* Bild direkt am unteren Rand */
+  margin-top: -100; /* Bild direkt am unteren Rand */
 }
 
 /* Footer-Text */
