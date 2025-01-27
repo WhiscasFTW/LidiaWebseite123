@@ -94,7 +94,7 @@ footer img {
   height: 51px; /* Höhe des Footer-Bildes */
   object-fit: cover; /* Stellt sicher, dass das Bild die gesamte Breite abdeckt */
   display: block;
-  margin-top: 0px; /* Abstand zwischen Text und Bild */
+  margin-top: 20px; /* Abstand zwischen Text und Bild */
 }
 
 /* Für das Bild in kleineren Bildschirmen */
@@ -269,4 +269,32 @@ footer img {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0; /* Innenabstand oben und unten */
+  background-color: black;
+  z-index: 2;
+  margin-top: 0;
+}
+
+footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin: 0;
+}
+
+footer .footer-content a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer .footer-content a:hover {
+  color: rgba(255, 255, 255, 1);
 }
