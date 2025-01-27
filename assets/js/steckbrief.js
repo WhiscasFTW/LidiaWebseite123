@@ -10,24 +10,24 @@ function toggleSidebar() {
 
   // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
   overlay.classList.toggle('active');
-
-  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-  toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
-  var overlay = document.getElementById('page-transition-overlay');
-  
-  // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
-  if (overlay) {
-    overlay.style.opacity = '0';
+  var overlay = document.createElement('div');
+  overlay.id = 'page-transition-overlay';
+  overlay.className = 'page-transition-overlay';
+  document.body.appendChild(overlay);
 
-    // Overlay nach 1,4 Sekunden vollständig entfernen
-    setTimeout(function () {
-      overlay.remove();
-    }, 1400);
-  }
+  // Overlay einblenden
+  setTimeout(function () {
+    overlay.style.opacity = '1';
+  }, 10);
+
+  // Nach 1,4 Sekunden zur neuen Seite navigieren
+  setTimeout(function () {
+    window.location.href = '/startseite.html';
+  }, 1400);
 };
 
 // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
