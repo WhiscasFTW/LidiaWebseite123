@@ -16,7 +16,7 @@ function toggleSidebar() {
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     var overlay = document.getElementById('page-transition-overlay');
 
     // Overlay langsam ausblenden
@@ -26,7 +26,7 @@ window.onload = function () {
     setTimeout(function () {
         overlay.remove(); // Overlay aus dem DOM entfernen
     }, 1400); // 1,4 Sekunden
-};
+});
 
 // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
 function navigateToPage(url) {
@@ -56,3 +56,11 @@ document.querySelectorAll('a').forEach(function (link) {
         }
     });
 });
+
+// Fehlerbehandlung für das Video-Hintergrund
+var video = document.getElementById("video-background");
+
+video.onerror = function () {
+    console.error("Fehler beim Laden des Videos.");
+    // Hier könnte eine Fallback-Methode eingeführt werden, z. B. ein statisches Bild anstelle des Videos.
+};
