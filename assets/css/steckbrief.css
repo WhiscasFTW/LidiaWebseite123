@@ -79,22 +79,6 @@ footer img {
   margin-top: -100; /* Bild direkt am unteren Rand */
 }
 
-/* Footer-Text */
-.footer-text {
-  margin-top: -20px; /* Text weiter nach unten verschieben (vorher -45px) */
-  color: white;
-  font-size: 14px;
-}
-
-.footer-text a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-text a:hover {
-  text-decoration: underline;
-}
-
 /* Dunkles Overlay für die Transition */
 .page-transition-overlay {
   position: fixed;
