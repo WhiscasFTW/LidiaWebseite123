@@ -57,29 +57,31 @@ main {
   z-index: 0; /* Video unter Header und Footer */
   margin-top: 0; /* Kein Abstand zum Header */
   background-color: black; /* Hintergrundfarbe für den Main-Bereich */
-  padding-bottom: 51px; /* Platz für Footer */
+  padding-bottom: 0; /* Kein Abstand nach unten */
 }
 
 /* Footer */
 footer {
-  position: fixed; /* Footer bleibt immer am unteren Rand */
-  bottom: -51px; /* Anfangs ist der Footer außerhalb des Bildschirms */
+  position: relative; /* Footer am Ende der Seite */
   width: 100%;
-  height: 51px; /* Höhe des Footers */
   text-align: center;
-  padding: 10px 0;
-  background-color: black;
-  z-index: 2;
-  transition: bottom 0.5s ease-in-out; /* Sanfte Bewegung für das Erscheinen */
+  padding: 20px 0; /* Innenabstand oben und unten */
+  background-color: black; /* Hintergrundfarbe des Footers */
+  z-index: 2; /* Footer über dem Video und Overlay */
+  margin-top: 0; /* Kein Abstand nach oben */
+  margin-bottom: 0; /* Kein Abstand nach unten */
 }
 
-/* Footer sichtbar machen */
-footer.visible {
-  bottom: 0; /* Sobald sichtbar, ist der Footer am unteren Rand */
+footer img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Verhindert unerwünschte Abstände */
+  margin-top: 0; /* Bild direkt am unteren Rand */
 }
 
 /* Footer-Text */
 .footer-text {
+  margin-top: -60px; /* Text weiter nach unten verschieben (vorher -45px) */
   color: white;
   font-size: 14px;
 }
@@ -175,7 +177,7 @@ footer.visible {
   padding: 10px 10px 10px 32px;
   text-decoration: none;
   font-size: 22px;
-  color: rgba(255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85);
   display: block;
   transition: transform 1s ease, opacity 1s ease;
   font-family: 'Pacifico', cursive;
@@ -201,7 +203,7 @@ footer.visible {
 
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-  font-size: 96px;
+  font-size: 96px; /* 20 % kleiner (vorher 120px) */
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
   border: none;
@@ -211,8 +213,8 @@ footer.visible {
   left: 15px;
   transform: translateY(-50%);
   z-index: 3;
-  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
   padding: 10px;
 }
 
@@ -221,21 +223,22 @@ footer.visible {
   transform: translateY(-50%) rotate(90deg);
 }
 
+/* Hover-Effekt für den Button */
 .toggle-button:hover {
-  transform: translateY(-50%) scale(1.1);
-  color: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
+  color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
 }
 
 /* Atmungsanimation für den Button (halbe Stärke) */
 @keyframes breathe {
   0% {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8); /* Hell */
   }
   50% {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
   }
   100% {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8); /* Hell */
   }
 }
 
@@ -245,10 +248,10 @@ footer.visible {
     transform: translateY(-50%) rotate(0deg);
   }
   25% {
-    transform: translateY(-50%) rotate(-2deg);
+    transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
   }
   75% {
-    transform: translateY(-50%) rotate(2deg);
+    transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
   }
 }
 
@@ -258,3 +261,4 @@ footer.visible {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+
