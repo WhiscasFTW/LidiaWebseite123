@@ -24,18 +24,6 @@ function navigateToPage(url) {
   }, 1400); // Verzögerung für den Übergangseffekt
 }
 
-// Event-Listener für das Laden der Seite, um das Overlay zu initialisieren
-window.addEventListener('load', function () {
-  // Nur initialisieren, wenn noch kein Overlay existiert
-  var existingOverlay = document.getElementById('page-transition-overlay');
-  if (!existingOverlay) {
-    var overlay = document.createElement('div');
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay);
-  }
-});
-
 // Event-Listener für alle Links und Buttons zum Anwenden des Übergangseffekts
 const links = document.querySelectorAll('a, .toggle-button');
 
@@ -61,10 +49,4 @@ function toggleSidebar() {
 const toggleButton = document.querySelector('.toggle-button');
 if (toggleButton) {
   toggleButton.addEventListener('click', toggleSidebar);
-}
-
-// Überprüfung der Overlay-Logik für die Sidebar
-const overlay = document.querySelector('.overlay');
-if (overlay) {
-  overlay.addEventListener('click', toggleSidebar); // Sidebar schließen, wenn Overlay geklickt wird
 }
