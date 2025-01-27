@@ -1,3 +1,5 @@
+
+
 /* Allgemeines Layout */
 body, html {
   margin: 0;
@@ -192,9 +194,9 @@ footer img {
   cursor: pointer;
   position: fixed;
   top: 50%;
-  left: 10px; /* Button nach links verschieben */
+  left: 15px;
   transform: translateY(-50%);
-  z-index: 20;
+  z-index: 3;
   transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
   animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
   padding: 10px;
@@ -206,6 +208,7 @@ footer img {
 }
 
 .toggle-button:hover {
+  transform: translateY(-50%) scale(1.1);
   color: rgba(255, 255, 255, 1);
 }
 
@@ -229,5 +232,3 @@ footer img {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
-
-
