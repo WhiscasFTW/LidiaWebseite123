@@ -19,7 +19,6 @@ function navigateToPage(url) {
 
   // Nach 1,4 Sekunden zur neuen Seite wechseln
   setTimeout(function () {
-    console.log('Redirecting to: ' + url); // Debug-Ausgabe
     window.location.href = url;
   }, 1400); // Verzögerung für den Übergangseffekt
 }
