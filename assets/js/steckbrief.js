@@ -18,14 +18,16 @@ function toggleSidebar() {
 // Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
   var overlay = document.getElementById('page-transition-overlay');
+  
+  // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
+  if (overlay) {
+    overlay.style.opacity = '0';
 
-  // Overlay langsam ausblenden
-  overlay.style.opacity = '0';
-
-  // Overlay nach 1,4 Sekunden vollständig entfernen
-  setTimeout(function () {
-    overlay.remove();
-  }, 1400);
+    // Overlay nach 1,4 Sekunden vollständig entfernen
+    setTimeout(function () {
+      overlay.remove();
+    }, 1400);
+  }
 };
 
 // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
