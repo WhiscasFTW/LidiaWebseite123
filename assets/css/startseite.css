@@ -1,6 +1,3 @@
-
-
-
 /* Allgemeines Layout */
 body, html {
   margin: 0;
@@ -115,6 +112,21 @@ footer img {
 @media (max-width: 768px) {
   footer img {
     max-height: 51px; /* Die Höhe bleibt auf 51px auch auf kleinen Geräten */
+  }
+
+  /* Video auf mobilen Geräten größer und ganz unten */
+  .video-container {
+    height: 100vh; /* Volle Höhe des Viewports */
+  }
+
+  #video-background {
+    height: 100%; /* Video nimmt 100% der Höhe ein */
+    object-fit: cover; /* Deckt den gesamten Bereich ab, ohne das Bild zu verzerren */
+  }
+
+  /* Overlay für das Video auf mobilen Geräten */
+  .video-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Etwas dunkler für den Kontrast */
   }
 }
 
