@@ -1,24 +1,58 @@
 
-});
-
-// Funktion zum Öffnen der Sidebar (kann aufgerufen werden, wenn Sidebar geöffnet werden soll)
+// Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
+  var sidebar = document.getElementById('sidebar');
+  var toggleButton = document.getElementById('toggleButton');
+  var overlay = document.getElementById('overlay');
 
-  // Sidebar öffnen oder schließen
+  // Sidebar und Button umschalten
   sidebar.classList.toggle('open');
+  toggleButton.classList.toggle('open');
+
+  // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
   overlay.classList.toggle('active');
+
+  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+  toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Event-Listener für das Öffnen der Sidebar
-const toggleButton = document.querySelector('.toggle-button');
-if (toggleButton) {
-  toggleButton.addEventListener('click', toggleSidebar);
+// Beim Laden der Seite das Overlay ausblenden und entfernen
+window.onload = function () {
+  var overlay = document.getElementById('page-transition-overlay');
+
+  // Overlay langsam ausblenden
+  overlay.style.opacity = '0';
+
+  // Overlay nach 1,4 Sekunden vollständig entfernen
+  setTimeout(function () {
+    overlay.remove();
+  }, 1400);
+};
+
+// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+function navigateToPage(url) {
+  var overlay = document.createElement('div');
+  overlay.id = 'page-transition-overlay';
+  overlay.className = 'page-transition-overlay';
+  document.body.appendChild(overlay);
+
+  // Overlay einblenden
+  setTimeout(function () {
+    overlay.style.opacity = '1';
+  }, 10);
+
+  // Nach 1,4 Sekunden weiterleiten
+  setTimeout(function () {
+    window.location.href = url;
+  }, 1400);
 }
 
-// Überprüfung der Overlay-Logik für die Sidebar
-const overlay = document.querySelector('.overlay');
-if (overlay) {
-  overlay.addEventListener('click', toggleSidebar); // Sidebar schließen, wenn Overlay geklickt wird
-}
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    if (link.href && !link.href.includes('javascript:')) {
+      event.preventDefault();
+      navigateToPage(link.href);
+    }
+  });
+});
