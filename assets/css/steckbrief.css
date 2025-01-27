@@ -89,12 +89,14 @@ footer .footer-content p {
 footer .footer-content a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  margin: 0px;
-  transition: color 0.3s ease;
+  margin: 0 5px; /* Abstand zwischen den Links */
+  transition: color 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge */
 }
 
 footer .footer-content a:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft beim Hover */
+  transform: translateY(-2px); /* Leichtes Anheben des Links */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Schatten-Effekt */
 }
 
 /* Footer-Bild */
