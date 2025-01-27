@@ -69,6 +69,15 @@ footer {
   background-color: black;
   z-index: 2;
   margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px; /* Höhe des Footer-Bildes */
+}
+
+footer .footer-content {
+  position: absolute;
+  z-index: 1;
 }
 
 footer .footer-content p {
