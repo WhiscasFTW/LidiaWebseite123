@@ -2,10 +2,17 @@ window.onload = () => {
   const video = document.getElementById('video-background');
   const loadingScreen = document.getElementById('loading-screen');
 
-  // Sicherstellen, dass das Video vollständig geladen ist
+  // Wenn das Video geladen wurde
   video.oncanplaythrough = () => {
     loadingScreen.style.display = 'none'; // Ladebildschirm ausblenden
   };
+
+  // Fallback, falls das Video nicht schnell genug lädt
+  setTimeout(() => {
+    if (loadingScreen.style.display !== 'none') {
+      loadingScreen.style.display = 'none'; // Ladebildschirm nach 10 Sekunden ausblenden
+    }
+  }, 10000); // 10 Sekunden Wartezeit, bevor der Ladebildschirm entfernt wird
 };
 
 // Funktion zum Öffnen/Schließen der Sidebar
