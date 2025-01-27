@@ -74,13 +74,13 @@ footer {
 footer .footer-content p {
   color: rgba(255, 255, 255, 0.85);
   font-size: 16px;
-  margin: 0;
+  margin: -30px;
 }
 
 footer .footer-content a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  margin: -30px;
+  margin: 0px;
   transition: color 0.3s ease;
 }
 
