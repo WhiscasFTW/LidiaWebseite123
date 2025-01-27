@@ -66,8 +66,8 @@ main {
   background-color: rgba(255, 255, 255, 0.95); /* Sehr heller Hintergrund */
   padding: 20px;
   margin: 30px auto;
-  width: 90%; /* Standardbreite für Mobile */
-  max-width: 1200px; /* Maximale Breite für Desktop */
+  width: 80%; /* Schmaler als vorher */
+  max-width: 800px; /* Maximale Breite für Desktop */
   border-radius: 8px;
   text-align: left; /* Text linksbündig */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -80,7 +80,7 @@ main {
 /* Desktop-Version der Info-Box */
 @media (min-width: 768px) {
   .info-box {
-    width: 80%; /* Breiter für Desktop */
+    width: 70%; /* Etwas breiter für Desktop */
     padding: 40px; /* Mehr Innenabstand */
     margin: 50px auto; /* Mehr Abstand oben und unten */
   }
@@ -177,25 +177,25 @@ footer img {
   left: 0;
 }
 
-/* Links in der Sidebar */
+/* Links in der Sidebar (simpler und schlichter) */
 .sidebar-links {
   padding-bottom: 20px;
 }
 
 .sidebar a {
-  padding: 10px 10px 10px 32px;
+  padding: 10px 20px;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 18px; /* Kleinere Schriftgröße */
   color: rgba(255, 255, 255, 0.85);
   display: block;
-  transition: transform 1s ease, opacity 1s ease;
-  font-family: 'Pacifico', cursive;
-  background-color: rgba(255, 255, 255, 0.15);
-  margin: 5px 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: transparent; /* Keine Hintergrundfarbe */
+  margin: 5px 0;
   border-radius: 5px;
   position: relative;
-  transform: translateX(-100%);
+  font-family: Arial, sans-serif; /* Schlichter Font */
   opacity: 0;
+  transform: translateX(-100%);
 }
 
 .sidebar.open a {
@@ -204,7 +204,7 @@ footer img {
 }
 
 .sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1); /* Dezenter Hover-Effekt */
   color: rgba(255, 255, 255, 1);
   transform: translateX(5px);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
