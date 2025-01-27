@@ -1,12 +1,10 @@
-window.onload = () => {
-  const video = document.getElementById('video-background');
-  const loadingScreen = document.getElementById('loading-screen');
+
 
 // Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const toggleButton = document.getElementById('toggleButton');
-  const overlay = document.getElementById('overlay');
+  var sidebar = document.getElementById('sidebar');
+  var toggleButton = document.getElementById('toggleButton');
+  var overlay = document.getElementById('overlay');
 
   // Sidebar und Button umschalten
   sidebar.classList.toggle('open');
@@ -14,34 +12,42 @@ function toggleSidebar() {
 
   // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
   overlay.classList.toggle('active');
+
+  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+  toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
-  const overlay = document.getElementById('page-transition-overlay');
-
+  var overlay = document.getElementById('page-transition-overlay');
+  
+  // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
   if (overlay) {
     overlay.style.opacity = '0';
+
+    // Overlay nach 1,4 Sekunden vollständig entfernen
     setTimeout(function () {
       overlay.remove();
-    }, 1);
+    }, 1400);
   }
 };
 
 // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
 function navigateToPage(url) {
-  const overlay = document.createElement('div');
+  var overlay = document.createElement('div');
   overlay.id = 'page-transition-overlay';
   overlay.className = 'page-transition-overlay';
   document.body.appendChild(overlay);
 
+  // Overlay einblenden
   setTimeout(function () {
     overlay.style.opacity = '1';
-  }, 1);
+  }, 10);
 
+  // Nach 1,4 Sekunden weiterleiten
   setTimeout(function () {
     window.location.href = url;
-  }, 1);
+  }, 1400);
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
