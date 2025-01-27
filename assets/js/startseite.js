@@ -7,27 +7,27 @@ function toggleSidebar() {
     sidebar.classList.toggle('open');
     toggleButton.classList.toggle('open');
     overlay.classList.toggle('active');
-    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
+// Funktion für den Seitenwechsel mit Übergang
 function navigateToPage(url) {
-    var overlay = document.createElement('div'); 
+    var overlay = document.createElement('div');
     overlay.id = 'page-transition-overlay';
     overlay.className = 'page-transition-overlay';
     document.body.appendChild(overlay);
 
+    // Übergangseffekt (Overlay wird eingeblendet)
     setTimeout(function () {
-        overlay.style.opacity = '1'; // Overlay langsam einblenden
+        overlay.style.opacity = '1'; // Overlay einblenden
     }, 10);
 
-    // Nach 1,4 Sekunden weiterleiten
+    // Nach 1,4 Sekunden Seite wechseln
     setTimeout(function () {
-        window.location.href = url;
+        window.location.href = url; // URL laden
     }, 1400);
 }
 
-// Event-Listener für alle Links, die zu einer neuen Seite führen
+// Event-Listener für alle Links
 document.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function (event) {
         if (link.href && !link.href.includes('javascript:')) {
@@ -37,10 +37,9 @@ document.querySelectorAll('a').forEach(function (link) {
     });
 });
 
-// Nach dem Laden der Seite sicherstellen, dass das Overlay entfernt wird
+// Nach dem Laden der Seite Overlay zurücksetzen
 window.onload = function () {
     var overlay = document.getElementById('page-transition-overlay');
-
     if (overlay) {
         overlay.style.opacity = '0';
         setTimeout(function () {
@@ -49,13 +48,13 @@ window.onload = function () {
     }
 };
 
-// Bei einem Zurückwechseln zur Seite das Overlay und Transition korrekt zurücksetzen
+// Sicherstellen, dass Overlay bei "pageshow" zurückgesetzt wird
 window.addEventListener('pageshow', function () {
     var overlay = document.getElementById('page-transition-overlay');
     if (overlay) {
         overlay.style.opacity = '0';
         setTimeout(function () {
             overlay.remove();
-        }, 1400); // Sicherstellen, dass das Overlay entfernt wird
+        }, 1400); 
     }
 });
