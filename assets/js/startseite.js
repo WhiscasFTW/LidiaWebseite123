@@ -30,22 +30,30 @@ window.onload = function () {
     }, 1400); // 1,4 Sekunden
 };
 
+// Funktion zum Einblenden des Overlays (als Promise)
+function fadeOutOverlay() {
+    return new Promise((resolve) => {
+        var overlay = document.createElement('div'); // Neues Overlay erstellen
+        overlay.id = 'page-transition-overlay';
+        overlay.className = 'page-transition-overlay';
+        document.body.appendChild(overlay); // Overlay hinzufügen
+
+        // Overlay einblenden
+        setTimeout(function () {
+            overlay.style.opacity = '1';
+        }, 10); // Kurze Verzögerung, um das Einblenden zu starten
+
+        // Warte, bis die Fade-Out-Animation abgeschlossen ist
+        overlay.addEventListener('transitionend', function () {
+            resolve(); // Promise auflösen, wenn die Animation abgeschlossen ist
+        }, { once: true }); // Event-Listener nur einmal ausführen
+    });
+}
+
 // Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-function navigateToPage(url) {
-    var overlay = document.createElement('div'); // Neues Overlay erstellen
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay); // Overlay hinzufügen
-
-    // Overlay einblenden
-    setTimeout(function () {
-        overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
-
-    // Warte, bis die Fade-Out-Animation abgeschlossen ist
-    overlay.addEventListener('transitionend', function () {
-        window.location.href = url; // Weiterleitung zur neuen Seite
-    }, { once: true }); // Event-Listener nur einmal ausführen
+async function navigateToPage(url) {
+    await fadeOutOverlay(); // Warte, bis das Overlay vollständig eingeblendet ist
+    window.location.href = url; // Weiterleitung zur neuen Seite
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
