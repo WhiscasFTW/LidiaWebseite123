@@ -167,24 +167,33 @@ footer img {
   left: 0;
 }
 
-/* Signatur der Künstlerin */
+/* Signatur der Künstlerin (Originalzustand) */
 .signature {
-  position: absolute;  /* Damit bleibt es immer in der gleichen Position */
-  bottom: 10px;        /* Abstand vom unteren Rand */
-  left: 50%;           /* Zentriert es horizontal */
+  position: absolute;
+  bottom: 10px; /* Abstand vom unteren Rand */
+  left: 50%; /* Zentriert es horizontal */
   transform: translateX(-50%); /* Korrektur zur perfekten Zentrierung */
-  font-size: 14px;     /* Beibehaltung der gleichen Schriftgröße */
+  font-size: 12px; /* Originalgröße der Schrift */
   color: rgba(255, 255, 255, 0.8); /* Weiß, leicht transparent */
-  font-family: Arial, sans-serif; /* Gleiche Schriftart */
+  font-family: 'Pacifico', cursive; /* Schriftart wie gewünscht */
   text-align: center; /* Zentrierung des Textes */
-  z-index: 1;         /* Stellt sicher, dass es nicht hinter anderen Elementen verschwindet */
+  animation: fadeInUp 1.5s ease-in-out; /* Fade-In mit Aufwärtsbewegung */
+  z-index: 1; /* Stellt sicher, dass es nicht hinter anderen Elementen verschwindet */
 }
 
-/* Links in der Sidebar */
-.sidebar-links {
-  padding-bottom: 20px;
+/* Fade-In-Animation für die Signatur */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Links in der Sidebar mit gewünschter Schriftart */
 .sidebar a {
   padding: 10px 10px 10px 32px;
   text-decoration: none;
@@ -192,7 +201,7 @@ footer img {
   color: rgba(255, 255, 255, 0.85);
   display: block;
   transition: transform 1s ease, opacity 1s ease;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive; /* Schriftart wie gewünscht */
   background-color: rgba(255, 255, 255, 0.15);
   margin: 5px 10px;
   border-radius: 5px;
