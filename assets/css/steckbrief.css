@@ -68,7 +68,7 @@ footer {
   padding: 10px 0; /* Innenabstand oben und unten */
   background-color: black; /* Hintergrundfarbe des Footers */
   z-index: 2; /* Footer über dem Video und Overlay */
-  margin-top: 50; /* Kein Abstand nach oben */
+  margin-top: 150; /* Kein Abstand nach oben */
   margin-bottom: 0; /* Kein Abstand nach unten */
 }
 
