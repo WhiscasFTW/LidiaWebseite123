@@ -55,8 +55,3 @@ document.querySelectorAll('a').forEach(function (link) {
     }
   });
 });
-
-// Event-Listener für das Schließen der Sidebar, wenn das Overlay geklickt wird
-document.getElementById('overlay').addEventListener('click', function () {
-  toggleSidebar(); // Sidebar schließen, wenn Overlay geklickt wird
-});
