@@ -2,8 +2,8 @@ window.onload = () => {
   const video = document.getElementById('video-background');
   const loadingScreen = document.getElementById('loading-screen');
 
-  // Wenn das Video geladen wurde
-  video.oncanplaythrough = () => {
+  // Überprüfen, ob das Video geladen ist
+  video.onloadeddata = () => {
     loadingScreen.style.display = 'none'; // Ladebildschirm ausblenden
   };
 
