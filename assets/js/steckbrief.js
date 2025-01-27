@@ -1,5 +1,3 @@
-
-
 // Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
   var sidebar = document.getElementById('sidebar');
@@ -44,18 +42,20 @@ function navigateToPage(url) {
     overlay.style.opacity = '1';
   }, 10);
 
-  // Nach 1,4 Sekunden weiterleiten
+  // Nach 1,4 Sekunden zur neuen Seite navigieren
   setTimeout(function () {
     window.location.href = url;
   }, 1400);
 }
 
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    if (link.href && !link.href.includes('javascript:')) {
-      event.preventDefault();
-      navigateToPage(link.href);
-    }
+// Event Listener für den Toggle-Button
+document.getElementById('toggleButton').addEventListener('click', toggleSidebar);
+
+// Links in der Sidebar verlinken
+var sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    navigateToPage(link.href);
   });
 });
