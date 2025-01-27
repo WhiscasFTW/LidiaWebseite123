@@ -2,12 +2,6 @@ window.onload = () => {
   const video = document.getElementById('video-background');
   const loadingScreen = document.getElementById('loading-screen');
 
-  // Sicherstellen, dass das Video vollständig geladen ist
-  video.oncanplaythrough = () => {
-    loadingScreen.style.display = 'none'; // Ladebildschirm ausblenden
-  };
-};
-
 // Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
@@ -30,7 +24,7 @@ window.onload = function () {
     overlay.style.opacity = '0';
     setTimeout(function () {
       overlay.remove();
-    }, 500);
+    }, 1);
   }
 };
 
@@ -47,7 +41,7 @@ function navigateToPage(url) {
 
   setTimeout(function () {
     window.location.href = url;
-  }, 500);
+  }, 1);
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
