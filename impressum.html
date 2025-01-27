@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/impressum.css">
+  <!-- CSS-Dateien werden mit "rel=preload" asynchron geladen -->
+  <link rel="stylesheet" href="assets/css/steckbrief.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-
-  <body>
+<body>
   <!-- Dunkles Overlay für die Transition -->
   <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
@@ -39,7 +39,7 @@
 
   <!-- Header -->
   <header>
-    <img src="assets/images/HeaderImpressum.png" alt="Header">
+    <img src="assets/images/HeaderSteckbrief.png" alt="Header">
   </header>
   
   <!-- Main-Bereich (Video) -->
@@ -53,6 +53,7 @@
     </div>
   </main>
   
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
@@ -61,8 +62,7 @@
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
 
-  <script src="assets/js/impressum.js"></script>
+  <!-- Asynchrones Laden von JavaScript -->
+  <script src="assets/js/steckbrief.js" defer></script>
 </body>
 </html>
-  <link rel="stylesheet" href="impressum.css?nocache=1">
-<script src="impressum.js?nocache=1"></script>
