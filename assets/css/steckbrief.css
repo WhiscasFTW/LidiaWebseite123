@@ -81,7 +81,7 @@ footer img {
 
 /* Footer-Text */
 .footer-text {
-  margin-top: -78px; /* Text weiter nach unten verschieben (vorher -45px) */
+  margin-top: -100px; /* Text weiter nach unten verschieben (vorher -45px) */
   color: white;
   font-size: 14px;
 }
