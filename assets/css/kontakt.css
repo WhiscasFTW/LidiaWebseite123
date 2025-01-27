@@ -124,9 +124,8 @@ footer img {
   height: 100%;
   background: black;
   z-index: 9999;
-  opacity: 1; /* Sichtbar ohne Übergang */
-  pointer-events: auto; /* Erlaubt Interaktionen */
-  /* Keine Transition mehr hier, wenn keine Animation gewünscht ist */
+  opacity: 1;
+  transition: opacity 1.4s ease;
 }
 
 /* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
@@ -144,7 +143,6 @@ footer img {
 
 .overlay.active {
   display: block;
-  opacity: 1; /* Sicherstellen, dass das Overlay sichtbar ist */
 }
 
 /* Sidebar */
@@ -158,7 +156,7 @@ footer img {
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   overflow-x: hidden;
-  transition: left 1s ease; /* Bei Bedarf anpassen */
+  transition: left 1s ease;
   z-index: 10; /* Sidebar über dem Video, aber unter Header und Footer */
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -257,7 +255,7 @@ footer img {
     color: rgba(255, 255, 255, 0.8); /* Hell */
   }
   50% {
-    color: rgba(255, 255, 255, 0.6); /* Etwas dunkler */
+    color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
   }
   100% {
     color: rgba(255, 255, 255, 0.8); /* Hell */
@@ -266,22 +264,20 @@ footer img {
 
 /* Wackel-Animation für den Button */
 @keyframes wobble {
-  0% {
-    transform: translateY(-50%) rotate(0deg); /* Kein Wackeln */
+  0%, 100% {
+    transform: translateY(-50%) rotate(0deg);
   }
-  15% {
-    transform: translateY(-50%) rotate(10deg);
+  25% {
+    transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
   }
-  30% {
-    transform: translateY(-50%) rotate(-10deg);
+  75% {
+    transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
   }
-  45% {
-    transform: translateY(-50%) rotate(10deg);
-  }
-  60% {
-    transform: translateY(-50%) rotate(-10deg);
-  }
-  100% {
-    transform: translateY(-50%) rotate(0deg); /* Wieder zurücksetzen */
-  }
+}
+
+/* Animationen */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
