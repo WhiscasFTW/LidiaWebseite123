@@ -77,7 +77,7 @@ main {
   padding: 20px;
   text-align: center;
   border-radius: 8px;
-  width: 32%; /* Setzt die Breite der Boxen auf 32%, so dass sie gut nebeneinander passen */
+  width: 33.33%; /* Setzt die Breite der Boxen auf 33.33%, sodass sie den Raum gleichmäßig einnehmen */
   box-sizing: border-box; /* Stellt sicher, dass Padding und Border nicht zur Breite hinzugerechnet werden */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
