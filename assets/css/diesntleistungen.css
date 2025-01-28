@@ -120,8 +120,11 @@ footer img {
   overflow-x: hidden;
   transition: left 1s ease;
   z-index: 10;
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
   padding-top: 20px;
+}
+
+.sidebar.open {
+  left: 0;
 }
 
 /* Links in der Sidebar */
@@ -226,31 +229,17 @@ footer img {
   100% { transform: translateY(0); }
 }
 
-/* Mobile Anpassungen */
-@media (max-width: 768px) {
-  /* Header in der mobilen Version */
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
   header {
     height: 200px;
+    padding: 0;
   }
 
-  /* Footer in der mobilen Version */
-  footer {
-    height: 51px;
-  }
-
-  /* Sidebar für mobile Geräte */
-  .sidebar {
-    left: 0; /* Sidebar wird standardmäßig sichtbar */
-    width: 200px;
-  }
-
-  /* Button zum Öffnen/Schließen der Sidebar */
-  .toggle-button {
-    font-size: 64px;
-  }
-
-  /* Links in der Sidebar für mobile Geräte */
-  .sidebar a {
-    font-size: 18px;
+  /* Skaliert das Header-Bild gleichmäßig innerhalb der 200px */
+  header img {
+    height: 100%;
+    object-fit: cover;
   }
 }
