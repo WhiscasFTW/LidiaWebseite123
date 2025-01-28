@@ -23,16 +23,22 @@ window.onload = function () {
   if (overlay) {
     overlay.style.opacity = '0';
 
-    // Overlay nach 0 Sekunden vollständig entfernen
+    // Overlay nach 1 Sekunde vollständig entfernen
     setTimeout(function () {
       overlay.remove();
-    }, 0);
+    }, 1000);
   }
 };
 
-// Funktion für den Seitenwechsel ohne Übergangseffekt
+// Funktion für den Seitenwechsel mit Fade-Out-Effekt
 function navigateToPage(url) {
-  window.location.href = url;
+  var overlay = document.getElementById('page-transition-overlay');
+  if (overlay) {
+    overlay.style.opacity = '1'; // Overlay einblenden
+    setTimeout(function () {
+      window.location.href = url; // Nach 1 Sekunde weiterleiten
+    }, 1000);
+  }
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
