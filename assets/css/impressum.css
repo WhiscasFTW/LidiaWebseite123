@@ -34,7 +34,7 @@ header .header-content {
 header img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: cover; /* Bild wird jetzt immer zugeschnitten */
   display: block;
 }
 
@@ -49,8 +49,9 @@ header .header-content h1 {
 /* Mobile-Version des Headers */
 @media (max-width: 767px) {
   header {
-    background-color: rgba(0, 0, 0, 0.9); /* Dunklerer Hintergrund auf mobilen Geräten */
-    height: 200px; /* Kleinerer Header für Mobilgeräte */
+    height: 250px; /* Angepasste Höhe für Mobilgeräte */
+    background-color: black; /* Keine Änderung am Hintergrund */
+    position: absolute; /* Header oben fixiert */
   }
 
   header .header-content h1 {
@@ -60,6 +61,7 @@ header .header-content h1 {
   header img {
     height: 100%; /* Bild nimmt die gesamte Höhe des Headers ein */
     object-fit: cover; /* Bild bleibt im richtigen Verhältnis */
+    width: 100%;
   }
 }
 
