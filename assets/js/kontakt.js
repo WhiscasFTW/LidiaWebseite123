@@ -44,3 +44,12 @@ document.querySelectorAll('a').forEach(function (link) {
     }
   });
 });
+
+// Fade-In- und Fade-Out-Funktion
+function applyFadeEffect(element) {
+  element.classList.add('fade-in');
+  setTimeout(() => {
+    element.classList.remove('fade-in');
+    element.classList.add('fade-out');
+  }, 1000);
+}
