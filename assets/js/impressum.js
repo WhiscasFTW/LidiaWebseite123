@@ -15,12 +15,22 @@ function toggleSidebar() {
   toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
+// Funktion für die Navigation mit sanftem Übergang
+function navigateToPage(url) {
+  // Übergangseffekt starten
+  document.body.style.opacity = '0'; // Ausblenden der Seite
+  setTimeout(function() {
+    // Nach dem Ausblenden zur neuen Seite navigieren
+    window.location.href = url;
+  }, 500); // 500ms warten, um den Übergang abzuschließen
+}
+
 // Event-Listener für alle Links, die zu einer neuen Seite führen
 document.querySelectorAll('a').forEach(function (link) {
   link.addEventListener('click', function (event) {
     if (link.href && !link.href.includes('javascript:')) {
-      event.preventDefault();
-      navigateToPage(link.href);
+      event.preventDefault(); // Verhindern des Standardverhaltens
+      navigateToPage(link.href); // Seitenwechsel mit Übergang
     }
   });
 });
