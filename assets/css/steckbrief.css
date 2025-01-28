@@ -76,6 +76,7 @@ main {
   height: 50vh; /* Höhe des Videos anpassen */
   z-index: -1; /* Video bleibt im Hintergrund */
   overflow: hidden;
+  margin-top: -10px; /* Video direkt unter den Boxen */
 }
 
 #video-background {
