@@ -121,8 +121,6 @@ footer img {
   overflow-x: hidden;
   transition: left 1s ease;
   z-index: 10;
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
 }
 
@@ -230,4 +228,19 @@ footer img {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+}
+
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  /* Skaliert das Header-Bild gleichmäßig innerhalb der 200px */
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
