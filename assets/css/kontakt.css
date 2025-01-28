@@ -63,7 +63,7 @@ main {
 }
 
 .content-block {
-  background-color: #f0f8ff; /* Sanfter Pastellton (Hellblau) */
+  background-color: #e0f7e9; /* Sanfter grüner Pastellton */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -105,7 +105,7 @@ main {
 }
 
 .box {
-  background-color: #f0f8ff; /* Sanfter Pastellton (Hellblau) */
+  background-color: #e0f7e9; /* Sanfter grüner Pastellton */
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
