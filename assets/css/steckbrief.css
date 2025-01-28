@@ -8,38 +8,6 @@ body, html {
   background-color: black;
 }
 
-/* Video-Container */
-.video-container {
-  position: absolute; /* Absolute Positionierung */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 51px); /* Die Höhe des Videos wird so gesetzt, dass es unter dem Content und über dem Footer bleibt */
-  z-index: -1; /* Video bleibt immer im Hintergrund */
-  overflow: hidden;
-}
-
-/* Video-Hintergrund */
-#video-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Helles Overlay für das Video */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
 /* Header */
 header {
   position: relative;
@@ -57,7 +25,36 @@ header img {
   display: block;
 }
 
-/* Content Block (Textbereich) */
+/* Main-Bereich: Boxen zuerst */
+main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-bottom: 50px; /* Platz für den Footer */
+  overflow: hidden;
+}
+
+/* Video-Container */
+.video-container {
+  position: relative; /* Relative Positionierung */
+  width: 100%;
+  height: 50vh; /* Höhe des Videos anpassen */
+  z-index: -1; /* Video bleibt im Hintergrund */
+  overflow: hidden;
+}
+
+#video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Inhalt der Boxen */
 .content-block {
   margin: 20px;
   padding: 15px;
@@ -65,10 +62,9 @@ header img {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 2; /* Textbereich bekommt einen höheren Z-Index */
+  z-index: 2;
 }
 
-/* Überschrift und Text im Content Block */
 .content-block h2 {
   font-size: 28px;
   font-weight: bold;
@@ -136,7 +132,6 @@ footer img {
   height: 51px;
   object-fit: cover;
   display: block;
-  margin-top: 0px;
 }
 
 /* Sidebar */
