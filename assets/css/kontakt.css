@@ -63,40 +63,6 @@ main {
   margin: 0 auto; /* Zentriere den Container */
 }
 
-/* Content Block */
-.content-block {
-  background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.content-block h2 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #333;
-}
-
-.content-block h3 {
-  font-size: 20px;
-  color: #555;
-}
-
-.content-block ul {
-  padding-left: 20px;
-}
-
-.content-block ul li {
-  list-style-type: disc;
-  margin-bottom: 8px;
-}
-
-.content-block p {
-  line-height: 1.6;
-  color: #444;
-}
-
 /* Boxen im Main-Bereich */
 .boxen {
   display: flex;
@@ -106,9 +72,8 @@ main {
   width: 100%; /* Nutzt den Raum gleichmäßig */
 }
 
+/* Jede Box */
 .box {
-  background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
-  border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
@@ -116,6 +81,17 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Obere Boxen (Beige) */
+.box:nth-child(-n+3) {
+  background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
+}
+
+/* Untere Boxen (Dunkelrot) */
+.box:nth-child(n+4) {
+  background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
+}
+
+/* Box-Inhalte */
 .box img {
   width: 100%;
   height: auto;
@@ -142,11 +118,6 @@ main {
 .box a.btn:hover {
   background-color: #f5f5dc; /* Beige Hintergrundfarbe für den Hover-Effekt */
   color: #8b0000;
-}
-
-/* Boxen im Main-Bereich (Untere Boxen) */
-.boxen .box:nth-child(n+4) {
-  background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
 }
 
 /* Footer */
@@ -340,8 +311,14 @@ footer img {
   }
 }
 
+/* Media Query für größere mobile Geräte und Tablets */
 @media screen and (max-width: 1024px) {
+  .boxen {
+    flex-direction: row;
+    gap: 20px;
+  }
+
   .box {
-    width: 45%;
+    width: 32%;
   }
 }
