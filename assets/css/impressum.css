@@ -49,13 +49,13 @@ header .header-content h1 {
 /* Mobile-Version des Headers */
 @media (max-width: 767px) {
   header {
-    height: 250px; /* Angepasste Höhe für Mobilgeräte */
+    height: 200px; /* Angepasste Höhe für Mobilgeräte */
     background-color: black; /* Keine Änderung am Hintergrund */
     position: absolute; /* Header oben fixiert */
   }
 
   header .header-content h1 {
-    font-size: 36px; /* Größere Schriftgröße für Mobilgeräte */
+    font-size: 24px; /* Textgröße für Mobilgeräte */
   }
 
   header img {
@@ -69,7 +69,7 @@ header .header-content h1 {
 main {
   position: relative;
   z-index: 0;
-  margin-top: 0;
+  margin-top: 20px; /* Abstand zwischen Header und Box */
   background-color: transparent; /* Transparenter Hintergrund */
   padding-bottom: 0;
 }
