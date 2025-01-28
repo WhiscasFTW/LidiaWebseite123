@@ -63,7 +63,7 @@ main {
 }
 
 .content-block {
-  background-color: #e0f7e9; /* Sanfter grüner Pastellton */
+  background-color: #e0f7e9; /* Sanfter Grünton für die oberen Boxen */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -105,7 +105,7 @@ main {
 }
 
 .box {
-  background-color: #e0f7e9; /* Sanfter grüner Pastellton */
+  background-color: #d1f0e1; /* Sanfter Grünton für die unteren Boxen */
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
@@ -312,13 +312,11 @@ footer img {
 
 /* Media Query für mobile Geräte */
 @media screen and (max-width: 768px) {
-  /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
   header {
     height: 200px;
     padding: 0;
   }
 
-  /* Skaliert das Header-Bild gleichmäßig innerhalb der 200px */
   header img {
     height: 100%;
     object-fit: cover;
