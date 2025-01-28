@@ -69,31 +69,6 @@ main {
   color: #444;
 }
 
-/* Video-Container */
-.video-container {
-  position: relative; /* Relative Positionierung */
-  width: 100%;
-  height: 50vh; /* Höhe des Videos anpassen */
-  z-index: -1; /* Video bleibt im Hintergrund */
-  overflow: hidden;
-}
-
-#video-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Desktop-Version: Video kleiner machen */
-@media screen and (min-width: 769px) {
-  .video-container {
-    height: 40vh; /* Videohöhe für die Desktop-Version */
-  }
-}
-
 /* Footer */
 footer {
   position: relative;
@@ -264,34 +239,24 @@ footer img {
 
 /* Media Query für mobile Geräte */
 @media screen and (max-width: 768px) {
-  /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
   header {
     height: 200px;
     padding: 0;
   }
 
-  /* Skaliert das Header-Bild gleichmäßig innerhalb der 200px */
   header img {
     height: 100%;
     object-fit: cover;
   }
 
-  /* Text im Content Block für mobile Geräte anpassen */
   .content-block {
     margin: 15px;
     padding: 10px;
   }
-
   .content-block h2 {
     font-size: 20px;
   }
-
   .content-block p, .content-block ul {
     font-size: 14px;
-  }
-
-  /* Anpassung für das Video */
-  .video-container {
-    height: 60vh; /* Videohöhe auf mobilen Geräten anpassen */
   }
 }
