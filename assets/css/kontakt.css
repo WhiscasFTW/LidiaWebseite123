@@ -107,7 +107,7 @@ main {
 }
 
 .box {
-  background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
+  background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
@@ -124,7 +124,7 @@ main {
 
 .box h3 {
   font-size: 22px;
-  color: #fff;
+  color: #333;
   margin-top: 10px;
 }
 
@@ -142,6 +142,11 @@ main {
 .box a.btn:hover {
   background-color: #f5f5dc; /* Beige Hintergrundfarbe für den Hover-Effekt */
   color: #8b0000;
+}
+
+/* Boxen im Main-Bereich (Untere Boxen) */
+.boxen .box:nth-child(n+4) {
+  background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
 }
 
 /* Footer */
