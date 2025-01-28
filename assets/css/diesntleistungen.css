@@ -1,6 +1,3 @@
-
-
-/* Allgemeines Layout */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,22 +7,18 @@ body, html {
   background-color: black;
 }
 
-/* Video-Container */
 .video-container {
   position: relative;
   width: 100%;
   height: auto;
-  z-index: -1;
 }
 
-/* Video-Hintergrund */
 #video-background {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Helles Overlay für das Video */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -36,7 +29,6 @@ body, html {
   z-index: 1;
 }
 
-/* Header */
 header {
   position: relative;
   z-index: 2;
@@ -53,7 +45,6 @@ header img {
   display: block;
 }
 
-/* Main-Bereich */
 main {
   position: relative;
   z-index: 0;
@@ -62,7 +53,6 @@ main {
   padding-bottom: 0;
 }
 
-/* Footer */
 footer {
   position: relative;
   width: 100%;
@@ -109,7 +99,6 @@ footer img {
   margin-top: 0px;
 }
 
-/* Sidebar */
 .sidebar {
   height: 100%;
   width: 250px;
@@ -131,7 +120,6 @@ footer img {
   left: 0;
 }
 
-/* Links in der Sidebar */
 .sidebar-links {
   padding-bottom: 20px;
 }
@@ -164,7 +152,6 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Signatur der Künstlerin */
 .artist-signature {
   text-align: center;
   padding: 20px;
@@ -185,7 +172,6 @@ footer img {
   filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
   font-size: 96px;
   color: rgba(255, 255, 255, 0.8);
@@ -212,23 +198,15 @@ footer img {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Atmungsanimation für den Button */
 @keyframes breathe {
   0% { color: rgba(255, 255, 255, 0.8); }
   50% { color: rgba(255, 255, 255, 0.6); }
   100% { color: rgba(255, 255, 255, 0.8); }
 }
 
-/* Wackel-Animation für den Button */
 @keyframes wobble {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
-}
-
-/* Animationen */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(-10deg); }
 }
