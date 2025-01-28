@@ -12,7 +12,7 @@ body, html {
 /* Header */
 header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   padding: 10px 0;
   background-color: black;
@@ -29,7 +29,7 @@ header img {
 /* Main-Bereich: Boxen zuerst */
 main {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -44,7 +44,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 3; /* Boxen haben einen höheren Z-Index als das Video */
+  z-index: 4;
 }
 
 .content-block h2 {
@@ -73,17 +73,18 @@ main {
 /* Video-Container */
 .video-container {
   width: 100%;
-  height: 400px; /* Höhe des Videos auf Desktop */
+  height: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  z-index: 1; /* Das Video hat den niedrigsten Z-Index und bleibt hinter den Boxen */
+  z-index: 2;
 }
 
+/* Video selbst */
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Video füllt den gesamten Container */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -95,7 +96,7 @@ footer {
   text-align: center;
   padding: 0px 0;
   background-color: black;
-  z-index: 2; /* Footer sollte oberhalb des Videos sein */
+  z-index: 3;
   margin-top: 0;
   display: flex;
   align-items: center;
@@ -258,6 +259,25 @@ footer img {
 
 /* Media Query für mobile Geräte */
 @media screen and (max-width: 768px) {
+  /* Video nur für mobile Geräte anzeigen */
+  .video-container {
+    display: block; /* Video anzeigen */
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Auf Desktop das Video ausblenden */
+  @media screen and (min-width: 769px) {
+    .video-container {
+      display: none; /* Video ausblenden */
+    }
+  }
+
   /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
   header {
     height: 200px;
