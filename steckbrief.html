@@ -11,6 +11,21 @@
       font-family: sans-serif;
       font-size: 21px;
     }
+    /* Das Video direkt zwischen den Boxen und Footer */
+    .video-container {
+      width: 100%;
+      height: 400px; /* Höhe des Videos */
+      margin-top: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +90,7 @@
       <p>Malen ist für mich eine Möglichkeit, mich auszudrücken und die Welt um mich herum festzuhalten. Es macht mir Freude, mit Farben und Formen zu experimentieren und meine Ideen auf die Leinwand zu bringen.</p>
     </div>
 
-    <!-- Video unter den Boxen -->
+    <!-- Video unter den Boxen und über dem Footer -->
     <div class="video-container">
       <video autoplay loop muted id="video-background">
         <source src="assets/images/Background.mkv" type="video/webm">
