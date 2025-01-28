@@ -59,8 +59,7 @@ main {
   background-color: #333; /* Dunklerer Grauton für den Hintergrund */
   padding-bottom: 0;
   padding: 20px;
-  margin-left: 20px;  /* Für den Abstand auf der linken Seite */
-  margin-right: 20px; /* Für den Abstand auf der rechten Seite */
+  width: 100%; /* Hintergrund auf 100% der Breite */
 }
 
 .content-block {
@@ -102,7 +101,7 @@ main {
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
-  width: calc(100% - 40px); /* Berücksichtigt den Abstand */
+  width: 100%; /* Nutzt den Raum gleichmäßig */
 }
 
 .box {
