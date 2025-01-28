@@ -119,7 +119,7 @@ main {
   width: 250px;
   height: 100%;
   background-color: #333;
-  transition: left 1s ease;
+  transition: left 0.3s ease;
   z-index: 2;
   padding: 20px;
 }
@@ -157,7 +157,7 @@ main {
   left: 15px;
   transform: translateY(-50%);
   z-index: 3;
-  transition: left 1s ease;
+  transition: left 0.3s ease;
 }
 
 /* Für das Overlay */
