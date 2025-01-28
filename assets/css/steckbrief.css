@@ -240,15 +240,15 @@ footer img {
   cursor: pointer;
   position: fixed;
   top: 50%;
-  left: 15px; /* Standardposition beim Schließen */
+  left: 15px;
   transform: translateY(-50%);
   z-index: 3;
   transition: left 0.3s ease, transform 0.3s ease;
 }
 
-.sidebar.open + .toggle-button {
-  left: 250px; /* Wenn Sidebar offen, Button neben der Sidebar */
-  transition: left 0.3s ease; /* Sorgt für eine weiche Animation */
+.toggle-button.open {
+  left: 250px;
+  transform: translateY(-50%) rotate(90deg);
 }
 
 /* Für das Overlay */
