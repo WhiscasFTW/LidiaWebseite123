@@ -232,7 +232,7 @@ footer img {
   header {
     height: 200px;
   }
-  
+
   /* Footer in der mobilen Version */
   footer {
     height: 51px;
@@ -240,6 +240,7 @@ footer img {
 
   /* Sidebar für mobile Geräte */
   .sidebar {
+    left: 0; /* Sidebar wird standardmäßig sichtbar */
     width: 200px;
   }
 
