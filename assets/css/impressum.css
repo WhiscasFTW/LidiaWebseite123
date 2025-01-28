@@ -70,20 +70,20 @@ main {
   padding-top: 200px; /* Abstand zwischen Header und Box in der mobilen Version */
 }
 
-/* Info-Box für Impressum und Datenschutz (dunkelere Version) */
+/* Info-Box für Impressum und Datenschutz */
 .info-box {
-  background-color: rgba(0, 0, 0, 0.7); /* Dunklerer Hintergrund */
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
   margin: 30px auto;
   width: 80%; /* Schmaler als vorher */
   max-width: 800px;
   border-radius: 8px;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: relative;
   z-index: 2;
-  color: #fff; /* Hellere Schrift */
+  color: #333;
 }
 
 /* Desktop-Version der Info-Box */
@@ -98,14 +98,13 @@ main {
 .info-box h2 {
   margin-top: 20px;
   font-size: 24px;
-  color: #fff; /* Hellere Schrift */
+  color: #000;
 }
 
 .info-box p {
   font-size: 16px;
   line-height: 1.6;
   margin: 10px 0;
-  color: #fff; /* Hellere Schrift */
 }
 
 .info-box a {
@@ -165,20 +164,20 @@ footer img {
   margin-top: 0px;
 }
 
-/* Sidebar (dunklere Version) */
+/* Sidebar */
 .sidebar {
   height: 100%;
   width: 250px;
   position: fixed;
   top: 0;
   left: -250px;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)); /* Dunklerer Hintergrund */
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   overflow-x: hidden;
   transition: left 1s ease;
   z-index: 10;
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
 }
@@ -187,7 +186,7 @@ footer img {
   left: 0;
 }
 
-/* Links in der Sidebar (dunklerer Hintergrund und hellerer Text) */
+/* Links in der Sidebar (simpler und schlichter) */
 .sidebar-links {
   padding-bottom: 20px;
 }
@@ -196,7 +195,7 @@ footer img {
   padding: 10px 20px;
   text-decoration: none;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.85); /* Hellerer Text */
+  color: rgba(255, 255, 255, 0.85);
   display: block;
   transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: transparent;
@@ -281,4 +280,48 @@ footer img {
   25% { transform: translateY(-50%) rotate(10deg); }
   50% { transform: translateY(-50%) rotate(0deg); }
   75% { transform: translateY(-50%) rotate(-10deg); }
+}
+
+/* Mobile-Version der Info-Box */
+@media (max-width: 767px) {
+  .info-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Dunklerer Hintergrund für mobile Version */
+    color: #fff; /* Hellerer Text */
+  }
+
+  .sidebar {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)); /* Dunklerer Hintergrund */
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    color: #fff; /* Hellerer Text */
+  }
+
+  .sidebar a {
+    color: rgba(255, 255, 255, 0.85); /* Hellerer Text in der Sidebar */
+  }
+
+  /* Für den Text im Header */
+  header .header-content h1 {
+    font-size: 24px; /* Kleinere Schriftgröße für mobile Ansicht */
+  }
+
+  /* Bild im Header für mobile Ansicht */
+  header img {
+    height: 100%; /* Bild nimmt die gesamte Höhe des Headers ein */
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .toggle-button {
+    left: 15px;
+    transform: translateY(-50%) scale(1.1); /* Etwas größere Animation für mobile Ansicht */
+  }
+
+  .info-box h2 {
+    color: #fff; /* Hellerer Text */
+  }
+
+  .info-box p {
+    color: #fff; /* Hellerer Text */
+  }
 }
