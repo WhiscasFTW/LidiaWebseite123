@@ -1,26 +1,28 @@
+
+
 /* Allgemeines Layout */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow-y: auto; /* Scrollen erlauben */
-  background-color: black; /* Hintergrundfarbe für die gesamte Seite */
+  overflow-y: auto;
+  background-color: black;
 }
 
 /* Video-Container */
 .video-container {
-  position: relative; /* Container für Video und Overlay */
+  position: relative;
   width: 100%;
   height: auto;
-  z-index: -1; /* Video im Hintergrund */
+  z-index: -1;
 }
 
 /* Video-Hintergrund */
 #video-background {
   width: 100%;
   height: auto;
-  display: block; /* Verhindert unerwünschte Abstände */
+  display: block;
 }
 
 /* Helles Overlay für das Video */
@@ -30,34 +32,34 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* 40% Deckkraft (deutlich heller) */
-  z-index: 1; /* Overlay über dem Video */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 /* Header */
 header {
-  position: relative; /* Header über dem Video */
-  z-index: 2; /* Header über dem Video und Overlay */
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: 10px 0; /* 10px weniger Padding oben und unten */
-  background-color: black; /* Hintergrundfarbe des Headers */
-  margin-top: -10px; /* Header 10px weiter nach oben */
-  margin-bottom: 0; /* Kein Abstand zum Video */
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
 header img {
   max-width: 100%;
   height: auto;
-  display: block; /* Verhindert unerwünschte Abstände */
+  display: block;
 }
 
-/* Main-Bereich (Video-Container) */
+/* Main-Bereich */
 main {
-  position: relative; /* Video innerhalb des Main-Bereichs */
-  z-index: 0; /* Video unter Header und Footer */
-  margin-top: 0; /* Kein Abstand zum Header */
-  background-color: black; /* Hintergrundfarbe für den Main-Bereich */
-  padding-bottom: 0; /* Kein Abstand nach unten */
+  position: relative;
+  z-index: 0;
+  margin-top: 0;
+  background-color: black;
+  padding-bottom: 0;
 }
 
 /* Footer */
@@ -65,14 +67,14 @@ footer {
   position: relative;
   width: 100%;
   text-align: center;
-  padding: 0px 0; /* Innenabstand oben und unten */
+  padding: 0px 0;
   background-color: black;
   z-index: 2;
   margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 51px; /* Höhe des Footer-Bildes */
+  height: 51px;
 }
 
 footer .footer-content {
@@ -89,75 +91,22 @@ footer .footer-content p {
 footer .footer-content a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  margin: 0 5px; /* Abstand zwischen den Links */
-  transition: color 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge */
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer .footer-content a:hover {
-  color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft beim Hover */
-  transform: translateY(-2px); /* Leichtes Anheben des Links */
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Schatten-Effekt */
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Footer-Bild */
 footer img {
   width: 100%;
-  height: 51px; /* Höhe des Footer-Bildes */
-  object-fit: cover; /* Stellt sicher, dass das Bild die gesamte Breite abdeckt */
+  height: 51px;
+  object-fit: cover;
   display: block;
-  margin-top: 0px; /* Abstand zwischen Text und Bild */
-}
-
-/* Für das Bild in kleineren Bildschirmen */
-@media (max-width: 768px) {
-  footer img {
-    max-height: 51px; /* Die Höhe bleibt auf 51px auch auf kleinen Geräten */
-  }
-
-  /* Video auf mobilen Geräten größer und ganz unten */
-  .video-container {
-    height: 100vh; /* Volle Höhe des Viewports */
-  }
-
-  #video-background {
-    height: 100%; /* Video nimmt 100% der Höhe ein */
-    object-fit: cover; /* Deckt den gesamten Bereich ab, ohne das Bild zu verzerren */
-  }
-
-  /* Overlay für das Video auf mobilen Geräten */
-  .video-overlay {
-    background-color: rgba(0, 0, 0, 0.6); /* Etwas dunkler für den Kontrast */
-  }
-}
-
-/* Dunkles Overlay für die Transition */
-.page-transition-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 1.4s ease;
-}
-
-/* Overlay für den abgedunkelten Hintergrund, wenn die Sidebar geöffnet ist */
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 9; /* Overlay unter der Sidebar, aber über dem Video */
-  transition: opacity 0.5s ease;
-}
-
-.overlay.active {
-  display: block;
+  margin-top: 0px;
 }
 
 /* Sidebar */
@@ -172,35 +121,12 @@ footer img {
   -webkit-backdrop-filter: blur(30px);
   overflow-x: hidden;
   transition: left 1s ease;
-  z-index: 10; /* Sidebar über dem Video, aber unter Header und Footer */
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
   padding-top: 20px;
 }
 
 .sidebar.open {
   left: 0;
-}
-
-/* Signatur der Künstlerin */
-.artist-signature {
-  text-align: center;
-  padding: 20px;
-  animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-  width: auto;
-  height: 140px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.artist-signature img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 /* Links in der Sidebar */
@@ -236,9 +162,30 @@ footer img {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Signatur der Künstlerin */
+.artist-signature {
+  text-align: center;
+  padding: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+  width: auto;
+  height: 140px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
 /* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
-  font-size: 96px; /* 20 % kleiner (vorher 120px) */
+  font-size: 96px;
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
   border: none;
@@ -248,8 +195,8 @@ footer img {
   left: 15px;
   transform: translateY(-50%);
   z-index: 3;
-  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out; /* Langsamere Bewegung (1s statt 0.5s) */
-  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out; /* Wackel-Animation */
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
   padding: 10px;
 }
 
@@ -258,36 +205,23 @@ footer img {
   transform: translateY(-50%) rotate(90deg);
 }
 
-/* Hover-Effekt für den Button */
 .toggle-button:hover {
-  transform: translateY(-50%) scale(1.1); /* Leichte Vergrößerung */
-  color: rgba(255, 255, 255, 1); /* Vollständige Deckkraft */
+  transform: translateY(-50%) scale(1.1);
+  color: rgba(255, 255, 255, 1);
 }
 
-/* Atmungsanimation für den Button (halbe Stärke) */
+/* Atmungsanimation für den Button */
 @keyframes breathe {
-  0% {
-    color: rgba(255, 255, 255, 0.8); /* Hell */
-  }
-  50% {
-    color: rgba(255, 255, 255, 0.6); /* Halb so dunkel wie vorher */
-  }
-  100% {
-    color: rgba(255, 255, 255, 0.8); /* Hell */
-  }
+  0% { color: rgba(255, 255, 255, 0.8); }
+  50% { color: rgba(255, 255, 255, 0.6); }
+  100% { color: rgba(255, 255, 255, 0.8); }
 }
 
 /* Wackel-Animation für den Button */
 @keyframes wobble {
-  0%, 100% {
-    transform: translateY(-50%) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-50%) rotate(-2deg); /* Leichte Neigung nach links */
-  }
-  75% {
-    transform: translateY(-50%) rotate(2deg); /* Leichte Neigung nach rechts */
-  }
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(-2deg); }
+  75% { transform: translateY(-50%) rotate(2deg); }
 }
 
 /* Animationen */
@@ -295,4 +229,19 @@ footer img {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+}
+
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  /* Setzt die Höhe des Headers auf 200px für mobile Geräte */
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  /* Skaliert das Header-Bild gleichmäßig innerhalb der 200px */
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
