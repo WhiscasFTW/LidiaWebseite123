@@ -13,14 +13,12 @@ header {
   position: relative;
   z-index: 2;
   background-color: black;
-  margin-top: -10px;
-  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 360px; /* Originalhöhe für Desktop */
   width: 100%;
-  overflow: hidden; /* Verhindert das Überschreiten des Headers */
+  overflow: hidden;
 }
 
 /* Header-Inhalt */
@@ -34,14 +32,14 @@ header .header-content {
 header img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Bild wird jetzt immer zugeschnitten */
+  object-fit: cover;
   display: block;
 }
 
 /* Für den Text im Header */
 header .header-content h1 {
   margin: 0;
-  font-size: 30px; /* Textgröße für Desktop */
+  font-size: 30px;
   font-weight: bold;
   color: #fff;
 }
@@ -50,17 +48,17 @@ header .header-content h1 {
 @media (max-width: 767px) {
   header {
     height: 200px; /* Angepasste Höhe für Mobilgeräte */
-    background-color: black; /* Keine Änderung am Hintergrund */
-    position: absolute; /* Header oben fixiert */
+    background-color: black;
+    position: relative; /* Fixiere den Header oben */
   }
 
   header .header-content h1 {
-    font-size: 24px; /* Textgröße für Mobilgeräte */
+    font-size: 24px;
   }
 
   header img {
     height: 100%; /* Bild nimmt die gesamte Höhe des Headers ein */
-    object-fit: cover; /* Bild bleibt im richtigen Verhältnis */
+    object-fit: cover;
     width: 100%;
   }
 }
@@ -69,33 +67,32 @@ header .header-content h1 {
 main {
   position: relative;
   z-index: 0;
-  margin-top: 20px; /* Abstand zwischen Header und Box */
-  background-color: transparent; /* Transparenter Hintergrund */
-  padding-bottom: 0;
+  background-color: transparent;
+  padding-top: 200px; /* Abstand zwischen Header und Box in der mobilen Version */
 }
 
 /* Info-Box für Impressum und Datenschutz */
 .info-box {
-  background-color: rgba(255, 255, 255, 0.95); /* Sehr heller Hintergrund */
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
   margin: 30px auto;
   width: 80%; /* Schmaler als vorher */
-  max-width: 800px; /* Maximale Breite für Desktop */
+  max-width: 800px;
   border-radius: 8px;
-  text-align: left; /* Text linksbündig */
+  text-align: left;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: relative;
-  z-index: 2; /* Über dem Video */
-  color: #333; /* Dunkler Text für bessere Lesbarkeit */
+  z-index: 2;
+  color: #333;
 }
 
 /* Desktop-Version der Info-Box */
 @media (min-width: 768px) {
   .info-box {
-    width: 70%; /* Etwas breiter für Desktop */
-    padding: 40px; /* Mehr Innenabstand */
-    margin: 50px auto; /* Mehr Abstand oben und unten */
+    width: 70%;
+    padding: 40px;
+    margin: 50px auto;
   }
 }
 
@@ -128,7 +125,7 @@ footer {
   text-align: center;
   padding: 0px 0;
   background-color: black;
-  z-index: 3; /* Über der Box */
+  z-index: 3;
   margin-top: 0;
   display: flex;
   align-items: center;
@@ -198,15 +195,15 @@ footer img {
 .sidebar a {
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 18px; /* Kleinere Schriftgröße */
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
   display: block;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  background-color: transparent; /* Keine Hintergrundfarbe */
+  background-color: transparent;
   margin: 5px 0;
   border-radius: 5px;
   position: relative;
-  font-family: Arial, sans-serif; /* Schlichter Font */
+  font-family: Arial, sans-serif;
   opacity: 0;
   transform: translateX(-100%);
 }
@@ -217,7 +214,7 @@ footer img {
 }
 
 .sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Dezenter Hover-Effekt */
+  background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 1);
   transform: translateX(5px);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
