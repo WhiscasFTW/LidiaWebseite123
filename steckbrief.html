@@ -12,8 +12,8 @@
       font-size: 21px;
     }
     .content-block {
-      margin: 30px 0;
-      padding: 20px;
+      margin: 20px;
+      padding: 15px;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,14 +21,45 @@
     .content-block h2 {
       margin-bottom: 10px;
       color: #333;
+      font-size: 24px;
     }
     .content-block p {
       color: #555;
       line-height: 1.6;
+      font-size: 16px;
     }
     .content-block ul {
       margin-left: 20px;
       color: #555;
+      font-size: 16px;
+    }
+    /* Responsives Layout für mobile Geräte */
+    @media (max-width: 768px) {
+      .content-block {
+        margin: 15px;
+        padding: 10px;
+      }
+      .content-block h2 {
+        font-size: 20px;
+      }
+      .content-block p, .content-block ul {
+        font-size: 14px;
+      }
+    }
+    /* Responsives Video */
+    .video-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    #video-background {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
@@ -57,19 +88,19 @@
   </header>
   
   <main>
-    <div class="video-container">
-      <video autoplay loop muted id="video-background">
-        <source src="assets/images/Background.mkv" type="video/webm">
-        Dein Browser unterstützt dieses Videoformat nicht.
-      </video>
-    </div>
-
-    <!-- Block 1: Über mich und mein künstlerischer Weg -->
+    <!-- Block 1: Über mich und mein künstlerischer Weg (über dem Video) -->
     <div class="content-block">
       <h2>Über mich und mein künstlerischer Weg</h2>
       <p>Ich heiße Lidia Grön, bin am 08.09.1969 in Marx, Russland, geboren und wohne mittlerweile in Hessen. In meiner Heimat habe ich Philologie an der Nordöstlichen Universität in Magadan studiert und als Lehrerin gearbeitet. Im Jahr 2000 bin ich nach Deutschland gekommen. Von 2010 bis 2013 absolvierte ich in Hessen eine Ausbildung zur Sozialpädagogin.</p>
       <p>Schon als Kind habe ich gern gemalt, aber durch die vielen Umzüge in Russland und später in Deutschland blieb wenig Zeit für mein Hobby. Gelegentlich habe ich mit Bleistift, Wasserfarben oder bunten Stiften gemalt, vor allem beruflich, wenn ich mit Kindern gearbeitet habe.</p>
       <p>Während der Corona-Pandemie entdeckte ich beim Aufräumen alte Ölfarben und begann, damit zu experimentieren. Die Farben waren eingetrocknet, also mischte ich sie mit Speiseöl und Aceton – nicht perfekt, aber es hat funktioniert! Über das Internet eignete ich mir Wissen über den Umgang mit Ölfarben an und begann, regelmäßig zu malen.</p>
+    </div>
+
+    <div class="video-container">
+      <video autoplay loop muted id="video-background">
+        <source src="assets/images/Background.mkv" type="video/webm">
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
     </div>
 
     <!-- Block 2: Meine Themen und Techniken -->
