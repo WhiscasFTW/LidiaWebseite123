@@ -1,4 +1,4 @@
-/* Allgemeines Layout */
+/* Allgemeine Einstellungen */
 body, html {
   margin: 0;
   padding: 0;
@@ -281,4 +281,28 @@ footer img {
   25% { transform: translateY(-50%) rotate(10deg); }
   50% { transform: translateY(-50%) rotate(0deg); }
   75% { transform: translateY(-50%) rotate(-10deg); }
+}
+
+/* Verbesserungen für die Sidebar in der mobilen Version */
+@media (max-width: 767px) {
+  .sidebar {
+    left: -300px; /* Sidebar weiter nach links verschieben */
+    width: 270px; /* Sidebar breiter für bessere Lesbarkeit */
+    background: rgba(255, 255, 255, 0.95); /* Hellerer Hintergrund für bessere Lesbarkeit */
+    backdrop-filter: none; /* Kein Blur-Effekt */
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar a {
+    font-size: 20px; /* Größere Schrift für bessere Lesbarkeit */
+    color: black; /* Schwarzer Text für bessere Lesbarkeit */
+  }
+
+  .toggle-button {
+    left: 270px; /* Platz für den Button */
+    transform: translateY(-50%) rotate(90deg); /* Drehen des Buttons für Mobilgeräte */
+  }
 }
