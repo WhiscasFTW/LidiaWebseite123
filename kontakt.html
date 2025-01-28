@@ -82,20 +82,25 @@
     /* Anpassung der Cards für mobile Geräte */
     @media screen and (max-width: 768px) {
       .cards-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .card {
-        width: 80%; /* Auf mobilen Geräten sollten die Cards breiter sein */
-        margin-bottom: 20px;
+        display: none; /* Versteckt die Cards auf mobilen Geräten */
       }
     }
 
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
+    /* Anpassung der Boxen auf Desktop */
+    .boxen {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
     }
+
+    /* Anpassung für kleinere Bildschirme, um die Boxen bei Bedarf zu verstecken */
+    @media screen and (max-width: 768px) {
+      .boxen {
+        display: none; /* Boxen werden auf mobilen Geräten ausgeblendet */
+      }
+    }
+
   </style>
 </head>
 <body>
