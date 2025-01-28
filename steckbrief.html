@@ -11,22 +11,6 @@
       font-family: sans-serif;
       font-size: 21px;
     }
-
-    /* Styling für das Video */
-    .video-container {
-      width: 100%;
-      height: 400px; /* Höhe des Videos */
-      margin-top: 20px;
-      margin-bottom: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Das Video füllt den Container ohne Verzerrung */
-    }
   </style>
 </head>
 <body>
@@ -57,43 +41,20 @@
     <!-- Boxen, die über dem Video erscheinen -->
     <div class="content-block">
       <h2>Über mich und mein künstlerischer Weg</h2>
-      <p>Ich heiße Lidia Grön, bin am 08.09.1969 in Marx, Russland, geboren und wohne mittlerweile in Hessen. In meiner Heimat habe ich Philologie an der Nordöstlichen Universität in Magadan studiert und als Lehrerin gearbeitet. Im Jahr 2000 bin ich nach Deutschland gekommen. Von 2010 bis 2013 absolvierte ich in Hessen eine Ausbildung zur Sozialpädagogin.</p>
-      <p>Schon als Kind habe ich gern gemalt, aber durch die vielen Umzüge in Russland und später in Deutschland blieb wenig Zeit für mein Hobby. Gelegentlich habe ich mit Bleistift, Wasserfarben oder bunten Stiften gemalt, vor allem beruflich, wenn ich mit Kindern gearbeitet habe.</p>
-      <p>Während der Corona-Pandemie entdeckte ich beim Aufräumen alte Ölfarben und begann, damit zu experimentieren. Die Farben waren eingetrocknet, also mischte ich sie mit Speiseöl und Aceton – nicht perfekt, aber es hat funktioniert! Über das Internet eignete ich mir Wissen über den Umgang mit Ölfarben an und begann, regelmäßig zu malen.</p>
+      <p>Ich heiße Lidia Grön, bin am 08.09.1969 in Marx, Russland, geboren und wohne mittlerweile in Hessen. In meiner Heimat habe ich Philologie an der Nordöstlichen Universität in Magadan studiert und als Lehrerin gearbeitet. Im Jahr 2000 bin ich nach Deutschland gekommen...</p>
     </div>
     <div class="content-block">
       <h2>Meine Themen und Techniken</h2>
-      <p>Zuerst malte ich Pflanzen und Landschaften, später wagte ich mich an Gesichter und Porträts. Meine Begeisterung für Literatur inspirierte mich dazu, literarische Figuren mit Ölfarben auf Karton zu interpretieren. Auch Porträts von Bekannten und Verwandten sind dabei entstanden.</p>
-      <p>Inzwischen kann ich nicht mehr aufhören zu malen. Besonders fasziniert mich das Thema Menschen in der Natur.</p>
-      <h3>Themen:</h3>
-      <ul>
-        <li>Menschen und Porträts</li>
-        <li>Natur und urbane Landschaften</li>
-      </ul>
-      <h3>Materialien:</h3>
-      <ul>
-        <li>Ölfarben</li>
-        <li>Acryl</li>
-        <li>Zeichenkohle</li>
-        <li>Bleistift und Grafitstifte</li>
-        <li>Pastell</li>
-      </ul>
+      <p>Zuerst malte ich Pflanzen und Landschaften, später wagte ich mich an Gesichter und Porträts. Meine Begeisterung für Literatur inspirierte mich dazu, literarische Figuren mit Ölfarben auf Karton zu interpretieren...</p>
     </div>
     <div class="content-block">
       <h2>Ausstellungen und meine Motivation</h2>
-      <p>Seit 2021 beschäftige ich mich intensiv mit Ölmalerei – als Autodidaktin habe ich mir die Techniken selbst beigebracht. Seit 2024 bin ich als Lehrkraft an den Volkshochschulen in Waldeck-Frankenberg und im Hochsauerlandkreis tätig, wo ich Zeichen- und Malkurse sowie Workshops für Ölmalerei anbiete.</p>
-      <p>Meine Arbeiten wurden bereits in einigen Ausstellungen gezeigt:</p>
-      <ul>
-        <li>„4 Arten“ – Gruppenausstellung, September 2022, Galerie im Bürgerhaus, Korbach</li>
-        <li>Teilnahme an Kunstmärkten von 2022 bis 2024</li>
-        <li>„Bild des Monats“ – Februar 2022, Korbach</li>
-      </ul>
-      <p>Malen ist für mich eine Möglichkeit, mich auszudrücken und die Welt um mich herum festzuhalten. Es macht mir Freude, mit Farben und Formen zu experimentieren und meine Ideen auf die Leinwand zu bringen.</p>
+      <p>Seit 2021 beschäftige ich mich intensiv mit Ölmalerei – als Autodidaktin habe ich mir die Techniken selbst beigebracht. Seit 2024 bin ich als Lehrkraft an den Volkshochschulen in Waldeck-Frankenberg und im Hochsauerlandkreis tätig...</p>
     </div>
 
-    <!-- Video unter den Boxen und über dem Footer -->
+    <!-- Video unter den Boxen -->
     <div class="video-container">
-      <video autoplay loop muted>
+      <video autoplay loop muted id="video-background">
         <source src="assets/images/Background.mkv" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
