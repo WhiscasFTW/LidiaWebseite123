@@ -18,7 +18,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px; /* Standardgröße für Desktop */
+  height: 360px; /* Originalhöhe für Desktop */
   width: 100%;
   overflow: hidden; /* Verhindert das Überschreiten des Headers */
 }
@@ -50,7 +50,7 @@ header .header-content h1 {
 @media (max-width: 767px) {
   header {
     background-color: rgba(0, 0, 0, 0.9); /* Dunklerer Hintergrund auf mobilen Geräten */
-    height: 120px; /* Größerer Header für Mobilgeräte */
+    height: 200px; /* Kleinerer Header für Mobilgeräte */
   }
 
   header .header-content h1 {
@@ -58,8 +58,8 @@ header .header-content h1 {
   }
 
   header img {
-    height: 120px; /* Setzt die Bildhöhe in der mobilen Version */
-    object-fit: contain; /* Bildgröße besser anpassen */
+    height: 100%; /* Bild nimmt die gesamte Höhe des Headers ein */
+    object-fit: cover; /* Bild bleibt im richtigen Verhältnis */
   }
 }
 
@@ -272,13 +272,14 @@ footer img {
 /* Atmungsanimation für den Button */
 @keyframes breathe {
   0% { color: rgba(255, 255, 255, 0.8); }
-  50% { color: rgba(255, 255, 255, 0.6); }
+  50% { color: rgba(255, 255, 255, 1); }
   100% { color: rgba(255, 255, 255, 0.8); }
 }
 
-/* Wackel-Animation für den Button */
+/* Wackeln der Sidebar-Button-Animation */
 @keyframes wobble {
   0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
+  25% { transform: translateY(-50%) rotate(10deg); }
+  50% { transform: translateY(-50%) rotate(0deg); }
+  75% { transform: translateY(-50%) rotate(-10deg); }
 }
