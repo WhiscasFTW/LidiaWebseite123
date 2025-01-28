@@ -14,7 +14,7 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 51px); /* Die Höhe des Videos wird so gesetzt, dass es unter dem Content und über dem Footer bleibt */
   z-index: -1; /* Video bleibt immer im Hintergrund */
   overflow: hidden;
 }
