@@ -62,13 +62,46 @@ main {
   margin-left: 270px; /* Sidebar Platz */
 }
 
+.content-block {
+  background-color: #ffffff; /* Weißer Hintergrund */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-block h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.content-block h3 {
+  font-size: 20px;
+  color: #555;
+}
+
+.content-block ul {
+  padding-left: 20px;
+}
+
+.content-block ul li {
+  list-style-type: disc;
+  margin-bottom: 8px;
+}
+
+.content-block p {
+  line-height: 1.6;
+  color: #444;
+}
+
 /* Boxen im Main-Bereich */
 .boxen {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
-  flex-wrap: wrap; /* Ermöglicht das Umfließen der Boxen, wenn der Platz nicht ausreicht */
+  width: 100%; /* Maximiert die Boxen auf die gesamte Breite */
 }
 
 .box {
@@ -77,8 +110,7 @@ main {
   padding: 20px;
   text-align: center;
   border-radius: 8px;
-  width: 33.33%; /* Setzt die Breite der Boxen auf 33.33%, sodass sie den Raum gleichmäßig einnehmen */
-  box-sizing: border-box; /* Stellt sicher, dass Padding und Border nicht zur Breite hinzugerechnet werden */
+  width: 32%; /* Nutzt den Raum gleichmäßig */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
