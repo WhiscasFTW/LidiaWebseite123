@@ -12,17 +12,53 @@ body, html {
 header {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 10px 0;
   background-color: black;
   margin-top: -10px;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Für Desktop */
+}
+
+/* Header-Inhalt */
+header .header-content {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 header img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
+}
+
+/* Für den Text im Header */
+header .header-content h1 {
+  margin: 0;
+  font-size: 30px; /* Textgröße nach Wunsch anpassen */
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Mobile-Version des Headers */
+@media (max-width: 767px) {
+  header {
+    background-color: rgba(0, 0, 0, 0.9); /* Dunklerer Hintergrund auf mobilen Geräten */
+    height: 80px; /* Etwas kleinerer Header für Mobilgeräte */
+  }
+
+  header .header-content h1 {
+    font-size: 24px; /* Kleinere Schriftgröße für Mobilgeräte */
+  }
+
+  header img {
+    height: 80px; /* Setzt die Bildhöhe in der mobilen Version */
+    object-fit: contain; /* Bildgröße besser anpassen */
+  }
 }
 
 /* Main-Bereich */
@@ -36,18 +72,18 @@ main {
 
 /* Info-Box für Impressum und Datenschutz */
 .info-box {
-  background-color: rgba(0, 0, 0, 0.8); /* Dunklerer Hintergrund */
-  color: #f0f0f0; /* Hellerer Text */
+  background-color: rgba(255, 255, 255, 0.95); /* Sehr heller Hintergrund */
   padding: 20px;
   margin: 30px auto;
   width: 80%; /* Schmaler als vorher */
   max-width: 800px; /* Maximale Breite für Desktop */
   border-radius: 8px;
   text-align: left; /* Text linksbündig */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Dezenterer Schatten */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: relative;
   z-index: 2; /* Über dem Video */
+  color: #333; /* Dunkler Text für bessere Lesbarkeit */
 }
 
 /* Desktop-Version der Info-Box */
@@ -62,7 +98,7 @@ main {
 .info-box h2 {
   margin-top: 20px;
   font-size: 24px;
-  color: #fff; /* Hellerer Titel */
+  color: #000;
 }
 
 .info-box p {
@@ -72,13 +108,13 @@ main {
 }
 
 .info-box a {
-  color: #4e90e5; /* Etwas helleres Blau */
+  color: #007BFF;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .info-box a:hover {
-  color: #88b8e8; /* Helleres Blau beim Hover */
+  color: #0056b3;
 }
 
 /* Footer */
