@@ -48,15 +48,15 @@ header .header-content h1 {
 @media (max-width: 767px) {
   header {
     background-color: rgba(0, 0, 0, 0.9); /* Dunklerer Hintergrund auf mobilen Geräten */
-    height: 80px; /* Etwas kleinerer Header für Mobilgeräte */
+    height: 120px; /* Größerer Header für Mobilgeräte */
   }
 
   header .header-content h1 {
-    font-size: 24px; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 36px; /* Größere Schriftgröße für Mobilgeräte */
   }
 
   header img {
-    height: 80px; /* Setzt die Bildhöhe in der mobilen Version */
+    height: 120px; /* Setzt die Bildhöhe in der mobilen Version */
     object-fit: contain; /* Bildgröße besser anpassen */
   }
 }
