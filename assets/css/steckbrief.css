@@ -261,3 +261,20 @@ footer img {
 .overlay.active {
   display: block;
 }
+
+/* Mobile-Optimierungen */
+@media screen and (max-width: 768px) {
+  .boxen {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .box img {
+    width: 100%;
+  }
+}
