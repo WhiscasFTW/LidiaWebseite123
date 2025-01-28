@@ -1,4 +1,3 @@
-
 /* Allgemeines Layout */
 body, html {
   margin: 0;
@@ -13,15 +12,18 @@ body, html {
 .video-container {
   position: relative;
   width: 100%;
-  height: auto;
-  z-index: -1;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Video-Hintergrund */
 #video-background {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Helles Overlay für das Video */
@@ -52,13 +54,39 @@ header img {
   display: block;
 }
 
-/* Main-Bereich */
-main {
+/* Content Block (Textbereich) */
+.content-block {
+  margin: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 0;
-  margin-top: 0;
-  background-color: black;
-  padding-bottom: 0;
+  z-index: 2;
+}
+
+/* Überschrift und Text im Content Block */
+.content-block h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.content-block p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.content-block ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.content-block ul li {
+  font-size: 18px;
+  color: #444;
 }
 
 /* Footer */
@@ -242,5 +270,22 @@ footer img {
   header img {
     height: 100%;
     object-fit: cover;
+  }
+
+  /* Text im Content Block für mobile Geräte anpassen */
+  .content-block {
+    margin: 15px;
+    padding: 10px;
+  }
+  .content-block h2 {
+    font-size: 20px;
+  }
+  .content-block p, .content-block ul {
+    font-size: 14px;
+  }
+
+  /* Anpassung für das Video */
+  .video-container {
+    height: 60vh; /* Videohöhe auf mobilen Geräten anpassen */
   }
 }
