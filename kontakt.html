@@ -5,26 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webseite mit Sidebar</title>
-  <!-- CSS-Dateien werden mit "rel=preload" asynchron geladen -->
-  <link rel="stylesheet" href="assets/css/kontakt.css">
+  <link rel="stylesheet" href="assets/css/diesntleistungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body, .sidebar-links a {
+      font-family: sans-serif;
+      font-size: 21px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Dunkles Overlay für die Transition -->
-  <div id="page-transition-overlay" class="page-transition-overlay"></div>
-
   <!-- Overlay für die Sidebar -->
   <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- Die Sidebar auf der linken Seite -->
   <div id="sidebar" class="sidebar">
-    <!-- Signatur der Künstlerin -->
     <div class="artist-signature">
       <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
     </div>
 
-    <!-- Links mit Icons -->
     <div class="sidebar-links">
       <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
       <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
@@ -34,27 +32,21 @@
     </div>
   </div>
 
-  <!-- Button zum Öffnen und Schließen der Sidebar -->
   <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-  <!-- Header -->
   <header>
-    <img src="assets/images/HeaderKontakt.png" alt="Header">
+    <img src="assets/images/HeaderDienstleistungen.png" alt="Header">
   </header>
   
-  <!-- Main-Bereich (Video) -->
   <main>
     <div class="video-container">
       <video autoplay loop muted id="video-background">
         <source src="assets/images/Background.mkv" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
-      <div class="video-overlay"></div> <!-- Helles Overlay für das Video -->
     </div>
   </main>
-  
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Lidia Grön | <a href="impressum.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
@@ -62,7 +54,6 @@
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
 
-  <!-- Asynchrones Laden von JavaScript -->
-  <script src="assets/js/kontakt.js" defer></script>
+  <script src="assets/js/dienstleistungen.js" defer></script>
 </body>
 </html>
