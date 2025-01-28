@@ -10,7 +10,25 @@
     body, .sidebar-links a {
       font-family: sans-serif;
       font-size: 21px;
+      margin: 0;
+      padding: 0;
     }
+
+    /* Sicherstellen, dass der Footer immer unten ist */
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      margin-top: auto; /* Macht sicher, dass der Footer unten bleibt */
+    }
+
   </style>
 </head>
 <body>
