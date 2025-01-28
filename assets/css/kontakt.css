@@ -59,9 +59,11 @@ main {
   background-color: #333; /* Dunklerer Grauton für den Hintergrund */
   padding-bottom: 0;
   padding: 20px;
-  width: 100%; /* Hintergrund auf 100% der Breite */
+  max-width: 2560px; /* Begrenze die Breite auf 2560px */
+  margin: 0 auto; /* Zentriere den Container */
 }
 
+/* Content Block */
 .content-block {
   background-color: #e0f7e9; /* Sanfter Grünton für die oberen Boxen */
   padding: 20px;
