@@ -101,7 +101,8 @@ main {
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
-  width: 100%; /* Maximiert die Boxen auf die gesamte Breite */
+  width: calc(100% - 40px); /* Berücksichtigt den Abstand */
+  margin-left: 20px; /* Sicherstellt, dass der Abstand auch nach links vorhanden ist */
 }
 
 .box {
