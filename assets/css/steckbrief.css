@@ -32,7 +32,7 @@ main {
   display: flex;
   flex-direction: column;
   height: auto;
-  margin-bottom: 0; /* Kein zusätzlicher Platz für den Footer mehr */
+  margin-bottom: 0;
 }
 
 /* Inhalt der Boxen */
@@ -71,19 +71,20 @@ main {
 
 /* Video-Container */
 .video-container {
-  width: 100%;          /* Breite des Videos */
-  height: 400px;        /* Höhe des Videos (kann angepasst werden) */
-  margin-top: 20px;     /* Abstand oben */
-  margin-bottom: 20px;  /* Abstand unten */
+  width: 100%;
+  height: 400px; /* Höhe des Videos auf Desktop */
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .video-container video {
-  width: 100%;          /* Breite des Videos auf die Container-Breite skalieren */
-  height: 100%;         /* Höhe des Videos auf die Container-Höhe skalieren */
-  object-fit: cover;    /* Das Video füllt den Container aus, ohne Verzerrung */
-  object-position: center; /* Positioniert das Video in der Mitte des Containers */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Footer */
