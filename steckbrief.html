@@ -11,20 +11,21 @@
       font-family: sans-serif;
       font-size: 21px;
     }
-    /* Das Video direkt zwischen den Boxen und Footer */
+
+    /* Styling für das Video */
     .video-container {
       width: 100%;
       height: 400px; /* Höhe des Videos */
       margin-top: 20px;
       margin-bottom: 20px;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
     }
 
     .video-container video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* Das Video füllt den Container ohne Verzerrung */
     }
   </style>
 </head>
@@ -92,7 +93,7 @@
 
     <!-- Video unter den Boxen und über dem Footer -->
     <div class="video-container">
-      <video autoplay loop muted id="video-background">
+      <video autoplay loop muted>
         <source src="assets/images/Background.mkv" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
