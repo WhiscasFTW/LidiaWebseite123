@@ -86,6 +86,7 @@ main {
 .box:nth-child(2),
 .box:nth-child(3) {
   background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
+  color: #333; /* Dunkelgrauer Text für bessere Lesbarkeit */
 }
 
 /* Untere Boxen (Dunkelrot) */
@@ -93,6 +94,7 @@ main {
 .box:nth-child(5),
 .box:nth-child(6) {
   background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
+  color: #fff; /* Weißer Text für die unteren Boxen */
 }
 
 /* Box-Inhalte */
@@ -104,7 +106,6 @@ main {
 
 .box h3 {
   font-size: 22px;
-  color: #333;
   margin-top: 10px;
 }
 
