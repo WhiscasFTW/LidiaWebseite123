@@ -1,169 +1,318 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/kontakt.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
+/* Allgemeines Layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+}
 
-    /* Verbesserte Boxen-Styles */
-    .boxen {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 20px;
-    }
+/* Video-Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
 
-    .box {
-      background-color: #ffffff; /* Weicherer Hintergrund */
-      border: 2px solid #ddd;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-      width: 30%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Besserer Schatten */
-      transition: box-shadow 0.3s ease;
-    }
+/* Video-Hintergrund */
+#video-background {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    .box img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px; /* Abstand zwischen Bild und Text */
-    }
+/* Helles Overlay für das Video */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
 
-    .box h3 {
-      font-size: 22px;
-      color: #333;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+/* Header */
+header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
 
-    .box p {
-      color: #666;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    .box a.btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 25px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
+/* Main-Bereich */
+main {
+  position: relative;
+  z-index: 0;
+  margin-top: 0;
+  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+  padding-bottom: 0;
+  padding: 20px;
+  max-width: 2560px; /* Begrenze die Breite auf 2560px */
+  margin: 0 auto; /* Zentriere den Container */
+}
 
-    .box a.btn:hover {
-      background-color: #45a049;
-    }
+/* Boxen im Main-Bereich */
+.boxen {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%; /* Nutzt den Raum gleichmäßig */
+}
 
-    .box:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Schatten bei Hover */
-    }
+/* Jede Box */
+.box {
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 32%; /* Nutzt den Raum gleichmäßig */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  </style>
-</head>
-<body>
-  <!-- Overlay für die Sidebar -->
-  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+/* Obere Boxen (Beige) */
+.box:nth-child(-n+3) {
+  background-color: #f5f5dc; /* Beige Farbe für die oberen Boxen */
+}
 
-  <div id="sidebar" class="sidebar">
-    <div class="artist-signature">
-      <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
-    </div>
+/* Untere Boxen (Dunkelrot) */
+.box:nth-child(n+4) {
+  background-color: #8b0000; /* Dunkelrote Farbe für die unteren Boxen */
+}
 
-    <div class="sidebar-links">
-      <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-      <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
-      <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
-      <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-      <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
-    </div>
-  </div>
+/* Box-Inhalte */
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
-  <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+.box h3 {
+  font-size: 22px;
+  color: #333;
+  margin-top: 10px;
+}
 
-  <header>
-    <img src="assets/images/HeaderKontakt.png" alt="Header">
-  </header>
-  
-  <main>
-     <!-- Erste 3 Textboxen -->
-    <div class="content-block">
-      <h2>Über mich und mein künstlerischer Weg</h2>
-      <p>Ich heiße Lidia Grön, bin am 08.09.1969 in Marx, Russland, geboren und wohne mittlerweile in Hessen. In meiner Heimat habe ich Philologie an der Nordöstlichen Universität in Magadan studiert und als Lehrerin gearbeitet. Im Jahr 2000 bin ich nach Deutschland gekommen. Von 2010 bis 2013 absolvierte ich in Hessen eine Ausbildung zur Sozialpädagogin.</p>
-      <p>Schon als Kind habe ich gern gemalt, aber durch die vielen Umzüge in Russland und später in Deutschland blieb wenig Zeit für mein Hobby. Gelegentlich habe ich mit Bleistift, Wasserfarben oder bunten Stiften gemalt, vor allem beruflich, wenn ich mit Kindern gearbeitet habe.</p>
-      <p>Während der Corona-Pandemie entdeckte ich beim Aufräumen alte Ölfarben und begann, damit zu experimentieren. Die Farben waren eingetrocknet, also mischte ich sie mit Speiseöl und Aceton – nicht perfekt, aber es hat funktioniert! Über das Internet eignete ich mir Wissen über den Umgang mit Ölfarben an und begann, regelmäßig zu malen.</p>
-    </div>
+.box a.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #8b0000; /* Dunkelrote Farbe für die Buttons */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-    <div class="content-block">
-      <h2>Meine Themen und Techniken</h2>
-      <p>Zuerst malte ich Pflanzen und Landschaften, später wagte ich mich an Gesichter und Porträts. Meine Begeisterung für Literatur inspirierte mich dazu, literarische Figuren mit Ölfarben auf Karton zu interpretieren. Auch Porträts von Bekannten und Verwandten sind dabei entstanden.</p>
-      <p>Inzwischen kann ich nicht mehr aufhören zu malen. Besonders fasziniert mich das Thema Menschen in der Natur.</p>
-      <h3>Themen:</h3>
-      <ul>
-        <li>Menschen und Porträts</li>
-        <li>Natur und urbane Landschaften</li>
-      </ul>
-      <h3>Materialien:</h3>
-      <ul>
-        <li>Ölfarben</li>
-        <li>Acryl</li>
-        <li>Zeichenkohle</li>
-        <li>Bleistift und Grafitstifte</li>
-        <li>Pastell</li>
-      </ul>
-    </div>
+.box a.btn:hover {
+  background-color: #f5f5dc; /* Beige Hintergrundfarbe für den Hover-Effekt */
+  color: #8b0000;
+}
 
-    <div class="content-block">
-      <h2>Ausstellungen und meine Motivation</h2>
-      <p>Seit 2021 beschäftige ich mich intensiv mit Ölmalerei – als Autodidaktin habe ich mir die Techniken selbst beigebracht. Seit 2024 bin ich als Lehrkraft an den Volkshochschulen in Waldeck-Frankenberg und im Hochsauerlandkreis tätig, wo ich Zeichen- und Malkurse sowie Workshops für Ölmalerei anbiete.</p>
-      <p>Meine Arbeiten wurden bereits in einigen Ausstellungen gezeigt:</p>
-      <ul>
-        <li>„4 Arten“ – Gruppenausstellung, September 2022, Galerie im Bürgerhaus, Korbach</li>
-        <li>Teilnahme an Kunstmärkten von 2022 bis 2024</li>
-        <li>„Bild des Monats“ – Februar 2022, Korbach</li>
-      </ul>
-      <p>Malen ist für mich eine Möglichkeit, mich auszudrücken und die Welt um mich herum festzuhalten. Es macht mir Freude, mit Farben und Formen zu experimentieren und meine Ideen auf die Leinwand zu bringen.</p>
-    </div>
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0;
+  background-color: black;
+  z-index: 2;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px;
+}
 
-    <!-- Weitere 3 Boxen -->
-    <div class="boxen">
-      <div class="box">
-        <h3>Meine Werke</h3>
-        <img src="assets/images/MeineWerke.jpg" alt="Meine Werke">
-        <a href="meinewerke.html" class="btn">Mehr erfahren</a>
-      </div>
-      <div class="box">
-        <h3>Dienstleistungen</h3>
-        <img src="assets/images/Dienstleistungen.jpg" alt="Dienstleistungen">
-        <a href="dienstleistungen.html" class="btn">Mehr erfahren</a>
-      </div>
-      <div class="box">
-        <h3>Kontakt</h3>
-        <img src="assets/images/Kontakt.jpg" alt="Kontakt">
-        <a href="kontakt.html" class="btn">Mehr erfahren</a>
-      </div>
-    </div>
-  </main>
+footer .footer-content {
+  position: absolute;
+  z-index: 1;
+}
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Lidia Grön | <a href="impressum.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-    </div>
-    <img src="assets/images/Footer.jpg" alt="Footer Bild">
-  </footer>
+footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin: 0;
+}
 
-  <script src="assets/js/kontakt.js" defer></script>
-</body>
-</html>
+footer .footer-content a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-content a:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+footer img {
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  display: block;
+  margin-top: 0px;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  overflow-x: hidden;
+  transition: left 1s ease;
+  z-index: 10;
+  padding-top: 20px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Links in der Sidebar */
+.sidebar-links {
+  padding-bottom: 20px;
+}
+
+.sidebar a {
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  transition: transform 1s ease, opacity 1s ease;
+  font-family: 'Pacifico', cursive;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 5px 10px;
+  border-radius: 5px;
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.sidebar.open a {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 1);
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+  text-align: center;
+  padding: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+  width: auto;
+  height: 140px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+  font-size: 96px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+  padding: 10px;
+}
+
+.toggle-button.open {
+  left: 265px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.toggle-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Atmungsanimation für den Button */
+@keyframes breathe {
+  0% { color: rgba(255, 255, 255, 0.8); }
+  50% { color: rgba(255, 255, 255, 0.6); }
+  100% { color: rgba(255, 255, 255, 0.8); }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(-2deg); }
+  75% { transform: translateY(-50%) rotate(2deg); }
+}
+
+/* Animationen */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .boxen {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .box {
+    width: 45%;
+  }
+}
