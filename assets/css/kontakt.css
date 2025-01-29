@@ -18,26 +18,26 @@ body {
   padding: 1rem;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Damit Header und Footer richtig positioniert werden */
+  justify-content: center;
+  align-items: center;
   background: rgba(20, 20, 20, 1);
 }
 
 /* Header */
 header {
-  width: 100%; /* Header nimmt die volle Breite des Bildschirms ein */
-  height: 360px; /* Fixierte Höhe für den Header */
-  position: fixed;
-  top: 0; /* Header ganz oben auf der Seite */
-  left: 0;
-  z-index: 1; /* Damit der Header immer oben bleibt */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
   background-color: black;
-  overflow: hidden; /* Damit nichts aus dem Header rausragt */
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
 header img {
-  width: 100%; /* Headerbild nimmt die volle Breite ein */
-  height: 100%; /* Headerbild füllt die Höhe des Headers */
-  object-fit: cover; /* Bild passt sich dem Container an */
+  width: 100%; /* Header füllt den vollen Raum aus */
+  height: 360px; /* Höhe des Header-Bildes */
+  object-fit: cover;
   display: block;
 }
 
@@ -45,25 +45,33 @@ header img {
 main {
   position: relative;
   z-index: 0;
-  margin-top: 360px; /* Der Hauptbereich verschiebt sich nach unten, um Platz für den Header zu schaffen */
-  padding: 20px;
-  max-width: 2560px;
-  margin: 0 auto;
+  margin-top: 0;
   background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-  min-height: calc(100vh - 360px - 51px); /* Stellt sicher, dass der Hauptbereich immer den verfügbaren Platz einnimmt */
+  padding-bottom: 0;
+  padding: 20px;
+  max-width: 2560px; /* Begrenze die Breite auf 2560px */
+  margin: 0 auto; /* Zentriere den Container */
 }
 
 /* Footer */
 footer {
-  width: 100%; /* Footer nimmt die volle Breite des Bildschirms ein */
-  height: 51px; /* Fixierte Höhe für den Footer */
-  position: fixed;
-  bottom: 0; /* Footer ganz unten */
+  position: fixed; /* Fixiert den Footer am unteren Rand */
+  bottom: 0;
   left: 0;
-  z-index: 1; /* Damit der Footer immer unten bleibt */
+  width: 100%;
+  height: 51px; /* Höhe des Footer-Bildes */
   background-color: black;
-  text-align: center;
-  padding: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  width: 2560px; /* Breite des Footer-Bildes */
+  height: 51px; /* Höhe des Footer-Bildes */
+  object-fit: cover; /* Stellt sicher, dass das Bild richtig skaliert wird */
+  display: block;
 }
 
 footer .footer-content {
