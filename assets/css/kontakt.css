@@ -25,27 +25,25 @@ body {
 
 /* Header */
 header {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 10px 0;
-  background-color: black;
-  margin-top: -10px;
-  margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 360px; /* Höhe des Headers */
+  z-index: 1;
 }
 
 header img {
-  width: 100%; /* Header füllt den vollen Raum aus */
-  height: 360px; /* Höhe des Header-Bildes */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* Main-Bereich */
 main {
   position: relative;
   z-index: 0;
-  margin-top: 0;
+  margin-top: 360px; /* Platz für den Header */
   background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
   padding-bottom: 0;
   padding: 20px;
@@ -55,33 +53,33 @@ main {
 
 /* Footer */
 footer {
-  position: fixed; /* Fixiert den Footer am unteren Rand */
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 51px; /* Höhe des Footer-Bildes */
-  background-color: black;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 51px; /* Höhe des Footers */
+  z-index: 1;
 }
 
 footer img {
-  width: 2560px; /* Breite des Footer-Bildes */
-  height: 51px; /* Höhe des Footer-Bildes */
-  object-fit: cover; /* Stellt sicher, dass das Bild richtig skaliert wird */
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
   display: block;
 }
 
 footer .footer-content {
   position: absolute;
   z-index: 1;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 footer .footer-content p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
   margin: 0;
 }
 
