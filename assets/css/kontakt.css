@@ -18,24 +18,26 @@ body {
   padding: 1rem;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Damit Header und Footer richtig positioniert werden */
   background: rgba(20, 20, 20, 1);
 }
 
 /* Header */
 header {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 10px 0;
+  width: 100%; /* Header nimmt die volle Breite des Bildschirms ein */
+  height: 360px; /* Fixierte Höhe für den Header */
+  position: fixed;
+  top: 0; /* Header ganz oben auf der Seite */
+  left: 0;
+  z-index: 1; /* Damit der Header immer oben bleibt */
   background-color: black;
-  margin-top: 0;
-  margin-bottom: 0;
+  overflow: hidden; /* Damit nichts aus dem Header rausragt */
 }
 
 header img {
-  max-width: 100%;
-  height: auto;
+  width: 100%; /* Headerbild nimmt die volle Breite ein */
+  height: 100%; /* Headerbild füllt die Höhe des Headers */
+  object-fit: cover; /* Bild passt sich dem Container an */
   display: block;
 }
 
@@ -43,28 +45,25 @@ header img {
 main {
   position: relative;
   z-index: 0;
-  margin-top: 0;
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-  padding-bottom: 0;
+  margin-top: 360px; /* Der Hauptbereich verschiebt sich nach unten, um Platz für den Header zu schaffen */
   padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
-  flex-grow: 1; /* Damit der Main-Bereich den verbleibenden Raum ausfüllt */
+  max-width: 2560px;
+  margin: 0 auto;
+  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+  min-height: calc(100vh - 360px - 51px); /* Stellt sicher, dass der Hauptbereich immer den verfügbaren Platz einnimmt */
 }
 
 /* Footer */
 footer {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  padding: 0px 0;
+  width: 100%; /* Footer nimmt die volle Breite des Bildschirms ein */
+  height: 51px; /* Fixierte Höhe für den Footer */
+  position: fixed;
+  bottom: 0; /* Footer ganz unten */
+  left: 0;
+  z-index: 1; /* Damit der Footer immer unten bleibt */
   background-color: black;
-  z-index: 2;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 51px;
+  text-align: center;
+  padding: 0;
 }
 
 footer .footer-content {
@@ -89,14 +88,6 @@ footer .footer-content a:hover {
   color: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-footer img {
-  width: 100%;
-  height: 51px;
-  object-fit: cover;
-  display: block;
-  margin-top: 0px;
 }
 
 /* Sidebar */
