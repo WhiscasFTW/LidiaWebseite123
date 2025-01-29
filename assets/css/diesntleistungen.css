@@ -8,6 +8,33 @@ body, html {
   background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  margin: 0;
+}
+
 /* Header */
 header {
   position: relative;
@@ -206,27 +233,114 @@ footer img {
   100% { transform: translateY(0); }
 }
 
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
+/* Bildergalerie */
+#mz-gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-  header img {
-    height: 100%;
-    object-fit: cover;
+#mz-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 70px);
+  height: calc(100% - 50px);
+  max-height: 670px;
+  max-width: 1900px;
+  margin: 35px 0px;
+  background-color: black;
+  background-image: radial-gradient(rgba(124, 252, 0, 0.4) 1px, black 1px);
+  background-size: 40px 40px;
+  border: 1px dotted rgba(124, 252, 0, 0.7);
+  outline: 1px dotted rgba(124, 252, 0, 0.7);
+  outline-offset: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 0 0 55px;
+  scroll-behavior: smooth;
+  scrollbar-color: lawngreen #222;
+  scrollbar-width: auto;
+  animation: background 300s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: -300% 100%;
+  }
+  100% {
+    background-position: 100% -300%;
   }
 }
 
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
-  }
+#mz-gallery::-webkit-scrollbar {
+  height: 25px;
 }
+
+#mz-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:active {
+  background: #444;
+}
+
+/* Styling der Galerie-Elemente */
+#mz-gallery figure {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  scroll-snap-align: start;
+  position: relative;
+  width: 220px;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease-in-out, filter 0.3s ease;
+}
+
+#mz-gallery figure img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#mz-gallery figure:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+#mz-gallery figure a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+#mz-gallery figure:hover a {
+  opacity: 1;
+}
+
+/* Weitere spezifische Styles und Medienabfragen... */
