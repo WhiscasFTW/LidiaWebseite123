@@ -55,4 +55,4 @@ function openLightbox(imageSrc, text) {
 // Funktion zum Schließen der Lightbox
 function closeLightbox() {
     document.getElementById('lightbox').style.display = "none";
-}
+} 
