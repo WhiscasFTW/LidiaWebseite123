@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/kontakt.css">
+  <title>Webseite mit Sidebar und Bildergalerie</title>
+  <link rel="stylesheet" href="assets/css/meinewerke.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body, .sidebar-links a {
@@ -35,12 +34,35 @@
   <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
   <header>
-    <img src="assets/images/HeaderDienstleistungen.png" alt="Header">
+    <img src="assets/images/HeaderMeineWerke.png" alt="Header">
   </header>
   
   <main>
-    <!-- Hier werden keine Cards mehr angezeigt -->
     <p>Willkommen auf meiner Website. Weitere Informationen finden Sie über die Sidebar.</p>
+
+    <!-- Bildergalerie -->
+    <div class="gallery">
+        <div class="gallery-item" onclick="openLightbox('assets/images/image1.jpg', 'Bildbeschreibung 1')">
+            <img src="assets/images/image1.jpg" alt="Bild 1">
+            <p>Bildbeschreibung 1</p>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('assets/images/image2.jpg', 'Bildbeschreibung 2')">
+            <img src="assets/images/image2.jpg" alt="Bild 2">
+            <p>Bildbeschreibung 2</p>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('assets/images/image3.jpg', 'Bildbeschreibung 3')">
+            <img src="assets/images/image3.jpg" alt="Bild 3">
+            <p>Bildbeschreibung 3</p>
+        </div>
+    </div>
+
+    <!-- Lightbox für Vergrößerung -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
+        <p id="lightbox-text"></p>
+    </div>
+
   </main>
 
   <footer>
@@ -50,6 +72,7 @@
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
 
-  <script src="assets/js/kontakt.js" defer></script>
+  <script src="assets/js/meinewerke.js" defer></script>
+ 
 </body>
 </html>
