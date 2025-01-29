@@ -234,6 +234,7 @@ footer img {
     max-width: 80%;
     max-height: 80%;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Sanfte Animation für Vergrößern */
 }
 
 .lightbox p {
@@ -269,3 +270,4 @@ footer img {
     25% { transform: translateY(-50%) rotate(-2deg); }
     75% { transform: translateY(-50%) rotate(2deg); }
 }
+
