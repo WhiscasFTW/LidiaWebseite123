@@ -18,8 +18,7 @@ body {
   padding: 1rem;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   background: rgba(20, 20, 20, 1);
 }
 
@@ -30,7 +29,7 @@ header {
   text-align: center;
   padding: 10px 0;
   background-color: black;
-  margin-top: -10px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -50,77 +49,7 @@ main {
   padding: 20px;
   max-width: 2560px; /* Begrenze die Breite auf 2560px */
   margin: 0 auto; /* Zentriere den Container */
-}
-
-/* Footer */
-footer {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  padding: 0px 0;
-  background-color: black;
-  z-index: 2;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 51px;
-}
-
-footer .footer-content {
-  position: absolute;
-  z-index: 1;/* Allgemeines Layout */
-* {
-  box-sizing: border-box;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
-}
-
-body {
-  font-family: Lato, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* Flexbox in Spaltenrichtung für Header, Main und Footer */
-  justify-content: flex-start; /* Header bleibt oben */
-}
-
-/* Header */
-header {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 10px 0;
-  background-color: black;
-  margin-top: -10px;
-  margin-bottom: 0;
-}
-
-header img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Main-Bereich */
-main {
-  position: relative;
-  z-index: 0;
-  margin-top: 0;
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-  padding-bottom: 0;
-  padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
-  flex: 1; /* Damit der Main-Bereich den verbleibenden Platz einnimmt */
+  flex-grow: 1; /* Damit der Main-Bereich den verbleibenden Raum ausfüllt */
 }
 
 /* Footer */
@@ -189,8 +118,6 @@ footer img {
 .sidebar.open {
   left: 0;
 }
-
-/* Weitere Styles bleiben unverändert */
 
 /* Links in der Sidebar */
 .sidebar-links {
