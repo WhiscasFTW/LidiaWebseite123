@@ -8,33 +8,6 @@ body, html {
   background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body,
-html {
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: black;
-  margin: 0;
-}
-
 /* Header */
 header {
   position: relative;
@@ -233,7 +206,34 @@ footer img {
   100% { transform: translateY(0); }
 }
 
-/* Bildergalerie */
+/* Galerie-Stil (Neuer Code) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  margin: 0;
+}
+
 #mz-gallery-container {
   position: relative;
   display: flex;
@@ -300,47 +300,67 @@ footer img {
   background: #444;
 }
 
-/* Styling der Galerie-Elemente */
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:vertical:increment {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-button:horizontal:decrement {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-button:horizontal:increment {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-button:vertical:decrement {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-button:vertical:increment {
+  background: transparent;
+}
+
 #mz-gallery figure {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  scroll-snap-align: start;
   position: relative;
-  width: 220px;
+  width: 280px;
   height: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.2);
-  transition: transform 0.5s ease-in-out, filter 0.3s ease;
+  margin-right: 30px;
+  scroll-snap-align: start;
 }
 
 #mz-gallery figure img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 
-#mz-gallery figure:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-#mz-gallery figure a {
-  display: block;
-  width: 100%;
-  height: 100%;
+#mz-gallery figure figcaption {
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
+  left: 10px;
+  bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-#mz-gallery figure:hover a {
-  opacity: 1;
+#mz-gallery figure:hover figcaption {
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
-/* Weitere spezifische Styles und Medienabfragen... */
+@mz-gallery figure:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
