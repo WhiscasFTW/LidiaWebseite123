@@ -1,17 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar und Bildergalerie</title>
-  <link rel="stylesheet" href="assets/css/meinewerke.css">
-  <script src="assets/js/meinewerke.js" defer></script>
+  <title>Webseite mit Sidebar</title>
+  <link rel="stylesheet" href="assets/css/startseite.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body, .sidebar-links a {
+      font-family: sans-serif;
+      font-size: 21px;
+    }
+
+    body, .sidebar-links a {
+      font-family: sans-serif;
+      font-size: 21px;
+    }
+  </style>
 </head>
 <body>
   <!-- Overlay für die Sidebar -->
   <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
     <div class="artist-signature">
       <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
@@ -22,19 +33,18 @@
       <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
       <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
       <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-      <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
+      <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
     </div>
   </div>
 
-  <!-- Button zum Öffnen/Schließen der Sidebar -->
   <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
   <header>
-    <img src="assets/images/HeaderMeineWerke.png" alt="Header">
+    <img src="assets/images/HeaderDienstleistungen.png" alt="Header">
   </header>
-
+  
   <main>
-    <!-- Dein originaler Main-Inhalt (Galerien) bleibt hier unverändert -->
+ 
   </main>
 
   <footer>
@@ -43,5 +53,7 @@
     </div>
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
+
+  <script src="assets/js/startseite.js" defer></script>
 </body>
 </html>
