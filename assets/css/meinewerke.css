@@ -5,9 +5,10 @@ body {
     margin: 0;
     background-color: #010101;
     color: #eee;
-    max-width: 2560px;
+    max-width: 2560px; /* Begrenze die Breite */
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
 }
 
 svg {
@@ -38,7 +39,7 @@ header img {
 /* Abstand zwischen Header und Main */
 main {
     position: relative;
-    margin-top: 20px; /* Abstand zwischen Header und Main */
+    margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
     padding: 20px;
     width: 100%;
     max-width: 2560px;
@@ -274,7 +275,7 @@ footer img {
 
 .sidebar .signature {
     text-align: center;
-    font-size: 10px; /* Noch kleiner gemacht */
+    font-size: 10px; /* Kleinere Signatur */
     color: rgba(255, 255, 255, 0.85);
     margin-top: 20px;
 }
