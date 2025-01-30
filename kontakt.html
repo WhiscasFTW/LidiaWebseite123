@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webseite mit Sidebar</title>
   <link rel="stylesheet" href="assets/css/kontakt.css">
+  <link rel="stylesheet" href="assets/css/kontakt.scss"> <!-- Verlinkung zur kontakt.scss -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Allgemeines Layout */
@@ -300,7 +301,6 @@
       <li><a href="javascript:void(0)"><figure><img src="https://images.unsplash.com/photo-1633621533308-8760aefb5521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjAyMQ&ixlib=rb-1.2.1&q=80&w=400" onclick="openModal(this)"><figcaption>Adventure getaways</figcaption></figure></a></li>
       <li><a href="javascript:void(0)"><figure><img src="https://images.unsplash.com/photo-1633635146842-12d386e64058?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400" onclick="openModal(this)"><figcaption>Forest escapes</figcaption></figure></a></li>
       <li><a href="javascript:void(0)"><figure><img src="https://images.unsplash.com/photo-1568444438385-ece31a33ce78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400" onclick="openModal(this)"><figcaption>Street scenes</figcaption></figure></a></li>
-      <!-- Weitere Bilder kannst du hier hinzufügen -->
     </ul>
   </main>
 
@@ -340,27 +340,3 @@
 </body>
 </html>
 
-
-<div class="m-p-g">
-	<div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">
-		<img src="http://unsplash.it/600/400?image=940" data-full="http://unsplash.it/1200/800?image=940" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/640/450?image=906" data-full="http://unsplash.it/1280/900?image=906" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/550/420?image=885" data-full="http://unsplash.it/1100/840?image=885" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/650/450?image=823" data-full="http://unsplash.it/1300/900?image=823" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/600/350?image=815" data-full="http://unsplash.it/1200/700?image=815" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/560/500?image=677" data-full="http://unsplash.it/1120/1000?image=677" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/670/410?image=401" data-full="http://unsplash.it/1340/820?image=401" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/620/340?image=623" data-full="http://unsplash.it/1240/680?image=623" class="m-p-g__thumbs-img" />
-		<img src="http://unsplash.it/790/390?image=339" data-full="http://unsplash.it/1580/780?image=339" class="m-p-g__thumbs-img" />
-	</div>
-
-	<div class="m-p-g__fullscreen"></div>
-</div>
-
-<script>
-	var elem = document.querySelector('.m-p-g');
-
-	document.addEventListener('DOMContentLoaded', function() {
-		var gallery = new MaterialPhotoGallery(elem);
-	});
-</script>
