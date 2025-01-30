@@ -35,10 +35,10 @@ header img {
     display: block;
 }
 
-/* Main-Bereich */
+/* Abstand zwischen Header und Main */
 main {
     position: relative;
-    margin-top: 360px; /* Höhe des Headers */
+    margin-top: 20px; /* Abstand zwischen Header und Main */
     padding: 20px;
     width: 100%;
     max-width: 2560px;
@@ -274,7 +274,7 @@ footer img {
 
 .sidebar .signature {
     text-align: center;
-    font-size: 14px; /* Kleinere Signatur */
+    font-size: 10px; /* Noch kleiner gemacht */
     color: rgba(255, 255, 255, 0.85);
     margin-top: 20px;
 }
