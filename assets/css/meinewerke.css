@@ -72,7 +72,7 @@ main {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to top, #000 20%, transparent);
+    background-image: linear-gradient(to top, #000 10%, transparent);
 }
 
 .slider .list .item .content {
