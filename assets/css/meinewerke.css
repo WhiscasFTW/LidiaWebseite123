@@ -9,7 +9,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
-    overflow-y: hidden; /* Verhindert vertikalen Scrollbalken */
+    /* Entfernt overflow-y hidden, damit die Seite weiterhin scrollbar bleibt */
 }
 
 svg {
@@ -261,7 +261,7 @@ footer img {
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
+    overflow-y: scroll; /* Scrollbar bleibt unsichtbar für Sidebar */
     transition: left 1s ease;
     z-index: 1100;
     padding-top: 20px;
