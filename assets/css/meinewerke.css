@@ -11,6 +11,10 @@ body {
     overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
 }
 
+svg {
+    width: 25px;
+}
+
 /* Fixierter Header */
 header {
     position: relative;
@@ -72,7 +76,7 @@ main {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to top, #000 10%, transparent);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, transparent 100%); /* Sanfter Opacity-Effekt */
 }
 
 .slider .list .item .content {
@@ -111,7 +115,7 @@ main {
 .slider .list .item.active h2,
 .slider .list .item.active p:nth-child(3) {
     transform: translateY(30px);
-    filter: blur(10px);
+    filter: blur(20px);
     opacity: 0;
     animation: showContent .5s .7s ease-in-out 1 forwards;
 }
@@ -169,7 +173,7 @@ main {
 .thumbnail .item {
     width: 150px;
     height: 220px;
-    filter: brightness(.6);
+    filter: brightness(.3);
     transition: .5s;
     flex-shrink: 0;
 }
@@ -188,6 +192,23 @@ main {
 .thumbnail .item .content {
     position: absolute;
     inset: auto 10px 10px 10px;
+}
+
+/* Hover-Effekt für Thumbnails */
+.thumbnail .item:hover {
+    filter: brightness(1);
+    transform: scale(1.05);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.thumbnail .item img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.thumbnail .item:hover img {
+    transform: scale(1.1);  /* Vergrößert das Bild im Thumbnail */
+    filter: brightness(1.2);  /* Heller machen */
 }
 
 @media screen and (max-width: 768px) {
@@ -276,28 +297,6 @@ footer img {
     margin-top: 20px;
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-  text-align: center;
-  padding: 20px;
-  animation: float 3s ease-in-out infinite;
-}
-
-.artist-signature img {
-  width: auto;
-  height: 140px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.artist-signature img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-}
-
-/* Sidebar links */
 .sidebar-links {
     padding-bottom: 20px;
 }
