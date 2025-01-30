@@ -25,10 +25,9 @@ body {
 header {
   width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 0; /* Keine zusätzliche Polsterung */
   background-color: black;
   margin-top: 0;
-  margin-bottom: 0;
 }
 
 header img {
@@ -51,16 +50,18 @@ main {
   justify-content: center; /* Zentriert das Grid */
 }
 
+/* Das Grid */
 main ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexibles Grid */
-  gap: 15px;
+  grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+  gap: 15px; /* Optimierter Abstand zwischen den Bildern */
   list-style: none;
   padding: 0;
   width: 100%;
   justify-items: center; /* Zentriert die Bilder im Grid */
 }
 
+/* Bilder */
 main li {
   width: 100%;
 }
@@ -69,10 +70,13 @@ figure img {
   width: 100%; /* Die Breite passt sich immer an den Container an */
   height: 600px; /* Feste Höhe */
   object-fit: cover; /* Bild wird zugeschnitten, um den Container auszufüllen */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-figure {
-  margin: 0;
+/* Hover-Effekt für die Bilder */
+figure img:hover {
+  transform: scale(1.05); /* Leichtes Vergrößern */
+  filter: brightness(1.2);
 }
 
 /* Footer */
