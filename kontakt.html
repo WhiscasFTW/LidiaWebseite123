@@ -11,7 +11,7 @@
       font-family: sans-serif;
       font-size: 21px;
     }
-    /* Hier beginnt die CSS Ergänzung */
+
     main ul {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexibles Grid */
@@ -25,19 +25,55 @@
     }
 
     figure img {
-      width: 100%; /* Die Breite passt sich immer an den Container an */
-      height: 600px; /* Feste Höhe */
-      object-fit: cover; /* Bild wird zugeschnitten, um den Container auszufüllen */
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      cursor: pointer; /* Bild als klickbar markieren */
+      transition: transform 0.3s ease;
+    }
+
+    figure img:hover {
+      transform: scale(1.05);
     }
 
     figure {
       margin: 0;
     }
-    /* Ende der CSS Ergänzung */
+
+    /* Modal-Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund */
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 40px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
-  <!-- Overlay für die Sidebar -->
   <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
   <div id="sidebar" class="sidebar">
@@ -61,53 +97,28 @@
   </header>
   
   <main>
-    <!-- Galerie mit Bildern und Captions -->
     <ul>
       <li>
-        <a href="">
+        <a href="javascript:void(0)">
           <figure>
-            <img src='assets/images/MeineWerke/SBerghütte.png'>
+            <img src="assets/images/MeineWerke/SBerghütte.png" onclick="openModal(this)">
             <figcaption>Berghütte</figcaption>
           </figure>
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="javascript:void(0)">
           <figure>
-            <img src='https://images.unsplash.com/photo-1633621533308-8760aefb5521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjAyMQ&ixlib=rb-1.2.1&q=80&w=400' alt='Guy on a bike ok a wooden bridge with a forest backdrop'>
+            <img src="https://images.unsplash.com/photo-1633621533308-8760aefb5521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjAyMQ&ixlib=rb-1.2.1&q=80&w=400" onclick="openModal(this)">
             <figcaption>Adventure getaways</figcaption>
           </figure>
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="javascript:void(0)">
           <figure>
-            <img src='https://images.unsplash.com/photo-1633635146842-12d386e64058?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400' alt='Person standing alone in a misty forest'>
+            <img src="https://images.unsplash.com/photo-1633635146842-12d386e64058?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400" onclick="openModal(this)">
             <figcaption>Forest escapes</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <figure>
-            <img src='https://images.unsplash.com/photo-1568444438385-ece31a33ce78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400' alt='Person hiking on a trail through mountains while taking a photo with phone'>
-            <figcaption>Hiking trails</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <figure>
-            <img src='https://images.unsplash.com/photo-1633515257379-5fda985bd57a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400' alt='Street scene with person walking and others on motorbikes, all wearing masks'>
-            <figcaption>Street scenes</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <figure>
-            <img src='https://images.unsplash.com/photo-1633209931146-260ce0d16e22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDA1MjA5OA&ixlib=rb-1.2.1&q=80&w=400' alt='Fashionable-looking girl with blond hair and pink sunglasses'>
-            <figcaption>Trending</figcaption>
           </figure>
         </a>
       </li>
@@ -121,6 +132,28 @@
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
 
+  <!-- Modal für das Vergrößern der Bilder -->
+  <div id="modal" class="modal">
+    <button class="close-modal" onclick="closeModal()">×</button>
+    <img id="modalImage" src="" alt="Großansicht">
+  </div>
+
   <script src="assets/js/kontakt.js" defer></script>
+
+  <script>
+    function openModal(imgElement) {
+      // Bild im Modal setzen und anzeigen
+      var modal = document.getElementById('modal');
+      var modalImage = document.getElementById('modalImage');
+      modalImage.src = imgElement.src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      // Modal schließen
+      var modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
