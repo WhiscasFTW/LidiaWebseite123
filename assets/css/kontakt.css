@@ -25,18 +25,19 @@ body {
 
 /* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 360px; /* Höhe des Headers */
-  z-index: 1;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
 header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Main-Bereich */
@@ -44,42 +45,58 @@ main {
   position: relative;
   z-index: 0;
   margin-top: 360px; /* Platz für den Header */
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+  background-color: #000000;
   padding-bottom: 0;
   padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
+  max-width: 2560px;
+  margin: 0 auto;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexibles Grid */
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+main li {
+  width: 100%;
+}
+
+figure img {
+  width: 100%; /* Die Breite passt sich immer an den Container an */
+  height: 600px; /* Feste Höhe */
+  object-fit: cover; /* Bild wird zugeschnitten, um den Container auszufüllen */
+}
+
+figure {
+  margin: 0;
 }
 
 /* Footer */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 51px; /* Höhe des Footers */
-  z-index: 1;
-}
-
-footer img {
-  width: 100%;
+  text-align: center;
+  padding: 0px 0;
+  background-color: black;
+  z-index: 2;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 51px;
-  object-fit: cover;
-  display: block;
 }
 
 footer .footer-content {
   position: absolute;
   z-index: 1;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
   margin: 0;
 }
 
@@ -94,6 +111,14 @@ footer .footer-content a:hover {
   color: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+footer img {
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  display: block;
+  margin-top: 0px;
 }
 
 /* Sidebar */
@@ -235,104 +260,5 @@ footer .footer-content a:hover {
 @media screen and (max-width: 1024px) {
   .boxen {
     flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
-  }
-}
-
-/* Bildergalerie-Stile */
-img {
-  width: 100%;
-  display: block;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: transform 1000ms;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  max-width: 100%;
-  width: 70rem;
-}
-
-figure {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-figure::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(0, 0, 0, 0.5);
-  transform-origin: center;
-  opacity: 0;
-  transform: scale(2);
-  transition: opacity 300ms;
-}
-
-figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  text-align: center;
-  padding: 1rem;
-  color: white;
-  font-size: 1.2rem;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 600ms, transform 600ms;
-}
-
-a:is(:hover, :focus) figure::after {
-  opacity: 1;
-}
-
-a:is(:hover, :focus) figcaption {
-  opacity: 1;
-  transition: opacity 600ms;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  figcaption {
-    transform: translate3d(0, 2rem, 0);
-  }
-  
-  figure::after {
-    border-radius: 50%;
-    opacity: 1;
-    transform: scale(0);
-    transition: transform 900ms;
-  }
-  
-  a:is(:hover, :focus) figure::after {
-    transform: scale(2.5);
-  }
-
-  a:is(:hover, :focus) figcaption {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: opacity 600ms 400ms, transform 600ms 400ms;
-  }
-
-  a:is(:hover, :focus) img {
-    transform: scale(1.2);
   }
 }
