@@ -9,10 +9,10 @@ body, html {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+  background-color: #000000; /* Schwarzer Hintergrund */
 }
 
-/* Body-Layout mit Header-Fix */
+/* Body-Layout mit fixiertem Header */
 body {
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ body {
 
 /* Fixierter Header */
 header {
-  position: fixed; /* Bleibt immer oben */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -35,14 +35,14 @@ header {
 header img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Bild füllt den Container */
+  object-fit: cover;
   display: block;
 }
 
 /* Main-Bereich (beginnt unter dem Header) */
 main {
   position: relative;
-  margin-top: 360px; /* Gleiche Höhe wie Header, damit nichts überlappt */
+  margin-top: 360px; /* Höhe des Headers */
   padding: 20px;
   width: 100%;
   max-width: 2560px;
@@ -68,8 +68,8 @@ main {
 /* Grid-Container */
 main ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible Spalten */
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible Spalten */
+  gap: 10px; /* Abstand zwischen den Bildern */
   list-style: none;
   padding: 0;
   width: 100%;
@@ -85,7 +85,7 @@ main li {
 figure img {
   width: 100%;
   height: 600px; /* Fixierte Höhe */
-  object-fit: cover; /* Zuschneiden für perfekte Darstellung */
+  object-fit: cover; /* Zuschneiden */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -99,10 +99,10 @@ figure img:hover {
 footer {
   width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 0px 0;
   background-color: black;
   z-index: 2;
-  margin-top: auto;
+  margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,7 +161,7 @@ footer img {
   left: 0;
 }
 
-/* Sidebar-Links */
+/* Links in der Sidebar */
 .sidebar-links {
   padding-bottom: 20px;
 }
@@ -215,7 +215,7 @@ footer img {
   filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-/* Sidebar-Button */
+/* Button zum Öffnen und Schließen der Sidebar */
 .toggle-button {
   font-size: 96px;
   color: rgba(255, 255, 255, 0.8);
@@ -242,7 +242,13 @@ footer img {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Media Queries */
+/* Animationen */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
 @media screen and (max-width: 768px) {
   header {
     height: 200px;
