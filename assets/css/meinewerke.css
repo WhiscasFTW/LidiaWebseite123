@@ -11,10 +11,6 @@ body {
     overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
 }
 
-svg {
-    width: 25px;
-}
-
 /* Fixierter Header */
 header {
     position: relative;
@@ -260,7 +256,7 @@ footer img {
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    overflow-y: scroll; /* Sidebar bleibt scrollable, aber ohne sichtbare Scrollbar */
+    overflow-x: hidden;
     transition: left 1s ease;
     z-index: 1100;
     padding-top: 20px;
@@ -273,27 +269,35 @@ footer img {
     left: 0;
 }
 
-.sidebar .signature-container {
-    position: absolute;
-    bottom: 20px; /* Platzierung am unteren Ende */
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
 .sidebar .signature {
-    font-size: 8px; /* Deutlich kleinere Signatur */
+    text-align: center;
+    font-size: 10px; /* Kleinere Signatur */
     color: rgba(255, 255, 255, 0.85);
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-.sidebar .signature img {
-    width: 100px; /* Verkleinertes Signatur-Bild */
-    height: auto;
-    margin: 10px 0;
+/* Signatur der Künstlerin */
+.artist-signature {
+  text-align: center;
+  padding: 20px;
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Links in der Sidebar */
+.artist-signature img {
+  width: auto;
+  height: 140px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Sidebar links */
 .sidebar-links {
     padding-bottom: 20px;
 }
