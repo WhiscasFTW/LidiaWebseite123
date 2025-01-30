@@ -1,102 +1,46 @@
-/* Allgemeines Layout */
-* {
-  box-sizing: border-box;
-}
 
+/* Allgemeines Layout */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund */
+  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
 }
 
-/* Body-Layout mit fixiertem Header */
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Zentriert den Main-Bereich */
-  min-height: 100vh;
-  background: rgba(20, 20, 20, 1);
-}
-
-/* Fixierter Header */
+/* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 360px; /* Fixierte Höhe */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
   background-color: black;
-  z-index: 1000;
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
 header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Main-Bereich (beginnt unter dem Header) */
+/* Main-Bereich */
 main {
   position: relative;
-  margin-top: 360px; /* Höhe des Headers */
+  z-index: 0;
+  margin-top: 0;
+  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+  padding-bottom: 0;
   padding: 20px;
-  width: 100%;
-  max-width: 2560px;
-  display: flex;
-  justify-content: center; /* Zentriert das Grid */
-}
-
-/* Text über dem Grid */
-.shop-text {
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 20px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.shop-text:hover {
-  color: rgba(255, 255, 255, 1);
-  transform: scale(1.05);
-}
-
-/* Grid-Container */
-main ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible Spalten */
-  gap: 10px; /* Abstand zwischen den Bildern */
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  justify-items: center;
-}
-
-/* Einzelne Grid-Elemente */
-main li {
-  width: 100%;
-}
-
-/* Bilder im Grid */
-figure img {
-  width: 100%;
-  height: 600px; /* Fixierte Höhe */
-  object-fit: cover; /* Zuschneiden */
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Hover-Effekt für Bilder */
-figure img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+  max-width: 2560px; /* Begrenze die Breite auf 2560px */
+  margin: 0 auto; /* Zentriere den Container */
 }
 
 /* Footer */
 footer {
+  position: relative;
   width: 100%;
   text-align: center;
   padding: 0px 0;
@@ -242,6 +186,20 @@ footer img {
   color: rgba(255, 255, 255, 1);
 }
 
+/* Atmungsanimation für den Button */
+@keyframes breathe {
+  0% { color: rgba(255, 255, 255, 0.8); }
+  50% { color: rgba(255, 255, 255, 0.6); }
+  100% { color: rgba(255, 255, 255, 0.8); }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(-2deg); }
+  75% { transform: translateY(-50%) rotate(2deg); }
+}
+
 /* Animationen */
 @keyframes float {
   0% { transform: translateY(0); }
@@ -249,12 +207,27 @@ footer img {
   100% { transform: translateY(0); }
 }
 
+/* Media Query für mobile Geräte */
 @media screen and (max-width: 768px) {
   header {
     height: 200px;
+    padding: 0;
   }
 
-  main {
-    margin-top: 200px;
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Media Query für größere mobile Geräte und Tablets */
+@media screen and (max-width: 1024px) {
+  .boxen {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .box {
+    width: 32%;
   }
 }
