@@ -9,7 +9,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
-    overflow-y: auto; /* Aktiviert die vertikale Scrollbar */
 }
 
 svg {
@@ -261,7 +260,7 @@ footer img {
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    overflow-y: auto; /* Sidebar bleibt scrollable, aber ohne sichtbare Scrollbar */
+    overflow-y: scroll; /* Sidebar bleibt scrollable, aber ohne sichtbare Scrollbar */
     transition: left 1s ease;
     z-index: 1100;
     padding-top: 20px;
@@ -274,11 +273,18 @@ footer img {
     left: 0;
 }
 
-.sidebar .signature {
+.sidebar .signature-container {
+    position: absolute;
+    bottom: 20px; /* Platzierung am unteren Ende */
+    left: 0;
+    right: 0;
     text-align: center;
+}
+
+.sidebar .signature {
     font-size: 8px; /* Deutlich kleinere Signatur */
     color: rgba(255, 255, 255, 0.85);
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .sidebar .signature img {
@@ -287,6 +293,7 @@ footer img {
     margin: 10px 0;
 }
 
+/* Links in der Sidebar */
 .sidebar-links {
     padding-bottom: 20px;
 }
