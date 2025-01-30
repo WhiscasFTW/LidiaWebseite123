@@ -190,14 +190,10 @@ main {
     inset: auto 10px 10px 10px;
 }
 
-@media screen and (max-width: 768px) {
-    header {
-        height: 200px;
-    }
-
-    main {
-        margin-top: 200px;
-    }
+.thumbnail .item:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Footer */
@@ -257,7 +253,7 @@ footer img {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     overflow-x: hidden;
-    transition: left 1s ease;
+    transition: left 0.5s ease-in-out;
     z-index: 1100;
     padding-top: 20px;
     max-width: 2560px;
