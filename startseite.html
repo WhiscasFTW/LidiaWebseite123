@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: Arial, sans-serif;  /* Standard-Schriftart */
       overflow-y: auto;
       background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
     }
@@ -25,18 +25,6 @@
       height: 100%;
       object-fit: cover;  /* Das Video passt sich der Größe des Viewports an */
       z-index: -1;  /* Video hinter den restlichen Inhalten */
-    }
-
-    /* Main-Bereich */
-    main {
-      position: relative;
-      z-index: 0;
-      margin-top: 0;
-      background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-      padding-bottom: 0;
-      padding: 20px;
-      max-width: 2560px; /* Begrenze die Breite auf 2560px */
-      margin: 0 auto; /* Zentriere den Container */
     }
 
     /* Sidebar */
@@ -53,6 +41,7 @@
       transition: left 1s ease;
       z-index: 10;
       padding-top: 20px;
+      font-family: 'Pacifico', cursive; /* Richtige Schriftart für die Sidebar */
     }
 
     .sidebar.open {
@@ -71,7 +60,7 @@
       color: rgba(255, 255, 255, 0.85);
       display: block;
       transition: transform 1s ease, opacity 1s ease;
-      font-family: 'Pacifico', cursive;
+      font-family: 'Pacifico', cursive;  /* Sicherstellen, dass die Sidebar-Schriftart richtig angewendet wird */
       background-color: rgba(255, 255, 255, 0.15);
       margin: 5px 10px;
       border-radius: 5px;
