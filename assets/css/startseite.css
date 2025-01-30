@@ -143,7 +143,7 @@ header .menu{
 .thumbnail .item{
     width: 150px;
     height: 220px;
-    filter: brightness(.1);
+    filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0;
 }
@@ -154,7 +154,7 @@ header .menu{
     border-radius: 10px;
 }
 .thumbnail .item.active{
-    filter: brightness(1.5);
+    filter: brightness(0.6);
 }
 .thumbnail .item .content{
     position: absolute;
