@@ -15,37 +15,6 @@ function toggleSidebar() {
     toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-    document.body.classList.add('loaded'); // Die "loaded"-Klasse nach dem Laden hinzufügen
-
-    var overlay = document.getElementById('page-transition-overlay');
-
-    // Overlay langsam ausblenden
-    overlay.style.opacity = '0';
-
-    // Overlay nach 1,4 Sekunden vollständig entfernen
-    setTimeout(function () {
-        overlay.remove(); // Overlay aus dem DOM entfernen
-    }, 1400); // 1,4 Sekunden
-};
-
-// Funktion für den Seitenwechsel mit 1,4 Sekunden Fade-Out
-function navigateToPage(url) {
-    var overlay = document.createElement('div'); // Neues Overlay erstellen
-    overlay.id = 'page-transition-overlay';
-    overlay.className = 'page-transition-overlay';
-    document.body.appendChild(overlay); // Overlay hinzufügen
-
-    // Overlay einblenden
-    setTimeout(function () {
-        overlay.style.opacity = '1';
-    }, 10); // Kurze Verzögerung, um das Einblenden zu starten
-
-    // Nach 1,4 Sekunden weiterleiten
-    setTimeout(function () {
-        window.location.href = url;
-    }, 1400); // 1,4 Sekunden
 }
 
 // Event-Listener für alle Links, die zu einer neuen Seite führen
