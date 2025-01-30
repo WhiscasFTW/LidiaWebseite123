@@ -11,10 +11,6 @@ body {
     overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
 }
 
-svg {
-    width: 25px;
-}
-
 /* Fixierter Header */
 header {
     position: relative;
@@ -76,7 +72,7 @@ main {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, transparent 100%); /* Standard Opacity-Effekt */
+    background-image: linear-gradient(to top, #000 20%, transparent);
 }
 
 .slider .list .item .content {
@@ -194,23 +190,6 @@ main {
     inset: auto 10px 10px 10px;
 }
 
-/* Schwächerer Hover-Effekt für Thumbnails */
-.thumbnail .item:hover {
-    filter: brightness(0.35);
-    transform: scale(1.02);  /* Weniger starke Vergrößerung */
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.thumbnail .item img {
-    border-radius: 10px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.thumbnail .item:hover img {
-    transform: scale(1.05);  /* Etwas größere Vergrößerung */
-    filter: brightness(1.1);  /* Etwas heller */
-}
-
 @media screen and (max-width: 768px) {
     header {
         height: 200px;
@@ -297,6 +276,28 @@ footer img {
     margin-top: 20px;
 }
 
+/* Signatur der Künstlerin */
+.artist-signature {
+  text-align: center;
+  padding: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+  width: auto;
+  height: 140px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Sidebar links */
 .sidebar-links {
     padding-bottom: 20px;
 }
