@@ -1,354 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// Slider-Code
+let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let thumbnails = document.querySelectorAll('.thumbnail .item');
 
-body {
-    font-family: Poppins;
-    margin: 0;
-    background-color: #010101;
-    color: #eee;
-    max-width: 2560px; /* Begrenze die Breite */
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
-    overflow-y: auto; /* Aktiviert die vertikale Scrollbar */
+// config param
+let countItem = items.length;
+let itemActive = 0;
+
+// Event next click
+next.onclick = function() {
+    itemActive = itemActive + 1;
+    if (itemActive >= countItem) {
+        itemActive = 0;
+    }
+    showSlider();
 }
 
-svg {
-    width: 25px;
+// Event prev click
+prev.onclick = function() {
+    itemActive = itemActive - 1;
+    if (itemActive < 0) {
+        itemActive = countItem - 1;
+    }
+    showSlider();
 }
 
-/* Fixierter Header */
-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 360px; /* Höhe des Headers */
-    background-color: black;
-    z-index: 2;
-    max-width: 2560px;
-    margin-left: auto;
-    margin-right: auto;
+// Auto run slider
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 5000);
+
+function showSlider() {
+    // remove item active old
+    let itemActiveOld = document.querySelector('.slider .list .item.active');
+    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+    itemActiveOld.classList.remove('active');
+    thumbnailActiveOld.classList.remove('active');
+
+    // active new item
+    items[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+    setPositionThumbnail();
+
+    // clear auto time run slider
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 5000);
 }
 
-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Abstand zwischen Header und Main */
-main {
-    position: relative;
-    margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
-    padding: 20px;
-    width: 100%;
-    max-width: 2560px;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-}
-
-/* Slider */
-.slider {
-    height: 100vh;
-    margin-top: -50px;
-    position: relative;
-}
-
-.slider .list .item {
-    position: absolute;
-    inset: 0 0 0 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: .5s;
-}
-
-.slider .list .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slider .list .item::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-image: linear-gradient(to top, #000 20%, transparent);
-}
-
-.slider .list .item .content {
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    width: 500px;
-    max-width: 80%;
-    z-index: 1;
-}
-
-.slider .list .item .content p:nth-child(1) {
-    text-transform: uppercase;
-    letter-spacing: 10px;
-}
-
-.slider .list .item .content h2 {
-    font-size: 100px;
-    margin: 0;
-}
-
-.slider .list .item.active {
-    opacity: 1;
-    z-index: 10;
-}
-
-@keyframes showContent {
-    to {
-        transform: translateY(0);
-        filter: blur(0);
-        opacity: 1;
+function setPositionThumbnail() {
+    let thumbnailActive = document.querySelector('.thumbnail .item.active');
+    let rect = thumbnailActive.getBoundingClientRect();
+    if (rect.left < 0 || rect.right > window.innerWidth) {
+        thumbnailActive.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
     }
 }
 
-.slider .list .item.active p:nth-child(1),
-.slider .list .item.active h2,
-.slider .list .item.active p:nth-child(3) {
-    transform: translateY(30px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s .7s ease-in-out 1 forwards;
+// Click thumbnail
+thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+        itemActive = index;
+        showSlider();
+    });
+});
+
+// Sidebar-Code
+// Funktion zum Öffnen/Schließen der Sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleButton = document.getElementById('toggleButton');
+    var overlay = document.getElementById('overlay');
+
+    // Sidebar und Button umschalten
+    sidebar.classList.toggle('open');
+    toggleButton.classList.toggle('open');
+
+    // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+    overlay.classList.toggle('active');
+
+    // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+    toggleButton.style.animation = 'none'; // Animationen entfernen
 }
 
-.slider .list .item.active h2 {
-    animation-delay: 1s;
-}
+// Beim Laden der Seite das Overlay ausblenden und entfernen
+window.onload = function() {
+    var overlay = document.getElementById('page-transition-overlay');
+    
+    // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
+    if (overlay) {
+        overlay.style.opacity = '0';
 
-.slider .list .item.active p:nth-child(3) {
-    animation-duration: 1.3s;
-}
-
-.arrows {
-    position: absolute;
-    top: 30%;
-    right: 50px;
-    z-index: 100;
-}
-
-.arrows button {
-    background-color: #eee5;
-    border: none;
-    font-family: monospace;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: x-large;
-    color: #eee;
-    transition: .5s;
-}
-
-.arrows button:hover {
-    background-color: #eee;
-    color: black;
-}
-
-.thumbnail {
-    position: absolute;
-    bottom: 50px;
-    z-index: 11;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    height: 250px;
-    padding: 0 50px;
-    box-sizing: border-box;
-    overflow: auto;
-    justify-content: center;
-}
-
-.thumbnail::-webkit-scrollbar {
-    width: 0;
-}
-
-.thumbnail .item {
-    width: 150px;
-    height: 220px;
-    filter: brightness(.3);
-    transition: .5s;
-    flex-shrink: 0;
-}
-
-.thumbnail .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.thumbnail .item.active {
-    filter: brightness(0.6);
-}
-
-.thumbnail .item .content {
-    position: absolute;
-    inset: auto 10px 10px 10px;
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        height: 200px;
+        // Overlay nach 0 Sekunden vollständig entfernen
+        setTimeout(function() {
+            overlay.remove();
+        }, 0);
     }
+};
 
-    main {
-        margin-top: 200px;
-    }
+// Funktion für den Seitenwechsel ohne Übergangseffekt
+function navigateToPage(url) {
+    window.location.href = url;
 }
 
-/* Footer */
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 0px 0;
-    background-color: black;
-    z-index: 2;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 51px;
-}
-
-footer .footer-content {
-    position: absolute;
-    z-index: 1;
-}
-
-footer .footer-content p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 16px;
-    margin: 0;
-}
-
-footer .footer-content a {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-footer .footer-content a:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-footer img {
-    width: 100%;
-    height: 51px;
-    object-fit: cover;
-    display: block;
-    margin-top: 0px;
-}
-
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-y: auto; /* Sidebar bleibt scrollable, aber ohne sichtbare Scrollbar */
-    transition: left 1s ease;
-    z-index: 1100;
-    padding-top: 20px;
-    max-width: 2560px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.sidebar.open {
-    left: 0;
-}
-
-.sidebar .signature {
-    text-align: center;
-    font-size: 8px; /* Deutlich kleinere Signatur */
-    color: rgba(255, 255, 255, 0.85);
-    margin-top: 20px;
-}
-
-.sidebar .signature img {
-    width: 100px; /* Verkleinertes Signatur-Bild */
-    height: auto;
-    margin: 10px 0;
-}
-
-.sidebar-links {
-    padding-bottom: 20px;
-}
-
-.sidebar a {
-    padding: 10px 10px 10px 32px;
-    text-decoration: none;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.85);
-    display: block;
-    transition: transform 1s ease, opacity 1s ease;
-    font-family: 'Pacifico', cursive;
-    background-color: rgba(255, 255, 255, 0.15);
-    margin: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.sidebar.open a {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Toggle-Button für Sidebar */
-.toggle-button {
-    font-size: 96px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 1200;
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
-    padding: 10px;
-}
-
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.toggle-button:hover {
-    transform: translateY(-50%) scale(1.1);
-    color: rgba(255, 255, 255, 1);
-}
-
-/* Animationen */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        if (link.href && !link.href.includes('javascript:')) {
+            event.preventDefault();
+            navigateToPage(link.href);
+        }
+    });
+});
