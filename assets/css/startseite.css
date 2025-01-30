@@ -8,15 +8,21 @@ body, html {
   background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
 }
 
-/* Hintergrundvideo */
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Das Video passt sich der Größe des Viewports an */
-  z-index: -1;  /* Video hinter den restlichen Inhalten */
+/* Header */
+header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Main-Bereich */
@@ -29,6 +35,53 @@ main {
   padding: 20px;
   max-width: 2560px; /* Begrenze die Breite auf 2560px */
   margin: 0 auto; /* Zentriere den Container */
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0;
+  background-color: black;
+  z-index: 2;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px;
+}
+
+footer .footer-content {
+  position: absolute;
+  z-index: 1;
+}
+
+footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin: 0;
+}
+
+footer .footer-content a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-content a:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+footer img {
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  display: block;
+  margin-top: 0px;
 }
 
 /* Sidebar */
@@ -155,6 +208,19 @@ main {
 
 /* Media Query für mobile Geräte */
 @media screen and (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Media Query für größere mobile Geräte und Tablets */
+@media screen and (max-width: 1024px) {
   .boxen {
     flex-direction: row;
     gap: 20px;
