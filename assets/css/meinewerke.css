@@ -170,7 +170,7 @@ main {
     width: 150px;
     height: 220px;
     filter: brightness(.3);
-    transition: .3s;
+    transition: .5s;
     flex-shrink: 0;
 }
 
@@ -193,7 +193,17 @@ main {
 .thumbnail .item:hover {
     filter: brightness(1.1);
     transform: scale(1.02); /* Schwächerer Hover-Effekt */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.6s ease-out, filter 0.6s ease-out; /* Smoother Transition */
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 200px;
+    }
+
+    main {
+        margin-top: 200px;
+    }
 }
 
 /* Footer */
