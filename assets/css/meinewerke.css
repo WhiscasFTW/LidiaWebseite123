@@ -360,6 +360,15 @@ footer img {
 
 /* Mobile Anpassungen */
 @media screen and (max-width: 768px) {
+    /* Entfernen des Bereichs zwischen Footer und Main */
+    main {
+        margin-bottom: 0; /* Entfernt den Abstand zwischen Main und Footer */
+    }
+
+    footer {
+        margin-top: 0; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+    }
+
     /* Entfernen des schwarzen Balkens */
     body {
         background-color: transparent; /* Entfernt den Hintergrund */
@@ -406,6 +415,10 @@ footer img {
 
     .thumbnail .item.active {
         filter: brightness(0.7);
+    }
+
+    .thumbnail .item .content {
+        font-size: 12px; /* Kleineren Text in den Thumbnails */
     }
 
     .thumbnail .item:hover {
