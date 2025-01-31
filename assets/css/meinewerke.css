@@ -362,22 +362,19 @@ footer img {
 @media screen and (max-width: 768px) {
     /* Entfernen des Bereichs zwischen Footer und Main */
     main {
-        margin-bottom: 0; /* Entfernt den Abstand zwischen Main und Footer */
+        margin-bottom: 0 !important; /* Entfernt den Abstand zwischen Main und Footer */
+        padding-bottom: 0 !important; /* Entfernt zusätzliches Padding */
     }
 
     footer {
-        margin-top: 0; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+        margin-top: 0 !important; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+        padding-top: 0 !important; /* Entfernt Padding im Footer */
     }
 
-    /* Entfernen des schwarzen Balkens */
-    body {
-        background-color: transparent; /* Entfernt den Hintergrund */
-    }
-
-    /* Verhindern, dass die Seite sich horizontal verschiebt */
+    /* Entfernen von Padding und Margin für body und html */
     body, html {
-        width: 100%; /* Setzt die Breite der Seite auf 100% */
-        overflow-x: hidden; /* Verhindert horizontales Scrollen */
+        margin: 0;
+        padding: 0;
     }
 
     /* Header auf mobilen Geräten */
