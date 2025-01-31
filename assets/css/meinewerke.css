@@ -5,10 +5,10 @@ body {
     margin: 0;
     background-color: #010101;
     color: #eee;
-    max-width: 2560px; /* Begrenze die Breite */
+    max-width: 100%; /* Setze auf 100%, um horizontales Scrollen zu verhindern */
     margin-left: auto;
     margin-right: auto;
-    overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 /* Fixierter Header */
@@ -38,12 +38,13 @@ main {
     margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
     padding: 20px;
     width: 100%;
-    max-width: 2560px;
+    max-width: 100%; /* Verhindert horizontales Scrollen */
     display: flex;
     justify-content: center;
     z-index: 1;
     margin-bottom: 0 !important; /* Abstand zwischen main und footer entfernen */
     padding-bottom: 0 !important; /* Padding von main entfernen */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 /* Slider */
@@ -51,6 +52,7 @@ main {
     height: 100vh;
     margin-top: -50px;
     position: relative;
+    overflow: hidden; /* Verhindert, dass das Bild aus dem Container herausragt */
 }
 
 .slider .list .item {
@@ -205,12 +207,13 @@ main {
 
     main {
         margin-top: 200px;
-        margin-bottom: 0 !important; /* Entferne Abstand zwischen main und footer */
         padding-bottom: 0 !important;
+        overflow-x: hidden; /* Verhindert horizontales Scrollen */
     }
 
     .thumbnail {
         gap: 5px; /* Weniger Abstand zwischen Thumbnails */
+        overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
     }
 
     .thumbnail .item {
@@ -220,6 +223,13 @@ main {
 
     .thumbnail .item .content {
         font-size: 14px; /* Text in Thumbnails kleiner */
+    }
+
+    /* Bildbearbeitung */
+    .slider img {
+        width: 100%;
+        height: auto; /* Anpassung des Bildes */
+        object-fit: cover;
     }
 }
 
