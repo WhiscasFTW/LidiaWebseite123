@@ -22,7 +22,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1; /* Video bleibt im Hintergrund */
+      z-index: -1; /* Video hinter anderen Inhalten */
     }
 
     /* Stelle sicher, dass der Rest des Inhalts vor dem Video angezeigt wird */
@@ -59,7 +59,7 @@
 <body>
   <!-- Hintergrundvideo -->
   <video id="background-video" autoplay muted loop>
-    <source src="assets/images/Background.mp4" type="video/mp4"> <!-- Sicherstellen, dass das Video richtig formatiert ist -->
+    <source src="assets/images/Background.mp4" type="video/mp4">
     Ihr Browser unterstützt dieses Videoformat nicht.
   </video>
 
