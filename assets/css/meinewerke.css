@@ -365,19 +365,17 @@ footer img {
 @media screen and (max-width: 768px) {
     /* Entfernen des Bereichs zwischen Footer und Main */
     main {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
+        margin-bottom: 0 !important; /* Entfernt den Abstand zwischen Main und Footer */
+        padding-bottom: 0 !important; /* Entfernt zusätzliches Padding */
     }
 
     footer {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+        margin-top: 0 !important; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+        padding-top: 0 !important; /* Entfernt Padding im Footer */
     }
 
-    /* Entfernen von Padding und Margin für body und html */
+    /* Verhindern von horizontalem Overflow */
     body, html {
-        margin: 0;
-        padding: 0;
         overflow-x: hidden; /* Verhindert horizontales Scrollen */
     }
 
@@ -388,34 +386,5 @@ footer img {
 
     main {
         margin-top: 200px;
-    }
-
-    /* Slider-Anpassungen */
-    .slider {
-        height: 60vh; /* Reduzierte Höhe für mobile Geräte */
-    }
-
-    .slider .list .item .content h2 {
-        font-size: 50px; /* Kleinere Schriftgröße für mobile Geräte */
-    }
-
-    /* Thumbnails */
-    .thumbnail {
-        height: 150px; /* Reduzierte Höhe für mobile Geräte */
-        padding: 0 10px; /* Reduziertes Padding */
-    }
-
-    .thumbnail .item {
-        width: 100px; /* Kleinere Thumbnails für mobile Geräte */
-        height: 140px;
-    }
-
-    /* Sidebar */
-    .sidebar {
-        width: 200px; /* Kleinere Sidebar für mobile Geräte */
-    }
-
-    .toggle-button {
-        font-size: 48px; /* Kleinere Schriftgröße für den Toggle-Button */
     }
 }
