@@ -5,9 +5,7 @@ body {
     margin: 0;
     background-color: #010101;
     color: #eee;
-    max-width: 100%; /* Setze auf 100%, um horizontales Scrollen zu verhindern */
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100vw; /* Maximale Breite der Ansicht auf den Viewport begrenzen */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
@@ -38,13 +36,10 @@ main {
     margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
     padding: 20px;
     width: 100%;
-    max-width: 100%; /* Verhindert horizontales Scrollen */
+    max-width: 2560px;
     display: flex;
     justify-content: center;
     z-index: 1;
-    margin-bottom: 0 !important; /* Abstand zwischen main und footer entfernen */
-    padding-bottom: 0 !important; /* Padding von main entfernen */
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 /* Slider */
@@ -52,7 +47,6 @@ main {
     height: 100vh;
     margin-top: -50px;
     position: relative;
-    overflow: hidden; /* Verhindert, dass das Bild aus dem Container herausragt */
 }
 
 .slider .list .item {
@@ -200,39 +194,6 @@ main {
     transition: transform 0.6s ease-out, filter 0.6s ease-out; /* Smoother Transition */
 }
 
-@media screen and (max-width: 768px) {
-    header {
-        height: 200px;
-    }
-
-    main {
-        margin-top: 200px;
-        padding-bottom: 0 !important;
-        overflow-x: hidden; /* Verhindert horizontales Scrollen */
-    }
-
-    .thumbnail {
-        gap: 5px; /* Weniger Abstand zwischen Thumbnails */
-        overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
-    }
-
-    .thumbnail .item {
-        width: 120px; /* Thumbnail kleiner machen */
-        height: 180px;
-    }
-
-    .thumbnail .item .content {
-        font-size: 14px; /* Text in Thumbnails kleiner */
-    }
-
-    /* Bildbearbeitung */
-    .slider img {
-        width: 100%;
-        height: auto; /* Anpassung des Bildes */
-        object-fit: cover;
-    }
-}
-
 /* Footer */
 footer {
     width: 100%;
@@ -245,8 +206,6 @@ footer {
     align-items: center;
     justify-content: center;
     height: 51px;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
 }
 
 footer .footer-content {
@@ -383,18 +342,88 @@ footer img {
 }
 
 .toggle-button.open {
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.toggle-button:hover {
+    transform: translateY(-50%) scale(1.1);
     color: rgba(255, 255, 255, 1);
-    left: 0;
 }
 
-@keyframes breathe {
-    0% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-50%) scale(1.1); }
-    100% { transform: translateY(-50%) scale(1); }
+/* Animationen */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
-@keyframes wobble {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    50% { transform: translateY(-50%) rotate(5deg); }
-    100% { transform: translateY(-50%) rotate(0deg); }
+/* Mobile Anpassungen */
+@media screen and (max-width: 768px) {
+    /* Entfernen des Bereichs zwischen Footer und Main */
+    main {
+        margin-bottom: 0; /* Entfernt den Abstand zwischen Main und Footer */
+    }
+
+    footer {
+        margin-top: 0; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+    }
+
+    /* Entfernen des schwarzen Balkens */
+    body {
+        background-color: transparent; /* Entfernt den Hintergrund */
+    }
+
+    /* Verhindern, dass die Seite sich horizontal verschiebt */
+    body, html {
+        width: 100%; /* Setzt die Breite der Seite auf 100% */
+        overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    }
+
+    /* Header auf mobilen Geräten */
+    header {
+        height: 200px;
+    }
+
+    main {
+        margin-top: 200px;
+    }
+
+    /* Anpassung der Thumbnails */
+    .thumbnail {
+        height: 220px;
+        flex-direction: row; /* Bleiben in einer Reihe */
+        padding: 0 20px; /* Linken und rechten Abstand verringern */
+        gap: 10px;
+        justify-content: flex-start; /* Stellt sicher, dass sie von links beginnen */
+        margin-bottom: 0; /* Kein Abstand mehr unter den Thumbnails */
+    }
+
+    .thumbnail .item {
+        width: 120px; /* Verkleinern der Thumbnails */
+        height: 180px;
+        filter: brightness(0.5);
+        transition: .5s;
+        flex-shrink: 0;
+    }
+
+    .thumbnail .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .thumbnail .item.active {
+        filter: brightness(0.7);
+    }
+
+    .thumbnail .item .content {
+        font-size: 12px; /* Kleineren Text in den Thumbnails */
+    }
+
+    .thumbnail .item:hover {
+        filter: brightness(1);
+        transform: scale(1.05); /* Leichterer Hover-Effekt */
+    }
 }
