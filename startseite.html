@@ -33,7 +33,8 @@
 <body>
   <!-- Hintergrundvideo -->
   <video id="background-video" autoplay muted loop>
-    <source src="assets/images/Background.mkv" type="video/mp4">
+    <source src="assets/images/Background.mp4" type="video/mp4"> <!-- MP4 als bevorzugtes Format -->
+    <source src="assets/images/Background.mkv" type="video/x-matroska"> <!-- MKV als Fallback -->
     Ihr Browser unterstützt dieses Videoformat nicht.
   </video>
 
@@ -62,4 +63,4 @@
 
   <script src="assets/js/startseite.js" defer></script>
 </body>
-</html>         
+</html>
