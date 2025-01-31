@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Video</title>
+  <title>Webseite mit Sidebar</title>
   <link rel="stylesheet" href="assets/css/startseite.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <!-- Hintergrundvideo -->
   <video id="background-video" autoplay muted loop>
-    <source src="assets/images/Background.mp4" type="video/mp4"> <!-- Versuche mp4 statt mkv -->
+    <source src="assets/images/Background.mkv" type="video/mp4">
     Ihr Browser unterstützt dieses Videoformat nicht.
   </video>
 
@@ -21,6 +22,7 @@
     <div class="artist-signature">
       <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
     </div>
+
     <div class="sidebar-links">
       <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
       <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
@@ -30,11 +32,12 @@
     </div>
   </div>
 
-  <!-- Button zum Öffnen der Sidebar -->
+  <!-- Button zum Öffnen und Schließen der Sidebar -->
   <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
+  <!-- Hauptinhalt -->
   <main>
-    <!-- Hauptinhalt kommt hier -->
+    <!-- Hier kommt der Hauptinhalt der Seite -->
   </main>
 
   <script src="assets/js/startseite.js" defer></script>
