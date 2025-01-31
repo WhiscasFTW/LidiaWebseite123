@@ -396,6 +396,7 @@ footer img {
         padding: 0 20px; /* Linken und rechten Abstand verringern */
         gap: 10px;
         justify-content: flex-start; /* Stellt sicher, dass sie von links beginnen */
+        margin-bottom: 0; /* Kein Abstand mehr unter den Thumbnails */
     }
 
     .thumbnail .item {
