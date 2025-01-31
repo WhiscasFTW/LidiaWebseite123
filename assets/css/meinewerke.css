@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Allgemeine Stile */
 body {
     font-family: Poppins;
     margin: 0;
     background-color: #010101;
     color: #eee;
-    max-width: 100vw; /* Maximale Breite der Ansicht auf den Viewport begrenzen */
+    max-width: 100vw; /* Maximale Breite auf den Viewport begrenzen */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
-/* Fixierter Header */
+/* Header */
 header {
     position: relative;
     top: 0;
@@ -30,7 +31,7 @@ header img {
     display: block;
 }
 
-/* Abstand zwischen Header und Main */
+/* Main-Bereich */
 main {
     position: relative;
     margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
@@ -122,6 +123,7 @@ main {
     animation-duration: 1.3s;
 }
 
+/* Pfeile */
 .arrows {
     position: absolute;
     top: 30%;
@@ -146,6 +148,7 @@ main {
     color: black;
 }
 
+/* Thumbnails */
 .thumbnail {
     position: absolute;
     bottom: 50px;
@@ -190,8 +193,8 @@ main {
 
 .thumbnail .item:hover {
     filter: brightness(1.1);
-    transform: scale(1.02); /* Schwächerer Hover-Effekt */
-    transition: transform 0.6s ease-out, filter 0.6s ease-out; /* Smoother Transition */
+    transform: scale(1.02);
+    transition: transform 0.6s ease-out, filter 0.6s ease-out;
 }
 
 /* Footer */
@@ -265,7 +268,7 @@ footer img {
 
 .sidebar .signature {
     text-align: center;
-    font-size: 10px; /* Kleinere Signatur */
+    font-size: 10px;
     color: rgba(255, 255, 255, 0.85);
     margin-top: 20px;
 }
@@ -291,7 +294,7 @@ footer img {
   filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-/* Sidebar links */
+/* Sidebar-Links */
 .sidebar-links {
     padding-bottom: 20px;
 }
@@ -362,19 +365,20 @@ footer img {
 @media screen and (max-width: 768px) {
     /* Entfernen des Bereichs zwischen Footer und Main */
     main {
-        margin-bottom: 0 !important; /* Entfernt den Abstand zwischen Main und Footer */
-        padding-bottom: 0 !important; /* Entfernt zusätzliches Padding */
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     footer {
-        margin-top: 0 !important; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
-        padding-top: 0 !important; /* Entfernt Padding im Footer */
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
     /* Entfernen von Padding und Margin für body und html */
     body, html {
         margin: 0;
         padding: 0;
+        overflow-x: hidden; /* Verhindert horizontales Scrollen */
     }
 
     /* Header auf mobilen Geräten */
@@ -386,41 +390,32 @@ footer img {
         margin-top: 200px;
     }
 
-    /* Anpassung der Thumbnails */
+    /* Slider-Anpassungen */
+    .slider {
+        height: 60vh; /* Reduzierte Höhe für mobile Geräte */
+    }
+
+    .slider .list .item .content h2 {
+        font-size: 50px; /* Kleinere Schriftgröße für mobile Geräte */
+    }
+
+    /* Thumbnails */
     .thumbnail {
-        height: 220px;
-        flex-direction: row; /* Bleiben in einer Reihe */
-        padding: 0 20px; /* Linken und rechten Abstand verringern */
-        gap: 10px;
-        justify-content: flex-start; /* Stellt sicher, dass sie von links beginnen */
-        margin-bottom: 0; /* Kein Abstand mehr unter den Thumbnails */
+        height: 150px; /* Reduzierte Höhe für mobile Geräte */
+        padding: 0 10px; /* Reduziertes Padding */
     }
 
     .thumbnail .item {
-        width: 120px; /* Verkleinern der Thumbnails */
-        height: 180px;
-        filter: brightness(0.5);
-        transition: .5s;
-        flex-shrink: 0;
+        width: 100px; /* Kleinere Thumbnails für mobile Geräte */
+        height: 140px;
     }
 
-    .thumbnail .item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
+    /* Sidebar */
+    .sidebar {
+        width: 200px; /* Kleinere Sidebar für mobile Geräte */
     }
 
-    .thumbnail .item.active {
-        filter: brightness(0.7);
-    }
-
-    .thumbnail .item .content {
-        font-size: 12px; /* Kleineren Text in den Thumbnails */
-    }
-
-    .thumbnail .item:hover {
-        filter: brightness(1);
-        transform: scale(1.05); /* Leichterer Hover-Effekt */
+    .toggle-button {
+        font-size: 48px; /* Kleinere Schriftgröße für den Toggle-Button */
     }
 }
