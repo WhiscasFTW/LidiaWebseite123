@@ -4,8 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+  overflow: hidden; /* Verhindert Scrollen, wenn Sidebar geöffnet */
 }
 
 /* Video-Hintergrund */
@@ -16,7 +15,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Hinter alle anderen Inhalte legen */
+  z-index: -2; /* Video hinter alle anderen Inhalte legen */
 }
 
 /* Sicherstellen, dass der Rest des Inhalts vor dem Video angezeigt wird */
