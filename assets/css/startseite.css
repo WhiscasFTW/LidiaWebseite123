@@ -4,8 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+  overflow: hidden; /* Verhindert Scrollen, wenn Sidebar geöffnet */
 }
 
 /* Video-Hintergrund */
@@ -16,10 +15,10 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Hinter alle anderen Inhalte legen */
+  z-index: -2; /* Video hinter alle anderen Inhalte legen */
 }
 
-/* Stelle sicher, dass der Rest des Inhalts vor dem Video angezeigt wird */
+/* Sicherstellen, dass der Rest des Inhalts vor dem Video angezeigt wird */
 main {
   position: relative;
   z-index: 1;
@@ -41,19 +40,25 @@ main {
   padding-top: 20px;
 }
 
+/* Sidebar im geöffneten Zustand */
 .sidebar.open {
   left: 0;
+  z-index: 15; /* Sidebar sollte im Vordergrund erscheinen */
 }
 
-/* Schriftart "Pacifico" für die Sidebar */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* Links in der Sidebar */
+.sidebar-links {
+  padding-bottom: 20px;
+}
 
 .sidebar a {
-  font-family: 'Pacifico', cursive;  /* Pacifico Schriftart für die Sidebar-Links */
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
   font-size: 22px;
   color: rgba(255, 255, 255, 0.85);
   display: block;
   transition: transform 1s ease, opacity 1s ease;
+  font-family: 'Pacifico', cursive;
   background-color: rgba(255, 255, 255, 0.15);
   margin: 5px 10px;
   border-radius: 5px;
@@ -149,7 +154,6 @@ main {
     height: 200px;
     padding: 0;
   }
-
 }
 
 /* Media Query für größere mobile Geräte und Tablets */
