@@ -362,7 +362,7 @@ footer img {
 @media screen and (max-width: 768px) {
     /* Entfernen des Bereichs zwischen Footer und Main */
     main {
-        margin-bottom: -50; /* Entfernt den Abstand zwischen Main und Footer */
+        margin-bottom: -500; /* Entfernt den Abstand zwischen Main und Footer */
     }
 
     footer {
