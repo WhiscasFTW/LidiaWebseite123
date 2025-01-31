@@ -7,6 +7,7 @@
   height: 100%; /* Volle Höhe */
   object-fit: cover; /* Video wird angepasst, um den Bildschirm zu füllen */
   z-index: -1; /* Video hinter allem anderen */
+  display: block; /* Sicherstellen, dass das Video blockweise angezeigt wird */
 }
 
 /* Sicherstellen, dass der Hauptinhalt über dem Video angezeigt wird */
