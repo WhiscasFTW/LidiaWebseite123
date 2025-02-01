@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('hintergrund.jpg'); /* Hintergrundbild */
+    background-image: url('assets/images/Steckbrief/SBBackground.jpg'); /* Hintergrundbild */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
