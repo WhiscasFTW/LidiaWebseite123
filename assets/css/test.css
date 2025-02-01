@@ -1,1 +1,115 @@
+/* Grundlegendes Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+}
 
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Textblock-Stil */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.text-block {
+    width: 45%;
+    padding-right: 20px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.text-block p, .text-block ul {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.text-block ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.image-block {
+    width: 35%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Interaktive Effekte */
+.about-container:hover {
+    transform: scale(1.05);
+}
+
+.image-block:hover img {
+    transform: scale(1.1);
+}
+
+/* Zitat */
+.more-text {
+    margin-top: 40px;
+    font-size: 20px;
+    font-style: italic;
+    color: #f7f7f7;
+}
+
+/* Animation für Zitat */
+.quote {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Animations-Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
