@@ -1,67 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
+    font-weight: 700;
+    font-size: 1.8em;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 50px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
 }
 
-.text-block {
+.text-block, .image-block {
     flex: 1;
     padding: 20px;
-}
-
-.image-block {
-    flex: 1;
-    text-align: center;
 }
 
 .image-block img {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .extra-text {
-    margin-top: 15px;
-    font-size: 1.1em;
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    color: #777;
 }
 
 .additional-info {
-    margin-top: 50px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 ul li {
     padding: 5px 0;
+    font-weight: 500;
+}
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
