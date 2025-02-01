@@ -1,1 +1,41 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('hintergrund.jpg'); /* Hintergrundbild */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Leicht transparente Box */
+    border-radius: 10px;
+}
+
+.text-block {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-block {
+    flex: 1;
+    text-align: center;
+}
+
+.image-block img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.extra-text {
+    margin-top: 15px;
+    font-size: 1.1em;
+}
