@@ -3,11 +3,11 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('assets/images/background.jpg');
+    background-color: #2c3e50; /* Dunkelgrauer Hintergrund */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    color: #333;
+    color: #ecf0f1; /* Hellerer Text für besseren Kontrast */
 }
 
 /* Über mich Container */
@@ -36,7 +36,7 @@ body {
     width: 45%;
     padding: 20px;
     margin-bottom: 40px;
-    background-color: rgba(255, 255, 255, 0.8); /* Hintergrund für besseren Kontrast */
+    background-color: #34495e; /* Dunklerer Grauton für Textboxen */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -44,7 +44,7 @@ body {
 }
 
 .text-block:hover {
-    transform: scale(1.02); /* kleiner Hover-Effekt für Textblöcke */
+    transform: scale(1.02); /* Hover-Effekt für Textblöcke */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -52,7 +52,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #ecf0f1; /* Hellerer Titel */
 }
 
 /* Listenelemente */
@@ -65,11 +65,12 @@ body {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 15px;
+    color: #ecf0f1; /* Hellerer Text für besseren Kontrast */
 }
 
 /* Bild Styling */
 .image-block {
-    width: 45%; /* Anpassen, damit das Bild gut in die Containergröße passt */
+    width: 45%;
     margin: 20px 0;
     text-align: center;
 }
@@ -83,7 +84,7 @@ body {
 }
 
 .image-block:hover img {
-    transform: scale(1.05); /* Leichter Hover-Effekt für das Bild */
+    transform: scale(1.05); /* Hover-Effekt für das Bild */
 }
 
 /* Zitat Styling */
@@ -92,25 +93,4 @@ body {
     font-size: 20px;
     font-style: italic;
     color: #f7f7f7;
-}
-
-/* Animations-Keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
