@@ -11,38 +11,49 @@ body {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
-/* Textblock-Stil */
+/* Über mich Container */
 .about-section {
     padding: 60px 20px;
     text-align: center;
-    color: #fff;
+    color: #333;
 }
 
 .about-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
+/* Textblock Styling */
 .text-block {
     width: 45%;
     padding-right: 20px;
     margin-bottom: 40px;
-    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* leichter Hintergrund für bessere Lesbarkeit */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1.5s forwards;
+}
+
+/* Listenelemente */
+.text-block ul {
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 .text-block p, .text-block ul {
@@ -51,15 +62,12 @@ h2 {
     margin-bottom: 15px;
 }
 
-.text-block ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
+/* Bild Styling */
 .image-block {
     width: 35%;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .image-block img {
@@ -70,27 +78,16 @@ h2 {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Interaktive Effekte */
-.about-container:hover {
-    transform: scale(1.05);
-}
-
 .image-block:hover img {
     transform: scale(1.1);
 }
 
-/* Zitat */
+/* Zitat Styling */
 .more-text {
     margin-top: 40px;
     font-size: 20px;
     font-style: italic;
     color: #f7f7f7;
-}
-
-/* Animation für Zitat */
-.quote {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
 }
 
 /* Animations-Keyframes */
