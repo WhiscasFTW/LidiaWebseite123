@@ -85,9 +85,11 @@ body {
     }
 
     .content-block {
-        width: 99%; /* Noch breitere Boxen */
-        max-width: 750px; /* Maximale Breite für die Boxen */
+        width: 100%; /* Boxen jetzt über die gesamte Breite */
+        max-width: 800px; /* Maximale Breite der Boxen */
         aspect-ratio: 9 / 16;
+        margin-left: auto; /* Zentriert die Boxen */
+        margin-right: auto; /* Zentriert die Boxen */
     }
 
     /* Zitat in der mobilen Version weiter nach unten verschieben */
