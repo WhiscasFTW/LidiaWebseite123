@@ -85,8 +85,13 @@ body {
     }
 
     .content-block {
-        width: 98%; /* Noch breitere Boxen */
-        max-width: 700px; /* Maximale Breite für die Boxen */
+        width: 99%; /* Noch breitere Boxen */
+        max-width: 750px; /* Maximale Breite für die Boxen */
         aspect-ratio: 9 / 16;
+    }
+
+    /* Zitat in der mobilen Version weiter nach unten verschieben */
+    .more-text {
+        margin-top: 120px; /* Zitat weiter nach unten verschieben */
     }
 }
