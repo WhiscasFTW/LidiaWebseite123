@@ -13,10 +13,11 @@ body {
     text-align: center;
 }
 
-/* Flexibles Grid-Layout */
+/* Grid-System für 2x2 Layout auf Desktop */
 .about-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -25,6 +26,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Reihenfolge der Boxen definieren */
+.text-block:nth-child(1) { grid-column: 1; grid-row: 1; } /* Erste Textbox */
+.image-block { grid-column: 2; grid-row: 1; } /* Bildbox oben rechts */
+.text-block:nth-child(3) { grid-column: 1; grid-row: 2; } /* Zweite Textbox */
+.text-block:nth-child(4) { grid-column: 2; grid-row: 2; } /* Dritte Textbox */
 
 /* Einheitliche Boxen im 16:9-Format */
 .content-block {
@@ -72,9 +79,18 @@ body {
     color: #f7f7f7;
 }
 
-/* Responsive Anpassungen */
+/* Responsive Anpassungen für Mobile (1 Spalte) */
 @media (max-width: 768px) {
     .about-container {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .text-block:nth-child(1),
+    .image-block,
+    .text-block:nth-child(3),
+    .text-block:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto;
     }
 }
