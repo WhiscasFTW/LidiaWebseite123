@@ -75,17 +75,18 @@ body {
     color: #f7f7f7;
 }
 
-/* Mobile Anpassung: Boxen untereinander und zentriert */
+/* Mobile Anpassung: Boxen untereinander, breiter und mit Abstand zum Rand */
 @media (max-width: 768px) {
     .about-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-items: center; /* Zentriert die Boxen */
+        padding: 20px; /* Padding für Abstand zum Rand */
     }
 
     .content-block {
-        width: 90%; /* Reduziert die Breite der Boxen auf mobilen Geräten */
-        max-width: 400px; /* Maximale Breite für die Boxen */
+        width: 95%; /* Breitere Boxen */
+        max-width: 600px; /* Maximale Breite für die Boxen */
         aspect-ratio: 9 / 16;
     }
 }
