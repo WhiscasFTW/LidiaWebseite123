@@ -13,11 +13,11 @@ body {
     text-align: center;
 }
 
-/* Grid-System für 2x2 Layout auf Desktop */
+/* Grid-System für gleich große Boxen (2x2 Layout auf Desktop) */
 .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, 1fr); /* Alle Reihen haben gleiche Höhe */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -33,17 +33,19 @@ body {
 .text-block:nth-child(3) { grid-column: 1; grid-row: 2; } /* Zweite Textbox */
 .text-block:nth-child(4) { grid-column: 2; grid-row: 2; } /* Dritte Textbox */
 
-/* Einheitliche Boxen im 16:9-Format */
+/* Einheitliche Boxen */
 .content-block {
-    aspect-ratio: 16 / 9;
-    background-color: #34495e;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #34495e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 /* Textboxen */
@@ -61,12 +63,15 @@ body {
 .image-block {
     background: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-block img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Bild wird nicht beschnitten */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
