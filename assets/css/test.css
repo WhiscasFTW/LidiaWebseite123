@@ -13,39 +13,29 @@ body {
     text-align: center;
 }
 
-/* Grid-System für gleich große Boxen (2x2 Layout auf Desktop) */
+/* 2x2 Grid für Desktop */
 .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr); /* Alle Reihen haben gleiche Höhe */
-    gap: 20px;
+    grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
+    gap: 20px; /* Abstand zwischen den Boxen */
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Reihenfolge der Boxen definieren */
-.text-block:nth-child(1) { grid-column: 1; grid-row: 1; } /* Erste Textbox */
-.image-block { grid-column: 2; grid-row: 1; } /* Bildbox oben rechts */
-.text-block:nth-child(3) { grid-column: 1; grid-row: 2; } /* Zweite Textbox */
-.text-block:nth-child(4) { grid-column: 2; grid-row: 2; } /* Dritte Textbox */
-
-/* Einheitliche Boxen */
+/* Einheitliche Boxen mit 16:9-Format */
 .content-block {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #34495e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #34495e;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
 }
 
 /* Textboxen */
@@ -54,26 +44,22 @@ body {
     color: #ecf0f1;
 }
 
-.text-block h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
 /* Bildbox */
 .image-block {
-    background: none;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #34495e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
 }
 
 .image-block img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Bild wird nicht beschnitten */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
 }
 
 /* Zitat Styling */
@@ -84,18 +70,15 @@ body {
     color: #f7f7f7;
 }
 
-/* Responsive Anpassungen für Mobile (1 Spalte) */
+/* Mobile Anpassung: Boxen untereinander */
 @media (max-width: 768px) {
     .about-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
 
-    .text-block:nth-child(1),
-    .image-block,
-    .text-block:nth-child(3),
-    .text-block:nth-child(4) {
-        grid-column: auto;
-        grid-row: auto;
+    .content-block {
+        width: 100%;
+        aspect-ratio: 16 / 9;
     }
 }
