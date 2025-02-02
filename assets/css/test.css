@@ -28,23 +28,23 @@ body {
 .content-block {
     width: 100%;
     aspect-ratio: 9 / 16;
-    background-color: #34495e;
+    background-color: #ffffff; /* Weiße Boxen */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #3b4b5c; /* Dunklere Boxfarbe für Textbereich */
+    color: #34495e; /* Dunkler Text für Kontrast */
 }
 
 /* Textboxen */
 .text-block {
     text-align: left;
-    color: #ecf0f1;
+    color: #34495e; /* Dunkelgrauer Text */
     font-size: 16px; /* Textgröße anpassen */
-    background-color: #2c3e50; /* Textbereich dunkelgrau */
+    background-color: #ffffff; /* Weiße Hintergrundfarbe für Textbereich */
     border-radius: 6px;
     padding: 10px;
 }
@@ -54,11 +54,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #34495e;
+    background: #ffffff; /* Weiße Hintergrundfarbe für Bildbox */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    background-color: #3b4b5c; /* Gleich wie bei den Textboxen */
 }
 
 .image-block img {
@@ -76,15 +75,17 @@ body {
     color: #f7f7f7;
 }
 
-/* Mobile Anpassung: Boxen untereinander */
+/* Mobile Anpassung: Boxen untereinander und zentriert */
 @media (max-width: 768px) {
     .about-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        justify-items: center; /* Zentriert die Boxen */
     }
 
     .content-block {
-        width: 100%;
+        width: 90%; /* Reduziert die Breite der Boxen auf mobilen Geräten */
+        max-width: 400px; /* Maximale Breite für die Boxen */
         aspect-ratio: 9 / 16;
     }
 }
