@@ -18,10 +18,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
-    gap: 20px 20px; /* Horizontale und vertikale Abstände zwischen den Boxen */
+    gap: 20px; /* Vertikale und horizontale Abstände zwischen den Boxen */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 10px; /* Reduzierter Abstand von oben und unten */
 }
 
 /* Einheitliche Boxen im 9:16-Format */
@@ -81,15 +81,14 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-items: center; /* Zentriert die Boxen */
-        padding: 20px; /* Padding für Abstand zum Rand */
+        padding: 10px; /* Reduzierter Abstand für die Container */
     }
 
     .content-block {
         width: 100%; /* Boxen jetzt über die gesamte Breite */
         max-width: 800px; /* Maximale Breite der Boxen */
         aspect-ratio: 9 / 16;
-        margin-left: auto; /* Zentriert die Boxen */
-        margin-right: auto; /* Zentriert die Boxen */
+        margin: 0 auto; /* Zentriert die Boxen */
     }
 
     /* Zitat in der mobilen Version weiter nach unten verschieben */
