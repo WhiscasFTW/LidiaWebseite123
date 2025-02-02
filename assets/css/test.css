@@ -36,12 +36,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #3b4b5c; /* Dunklere Boxfarbe für Textbereich */
 }
 
 /* Textboxen */
 .text-block {
     text-align: left;
     color: #ecf0f1;
+    font-size: 16px; /* Textgröße anpassen */
+    background-color: #2c3e50; /* Textbereich dunkelgrau */
+    border-radius: 6px;
+    padding: 10px;
 }
 
 /* Bildbox */
@@ -53,6 +58,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    background-color: #3b4b5c; /* Gleich wie bei den Textboxen */
 }
 
 .image-block img {
