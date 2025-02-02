@@ -18,7 +18,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
-    gap: 20px; /* Abstand zwischen den Boxen */
+    gap: 20px 20px; /* Horizontale und vertikale Abstände zwischen den Boxen */
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px;
@@ -69,7 +69,7 @@ body {
 
 /* Zitat Styling */
 .more-text {
-    margin-top: 40px;
+    margin-top: 60px; /* Zitat tiefer verschieben */
     font-size: 20px;
     font-style: italic;
     color: #f7f7f7;
@@ -85,8 +85,8 @@ body {
     }
 
     .content-block {
-        width: 95%; /* Breitere Boxen */
-        max-width: 600px; /* Maximale Breite für die Boxen */
+        width: 98%; /* Noch breitere Boxen */
+        max-width: 700px; /* Maximale Breite für die Boxen */
         aspect-ratio: 9 / 16;
     }
 }
