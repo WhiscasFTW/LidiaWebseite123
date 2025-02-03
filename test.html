@@ -5,51 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
     <link rel="stylesheet" href="assets/css/test.css">
-    <script src="assets/js/test.js" defer></script>
+    <script src="assets/js/tset.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Kontaktaufnahme</h1>
-    </header>
-
     <main>
-        <section class="contact-form">
-            <h2>Kontaktformular</h2>
-            <form action="#" method="POST" class="form">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">E-Mail-Adresse</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="subject">Betreff</label>
-                <input type="text" id="subject" name="subject" required>
-                
-                <label for="message">Nachricht</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit" class="submit-btn">Absenden</button>
-            </form>
-        </section>
+        <div class="container">
+            <!-- Kontaktformular -->
+            <section class="box contact-form">
+                <h2>Kontaktformular</h2>
+                <form action="#" method="POST" class="form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="subject">Betreff</label>
+                    <input type="text" id="subject" name="subject" required>
+                    
+                    <label for="message">Nachricht</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit" class="submit-btn">Absenden</button>
+                </form>
+            </section>
 
-        <section class="other-contact">
-            <h2>Weitere Kontaktmöglichkeiten</h2>
-            <p>E-Mail-Adresse: <a href="mailto:info@kunstseite.de">info@kunstseite.de</a></p>
-            <p>Telefonnummer: <a href="tel:+49123456789">+49 123 456789</a></p>
-            <p>Social Media: 
-                <a href="#" class="social-icon">Instagram</a>
-                <a href="#" class="social-icon">Facebook</a>
-            </p>
-        </section>
+            <!-- Weitere Kontaktmöglichkeiten -->
+            <section class="box other-contact">
+                <h2>Weitere Kontaktmöglichkeiten</h2>
+                <p>E-Mail-Adresse: <a href="mailto:info@kunstseite.de">info@kunstseite.de</a></p>
+                <p>Telefonnummer: <a href="tel:+49123456789">+49 123 456789</a></p>
+                <p>Social Media: 
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Facebook</a>
+                </p>
+            </section>
 
-        <section class="youtube-video">
-            <h2>Schau dir unser Video an!</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
+            <!-- Youtube Video -->
+            <section class="box youtube-video">
+                <h2>Schau dir unser Video an!</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Kunstseite | Alle Rechte vorbehalten</p>
-    </footer>
 </body>
 </html>
