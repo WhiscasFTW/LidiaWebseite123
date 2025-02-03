@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt</title>
-  <!-- Verlinkung zur externen CSS-Datei -->
-  <link rel="stylesheet" href="/LidiaWebseite123/assets/css/test.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="assets/css/test.css">
+    <script src="assets/js/test.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Kontaktaufnahme</h1>
+    </header>
 
-  <div class="contact-container">
-    <section class="contact-form">
-      <h2>Kontaktformular</h2>
-      <form action="/submit" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+    <main>
+        <section class="contact-form">
+            <h2>Kontaktformular</h2>
+            <form action="#" method="POST" class="form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-Mail-Adresse</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Betreff</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit" class="submit-btn">Absenden</button>
+            </form>
+        </section>
 
-        <label for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" name="email" required>
+        <section class="other-contact">
+            <h2>Weitere Kontaktmöglichkeiten</h2>
+            <p>E-Mail-Adresse: <a href="mailto:info@kunstseite.de">info@kunstseite.de</a></p>
+            <p>Telefonnummer: <a href="tel:+49123456789">+49 123 456789</a></p>
+            <p>Social Media: 
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+            </p>
+        </section>
 
-        <label for="subject">Betreff</label>
-        <input type="text" id="subject" name="subject" required>
+        <section class="youtube-video">
+            <h2>Schau dir unser Video an!</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </main>
 
-        <label for="message">Nachricht</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <button type="submit" class="submit-btn">Absenden</button>
-      </form>
-    </section>
-
-    <section class="contact-info">
-      <h2>Weitere Kontaktmöglichkeiten</h2>
-      <p><strong>E-Mail-Adresse:</strong> <a href="mailto:info@kunstseite.de">info@kunstseite.de</a></p>
-      <p><strong>Telefonnummer:</strong> +49 123 456789</p>
-      <div class="social-media">
-        <a href="https://facebook.com" target="_blank" class="social-icon">
-          <img src="/LidiaWebseite123/assets/images/facebook-icon.png" alt="Facebook">
-        </a>
-      </div>
-    </section>
-
-    <!-- YouTube-Block -->
-    <section class="youtube-video">
-      <h2>Schau dir mein neuestes Video an!</h2>
-      <div class="youtube-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <!-- Google Map -->
-    <section class="google-map">
-      <h2>Finde mich</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.456793437565!2d8.945331678560064!3d51.20490226379607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b2fb5ac6f5a7b3%3A0x8e144bc64c3fe383!2sSportplatz%206%2C%2056430%20V%C3%B6hl-Marienhagen!5e0!3m2!1sde!2sde!4v1675483664205!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-  </div>
-
-  <!-- Verlinkung zur externen JS-Datei -->
-  <script src="/LidiaWebseite123/assets/js/test.js"></script>
-
+    <footer>
+        <p>&copy; 2025 Kunstseite | Alle Rechte vorbehalten</p>
+    </footer>
 </body>
 </html>
