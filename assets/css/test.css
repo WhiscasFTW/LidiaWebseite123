@@ -1,8 +1,16 @@
 /* Grundlegendes Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+}
+
+/* Allgemeines Layout */
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #2c3e50;
     color: #ecf0f1;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
@@ -154,16 +162,6 @@ body {
     }
 }
 
-/* Allgemeines Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
-}
-
 /* Header */
 header {
   position: relative;
@@ -277,7 +275,7 @@ footer img {
   margin: 5px 10px;
   border-radius: 5px;
   position: relative;
-  transform: translateX(-100%);
+  transform: translateX(-100%); /* Anfangsposition der Links */
   opacity: 0;
 }
 
@@ -288,101 +286,29 @@ footer img {
 
 .sidebar a:hover {
   background-color: rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 1);
-  transform: translateX(5px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
-/* Signatur der Künstlerin */
-.artist-signature {
-  text-align: center;
-  padding: 20px;
-  animation: float 3s ease-in-out infinite;
+.sidebar a.active {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.artist-signature img {
-  width: auto;
-  height: 140px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.artist-signature img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-}
-
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-  font-size: 96px;
-  color: rgba(255, 255, 255, 0.8);
+/* Button zum Öffnen der Sidebar */
+.sidebar-btn {
+  position: fixed;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 24px;
+  color: #fff;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  z-index: 3;
-  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
-  padding: 10px;
+  transition: opacity 0.3s ease;
 }
 
-.toggle-button.open {
-  left: 265px;
-  transform: translateY(-50%) rotate(90deg);
+.sidebar-btn:hover {
+  opacity: 0.7;
 }
 
-.toggle-button:hover {
-  transform: translateY(-50%) scale(1.1);
-  color: rgba(255, 255, 255, 1);
-}
-
-/* Atmungsanimation für den Button */
-@keyframes breathe {
-  0% { color: rgba(255, 255, 255, 0.8); }
-  50% { color: rgba(255, 255, 255, 0.6); }
-  100% { color: rgba(255, 255, 255, 0.8); }
-}
-
-/* Wackel-Animation für den Button */
-@keyframes wobble {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
-}
-
-/* Animationen */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
-
-  header img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
-  }
-}
