@@ -158,16 +158,16 @@ body {
     .about-container {
         grid-template-columns: 1fr; /* Eine Spalte */
         grid-template-rows: auto; /* Automatische Reihenhöhe */
-        justify-items: center; /* Zentriert alle Boxen */
+        justify-items: stretch; /* Boxen nehmen die volle Breite ein */
         padding: 0 20px; /* Padding für Abstand */
         gap: 13px; /* Abstand zwischen den Boxen */
     }
 
     .content-block {
-        width: 100%;
-        max-width: 95%; /* Die Boxen können bis zu 95% der Breite einnehmen */
+        width: 100%; /* Boxen nehmen die gesamte Breite ein */
+        max-width: 100%; /* Maximalbreite auf 100% gesetzt */
         aspect-ratio: 9 / 16;
-        margin: 10px auto; /* Margin für vertikale Abstände */
+        margin: 10px 0; /* Margin für vertikale Abstände */
     }
 
     /* Zitat in der mobilen Version sichtbar machen und etwas höher verschieben */
