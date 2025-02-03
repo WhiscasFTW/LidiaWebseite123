@@ -18,7 +18,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
-    gap: 20px; /* Abstand zwischen den Boxen sowohl horizontal als auch vertikal */
+    gap: 20px; /* Abstand zwischen den Boxen horizontal und vertikal */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px; /* 20px Abstand zu allen Seiten des Containers */
@@ -37,6 +37,7 @@ body {
     justify-content: flex-start; /* Text beginnt oben */
     align-items: center;
     color: #34495e; /* Dunkler Text für Kontrast */
+    margin: 10px; /* Abstand zwischen den Boxen */
 }
 
 /* Textboxen */
@@ -94,7 +95,7 @@ body {
         width: 100%; /* Boxen jetzt über die gesamte Breite */
         max-width: 95%; /* Boxen nehmen nun 95% der Breite ein */
         aspect-ratio: 9 / 16;
-        margin: 0 auto; /* Zentriert die Boxen */
+        margin: 10px auto; /* Zentriert die Boxen und sorgt für Abstand */
     }
 
     /* Zitat in der mobilen Version etwas höher verschieben */
