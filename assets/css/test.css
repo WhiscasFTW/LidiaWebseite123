@@ -17,13 +17,13 @@ body {
 /* 2x2 Grid für Desktop */
 .about-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px; 
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    grid-template-rows: repeat(2, 1fr); /* 2 Reihen */
+    gap: 20px; /* 20px Abstand zwischen allen Boxen */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box; /* Wichtig, damit Padding korrekt berücksichtigt wird */
+    box-sizing: border-box; /* Verhindert Probleme mit Padding und Gesamtgröße */
 }
 
 /* Einheitliche Boxen im 9:16-Format mit Hover-Effekten */
@@ -39,7 +39,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     color: #34495e;
-    margin: 0; /* Entfernt den Margin, damit der Abstand über das Grid gehandhabt wird */
+    margin: 0; /* Kein Margin, damit der Abstand nur über das Grid und Gap funktioniert */
     opacity: 0; /* Startwert für Animation */
     transform: translateY(50px); /* Startposition für Animation */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -119,18 +119,18 @@ body {
 /* Mobile Anpassung */
 @media (max-width: 768px) {
     .about-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        justify-items: center;
-        padding: 0 20px;
-        gap: 10px;
+        grid-template-columns: 1fr; /* Eine Spalte */
+        grid-template-rows: auto; /* Automatische Reihenhöhe */
+        justify-items: center; /* Zentriert alle Boxen */
+        padding: 0 20px; /* Padding für Abstand */
+        gap: 10px; /* Abstand zwischen den Boxen */
     }
 
     .content-block {
         width: 100%;
-        max-width: 95%;
+        max-width: 95%; /* Die Boxen können bis zu 95% der Breite einnehmen */
         aspect-ratio: 9 / 16;
-        margin: 10px auto;
+        margin: 10px auto; /* Margin für vertikale Abstände */
     }
 
     /* Zitat in der mobilen Version etwas höher verschieben */
@@ -148,6 +148,6 @@ body {
     }
 
     .more-text {
-        margin-top: 100px;
+        margin-top: 100px; /* Zitat etwas tiefer */
     }
 }
