@@ -9,7 +9,7 @@ body {
 
 /* Container für die gesamte Sektion */
 .about-section {
-    padding: 60px 20px;
+    padding: 30px 20px; /* Weniger Abstand oben in der mobilen Version */
     text-align: center;
 }
 
@@ -78,6 +78,10 @@ body {
 
 /* Mobile Anpassung: Boxen untereinander, breiter und mit Abstand zum Rand */
 @media (max-width: 768px) {
+    .about-section {
+        padding: 10px 20px; /* Weniger Abstand oben für den mobilen Inhalt */
+    }
+
     .about-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -95,7 +99,7 @@ body {
 
     /* Zitat in der mobilen Version etwas höher verschieben */
     .more-text {
-        margin-top: 80px; /* Zitat etwas höher in der mobilen Version */
+        margin-top: 60px; /* Zitat etwas höher in der mobilen Version */
     }
 }
 
