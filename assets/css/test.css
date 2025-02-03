@@ -46,10 +46,11 @@ body {
     box-sizing: border-box; /* Sorgt dafür, dass Padding berücksichtigt wird */
 }
 
-/* Hover-Effekt: Boxen vergrößern sich und werfen einen Schatten */
+/* Hover-Effekt: Boxen vergrößern sich leicht und der Schatten wird intensiver */
 .content-block:hover {
-    transform: translateY(-10px); /* Box hebt sich leicht an */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Intensiverer Schatten */
+    transform: translateY(-5px) scale(1.05); /* Leichte Vergrößerung und Anhebung */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2); /* Intensivierterer Schatten */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Übergänge */
 }
 
 /* Fade-In-Animation für Boxen */
