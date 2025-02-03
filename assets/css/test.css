@@ -1,3 +1,12 @@
+/* Grundlegendes Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
 /* Container für die gesamte Sektion */
 .about-section {
     padding: 60px 20px;
@@ -25,7 +34,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Text beginnt oben */
     align-items: center;
     color: #34495e; /* Dunkler Text für Kontrast */
 }
@@ -34,10 +43,11 @@
 .text-block {
     text-align: left;
     color: #34495e; /* Dunkelgrauer Text */
-    font-size: 16px; /* Textgröße anpassen */
+    font-size: 18px; /* Größere Textgröße */
     background-color: #ffffff; /* Weiße Hintergrundfarbe für Textbereich */
     border-radius: 6px;
     padding: 10px;
+    flex-grow: 1; /* Textbereich wächst, um den Platz zu füllen */
 }
 
 /* Bildbox */
