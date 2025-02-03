@@ -18,7 +18,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
-    gap: 20px; /* Vertikale und horizontale Abstände zwischen den Boxen */
+    gap: 20px 20px; /* Vertikale und horizontale Abstände zwischen den Boxen */
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px; /* Reduzierter Abstand von oben und unten */
@@ -81,12 +81,12 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-items: center; /* Zentriert die Boxen */
-        padding: 10px; /* Reduzierter Abstand für die Container */
+        padding: 0 10px; /* Abstand zum Rand in der mobilen Ansicht */
     }
 
     .content-block {
         width: 100%; /* Boxen jetzt über die gesamte Breite */
-        max-width: 800px; /* Maximale Breite der Boxen */
+        max-width: 90%; /* Maximale Breite der Boxen */
         aspect-ratio: 9 / 16;
         margin: 0 auto; /* Zentriert die Boxen */
     }
