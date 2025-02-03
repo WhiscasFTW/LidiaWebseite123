@@ -86,13 +86,13 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-items: center; /* Zentriert die Boxen */
-        padding: 0 10px; /* Abstand zum Rand in der mobilen Ansicht */
+        padding: 0 20px; /* Gleichmäßiger Abstand zum Rand */
         gap: 10px; /* Reduzierter vertikaler Abstand zwischen den Boxen */
     }
 
     .content-block {
         width: 100%; /* Boxen jetzt über die gesamte Breite */
-        max-width: 100%; /* Boxen sollen nun 100% der Breite einnehmen */
+        max-width: 90%; /* Boxen sollen nun 90% der Breite einnehmen */
         aspect-ratio: 9 / 16;
         margin: 0 auto; /* Zentriert die Boxen */
     }
