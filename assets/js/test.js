@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
     moreText.classList.add('visible');
 });
 
-
 // Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
   var sidebar = document.getElementById('sidebar');
@@ -18,18 +17,16 @@ function toggleSidebar() {
   // Sidebar und Button umschalten
   sidebar.classList.toggle('open');
   toggleButton.classList.toggle('open');
-
-  // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
-  overlay.classList.toggle('active');
+  overlay.classList.toggle('active'); // Overlay ein-/ausblenden
 
   // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-  toggleButton.style.animation = 'none'; // Animationen entfernen
+  toggleButton.style.animation = 'none'; // Animationen entfernen, wenn der Button erstmals geklickt wurde
 }
 
 // Beim Laden der Seite das Overlay ausblenden und entfernen
 window.onload = function () {
   var overlay = document.getElementById('page-transition-overlay');
-  
+
   // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
   if (overlay) {
     overlay.style.opacity = '0';
@@ -37,7 +34,7 @@ window.onload = function () {
     // Overlay nach 0 Sekunden vollständig entfernen
     setTimeout(function () {
       overlay.remove();
-    }, 0);
+    }, 300); // Übergangseffekt für das Entfernen
   }
 };
 
