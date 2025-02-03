@@ -133,9 +133,11 @@ body {
         margin: 10px auto; /* Margin für vertikale Abstände */
     }
 
-    /* Zitat in der mobilen Version etwas höher verschieben */
+    /* Zitat in der mobilen Version sichtbar machen und etwas höher verschieben */
     .more-text {
-        margin-top: 60px;
+        margin-top: 40px;
+        opacity: 1; /* Zitat sichtbar machen */
+        transform: translateY(0); /* Zitat an die richtige Position verschieben */
     }
 }
 
