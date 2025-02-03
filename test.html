@@ -1,51 +1,69 @@
-<div class="main-container">
-  <section class="hero">
-    <h1>Willkommen auf meiner Künstlerseite</h1>
-    <p>Entdecke meine Welt der Kunst und lass dich inspirieren!</p>
-    <div class="cta">
-      <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt</title>
 
-  <section class="art-gallery">
-    <div class="art-box">
-      <img src="assets/images/Steckbrief/SBLidia.jpg" alt="Kunstwerk 1" class="art-image">
-      <div class="art-overlay">
-        <h3>Meine Kunst</h3>
-        <p>Einblick in meine neuesten Werke.</p>
+  <!-- Verlinkung zur externen CSS-Datei -->
+  <link rel="stylesheet" href="assets/css/test.css">
+
+  <!-- Optional: Favicon hinzufügen -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="contact-container">
+    <header class="contact-header">
+      <h1>Kontakt / Get in Touch</h1>
+    </header>
+
+    <section class="contact-form">
+      <h2>Kontaktformular</h2>
+      <form action="/submit" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Betreff</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit" class="submit-btn">Absenden</button>
+      </form>
+    </section>
+
+    <section class="contact-info">
+      <h2>Weitere Kontaktmöglichkeiten</h2>
+      <p><strong>E-Mail-Adresse:</strong> <a href="mailto:info@kunstseite.de">info@kunstseite.de</a></p>
+      <p><strong>Telefonnummer:</strong> +49 123 456789</p>
+      <div class="social-media">
+        <a href="https://instagram.com" target="_blank">
+          <img src="assets/images/instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="assets/images/facebook-icon.png" alt="Facebook">
+        </a>
       </div>
-    </div>
+    </section>
 
-    <div class="art-box">
-      <img src="assets/images/Steckbrief/SBLidia.jpg" alt="Kunstwerk 2" class="art-image">
-      <div class="art-overlay">
-        <h3>Skulpturen</h3>
-        <p>Moderne Skulpturen, die Geschichten erzählen.</p>
-      </div>
-    </div>
+    <section class="google-map">
+      <h2>Finde mich</h2>
+      <!-- Google Map Embed (Beispiel) -->
+      <iframe src="https://www.google.com/maps/embed?pb=...your-map-embed-code..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </div>
 
-    <div class="art-box">
-      <img src="assets/images/Steckbrief/SBLidia.jpg" alt="Kunstwerk 3" class="art-image">
-      <div class="art-overlay">
-        <h3>Abstrakte Malerei</h3>
-        <p>Farbexplosionen und abstrakte Visionen.</p>
-      </div>
-    </div>
-  </section>
+  <footer class="footer">
+    <p>Weitere Links: <a href="/datenschutz">Datenschutz</a> | <a href="/impressum">Impressum</a></p>
+  </footer>
 
-  <section class="testimonials">
-    <h2>Was die Leute sagen</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial-card">
-        <p>"Die Werke sind atemberaubend! Sie fangen Emotionen auf eine besondere Weise ein."</p>
-        <span>- Julia, Kunstsammlerin</span>
-      </div>
+  <!-- Verlinkung zur externen JS-Datei -->
+  <script src="assets/js/test.js"></script>
 
-      <div class="testimonial-card">
-        <p>"Ich habe die Skulpturen gesehen – sie sind so lebendig und aussagekräftig."</p>
-        <span>- Max, Kunstkritiker</span>
-      </div>
-    </div>
-  </section>
-</div>
-
+</body>
+</html>
