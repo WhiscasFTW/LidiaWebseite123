@@ -11,23 +11,31 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #4A90E2;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
 main {
-    padding: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-section {
-    margin-bottom: 30px;
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
 }
 
 h2 {
@@ -71,26 +79,28 @@ form button:hover {
     margin-right: 10px;
 }
 
-.youtube-video iframe {
-    max-width: 100%;
-    height: auto;
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
     border-radius: 10px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4A90E2;
-    color: white;
+video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    header, footer {
-        padding: 15px;
+    main {
+        padding: 20px;
     }
 
-    .youtube-video iframe {
-        width: 100%;
+    .container {
+        grid-template-columns: 1fr;
     }
 }
