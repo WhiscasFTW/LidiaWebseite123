@@ -13,17 +13,7 @@ body {
   padding: 40px;
 }
 
-.contact-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.contact-header h1 {
-  font-size: 36px;
-  color: #333;
-}
-
-.contact-form, .contact-info, .google-map {
+.contact-form, .contact-info, .google-map, .youtube-video {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 30px;
@@ -31,7 +21,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form h2, .contact-info h2, .google-map h2 {
+.contact-form h2, .contact-info h2, .google-map h2, .youtube-video h2 {
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -90,18 +80,29 @@ body {
   border-radius: 8px;
 }
 
-.footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 14px;
-  color: #777;
+/* YouTube Block */
+.youtube-video {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer a {
-  text-decoration: none;
-  color: #4e8c4a;
+.youtube-video h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.youtube-container {
+  display: flex;
+  justify-content: center;
+}
+
+.youtube-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 8px;
 }
