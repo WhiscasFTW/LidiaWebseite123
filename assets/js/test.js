@@ -1,8 +1,9 @@
-// Event-Listener für das Bild (Hover-Effekt)
-const image = document.querySelector('.profile-img');
-image.addEventListener('mouseenter', () => {
-    image.style.transform = 'scale(1.1)';
-});
-image.addEventListener('mouseleave', () => {
-    image.style.transform = 'scale(1)';
+window.addEventListener('load', () => {
+    // Alle Boxen und das Zitat selektieren
+    const contentBlocks = document.querySelectorAll('.content-block');
+    const moreText = document.querySelector('.more-text');
+
+    // Füge der ersten Box und dem Zitat die Klasse 'visible' hinzu
+    contentBlocks.forEach(block => block.classList.add('visible'));
+    moreText.classList.add('visible');
 });
