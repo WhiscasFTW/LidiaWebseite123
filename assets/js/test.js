@@ -1,14 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const artImages = document.querySelectorAll('.art-image');
+// Optional: Animationen oder Interaktive Funktionen können hier hinzugefügt werden
+document.addEventListener('DOMContentLoaded', function() {
+  // Beispiel: Einfacher Fokus-Effekt für Eingabefelder
+  const formFields = document.querySelectorAll('.contact-form input, .contact-form textarea');
   
-  artImages.forEach(image => {
-    image.addEventListener('mouseenter', () => {
-      image.style.opacity = '0.7';
+  formFields.forEach(field => {
+    field.addEventListener('focus', () => {
+      field.style.borderColor = '#4e8c4a';
     });
     
-    image.addEventListener('mouseleave', () => {
-      image.style.opacity = '1';
+    field.addEventListener('blur', () => {
+      field.style.borderColor = '#ddd';
     });
   });
 });
-
