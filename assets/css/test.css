@@ -19,8 +19,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
     grid-template-rows: repeat(2, 1fr); /* 2 Reihen */
-    column-gap: 20px; /* Abstand zwischen den Spalten */
-    row-gap: 20px; /* Abstand zwischen den Reihen */
+    gap: 20px; /* 20px Abstand zwischen allen Boxen */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -40,7 +39,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     color: #34495e;
-    margin: 0; /* Kein Margin, der Abstand kommt durch das Grid */
+    margin: 0; /* Kein Margin, damit der Abstand nur über das Grid und Gap funktioniert */
     opacity: 0; /* Startwert für Animation */
     transform: translateY(50px); /* Startposition für Animation */
     transition: transform 0.3s ease, opacity 0.3s ease;
