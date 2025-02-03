@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
     grid-template-rows: repeat(2, 1fr); /* 2 Reihen */
-    gap: 5px; /* Abstand zwischen allen Boxen */
+    gap: 13px; /* Abstand zwischen allen Boxen auf 13px erhöht */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -64,9 +64,44 @@ body {
     }
 }
 
+/* Zusatz-Animation: Skalierung der Boxen beim Erscheinen */
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Die Boxen erscheinen mit der Animation */
 .content-block.visible {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.8s ease-out, scaleIn 0.8s ease-out forwards;
+}
+
+/* Animation für das Scrollen der Boxen (Hineinfliegen von unten) */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Boxen beim Scrollen einblenden */
+.content-block {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.content-block.visible {
+    animation: slideUp 0.8s ease-out forwards;
 }
 
 /* Textboxen */
@@ -124,7 +159,7 @@ body {
         grid-template-rows: auto; /* Automatische Reihenhöhe */
         justify-items: center; /* Zentriert alle Boxen */
         padding: 0 20px; /* Padding für Abstand */
-        gap: 5px; /* Abstand zwischen den Boxen */
+        gap: 13px; /* Abstand zwischen den Boxen */
     }
 
     .content-block {
@@ -145,7 +180,7 @@ body {
 /* Desktop Anpassung */
 @media (min-width: 769px) {
     .about-container {
-        gap: 5px; /* Abstand zwischen allen Boxen */
+        gap: 13px; /* Abstand zwischen allen Boxen */
         padding: 20px;
         box-sizing: border-box;
     }
