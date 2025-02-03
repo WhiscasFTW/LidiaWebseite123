@@ -1,9 +1,13 @@
 window.addEventListener('load', () => {
-    // Alle Boxen und das Zitat selektieren
     const contentBlocks = document.querySelectorAll('.content-block');
     const moreText = document.querySelector('.more-text');
 
     // Füge der ersten Box und dem Zitat die Klasse 'visible' hinzu
-    contentBlocks.forEach(block => block.classList.add('visible'));
+    contentBlocks.forEach((block, index) => {
+        setTimeout(() => {
+            block.classList.add('visible');
+        }, index * 200);  // Verzögerung für jede Box
+    });
+
     moreText.classList.add('visible');
 });
