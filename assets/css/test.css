@@ -92,7 +92,7 @@ body {
 
     .content-block {
         width: 100%; /* Boxen jetzt über die gesamte Breite */
-        max-width: 95%; /* Maximale Breite der Boxen auf 95% erhöhen */
+        max-width: 100%; /* Boxen sollen nun 100% der Breite einnehmen */
         aspect-ratio: 9 / 16;
         margin: 0 auto; /* Zentriert die Boxen */
     }
