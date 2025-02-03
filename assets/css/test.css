@@ -18,10 +18,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); /* Gleich hohe Reihen */
-    gap: 20px; /* Vertikale und horizontale Abstände zwischen den Boxen */
+    gap: 20px; /* Abstand zwischen den Boxen sowohl horizontal als auch vertikal */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px; /* Reduzierter Abstand von oben und unten */
+    padding: 20px; /* 20px Abstand zu allen Seiten des Containers */
 }
 
 /* Einheitliche Boxen im 9:16-Format */
@@ -108,7 +108,8 @@ body {
     .about-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 20px; /* Abstand zwischen den Boxen */
+        gap: 20px; /* Abstand zwischen den Boxen sowohl horizontal als auch vertikal */
+        padding: 20px; /* Abstand zu allen Seiten des Containers */
     }
 
     /* Zitat in der Desktop Version weiter nach unten verschieben */
