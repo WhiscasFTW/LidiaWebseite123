@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
     grid-template-rows: repeat(2, 1fr); /* 2 Reihen */
-    gap: 20px; /* Abstand zwischen allen Boxen */
+    gap: 5px; /* Abstand zwischen allen Boxen */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -39,19 +39,11 @@ body {
     justify-content: flex-start;
     align-items: center;
     color: #34495e;
-    margin: 0; /* Kein Margin, damit der Abstand nur über das Grid und Gap funktioniert */
+    margin: 0; /* Kein Margin, Abstand nur über Gap */
     opacity: 0; /* Startwert für Animation */
     transform: translateY(50px); /* Startposition für Animation */
     transition: transform 0.3s ease, opacity 0.3s ease;
     box-sizing: border-box; /* Sorgt dafür, dass Padding berücksichtigt wird */
-}
-
-/* Abstand für Boxen auf derselben Höhe */
-.content-block:nth-child(odd) {
-    margin-right: 10px; /* Abstand rechts für jede ungerade Box */
-}
-.content-block:nth-child(even) {
-    margin-left: 10px; /* Abstand links für jede gerade Box */
 }
 
 /* Hover-Effekt: Boxen vergrößern sich und werfen einen Schatten */
@@ -132,7 +124,7 @@ body {
         grid-template-rows: auto; /* Automatische Reihenhöhe */
         justify-items: center; /* Zentriert alle Boxen */
         padding: 0 20px; /* Padding für Abstand */
-        gap: 10px; /* Abstand zwischen den Boxen */
+        gap: 5px; /* Abstand zwischen den Boxen */
     }
 
     .content-block {
@@ -153,7 +145,7 @@ body {
 /* Desktop Anpassung */
 @media (min-width: 769px) {
     .about-container {
-        gap: 20px; /* Abstand zwischen allen Boxen */
+        gap: 5px; /* Abstand zwischen allen Boxen */
         padding: 20px;
         box-sizing: border-box;
     }
