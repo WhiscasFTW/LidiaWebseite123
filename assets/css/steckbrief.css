@@ -111,7 +111,7 @@ body {
     text-align: left;
     color: #34495e;
     font-size: 18px;
-    background-color: #ffffff;
+    background-color: #a3b598;
     border-radius: 6px;
     padding: 10px;
     flex-grow: 1;
@@ -199,7 +199,7 @@ body, html {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-y: auto;
-  background-color: #b5b5b5; /* Schwarzer Hintergrund für den gesamten Body */
+  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
 }
 
 /* Header */
@@ -224,7 +224,7 @@ main {
   position: relative;
   z-index: 0;
   margin-top: 0;
-  background-color: #b5b5b5; /* Schwarzer Hintergrund für den Main-Bereich */
+  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
   padding-bottom: 0;
   padding: 20px;
   max-width: 2560px; /* Begrenze die Breite auf 2560px */
