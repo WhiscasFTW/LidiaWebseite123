@@ -23,6 +23,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box; /* Wichtig, damit Padding korrekt berücksichtigt wird */
 }
 
 /* Einheitliche Boxen im 9:16-Format mit Hover-Effekten */
@@ -38,7 +39,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     color: #34495e;
-    margin: 10px;
+    margin: 0; /* Entfernt den Margin, damit der Abstand über das Grid gehandhabt wird */
     opacity: 0; /* Startwert für Animation */
     transform: translateY(50px); /* Startposition für Animation */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -141,8 +142,9 @@ body {
 /* Desktop Anpassung */
 @media (min-width: 769px) {
     .about-container {
-        gap: 20px;
+        gap: 20px; /* Abstand zwischen allen Boxen */
         padding: 20px;
+        box-sizing: border-box;
     }
 
     .more-text {
