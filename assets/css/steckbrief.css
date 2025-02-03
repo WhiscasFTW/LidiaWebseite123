@@ -39,7 +39,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    color: #a8b6bf;
+    color: #cacece;
     margin: 0; /* Kein Margin, Abstand nur über Gap */
     opacity: 0; /* Startwert für Animation */
     transform: translateY(50px); /* Startposition für Animation */
@@ -111,7 +111,7 @@ body {
     text-align: left;
     color: #34495e;
     font-size: 18px;
-    background-color: #a8b6bf;
+    background-color: #cacece;
     border-radius: 6px;
     padding: 10px;
     flex-grow: 1;
@@ -122,7 +122,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #a8b6bf;
+    background: #cacece;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
