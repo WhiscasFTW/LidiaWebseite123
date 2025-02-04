@@ -19,7 +19,7 @@ header {
   color: #c1c1c1; /* Helles Grau für den Header */
   margin-top: -10px;
   margin-bottom: 0;
-  border-bottom: 2px solid #444; /* Dezente Akzentlinie unter dem Header */
+  border-bottom: none; /* Entfernen des Strichs unter dem Header */
 }
 
 header img {
@@ -274,6 +274,15 @@ footer img {
 
 /* Mobile Ansicht */
 @media (max-width: 768px) {
+  header {
+    padding: 5px 0;
+  }
+
+  header img {
+    max-height: 80px; /* Header-Bildgröße für mobile Geräte anpassen */
+    object-fit: contain;
+  }
+  
   .kurse {
     flex-direction: column;
     align-items: center;
