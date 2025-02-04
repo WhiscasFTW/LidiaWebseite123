@@ -1,4 +1,3 @@
-
 /* script.js */
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".box").forEach(box => {
