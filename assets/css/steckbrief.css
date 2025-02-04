@@ -7,24 +7,26 @@ body {
     justify-content: center;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #121212;
+    color: white;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 13px;
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .box {
-    background: white;
+    background: #1e1e1e;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     position: relative;
+    aspect-ratio: 9 / 16;
 }
 
 .a1 img {
@@ -37,4 +39,11 @@ body {
 
 .video-container {
     margin-top: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
