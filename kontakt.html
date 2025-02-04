@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2x2 Block Layout mit Video</title>
-    <link rel="stylesheet" href="assets/css/kontakt.css">
-    <script defer src="assets/js/kontakt.js"></script>
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="assets/styles.css"> <!-- Dein CSS-File -->
 </head>
 <body>
-    <div class="container">
-        <div class="box a1">
-            <p>Text in Box A1</p>
-            <img src="assets/images/example.jpg" alt="Bild in A1">
+
+    <section class="kontakt">
+        <div class="kontakt-container">
+            <h1>Kontaktieren Sie uns</h1>
+            <p>Für Anfragen, Anmerkungen oder weitere Informationen können Sie uns gerne eine Nachricht senden.</p>
+
+            <form action="mailto:lkiel69@aol.de" method="POST" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Ihr Name">
+
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
+
+                <label for="nachricht">Nachricht</label>
+                <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht"></textarea>
+
+                <button type="submit">Absenden</button>
+            </form>
         </div>
-        <div class="box a2"><p>Text in Box A2</p></div>
-        <div class="box b1"><p>Text in Box B1</p></div>
-        <div class="box b2"><p>Text in Box B2</p></div>
-    </div>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-    </div>
+    </section>
+
+    <!-- Informationsblock -->
+    <section class="info">
+        <div class="info-container">
+            <h2>Weitere Informationen</h2>
+            <ul>
+                <li><strong>Name:</strong> Heike Schmidt</li>
+                <li><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></li>
+                <li><strong>Telefon:</strong> +49 1517 0386044</li>
+                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">heike.schmidt.3958</a></li>
+            </ul>
+        </div>
+    </section>
+
 </body>
 </html>
