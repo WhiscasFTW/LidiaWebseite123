@@ -11,10 +11,10 @@ body {
 header {
     text-align: center;
     background-color: #1e1e1e;
-    color: #00bcd4; /* Akzentfarbe: Helles Türkis für den Text */
+    color: #c1c1c1; /* Helles Grau für den Header */
     padding: 20px 0;
     font-size: 24px;
-    border-bottom: 2px solid #00bcd4; /* Akzentlinie unter dem Header */
+    border-bottom: 2px solid #444; /* Dezente Akzentlinie unter dem Header */
 }
 
 /* Kurs-Container */
@@ -26,22 +26,38 @@ header {
     padding: 20px;
 }
 
-/* Kurs Boxen */
+/* Kurs Boxen mit verschiedenen Farben */
 .kurs {
-    background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* Stärkerer Box-Schatten für Tiefe */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
     width: 45%;
     min-width: 300px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    color: #e0e0e0; /* Hellerer Text in den Boxen für besseren Kontrast */
+    color: #e0e0e0;
+    background-color: #333; /* Dunkles Grau als Standardfarbe */
+}
+
+.kurs:nth-child(1) {
+    background-color: #3e4a5a; /* Zartes Blau */
+}
+
+.kurs:nth-child(2) {
+    background-color: #4e5b61; /* Sanftes Grün */
+}
+
+.kurs:nth-child(3) {
+    background-color: #5c4a3d; /* Warmer Braunton */
+}
+
+.kurs:nth-child(4) {
+    background-color: #5f4b8b; /* Sanftes Lila */
 }
 
 /* Leichter Hover-Effekt */
 .kurs:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2); /* Hellerer Hover-Effekt */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Bilder-Bereich */
@@ -96,10 +112,10 @@ header {
 /* Links und Buttons im Dunkelmodus */
 a, button {
     color: #00bcd4; /* Akzentfarbe für Links und Buttons */
-    text-decoration: none; /* Entfernt Unterstreichung */
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover, button:hover {
-    color: #ff4081; /* Sanftes Pink bei Hover für mehr Kontrast */
+    color: #ff4081; /* Sanftes Pink bei Hover */
 }
