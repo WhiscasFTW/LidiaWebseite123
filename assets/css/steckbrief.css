@@ -40,33 +40,25 @@ body {
 }
 
 .a1 img {
-    width: 100%;
+    width: 50%; /* Bild verkleinert */
     height: auto;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
 }
 
 .video-container {
     margin-top: 20px;
     width: 90%;
     max-width: 1200px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .video-container iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
+    border-radius: 8px;
 }
-
-/* script.js */
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".box").forEach(box => {
-        box.addEventListener("mouseover", () => {
-            box.style.transform = "scale(1.05)";
-            box.style.transition = "transform 0.3s ease";
-        });
-        box.addEventListener("mouseout", () => {
-            box.style.transform = "scale(1)";
-        });
-    });
-});
