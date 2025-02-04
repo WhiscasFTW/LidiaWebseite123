@@ -1,45 +1,117 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
-    <link rel="stylesheet" href="assets/css/kontakt.css"> <!-- Dein CSS-File -->
-</head>
-<body>
+/* Kontaktseite */
+body {
+    background-color: #181818; /* Dunklerer Hintergrund */
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    <section class="kontakt">
-        <div class="kontakt-container">
-            <h1>Kontaktieren Sie uns</h1>
-            <p>Für Anfragen, Anmerkungen oder weitere Informationen können Sie uns gerne eine Nachricht senden.</p>
+/* Kontakt-Container */
+.kontakt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+}
 
-            <form action="mailto:lkiel69@aol.de" method="POST" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Ihr Name">
+.kontakt-container {
+    background-color: #2c2c2c; /* Etwas dunklerer Hintergrund für das Formular */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
 
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
+.kontakt-container h1 {
+    text-align: center;
+    color: #d1d1d1; /* Helles Grau für den Titel */
+    margin-bottom: 20px;
+}
 
-                <label for="nachricht">Nachricht</label>
-                <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht"></textarea>
+.kontakt-container p {
+    text-align: center;
+    color: #b3b3b3; /* Dunkleres Grau für den Text */
+    margin-bottom: 30px;
+}
 
-                <button type="submit">Absenden</button>
-            </form>
-        </div>
-    </section>
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-    <!-- Informationsblock -->
-    <section class="info">
-        <div class="info-container">
-            <h2>Weitere Informationen</h2>
-            <ul>
-                <li><strong>Name:</strong> Heike Schmidt</li>
-                <li><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></li>
-                <li><strong>Telefon:</strong> +49 1517 0386044</li>
-                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">heike.schmidt.3958</a></li>
-            </ul>
-        </div>
-    </section>
+label {
+    font-size: 16px;
+    color: #ccc;
+}
 
-</body>
-</html>
+input, textarea {
+    background-color: #3a3a3a; /* Dunkler Hintergrund für die Eingabefelder */
+    border: 1px solid #444;
+    color: #f5f5f5;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button {
+    background-color: #555; /* Dunklerer Button */
+    color: #f5f5f5;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #666; /* Hellerer Button bei Hover */
+}
+
+/* Informationsblock */
+.info {
+    background-color: #2c2c2c; /* Gleicher dunkler Hintergrund wie der Formularbereich */
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.info-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-container h2 {
+    color: #d1d1d1; /* Helles Grau für den Titel */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-container ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.info-container li {
+    margin: 10px 0;
+}
+
+.info-container a {
+    color: #00bcd4; /* Sanftes Türkis für Links */
+    text-decoration: none;
+}
+
+.info-container a:hover {
+    color: #ff4081; /* Helleres Pink für den Hover-Effekt */
+}
