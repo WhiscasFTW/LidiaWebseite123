@@ -1,40 +1,45 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="assets/styles.css"> <!-- Dein CSS-File -->
+</head>
+<body>
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 13px;
-    width: 80%;
-    max-width: 800px;
-}
+    <section class="kontakt">
+        <div class="kontakt-container">
+            <h1>Kontaktieren Sie uns</h1>
+            <p>Für Anfragen, Anmerkungen oder weitere Informationen können Sie uns gerne eine Nachricht senden.</p>
 
-.box {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
+            <form action="mailto:lkiel69@aol.de" method="POST" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Ihr Name">
 
-.a1 img {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
 
-.video-container {
-    margin-top: 20px;
-}
+                <label for="nachricht">Nachricht</label>
+                <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht"></textarea>
+
+                <button type="submit">Absenden</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Informationsblock -->
+    <section class="info">
+        <div class="info-container">
+            <h2>Weitere Informationen</h2>
+            <ul>
+                <li><strong>Name:</strong> Heike Schmidt</li>
+                <li><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></li>
+                <li><strong>Telefon:</strong> +49 1517 0386044</li>
+                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">heike.schmidt.3958</a></li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
