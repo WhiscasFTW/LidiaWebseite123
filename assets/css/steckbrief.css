@@ -26,8 +26,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     position: relative;
-    aspect-ratio: 9 / 16;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Damit sich die Boxen der Textgröße anpassen */
+    width: auto; /* Box wird nur so groß wie der Text */
+    min-width: 200px; /* Mindestbreite für Konsistenz */
 }
 
 .a1 { background: #2a2d3e; } /* Dunkles Blau */
@@ -37,16 +39,19 @@ body {
 
 .box:hover {
     background: #444; /* Helleres Grau bei Hover */
+    color: #f0f0f0;
+    transform: scale(1.05); /* Vergrößerungseffekt */
 }
 
 .a1 img {
-    width: 50%; /* Bild verkleinert */
+    width: 100%; /* Bild passt sich an */
     height: auto;
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 8px;
+    object-fit: cover; /* Verhindert Verzerrung und schneidet bei Bedarf */
 }
 
 .video-container {
@@ -73,7 +78,7 @@ body {
     .box {
         width: 100%;
         max-width: 400px;
-        aspect-ratio: 9 / 16;
+        padding: 10px; /* Weniger Padding auf mobilen Geräten */
     }
 
     .video-container {
