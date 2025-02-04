@@ -6,6 +6,23 @@ body, html {
   font-family: Arial, sans-serif;
   overflow-y: auto;
   background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+  width: 90%;
+  max-width: 1200px;
 }
 
 /* Header */
@@ -30,15 +47,11 @@ main {
   position: relative;
   z-index: 0;
   margin-top: 0;
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+  background-color: #000000;
   padding-bottom: 0;
   padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container horizontal */
-  display: flex; /* Flexbox-Layout verwenden */
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-  min-height: 100vh; /* Stelle sicher, dass der Bereich die volle Höhe des Bildschirms einnimmt */
+  max-width: 2560px;
+  margin: 0 auto;
 }
 
 /* Footer */
@@ -210,14 +223,13 @@ footer img {
   100% { transform: translateY(0); }
 }
 
-/* Boxen Layout */
+/* Boxen-Styling */
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 13px;
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto; /* Sicherstellen, dass der Container horizontal zentriert ist */
 }
 
 .box {
@@ -250,6 +262,7 @@ footer img {
   border-radius: 8px;
 }
 
+/* Video-Container */
 .video-container {
   margin-top: 20px;
   width: 90%;
