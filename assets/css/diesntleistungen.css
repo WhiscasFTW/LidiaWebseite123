@@ -1,17 +1,22 @@
+/* Dark Mode Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #121212;
+    color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
     text-align: center;
-    background-color: #333;
+    background-color: #1e1e1e;
     color: white;
     padding: 20px 0;
+    font-size: 24px;
 }
 
+/* Kurs-Container */
 .kurse {
     display: flex;
     flex-wrap: wrap;
@@ -21,19 +26,22 @@ header {
 }
 
 .kurs {
-    background: white;
+    background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     width: 45%;
     min-width: 300px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Leichter Hover-Effekt */
 .kurs:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Bilder-Bereich */
 .bilder {
     display: flex;
     justify-content: center;
@@ -45,14 +53,16 @@ header {
 .bilder img {
     width: 30%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .bilder img:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Mobile Ansicht */
 @media (max-width: 768px) {
     .kurse {
         flex-direction: column;
@@ -73,7 +83,7 @@ header {
     }
 }
 
-/* Animationen */
+/* Fade-In Animation */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
