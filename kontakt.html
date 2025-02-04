@@ -4,42 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
-    <link rel="stylesheet" href="assets/css/kontakt.css"> <!-- Dein CSS-File -->
+    <link rel="stylesheet" href="assets/css/kontakt.css">
 </head>
 <body>
-
-    <section class="kontakt">
-        <div class="kontakt-container">
-            <h1>Kontaktieren Sie uns</h1>
-            <p>Für Anfragen, Anmerkungen oder weitere Informationen können Sie uns gerne eine Nachricht senden.</p>
-
-            <form action="mailto:lkiel69@aol.de" method="POST" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Ihr Name">
-
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required placeholder="Ihre E-Mail-Adresse">
-
-                <label for="nachricht">Nachricht</label>
-                <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht"></textarea>
-
+    <div class="contact-page">
+        <div class="contact-form-box">
+            <h2>Kontaktformular</h2>
+            <form action="mailto:lkiel69@aol.de" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
                 <button type="submit">Absenden</button>
             </form>
         </div>
-    </section>
-
-    <!-- Informationsblock -->
-    <section class="info">
-        <div class="info-container">
-            <h2>Weitere Informationen</h2>
-            <ul>
-                <li><strong>Name:</strong> Lidia Grön</li>
-                <li><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></li>
-                <li><strong>Telefon:</strong> +49 1517 0386044</li>
-                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">Zum Facebook-Profil</a></li>
-            </ul>
+        <div class="contact-info-box">
+            <h3>Kontaktinformationen</h3>
+            <p><strong>Name:</strong> Lidia Grön</p>
+            <p><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></p>
+            <p><strong>Telefon:</strong> +49 1517 0386044</p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">heike.schmidt.3958</a></p>
         </div>
-    </section>
-
+    </div>
 </body>
 </html>
