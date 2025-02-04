@@ -1,87 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/kontakt.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
-
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2x2 Block Layout mit Video</title>
+    <link rel="stylesheet" href="assets/css/kontakt.css">
+    <script defer src="assets/js/kontakt.js"></script>
 </head>
 <body>
-  <!-- Overlay für die Sidebar -->
-  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
-  <div id="sidebar" class="sidebar">
-    <div class="artist-signature">
-      <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
-    </div>
-
-    <div class="sidebar-links">
-      <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-      <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Steckbrief</a>
-      <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
-      <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-      <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
-    </div>
-  </div>
-
-  <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
-
-  <header>
-    <img src="assets/images/HeaderDienstleistungen.png" alt="Header">
-  </header>
-  
-  <main>
     <div class="container">
-      <!-- Kontaktformular -->
-      <section class="box contact-form">
-        <h2>Kontaktformular</h2>
-        <form action="#" method="POST" class="form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-          
-          <label for="email">E-Mail-Adresse</label>
-          <input type="email" id="email" name="email" value="lkiel69@aol.de" required>
-          
-          <label for="subject">Betreff</label>
-          <input type="text" id="subject" name="subject" required>
-          
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" required></textarea>
-          
-          <button type="submit" class="submit-btn">Absenden</button>
-        </form>
-      </section>
-
-      <!-- Weitere Kontaktmöglichkeiten -->
-      <section class="box other-contact">
-        <h2>Weitere Kontaktmöglichkeiten</h2>
-        <p>E-Mail-Adresse: <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></p>
-        <p>Telefonnummer: <a href="tel:+4915170386044">+49 1517 0386044</a></p>
-        <p>Social Media: 
-            <a href="https://www.facebook.com/heike.schmidt.3958/" class="social-icon">Facebook</a>
-        </p>
-      </section>
-
-
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Lidia Grön | <a href="impressum.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+        <div class="box a1">
+            <p>Text in Box A1</p>
+            <img src="assets/images/example.jpg" alt="Bild in A1">
+        </div>
+        <div class="box a2"><p>Text in Box A2</p></div>
+        <div class="box b1"><p>Text in Box B1</p></div>
+        <div class="box b2"><p>Text in Box B2</p></div>
     </div>
-    <img src="assets/images/Footer.jpg" alt="Footer Bild">
-  </footer>
-
-  <script src="assets/js/kontakt.js" defer></script>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
 </body>
 </html>
