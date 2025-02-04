@@ -32,10 +32,7 @@ main {
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    width: calc(50% - 20px); /* Desktop Ansicht: Zwei Boxen pro Reihe */
-    height: 0;
-    padding-top: 177.77%; /* Höhe für 9:16 Format */
-    position: relative;
+    width: 100%;
 }
 
 .box:hover {
@@ -120,28 +117,14 @@ form button:hover {
 
     .container {
         gap: 20px;
-        flex-direction: column; /* Boxen untereinander auf mobilen Geräten */
-        width: 100%; /* Container nimmt volle Breite ein */
     }
 
     .box {
-        width: 100%; /* Boxen nehmen 100% der Breite ein */
-        padding-top: 177.77%; /* 9:16 Format */
-        height: 0; /* Höhe wird über das Padding bestimmt */
-        position: relative;
-    }
-
-    /* Optional: Text am unteren Rand der Box positionieren */
-    .box h2 {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        font-size: 1.2rem;
-        color: #bbb;
-        text-align: center;
+        padding: 20px;
     }
 }
+
+
 
 /* Allgemeines Layout */
 body, html {
