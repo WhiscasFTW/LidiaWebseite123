@@ -12,12 +12,20 @@ body {
 }
 
 main {
-    padding: 40px;
+    position: relative;
+    z-index: 0;
+    margin-top: 0;
+    background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+    padding-bottom: 0;
+    padding: 20px;
+    max-width: 2560px; /* Begrenze die Breite auf 2560px */
+    margin: 0 auto; /* Zentriere den Container */
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-wrap: wrap; /* Erlaube das Umbrechen von Boxen */
+    gap: 20px; /* Abstand zwischen den Boxen */
 }
 
+/* Container für die Boxen */
 .container {
     display: flex;
     flex-direction: column;
@@ -26,6 +34,7 @@ main {
     max-width: 1200px;
 }
 
+/* Boxen */
 .box {
     background-color: #252525;
     padding: 30px;
@@ -33,6 +42,7 @@ main {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     width: 100%;
+    box-sizing: border-box; /* Stellt sicher, dass die Boxen die Breite korrekt berechnen */
 }
 
 .box:hover {
@@ -112,28 +122,18 @@ form button:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     main {
-        padding: 20px;
-    }
-
-    .container {
-        gap: 20px;
+        flex-direction: column; /* Boxen untereinander anordnen */
+        padding: 10px;
     }
 
     .box {
-        padding: 20px;
+        padding: 20px; /* Weniger Padding auf mobilen Geräten */
+        width: 100%; /* Boxen sollen den gesamten Bildschirm ausnutzen */
     }
-}
 
-
-
-/* Allgemeines Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+    .container {
+        gap: 20px; /* Kleinere Abstände zwischen den Boxen */
+    }
 }
 
 /* Header */
@@ -151,18 +151,6 @@ header img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Main-Bereich */
-main {
-  position: relative;
-  z-index: 0;
-  margin-top: 0;
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-  padding-bottom: 0;
-  padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
 }
 
 /* Footer */
@@ -345,6 +333,20 @@ footer img {
     height: 100%;
     object-fit: cover;
   }
+
+  main {
+    flex-direction: column; /* Boxen untereinander anordnen */
+    padding: 10px;
+  }
+
+  .box {
+    padding: 20px; /* Weniger Padding auf mobilen Geräten */
+    width: 100%; /* Boxen sollen den gesamten Bildschirm ausnutzen */
+  }
+
+  .container {
+    gap: 20px; /* Kleinere Abstände zwischen den Boxen */
+  }
 }
 
 /* Media Query für größere mobile Geräte und Tablets */
@@ -355,6 +357,6 @@ footer img {
   }
 
   .box {
-    width: 32%;
+    width: 32%; /* Zwei Boxen nebeneinander */
   }
 }
