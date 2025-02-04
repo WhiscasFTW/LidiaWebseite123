@@ -1,186 +1,34 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar und 2x2 Layout</title>
-  <link rel="stylesheet" href="assets/css/steckbrief.css">
-  <link rel="stylesheet" href="assets/css/steckbrief.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
-
-    /* Zusätzliche Styles für das 2x2 Layout */
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 13px;
-      padding: 20px;
-    }
-
-    .box {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .video-container {
-      margin-top: 20px;
-    }
-
-    /* Sidebar Styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      color: white;
-      padding-top: 20px;
-      transition: left 0.3s;
-      z-index: 100;
-    }
-
-    .sidebar a {
-      padding: 10px 15px;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      display: block;
-      transition: background-color 0.3s;
-    }
-
-    .sidebar a:hover {
-      background-color: #575757;
-    }
-
-    .toggle-button {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 30px;
-      z-index: 101;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .overlay.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    /* Responsive Design für mobile Geräte */
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-
-      .toggle-button {
-        top: 10px;
-        left: 10px;
-      }
-
-      .sidebar {
-        width: 200px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2x2 Block Layout mit Video</title>
+    <link rel="stylesheet" href="assets/css/steckbrief.css">
+    <script defer src="assets/js/steckbrief.js"></script>
 </head>
 <body>
-  <!-- Overlay für die Sidebar -->
-  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
-  <div id="sidebar" class="sidebar">
-    <div class="artist-signature">
-      <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
-    </div>
-
-    <div class="sidebar-links">
-      <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-      <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Über mich</a>
-      <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
-      <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-      <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
-    </div>
-  </div>
-
-  <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
-
-  <header>
-    <img src="assets/images/HeaderDienstleistungen.png" alt="Header">
-  </header>
-
-  <!-- 2x2 Block Layout -->
-  <main>
     <div class="container">
-      <div class="box a1">
-        <h2>Steckbrief</h2>
-        <p>Text in Box A1</p>
-        <img src="assets/images/Steckbrief/SBLidia.png" alt="Bild in A1">
-      </div>
-      <div class="box a2">
-        <h2>VITA</h2>
-        <p>Text in Box A2</p>
-      </div>
-      <div class="box b1">
-        <h2>Austellungen</h2>
-        <p>Text in Box B1</p>
-      </div>
-      <div class="box b2">
-        <h2>Themen und Materialien</h2>
-        <p>Text in Box B2</p>
-      </div>
+        <div class="box a1">
+            <h2>Steckbrief</h2>
+            <p>Text in Box A1</p>
+            <img src="assets/images/Steckbrief/SBLidia.png" alt="Bild in A1">
+        </div>
+        <div class="box a2">
+            <h2>VITA</h2>
+            <p>Text in Box A2</p>
+        </div>
+        <div class="box b1">
+            <h2>Austellungen</h2>
+            <p>Text in Box B1</p>
+        </div>
+        <div class="box b2">
+            <h2>Themen und Materialien</h2>
+            <p>Text in Box B2</p>
+        </div>
     </div>
-
     <div class="video-container">
-      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allowfullscreen></iframe>
     </div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Lidia Grön | <a href="impressum.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-    </div>
-    <img src="assets/images/Footer.jpg" alt="Footer Bild">
-  </footer>
-
-  <script src="assets/js/steckbrief.js" defer></script>
-  <script>
-    // Funktion, um die Sidebar zu toggeln
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      const toggleButton = document.getElementById('toggleButton');
-      
-      if (sidebar.style.left === '-250px') {
-        sidebar.style.left = '0';
-        overlay.classList.add('active');
-      } else {
-        sidebar.style.left = '-250px';
-        overlay.classList.remove('active');
-      }
-    }
-  </script>
 </body>
 </html>
