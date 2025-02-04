@@ -20,13 +20,23 @@ body {
 }
 
 .box {
-    background: #1e1e1e;
+    background: #252525;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     position: relative;
     aspect-ratio: 9 / 16;
+    transition: background 0.3s ease;
+}
+
+.a1 { background: #2a2d3e; } /* Dunkles Blau */
+.a2 { background: #3e2a2a; } /* Dunkles Rot */
+.b1 { background: #2a3e2d; } /* Dunkles Grün */
+.b2 { background: #3a2a3e; } /* Dunkles Lila */
+
+.box:hover {
+    background: #444; /* Helleres Grau bei Hover */
 }
 
 .a1 img {
@@ -47,3 +57,16 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
 }
+
+/* script.js */
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".box").forEach(box => {
+        box.addEventListener("mouseover", () => {
+            box.style.transform = "scale(1.05)";
+            box.style.transition = "transform 0.3s ease";
+        });
+        box.addEventListener("mouseout", () => {
+            box.style.transform = "scale(1)";
+        });
+    });
+});
