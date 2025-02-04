@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #1a1a1a;
+    color: #ddd;
 }
 
 main {
@@ -27,10 +27,10 @@ main {
 }
 
 .box {
-    background-color: #ffffff;
+    background-color: #292929;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     width: 100%;
 }
@@ -40,7 +40,7 @@ main {
 }
 
 h2 {
-    color: #2C3E50;
+    color: #f1c40f;
     margin-bottom: 20px;
     font-size: 1.6rem;
     font-weight: bold;
@@ -50,22 +50,23 @@ form label {
     display: block;
     margin-bottom: 10px;
     font-size: 1.1rem;
-    color: #7F8C8D;
+    color: #aaa;
 }
 
 form input, form textarea {
     width: 100%;
     padding: 14px;
     margin-bottom: 15px;
-    border: 1px solid #BDC3C7;
+    border: 1px solid #444;
     border-radius: 8px;
     font-size: 1.1rem;
-    color: #2C3E50;
+    background-color: #333;
+    color: #ddd;
 }
 
 form button {
-    background-color: #4A90E2;
-    color: white;
+    background-color: #f1c40f;
+    color: black;
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -75,11 +76,11 @@ form button {
 }
 
 form button:hover {
-    background-color: #357ab7;
+    background-color: #d4ac0d;
 }
 
 .other-contact a {
-    color: #4A90E2;
+    color: #f1c40f;
     text-decoration: none;
     margin-right: 10px;
     font-size: 1.2rem;
@@ -102,10 +103,10 @@ form button:hover {
 }
 
 .youtube-video {
-    height: auto;  /* Höhe nur so groß wie das Video */
+    height: auto;
     max-width: 100%;
     width: 100%;
-    padding: 0;  /* Keine zusätzliche Polsterung */
+    padding: 0;
 }
 
 /* Responsive Styles */
