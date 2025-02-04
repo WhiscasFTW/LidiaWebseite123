@@ -20,9 +20,8 @@ main {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 40px;
-    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
 }
@@ -33,9 +32,9 @@ main {
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    width: calc(50% - 20px); /* Standard für Desktop-Ansicht: 2 Boxen pro Reihe */
+    width: calc(50% - 20px); /* Desktop Ansicht: Zwei Boxen pro Reihe */
     height: 0;
-    padding-top: 177.77%; /* Höhe wird durch 9:16 Verhältnis (100% / 9 * 16 = 177.77%) */
+    padding-top: 177.77%; /* Höhe für 9:16 Format */
     position: relative;
 }
 
@@ -116,22 +115,23 @@ form button:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     main {
-        padding: 15px; /* Weniger Padding für kleinere Bildschirme */
-        max-width: 100%; /* Container soll die ganze Breite nutzen */
-        margin: 0; /* Kein zusätzliches Margin */
+        padding: 20px;
     }
 
     .container {
-        gap: 20px; /* Etwas weniger Abstand zwischen den Boxen */
-        flex-direction: column; /* Boxen untereinander statt nebeneinander */
+        gap: 20px;
+        flex-direction: column; /* Boxen untereinander auf mobilen Geräten */
+        width: 100%; /* Container nimmt volle Breite ein */
     }
 
     .box {
-        width: 100%; /* Boxen nehmen die ganze Breite ein */
-        height: 0;
-        padding-top: 177.77%; /* Höhe für 9:16-Format */
+        width: 100%; /* Boxen nehmen 100% der Breite ein */
+        padding-top: 177.77%; /* 9:16 Format */
+        height: 0; /* Höhe wird über das Padding bestimmt */
+        position: relative;
     }
 
+    /* Optional: Text am unteren Rand der Box positionieren */
     .box h2 {
         position: absolute;
         bottom: 20px;
@@ -139,6 +139,7 @@ form button:hover {
         right: 20px;
         font-size: 1.2rem;
         color: #bbb;
+        text-align: center;
     }
 }
 
@@ -348,4 +349,29 @@ footer img {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+}
+
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Media Query für größere mobile Geräte und Tablets */
+@media screen and (max-width: 1024px) {
+  .boxen {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .box {
+    width: 32%;
+  }
 }
