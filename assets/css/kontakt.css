@@ -22,14 +22,18 @@ main {
     margin: 0 auto; /* Zentriere den Container */
     display: flex;
     flex-wrap: wrap; /* Erlaube das Umbrechen von Boxen */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
     gap: 20px; /* Abstand zwischen den Boxen */
 }
 
 /* Container für die Boxen */
 .container {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-wrap: wrap; /* Boxen nebeneinander und umbrechen wenn nötig */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
+    gap: 20px; /* Abstand zwischen den Boxen */
     width: 100%;
     max-width: 1200px;
 }
@@ -41,8 +45,10 @@ main {
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    width: 100%;
+    width: 100%; /* Vollständig ausgenutzte Breite */
+    max-width: 500px; /* Maximale Breite der Box */
     box-sizing: border-box; /* Stellt sicher, dass die Boxen die Breite korrekt berechnen */
+    text-align: center; /* Zentriert den Text innerhalb der Box */
 }
 
 .box:hover {
@@ -128,7 +134,8 @@ form button:hover {
 
     .box {
         padding: 20px; /* Weniger Padding auf mobilen Geräten */
-        width: 100%; /* Boxen sollen den gesamten Bildschirm ausnutzen */
+        width: 90%; /* Boxen auf mobilen Geräten vergrößern */
+        max-width: none; /* Maximale Breite für mobile Geräte entfernen */
     }
 
     .container {
@@ -337,26 +344,16 @@ footer img {
   main {
     flex-direction: column; /* Boxen untereinander anordnen */
     padding: 10px;
+    justify-content: center; /* Vertikal zentrieren */
   }
 
   .box {
     padding: 20px; /* Weniger Padding auf mobilen Geräten */
-    width: 100%; /* Boxen sollen den gesamten Bildschirm ausnutzen */
+    width: 90%; /* Boxen auf mobilen Geräten vergrößern */
+    max-width: none; /* Maximale Breite für mobile Geräte entfernen */
   }
 
   .container {
     gap: 20px; /* Kleinere Abstände zwischen den Boxen */
-  }
-}
-
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%; /* Zwei Boxen nebeneinander */
   }
 }
