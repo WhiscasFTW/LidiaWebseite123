@@ -34,7 +34,11 @@ main {
   padding-bottom: 0;
   padding: 20px;
   max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
+  margin: 0 auto; /* Zentriere den Container horizontal */
+  display: flex; /* Flexbox-Layout verwenden */
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; /* Vertikal zentrieren */
+  min-height: 100vh; /* Stelle sicher, dass der Bereich die volle Höhe des Bildschirms einnimmt */
 }
 
 /* Footer */
@@ -206,13 +210,14 @@ footer img {
   100% { transform: translateY(0); }
 }
 
-/* Main Content Layout */
+/* Boxen Layout */
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 13px;
   width: 90%;
   max-width: 1200px;
+  margin: 0 auto; /* Sicherstellen, dass der Container horizontal zentriert ist */
 }
 
 .box {
@@ -259,8 +264,18 @@ footer img {
   border-radius: 8px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -276,18 +291,9 @@ footer img {
   .video-container {
     width: 100%;
   }
-
-  header {
-    height: 200px;
-    padding: 0;
-  }
-
-  header img {
-    height: 100%;
-    object-fit: cover;
-  }
 }
 
+/* Media Query für größere mobile Geräte und Tablets */
 @media screen and (max-width: 1024px) {
   .boxen {
     flex-direction: row;
