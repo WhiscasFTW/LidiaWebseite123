@@ -17,17 +17,14 @@ header {
 }
 
 /* Kurs-Container */
-.kurs-container {
+.kurse {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
-/* Kurs-Boxen */
 .kurs {
     background: #1e1e1e;
     padding: 20px;
@@ -38,38 +35,57 @@ header {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover-Effekt */
+/* Leichter Hover-Effekt */
 .kurs:hover {
     transform: scale(1.03);
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Bilder */
-.kurs-bild {
+/* Bilder-Bereich */
+.bilder {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.bilder img {
     width: 30%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover für Bilder */
-.kurs-bild:hover {
+.bilder img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Ansicht: Textbox-Bild-Wechsel */
+/* Mobile Ansicht */
 @media (max-width: 768px) {
-    .kurs-container {
+    .kurse {
         flex-direction: column;
         align-items: center;
     }
-
+    
     .kurs {
         width: 90%;
     }
-
-    .kurs-bild {
+    
+    .bilder {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bilder img {
         width: 80%;
     }
+}
+
+/* Fade-In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
