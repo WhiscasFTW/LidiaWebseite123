@@ -11,9 +11,10 @@ body {
 header {
     text-align: center;
     background-color: #1e1e1e;
-    color: white;
+    color: #00bcd4; /* Akzentfarbe: Helles Türkis für den Text */
     padding: 20px 0;
     font-size: 24px;
+    border-bottom: 2px solid #00bcd4; /* Akzentlinie unter dem Header */
 }
 
 /* Kurs-Container */
@@ -25,20 +26,22 @@ header {
     padding: 20px;
 }
 
+/* Kurs Boxen */
 .kurs {
     background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* Stärkerer Box-Schatten für Tiefe */
     width: 45%;
     min-width: 300px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #e0e0e0; /* Hellerer Text in den Boxen für besseren Kontrast */
 }
 
 /* Leichter Hover-Effekt */
 .kurs:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2); /* Hellerer Hover-Effekt */
 }
 
 /* Bilder-Bereich */
@@ -88,4 +91,15 @@ header {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Links und Buttons im Dunkelmodus */
+a, button {
+    color: #00bcd4; /* Akzentfarbe für Links und Buttons */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    transition: color 0.3s ease;
+}
+
+a:hover, button:hover {
+    color: #ff4081; /* Sanftes Pink bei Hover für mehr Kontrast */
 }
