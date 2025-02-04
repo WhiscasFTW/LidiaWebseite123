@@ -20,8 +20,9 @@ main {
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 40px;
+    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
 }
@@ -32,7 +33,10 @@ main {
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    width: 100%;
+    width: calc(50% - 20px); /* Standard für Desktop-Ansicht: 2 Boxen pro Reihe */
+    height: 0;
+    padding-top: 177.77%; /* Höhe wird durch 9:16 Verhältnis (100% / 9 * 16 = 177.77%) */
+    position: relative;
 }
 
 .box:hover {
@@ -119,15 +123,24 @@ form button:hover {
 
     .container {
         gap: 20px; /* Etwas weniger Abstand zwischen den Boxen */
+        flex-direction: column; /* Boxen untereinander statt nebeneinander */
     }
 
     .box {
-        padding: 15px; /* Weniger Padding in den Boxen */
         width: 100%; /* Boxen nehmen die ganze Breite ein */
+        height: 0;
+        padding-top: 177.77%; /* Höhe für 9:16-Format */
+    }
+
+    .box h2 {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+        color: #bbb;
     }
 }
-
-
 
 /* Allgemeines Layout */
 body, html {
@@ -335,29 +348,4 @@ footer img {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
-
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
-
-  header img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
-  }
 }
