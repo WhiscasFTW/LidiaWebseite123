@@ -12,13 +12,13 @@
             <h2>Kontaktformular</h2>
             <form action="mailto:lkiel69@aol.de" method="post" enctype="text/plain" autocomplete="off">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required autocomplete="new-name">
                 
                 <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required autocomplete="new-email">
                 
                 <label for="message">Nachricht:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" required autocomplete="off"></textarea>
                 
                 <button type="submit">Absenden</button>
             </form>
@@ -28,7 +28,11 @@
             <p><strong>Name:</strong> Lidia Grön</p>
             <p><strong>E-Mail:</strong> <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></p>
             <p><strong>Telefon:</strong> +49 1517 0386044</p>
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">heike.schmidt.3958</a></p>
+            <div class="facebook-button">
+                <a href="https://www.facebook.com/heike.schmidt.3958/" target="_blank">
+                    <button>Facebook</button>
+                </a>
+            </div>
         </div>
     </div>
 </body>
