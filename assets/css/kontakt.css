@@ -16,7 +16,7 @@ body {
     justify-content: center; /* Zentriert den Inhalt auf der Seite */
 }
 
-.contact-form-box, .contact-info-box {
+.contact-info-box {
     background-color: #3a3a3a; /* Dunkler, aber angenehmer Farbton */
     padding: 20px;
     margin: 20px auto;
@@ -27,63 +27,23 @@ body {
     text-align: center;
 }
 
-h2, h3 {
+h3 {
     color: #f1f1f1;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #f1f1f1;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #555;
-    border: 1px solid #666;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 14px;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    border-color: #888;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #6b6b6b; /* Etwas hellere Akzentfarbe */
-    border: none;
-    color: white;
-    font-size: 16px;
-    margin-top: 15px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: #8c8c8c;
+    font-size: 24px;
 }
 
 .contact-info-box p {
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 16px;
+    color: #f1f1f1;
 }
 
-.contact-info-box a {
+.contact-details a {
     color: #f1f1f1;
     text-decoration: none;
 }
 
-.contact-info-box a:hover {
+.contact-details a:hover {
     text-decoration: underline;
 }
 
@@ -101,11 +61,4 @@ button:hover {
 
 .facebook-button button:hover {
     background-color: #2d4373; /* Dunklerer Facebook-Ton beim Hover */
-}
-
-/* Autofill-Styles */
-input:-webkit-autofill,
-textarea:-webkit-autofill {
-    background-color: #555 !important;
-    color: #fff;
 }
