@@ -20,17 +20,12 @@ header {
   margin-top: -10px;
   margin-bottom: 0;
   border-bottom: none; /* Entfernen des Strichs unter dem Header */
-  width: 100%;
-  max-width: 2560px; /* Begrenzte maximale Breite für den Header */
-  margin: 0 auto; /* Zentriert den Header */
 }
 
-/* Header Bild */
 header img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
 }
 
 /* Main-Bereich */
@@ -277,20 +272,33 @@ footer img {
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Ansicht für den Header */
+/* Mobile Ansicht */
 @media (max-width: 768px) {
   header {
-    padding: 15px 0; /* Mehr Padding für den Header */
-    max-width: 700px; /* Begrenzte Breite des Headers auf mobilen Geräten */
+    padding: 5px 0;
   }
 
   header img {
-    max-height: 100px; /* Vergrößert das Header-Bild für mobile Geräte */
+    max-height: 80px; /* Header-Bildgröße für mobile Geräte anpassen */
     object-fit: contain;
   }
-
-  header h1 {
-    font-size: 28px; /* Größere Schriftgröße für den Titel */
+  
+  .kurse {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .kurs {
+    width: 90%;
+  }
+  
+  .bilder {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bilder img {
+    width: 80%;
   }
 }
 
