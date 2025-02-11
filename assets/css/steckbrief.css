@@ -51,6 +51,10 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertikal und horizontal zentrieren */
+    height: 150px; /* Feste Höhe für die Boxen */
 }
 
 .box h2 {
@@ -62,21 +66,21 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Abgedunkelte, natürliche Farben für die Boxen */
+/* Abgedunkelte, natürliche Farben für die Boxen (Blau, Grün, Rot) */
 .box1 {
-    background-color: #2f4f4f; /* Abgedunkeltes Seegrün */
+    background-color: #1d3c3c; /* Abgedunkeltes Blau-Grün */
 }
 
 .box2 {
-    background-color: #4b3f44; /* Dunkles Braungrau */
+    background-color: #3b2a2a; /* Sehr dunkles Rotbraun */
 }
 
 .box3 {
-    background-color: #3c2f2f; /* Abgedunkeltes Schokoladenbraun */
+    background-color: #2f1a1a; /* Dunkles Rot */
 }
 
 .box4 {
-    background-color: #4c6b2d; /* Abgedunkeltes Olivgrün */
+    background-color: #2f4a2f; /* Abgedunkeltes Waldgrün */
 }
 
 .hidden-text {
