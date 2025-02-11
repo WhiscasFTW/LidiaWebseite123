@@ -62,21 +62,21 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Schöne, harmonische Farben für die Boxen */
+/* Abgedunkelte, natürliche Farben für die Boxen */
 .box1 {
-    background-color: #4e8a8b; /* Sanftes Teal */
+    background-color: #2f4f4f; /* Abgedunkeltes Seegrün */
 }
 
 .box2 {
-    background-color: #6b5b95; /* Angenehmes Lavendel */
+    background-color: #4b3f44; /* Dunkles Braungrau */
 }
 
 .box3 {
-    background-color: #f4a261; /* Warmer Pfirsichton */
+    background-color: #3c2f2f; /* Abgedunkeltes Schokoladenbraun */
 }
 
 .box4 {
-    background-color: #2d6a4f; /* Sanftes Waldgrün */
+    background-color: #4c6b2d; /* Abgedunkeltes Olivgrün */
 }
 
 .hidden-text {
