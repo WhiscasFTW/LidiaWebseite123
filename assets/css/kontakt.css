@@ -21,16 +21,18 @@ main {
     max-width: 2560px; /* Begrenze die Breite auf 2560px */
     margin: 0 auto; /* Zentriere den Container */
     display: flex;
-    flex-direction: column; /* Boxen untereinander positionieren */
-    align-items: center; /* Zentriert die Boxen horizontal */
+    flex-wrap: wrap; /* Erlaube das Umbrechen von Boxen */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
     gap: 20px; /* Abstand zwischen den Boxen */
 }
 
 /* Container für die Boxen */
 .container {
     display: flex;
-    flex-direction: column; /* Boxen untereinander anordnen */
-    align-items: center; /* Zentriert die Boxen horizontal */
+    flex-wrap: wrap; /* Boxen nebeneinander und umbrechen wenn nötig */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
     gap: 20px; /* Abstand zwischen den Boxen */
     width: 100%;
     max-width: 1200px;
@@ -100,127 +102,34 @@ form button:hover {
     font-size: 1.2rem;
 }
 
-/* Header */
-header {
+.video-container {
     position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 10px 0;
-    background-color: black;
-    margin-top: -10px;
-    margin-bottom: 0;
-}
-
-header img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Footer */
-footer {
-    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 12px;
     width: 100%;
-    text-align: center;
-    padding: 0px 0;
-    background-color: black;
-    z-index: 2;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 51px;
 }
 
-footer .footer-content {
+.video-container iframe {
     position: absolute;
-    z-index: 1;
-}
-
-footer .footer-content p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 16px;
-    margin: 0;
-}
-
-footer .footer-content a {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-footer .footer-content a:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
     top: 0;
-    left: -250px;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    transition: left 1s ease;
-    z-index: 10;
-    padding-top: 20px;
-}
-
-.sidebar.open {
     left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
-.toggle-button {
-    font-size: 96px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    z-index: 3;
-    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
-    padding: 10px;
+.youtube-video {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
 }
 
-.toggle-button.open {
-    left: 265px;
-    transform: translateY(-50%) rotate(90deg);
-}
-
-/* Atmungsanimation für den Button */
-@keyframes breathe {
-    0% { color: rgba(255, 255, 255, 0.8); }
-    50% { color: rgba(255, 255, 255, 0.6); }
-    100% { color: rgba(255, 255, 255, 0.8); }
-}
-
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-    header {
-        height: 200px;
-        padding: 0;
-    }
-
-    header img {
-        height: 100%;
-        object-fit: cover;
-    }
-
+/* Responsive Styles */
+@media (max-width: 768px) {
     main {
         flex-direction: column; /* Boxen untereinander anordnen */
         padding: 10px;
-        justify-content: center; /* Vertikal zentrieren */
     }
 
     .box {
@@ -232,4 +141,219 @@ footer .footer-content a:hover {
     .container {
         gap: 20px; /* Kleinere Abstände zwischen den Boxen */
     }
+}
+
+/* Header */
+header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0;
+  background-color: black;
+  z-index: 2;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px;
+}
+
+footer .footer-content {
+  position: absolute;
+  z-index: 1;
+}
+
+footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin: 0;
+}
+
+footer .footer-content a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-content a:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+footer img {
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  display: block;
+  margin-top: 0px;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  overflow-x: hidden;
+  transition: left 1s ease;
+  z-index: 10;
+  padding-top: 20px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Links in der Sidebar */
+.sidebar-links {
+  padding-bottom: 20px;
+}
+
+.sidebar a {
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  transition: transform 1s ease, opacity 1s ease;
+  font-family: 'Pacifico', cursive;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 5px 10px;
+  border-radius: 5px;
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.sidebar.open a {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 1);
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Signatur der Künstlerin */
+.artist-signature {
+  text-align: center;
+  padding: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.artist-signature img {
+  width: auto;
+  height: 140px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-signature img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Button zum Öffnen und Schließen der Sidebar */
+.toggle-button {
+  font-size: 96px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
+  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+  padding: 10px;
+}
+
+.toggle-button.open {
+  left: 265px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.toggle-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Atmungsanimation für den Button */
+@keyframes breathe {
+  0% { color: rgba(255, 255, 255, 0.8); }
+  50% { color: rgba(255, 255, 255, 0.6); }
+  100% { color: rgba(255, 255, 255, 0.8); }
+}
+
+/* Wackel-Animation für den Button */
+@keyframes wobble {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(-2deg); }
+  75% { transform: translateY(-50%) rotate(2deg); }
+}
+
+/* Animationen */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Media Query für mobile Geräte */
+@media screen and (max-width: 768px) {
+  header {
+    height: 200px;
+    padding: 0;
+  }
+
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+    flex-direction: column; /* Boxen untereinander anordnen */
+    padding: 10px;
+    justify-content: center; /* Vertikal zentrieren */
+  }
+
+  .box {
+    padding: 20px; /* Weniger Padding auf mobilen Geräten */
+    width: 90%; /* Boxen auf mobilen Geräten vergrößern */
+    max-width: none; /* Maximale Breite für mobile Geräte entfernen */
+  }
+
+  .container {
+    gap: 20px; /* Kleinere Abstände zwischen den Boxen */
+  }
 }
