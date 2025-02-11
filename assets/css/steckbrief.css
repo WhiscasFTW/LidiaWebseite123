@@ -52,8 +52,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     display: flex;
+    flex-direction: column; /* Boxeninhalt wird vertikal ausgerichtet */
     justify-content: center;
-    align-items: center; /* Vertikal und horizontal zentrieren */
+    align-items: center; /* Überschrift wird sowohl vertikal als auch horizontal zentriert */
     height: 150px; /* Feste Höhe für die Boxen */
 }
 
