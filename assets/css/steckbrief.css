@@ -10,13 +10,44 @@ body {
     background-color: #121212;
     color: white;
 }
-
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Drei Spalten: 2 für Textboxen, 1 für Bilderbox */
     gap: 13px;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px; /* Breiter für das extra Bild */
+}
+
+.image-box {
+    background: #252525;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-box {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
 }
 
 .box {
