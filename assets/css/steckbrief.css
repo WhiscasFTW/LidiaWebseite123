@@ -1,118 +1,64 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #121212;
-    color: white;
 }
+
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Drei Spalten: 2 für Textboxen, 1 für Bilderbox */
-    gap: 13px;
-    width: 90%;
-    max-width: 1400px; /* Breiter für das extra Bild */
-}
-
-.image-box {
-    background: #252525;
-    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-.image-box img {
+.image-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.image-section img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-box {
-        width: 100%;
-        max-width: 400px;
-    }
-}
-
+.content-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
 }
 
 .box {
-    background: #252525;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-    position: relative;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Damit sich die Boxen der Textgröße anpassen */
-    width: auto; /* Box wird nur so groß wie der Text */
-    min-width: 200px; /* Mindestbreite für Konsistenz */
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.a1 { background: #2a2d3e; } /* Dunkles Blau */
-.a2 { background: #3e2a2a; } /* Dunkles Rot */
-.b1 { background: #2a3e2d; } /* Dunkles Grün */
-.b2 { background: #3a2a3e; } /* Dunkles Lila */
-
-.box:hover {
-    background: #444; /* Helleres Grau bei Hover */
-    color: #f0f0f0;
-    transform: scale(1.05); /* Vergrößerungseffekt */
+.hidden-text {
+    display: none;
+    margin-top: 10px;
 }
 
-.a1 img {
-    width: 100%; /* Bild passt sich an */
-    height: auto;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 8px;
-    object-fit: cover; /* Verhindert Verzerrung und schneidet bei Bedarf */
-}
-
-.video-container {
-    margin-top: 20px;
+.video-section {
     width: 90%;
     max-width: 1200px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.video-container iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
     .container {
-        display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
-    .box {
-        width: 100%;
-        max-width: 400px;
-        padding: 10px; /* Weniger Padding auf mobilen Geräten */
-    }
-
-    .video-container {
-        width: 100%;
+    .image-section {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
