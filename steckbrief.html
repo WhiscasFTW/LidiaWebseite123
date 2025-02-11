@@ -3,68 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2x2 Block Layout mit Bilderbox</title>
+    <title>Deine Webseite</title>
     <link rel="stylesheet" href="assets/css/steckbrief.css">
-    <script defer src="assets/js/steckbrief.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="box a1">
-            <h2>Steckbrief</h2>
-            <p><strong>Herzlich willkommen auf meiner Webseite!</strong></p>
-            <p>Ich heiße <strong>Lidia Grön</strong> und wohne in Hessen. Seit meiner Kindheit male ich gern. Wegen zahlreicher Umzüge in meinem Heimatland <strong>Russland</strong> und später in <strong>Deutschland</strong> hatte ich jedoch wenig Zeit für mein Hobby.</p>
-            <p>Zwischendurch malte ich mit Bleistift, Wasserfarben und bunten Stiften – vor allem berufsbedingt mit meinen Erziehenden. Während der <strong>Corona-Pandemie</strong> hatte ich plötzlich viel Zeit und entdeckte beim Aufräumen die <strong>Ölfarben</strong> für mich.</p>
-            <p>Ich begann mit alten, ausgetrockneten Farben zu experimentieren, mischte sie mit Speiseöl und Aceton und versuchte mich an ersten Werken. Im Internet fand ich verschiedene Informationen zur Verarbeitung von Ölfarben.</p>
-            <p>Zuerst malte ich <strong>Pflanzen und Landschaften</strong>. Dann begann ich <strong>Gesichter</strong> zu malen. Meine Liebe zur Literatur inspirierte mich dazu, <strong>literarische Charaktere</strong> in Öl auf Karton zu interpretieren. Ich wagte mich an Porträts von Bekannten und Verwandten – und seitdem kann ich es nicht mehr lassen!</p>
-            <p>Besonders fasziniert es mich, <strong>Menschen in der Natur</strong> zu malen.</p>
+        <div class="image-section">
+            <img src="dein-bild.jpg" alt="Beschreibung des Bildes">
         </div>
-        <div class="box a2">
-            <h2>VITA</h2>
-            <p><strong>Lidia Grön</strong>, geboren am <strong>08.09.1969</strong> in Marx, Russland.</p>
-            <ul>
-                <li>Studium der <strong>Philologie</strong> an der Nordöstlichen Universität in <strong>Magadan</strong>.</li>
-                <li>Arbeit als <strong>Lehrerin</strong> in Russland.</li>
-                <li><strong>2000</strong> – Auswanderung nach Deutschland.</li>
-                <li><strong>2010 - 2013</strong> – Ausbildung an der <strong>Fachschule für Sozialpädagogik, Hessen</strong>.</li>
-                <li><strong>Seit 2021</strong> – Beschäftigung mit <strong>Ölmalerei</strong> (Autodidaktin).</li>
-                <li><strong>Seit 2024</strong> – Lehrkraft an der <strong>VHS Waldeck-Frankenberg</strong> und <strong>VHS Hochsauerlandkreis</strong> (Zeichenkurse, Malkurse, Workshops für Ölmalerei).</li>
-            </ul>
-        </div>
-        <div class="box b1">
-            <h2>Themen und Materialien</h2>
-            <p><strong>Themen:</strong></p>
-            <ul>
-                <li>Menschen</li>
-                <li>Porträt</li>
-                <li>Natur</li>
-                <li>Urbane Landschaft</li>
-            </ul>
-            <p><strong>Materialien:</strong></p>
-            <ul>
-                <li>Ölfarben</li>
-                <li>Acryl</li>
-                <li>Zeichenkohle</li>
-                <li>Bleistift</li>
-                <li>Grafitstifte</li>
-                <li>Pastell</li>
-            </ul>
-        </div>
-        <div class="box b2">
-            <h2>Ausstellungen</h2>
-            <ul>
-                <li><strong>„4 Arten“</strong> – Ausstellung, <strong>09/2022</strong>, Galerie im Bürgerhaus, Korbach</li>
-                <li><strong>Kunstmärkte</strong> 2022 - 2024</li>
-                <li><strong>Bild des Monats</strong> – <strong>02/2022</strong>, Korbach</li>
-                <li><strong>Altstadt Kulturfest</strong> – <strong>06/2023</strong>, Korbach</li>
-                <li><strong>Altstadt Kulturfest</strong> – <strong>07/2024</strong>, Korbach</li>
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src="assets/images/Steckbrief/SBLidia.png" alt="Künstlerische Arbeit">
+        <div class="content-section">
+            <div class="box" onclick="toggleText(1)">
+                <h2>Kickle ask the Down</h2>
+                <p class="hidden-text">Sreds!</p>
+            </div>
+            <div class="box" onclick="toggleText(2)">
+                <h2>Ideal</h2>
+                <p class="hidden-text">VITA</p>
+            </div>
+            <div class="box" onclick="toggleText(3)">
+                <h2>Shea</h2>
+                <p class="hidden-text">Anst</p>
+            </div>
+            <div class="box" onclick="toggleText(4)">
+                <h2>Youth</h2>
+                <p class="hidden-text">Stelch</p>
+            </div>
         </div>
     </div>
-    <div class="video-container">
-        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LZQyC4LEPHg" frameborder="0" allowfullscreen></iframe>
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dein-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <script src="assets/js/steckbrief.js"></script>
 </body>
 </html>
