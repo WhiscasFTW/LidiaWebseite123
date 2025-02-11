@@ -12,3 +12,11 @@ function toggleText(boxNumber) {
         }, 500);
     }
 }
+
+// Open the first box on page load
+window.onload = function() {
+    const firstBoxText = document.querySelector('.hidden-text');
+    firstBoxText.style.display = "block";
+    firstBoxText.style.opacity = 1;
+    firstBoxText.style.maxHeight = "100px"; // Adjust based on content size
+};
