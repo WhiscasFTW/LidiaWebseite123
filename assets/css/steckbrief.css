@@ -49,13 +49,13 @@ body {
     padding: 15px;
     cursor: pointer;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.5s ease;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Boxeninhalt wird vertikal ausgerichtet */
     justify-content: center;
     align-items: center; /* Überschrift wird sowohl vertikal als auch horizontal zentriert */
     height: 150px; /* Feste Höhe für die Boxen */
+    overflow: hidden;
 }
 
 .box h2 {
@@ -90,6 +90,16 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+/* Beim Öffnen wird die Box vergrößert, und der Text wird sichtbar */
+.box.open {
+    height: auto; /* Box wächst, um den Text zu zeigen */
+}
+
+.box.open .hidden-text {
+    opacity: 1;
+    max-height: 200px; /* Maximale Höhe für den Text */
 }
 
 .video-section {
