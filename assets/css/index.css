@@ -51,7 +51,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    animation: backgroundEffect 7s ease-in-out forwards; /* 7s Gesamtdauer */
+    animation: backgroundEffect 3s ease-in-out forwards; /* 7s Gesamtdauer */
     opacity: 0; /* Startet unsichtbar */
     transition: opacity 1s ease-in-out;
 }
