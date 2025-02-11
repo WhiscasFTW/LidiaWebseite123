@@ -41,11 +41,11 @@ body {
     flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Verringert den Abstand zwischen den Boxen */
+    gap: 5px; /* Boxen näher beieinander */
 }
 
 .box {
-    margin-bottom: 5px; /* Verringert den Abstand zwischen den Boxen */
+    margin-bottom: 5px; /* Kleinerer Abstand zwischen den Boxen */
     padding: 15px;
     cursor: pointer;
     border-radius: 10px;
@@ -62,21 +62,21 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Neue abgedunkelte und angenehmere Töne für die Boxen */
+/* Schöne, harmonische Farben für die Boxen */
 .box1 {
-    background-color: #3b4c56; /* Abgedunkeltes Graublau */
+    background-color: #4e8a8b; /* Sanftes Teal */
 }
 
 .box2 {
-    background-color: #5a6870; /* Mäßig abgedunkeltes Blau-Grün */
+    background-color: #6b5b95; /* Angenehmes Lavendel */
 }
 
 .box3 {
-    background-color: #6c4f7d; /* Abgedunkeltes Violett mit einem Hauch von Rot */
+    background-color: #f4a261; /* Warmer Pfirsichton */
 }
 
 .box4 {
-    background-color: #3a755b; /* Abgedunkeltes, beruhigendes Grün */
+    background-color: #2d6a4f; /* Sanftes Waldgrün */
 }
 
 .hidden-text {
