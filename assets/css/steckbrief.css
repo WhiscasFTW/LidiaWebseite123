@@ -50,6 +50,7 @@ header img {
 @media (max-width: 768px) {
   .container {
     flex-direction: column; /* Boxen untereinander stapeln */
+    align-items: center; /* Zentrieren auf mobilen Geräten */
   }
 }
 
@@ -89,6 +90,12 @@ header img {
   gap: 10px; /* Abstand zwischen den Boxen */
 }
 
+@media (max-width: 768px) {
+  .content-section {
+    width: 100%; /* Volle Breite auf mobilen Geräten */
+  }
+}
+
 .box {
   padding: 15px;
   cursor: pointer;
@@ -98,6 +105,7 @@ header img {
   border: 1px solid rgba(255, 255, 255, 0.1); /* Leichter Rand für Kontrast */
   color: #ffffff; /* Weiße Textfarbe für bessere Lesbarkeit */
   width: 100%; /* Boxen nehmen die volle Breite ein */
+  position: relative; /* Für das Einblenden des versteckten Textes */
 }
 
 .box h2 {
@@ -125,6 +133,20 @@ header img {
 
 .box4 {
   background: linear-gradient(135deg, #8B7355, #6B5335); /* Dunkles Beige-Braun mit Gradient */
+}
+
+/* Versteckter Text in den Boxen */
+.hidden-text {
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.box.active .hidden-text {
+  opacity: 1;
+  max-height: 200px; /* Anpassen basierend auf dem Inhalt */
 }
 
 /* Video-Bereich */
