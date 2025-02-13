@@ -125,10 +125,12 @@ header {
     background-color: black;
     margin-top: -10px;
     margin-bottom: 0;
+    width: 100%;
+    overflow: hidden; /* Verhindert, dass der Header-Inhalt überläuft */
 }
 
 header img {
-    max-width: 100%;
+    width: 100%; /* Bild nimmt die volle Breite ein */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -317,10 +319,11 @@ footer img {
 
     .content-section {
         width: 100%; /* Volle Breite für die Boxen */
+        align-items: center; /* Zentriert die Boxen */
     }
 
     .box {
-        width: 100%; /* Boxen nehmen die volle Breite ein */
+        width: 90%; /* Boxen nehmen 90% der Breite ein */
         margin-bottom: 10px; /* Abstand zwischen den Boxen */
     }
 
@@ -330,9 +333,11 @@ footer img {
 
     header {
         padding: 10px 0; /* Weniger Padding für den Header */
+        overflow: hidden; /* Verhindert Überlauf */
     }
 
     header img {
-        width: 80%; /* Bild etwas kleiner auf Mobilgeräten */
+        width: 120%; /* Bild wird angezoomt */
+        margin-left: -10%; /* Verschiebt das Bild nach links, um es zu zentrieren */
     }
 }
