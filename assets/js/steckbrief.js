@@ -15,7 +15,6 @@ document.querySelectorAll('.box').forEach(box => {
     });
 });
 
-
 // Funktion zum Öffnen/Schließen der Sidebar
 function toggleSidebar() {
   var sidebar = document.getElementById('sidebar');
@@ -61,3 +60,4 @@ document.querySelectorAll('a').forEach(function (link) {
       navigateToPage(link.href);
     }
   });
+});
