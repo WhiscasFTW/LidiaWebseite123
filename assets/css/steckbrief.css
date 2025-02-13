@@ -121,17 +121,19 @@ header {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 20px 0;
+    padding: 0;
     background-color: black;
     margin-top: -10px;
     margin-bottom: 0;
     width: 100%;
     overflow: hidden; /* Verhindert, dass der Header-Inhalt überläuft */
+    height: 360px; /* Feste Höhe des Headers */
 }
 
 header img {
-    width: 100%; /* Bild nimmt die volle Breite ein */
-    height: auto;
+    width: 2560px; /* Feste Breite des Headers */
+    height: 360px; /* Feste Höhe des Headers */
+    object-fit: cover; /* Bild wird beschnitten, um das Seitenverhältnis beizubehalten */
     display: block;
     margin: 0 auto;
 }
@@ -332,12 +334,14 @@ footer img {
     }
 
     header {
-        padding: 10px 0; /* Weniger Padding für den Header */
+        height: 360px; /* Beibehaltung der Originalhöhe */
         overflow: hidden; /* Verhindert Überlauf */
     }
 
     header img {
-        width: 120%; /* Bild wird angezoomt */
-        margin-left: -10%; /* Verschiebt das Bild nach links, um es zu zentrieren */
+        width: 100vw; /* Bild nimmt die volle Viewport-Breite ein */
+        height: 360px; /* Beibehaltung der Originalhöhe */
+        object-fit: cover; /* Bild wird beschnitten, um das Seitenverhältnis beizubehalten */
+        margin-left: calc((100vw - 2560px) / -2); /* Zentriert das Bild horizontal */
     }
 }
