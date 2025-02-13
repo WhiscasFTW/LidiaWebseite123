@@ -9,11 +9,6 @@ function toggleText(boxNumber) {
     }
 }
 
-// Open the first box on page load
-window.onload = function() {
-    const firstBoxText = document.querySelector('.hidden-text');
-    firstBoxText.style.opacity = 1;
-    firstBoxText.style.maxHeight = firstBoxText.scrollHeight + "px";
 };
 document.querySelectorAll('.box').forEach(box => {
     box.addEventListener('click', () => {
