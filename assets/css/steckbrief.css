@@ -140,6 +140,10 @@ header img {
 
 /* Media Queries für mobile Geräte */
 @media (max-width: 768px) {
+    header {
+        display: none; /* Header auf mobilen Geräten ausblenden */
+    }
+
     .container {
         flex-direction: column; /* Bild und Boxen untereinander anordnen */
         align-items: center; /* Zentriert die Boxen */
@@ -162,18 +166,6 @@ header img {
 
     .video-section iframe {
         height: 200px; /* Höhe für Mobilgeräte */
-    }
-
-    header {
-        height: auto; /* Höhe anpassen, um das Bild proportional zu skalieren */
-        overflow: hidden; /* Verhindert Überlauf */
-    }
-
-    header img {
-        width: 100vw; /* Bild nimmt die volle Viewport-Breite ein */
-        height: auto; /* Höhe passt sich proportional an */
-        object-fit: cover; /* Bild wird beschnitten, um das Seitenverhältnis beizubehalten */
-        margin-left: calc((100vw - 2560px) / -2); /* Zentriert das Bild horizontal */
     }
 }
 
