@@ -138,6 +138,45 @@ header img {
     margin: 0 auto;
 }
 
+/* Media Queries für mobile Geräte */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Bild und Boxen untereinander anordnen */
+        align-items: center; /* Zentriert die Boxen */
+    }
+
+    .image-section {
+        width: 100%; /* Bild nimmt die volle Breite ein */
+        margin-bottom: 20px; /* Abstand nach unten */
+    }
+
+    .content-section {
+        width: 100%; /* Volle Breite für die Boxen */
+        align-items: center; /* Zentriert die Boxen */
+    }
+
+    .box {
+        width: 90%; /* Boxen nehmen 90% der Breite ein */
+        margin-bottom: 10px; /* Abstand zwischen den Boxen */
+    }
+
+    .video-section iframe {
+        height: 200px; /* Höhe für Mobilgeräte */
+    }
+
+    header {
+        height: auto; /* Höhe anpassen, um das Bild proportional zu skalieren */
+        overflow: hidden; /* Verhindert Überlauf */
+    }
+
+    header img {
+        width: 100vw; /* Bild nimmt die volle Viewport-Breite ein */
+        height: auto; /* Höhe passt sich proportional an */
+        object-fit: cover; /* Bild wird beschnitten, um das Seitenverhältnis beizubehalten */
+        margin-left: calc((100vw - 2560px) / -2); /* Zentriert das Bild horizontal */
+    }
+}
+
 /* Footer */
 footer {
     position: relative;
@@ -305,43 +344,4 @@ footer img {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Media Queries für mobile Geräte */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Bild und Boxen untereinander anordnen */
-        align-items: center; /* Zentriert die Boxen */
-    }
-
-    .image-section {
-        width: 100%; /* Bild nimmt die volle Breite ein */
-        margin-bottom: 20px; /* Abstand nach unten */
-    }
-
-    .content-section {
-        width: 100%; /* Volle Breite für die Boxen */
-        align-items: center; /* Zentriert die Boxen */
-    }
-
-    .box {
-        width: 90%; /* Boxen nehmen 90% der Breite ein */
-        margin-bottom: 10px; /* Abstand zwischen den Boxen */
-    }
-
-    .video-section iframe {
-        height: 200px; /* Höhe für Mobilgeräte */
-    }
-
-    header {
-        height: 360px; /* Beibehaltung der Originalhöhe */
-        overflow: hidden; /* Verhindert Überlauf */
-    }
-
-    header img {
-        width: 100vw; /* Bild nimmt die volle Viewport-Breite ein */
-        height: 360px; /* Beibehaltung der Originalhöhe */
-        object-fit: cover; /* Bild wird beschnitten, um das Seitenverhältnis beizubehalten */
-        margin-left: calc((100vw - 2560px) / -2); /* Zentriert das Bild horizontal */
-    }
 }
