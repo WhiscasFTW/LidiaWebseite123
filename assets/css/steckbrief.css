@@ -66,21 +66,21 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Farben für die Boxen */
 .box1 {
-    background-color: #4A6B3D; /* Dunkles Moosgrün */
+    background: linear-gradient(135deg, #4A6B3D, #3A5A2D); /* Dunkles Moosgrün mit Gradient */
 }
 
 .box2 {
-    background-color: #8B4513; /* Tiefes Terrakotta */
+    background: linear-gradient(135deg, #8B4513, #6B3510); /* Tiefes Terrakotta mit Gradient */
 }
 
 .box3 {
-    background-color: #2F4F4F; /* Dunkles Schiefergrau */
+    background: linear-gradient(135deg, #2F4F4F, #1F3F3F); /* Dunkles Schiefergrau mit Gradient */
 }
 
 .box4 {
-    background-color: #8B7355; /* Dunkles Beige-Braun */
+    background: linear-gradient(135deg, #8B7355, #6B5335); /* Dunkles Beige-Braun mit Gradient */
+
 }
 
 .hidden-text {
