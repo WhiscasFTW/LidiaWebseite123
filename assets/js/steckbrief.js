@@ -15,3 +15,8 @@ window.onload = function() {
     firstBoxText.style.opacity = 1;
     firstBoxText.style.maxHeight = firstBoxText.scrollHeight + "px";
 };
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('click', () => {
+        box.classList.toggle('active');
+    });
+});
