@@ -11,8 +11,8 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Erlaubt das Umbruch der Boxen auf kleineren Bildschirmen */
-    justify-content: center; /* Zentriert die Boxen */
+    flex-wrap: nowrap; /* Verhindert, dass die Boxen umbrechen */
+    justify-content: flex-start; /* Elemente linksbündig ausrichten */
     width: 90%;
     max-width: 1200px;
     margin: 20px auto;
@@ -47,7 +47,6 @@ body {
 }
 
 .box {
-    flex: 1 1 calc(25% - 40px); /* Flexibles Layout mit 4 Boxen pro Reihe */
     padding: 15px;
     cursor: pointer;
     border-radius: 10px;
@@ -60,7 +59,7 @@ body {
 
 .box h2 {
     margin: 0;
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive Schriftgröße */
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* Responsive Schriftgröße */
 }
 
 .box:hover {
@@ -117,53 +116,12 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatteneffekt beim Hover */
 }
 
-@media (max-width: 1024px) {
-    .box {
-        flex: 1 1 calc(50% - 40px); /* 2 Boxen pro Reihe auf Tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Bild und Boxen untereinander anordnen */
-    }
-
-    .image-section {
-        width: 100%; /* Bild nimmt die volle Breite ein */
-        margin-bottom: 20px; /* Abstand nach unten */
-    }
-
-    .box {
-        flex: 1 1 100%; /* 1 Box pro Reihe auf Mobilgeräten */
-    }
-
-    .video-section iframe {
-        height: 300px; /* Höhe für Tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .video-section iframe {
-        height: 200px; /* Höhe für Mobilgeräte */
-    }
-}
-
-/* Allgemeines Layout */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    overflow-y: auto;
-    background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
-}
-
-/* Header */
+/* Header-Anpassungen */
 header {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     background-color: black;
     margin-top: -10px;
     margin-bottom: 0;
@@ -173,17 +131,7 @@ header img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-@media (max-width: 768px) {
-    header {
-        height: auto; /* Feste Höhe entfernen */
-        padding: 5px 0; /* Padding reduzieren */
-    }
-
-    header img {
-        height: auto; /* Bildhöhe flexibel halten */
-    }
+    margin: 0 auto;
 }
 
 /* Footer */
@@ -353,4 +301,38 @@ footer img {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Media Queries für mobile Geräte */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Bild und Boxen untereinander anordnen */
+        align-items: center; /* Zentriert die Boxen */
+    }
+
+    .image-section {
+        width: 100%; /* Bild nimmt die volle Breite ein */
+        margin-bottom: 20px; /* Abstand nach unten */
+    }
+
+    .content-section {
+        width: 100%; /* Volle Breite für die Boxen */
+    }
+
+    .box {
+        width: 100%; /* Boxen nehmen die volle Breite ein */
+        margin-bottom: 10px; /* Abstand zwischen den Boxen */
+    }
+
+    .video-section iframe {
+        height: 200px; /* Höhe für Mobilgeräte */
+    }
+
+    header {
+        padding: 10px 0; /* Weniger Padding für den Header */
+    }
+
+    header img {
+        width: 80%; /* Bild etwas kleiner auf Mobilgeräten */
+    }
 }
