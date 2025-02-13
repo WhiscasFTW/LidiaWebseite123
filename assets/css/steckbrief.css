@@ -53,7 +53,7 @@ body {
     text-align: center;
     will-change: transform, box-shadow;
     border: 1px solid rgba(255, 255, 255, 0.1); /* Light border for contrast */
-    color: #1a1a1a; /* Dark text color for better readability */
+    color: #ffffff; /* White text color for better readability */
 }
 
 .box h2 {
@@ -68,19 +68,19 @@ body {
 
 /* Farben für die Boxen */
 .box1 {
-    background-color: #40E0D0; /* Türkis */
+    background-color: #4A6B3D; /* Dunkles Moosgrün */
 }
 
 .box2 {
-    background-color: #FF6F61; /* Korallenrot */
+    background-color: #8B4513; /* Tiefes Terrakotta */
 }
 
 .box3 {
-    background-color: #FFD700; /* Sonnengelb */
+    background-color: #2F4F4F; /* Dunkles Schiefergrau */
 }
 
 .box4 {
-    background-color: #9370DB; /* Lila */
+    background-color: #8B7355; /* Dunkles Beige-Braun */
 }
 
 .hidden-text {
