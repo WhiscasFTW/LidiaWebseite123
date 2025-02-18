@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #222; /* Dunklerer Hintergrund */
+    color: #fff; /* Textfarbe anpassen */
 }
 
 .slideshow-container {
@@ -17,13 +19,17 @@ body {
     max-width: 1200px;
     margin: 20px 0;
     overflow: hidden;
+    border-radius: 15px; /* Abgerundete Ecken */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Modernerer Schatten */
+    background-color: #333; /* Sanfterer Hintergrund für Boxen */
 }
 
 .slideshow h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #f5f5f5;
+    font-weight: bold;
 }
 
 .slides {
@@ -39,33 +45,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .slide img {
     height: 100%;
     width: auto;
     max-width: 100%;
-    object-fit: contain;
-    cursor: pointer;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Weiche Animation */
+}
+
+.slide:hover img {
+    transform: scale(1.05); /* Leichter Zoom-Effekt */
 }
 
 .info {
-    display: none;
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6); /* Dunklerer Text-Hintergrund */
     color: white;
     padding: 10px;
     border-radius: 5px;
-}
-
-.slide.transparent img {
-    opacity: 0.5;
+    font-size: 16px;
+    display: none;
+    transition: opacity 0.3s ease;
 }
 
 .slide.transparent .info {
     display: block;
+    opacity: 1;
 }
 
 .prev, .next {
@@ -77,21 +88,61 @@ body {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.6s ease, background-color 0.3s ease; /* Smooth Fade und Background Transition */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    opacity: 0.7;
 }
 
 .prev {
-    left: 0;
+    left: 20px;
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 20px;
 }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1; /* Dezentere Hover-Effekte */
+}
+
+@media (max-width: 768px) {
+    .slideshow {
+        width: 90%;
+    }
+
+    .slide {
+        height: 400px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .prev, .next {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .slide img {
+        object-fit: contain; /* Bild bleibt auf mobilen Geräten sichtbar */
+    }
+
+    .slideshow-container {
+        overflow: hidden;
+    }
+}
+
+/* Zoom-Effekt auf mobilen Geräten */
+@media (max-width: 768px) {
+    .slide img {
+        object-fit: contain; /* Dadurch bleibt das Bild im mobilen Bereich vollständig sichtbar */
+        cursor: zoom-in; /* Zeigt an, dass das Bild gezoomt werden kann */
+    }
+
+    .slide:hover img {
+        transform: scale(1.1); /* Moderater Zoom-Effekt auf mobilem Bild */
+    }
 }
