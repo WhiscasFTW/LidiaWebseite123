@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const collageButton = document.querySelector('.collage-button');
     const collageContainer = document.querySelector('.collage-container');
 
-    // Slide-Funktion
+    // Swipe-Funktion für mobile Geräte
     slideshows.forEach(slideshow => {
         const slidesContainer = slideshow.querySelector('.slides');
         const slides = slideshow.querySelectorAll('.slide');
@@ -41,6 +41,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 const info = slide.querySelector('.info');
                 info.style.display = info.style.display === 'block' ? 'none' : 'block';
             });
+        });
+
+        // Swipe-Events für mobile Version
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slidesContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        slidesContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX > touchEndX) {
+                if (currentIndex < slides.length - 1) {
+                    showSlide(currentIndex + 1);
+                }
+            } else if (touchStartX < touchEndX) {
+                if (currentIndex > 0) {
+                    showSlide(currentIndex - 1);
+                }
+            }
         });
 
         updateButtons();
