@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const collageButton = document.querySelector('.collage-button');
     const collageContainer = document.querySelector('.collage-container');
 
-    // Swipe-Funktion für mobile Geräte
     slideshows.forEach(slideshow => {
         const slidesContainer = slideshow.querySelector('.slides');
         const slides = slideshow.querySelectorAll('.slide');
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Swipe-Events für mobile Version
+        // Swipe für mobile Geräte
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Collage-Container schließen, wenn auf das Hintergrund geklickt wird
+    // Collage-Container schließen
     collageContainer.addEventListener('click', () => {
         collageContainer.classList.remove('active');
     });
