@@ -2,15 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #222; /* Dunklerer Hintergrund */
-    color: #fff; /* Textfarbe anpassen */
+    background-color: #222;
+    color: #fff;
 }
 
 .slideshow-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Abstand zwischen den Rubriken */
+    gap: 40px;
 }
 
 .slideshow {
@@ -19,9 +19,10 @@ body {
     max-width: 1200px;
     margin: 20px 0;
     overflow: hidden;
-    border-radius: 15px; /* Abgerundete Ecken */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Modernerer Schatten */
-    background-color: #333; /* Sanfterer Hintergrund für Boxen */
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    background-color: #333;
+    padding: 20px; /* Lockerer Hintergrundabstand */
 }
 
 .slideshow h2 {
@@ -46,7 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 15px; /* Abgerundete Ecken für die Bilder */
+    border-radius: 15px;
 }
 
 .slide img {
@@ -54,19 +55,19 @@ body {
     width: auto;
     max-width: 100%;
     object-fit: cover;
-    border-radius: 15px; /* Abgerundete Ecken für Bilder */
-    transition: transform 0.3s ease; /* Weiche Animation */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
 }
 
 .slide:hover img {
-    transform: scale(1.03); /* Subtiler Zoom-Effekt */
+    transform: scale(1.03);
 }
 
 .info {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Dunklerer Text-Hintergrund */
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -89,7 +90,7 @@ body {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: opacity 0.6s ease, background-color 0.3s ease; /* Smooth Fade und Background Transition */
+    transition: opacity 0.6s ease, background-color 0.3s ease;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
@@ -106,7 +107,7 @@ body {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    opacity: 1; /* Dezentere Hover-Effekte */
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -128,7 +129,7 @@ body {
     }
 
     .slide img {
-        object-fit: contain; /* Bild bleibt auf mobilen Geräten sichtbar */
+        object-fit: contain;
     }
 
     .slideshow-container {
@@ -136,14 +137,57 @@ body {
     }
 }
 
-/* Zoom-Effekt auf mobilen Geräten */
+/* Zoom für mobile Version */
 @media (max-width: 768px) {
     .slide img {
-        object-fit: contain; /* Dadurch bleibt das Bild im mobilen Bereich vollständig sichtbar */
-        cursor: zoom-in; /* Zeigt an, dass das Bild gezoomt werden kann */
+        object-fit: contain;
+        cursor: zoom-in;
     }
 
     .slide:hover img {
-        transform: scale(1.1); /* Moderater Zoom-Effekt auf mobilem Bild */
+        transform: scale(1.1);
     }
+}
+
+/* Button für Collage */
+.collage-button {
+    padding: 12px 24px;
+    background-color: #444;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+.collage-button:hover {
+    background-color: #666;
+}
+
+.collage-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.collage-container img {
+    width: 80%;
+    max-width: 1200px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.collage-container.active {
+    display: flex;
 }
