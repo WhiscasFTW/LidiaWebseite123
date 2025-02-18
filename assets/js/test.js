@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function showSlide(index) {
             const offset = -index * 100;
-            slidesContainer.style.transform = translateX(${offset}%);
+            slidesContainer.style.transform = `translateX(${offset}%)`;
             currentIndex = index;
             updateButtons();
         }
