@@ -35,7 +35,7 @@ body {
 
 .slides {
     display: flex;
-    transition: transform 0.7s ease-out; /* Sanftere Swipe-Animation */
+    transition: transform 1.2s ease-out; /* Sanftere Swipe-Animation */
 }
 
 .slide {
