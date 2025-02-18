@@ -22,7 +22,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     background-color: #333;
-    padding: 20px; /* Lockerer Hintergrundabstand */
+    padding: 20px;
 }
 
 .slideshow h2 {
@@ -110,6 +110,7 @@ body {
     opacity: 1;
 }
 
+/* Mobile Anpassungen */
 @media (max-width: 768px) {
     .slideshow {
         width: 90%;
@@ -130,26 +131,31 @@ body {
 
     .slide img {
         object-fit: contain;
+        cursor: zoom-in;
+        height: 80%;
+        max-width: 90%;
+    }
+
+    /* Größere Darstellung der Bilder auf mobilen Geräten */
+    .slide img {
+        max-width: 100%;
+        height: auto;
     }
 
     .slideshow-container {
         overflow: hidden;
     }
-}
 
-/* Zoom für mobile Version */
-@media (max-width: 768px) {
-    .slide img {
-        object-fit: contain;
-        cursor: zoom-in;
+    .prev, .next {
+        visibility: hidden;
     }
 
-    .slide:hover img {
-        transform: scale(1.1);
+    .slideshow:hover .prev, .slideshow:hover .next {
+        visibility: visible;
     }
 }
 
-/* Button für Collage */
+/* Collage-Button */
 .collage-button {
     padding: 12px 24px;
     background-color: #444;
@@ -168,6 +174,7 @@ body {
     background-color: #666;
 }
 
+/* Collage-Container */
 .collage-container {
     display: none;
     position: fixed;
