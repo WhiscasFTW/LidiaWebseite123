@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const slideshows = document.querySelectorAll('.slideshow');
+    const collageButton = document.querySelector('.collage-button');
+    const collageContainer = document.querySelector('.collage-container');
 
+    // Slide-Funktion
     slideshows.forEach(slideshow => {
         const slidesContainer = slideshow.querySelector('.slides');
         const slides = slideshow.querySelectorAll('.slide');
@@ -41,5 +44,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         updateButtons();
+    });
+
+    // Collage-Button-Funktion
+    collageButton.addEventListener('click', function() {
+        collageContainer.classList.toggle('active');
+        const images = document.querySelectorAll('.slideshow img');
+        collageContainer.innerHTML = ''; // Reset Collage Container
+        images.forEach(img => {
+            const clone = img.cloneNode();
+            collageContainer.appendChild(clone);
+        });
+    });
+
+    // Collage-Container schließen, wenn auf das Hintergrund geklickt wird
+    collageContainer.addEventListener('click', () => {
+        collageContainer.classList.remove('active');
     });
 });
