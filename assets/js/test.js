@@ -38,5 +38,19 @@ document.addEventListener('DOMContentLoaded', function () {
         updateButtons();
     });
 
+    // Collage modal functionality
     collageButton.addEventListener('click', () => {
-        collageModal.classList
+        collageModal.classList.add('open');
+    });
+
+    closeModal.addEventListener('click', () => {
+        collageModal.classList.remove('open');
+    });
+
+    // Close modal if clicked outside of it
+    window.addEventListener('click', (e) => {
+        if (e.target === collageModal) {
+            collageModal.classList.remove('open');
+        }
+    });
+});
