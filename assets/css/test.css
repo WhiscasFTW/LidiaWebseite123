@@ -46,7 +46,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 15px; /* Abgerundete Ecken für die Bilder */
 }
 
 .slide img {
@@ -54,11 +54,12 @@ body {
     width: auto;
     max-width: 100%;
     object-fit: cover;
+    border-radius: 15px; /* Abgerundete Ecken für Bilder */
     transition: transform 0.3s ease; /* Weiche Animation */
 }
 
 .slide:hover img {
-    transform: scale(1.05); /* Leichter Zoom-Effekt */
+    transform: scale(1.03); /* Subtiler Zoom-Effekt */
 }
 
 .info {
