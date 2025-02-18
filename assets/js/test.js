@@ -1,8 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const slideshows = document.querySelectorAll('.slideshow');
-    const collageButton = document.getElementById('collage-button');
-    const collageModal = document.getElementById('collage-modal');
-    const closeModal = document.getElementById('close-modal');
 
     slideshows.forEach(slideshow => {
         const slidesContainer = slideshow.querySelector('.slides');
@@ -18,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function showSlide(index) {
             const offset = -index * 100;
-            slidesContainer.style.transform = `translateX(${offset}%)`;
+            slidesContainer.style.transform = translateX(${offset}%);
             currentIndex = index;
             updateButtons();
         }
@@ -35,22 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                slide.classList.toggle('transparent');
+                const info = slide.querySelector('.info');
+                info.style.display = info.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
         updateButtons();
-    });
-
-    // Collage modal functionality
-    collageButton.addEventListener('click', () => {
-        collageModal.classList.add('open');
-    });
-
-    closeModal.addEventListener('click', () => {
-        collageModal.classList.remove('open');
-    });
-
-    // Close modal if clicked outside of it
-    window.addEventListener('click', (e) => {
-        if (e.target === collageModal) {
-            collageModal.classList.remove('open');
-        }
     });
 });
