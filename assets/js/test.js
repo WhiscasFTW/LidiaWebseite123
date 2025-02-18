@@ -1,5 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const slideshows = document.querySelectorAll('.slideshow');
+    const collageButton = document.getElementById('collage-button');
+    const collageModal = document.getElementById('collage-modal');
+    const closeModal = document.getElementById('close-modal');
 
     slideshows.forEach(slideshow => {
         const slidesContainer = slideshow.querySelector('.slides');
@@ -32,14 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        slides.forEach((slide, index) => {
-            slide.addEventListener('click', () => {
-                slide.classList.toggle('transparent');
-                const info = slide.querySelector('.info');
-                info.style.display = info.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
         updateButtons();
     });
-});
+
+    collageButton.addEventListener('click', () => {
+        collageModal.classList
