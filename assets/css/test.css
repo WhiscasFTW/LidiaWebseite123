@@ -64,7 +64,7 @@ body {
     filter: brightness(1.2); /* Hellt das Bild bei Hover auf */
 }
 
-/* Styling für die Info-Boxen (keine abgerundeten Ecken) */
+/* Styling für die Info-Boxen */
 .info {
     position: absolute;
     bottom: 0;
@@ -76,7 +76,7 @@ body {
     font-size: 18px;
     display: none;
     text-align: center;
-    border-radius: 0; /* Keine abgerundeten Ecken */
+    border-radius: 0 0 10px 10px;
 }
 
 /* Buttons zum Navigieren */
@@ -90,7 +90,7 @@ body {
     font-weight: bold;
     font-size: 18px;
     transition: background-color 0.5s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 0px 0px 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
