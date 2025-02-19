@@ -10,18 +10,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const nextButton = slideshow.querySelector('.next');
         let currentIndex = 0;
 
+        // Funktion zum Ausblenden der Infobox
+        function hideInfoBoxes() {
+            slides.forEach(slide => {
+                const info = slide.querySelector('.info');
+                if (info) {
+                    info.style.opacity = '0'; // Infobox ausblenden
+                }
+            });
+        }
+
+        // Funktion zum Aktualisieren der Navigation-Buttons
         function updateButtons() {
             prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
             nextButton.style.display = currentIndex === slides.length - 1 ? 'none' : 'block';
         }
 
+        // Funktion zum Anzeigen eines bestimmten Slides
         function showSlide(index) {
+            hideInfoBoxes(); // Infoboxen ausblenden, bevor der Slide gewechselt wird
             const offset = -index * 100;
             slidesContainer.style.transform = `translateX(${offset}%)`;
             currentIndex = index;
             updateButtons();
         }
 
+        // Event-Listener für die Navigation-Buttons
         prevButton.addEventListener('click', () => {
             if (currentIndex > 0) {
                 showSlide(currentIndex - 1);
@@ -34,12 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Hover-Effekt für die Infobox
         slides.forEach((slide, index) => {
-            slide.addEventListener('click', () => {
-                slide.classList.toggle('transparent');
-                const info = slide.querySelector('.info');
-                info.style.display = info.style.display === 'block' ? 'none' : 'block';
-            });
+            const info = slide.querySelector('.info');
+            if (info) {
+                slide.addEventListener('mouseenter', () => {
+                    info.style.opacity = '1'; // Infobox einblenden
+                });
+
+                slide.addEventListener('mouseleave', () => {
+                    info.style.opacity = '0'; // Infobox ausblenden
+                });
+            }
         });
 
         // Swipe für mobile Geräte
