@@ -73,15 +73,16 @@ body {
     color: white;
     padding: 20px;
     font-size: 24px;
-    display: none;
     text-align: center;
     border-radius: 0px;
     z-index: 999;
-    width: 100%; /* Infobox nur unten im Bild */
+    width: 100%;
+    opacity: 0; /* Standardmäßig unsichtbar */
+    transition: opacity 0.3s ease; /* Sanfter Übergang */
 }
 
-.slide.transparent .info {
-    display: block;
+.slide:hover .info {
+    opacity: 1; /* Infobox wird beim Hover sichtbar */
 }
 
 .prev, .next {
