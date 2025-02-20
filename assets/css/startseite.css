@@ -24,31 +24,32 @@ main {
   z-index: 1;
 }
 
-/* Stile für die zentrierte Box */
 .welcome-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9); /* Weißer Hintergrund mit Transparenz */
+  background-color: rgba(50, 50, 50, 0.9); /* Dunkler Hintergrund für besseren Kontrast */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 600px;
   width: 90%;
+  color: #fff; /* Weiße Schrift für guten Kontrast zum dunklen Hintergrund */
 }
 
 .welcome-box h1 {
   font-size: 32px;
   margin-bottom: 15px;
-  color: #333;
+  color: #ffcc00; /* Helle, warme Farbe für die Überschrift, die auffällt */
 }
 
 .welcome-box p {
   font-size: 18px;
-  color: #555;
+  color: #ddd; /* Helle Schrift für den Text, gut lesbar und nicht zu kontrastreich */
 }
+
 
 /* Sidebar */
 .sidebar {
