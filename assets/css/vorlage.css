@@ -1,142 +1,277 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Allgemeines Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  overflow-y: auto;
-  background-color: #000000; /* Schwarzer Hintergrund für den gesamten Body */
+/* Allgemeine Stile */
+body {
+    font-family: Poppins;
+    margin: 0;
+    background-color: #010101;
+    color: #eee;
+    max-width: 100vw; /* Maximale Breite auf den Viewport begrenzen */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 /* Header */
 header {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 10px 0;
-  background-color: black;
-  margin-top: -10px;
-  margin-bottom: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px; /* Höhe des Headers */
+    background-color: black;
+    z-index: 2;
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Main-Bereich */
 main {
-  position: relative;
-  z-index: 0;
-  margin-top: 0;
-  background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
-  padding-bottom: 0;
-  padding: 20px;
-  max-width: 2560px; /* Begrenze die Breite auf 2560px */
-  margin: 0 auto; /* Zentriere den Container */
+    position: relative;
+    margin-top: 60px; /* Abstand von 60px für mehr Platz unter dem Header */
+    padding: 20px;
+    width: 100%;
+    max-width: 2560px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Slider */
+.slider {
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+
+.slider .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #000 20%, transparent);
+}
+
+.slider .list .item .content {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.slider .list .item .content p:nth-child(1) {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content h2 {
+    font-size: 100px;
+    margin: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+/* Pfeile */
+.arrows {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+
+.arrows button {
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: black;
+}
+
+/* Thumbnails */
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+
+.thumbnail::-webkit-scrollbar {
+    width: 0;
+}
+
+.thumbnail .item {
+    width: 150px;
+    height: 220px;
+    filter: brightness(.3);
+    transition: .5s;
+    flex-shrink: 0;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .item.active {
+    filter: brightness(0.6);
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+.thumbnail .item:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    transition: transform 0.6s ease-out, filter 0.6s ease-out;
 }
 
 /* Footer */
 footer {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  padding: 0px 0;
-  background-color: black;
-  z-index: 2;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 51px;
+    width: 100%;
+    text-align: center;
+    padding: 0px 0;
+    background-color: black;
+    z-index: 2;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
 }
 
 footer .footer-content {
-  position: absolute;
-  z-index: 1;
+    position: absolute;
+    z-index: 1;
 }
 
 footer .footer-content p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-  margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    margin: 0;
 }
 
 footer .footer-content a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  margin: 0 5px;
-  transition: color 0.3s ease, transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer .footer-content a:hover {
-  color: rgba(255, 255, 255, 1);
-  transform: translateY(-2px);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 footer img {
-  width: 100%;
-  height: 51px;
-  object-fit: cover;
-  display: block;
-  margin-top: 0px;
+    width: 100%;
+    height: 51px;
+    object-fit: cover;
+    display: block;
+    margin-top: 0px;
 }
 
 /* Sidebar */
 .sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  overflow-x: hidden;
-  transition: left 1s ease;
-  z-index: 10;
-  padding-top: 20px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow-x: hidden;
+    transition: left 1s ease;
+    z-index: 1100;
+    padding-top: 20px;
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sidebar.open {
-  left: 0;
+    left: 0;
 }
 
-/* Links in der Sidebar */
-.sidebar-links {
-  padding-bottom: 20px;
-}
-
-.sidebar a {
-  padding: 10px 10px 10px 32px;
-  text-decoration: none;
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.85);
-  display: block;
-  transition: transform 1s ease, opacity 1s ease;
-  font-family: 'Pacifico', cursive;
-  background-color: rgba(255, 255, 255, 0.15);
-  margin: 5px 10px;
-  border-radius: 5px;
-  position: relative;
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.sidebar.open a {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 1);
-  transform: translateX(5px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+.sidebar .signature {
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 20px;
 }
 
 /* Signatur der Künstlerin */
@@ -160,76 +295,97 @@ footer img {
   filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-/* Button zum Öffnen und Schließen der Sidebar */
+/* Sidebar-Links */
+.sidebar-links {
+    padding-bottom: 20px;
+}
+
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    transition: transform 1s ease, opacity 1s ease;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.sidebar.open a {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Toggle-Button für Sidebar */
 .toggle-button {
-  font-size: 96px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  z-index: 3;
-  transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
-  animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
-  padding: 10px;
+    font-size: 96px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 1200;
+    transition: left 1s ease, transform 1s ease, color 1.5s ease-in-out;
+    animation: breathe 2s ease-in-out, wobble 4s infinite ease-in-out;
+    padding: 10px;
 }
 
 .toggle-button.open {
-  left: 265px;
-  transform: translateY(-50%) rotate(90deg);
+    left: 265px;
+    transform: translateY(-50%) rotate(90deg);
 }
 
 .toggle-button:hover {
-  transform: translateY(-50%) scale(1.1);
-  color: rgba(255, 255, 255, 1);
-}
-
-/* Atmungsanimation für den Button */
-@keyframes breathe {
-  0% { color: rgba(255, 255, 255, 0.8); }
-  50% { color: rgba(255, 255, 255, 0.6); }
-  100% { color: rgba(255, 255, 255, 0.8); }
-}
-
-/* Wackel-Animation für den Button */
-@keyframes wobble {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
+    transform: translateY(-50%) scale(1.1);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* Animationen */
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
-/* Media Query für mobile Geräte */
+/* Mobile Anpassungen */
 @media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
+    /* Entfernen des Bereichs zwischen Footer und Main */
+    main {
+        margin-bottom: 0 !important; /* Entfernt den Abstand zwischen Main und Footer */
+        padding-bottom: 0 !important; /* Entfernt zusätzliches Padding */
+    }
 
-  header img {
-    height: 100%;
-    object-fit: cover;
-  }
+    footer {
+        margin-top: 0 !important; /* Entfernt den Abstand zwischen Footer und dem Main-Bereich */
+        padding-top: 0 !important; /* Entfernt Padding im Footer */
+    }
+
+    /* Verhindern von horizontalem Overflow */
+    body, html {
+        overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    }
+
+    /* Header auf mobilen Geräten */
+    header {
+        height: 200px;
+    }
+
+    main {
+        margin-top: 200px;
+    }
 }
-
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
-  }
-}
-
