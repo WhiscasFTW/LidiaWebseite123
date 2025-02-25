@@ -1,17 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/vorlage.css">
+  <title>Webseite mit Sidebar und Slider</title>
+  <link rel="stylesheet" href="assets/css/meinewerke.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
-
     body, .sidebar-links a {
       font-family: sans-serif;
       font-size: 21px;
@@ -38,13 +34,61 @@
 
   <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-  <header>
-    <img src="assets/images/HeaderKontakt.png" alt="Header">
-  </header>
-  
-  <main>
- 
-  </main>
+  <!-- slider -->
+  <div class="slider">
+    <div class="list">
+      <div class="item active">
+        <img src="assets/images/MeineWerke/MainMenschen.png">
+        <div class="content">
+          <p></p>
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/images/MeineWerke/MainPorträts.png">
+        <div class="content">
+          <p></p>
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/images/MeineWerke/MainLandschaften.png">
+        <div class="content">
+          <p></p>
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="arrows">
+      <button id="prev"><</button>
+      <button id="next">></button>
+    </div>
+    <div class="thumbnail">
+      <div class="item active">
+        <img src="assets/images/MeineWerke/MainMenschen.png">
+        <div class="content">
+         Menschen
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/images/MeineWerke/MainPorträts.png">
+        <div class="content">
+          Porträts
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/images/MeineWerke/MainLandschaften.png">
+        <div class="content">
+         Landschaften
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main></main>
 
   <footer>
     <div class="footer-content">
@@ -53,7 +97,6 @@
     <img src="assets/images/Footer.jpg" alt="Footer Bild">
   </footer>
 
-  <script src="assets/js/vorlage.js" defer></script>
+  <script src="assets/js/meinewerke.js"></script>
 </body>
 </html>
-
