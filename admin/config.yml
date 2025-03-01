@@ -1,1 +1,16 @@
+backend:
+  name: git-gateway
+  branch: master  # Der Branch, den du verwendest
 
+media_folder: "assets/images"  # Der Ordner, in dem Bilder gespeichert werden
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name: "body", widget: "text" }
