@@ -17,6 +17,18 @@
             background-size: cover;
             background-position: center;
             height: 100vh; /* Das Bild wird die gesamte Höhe des Viewports abdecken */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .welcome-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            max-width: 80%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -41,7 +53,10 @@
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
     <main>
-        <!-- Das Bild ist nun als Hintergrund für den Main-Bereich gesetzt -->
+        <!-- Willkommensbox -->
+        <div class="welcome-box">
+            Willkommen auf der Webseite von Lidia Grön
+        </div>
     </main>
 </body>
 </html>
