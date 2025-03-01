@@ -1,115 +1,67 @@
-/* Import moderne Schriftart */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-/* Allgemeines Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden; /* Verhindert Scrollen, wenn Sidebar geöffnet */
-}
-
-/* Video-Hintergrund */
-#background-video {
+/* Hintergrundbild */
+.background-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -2;
+  background-image: url('assets/images/HintergrundStartseite.png'); /* Dein Bild */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Bild im Hintergrund */
 }
 
-/* Sicherstellen, dass der Rest des Inhalts vor dem Video angezeigt wird */
-main {
-  position: relative;
-  z-index: 1;
-}
-
-/* Moderne Welcome-Box mit Glas-Effekt */
-.welcome-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.15); /* Transparente Box */
-  backdrop-filter: blur(15px); /* Glass-Blur-Effekt */
-  -webkit-backdrop-filter: blur(15px);
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-width: 600px;
-  width: 90%;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.95);
-  animation: fadeInScale 1s ease-out forwards;
-}
-
-.welcome-box h1 {
-  font-size: 34px;
-  margin-bottom: 15px;
-  color: #ffcc00;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-.welcome-box p {
-  font-size: 18px;
-  color: #eee;
-  font-weight: 300;
-}
-
-/* Sidebar */
-.sidebar {
+/* Overlay - Zum Abdunkeln des Bildschirms, wenn Sidebar geöffnet */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar - Standardzustand und geöffnet */
+.sidebar {
   width: 250px;
+  height: 100%;
+  background-color: #222;
   position: fixed;
   top: 0;
   left: -250px;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  overflow-x: hidden;
-  transition: left 1s ease;
   z-index: 10;
-  padding-top: 20px;
+  transition: left 0.3s ease-in-out;
 }
 
-/* Sidebar im geöffneten Zustand */
 .sidebar.open {
   left: 0;
-  z-index: 15;
 }
 
 /* Links in der Sidebar */
 .sidebar-links {
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .sidebar a {
-  padding: 10px 10px 10px 32px;
+  padding: 10px;
   text-decoration: none;
   font-size: 22px;
   color: rgba(255, 255, 255, 0.85);
   display: block;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   font-family: 'Pacifico', cursive;
   background-color: rgba(255, 255, 255, 0.15);
   margin: 5px 10px;
   border-radius: 5px;
-  position: relative;
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.sidebar.open a {
-  transform: translateX(0);
-  opacity: 1;
 }
 
 .sidebar a:hover {
@@ -181,7 +133,27 @@ main {
   75% { transform: translateY(-50%) rotate(2deg); }
 }
 
-/* Einblend-Animation für die Welcome-Box */
+/* Begrüßungsbox */
+.welcome-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+  animation: fadeInScale 1s ease-out forwards;
+}
+
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -190,32 +162,5 @@ main {
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-/* Floating Animation */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
-}
-
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box {
-    width: 32%;
   }
 }
