@@ -1,48 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.querySelector('.loader');
+    const fullscreenContainer = document.querySelector('.fullscreen-container');
+    const button = document.querySelector('.intro-button');
+    const curtainButton = document.getElementById('openCurtain');
 
+    if (loader) loader.classList.add('hidden'); // Ladeanimation ausblenden
 
-// Funktion zum Öffnen/Schließen der Sidebar
-function toggleSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  var toggleButton = document.getElementById('toggleButton');
-  var overlay = document.getElementById('overlay');
+    setTimeout(() => {
+        if (fullscreenContainer) fullscreenContainer.classList.add('visible');
+    }, 500); // Fließender Übergang
 
-  // Sidebar und Button umschalten
-  sidebar.classList.toggle('open');
-  toggleButton.classList.toggle('open');
+    setTimeout(() => {
+        if (button) button.classList.add('visible');
+    }, 1000); // Button verzögert anzeigen
 
-  // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
-  overlay.classList.toggle('active');
+    if (curtainButton) {
+        curtainButton.addEventListener('click', function () {
+            const transition = document.createElement('div'); // Übergangselement
+            transition.classList.add('page-transition');
+            document.body.appendChild(transition);
 
-  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
-  toggleButton.style.animation = 'none'; // Animationen entfernen
-}
-
-// Beim Laden der Seite das Overlay ausblenden und entfernen
-window.onload = function () {
-  var overlay = document.getElementById('page-transition-overlay');
-  
-  // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
-  if (overlay) {
-    overlay.style.opacity = '0';
-
-    // Overlay nach 0 Sekunden vollständig entfernen
-    setTimeout(function () {
-      overlay.remove();
-    }, 0);
-  }
-};
-
-// Funktion für den Seitenwechsel ohne Übergangseffekt
-function navigateToPage(url) {
-  window.location.href = url;
-}
-
-// Event-Listener für alle Links, die zu einer neuen Seite führen
-document.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    if (link.href && !link.href.includes('javascript:')) {
-      event.preventDefault();
-      navigateToPage(link.href);
+            setTimeout(() => transition.classList.add('active'), 50); // Animation starten
+            setTimeout(() => window.location.href = 'startseite.html', 850); // Weiterleitung
+        });
     }
-  });
 });
