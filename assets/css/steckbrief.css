@@ -171,7 +171,7 @@ header img {
 
 /* Footer */
 footer {
-    position: relative;
+    position: fixed;
     width: 100%;
     text-align: center;
     padding: 0px 0;
