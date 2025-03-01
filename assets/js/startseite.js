@@ -1,105 +1,46 @@
+// Funktion zum Öffnen/Schließen der Sidebar
+function toggleSidebar() {
+  var sidebar = document.getElementById('sidebar');
+  var toggleButton = document.getElementById('toggleButton');
+  var overlay = document.getElementById('overlay');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const slideshows = document.querySelectorAll('.slideshow');
-    const collageButton = document.querySelector('.collage-button');
-    const collageContainer = document.querySelector('.collage-container');
+  // Sidebar und Button umschalten
+  sidebar.classList.toggle('open');
+  toggleButton.classList.toggle('open');
 
-    slideshows.forEach(slideshow => {
-        const slidesContainer = slideshow.querySelector('.slides');
-        const slides = slideshow.querySelectorAll('.slide');
-        const prevButton = slideshow.querySelector('.prev');
-        const nextButton = slideshow.querySelector('.next');
-        let currentIndex = 0;
+  // Overlay für den abgedunkelten Hintergrund ein- oder ausblenden
+  overlay.classList.toggle('active');
 
-        // Funktion zum Ausblenden der Infobox
-        function hideInfoBoxes() {
-            slides.forEach(slide => {
-                const info = slide.querySelector('.info');
-                if (info) {
-                    info.style.opacity = '0'; // Infobox ausblenden
-                }
-            });
-        }
+  // Animationen stoppen, nachdem der Button das erste Mal gedrückt wurde
+  toggleButton.style.animation = 'none'; // Animationen entfernen
+}
 
-        // Funktion zum Aktualisieren der Navigation-Buttons
-        function updateButtons() {
-            prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-            nextButton.style.display = currentIndex === slides.length - 1 ? 'none' : 'block';
-        }
+// Beim Laden der Seite das Overlay ausblenden und entfernen
+window.onload = function () {
+  var overlay = document.getElementById('page-transition-overlay');
+  
+  // Überprüfen, ob das Overlay vorhanden ist, und es korrekt entfernen
+  if (overlay) {
+    overlay.style.opacity = '0';
 
-        // Funktion zum Anzeigen eines bestimmten Slides
-        function showSlide(index) {
-            hideInfoBoxes(); // Infoboxen ausblenden, bevor der Slide gewechselt wird
-            const offset = -index * 100;
-            slidesContainer.style.transform = `translateX(${offset}%)`;
-            currentIndex = index;
-            updateButtons();
-        }
+    // Overlay nach 0 Sekunden vollständig entfernen
+    setTimeout(function () {
+      overlay.remove();
+    }, 0);
+  }
+};
 
-        // Event-Listener für die Navigation-Buttons
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                showSlide(currentIndex - 1);
-            }
-        });
+// Funktion für den Seitenwechsel ohne Übergangseffekt
+function navigateToPage(url) {
+  window.location.href = url;
+}
 
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < slides.length - 1) {
-                showSlide(currentIndex + 1);
-            }
-        });
-
-        // Hover-Effekt für die Infobox
-        slides.forEach((slide, index) => {
-            const info = slide.querySelector('.info');
-            if (info) {
-                slide.addEventListener('mouseenter', () => {
-                    info.style.opacity = '1'; // Infobox einblenden
-                });
-
-                slide.addEventListener('mouseleave', () => {
-                    info.style.opacity = '0'; // Infobox ausblenden
-                });
-            }
-        });
-
-        // Swipe für mobile Geräte
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        slidesContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        slidesContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX > touchEndX) {
-                if (currentIndex < slides.length - 1) {
-                    showSlide(currentIndex + 1);
-                }
-            } else if (touchStartX < touchEndX) {
-                if (currentIndex > 0) {
-                    showSlide(currentIndex - 1);
-                }
-            }
-        });
-
-        updateButtons();
-    });
-
-    // Collage-Button-Funktion
-    collageButton.addEventListener('click', function() {
-        collageContainer.classList.toggle('active');
-        const images = document.querySelectorAll('.slideshow img');
-        collageContainer.innerHTML = ''; // Reset Collage Container
-        images.forEach(img => {
-            const clone = img.cloneNode();
-            collageContainer.appendChild(clone);
-        });
-    });
-
-    // Collage-Container schließen
-    collageContainer.addEventListener('click', () => {
-        collageContainer.classList.remove('active');
-    });
+// Event-Listener für alle Links, die zu einer neuen Seite führen
+document.querySelectorAll('a').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    if (link.href && !link.href.includes('javascript:')) {
+      event.preventDefault();
+      navigateToPage(link.href);
+    }
+  });
 });
