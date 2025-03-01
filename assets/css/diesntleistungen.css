@@ -41,7 +41,7 @@ main {
 
 /* Footer */
 footer {
-    position: fixed;  /* Fixiert den Footer am unteren Rand */
+    position: relative;  /* Fixiert den Footer am unteren Rand */
     bottom: 0;        /* Setzt den Footer an den unteren Bildschirmrand */
     width: 100%;      /* Breite des Footers auf 100% setzen */
     text-align: center;
