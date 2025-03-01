@@ -14,14 +14,13 @@
   </style>
 </head>
 <body>
-  <!-- Hintergrundvideo -->
-  <video id="background-video" autoplay muted loop>
-    <source src="assets/images/HintergrundStartseite.png" type="video/mp4">
-    Ihr Browser unterstützt dieses Videoformat nicht.
-  </video>
+  <!-- Hintergrundbild -->
+  <div id="background-image" class="background-image">
+    <img src="assets/images/HintergrundStartseite.png" alt="Hintergrundbild">
+  </div>
 
   <!-- Overlay für die Sidebar -->
-  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+  <div id="overlay" class="overlay"></div>
 
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
@@ -39,7 +38,7 @@
   </div>
 
   <!-- Button zum Öffnen und Schließen der Sidebar -->
-  <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+  <div id="toggleButton" class="toggle-button"> &gt; </div>
 
   <!-- Begrüßungsbox -->
   <div id="welcome-box" class="welcome-box">
@@ -47,7 +46,7 @@
     <p>Entdecke die Kunst und Kreativität von Lidia Grön.</p>
   </div>
 
-  <!-- Hauptinhalt -->
+  <!-- Verlinkung zu startseite.js -->
   <script src="assets/js/startseite.js" defer></script>
 </body>
 </html>
