@@ -1,0 +1,15 @@
+{
+  "name": "dein-cms-projekt",
+  "version": "1.0.0",
+  "description": "Ein Projekt mit Decap CMS",
+  "scripts": {
+    "start": "npm run build",
+    "build": "echo 'Build-Prozess startet...'"
+  },
+  "dependencies": {
+    "decap-cms": "^2.0.0"
+  },
+  "devDependencies": {},
+  "author": "Dein Name",
+  "license": "MIT"
+}
