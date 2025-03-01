@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: WhiscasFTW/LidiaWebseite123  # Ersetze mit deinem GitHub-Repo
-  branch: main  # Falls du eine andere Branch nutzt, hier anpassen
+  name: git-gateway
+
 
 media_folder: "assets/images"  # Bilderordner für Uploads
 public_folder: "/assets/images"
