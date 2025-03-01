@@ -1,9 +1,12 @@
+/* Import moderne Schriftart */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* Allgemeines Layout */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow: hidden; /* Verhindert Scrollen, wenn Sidebar geöffnet */
 }
 
@@ -15,7 +18,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2; /* Video hinter alle anderen Inhalte legen */
+  z-index: -2;
 }
 
 /* Sicherstellen, dass der Rest des Inhalts vor dem Video angezeigt wird */
@@ -24,32 +27,42 @@ main {
   z-index: 1;
 }
 
+/* Moderne Welcome-Box mit Glas-Effekt */
 .welcome-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(50, 50, 50, 0.9); /* Dunkler Hintergrund für besseren Kontrast */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15); /* Transparente Box */
+  backdrop-filter: blur(15px); /* Glass-Blur-Effekt */
+  -webkit-backdrop-filter: blur(15px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 600px;
   width: 90%;
-  color: #fff; /* Weiße Schrift für guten Kontrast zum dunklen Hintergrund */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+  animation: fadeInScale 1s ease-out forwards;
 }
 
 .welcome-box h1 {
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 15px;
-  color: #ffcc00; /* Helle, warme Farbe für die Überschrift, die auffällt */
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .welcome-box p {
   font-size: 18px;
-  color: #ddd; /* Helle Schrift für den Text, gut lesbar und nicht zu kontrastreich */
+  color: #eee;
+  font-weight: 300;
 }
-
 
 /* Sidebar */
 .sidebar {
@@ -70,7 +83,7 @@ main {
 /* Sidebar im geöffneten Zustand */
 .sidebar.open {
   left: 0;
-  z-index: 15; /* Sidebar sollte im Vordergrund erscheinen */
+  z-index: 15;
 }
 
 /* Links in der Sidebar */
@@ -168,7 +181,19 @@ main {
   75% { transform: translateY(-50%) rotate(2deg); }
 }
 
-/* Animationen */
+/* Einblend-Animation für die Welcome-Box */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Floating Animation */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
