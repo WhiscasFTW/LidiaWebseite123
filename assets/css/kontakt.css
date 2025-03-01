@@ -162,17 +162,17 @@ header img {
 
 /* Footer */
 footer {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  padding: 0px 0;
-  background-color: black;
-  z-index: 2;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 51px;
+    position: fixed;  /* Fixiert den Footer am unteren Rand */
+    bottom: 0;        /* Setzt den Footer an den unteren Bildschirmrand */
+    width: 100%;      /* Breite des Footers auf 100% setzen */
+    text-align: center;
+    padding: 0px 0;
+    background-color: black;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
 }
 
 footer .footer-content {
