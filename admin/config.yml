@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: WhiscasFTW/LidiaWebseite123  # Ersetze mit deinem GitHub-Repo
+  branch: main  # Falls du eine andere Branch nutzt, hier anpassen
+
+media_folder: "assets/images"  # Bilderordner für Uploads
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Seiten"
+    files:
+      - label: "Index"
+        name: "index"
+        file: "index.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Startseite"
+        name: "startseite"
+        file: "startseite.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Steckbrief"
+        name: "steckbrief"
+        file: "steckbrief.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Meine Werke"
+        name: "meinewerke"
+        file: "meinewerke.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Dienstleistungen"
+        name: "dienstleistungen"
+        file: "dienstleistungen.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Kontakt"
+        name: "kontakt"
+        file: "kontakt.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+      - label: "Impressum"
+        name: "impressum"
+        file: "impressum.html"
+        fields:
+          - { label: "Inhalt", name: "body", widget: "markdown" }
