@@ -1,4 +1,3 @@
-
 /* Grundlegende Reset-Styles */
 * {
     margin: 0;
@@ -26,6 +25,17 @@ main {
     justify-content: center; /* Zentriert die Boxen horizontal */
     align-items: center; /* Zentriert die Boxen vertikal */
     gap: 20px; /* Abstand zwischen den Boxen */
+}
+
+/* Hintergrundvideo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Dehnt das Video, um den gesamten Bildschirm zu füllen */
+    z-index: -1; /* Damit der Inhalt vor dem Video bleibt */
 }
 
 /* Container für die Boxen */
@@ -316,45 +326,11 @@ footer img {
   100% { color: rgba(255, 255, 255, 0.8); }
 }
 
-/* Wackel-Animation für den Button */
+/* Wackelanimation für den Button */
 @keyframes wobble {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-2deg); }
-  75% { transform: translateY(-50%) rotate(2deg); }
-}
-
-/* Animationen */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Media Query für mobile Geräte */
-@media screen and (max-width: 768px) {
-  header {
-    height: 200px;
-    padding: 0;
-  }
-
-  header img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  main {
-    flex-direction: column; /* Boxen untereinander anordnen */
-    padding: 10px;
-    justify-content: center; /* Vertikal zentrieren */
-  }
-
-  .box {
-    padding: 20px; /* Weniger Padding auf mobilen Geräten */
-    width: 90%; /* Boxen auf mobilen Geräten vergrößern */
-    max-width: none; /* Maximale Breite für mobile Geräte entfernen */
-  }
-
-  .container {
-    gap: 20px; /* Kleinere Abstände zwischen den Boxen */
-  }
+  0% { transform: translateY(-50%) rotate(0); }
+  25% { transform: translateY(-50%) rotate(5deg); }
+  50% { transform: translateY(-50%) rotate(0); }
+  75% { transform: translateY(-50%) rotate(-5deg); }
+  100% { transform: translateY(-50%) rotate(0); }
 }
