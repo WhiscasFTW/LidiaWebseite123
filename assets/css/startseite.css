@@ -114,3 +114,30 @@
   75% { transform: translateY(-50%) rotate(-5deg); }
   100% { transform: translateY(-50%) rotate(0); }
 }
+
+/* Video Container */
+.video-container {
+  margin-top: 60px; /* Damit es nicht direkt unter dem Header ist */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Container auf kleinen Bildschirmen */
+@media (max-width: 768px) {
+  .video-container iframe {
+    height: 200px;
+  }
+}
