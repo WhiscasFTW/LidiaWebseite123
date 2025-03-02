@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -12,58 +14,9 @@
             font-family: sans-serif;
             font-size: 21px;
         }
-        
-        /* Video-Hintergrund */
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        main {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Abdunkelung des Hintergrunds */
-        main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .welcome-box {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 28px;
-            max-width: 80%;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-        }
     </style>
 </head>
 <body>
-    <!-- Video-Hintergrund -->
-    <video autoplay loop muted playsinline class="background-video">
-        <source src="assets/videos/AnimierterHintergrund.mp4" type="video/mp4">
-        Dein Browser unterstützt kein HTML5-Video.
-    </video>
-
     <!-- Overlay für die Sidebar -->
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
@@ -83,11 +36,49 @@
 
     <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
+    <header>
+        <img src="assets/images/HeaderKontakt.png" alt="Header">
+    </header>
+    
     <main>
-        <!-- Willkommensbox -->
-        <div class="welcome-box">
-            Willkommen auf der Webseite von Lidia Grön
+        <div class="container">
+            <!-- Kontaktformular -->
+            <section class="box contact-form">
+                <h2>Kontaktformular</h2>
+                <form action="#" method="POST" class="form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" value="lkiel69@aol.de" required>
+                    
+                    <label for="subject">Betreff</label>
+                    <input type="text" id="subject" name="subject" required>
+                    
+                    <label for="message">Nachricht</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit" class="submit-btn">Absenden</button>
+                </form>
+            </section>
+
+            <!-- Weitere Kontaktmöglichkeiten -->
+            <section class="box other-contact">
+                <h2>Weitere Kontaktmöglichkeiten</h2>
+                <p>E-Mail-Adresse: <a href="mailto:lkiel69@aol.de">lkiel69@aol.de</a></p>
+                <p>Telefonnummer: <a href="tel:+4915170386044">+49 1517 0386044</a></p>
+                <p>Social Media: 
+                    <a href="https://www.facebook.com/heike.schmidt.3958/" class="social-icon">Facebook</a>
+                </p>
+            </section>
         </div>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Lidia Grön | <a href="impressum.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+        </div>
+        <img src="assets/images/Footer.jpg" alt="Footer Bild">
+    </footer>
 </body>
 </html>
