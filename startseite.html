@@ -36,17 +36,32 @@
             background: rgba(0, 0, 0, 0.4); /* Dunkelnd mit 40% Opazität */
             z-index: -1;
         }
-        /* Textbox für den Willkommens-Text */
+        /* Ansprechende Willkommens-Textbox */
         .welcome-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px 40px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.3));
+            padding: 30px 50px;
+            border-radius: 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
             z-index: 1;
             position: relative;
-            color: #333;
+            max-width: 80%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Willkommens-Text Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Ursprüngliche Schriftart für Sidebar */
