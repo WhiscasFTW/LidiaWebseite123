@@ -1,55 +1,211 @@
-/* Allgemeines Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  overflow: hidden; /* Verhindert Scrollen, wenn Sidebar geöffnet */
+/* Grundlegende Reset-Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Video-Hintergrund */
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2; /* Video hinter alle anderen Inhalte legen */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ccc;
 }
 
-/* Sicherstellen, dass der Rest des Inhalts vor dem Video angezeigt wird */
 main {
+    position: relative;
+    z-index: 0;
+    margin-top: 0;
+    background-color: #000000; /* Schwarzer Hintergrund für den Main-Bereich */
+    padding-bottom: 0;
+    padding: 20px;
+    max-width: 2560px; /* Begrenze die Breite auf 2560px */
+    margin: 0 auto; /* Zentriere den Container */
+    display: flex;
+    flex-wrap: wrap; /* Erlaube das Umbrechen von Boxen */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
+    gap: 20px; /* Abstand zwischen den Boxen */
+}
+
+/* Container für die Boxen */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Boxen nebeneinander und umbrechen wenn nötig */
+    justify-content: center; /* Zentriert die Boxen horizontal */
+    align-items: center; /* Zentriert die Boxen vertikal */
+    gap: 20px; /* Abstand zwischen den Boxen */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Boxen */
+.box {
+    background-color: #252525;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 100%; /* Vollständig ausgenutzte Breite */
+    max-width: 500px; /* Maximale Breite der Box */
+    box-sizing: border-box; /* Stellt sicher, dass die Boxen die Breite korrekt berechnen */
+    text-align: center; /* Zentriert den Text innerhalb der Box */
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #bbbbbb;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #999;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color: #333;
+    color: #ccc;
+}
+
+form button {
+    background-color: #555;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #777;
+}
+
+.other-contact a {
+    color: #888;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-video {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Boxen untereinander anordnen */
+        padding: 10px;
+    }
+
+    .box {
+        padding: 20px; /* Weniger Padding auf mobilen Geräten */
+        width: 90%; /* Boxen auf mobilen Geräten vergrößern */
+        max-width: none; /* Maximale Breite für mobile Geräte entfernen */
+    }
+
+    .container {
+        gap: 20px; /* Kleinere Abstände zwischen den Boxen */
+    }
+}
+
+/* Header */
+header {
   position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+    position: relative;  /* Fixiert den Footer am unteren Rand */
+    bottom: 0;        /* Setzt den Footer an den unteren Bildschirmrand */
+    width: 100%;      /* Breite des Footers auf 100% setzen */
+    text-align: center;
+    padding: 0px 0;
+    background-color: black;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+}
+
+footer .footer-content {
+  position: absolute;
   z-index: 1;
 }
 
-.welcome-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(50, 50, 50, 0.9); /* Dunkler Hintergrund für besseren Kontrast */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-width: 600px;
-  width: 90%;
-  color: #fff; /* Weiße Schrift für guten Kontrast zum dunklen Hintergrund */
+footer .footer-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin: 0;
 }
 
-.welcome-box h1 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  color: #ffcc00; /* Helle, warme Farbe für die Überschrift, die auffällt */
+footer .footer-content a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.welcome-box p {
-  font-size: 18px;
-  color: #ddd; /* Helle Schrift für den Text, gut lesbar und nicht zu kontrastreich */
+footer .footer-content a:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
+footer img {
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  display: block;
+  margin-top: 0px;
+}
 
 /* Sidebar */
 .sidebar {
@@ -67,10 +223,8 @@ main {
   padding-top: 20px;
 }
 
-/* Sidebar im geöffneten Zustand */
 .sidebar.open {
   left: 0;
-  z-index: 15; /* Sidebar sollte im Vordergrund erscheinen */
 }
 
 /* Links in der Sidebar */
@@ -181,16 +335,26 @@ main {
     height: 200px;
     padding: 0;
   }
-}
 
-/* Media Query für größere mobile Geräte und Tablets */
-@media screen and (max-width: 1024px) {
-  .boxen {
-    flex-direction: row;
-    gap: 20px;
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+    flex-direction: column; /* Boxen untereinander anordnen */
+    padding: 10px;
+    justify-content: center; /* Vertikal zentrieren */
   }
 
   .box {
-    width: 32%;
+    padding: 20px; /* Weniger Padding auf mobilen Geräten */
+    width: 90%; /* Boxen auf mobilen Geräten vergrößern */
+    max-width: none; /* Maximale Breite für mobile Geräte entfernen */
+  }
+
+  .container {
+    gap: 20px; /* Kleinere Abstände zwischen den Boxen */
   }
 }
+
