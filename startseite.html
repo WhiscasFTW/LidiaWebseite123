@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webseite mit Sidebar</title>
-  <link rel="stylesheet" href="assets/css/startseite.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body, .sidebar-links a {
-      font-family: sans-serif;
-      font-size: 21px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="assets/css/startseite.css">
+    <script src="assets/js/startseite.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Video als Hintergrund */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        /* Abdunkeln des Videos */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dunkelnd mit 40% Opazität */
+            z-index: -1;
+        }
+        /* Ansprechende Willkommens-Textbox */
+   .welcome-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+    padding: 30px 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    max-width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+
+        /* Willkommens-Text Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ursprüngliche Schriftart für Sidebar */
+        body, .sidebar-links a {
+            font-family: sans-serif;
+            font-size: 21px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Hintergrundvideo -->
-  <video id="background-video" autoplay muted loop>
-    <source src="assets/images/Background.mkv" type="video/mp4">
-    Ihr Browser unterstützt dieses Videoformat nicht.
-  </video>
+    <!-- Video als Hintergrund -->
+    <video autoplay muted loop>
+        <source src="assets/images/AnimierterHintergrund.mkv" type="video/mp4">
+        Dein Browser unterstützt das Videoformat nicht.
+    </video>
 
-  <!-- Overlay für die Sidebar -->
-  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+    <!-- Overlay, um das Video abzudunkeln -->
+    <div class="video-overlay"></div>
 
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <div class="artist-signature">
-      <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
+    <!-- Willkommen-Textbox -->
+    <div class="welcome-box">
+        Willkommen auf der Webseite von Lidia Grön
     </div>
 
-    <div class="sidebar-links">
-      <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
-      <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Über mich</a>
-      <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
-      <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
-      <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
+    <!-- Sidebar -->
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <div id="sidebar" class="sidebar">
+        <div class="artist-signature">
+            <img src="assets/images/Siganture.png" alt="Signatur der Künstlerin" class="signature-image">
+        </div>
+
+        <div class="sidebar-links">
+            <a href="startseite.html"><i class="fas fa-home"></i> Startseite</a>
+            <a href="steckbrief.html"><i class="fas fa-paint-brush"></i> Über mich</a>
+            <a href="meinewerke.html"><i class="fas fa-palette"></i> Meine Werke</a>
+            <a href="dienstleistungen.html"><i class="fas fa-briefcase"></i> Dienstleistungen</a>
+            <a href="kontakt.html" id="redirect-button"><i class="fas fa-envelope"></i> Kontakt</a>
+        </div>
     </div>
-  </div>
 
-  <!-- Button zum Öffnen und Schließen der Sidebar -->
-  <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
+    <div id="toggleButton" class="toggle-button" onclick="toggleSidebar()"> &gt; </div>
 
-  <!-- Begrüßungsbox -->
-  <div id="welcome-box" class="welcome-box">
-    <h1>Willkommen auf meiner Seite!</h1>
-    <p>Entdecke die Kunst und Kreativität von Lidia Grön.</p>
-  </div>
-
-  <!-- Hauptinhalt -->
-  <script src="assets/js/startseite.js" defer></script>
 </body>
 </html>
